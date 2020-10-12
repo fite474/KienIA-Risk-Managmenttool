@@ -1,6 +1,6 @@
-﻿namespace RiskManagmentTool
+﻿namespace RiskManagmentTool.InterfaceLayer
 {
-    partial class Form1
+    partial class MainWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -33,21 +33,21 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(133, 67);
+            this.button1.Location = new System.Drawing.Point(507, 139);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "MainWindow";
+            this.Text = "MainWindow";
             this.ResumeLayout(false);
 
         }
@@ -57,4 +57,3 @@
         private System.Windows.Forms.Button button1;
     }
 }
-

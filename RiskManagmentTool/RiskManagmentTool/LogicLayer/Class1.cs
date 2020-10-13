@@ -18,18 +18,71 @@ namespace RiskManagmentTool.LogicLayer
             databaseConnection = new DatabaseConnection();
         }
 
-        public String GetRiskId()
+        public void CreateIssue()
         {
             Item issue = new Item
             {
                 ItemType = ItemType.Issue,
                 ItemData = new IssueObject
                 {
-                    
+                    IssueId = "",
+                    IssueBeschrijving = "",
+                    IssueGevolg = "",
+                    IssueDicipline = "",
+                    IssueGebruiksfase = "",
+                    IssueGebruiker = "",
+                    IssueGevarenzone = "",
+                    IssueSeverity = "",
+                    IssueFrequency = "",
+                    IssueProbability = "",
+                    IssueAvoidance = "",
+                    Verificatie = VerificatieStatus.Volledig
+                }
+            };
+
+            switch (issue.ItemType)
+            {
+                case ItemType.Risico:
+
+                    break;
+                case ItemType.Maatregel:
+
+                    break;
+                case ItemType.Template:
+
+                    break;
+                case ItemType.Object:
+
+                    break;
+
+            }
+
+        }
+
+
+
+
+
+
+
+    public void template()
+        {
+            Item issue = new Item
+            {
+                ItemType = ItemType.Issue,
+                ItemData = new IssueObject
+                {
+
 
                 }
 
             };
+
+        }
+
+        public String GetRiskId()
+        {
+           
 
 
 

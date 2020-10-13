@@ -27,11 +27,6 @@ namespace RiskManagmentTool.DataLayer
             return x;
         }
 
-        private int GetObjectX()
-        {
-            int x = 0;
-            return x;
 
-        }
     }
 }

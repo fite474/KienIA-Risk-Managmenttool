@@ -20,6 +20,7 @@ namespace RiskManagmentTool.LogicLayer.Objects
         public string IssueProbability { get; set; }
         public string IssueAvoidance { get; set; }
         public VerificatieStatus Verificatie { get; set; }
+       // public List<int> items to verificate
 
     }
 }

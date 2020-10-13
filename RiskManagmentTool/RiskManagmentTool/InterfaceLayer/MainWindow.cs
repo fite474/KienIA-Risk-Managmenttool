@@ -15,6 +15,8 @@ namespace RiskManagmentTool.InterfaceLayer
     public partial class MainWindow : Form
     {
         private ObjectBuilder objectBuilder;
+        private Form activeForm;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -23,7 +25,28 @@ namespace RiskManagmentTool.InterfaceLayer
             objectBuilder = new ObjectBuilder();
             Testing();
         }
-        
+
+
+        private void OpenContentWindow(Form contentForm, object btnSender)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+                //activeForm.SendToBack();
+            }
+            activeForm = contentForm;
+            contentForm.TopLevel = false;
+            contentForm.FormBorderStyle = FormBorderStyle.None;
+            contentForm.Dock = DockStyle.Fill;
+            //this.panelContentWindow.Controls.Add(contentForm);
+            //this.panelContentWindow.Tag = contentForm;
+            contentForm.BringToFront();
+            contentForm.Show();
+            //lblTitle.Text = contentForm.Text;
+
+
+        }
+
         private void Testing()
         {
             Class1 testBla = new Class1();

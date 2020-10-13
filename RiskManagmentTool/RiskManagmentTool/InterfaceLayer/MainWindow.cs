@@ -15,13 +15,17 @@ namespace RiskManagmentTool.InterfaceLayer
 {
     public partial class MainWindow : Form
     {
-        private ObjectBuilder objectBuilder;
+        private int menuPanelWidth;
         private Form activeForm;
+        private const int MAX_MENU_SIZE = 150;
+        private const int MIN_MENU_SIZE = 50;
 
         public MainWindow()
         {
+            
             InitializeComponent();
-
+            panelMenu.Width = MAX_MENU_SIZE;
+            menuPanelWidth = panelMenu.Width;
         }
 
 
@@ -44,7 +48,7 @@ namespace RiskManagmentTool.InterfaceLayer
 
 
         }
-
+        
 
         private void buttonProjecten_Click(object sender, EventArgs e)
         {
@@ -70,6 +74,25 @@ namespace RiskManagmentTool.InterfaceLayer
         private void buttonMaatregelen_Click(object sender, EventArgs e)
         {
             OpenContentWindow(new ContentMaatregelen(), sender);
+        }
+
+
+        private void buttonMenu_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine(panelMenu.Width);
+
+            if (menuPanelWidth == MAX_MENU_SIZE) {
+                menuPanelWidth = MIN_MENU_SIZE;
+            }
+            else if (menuPanelWidth == MIN_MENU_SIZE) {
+                menuPanelWidth = MAX_MENU_SIZE;
+            }
+            else{
+                Console.WriteLine("Error Menu Width");
+            }
+
+            panelMenu.Width = menuPanelWidth;
+
         }
     }
 }

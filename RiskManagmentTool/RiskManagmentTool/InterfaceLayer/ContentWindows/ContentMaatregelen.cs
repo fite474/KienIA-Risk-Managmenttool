@@ -10,11 +10,13 @@ using System.Windows.Forms;
 using RiskManagmentTool.LogicLayer;
 using RiskManagmentTool.LogicLayer.Objects;
 using RiskManagmentTool.LogicLayer.Objects.Core;
+using RiskManagmentTool.InterfaceLayer.EditWindows;
 
 namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 {
     public partial class ContentMaatregelen : Form
     {
+        private Form editMaatregelenForm;
         public ContentMaatregelen()
         {
             InitializeComponent();
@@ -23,6 +25,8 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 
         private void CreateIssue()
         {
+
+            
             Item issue = new Item
             {
                 ItemType = ItemType.Issue,
@@ -42,6 +46,12 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
                     Verificatie = VerificatieStatus.Volledig
                 }
             };
+        }
+
+        private void buttonAddNew_Click(object sender, EventArgs e)
+        {
+            editMaatregelenForm = new EditMaatregelen();
+            editMaatregelenForm.Show();
         }
     }
 }

@@ -78,6 +78,36 @@
     <Compile Include="InterfaceLayer\ContentWindows\ContentTemplates.Designer.cs">
       <DependentUpon>ContentTemplates.cs</DependentUpon>
     </Compile>
+    <Compile Include="InterfaceLayer\EditWindows\EditMaatregelen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\EditWindows\EditMaatregelen.Designer.cs">
+      <DependentUpon>EditMaatregelen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceLayer\EditWindows\EditObjecten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\EditWindows\EditObjecten.Designer.cs">
+      <DependentUpon>EditObjecten.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceLayer\EditWindows\EditProjecten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\EditWindows\EditProjecten.Designer.cs">
+      <DependentUpon>EditProjecten.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceLayer\EditWindows\EditRisicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\EditWindows\EditRisicos.Designer.cs">
+      <DependentUpon>EditRisicos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceLayer\EditWindows\EditTemplates.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\EditWindows\EditTemplates.Designer.cs">
+      <DependentUpon>EditTemplates.cs</DependentUpon>
+    </Compile>
     <Compile Include="InterfaceLayer\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +144,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InterfaceLayer\ContentWindows\ContentTemplates.resx">
       <DependentUpon>ContentTemplates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\EditWindows\EditMaatregelen.resx">
+      <DependentUpon>EditMaatregelen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\EditWindows\EditObjecten.resx">
+      <DependentUpon>EditObjecten.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\EditWindows\EditProjecten.resx">
+      <DependentUpon>EditProjecten.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\EditWindows\EditRisicos.resx">
+      <DependentUpon>EditRisicos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\EditWindows\EditTemplates.resx">
+      <DependentUpon>EditTemplates.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterfaceLayer\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>

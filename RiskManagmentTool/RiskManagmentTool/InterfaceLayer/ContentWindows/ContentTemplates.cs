@@ -16,5 +16,10 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
         {
             InitializeComponent();
         }
+
+        private void buttonAddNew_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

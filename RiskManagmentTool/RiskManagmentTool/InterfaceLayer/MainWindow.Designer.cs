@@ -38,6 +38,7 @@
             this.panelContent = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonMenu = new System.Windows.Forms.Button();
+            this.buttonRedirect = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +56,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(33)))), ((int)(((byte)(90)))));
+            this.panelMenu.Controls.Add(this.buttonRedirect);
             this.panelMenu.Controls.Add(this.buttonMaatregelen);
             this.panelMenu.Controls.Add(this.buttonRisicos);
             this.panelMenu.Controls.Add(this.buttonTemplates);
@@ -131,10 +133,10 @@
             // panelContent
             // 
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContent.Location = new System.Drawing.Point(200, 0);
+            this.panelContent.Location = new System.Drawing.Point(200, 78);
             this.panelContent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(1592, 937);
+            this.panelContent.Size = new System.Drawing.Size(1592, 859);
             this.panelContent.TabIndex = 2;
             // 
             // panel2
@@ -157,13 +159,25 @@
             this.buttonMenu.UseVisualStyleBackColor = true;
             this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
             // 
+            // buttonRedirect
+            // 
+            this.buttonRedirect.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonRedirect.Location = new System.Drawing.Point(0, 468);
+            this.buttonRedirect.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonRedirect.Name = "buttonRedirect";
+            this.buttonRedirect.Size = new System.Drawing.Size(200, 78);
+            this.buttonRedirect.TabIndex = 6;
+            this.buttonRedirect.Text = "Zoeken";
+            this.buttonRedirect.UseVisualStyleBackColor = true;
+            this.buttonRedirect.Click += new System.EventHandler(this.buttonRedirect_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1792, 937);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelContent);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelMenu);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainWindow";
@@ -186,5 +200,6 @@
         private System.Windows.Forms.Panel panelContent;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button buttonMenu;
+        private System.Windows.Forms.Button buttonRedirect;
     }
 }

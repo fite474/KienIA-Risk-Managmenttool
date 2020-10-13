@@ -115,6 +115,7 @@
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="LogicLayer\Class1.cs" />
+    <Compile Include="LogicLayer\Datacomunication.cs" />
     <Compile Include="LogicLayer\ObjectBuilder.cs" />
     <Compile Include="LogicLayer\Objects\Core\Item.cs" />
     <Compile Include="LogicLayer\Objects\Core\ItemType.cs" />

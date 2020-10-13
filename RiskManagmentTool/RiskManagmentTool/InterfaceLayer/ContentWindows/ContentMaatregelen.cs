@@ -12,14 +12,20 @@ using RiskManagmentTool.LogicLayer.Objects;
 using RiskManagmentTool.LogicLayer.Objects.Core;
 using RiskManagmentTool.InterfaceLayer.EditWindows;
 
+
 namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 {
     public partial class ContentMaatregelen : Form
     {
         private Form editMaatregelenForm;
-        public ContentMaatregelen()
+        private MainWindow mainWindowForm;
+        private Datacomunication comunicator;
+        public ContentMaatregelen(MainWindow mainWindow)
         {
             InitializeComponent();
+            mainWindowForm = mainWindow;
+            comunicator = new Datacomunication();
+            RefreshTable();
         }
 
 
@@ -47,11 +53,16 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
                 }
             };
         }
+        private void RefreshTable()
+        {
+            dataGridViewMaatregelen.DataSource = comunicator.getTable();
+        }
 
         private void buttonAddNew_Click(object sender, EventArgs e)
         {
             editMaatregelenForm = new EditMaatregelen();
-            editMaatregelenForm.Show();
+            mainWindowForm.OpenContentWindow(editMaatregelenForm);
+            //editMaatregelenForm.Show();
         }
     }
 }

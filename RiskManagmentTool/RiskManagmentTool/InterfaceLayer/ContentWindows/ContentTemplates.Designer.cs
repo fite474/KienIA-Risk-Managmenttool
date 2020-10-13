@@ -32,6 +32,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.buttonAddNew = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -39,6 +40,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.buttonAddNew);
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -73,6 +75,16 @@
             this.dataGridView1.Size = new System.Drawing.Size(1575, 712);
             this.dataGridView1.TabIndex = 0;
             // 
+            // buttonAddNew
+            // 
+            this.buttonAddNew.Location = new System.Drawing.Point(300, 24);
+            this.buttonAddNew.Name = "buttonAddNew";
+            this.buttonAddNew.Size = new System.Drawing.Size(75, 23);
+            this.buttonAddNew.TabIndex = 1;
+            this.buttonAddNew.Text = "Add";
+            this.buttonAddNew.UseVisualStyleBackColor = true;
+            this.buttonAddNew.Click += new System.EventHandler(this.buttonAddNew_Click);
+            // 
             // ContentTemplates
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -95,5 +107,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button buttonAddNew;
     }
 }

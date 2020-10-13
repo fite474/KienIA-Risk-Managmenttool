@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonAddNew = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.buttonAddNew = new System.Windows.Forms.Button();
+            this.dataGridViewMaatregelen = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMaatregelen)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -48,6 +48,16 @@
             this.panel1.Size = new System.Drawing.Size(1575, 100);
             this.panel1.TabIndex = 0;
             // 
+            // buttonAddNew
+            // 
+            this.buttonAddNew.Location = new System.Drawing.Point(472, 27);
+            this.buttonAddNew.Name = "buttonAddNew";
+            this.buttonAddNew.Size = new System.Drawing.Size(75, 23);
+            this.buttonAddNew.TabIndex = 1;
+            this.buttonAddNew.Text = "Add";
+            this.buttonAddNew.UseVisualStyleBackColor = true;
+            this.buttonAddNew.Click += new System.EventHandler(this.buttonAddNew_Click);
+            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
@@ -58,32 +68,26 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.dataGridViewMaatregelen);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 100);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1575, 712);
             this.panel2.TabIndex = 1;
             // 
-            // dataGridView1
+            // dataGridViewMaatregelen
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1575, 712);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // buttonAddNew
-            // 
-            this.buttonAddNew.Location = new System.Drawing.Point(472, 27);
-            this.buttonAddNew.Name = "buttonAddNew";
-            this.buttonAddNew.Size = new System.Drawing.Size(75, 23);
-            this.buttonAddNew.TabIndex = 1;
-            this.buttonAddNew.Text = "Add";
-            this.buttonAddNew.UseVisualStyleBackColor = true;
-            this.buttonAddNew.Click += new System.EventHandler(this.buttonAddNew_Click);
+            this.dataGridViewMaatregelen.AllowUserToAddRows = false;
+            this.dataGridViewMaatregelen.AllowUserToDeleteRows = false;
+            this.dataGridViewMaatregelen.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewMaatregelen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMaatregelen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewMaatregelen.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewMaatregelen.Name = "dataGridViewMaatregelen";
+            this.dataGridViewMaatregelen.ReadOnly = true;
+            this.dataGridViewMaatregelen.RowTemplate.Height = 24;
+            this.dataGridViewMaatregelen.Size = new System.Drawing.Size(1575, 712);
+            this.dataGridViewMaatregelen.TabIndex = 0;
             // 
             // ContentMaatregelen
             // 
@@ -96,7 +100,7 @@
             this.Text = "ContentMaatregelen";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMaatregelen)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -106,7 +110,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewMaatregelen;
         private System.Windows.Forms.Button buttonAddNew;
     }
 }

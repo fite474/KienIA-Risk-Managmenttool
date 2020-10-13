@@ -19,17 +19,18 @@ namespace RiskManagmentTool.InterfaceLayer
         private Form activeForm;
         private const int MAX_MENU_SIZE = 150;
         private const int MIN_MENU_SIZE = 50;
+        private MainWindow mainWindow;
 
         public MainWindow()
         {
-            
+            mainWindow = this;
             InitializeComponent();
             panelMenu.Width = MAX_MENU_SIZE;
             menuPanelWidth = panelMenu.Width;
         }
 
 
-        private void OpenContentWindow(Form contentForm, object btnSender)
+        public void OpenContentWindow(Form contentForm)//, object btnSender)
         {
             if (activeForm != null)
             {
@@ -53,27 +54,32 @@ namespace RiskManagmentTool.InterfaceLayer
         private void buttonProjecten_Click(object sender, EventArgs e)
         {
 
-            OpenContentWindow(new ContentProjecten(), sender);
+            OpenContentWindow(new ContentProjecten());//, sender);
         }
 
         private void buttonObjecten_Click(object sender, EventArgs e)
         {
-            OpenContentWindow(new ContentObjecten(), sender);
+            OpenContentWindow(new ContentObjecten());//, sender);, sender);
         }
 
         private void buttonTemplates_Click(object sender, EventArgs e)
         {
-            OpenContentWindow(new ContentTemplates(), sender);
+            OpenContentWindow(new ContentTemplates());//, sender);, sender);
         }
 
         private void buttonRisicos_Click(object sender, EventArgs e)
         {
-            OpenContentWindow(new ContentRisicos(), sender);
+            OpenContentWindow(new ContentRisicos());//, sender);, sender);
         }
 
         private void buttonMaatregelen_Click(object sender, EventArgs e)
         {
-            OpenContentWindow(new ContentMaatregelen(), sender);
+            OpenContentWindow(new ContentMaatregelen(this));//, sender);, sender);
+        }
+
+        private void buttonRedirect_Click(object sender, EventArgs e)
+        {
+
         }
 
 
@@ -94,5 +100,7 @@ namespace RiskManagmentTool.InterfaceLayer
             panelMenu.Width = menuPanelWidth;
 
         }
+
+        
     }
 }

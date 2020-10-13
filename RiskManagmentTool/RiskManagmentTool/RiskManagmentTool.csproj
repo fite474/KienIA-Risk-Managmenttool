@@ -48,6 +48,36 @@
   <ItemGroup>
     <Compile Include="DataLayer\DatabaseCommunication.cs" />
     <Compile Include="DataLayer\DatabaseConnection.cs" />
+    <Compile Include="InterfaceLayer\ContentWindows\ContentMaatregelen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\ContentWindows\ContentMaatregelen.Designer.cs">
+      <DependentUpon>ContentMaatregelen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceLayer\ContentWindows\ContentObjecten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\ContentWindows\ContentObjecten.Designer.cs">
+      <DependentUpon>ContentObjecten.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceLayer\ContentWindows\ContentProjecten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\ContentWindows\ContentProjecten.Designer.cs">
+      <DependentUpon>ContentProjecten.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceLayer\ContentWindows\ContentRisicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\ContentWindows\ContentRisicos.Designer.cs">
+      <DependentUpon>ContentRisicos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceLayer\ContentWindows\ContentTemplates.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\ContentWindows\ContentTemplates.Designer.cs">
+      <DependentUpon>ContentTemplates.cs</DependentUpon>
+    </Compile>
     <Compile Include="InterfaceLayer\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +100,21 @@
     <Compile Include="TestObjects\TestUI1.Designer.cs">
       <DependentUpon>TestUI1.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="InterfaceLayer\ContentWindows\ContentMaatregelen.resx">
+      <DependentUpon>ContentMaatregelen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\ContentWindows\ContentObjecten.resx">
+      <DependentUpon>ContentObjecten.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\ContentWindows\ContentProjecten.resx">
+      <DependentUpon>ContentProjecten.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\ContentWindows\ContentRisicos.resx">
+      <DependentUpon>ContentRisicos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\ContentWindows\ContentTemplates.resx">
+      <DependentUpon>ContentTemplates.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InterfaceLayer\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -98,8 +143,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="InterfaceLayer\ContentWindows\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

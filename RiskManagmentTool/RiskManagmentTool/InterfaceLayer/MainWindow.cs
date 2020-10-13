@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RiskManagmentTool.LogicLayer;
 using RiskManagmentTool.LogicLayer.Objects;
+using RiskManagmentTool.InterfaceLayer.ContentWindows;
 
 namespace RiskManagmentTool.InterfaceLayer
 {
@@ -21,9 +22,6 @@ namespace RiskManagmentTool.InterfaceLayer
         {
             InitializeComponent();
 
-
-            objectBuilder = new ObjectBuilder();
-            Testing();
         }
 
 
@@ -38,8 +36,8 @@ namespace RiskManagmentTool.InterfaceLayer
             contentForm.TopLevel = false;
             contentForm.FormBorderStyle = FormBorderStyle.None;
             contentForm.Dock = DockStyle.Fill;
-            //this.panelContentWindow.Controls.Add(contentForm);
-            //this.panelContentWindow.Tag = contentForm;
+            this.panelContent.Controls.Add(contentForm);
+            this.panelContent.Tag = contentForm;
             contentForm.BringToFront();
             contentForm.Show();
             //lblTitle.Text = contentForm.Text;
@@ -47,15 +45,31 @@ namespace RiskManagmentTool.InterfaceLayer
 
         }
 
-        private void Testing()
-        {
-            Class1 testBla = new Class1();
-            string riskIDTest = testBla.GetRiskId();
-            Console.WriteLine(riskIDTest);
-            RisicoObject newObject = new RisicoObject();
-            newObject =  objectBuilder.BuildRisico("1", "1", "1", "1", "1", "1", "1");
-            int x = 0;
 
+        private void buttonProjecten_Click(object sender, EventArgs e)
+        {
+
+            OpenContentWindow(new ContentProjecten(), sender);
+        }
+
+        private void buttonObjecten_Click(object sender, EventArgs e)
+        {
+            OpenContentWindow(new ContentObjecten(), sender);
+        }
+
+        private void buttonTemplates_Click(object sender, EventArgs e)
+        {
+            OpenContentWindow(new ContentTemplates(), sender);
+        }
+
+        private void buttonRisicos_Click(object sender, EventArgs e)
+        {
+            OpenContentWindow(new ContentRisicos(), sender);
+        }
+
+        private void buttonMaatregelen_Click(object sender, EventArgs e)
+        {
+            OpenContentWindow(new ContentMaatregelen(), sender);
         }
     }
 }

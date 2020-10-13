@@ -21,12 +21,19 @@ namespace RiskManagmentTool.InterfaceLayer
         private const int MIN_MENU_SIZE = 50;
         private MainWindow mainWindow;
 
+
+
+        private Form contentObjecten;
+        private Form contentMaatregelen;
+
         public MainWindow()
         {
             mainWindow = this;
             InitializeComponent();
             panelMenu.Width = MAX_MENU_SIZE;
             menuPanelWidth = panelMenu.Width;
+            OpenContentWindow(new ContentProjecten());
+
         }
 
 
@@ -34,7 +41,8 @@ namespace RiskManagmentTool.InterfaceLayer
         {
             if (activeForm != null)
             {
-                activeForm.Close();
+                //activeForm.Close();
+                activeForm.Hide();
                 //activeForm.SendToBack();
             }
             activeForm = contentForm;
@@ -49,37 +57,47 @@ namespace RiskManagmentTool.InterfaceLayer
 
 
         }
+
+
         
 
         private void buttonProjecten_Click(object sender, EventArgs e)
         {
 
-            OpenContentWindow(new ContentProjecten());//, sender);
+            OpenContentWindow(new ContentProjecten());
         }
 
         private void buttonObjecten_Click(object sender, EventArgs e)
         {
-            OpenContentWindow(new ContentObjecten());//, sender);, sender);
+            if (contentObjecten == null)
+            {
+                contentObjecten = new ContentObjecten(this);
+            }
+            OpenContentWindow(contentObjecten);//new ContentObjecten(this));
         }
 
         private void buttonTemplates_Click(object sender, EventArgs e)
         {
-            OpenContentWindow(new ContentTemplates());//, sender);, sender);
+            OpenContentWindow(new ContentTemplates());
         }
 
         private void buttonRisicos_Click(object sender, EventArgs e)
         {
-            OpenContentWindow(new ContentRisicos());//, sender);, sender);
+            OpenContentWindow(new ContentRisicos());
         }
 
         private void buttonMaatregelen_Click(object sender, EventArgs e)
         {
-            OpenContentWindow(new ContentMaatregelen(this));//, sender);, sender);
+            if (contentMaatregelen == null)
+            {
+                contentMaatregelen = new ContentMaatregelen(this);
+            }
+            OpenContentWindow(contentMaatregelen);
         }
 
         private void buttonRedirect_Click(object sender, EventArgs e)
         {
-            OpenContentWindow(new ContentRedirect());//, sender);, sender);
+            OpenContentWindow(new ContentRedirect());
 
         }
 

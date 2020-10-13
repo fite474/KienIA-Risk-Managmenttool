@@ -13,15 +13,20 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 {
     public partial class ContentObjecten : Form
     {
-        public ContentObjecten()
+        private Form editObjectenForm;
+        private MainWindow mainWindowForm;
+        public ContentObjecten(MainWindow mainWindow)
         {
+            mainWindowForm = mainWindow;
             InitializeComponent();
         }
 
         private void buttonAddNew_Click(object sender, EventArgs e)
         {
-            Form editObject = new EditObjecten();
-            editObject.Show();
+            editObjectenForm = new EditObjecten();
+            mainWindowForm.OpenContentWindow(editObjectenForm);
+            //Form editObject = new EditObjecten();
+            //editObject.Show();
         }
     }
 }

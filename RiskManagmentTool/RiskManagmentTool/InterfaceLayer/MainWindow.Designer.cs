@@ -180,6 +180,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelMenu);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MinimumSize = new System.Drawing.Size(500, 300);
             this.Name = "MainWindow";
             this.Text = "MainWindow";
             this.panelMenu.ResumeLayout(false);

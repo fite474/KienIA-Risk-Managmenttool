@@ -79,6 +79,7 @@ namespace RiskManagmentTool.InterfaceLayer
 
         private void buttonRedirect_Click(object sender, EventArgs e)
         {
+            OpenContentWindow(new ContentRedirect());//, sender);, sender);
 
         }
 

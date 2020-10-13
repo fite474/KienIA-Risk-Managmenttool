@@ -7,21 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using RiskManagmentTool.InterfaceLayer.EditWindows;
 
 namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 {
-    public partial class ContentObjecten : Form
+    public partial class ContentRedirect : Form
     {
-        public ContentObjecten()
+        public ContentRedirect()
         {
             InitializeComponent();
-        }
-
-        private void buttonAddNew_Click(object sender, EventArgs e)
-        {
-            Form editObject = new EditObjecten();
-            editObject.Show();
         }
     }
 }

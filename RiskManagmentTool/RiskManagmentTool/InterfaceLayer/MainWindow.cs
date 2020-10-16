@@ -19,7 +19,7 @@ namespace RiskManagmentTool.InterfaceLayer
         private Form activeForm;
         private const int MAX_MENU_SIZE = 150;
         private const int MIN_MENU_SIZE = 50;
-        private MainWindow mainWindow;
+       // private MainWindow mainWindow;
 
 
 
@@ -28,7 +28,7 @@ namespace RiskManagmentTool.InterfaceLayer
 
         public MainWindow()
         {
-            mainWindow = this;
+            //mainWindow = this;
             InitializeComponent();
             panelMenu.Width = MAX_MENU_SIZE;
             menuPanelWidth = panelMenu.Width;
@@ -41,8 +41,8 @@ namespace RiskManagmentTool.InterfaceLayer
         {
             if (activeForm != null)
             {
-                //activeForm.Close();
-                activeForm.Hide();
+                activeForm.Close();
+                //activeForm.Hide();
                 //activeForm.SendToBack();
             }
             activeForm = contentForm;
@@ -69,11 +69,12 @@ namespace RiskManagmentTool.InterfaceLayer
 
         private void buttonObjecten_Click(object sender, EventArgs e)
         {
-            if (contentObjecten == null)
-            {
-                contentObjecten = new ContentObjecten(this);
-            }
-            OpenContentWindow(contentObjecten);//new ContentObjecten(this));
+            OpenContentWindow(new ContentObjecten());
+            //if (contentObjecten == null)
+            //{
+            //    contentObjecten = new ContentObjecten(this);
+            //}
+            //OpenContentWindow(contentObjecten);//new ContentObjecten(this));
         }
 
         private void buttonTemplates_Click(object sender, EventArgs e)
@@ -88,11 +89,12 @@ namespace RiskManagmentTool.InterfaceLayer
 
         private void buttonMaatregelen_Click(object sender, EventArgs e)
         {
-            if (contentMaatregelen == null)
-            {
-                contentMaatregelen = new ContentMaatregelen(this);
-            }
-            OpenContentWindow(contentMaatregelen);
+            OpenContentWindow(new ContentMaatregelen());
+            //if (contentMaatregelen == null)
+            //{
+            //    contentMaatregelen = new ContentMaatregelen(this);
+            //}
+            //OpenContentWindow(contentMaatregelen);
         }
 
         private void buttonRedirect_Click(object sender, EventArgs e)
@@ -120,6 +122,6 @@ namespace RiskManagmentTool.InterfaceLayer
 
         }
 
-        
+
     }
 }

@@ -31,8 +31,12 @@ namespace RiskManagmentTool.DataLayer
 
         }
 
+
+       
+
         public SqlDataAdapter GetMaatregelen()
         {
+            
             sqlConnection.Open();
             String query = "SELECT * FROM TableMaatregels";
             SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);

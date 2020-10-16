@@ -16,13 +16,17 @@ namespace RiskManagmentTool.LogicLayer
         {
             databaseCommunication = new DatabaseCommunication();
         }
+
+        
+
+
         public DataTable getTable()
         {
             SqlDataAdapter adapter = databaseCommunication.GetMaatregelen();
             DataTable data = new DataTable();
             adapter.Fill(data);
             return data;
-            //dataGridViewMaatregels.DataSource = data;
+
             
         }
     }

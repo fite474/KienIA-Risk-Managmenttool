@@ -17,13 +17,12 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 {
     public partial class ContentMaatregelen : Form
     {
-        private Form editMaatregelenForm;
-        private MainWindow mainWindowForm;
+        //private Form editMaatregelenForm;
+        //private MainWindow mainWindowForm;
         private Datacomunication comunicator;
-        public ContentMaatregelen(MainWindow mainWindow)
+        public ContentMaatregelen()
         {
             InitializeComponent();
-            mainWindowForm = mainWindow;
             comunicator = new Datacomunication();
             RefreshTable();
         }
@@ -56,14 +55,13 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
         private void RefreshTable()
         {
             dataGridViewMaatregelen.DataSource = comunicator.getTable();
-            int x = 0;
         }
 
         private void buttonAddNew_Click(object sender, EventArgs e)
         {
-            editMaatregelenForm = new EditMaatregelen();
-            mainWindowForm.OpenContentWindow(editMaatregelenForm);
-            //editMaatregelenForm.Show();
+            Form editMaatregelenForm = new EditMaatregelen();
+            //mainWindowForm.OpenContentWindow(editMaatregelenForm);
+            editMaatregelenForm.Show();
         }
     }
 }

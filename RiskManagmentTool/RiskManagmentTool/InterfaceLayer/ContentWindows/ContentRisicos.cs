@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RiskManagmentTool.InterfaceLayer.EditWindows;
 
 namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 {
@@ -19,7 +20,9 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 
         private void buttonAddNew_Click(object sender, EventArgs e)
         {
+            Form editRisicosForm = new EditRisicos();
 
+            editRisicosForm.Show();
         }
     }
 }

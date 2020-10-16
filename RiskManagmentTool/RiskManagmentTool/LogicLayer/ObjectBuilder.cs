@@ -14,6 +14,8 @@ namespace RiskManagmentTool.LogicLayer
 
         //}
 
+
+
         public RisicoObject BuildRisico(string riskId, string riskBeschrijving, string riskGevolg, string riskDicipline, string riskGebruiksfase, string riskGebruiker, string riskGevarenzone)
         {
             RisicoObject objectx = new RisicoObject
@@ -31,5 +33,12 @@ namespace RiskManagmentTool.LogicLayer
 
             return objectx;
         }
+
+
+
+
+
+
+
     }
 }

@@ -1,6 +1,6 @@
-﻿namespace RiskManagmentTool.TestObjects
+﻿namespace RiskManagmentTool.InterfaceLayer.EditWindows
 {
-    partial class TestUI1
+    partial class EditIssue
     {
         /// <summary>
         /// Required designer variable.
@@ -28,20 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // TestUI1
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(283, 170);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // EditIssue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1332, 793);
-            this.Name = "TestUI1";
-            this.Text = "TestUI1";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.ClientSize = new System.Drawing.Size(1374, 988);
+            this.Controls.Add(this.button1);
+            this.Name = "EditIssue";
+            this.Text = "EditIssue";
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Button button1;
     }
 }

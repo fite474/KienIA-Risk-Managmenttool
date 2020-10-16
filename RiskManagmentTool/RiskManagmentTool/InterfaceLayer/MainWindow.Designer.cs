@@ -30,15 +30,15 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.buttonRedirect = new System.Windows.Forms.Button();
             this.buttonMaatregelen = new System.Windows.Forms.Button();
             this.buttonRisicos = new System.Windows.Forms.Button();
             this.buttonTemplates = new System.Windows.Forms.Button();
             this.buttonObjecten = new System.Windows.Forms.Button();
             this.buttonProjecten = new System.Windows.Forms.Button();
-            this.panelContent = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonMenu = new System.Windows.Forms.Button();
-            this.buttonRedirect = new System.Windows.Forms.Button();
+            this.panelContent = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -48,7 +48,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(151)))), ((int)(((byte)(25)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(200, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1592, 78);
             this.panel1.TabIndex = 0;
@@ -65,16 +65,28 @@
             this.panelMenu.Controls.Add(this.panel2);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(4);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(200, 937);
             this.panelMenu.TabIndex = 1;
+            // 
+            // buttonRedirect
+            // 
+            this.buttonRedirect.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonRedirect.Location = new System.Drawing.Point(0, 468);
+            this.buttonRedirect.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonRedirect.Name = "buttonRedirect";
+            this.buttonRedirect.Size = new System.Drawing.Size(200, 78);
+            this.buttonRedirect.TabIndex = 6;
+            this.buttonRedirect.Text = "Zoeken";
+            this.buttonRedirect.UseVisualStyleBackColor = true;
+            this.buttonRedirect.Click += new System.EventHandler(this.buttonRedirect_Click);
             // 
             // buttonMaatregelen
             // 
             this.buttonMaatregelen.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonMaatregelen.Location = new System.Drawing.Point(0, 390);
-            this.buttonMaatregelen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonMaatregelen.Margin = new System.Windows.Forms.Padding(4);
             this.buttonMaatregelen.Name = "buttonMaatregelen";
             this.buttonMaatregelen.Size = new System.Drawing.Size(200, 78);
             this.buttonMaatregelen.TabIndex = 4;
@@ -86,7 +98,7 @@
             // 
             this.buttonRisicos.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonRisicos.Location = new System.Drawing.Point(0, 312);
-            this.buttonRisicos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonRisicos.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRisicos.Name = "buttonRisicos";
             this.buttonRisicos.Size = new System.Drawing.Size(200, 78);
             this.buttonRisicos.TabIndex = 3;
@@ -98,7 +110,7 @@
             // 
             this.buttonTemplates.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonTemplates.Location = new System.Drawing.Point(0, 234);
-            this.buttonTemplates.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonTemplates.Margin = new System.Windows.Forms.Padding(4);
             this.buttonTemplates.Name = "buttonTemplates";
             this.buttonTemplates.Size = new System.Drawing.Size(200, 78);
             this.buttonTemplates.TabIndex = 2;
@@ -110,7 +122,7 @@
             // 
             this.buttonObjecten.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonObjecten.Location = new System.Drawing.Point(0, 156);
-            this.buttonObjecten.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonObjecten.Margin = new System.Windows.Forms.Padding(4);
             this.buttonObjecten.Name = "buttonObjecten";
             this.buttonObjecten.Size = new System.Drawing.Size(200, 78);
             this.buttonObjecten.TabIndex = 1;
@@ -122,22 +134,13 @@
             // 
             this.buttonProjecten.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonProjecten.Location = new System.Drawing.Point(0, 78);
-            this.buttonProjecten.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonProjecten.Margin = new System.Windows.Forms.Padding(4);
             this.buttonProjecten.Name = "buttonProjecten";
             this.buttonProjecten.Size = new System.Drawing.Size(200, 78);
             this.buttonProjecten.TabIndex = 0;
             this.buttonProjecten.Text = "projecten";
             this.buttonProjecten.UseVisualStyleBackColor = true;
             this.buttonProjecten.Click += new System.EventHandler(this.buttonProjecten_Click);
-            // 
-            // panelContent
-            // 
-            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContent.Location = new System.Drawing.Point(200, 78);
-            this.panelContent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(1592, 859);
-            this.panelContent.TabIndex = 2;
             // 
             // panel2
             // 
@@ -155,21 +158,18 @@
             this.buttonMenu.Name = "buttonMenu";
             this.buttonMenu.Size = new System.Drawing.Size(200, 78);
             this.buttonMenu.TabIndex = 0;
-            this.buttonMenu.Text = "Menu";
+            this.buttonMenu.Text = "show / hide menu bar\r\n\r\n";
             this.buttonMenu.UseVisualStyleBackColor = true;
             this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
             // 
-            // buttonRedirect
+            // panelContent
             // 
-            this.buttonRedirect.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonRedirect.Location = new System.Drawing.Point(0, 468);
-            this.buttonRedirect.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonRedirect.Name = "buttonRedirect";
-            this.buttonRedirect.Size = new System.Drawing.Size(200, 78);
-            this.buttonRedirect.TabIndex = 6;
-            this.buttonRedirect.Text = "Zoeken";
-            this.buttonRedirect.UseVisualStyleBackColor = true;
-            this.buttonRedirect.Click += new System.EventHandler(this.buttonRedirect_Click);
+            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContent.Location = new System.Drawing.Point(200, 78);
+            this.panelContent.Margin = new System.Windows.Forms.Padding(4);
+            this.panelContent.Name = "panelContent";
+            this.panelContent.Size = new System.Drawing.Size(1592, 859);
+            this.panelContent.TabIndex = 2;
             // 
             // MainWindow
             // 
@@ -183,6 +183,7 @@
             this.MinimumSize = new System.Drawing.Size(500, 300);
             this.Name = "MainWindow";
             this.Text = "MainWindow";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelMenu.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);

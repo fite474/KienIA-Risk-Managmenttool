@@ -15,6 +15,11 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         public EditRisicos()
         {
             InitializeComponent();
+
+
+            
         }
+
+
     }
 }

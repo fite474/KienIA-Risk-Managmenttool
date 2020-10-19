@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RiskManagmentTool.LogicLayer;
 
 namespace RiskManagmentTool.InterfaceLayer.EditWindows
 {
@@ -15,6 +16,21 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         public EditObjecten()
         {
             InitializeComponent();
+            SetInstellingen();
+        }
+
+        private void SetInstellingen()
+        {
+            KeuzeMenus instellingen = new KeuzeMenus();
+            List<CheckedListBox> menuBox = instellingen.GetKeuzeMenus();
+            for (int i = 0; i < menuBox.Count; i++)
+            {
+                
+                
+                tabPage3.Controls.Add(menuBox[i]);
+            }
+            
+            
         }
     }
 }

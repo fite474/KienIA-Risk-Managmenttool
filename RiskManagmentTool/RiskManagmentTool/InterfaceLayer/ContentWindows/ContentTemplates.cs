@@ -7,14 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RiskManagmentTool.LogicLayer;
 
 namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 {
     public partial class ContentTemplates : Form
     {
+        private Datacomunication comunicator;
         public ContentTemplates()
         {
             InitializeComponent();
+            comunicator = new Datacomunication();
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            dataGridViewTemplates.DataSource = comunicator.getTemplateTable();
+
         }
 
         private void buttonAddNew_Click(object sender, EventArgs e)

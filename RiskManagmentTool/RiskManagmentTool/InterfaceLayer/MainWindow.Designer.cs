@@ -39,6 +39,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonMenu = new System.Windows.Forms.Button();
             this.panelContent = new System.Windows.Forms.Panel();
+            this.buttonKeuzes = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -56,6 +57,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(33)))), ((int)(((byte)(90)))));
+            this.panelMenu.Controls.Add(this.buttonKeuzes);
             this.panelMenu.Controls.Add(this.buttonRedirect);
             this.panelMenu.Controls.Add(this.buttonMaatregelen);
             this.panelMenu.Controls.Add(this.buttonRisicos);
@@ -164,12 +166,24 @@
             // 
             // panelContent
             // 
-            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContent.AutoScroll = true;
             this.panelContent.Location = new System.Drawing.Point(200, 78);
             this.panelContent.Margin = new System.Windows.Forms.Padding(4);
             this.panelContent.Name = "panelContent";
             this.panelContent.Size = new System.Drawing.Size(1592, 859);
             this.panelContent.TabIndex = 2;
+            // 
+            // buttonKeuzes
+            // 
+            this.buttonKeuzes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonKeuzes.Location = new System.Drawing.Point(0, 546);
+            this.buttonKeuzes.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonKeuzes.Name = "buttonKeuzes";
+            this.buttonKeuzes.Size = new System.Drawing.Size(200, 78);
+            this.buttonKeuzes.TabIndex = 7;
+            this.buttonKeuzes.Text = "Keuze Opties";
+            this.buttonKeuzes.UseVisualStyleBackColor = true;
+            this.buttonKeuzes.Click += new System.EventHandler(this.buttonKeuzes_Click);
             // 
             // MainWindow
             // 
@@ -203,5 +217,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button buttonMenu;
         private System.Windows.Forms.Button buttonRedirect;
+        private System.Windows.Forms.Button buttonKeuzes;
     }
 }

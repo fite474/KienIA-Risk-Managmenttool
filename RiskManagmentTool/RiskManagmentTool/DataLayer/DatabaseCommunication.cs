@@ -31,8 +31,35 @@ namespace RiskManagmentTool.DataLayer
 
         }
 
+        public SqlDataAdapter GetRisicos()
+        {
+            sqlConnection.Open();
+            String query = "SELECT * FROM TableRisicos";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
+            sqlConnection.Close();
+            return adapter;
+        }
 
-       
+        public SqlDataAdapter GetObjecten()
+        {
+            sqlConnection.Open();
+            String query = "SELECT * FROM TableProjectenLijst";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
+            sqlConnection.Close();
+            return adapter;
+        }
+
+        public SqlDataAdapter GetTemplates()
+        {
+            sqlConnection.Open();
+            String query = "SELECT * FROM TableTemplatesList";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
+            sqlConnection.Close();
+            return adapter;
+        }
+
+
+
 
         public SqlDataAdapter GetMaatregelen()
         {

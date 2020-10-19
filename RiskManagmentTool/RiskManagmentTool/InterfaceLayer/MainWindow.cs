@@ -103,6 +103,11 @@ namespace RiskManagmentTool.InterfaceLayer
 
         }
 
+        private void buttonKeuzes_Click(object sender, EventArgs e)
+        {
+            OpenContentWindow(new ContentKeuzes());
+        }
+
 
         private void buttonMenu_Click(object sender, EventArgs e)
         {

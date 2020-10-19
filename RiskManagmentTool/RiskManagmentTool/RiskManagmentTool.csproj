@@ -49,6 +49,12 @@
     <Compile Include="DataLayer\DatabaseCommunication.cs" />
     <Compile Include="DataLayer\DatabaseConnection.cs" />
     <Compile Include="DataLayer\DatabaseTaskHandler.cs" />
+    <Compile Include="InterfaceLayer\ContentWindows\ContentKeuzes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\ContentWindows\ContentKeuzes.Designer.cs">
+      <DependentUpon>ContentKeuzes.cs</DependentUpon>
+    </Compile>
     <Compile Include="InterfaceLayer\ContentWindows\ContentMaatregelen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,18 @@
     </Compile>
     <Compile Include="InterfaceLayer\ContentWindows\ContentTemplates.Designer.cs">
       <DependentUpon>ContentTemplates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceLayer\ContentWindows\KeuzesItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\ContentWindows\KeuzesItem.Designer.cs">
+      <DependentUpon>KeuzesItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceLayer\ContentWindows\ProjectItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\ContentWindows\ProjectItem.Designer.cs">
+      <DependentUpon>ProjectItem.cs</DependentUpon>
     </Compile>
     <Compile Include="InterfaceLayer\EditWindows\EditIssue.cs">
       <SubType>Form</SubType>
@@ -129,6 +147,7 @@
     </Compile>
     <Compile Include="LogicLayer\Class1.cs" />
     <Compile Include="LogicLayer\Datacomunication.cs" />
+    <Compile Include="LogicLayer\KeuzeMenus.cs" />
     <Compile Include="LogicLayer\ObjectBuilder.cs" />
     <Compile Include="LogicLayer\Objects\Core\Item.cs" />
     <Compile Include="LogicLayer\Objects\Core\ItemType.cs" />
@@ -140,6 +159,9 @@
     <Compile Include="LogicLayer\VerificatieStatus.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="InterfaceLayer\ContentWindows\ContentKeuzes.resx">
+      <DependentUpon>ContentKeuzes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InterfaceLayer\ContentWindows\ContentMaatregelen.resx">
       <DependentUpon>ContentMaatregelen.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,6 +179,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InterfaceLayer\ContentWindows\ContentTemplates.resx">
       <DependentUpon>ContentTemplates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\ContentWindows\KeuzesItem.resx">
+      <DependentUpon>KeuzesItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\ContentWindows\ProjectItem.resx">
+      <DependentUpon>ProjectItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterfaceLayer\EditWindows\EditIssue.resx">
       <DependentUpon>EditIssue.cs</DependentUpon>

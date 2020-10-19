@@ -33,6 +33,8 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridViewMaatregelen = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMaatregelen)).BeginInit();
@@ -40,6 +42,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.buttonAddNew);
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -86,8 +90,25 @@
             this.dataGridViewMaatregelen.Name = "dataGridViewMaatregelen";
             this.dataGridViewMaatregelen.ReadOnly = true;
             this.dataGridViewMaatregelen.RowTemplate.Height = 24;
+            this.dataGridViewMaatregelen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewMaatregelen.Size = new System.Drawing.Size(1575, 712);
             this.dataGridViewMaatregelen.TabIndex = 0;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(767, 28);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(165, 22);
+            this.textBox1.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(960, 27);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Zoeken";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // ContentMaatregelen
             // 
@@ -99,6 +120,7 @@
             this.Name = "ContentMaatregelen";
             this.Text = "ContentMaatregelen";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMaatregelen)).EndInit();
             this.ResumeLayout(false);
@@ -112,5 +134,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridViewMaatregelen;
         private System.Windows.Forms.Button buttonAddNew;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

@@ -7,41 +7,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using RiskManagmentTool.InterfaceLayer.EditWindows;
 
 namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 {
-    public partial class ContentProjecten : Form
+    public partial class ContentKeuzes : Form
     {
+
         private int column = 0;
         private int row = 0;
-
-        public ContentProjecten()
+        public ContentKeuzes()
         {
             InitializeComponent();
-            LoadProjects();
+            LoadKeuzes();
         }
 
-        private void buttonAddNew_Click(object sender, EventArgs e)
-        {
-            Form editProjecten = new EditProjecten();
-            editProjecten.Show();
-        }
-
-        private void LoadProjects()
+        private void LoadKeuzes()
         {
 
 
             for (int i = 0; i < 20; i++)
             {
-                string projectText = "Rotterdam";
-                ProjectItem project = new ProjectItem(projectText)
+                //string projectText = "Rotterdam";
+                KeuzesItem keuzesItem = new KeuzesItem()
                 {
                     Dock = DockStyle.Fill//,
-                    //Margin.;
-                    
+                                         //Margin.;
+
                 };
-                tableLayoutPanelProjecten.Controls.Add(project, column, row);
+                tableLayoutPanelKeuzes.Controls.Add(keuzesItem, column, row);
                 column++;
                 if (column == 3)
                 {
@@ -51,7 +44,7 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
                 }
 
             }
-            
+
 
         }
     }

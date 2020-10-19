@@ -17,17 +17,36 @@ namespace RiskManagmentTool.LogicLayer
             databaseCommunication = new DatabaseCommunication();
         }
 
-        
+        public DataTable getObjectenTable()
+        {
+            SqlDataAdapter adapter = databaseCommunication.GetObjecten();
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            return data;
+        }
 
+        public DataTable getTemplateTable()
+        {
+            SqlDataAdapter adapter = databaseCommunication.GetTemplates();
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            return data;
+        }
 
-        public DataTable getTable()
+        public DataTable getRisicoTable()
         {
             SqlDataAdapter adapter = databaseCommunication.GetMaatregelen();
             DataTable data = new DataTable();
             adapter.Fill(data);
             return data;
+        }
 
-            
+        public DataTable getMaatregelTable()
+        {
+            SqlDataAdapter adapter = databaseCommunication.GetMaatregelen();
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            return data;
         }
     }
 }

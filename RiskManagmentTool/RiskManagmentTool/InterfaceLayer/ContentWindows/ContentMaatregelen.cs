@@ -54,7 +54,7 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
         }
         private void RefreshTable()
         {
-            dataGridViewMaatregelen.DataSource = comunicator.getTable();
+            dataGridViewMaatregelen.DataSource = comunicator.getMaatregelTable();
         }
 
         private void buttonAddNew_Click(object sender, EventArgs e)

@@ -77,11 +77,14 @@
             // 
             // dataGridViewTemplates
             // 
+            this.dataGridViewTemplates.AllowUserToAddRows = false;
+            this.dataGridViewTemplates.AllowUserToDeleteRows = false;
             this.dataGridViewTemplates.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewTemplates.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTemplates.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewTemplates.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewTemplates.Name = "dataGridViewTemplates";
+            this.dataGridViewTemplates.ReadOnly = true;
             this.dataGridViewTemplates.RowTemplate.Height = 24;
             this.dataGridViewTemplates.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewTemplates.Size = new System.Drawing.Size(1575, 712);

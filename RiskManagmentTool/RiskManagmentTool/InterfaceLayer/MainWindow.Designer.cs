@@ -167,10 +167,10 @@
             // panelContent
             // 
             this.panelContent.AutoScroll = true;
-            this.panelContent.Location = new System.Drawing.Point(200, 78);
+            this.panelContent.Location = new System.Drawing.Point(239, 78);
             this.panelContent.Margin = new System.Windows.Forms.Padding(4);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(1592, 859);
+            this.panelContent.Size = new System.Drawing.Size(1553, 859);
             this.panelContent.TabIndex = 2;
             // 
             // buttonKeuzes

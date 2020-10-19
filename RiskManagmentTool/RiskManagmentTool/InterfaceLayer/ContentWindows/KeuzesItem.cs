@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RiskManagmentTool.InterfaceLayer.EditWindows;
 
 namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 {
@@ -15,6 +16,13 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
         public KeuzesItem()
         {
             InitializeComponent();
+        }
+
+        private void buttonEditKeuzes_Click(object sender, EventArgs e)
+        {
+            Form editKeuzes = new EditKeuzes();
+            editKeuzes.Show();
+
         }
     }
 }

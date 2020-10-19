@@ -37,17 +37,17 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.labelGevSituatie = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxGevSituatie = new System.Windows.Forms.TextBox();
+            this.textBoxGevGebeurtenis = new System.Windows.Forms.TextBox();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
             this.checkedListBox3 = new System.Windows.Forms.CheckedListBox();
             this.checkedListBox4 = new System.Windows.Forms.CheckedListBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBoxDiscipline = new System.Windows.Forms.TextBox();
+            this.textBoxGebruiksfase = new System.Windows.Forms.TextBox();
+            this.textBoxBedienvorm = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -132,14 +132,14 @@
             this.label9.TabIndex = 8;
             this.label9.Text = "Gevaar";
             // 
-            // label10
+            // labelGevSituatie
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(34, 42);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(128, 17);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "Gevaarlijke situatie";
+            this.labelGevSituatie.AutoSize = true;
+            this.labelGevSituatie.Location = new System.Drawing.Point(34, 42);
+            this.labelGevSituatie.Name = "labelGevSituatie";
+            this.labelGevSituatie.Size = new System.Drawing.Size(128, 17);
+            this.labelGevSituatie.TabIndex = 9;
+            this.labelGevSituatie.Text = "Gevaarlijke situatie";
             // 
             // panel1
             // 
@@ -149,21 +149,21 @@
             this.panel1.Size = new System.Drawing.Size(1577, 42);
             this.panel1.TabIndex = 11;
             // 
-            // textBox1
+            // textBoxGevSituatie
             // 
-            this.textBox1.Location = new System.Drawing.Point(201, 39);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(509, 73);
-            this.textBox1.TabIndex = 10;
+            this.textBoxGevSituatie.Location = new System.Drawing.Point(201, 39);
+            this.textBoxGevSituatie.Multiline = true;
+            this.textBoxGevSituatie.Name = "textBoxGevSituatie";
+            this.textBoxGevSituatie.Size = new System.Drawing.Size(509, 73);
+            this.textBoxGevSituatie.TabIndex = 10;
             // 
-            // textBox2
+            // textBoxGevGebeurtenis
             // 
-            this.textBox2.Location = new System.Drawing.Point(201, 130);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(509, 79);
-            this.textBox2.TabIndex = 11;
+            this.textBoxGevGebeurtenis.Location = new System.Drawing.Point(201, 130);
+            this.textBoxGevGebeurtenis.Multiline = true;
+            this.textBoxGevGebeurtenis.Name = "textBoxGevGebeurtenis";
+            this.textBoxGevGebeurtenis.Size = new System.Drawing.Size(509, 79);
+            this.textBoxGevGebeurtenis.TabIndex = 11;
             // 
             // checkedListBox1
             // 
@@ -208,26 +208,26 @@
             this.checkedListBox4.Size = new System.Drawing.Size(355, 72);
             this.checkedListBox4.TabIndex = 15;
             // 
-            // textBox3
+            // textBoxDiscipline
             // 
-            this.textBox3.Location = new System.Drawing.Point(201, 234);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(509, 22);
-            this.textBox3.TabIndex = 16;
+            this.textBoxDiscipline.Location = new System.Drawing.Point(201, 234);
+            this.textBoxDiscipline.Name = "textBoxDiscipline";
+            this.textBoxDiscipline.Size = new System.Drawing.Size(509, 22);
+            this.textBoxDiscipline.TabIndex = 16;
             // 
-            // textBox4
+            // textBoxGebruiksfase
             // 
-            this.textBox4.Location = new System.Drawing.Point(201, 289);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(509, 22);
-            this.textBox4.TabIndex = 17;
+            this.textBoxGebruiksfase.Location = new System.Drawing.Point(201, 289);
+            this.textBoxGebruiksfase.Name = "textBoxGebruiksfase";
+            this.textBoxGebruiksfase.Size = new System.Drawing.Size(509, 22);
+            this.textBoxGebruiksfase.TabIndex = 17;
             // 
-            // textBox5
+            // textBoxBedienvorm
             // 
-            this.textBox5.Location = new System.Drawing.Point(201, 357);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(509, 22);
-            this.textBox5.TabIndex = 18;
+            this.textBoxBedienvorm.Location = new System.Drawing.Point(201, 357);
+            this.textBoxBedienvorm.Name = "textBoxBedienvorm";
+            this.textBoxBedienvorm.Size = new System.Drawing.Size(509, 22);
+            this.textBoxBedienvorm.TabIndex = 18;
             // 
             // button1
             // 
@@ -244,13 +244,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1577, 838);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBoxBedienvorm);
+            this.Controls.Add(this.textBoxGebruiksfase);
+            this.Controls.Add(this.textBoxDiscipline);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.labelGevSituatie);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label6);
@@ -262,8 +262,8 @@
             this.Controls.Add(this.checkedListBox2);
             this.Controls.Add(this.checkedListBox3);
             this.Controls.Add(this.checkedListBox4);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBoxGevSituatie);
+            this.Controls.Add(this.textBoxGevGebeurtenis);
             this.Name = "EditRisicos";
             this.Text = "EditRisicos";
             this.ResumeLayout(false);
@@ -282,17 +282,17 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label labelGevSituatie;
+        private System.Windows.Forms.TextBox textBoxGevSituatie;
+        private System.Windows.Forms.TextBox textBoxGevGebeurtenis;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.CheckedListBox checkedListBox2;
         private System.Windows.Forms.CheckedListBox checkedListBox3;
         private System.Windows.Forms.CheckedListBox checkedListBox4;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBoxDiscipline;
+        private System.Windows.Forms.TextBox textBoxGebruiksfase;
+        private System.Windows.Forms.TextBox textBoxBedienvorm;
         private System.Windows.Forms.Button button1;
     }
 }

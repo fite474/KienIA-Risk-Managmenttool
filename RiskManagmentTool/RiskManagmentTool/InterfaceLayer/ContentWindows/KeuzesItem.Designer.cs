@@ -30,7 +30,7 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonEditKeuzes = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -41,7 +41,7 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button1, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.buttonEditKeuzes, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.listBox1, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -64,16 +64,17 @@
             this.label1.Text = "Keuze menu: snelheid";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button1
+            // buttonEditKeuzes
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(30, 272);
-            this.button1.Margin = new System.Windows.Forms.Padding(30, 3, 30, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(258, 53);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Edit keuze opties";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonEditKeuzes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonEditKeuzes.Location = new System.Drawing.Point(30, 272);
+            this.buttonEditKeuzes.Margin = new System.Windows.Forms.Padding(30, 3, 30, 3);
+            this.buttonEditKeuzes.Name = "buttonEditKeuzes";
+            this.buttonEditKeuzes.Size = new System.Drawing.Size(258, 53);
+            this.buttonEditKeuzes.TabIndex = 1;
+            this.buttonEditKeuzes.Text = "Edit keuze opties";
+            this.buttonEditKeuzes.UseVisualStyleBackColor = true;
+            this.buttonEditKeuzes.Click += new System.EventHandler(this.buttonEditKeuzes_Click);
             // 
             // listBox1
             // 
@@ -109,7 +110,7 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonEditKeuzes;
         private System.Windows.Forms.ListBox listBox1;
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace RiskManagmentTool.InterfaceLayer.EditWindows
 {
-    public partial class EditIssue : Form
+    public partial class IssueRisicoDetails : Form
     {
-        public EditIssue()
+        public IssueRisicoDetails()
         {
             InitializeComponent();
         }

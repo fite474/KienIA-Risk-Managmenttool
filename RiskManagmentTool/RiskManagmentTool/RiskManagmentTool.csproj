@@ -103,11 +103,29 @@
     <Compile Include="InterfaceLayer\ContentWindows\ProjectItem.Designer.cs">
       <DependentUpon>ProjectItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="InterfaceLayer\EditWindows\EditIssue.cs">
+    <Compile Include="InterfaceLayer\EditWindows\AddTemplate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InterfaceLayer\EditWindows\EditIssue.Designer.cs">
-      <DependentUpon>EditIssue.cs</DependentUpon>
+    <Compile Include="InterfaceLayer\EditWindows\AddTemplate.Designer.cs">
+      <DependentUpon>AddTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceLayer\EditWindows\IssueMaatregelen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\EditWindows\IssueMaatregelen.Designer.cs">
+      <DependentUpon>IssueMaatregelen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceLayer\EditWindows\IssueRisicoDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\EditWindows\IssueRisicoDetails.Designer.cs">
+      <DependentUpon>IssueRisicoDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceLayer\EditWindows\EditKeuzes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\EditWindows\EditKeuzes.Designer.cs">
+      <DependentUpon>EditKeuzes.cs</DependentUpon>
     </Compile>
     <Compile Include="InterfaceLayer\EditWindows\EditMaatregelen.cs">
       <SubType>Form</SubType>
@@ -186,8 +204,17 @@
     <EmbeddedResource Include="InterfaceLayer\ContentWindows\ProjectItem.resx">
       <DependentUpon>ProjectItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InterfaceLayer\EditWindows\EditIssue.resx">
-      <DependentUpon>EditIssue.cs</DependentUpon>
+    <EmbeddedResource Include="InterfaceLayer\EditWindows\AddTemplate.resx">
+      <DependentUpon>AddTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\EditWindows\IssueMaatregelen.resx">
+      <DependentUpon>IssueMaatregelen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\EditWindows\IssueRisicoDetails.resx">
+      <DependentUpon>IssueRisicoDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\EditWindows\EditKeuzes.resx">
+      <DependentUpon>EditKeuzes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterfaceLayer\EditWindows\EditMaatregelen.resx">
       <DependentUpon>EditMaatregelen.cs</DependentUpon>

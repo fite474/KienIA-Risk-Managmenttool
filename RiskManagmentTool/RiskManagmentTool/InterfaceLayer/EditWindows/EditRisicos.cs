@@ -17,7 +17,23 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             InitializeComponent();
 
 
+        }
+        public EditRisicos(string riskBeschrijving,
+                            string riskGevolg)//,
+                            //string riskDicipline,
+                            //string riskGebruiksfase,
+                            //string riskGebruiker,
+                            //string riskGevarenzone)
+        {
             
+            InitializeComponent();
+
+            textBoxGevGebeurtenis.Text = riskBeschrijving;
+            textBoxGevSituatie.Text = riskGevolg;
+            //textBoxDiscipline.Text = riskDicipline;
+            //textBoxGebruiksfase.Text = riskGebruiksfase;
+            //textBoxBedienvorm.Text = riskGebruiker;
+            //textBoxRiskGevarenzone.Text = riskGevarenzone;
         }
 
 

@@ -58,8 +58,50 @@ namespace RiskManagmentTool.DataLayer
             return adapter;
         }
 
+        public List<string> GetGekoppeldeObjecten()
+        {
+            List<string> objectNamen = new List<string>();
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT ObjectNaam FROM TableProjectenLijst", sqlConnection);
+
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    objectNamen.Add((dr[0]).ToString());
+                }
+            }
+            sqlConnection.Close();
+            return objectNamen;
+        }
+
+        public SqlDataAdapter GetIssues(string objectNaam)
+        {
+            //Risico's data
+            sqlConnection.Open();
+            //String query = "SELECT * FROM TableRisksUsedInProject WHERE UsedInProjectName = '" + ProjectName + "'";
+            String query = "SELECT TableRisicos.* FROM TableRisksUsedInProject " +
+                " JOIN TableRisicos " +
+                "ON TableRisksUsedInProject.RisicoID = TableRisicos.RiskID WHERE UsedInProjectName = '" + objectNaam + "' ";
 
 
+            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
+            sqlConnection.Close();
+            return adapter;
+
+            ////Maatregels data
+            //sqlConnection.Open();
+            ////query = "SELECT * FROM TableMaatregelsUsedInProject WHERE UsedInProjectName = '" + ProjectName + "'";
+            //query = "SELECT TableMaatregels.* FROM TableMaatregelsUsedInProject " +
+            //    " JOIN TableMaatregels " +
+            //    "ON TableMaatregelsUsedInProject.MaatregelID = TableMaatregels.MaatregelID WHERE UsedInProjectName = '" + ProjectName + "' ";
+            //adapter = new SqlDataAdapter(query, sqlConnection);
+            //data = new DataTable();
+            //adapter.Fill(data);
+            //dataGridViewMaatregel.DataSource = data;
+            //sqlConnection.Close();
+
+        }
 
         public SqlDataAdapter GetMaatregelen()
         {

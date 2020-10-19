@@ -17,6 +17,20 @@ namespace RiskManagmentTool.LogicLayer
             databaseCommunication = new DatabaseCommunication();
         }
 
+        public DataTable getObjectIssues(string objectNaam)
+        {
+            SqlDataAdapter adapter = databaseCommunication.GetIssues(objectNaam);
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            return data;
+        }
+
+        public List<string> GetGekoppeldeObjecten()
+        {
+            return databaseCommunication.GetGekoppeldeObjecten();
+
+        }
+
         public DataTable getObjectenTable()
         {
             SqlDataAdapter adapter = databaseCommunication.GetObjecten();

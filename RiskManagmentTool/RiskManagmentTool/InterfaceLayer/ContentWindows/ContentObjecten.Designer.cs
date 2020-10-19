@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.buttonAddNew = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridViewObjecten = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewObjecten)).BeginInit();
@@ -51,6 +51,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1575, 100);
             this.panel1.TabIndex = 0;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(643, 29);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(181, 22);
+            this.textBox1.TabIndex = 3;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(829, 29);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Zoeken";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // buttonAddNew
             // 
@@ -81,31 +97,19 @@
             // 
             // dataGridViewObjecten
             // 
+            this.dataGridViewObjecten.AllowUserToAddRows = false;
+            this.dataGridViewObjecten.AllowUserToDeleteRows = false;
             this.dataGridViewObjecten.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewObjecten.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewObjecten.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewObjecten.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewObjecten.Name = "dataGridViewObjecten";
+            this.dataGridViewObjecten.ReadOnly = true;
             this.dataGridViewObjecten.RowTemplate.Height = 24;
             this.dataGridViewObjecten.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewObjecten.Size = new System.Drawing.Size(1575, 712);
             this.dataGridViewObjecten.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(829, 29);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Zoeken";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(643, 29);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(181, 22);
-            this.textBox1.TabIndex = 3;
+            this.dataGridViewObjecten.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewObjecten_MouseDoubleClick);
             // 
             // ContentObjecten
             // 

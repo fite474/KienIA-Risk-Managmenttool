@@ -49,6 +49,12 @@
     <Compile Include="DataLayer\DatabaseCommunication.cs" />
     <Compile Include="DataLayer\DatabaseConnection.cs" />
     <Compile Include="DataLayer\DatabaseTaskHandler.cs" />
+    <Compile Include="InterfaceLayer\AddWindows\AddRisico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\AddWindows\AddRisico.Designer.cs">
+      <DependentUpon>AddRisico.cs</DependentUpon>
+    </Compile>
     <Compile Include="InterfaceLayer\ContentWindows\ContentKeuzes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +183,9 @@
     <Compile Include="LogicLayer\VerificatieStatus.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="InterfaceLayer\AddWindows\AddRisico.resx">
+      <DependentUpon>AddRisico.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InterfaceLayer\ContentWindows\ContentKeuzes.resx">
       <DependentUpon>ContentKeuzes.cs</DependentUpon>
     </EmbeddedResource>

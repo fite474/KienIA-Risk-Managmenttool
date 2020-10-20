@@ -44,19 +44,19 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.buttonAddTemplate = new System.Windows.Forms.Button();
+            this.buttonIssuesOplossen = new System.Windows.Forms.Button();
+            this.buttonAddMaatregel = new System.Windows.Forms.Button();
+            this.buttonAddRisico = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridViewGekoppeldeIssues = new System.Windows.Forms.DataGridView();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.buttonAddRisico = new System.Windows.Forms.Button();
-            this.buttonAddMaatregel = new System.Windows.Forms.Button();
-            this.buttonIssuesOplossen = new System.Windows.Forms.Button();
-            this.buttonAddTemplate = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -65,8 +65,8 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGekoppeldeIssues)).BeginInit();
-            this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -209,18 +209,18 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(37, 87);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 17);
+            this.label6.Size = new System.Drawing.Size(173, 17);
             this.label6.TabIndex = 1;
-            this.label6.Text = "label6";
+            this.label6.Text = "Nog te verifiëren issues: 2";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(34, 18);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 17);
+            this.label5.Size = new System.Drawing.Size(144, 17);
             this.label5.TabIndex = 0;
-            this.label5.Text = "label5";
+            this.label5.Text = "Incomplete issues: 17";
             // 
             // panel3
             // 
@@ -235,17 +235,43 @@
             this.panel3.Size = new System.Drawing.Size(1569, 447);
             this.panel3.TabIndex = 2;
             // 
-            // comboBox3
+            // buttonAddTemplate
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "Alle issues",
-            "Onopgeloste issues",
-            "Nog te verifiëren"});
-            this.comboBox3.Location = new System.Drawing.Point(11, 14);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(184, 24);
-            this.comboBox3.TabIndex = 1;
+            this.buttonAddTemplate.Location = new System.Drawing.Point(1312, 329);
+            this.buttonAddTemplate.Name = "buttonAddTemplate";
+            this.buttonAddTemplate.Size = new System.Drawing.Size(121, 29);
+            this.buttonAddTemplate.TabIndex = 5;
+            this.buttonAddTemplate.Text = "Add template";
+            this.buttonAddTemplate.UseVisualStyleBackColor = true;
+            this.buttonAddTemplate.Click += new System.EventHandler(this.buttonAddTemplate_Click);
+            // 
+            // buttonIssuesOplossen
+            // 
+            this.buttonIssuesOplossen.Location = new System.Drawing.Point(1312, 239);
+            this.buttonIssuesOplossen.Name = "buttonIssuesOplossen";
+            this.buttonIssuesOplossen.Size = new System.Drawing.Size(121, 56);
+            this.buttonIssuesOplossen.TabIndex = 4;
+            this.buttonIssuesOplossen.Text = "Issues oplossen / verifiëren";
+            this.buttonIssuesOplossen.UseVisualStyleBackColor = true;
+            this.buttonIssuesOplossen.Click += new System.EventHandler(this.buttonIssuesOplossen_Click);
+            // 
+            // buttonAddMaatregel
+            // 
+            this.buttonAddMaatregel.Location = new System.Drawing.Point(1312, 171);
+            this.buttonAddMaatregel.Name = "buttonAddMaatregel";
+            this.buttonAddMaatregel.Size = new System.Drawing.Size(121, 29);
+            this.buttonAddMaatregel.TabIndex = 3;
+            this.buttonAddMaatregel.Text = "Add Maatregel";
+            this.buttonAddMaatregel.UseVisualStyleBackColor = true;
+            // 
+            // buttonAddRisico
+            // 
+            this.buttonAddRisico.Location = new System.Drawing.Point(1312, 117);
+            this.buttonAddRisico.Name = "buttonAddRisico";
+            this.buttonAddRisico.Size = new System.Drawing.Size(121, 29);
+            this.buttonAddRisico.TabIndex = 2;
+            this.buttonAddRisico.Text = "Add risico";
+            this.buttonAddRisico.UseVisualStyleBackColor = true;
             // 
             // tabControl1
             // 
@@ -285,6 +311,28 @@
             this.dataGridViewGekoppeldeIssues.Size = new System.Drawing.Size(1257, 362);
             this.dataGridViewGekoppeldeIssues.TabIndex = 0;
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.comboBox3);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(3, 3);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1257, 50);
+            this.panel5.TabIndex = 1;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Alle issues",
+            "Onopgeloste issues",
+            "Nog te verifiëren",
+            "Nog te bespreken met klant"});
+            this.comboBox3.Location = new System.Drawing.Point(11, 14);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(184, 24);
+            this.comboBox3.TabIndex = 1;
+            // 
             // tabPage2
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
@@ -323,53 +371,6 @@
             this.button1.Text = "Done";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // buttonAddRisico
-            // 
-            this.buttonAddRisico.Location = new System.Drawing.Point(1312, 117);
-            this.buttonAddRisico.Name = "buttonAddRisico";
-            this.buttonAddRisico.Size = new System.Drawing.Size(121, 29);
-            this.buttonAddRisico.TabIndex = 2;
-            this.buttonAddRisico.Text = "Add risico";
-            this.buttonAddRisico.UseVisualStyleBackColor = true;
-            // 
-            // buttonAddMaatregel
-            // 
-            this.buttonAddMaatregel.Location = new System.Drawing.Point(1312, 171);
-            this.buttonAddMaatregel.Name = "buttonAddMaatregel";
-            this.buttonAddMaatregel.Size = new System.Drawing.Size(121, 29);
-            this.buttonAddMaatregel.TabIndex = 3;
-            this.buttonAddMaatregel.Text = "Add Maatregel";
-            this.buttonAddMaatregel.UseVisualStyleBackColor = true;
-            // 
-            // buttonIssuesOplossen
-            // 
-            this.buttonIssuesOplossen.Location = new System.Drawing.Point(1312, 239);
-            this.buttonIssuesOplossen.Name = "buttonIssuesOplossen";
-            this.buttonIssuesOplossen.Size = new System.Drawing.Size(121, 56);
-            this.buttonIssuesOplossen.TabIndex = 4;
-            this.buttonIssuesOplossen.Text = "Issues oplossen / verifiëren";
-            this.buttonIssuesOplossen.UseVisualStyleBackColor = true;
-            this.buttonIssuesOplossen.Click += new System.EventHandler(this.buttonIssuesOplossen_Click);
-            // 
-            // buttonAddTemplate
-            // 
-            this.buttonAddTemplate.Location = new System.Drawing.Point(1312, 329);
-            this.buttonAddTemplate.Name = "buttonAddTemplate";
-            this.buttonAddTemplate.Size = new System.Drawing.Size(121, 29);
-            this.buttonAddTemplate.TabIndex = 5;
-            this.buttonAddTemplate.Text = "Add template";
-            this.buttonAddTemplate.UseVisualStyleBackColor = true;
-            this.buttonAddTemplate.Click += new System.EventHandler(this.buttonAddTemplate_Click);
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.comboBox3);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(3, 3);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1257, 50);
-            this.panel5.TabIndex = 1;
-            // 
             // EditObjecten
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -388,8 +389,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGekoppeldeIssues)).EndInit();
-            this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

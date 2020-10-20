@@ -32,20 +32,24 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonRisicoDetails
@@ -94,98 +98,6 @@
             this.panel1.Size = new System.Drawing.Size(1297, 346);
             this.panel1.TabIndex = 3;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(725, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(332, 161);
-            this.panel2.TabIndex = 0;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(128, 17);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Aangemaakt door: ";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 46);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(111, 17);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Aangemaakt op:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 74);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 17);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Due date:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 105);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 17);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Status";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(28, 147);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(55, 17);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Situatie";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(28, 97);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(55, 17);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "Gevaar";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(28, 191);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(86, 17);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "Gebeurtenis";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(28, 237);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(72, 17);
-            this.label10.TabIndex = 6;
-            this.label10.Text = "Init_Risico";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(28, 270);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(83, 17);
-            this.label11.TabIndex = 7;
-            this.label11.Text = "Rest_Risico";
-            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
@@ -196,6 +108,98 @@
             this.checkBox1.Text = "Rest_Risico_OK";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(28, 270);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(83, 17);
+            this.label11.TabIndex = 7;
+            this.label11.Text = "Rest_Risico";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(28, 237);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(72, 17);
+            this.label10.TabIndex = 6;
+            this.label10.Text = "Init_Risico";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(28, 191);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(86, 17);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "Gebeurtenis";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(28, 97);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(55, 17);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Gevaar";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(28, 147);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(55, 17);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Situatie";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Location = new System.Drawing.Point(725, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(572, 161);
+            this.panel2.TabIndex = 0;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 105);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(48, 17);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Status";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 74);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(70, 17);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Due date:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 46);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(111, 17);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Aangemaakt op:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(128, 17);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Aangemaakt door: ";
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(1154, 833);
@@ -205,11 +209,42 @@
             this.button1.Text = "Next";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(12, 352);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1107, 468);
+            this.tabControl1.TabIndex = 5;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1099, 439);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Maatregelen";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(192, 71);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // IssueMaatregelen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1297, 908);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Name = "IssueMaatregelen";
@@ -218,6 +253,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -240,5 +276,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
     }
 }

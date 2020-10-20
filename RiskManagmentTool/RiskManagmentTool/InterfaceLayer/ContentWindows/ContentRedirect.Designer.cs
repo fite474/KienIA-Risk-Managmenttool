@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonZoekIssueNummer = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +49,7 @@
             this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.button1, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.buttonZoekIssueNummer, 2, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -60,6 +60,16 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1575, 812);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // button2
+            // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.button2.Location = new System.Drawing.Point(677, 393);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Zoeken";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -67,9 +77,9 @@
             this.label1.Location = new System.Drawing.Point(3, 126);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.label1.Size = new System.Drawing.Size(199, 17);
+            this.label1.Size = new System.Drawing.Size(201, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "zoeken naar Issue nummer";
+            this.label1.Text = "Zoeken naar Issue nummer";
             // 
             // textBox1
             // 
@@ -98,25 +108,15 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Zoek op kernwoord";
             // 
-            // button1
+            // buttonZoekIssueNummer
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.button1.Location = new System.Drawing.Point(677, 123);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Zoeken";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.button2.Location = new System.Drawing.Point(677, 393);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Zoeken";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonZoekIssueNummer.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.buttonZoekIssueNummer.Location = new System.Drawing.Point(677, 123);
+            this.buttonZoekIssueNummer.Name = "buttonZoekIssueNummer";
+            this.buttonZoekIssueNummer.Size = new System.Drawing.Size(75, 23);
+            this.buttonZoekIssueNummer.TabIndex = 4;
+            this.buttonZoekIssueNummer.Text = "Zoeken";
+            this.buttonZoekIssueNummer.UseVisualStyleBackColor = true;
             // 
             // ContentRedirect
             // 
@@ -140,6 +140,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonZoekIssueNummer;
     }
 }

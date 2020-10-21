@@ -37,12 +37,21 @@ namespace RiskManagmentTool.LogicLayer
 
         }
 
-        public DataTable GetProjectenTable()
+        public void MakeObject(string projectNaam, string objectNaam, string objectType, string objectOmschrijving)
         {
-            SqlDataAdapter adapter = databaseCommunication.GetProjecten();
-            DataTable data = new DataTable();
-            adapter.Fill(data);
-            return data;
+            Item objectItem = new Item
+            {
+                ItemType = ItemType.Object,
+                ItemData = new ObjectObject
+                {
+                    ProjectNaam = projectNaam,
+                    ObjectNaam = objectNaam,
+                    ObjectType = objectType,
+                    ObjectOmschrijving = objectOmschrijving
+                }
+            };
+            SendItemToDB(objectItem);
+
         }
 
 
@@ -51,6 +60,39 @@ namespace RiskManagmentTool.LogicLayer
 
 
 
+
+
+
+
+
+
+        public DataTable GetProjectenTable()
+        {
+            SqlDataAdapter adapter = databaseCommunication.GetProjecten();
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            return data;
+        }
+
+        public DataTable GetObjectenFromProject(string projectNaam)
+        {
+            SqlDataAdapter adapter = databaseCommunication.GetObjectenFromProject(projectNaam);
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            return data;
+        }
+
+
+        public List<string> GetObjectTypes()
+        {
+            return databaseCommunication.GetObjectTypes();
+
+        }
+
+        public void AddToMenu(string menuTitel, string optionToAdd)
+        {
+            databaseCommunication.AddToMenu(menuTitel, optionToAdd);
+        }
 
 
 
@@ -73,7 +115,7 @@ namespace RiskManagmentTool.LogicLayer
 
                     break;
                 case ItemType.Object:
-
+                    databaseCommunication.MakeObject(item);
                     break;
                 case ItemType.Project:
                     databaseCommunication.MakeProject(item);
@@ -120,9 +162,9 @@ namespace RiskManagmentTool.LogicLayer
             return data;
         }
 
-        public DataTable getRisicoTable()
+        public DataTable GetGevarenTable()
         {
-            SqlDataAdapter adapter = databaseCommunication.GetMaatregelen();
+            SqlDataAdapter adapter = databaseCommunication.GetGevaren();
             DataTable data = new DataTable();
             adapter.Fill(data);
             return data;

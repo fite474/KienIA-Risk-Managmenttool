@@ -21,19 +21,11 @@ namespace RiskManagmentTool.DataLayer
 
         }
 
-        private void CommunicateToDatabase(string input)
-        {
-            sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO TableTemplatesList(TemplateID,TemplateType,TemplateName) VALUES " +
-                                                                       "(@TemplateID,@TemplateType,@TemplateName)", sqlConnection);
-            cmd.Parameters.AddWithValue("@TemplateID", input);
-
-            cmd.ExecuteNonQuery();
-            sqlConnection.Close();
-
-        }
 
 
+
+        // START REGION INIT ITEMS
+        
         public void MakeProject(Item item)
         {
             string projectNaam = item.ItemData.ProjectNaam;
@@ -46,6 +38,32 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
         }
 
+
+
+        public void MakeObject(Item item)
+        {
+            string projectNaam = item.ItemData.ProjectNaam;
+            string objectNaam = item.ItemData.ObjectNaam;
+            string objectType = item.ItemData.ObjectType;
+            string objectOmschrijving = item.ItemData.ObjectOmschrijving;
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO TableObjecten(ProjectNaam, ObjectNaam, ObjectType, ObjectOmschrijving) VALUES " +
+                                                                       "(@ProjectNaam, @ObjectNaam, @ObjectType, @ObjectOmschrijving)", sqlConnection);
+            cmd.Parameters.AddWithValue("@ProjectNaam", projectNaam);
+            cmd.Parameters.AddWithValue("@ObjectNaam", objectNaam);
+            cmd.Parameters.AddWithValue("@ObjectType", objectType);
+            cmd.Parameters.AddWithValue("@ObjectOmschrijving", objectOmschrijving);
+
+
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+
+        // END REGION INIT ITEMS
+
+
+        // START REGION -----------GET REQUESTS FROM DATABASE
+
         public SqlDataAdapter GetProjecten()
         {
             sqlConnection.Open();
@@ -55,23 +73,105 @@ namespace RiskManagmentTool.DataLayer
             return adapter;
         }
 
-        public SqlDataAdapter GetRisicos()
+
+        public SqlDataAdapter GetObjecten()
         {
             sqlConnection.Open();
-            String query = "SELECT * FROM TableRisicos";
+            String query = "SELECT ProjectNaam,ObjectNaam FROM TableObjecten";
             SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
             sqlConnection.Close();
             return adapter;
         }
 
-        public SqlDataAdapter GetObjecten()
+        public SqlDataAdapter GetObjectenFromProject(string projectNaam)
         {
             sqlConnection.Open();
-            String query = "SELECT * FROM TableProjectenLijst";
+            String query = "SELECT ProjectNaam, ObjectNaam, ObjectType, ObjectOmschrijving FROM TableObjecten WHERE ProjectNaam = '" + projectNaam + "'";
             SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
             sqlConnection.Close();
             return adapter;
         }
+
+
+        public List<string> GetObjectTypes()
+        {
+            List<string> objectTypes = new List<string>();
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT ObjectType FROM ObjectTypes", sqlConnection);
+
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    objectTypes.Add((dr[0]).ToString());
+                }
+            }
+            sqlConnection.Close();
+            return objectTypes;
+
+        }
+
+        public SqlDataAdapter GetGevaren()
+        {
+            sqlConnection.Open();
+            String query = "SELECT * FROM TableGevaren";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
+            sqlConnection.Close();
+            return adapter;
+        }
+
+
+        //END REGION -----GET REQUESTS FROM DATABASE
+
+
+        //START MENU REGION
+        public void AddToMenu(string menuTitel, string optionToAdd)
+        {
+
+
+            string databaseTableName = "ObjectTypes";
+            
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO " + databaseTableName + "(ObjectType) VALUES " +
+                                                                       "(@ObjectType)", sqlConnection);
+            //cmd.Parameters.AddWithValue("@ProjectNaam", projectNaam);
+            cmd.Parameters.AddWithValue("@ObjectType", optionToAdd);
+
+
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         public SqlDataAdapter GetTemplates()
         {

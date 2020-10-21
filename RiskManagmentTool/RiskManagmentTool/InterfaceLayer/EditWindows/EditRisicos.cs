@@ -36,6 +36,15 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             //textBoxRiskGevarenzone.Text = riskGevarenzone;
         }
 
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
 
+            //textBoxGevGebeurtenis.Text = riskBeschrijving;
+            //textBoxGevSituatie.Text = riskGevolg;
+            //textBoxDiscipline.Text = riskDicipline;
+            //textBoxGebruiksfase.Text = riskGebruiksfase;
+            //textBoxBedienvorm.Text = riskGebruiker;
+            //textBoxRiskGevarenzone.Text = riskGevarenzone;
+        }
     }
 }

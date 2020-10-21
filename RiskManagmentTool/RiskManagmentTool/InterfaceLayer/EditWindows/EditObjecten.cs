@@ -15,29 +15,31 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
     public partial class EditObjecten : Form
     {
         private Datacomunication comunicator;
-        private string objectNaam;
+        private string ObjectNaam;
+        private KeuzeMenus keuzeMenus;
+
+
         public EditObjecten()
         {
             InitializeComponent();
             SetInstellingen();
         }
-        public EditObjecten(string objectNaam,
+        public EditObjecten(string projectNaam,
+                            string objectNaam,
                             string objectType,
-                            string objectOmschrijving)//,
-                                              //string riskDicipline,
-                                              //string riskGebruiksfase,
-                                              //string riskGebruiker,
-                                              //string riskGevarenzone)
+                            string objectOmschrijving)
         {
 
             InitializeComponent();
-            this.objectNaam = objectNaam;
-            comboBoxObjectType.Items.Add(objectType);
-
-            textBoxObjectNaam.Text = objectNaam;
-            comboBoxObjectType.SelectedIndex = 0;
-            textBoxOmschrijving.Text = objectOmschrijving;
             comunicator = new Datacomunication();
+            keuzeMenus = new KeuzeMenus();
+            LoadMenus();
+            this.ObjectNaam = objectNaam;
+            textBoxProjectNaam.Text = projectNaam;
+            textBoxObjectNaam.Text = ObjectNaam;
+            textBoxOmschrijving.Text = objectOmschrijving;
+            comboBoxObjectType.SelectedIndex = comboBoxObjectType.FindStringExact(objectType);
+            
             LoadData();
             SetInstellingen();
 
@@ -47,25 +49,35 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             //textBoxRiskGevarenzone.Text = riskGevarenzone;
         }
 
+        private void LoadMenus()
+        {
+            List<string> typeObjectList = keuzeMenus.GetTypeObjectMenu();
+            foreach (string typeString in typeObjectList)
+            {
+                comboBoxObjectType.Items.Add(typeString);
+            }
+
+
+        }
         private void LoadData()
         {
-            dataGridViewGekoppeldeIssues.DataSource = comunicator.getObjectIssues(objectNaam);
+            //dataGridViewGekoppeldeIssues.DataSource = comunicator.getObjectIssues(ObjectNaam);
             ShowSolvedIssues();
 
         }
 
         private void ShowSolvedIssues()
         {
-            int i = 0;
-            foreach (DataGridViewRow row in dataGridViewGekoppeldeIssues.Rows)
-            {
-                if (i > 2)//row.Cells[10].ToString())
-                {
-                    row.DefaultCellStyle.ForeColor = Color.Red;
+            //int i = 0;
+            //foreach (DataGridViewRow row in dataGridViewGekoppeldeIssues.Rows)
+            //{
+            //    if (i > 2)//row.Cells[10].ToString())
+            //    {
+            //        row.DefaultCellStyle.ForeColor = Color.Red;
                     
-                }
-                i++;
-            }
+            //    }
+            //    i++;
+            //}
 
         }
 
@@ -113,7 +125,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void buttonAddRisico_Click(object sender, EventArgs e)
         {
-            Form addRisico = new AddRisico();
+            Form addRisico = new AddRisico(ObjectNaam);
             addRisico.Show();
         }
 

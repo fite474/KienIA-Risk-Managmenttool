@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RiskManagmentTool.LogicLayer;
 
 namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 {
@@ -15,37 +16,39 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 
         private int column = 0;
         private int row = 0;
+        private List<string> MenuNames;
+        private Datacomunication comunicator;
         public ContentKeuzes()
         {
             InitializeComponent();
-            LoadKeuzes();
+            comunicator = new Datacomunication();
+            InitComboBoxObjects();
+            //LoadComboBoxKeuzes();
         }
 
-        private void LoadKeuzes()
+        
+
+        private void InitComboBoxObjects()
         {
-
-
-            for (int i = 0; i < 20; i++)
+            //init list of each combobox
+            MenuNames = new List<string>();
+            MenuNames.Add("Object type");
+            List<string> objectTypes = comunicator.GetObjectTypes();
+            //object type
+            foreach (string menuName in MenuNames)
             {
-                //string projectText = "Rotterdam";
-                KeuzesItem keuzesItem = new KeuzesItem()
+                KeuzesItem keuzesItem = new KeuzesItem(menuName, objectTypes)
                 {
                     Dock = DockStyle.Fill//,
                                          //Margin.;
 
                 };
+
                 tableLayoutPanelKeuzes.Controls.Add(keuzesItem, column, row);
-                column++;
-                if (column == 3)
-                {
-                    row++;
-                    column = 0;
-
-                }
-
             }
-
-
+           
         }
+
+        
     }
 }

@@ -42,13 +42,25 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
         {
 
             string projectNaam = dataGridViewProjecten.SelectedRows[0].Cells[0].Value.ToString();
+            ShowEditProject(projectNaam);
+            //Form editProjecten = new EditProjecten(projectNaam);//,
 
-            Form editProjecten = new EditProjecten(projectNaam);//,
+            //editProjecten.Show();
 
+
+
+        }
+
+        private void ShowEditProject(string projectNaam)
+        {
+            Form editProjecten = new EditProjecten(projectNaam);//activeForm = contentForm;
+            editProjecten.TopLevel = false;
+            editProjecten.FormBorderStyle = FormBorderStyle.None;
+            editProjecten.Dock = DockStyle.Fill;
+            this.panelEditProject.Controls.Add(editProjecten);
+            this.panelEditProject.Tag = editProjecten;
+            editProjecten.BringToFront();
             editProjecten.Show();
-
-
-
         }
     }
 }

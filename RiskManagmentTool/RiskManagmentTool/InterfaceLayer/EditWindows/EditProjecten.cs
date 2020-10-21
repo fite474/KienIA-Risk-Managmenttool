@@ -28,22 +28,19 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         {
 
             textBoxProjectNaam.Text = ProjectNaam;
-            //dataGridViewGekoppeldeObjecten.DataSource = comunicator.getObjectenTable();
+            dataGridViewGekoppeldeObjecten.DataSource = comunicator.GetObjectenFromProject(ProjectNaam);
 
         }
 
         private void dataGridViewGekoppeldeObjecten_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            string projectNaam = dataGridViewGekoppeldeObjecten.SelectedRows[0].Cells[0].Value.ToString();
+            string objectNaam = dataGridViewGekoppeldeObjecten.SelectedRows[0].Cells[1].Value.ToString();
+            string objectType = dataGridViewGekoppeldeObjecten.SelectedRows[0].Cells[2].Value.ToString();
+            string objectOmschrijving = dataGridViewGekoppeldeObjecten.SelectedRows[0].Cells[3].Value.ToString();
 
-            string objectNaam = dataGridViewGekoppeldeObjecten.SelectedRows[0].Cells[0].Value.ToString();
-            string ObjectType = dataGridViewGekoppeldeObjecten.SelectedRows[0].Cells[1].Value.ToString();
-            string ObjectBeschrijving = dataGridViewGekoppeldeObjecten.SelectedRows[0].Cells[2].Value.ToString();
-
-            Form editObjecten = new EditObjecten(objectNaam,
-                            ObjectType,
-                            ObjectBeschrijving);//,
-
-            editObjecten.Show();
+            Form editObject = new EditObjecten(projectNaam, objectNaam, objectType, objectOmschrijving);
+            editObject.Show();
 
 
 
@@ -51,7 +48,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void buttonMakeNewObject_Click(object sender, EventArgs e)
         {
-            Form initObject = new InitObject();
+            Form initObject = new InitObject(ProjectNaam);
             initObject.Show();
         }
 

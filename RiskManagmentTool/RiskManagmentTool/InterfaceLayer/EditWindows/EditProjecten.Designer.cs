@@ -60,7 +60,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(129, 77);
+            this.label1.Location = new System.Drawing.Point(47, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 17);
             this.label1.TabIndex = 0;
@@ -69,7 +69,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(132, 147);
+            this.label2.Location = new System.Drawing.Point(47, 90);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(158, 17);
             this.label2.TabIndex = 1;
@@ -78,7 +78,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(886, 76);
+            this.label3.Location = new System.Drawing.Point(888, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 17);
             this.label3.TabIndex = 2;
@@ -87,7 +87,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(889, 134);
+            this.label4.Location = new System.Drawing.Point(891, 67);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 17);
             this.label4.TabIndex = 3;
@@ -96,7 +96,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(892, 214);
+            this.label5.Location = new System.Drawing.Point(894, 147);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 17);
             this.label5.TabIndex = 4;
@@ -106,9 +106,9 @@
             // 
             this.panel1.Controls.Add(this.tabControl1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 318);
+            this.panel1.Location = new System.Drawing.Point(0, 210);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1575, 494);
+            this.panel1.Size = new System.Drawing.Size(1575, 602);
             this.panel1.TabIndex = 5;
             // 
             // tabControl1
@@ -119,7 +119,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1575, 494);
+            this.tabControl1.Size = new System.Drawing.Size(1575, 602);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage2
@@ -130,14 +130,14 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1567, 465);
+            this.tabPage2.Size = new System.Drawing.Size(1567, 573);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Gekoppelde objecten";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // buttonExport
             // 
-            this.buttonExport.Location = new System.Drawing.Point(99, 409);
+            this.buttonExport.Location = new System.Drawing.Point(99, 486);
             this.buttonExport.Name = "buttonExport";
             this.buttonExport.Size = new System.Drawing.Size(219, 33);
             this.buttonExport.TabIndex = 2;
@@ -157,7 +157,7 @@
             this.dataGridViewGekoppeldeObjecten.ReadOnly = true;
             this.dataGridViewGekoppeldeObjecten.RowTemplate.Height = 24;
             this.dataGridViewGekoppeldeObjecten.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewGekoppeldeObjecten.Size = new System.Drawing.Size(1561, 282);
+            this.dataGridViewGekoppeldeObjecten.Size = new System.Drawing.Size(1561, 377);
             this.dataGridViewGekoppeldeObjecten.TabIndex = 0;
             this.dataGridViewGekoppeldeObjecten.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewGekoppeldeObjecten_MouseDoubleClick);
             // 
@@ -255,16 +255,16 @@
             // 
             // textBoxProjectNaam
             // 
-            this.textBoxProjectNaam.Location = new System.Drawing.Point(287, 77);
+            this.textBoxProjectNaam.Location = new System.Drawing.Point(227, 20);
             this.textBoxProjectNaam.Name = "textBoxProjectNaam";
-            this.textBoxProjectNaam.Size = new System.Drawing.Size(100, 22);
+            this.textBoxProjectNaam.Size = new System.Drawing.Size(186, 22);
             this.textBoxProjectNaam.TabIndex = 6;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(315, 141);
+            this.textBox3.Location = new System.Drawing.Point(227, 85);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(180, 22);
+            this.textBox3.Size = new System.Drawing.Size(186, 22);
             this.textBox3.TabIndex = 7;
             // 
             // EditProjecten

@@ -30,14 +30,15 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 
         private void dataGridViewObjecten_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            string projectNaam = dataGridViewObjecten.SelectedRows[0].Cells[0].Value.ToString();
+            string objectNaam = dataGridViewObjecten.SelectedRows[0].Cells[1].Value.ToString();
+            string objectType = dataGridViewObjecten.SelectedRows[0].Cells[2].Value.ToString();
+            string objectBeschrijving = dataGridViewObjecten.SelectedRows[0].Cells[3].Value.ToString();
 
-            string objectNaam = dataGridViewObjecten.SelectedRows[0].Cells[0].Value.ToString();
-            string ObjectType = dataGridViewObjecten.SelectedRows[0].Cells[1].Value.ToString();
-            string ObjectBeschrijving = dataGridViewObjecten.SelectedRows[0].Cells[2].Value.ToString();
-
-            Form editObjecten = new EditObjecten(objectNaam,
-                            ObjectType,
-                            ObjectBeschrijving);//,
+            Form editObjecten = new EditObjecten(projectNaam,
+                                                 objectNaam,
+                                                 objectType,
+                                                 objectBeschrijving);
 
             editObjecten.Show();
 

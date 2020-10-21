@@ -31,18 +31,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxProjectNaam = new System.Windows.Forms.TextBox();
             this.buttonCreateObject = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBoxObjectNaam = new System.Windows.Forms.TextBox();
+            this.comboBoxObjectType = new System.Windows.Forms.ComboBox();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
-            this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBoxObjectOmschrijving = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -74,13 +76,12 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Type object";
             // 
-            // textBox1
+            // textBoxProjectNaam
             // 
-            this.textBox1.Location = new System.Drawing.Point(172, 40);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.Text = "Rotterdam";
+            this.textBoxProjectNaam.Location = new System.Drawing.Point(181, 43);
+            this.textBoxProjectNaam.Name = "textBoxProjectNaam";
+            this.textBoxProjectNaam.Size = new System.Drawing.Size(158, 22);
+            this.textBoxProjectNaam.TabIndex = 3;
             // 
             // buttonCreateObject
             // 
@@ -92,20 +93,20 @@
             this.buttonCreateObject.UseVisualStyleBackColor = true;
             this.buttonCreateObject.Click += new System.EventHandler(this.buttonCreateObject_Click);
             // 
-            // textBox2
+            // textBoxObjectNaam
             // 
-            this.textBox2.Location = new System.Drawing.Point(181, 86);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 5;
+            this.textBoxObjectNaam.Location = new System.Drawing.Point(181, 86);
+            this.textBoxObjectNaam.Name = "textBoxObjectNaam";
+            this.textBoxObjectNaam.Size = new System.Drawing.Size(158, 22);
+            this.textBoxObjectNaam.TabIndex = 5;
             // 
-            // comboBox1
+            // comboBoxObjectType
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(181, 127);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 6;
+            this.comboBoxObjectType.FormattingEnabled = true;
+            this.comboBoxObjectType.Location = new System.Drawing.Point(181, 127);
+            this.comboBoxObjectType.Name = "comboBoxObjectType";
+            this.comboBoxObjectType.Size = new System.Drawing.Size(158, 24);
+            this.comboBoxObjectType.TabIndex = 6;
             // 
             // checkedListBox1
             // 
@@ -124,7 +125,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(53, 188);
+            this.tabControl1.Location = new System.Drawing.Point(64, 305);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(582, 353);
@@ -144,24 +145,23 @@
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // label6
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(451, 230);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(264, 13);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(63, 17);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Snelheid";
             // 
-            // label4
+            // label5
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(57, 165);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(124, 17);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Object instellingen";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(9, 14);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(69, 17);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Brug type";
             // 
             // checkedListBox2
             // 
@@ -179,35 +179,55 @@
             this.checkedListBox2.Size = new System.Drawing.Size(208, 157);
             this.checkedListBox2.TabIndex = 8;
             // 
-            // label5
+            // tabPage2
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 14);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 17);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Brug type";
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(574, 324);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // label6
+            // label4
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(264, 13);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 17);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Snelheid";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(68, 282);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(124, 17);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Object instellingen";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(64, 174);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(93, 17);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Omschrijving:";
+            // 
+            // textBoxObjectOmschrijving
+            // 
+            this.textBoxObjectOmschrijving.Location = new System.Drawing.Point(181, 174);
+            this.textBoxObjectOmschrijving.Multiline = true;
+            this.textBoxObjectOmschrijving.Name = "textBoxObjectOmschrijving";
+            this.textBoxObjectOmschrijving.Size = new System.Drawing.Size(264, 60);
+            this.textBoxObjectOmschrijving.TabIndex = 11;
             // 
             // InitObject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(929, 647);
+            this.ClientSize = new System.Drawing.Size(929, 797);
+            this.Controls.Add(this.textBoxObjectOmschrijving);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.comboBoxObjectType);
+            this.Controls.Add(this.textBoxObjectNaam);
             this.Controls.Add(this.buttonCreateObject);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxProjectNaam);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -226,10 +246,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxProjectNaam;
         private System.Windows.Forms.Button buttonCreateObject;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textBoxObjectNaam;
+        private System.Windows.Forms.ComboBox comboBoxObjectType;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
@@ -238,5 +258,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBoxObjectOmschrijving;
     }
 }

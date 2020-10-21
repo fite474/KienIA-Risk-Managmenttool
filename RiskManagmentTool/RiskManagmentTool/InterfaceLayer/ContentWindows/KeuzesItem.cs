@@ -13,14 +13,30 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 {
     public partial class KeuzesItem : UserControl
     {
-        public KeuzesItem()
+        private string MenuName;
+        private List<string> MenuOptions;
+        public KeuzesItem(string menuName, List<string> options)
         {
             InitializeComponent();
+            MenuName = menuName;
+            MenuOptions = options;
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            textBoxMenuName.Text = MenuName;
+            
+            foreach (string menuOption in MenuOptions)
+            {
+                listBoxMenuOptions.Items.Add(menuOption);
+                //comboBoxObjectType.Items.Add(typeString);
+            }
         }
 
         private void buttonEditKeuzes_Click(object sender, EventArgs e)
         {
-            Form editKeuzes = new EditKeuzes();
+            Form editKeuzes = new EditKeuzes(MenuName, MenuOptions);
             editKeuzes.Show();
 
         }

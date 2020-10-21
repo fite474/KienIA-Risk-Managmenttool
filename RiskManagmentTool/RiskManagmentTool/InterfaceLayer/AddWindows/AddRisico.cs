@@ -14,17 +14,25 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
     public partial class AddRisico : Form
     {
         private Datacomunication comunicator;
-        public AddRisico()
+        private string ObjectNaam;
+        //public AddRisico()
+        //{
+        //    InitializeComponent();
+        //    comunicator = new Datacomunication();
+        //    LoadData();
+        //}
+        public AddRisico(string objectNaam)
         {
             InitializeComponent();
             comunicator = new Datacomunication();
+            this.ObjectNaam = objectNaam;
             LoadData();
         }
 
         private void LoadData()
         {
-            dataGridViewRisicos.DataSource = comunicator.getRisicoTable();
-
+            dataGridViewRisicos.DataSource = comunicator.GetGevarenTable();
+            textBoxObjectNaam.Text = ObjectNaam;
 
         }
 

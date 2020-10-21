@@ -49,6 +49,13 @@
             this.textBoxGebruiksfase = new System.Windows.Forms.TextBox();
             this.textBoxBedienvorm = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.buttonSave = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -143,6 +150,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.buttonSave);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 796);
             this.panel1.Name = "panel1";
@@ -238,11 +246,61 @@
             this.button1.Text = "▼";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // buttonSave
+            // 
+            this.buttonSave.Location = new System.Drawing.Point(1431, 7);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(143, 32);
+            this.buttonSave.TabIndex = 0;
+            this.buttonSave.Text = "Save";
+            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(201, 426);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(509, 22);
+            this.textBox1.TabIndex = 20;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(201, 475);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(509, 22);
+            this.textBox2.TabIndex = 21;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(201, 530);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(509, 22);
+            this.textBox3.TabIndex = 22;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(201, 584);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(509, 22);
+            this.textBox4.TabIndex = 23;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(201, 633);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(509, 22);
+            this.textBox5.TabIndex = 24;
+            // 
             // EditRisicos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1577, 838);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBoxBedienvorm);
             this.Controls.Add(this.textBoxGebruiksfase);
@@ -266,6 +324,7 @@
             this.Controls.Add(this.textBoxGevGebeurtenis);
             this.Name = "EditRisicos";
             this.Text = "EditRisicos";
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,5 +353,11 @@
         private System.Windows.Forms.TextBox textBoxGebruiksfase;
         private System.Windows.Forms.TextBox textBoxBedienvorm;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox5;
     }
 }

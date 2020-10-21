@@ -121,6 +121,12 @@
     <Compile Include="InterfaceLayer\AddWindows\AddTemplate.Designer.cs">
       <DependentUpon>AddTemplate.cs</DependentUpon>
     </Compile>
+    <Compile Include="InterfaceLayer\EditWindows\EditText.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\EditWindows\EditText.Designer.cs">
+      <DependentUpon>EditText.cs</DependentUpon>
+    </Compile>
     <Compile Include="InterfaceLayer\EditWindows\IssueMaatregelen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +207,7 @@
     <Compile Include="LogicLayer\Objects\Core\ItemType.cs" />
     <Compile Include="LogicLayer\Objects\IssueObject.cs" />
     <Compile Include="LogicLayer\Objects\MaatregelObject.cs" />
+    <Compile Include="LogicLayer\Objects\ObjectObject.cs" />
     <Compile Include="LogicLayer\Objects\ProjectObject.cs" />
     <Compile Include="LogicLayer\Objects\RisicoBeoordelingObject.cs" />
     <Compile Include="LogicLayer\Objects\ObjectSettings.cs" />
@@ -243,6 +250,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InterfaceLayer\AddWindows\AddTemplate.resx">
       <DependentUpon>AddTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\EditWindows\EditText.resx">
+      <DependentUpon>EditText.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterfaceLayer\EditWindows\IssueMaatregelen.resx">
       <DependentUpon>IssueMaatregelen.cs</DependentUpon>

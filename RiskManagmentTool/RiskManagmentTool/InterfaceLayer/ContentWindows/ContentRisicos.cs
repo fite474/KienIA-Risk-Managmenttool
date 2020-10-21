@@ -25,7 +25,7 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 
         private void LoadData()
         {
-            dataGridViewRisicos.DataSource = comunicator.getRisicoTable();
+            dataGridViewRisicos.DataSource = comunicator.GetGevarenTable();
 
         }
 

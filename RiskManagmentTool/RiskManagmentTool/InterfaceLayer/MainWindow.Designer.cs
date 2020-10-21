@@ -129,7 +129,7 @@
             this.buttonRisicos.Name = "buttonRisicos";
             this.buttonRisicos.Size = new System.Drawing.Size(200, 78);
             this.buttonRisicos.TabIndex = 3;
-            this.buttonRisicos.Text = "Risico lijst";
+            this.buttonRisicos.Text = "Gevaren lijst";
             this.buttonRisicos.UseVisualStyleBackColor = true;
             this.buttonRisicos.Click += new System.EventHandler(this.buttonRisicos_Click);
             // 
@@ -192,10 +192,11 @@
             // panelContent
             // 
             this.panelContent.AutoScroll = true;
-            this.panelContent.Location = new System.Drawing.Point(239, 136);
+            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContent.Location = new System.Drawing.Point(200, 106);
             this.panelContent.Margin = new System.Windows.Forms.Padding(4);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(1553, 801);
+            this.panelContent.Size = new System.Drawing.Size(1592, 831);
             this.panelContent.TabIndex = 2;
             // 
             // MainWindow

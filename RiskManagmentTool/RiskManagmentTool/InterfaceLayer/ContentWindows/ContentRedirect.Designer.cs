@@ -117,6 +117,7 @@
             this.buttonZoekIssueNummer.TabIndex = 4;
             this.buttonZoekIssueNummer.Text = "Zoeken";
             this.buttonZoekIssueNummer.UseVisualStyleBackColor = true;
+            this.buttonZoekIssueNummer.Click += new System.EventHandler(this.buttonZoekIssueNummer_Click);
             // 
             // ContentRedirect
             // 

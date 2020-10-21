@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using RiskManagmentTool.DataLayer;
+using RiskManagmentTool.LogicLayer.Objects;
+using RiskManagmentTool.LogicLayer.Objects.Core;
 
 namespace RiskManagmentTool.LogicLayer
 {
@@ -16,6 +18,77 @@ namespace RiskManagmentTool.LogicLayer
         {
             databaseCommunication = new DatabaseCommunication();
         }
+
+
+
+
+        public void MakeProject(string projectNaam)
+        {
+            Item projectItem = new Item
+            {
+                ItemType = ItemType.Project,
+                ItemData = new ProjectObject
+                {
+                    ProjectNaam = projectNaam
+
+                }
+            };
+            SendItemToDB(projectItem);
+
+        }
+
+        public DataTable GetProjectenTable()
+        {
+            SqlDataAdapter adapter = databaseCommunication.GetProjecten();
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            return data;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        private void SendItemToDB(Item item)
+        {
+            switch (item.ItemType)
+            {
+                case ItemType.Risico:
+
+                    break;
+                case ItemType.Maatregel:
+
+                    break;
+                case ItemType.Issue:
+
+                    break;
+                case ItemType.Template:
+
+                    break;
+                case ItemType.Object:
+
+                    break;
+                case ItemType.Project:
+                    databaseCommunication.MakeProject(item);
+                    break;
+                default:
+                    break;
+            }
+
+        }
+
+
+
+
+
+
 
         public DataTable getObjectIssues(string objectNaam)
         {

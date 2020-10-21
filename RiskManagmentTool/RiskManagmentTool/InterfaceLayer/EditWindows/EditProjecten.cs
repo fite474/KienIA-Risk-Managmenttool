@@ -8,22 +8,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RiskManagmentTool.LogicLayer;
+using RiskManagmentTool.InterfaceLayer.InitWindows;
 
 namespace RiskManagmentTool.InterfaceLayer.EditWindows
 {
     public partial class EditProjecten : Form
     {
         private Datacomunication comunicator;
-        public EditProjecten()
+        private string ProjectNaam;
+        public EditProjecten(string projectNaam)
         {
             InitializeComponent();
+            this.ProjectNaam = projectNaam;
             comunicator = new Datacomunication();
             LoadData();
         }
 
         private void LoadData()
         {
-            dataGridViewGekoppeldeObjecten.DataSource = comunicator.getObjectenTable();
+
+            textBoxProjectNaam.Text = ProjectNaam;
+            //dataGridViewGekoppeldeObjecten.DataSource = comunicator.getObjectenTable();
 
         }
 
@@ -42,6 +47,18 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
 
 
+        }
+
+        private void buttonMakeNewObject_Click(object sender, EventArgs e)
+        {
+            Form initObject = new InitObject();
+            initObject.Show();
+        }
+
+        private void buttonExport_Click(object sender, EventArgs e)
+        {
+            Form exportObject = new ExportObject();
+            exportObject.Show();
         }
     }
 }

@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.buttonKeuzes = new System.Windows.Forms.Button();
             this.buttonRedirect = new System.Windows.Forms.Button();
             this.buttonMaatregelen = new System.Windows.Forms.Button();
             this.buttonRisicos = new System.Windows.Forms.Button();
@@ -39,7 +41,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonMenu = new System.Windows.Forms.Button();
             this.panelContent = new System.Windows.Forms.Panel();
-            this.buttonKeuzes = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -47,12 +49,23 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(151)))), ((int)(((byte)(25)))));
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(200, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1592, 78);
+            this.panel1.Size = new System.Drawing.Size(1592, 106);
             this.panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(627, 39);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(478, 39);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "KienIA Risk Management Tool";
             // 
             // panelMenu
             // 
@@ -71,6 +84,18 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(200, 937);
             this.panelMenu.TabIndex = 1;
+            // 
+            // buttonKeuzes
+            // 
+            this.buttonKeuzes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonKeuzes.Location = new System.Drawing.Point(0, 546);
+            this.buttonKeuzes.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonKeuzes.Name = "buttonKeuzes";
+            this.buttonKeuzes.Size = new System.Drawing.Size(200, 78);
+            this.buttonKeuzes.TabIndex = 7;
+            this.buttonKeuzes.Text = "Keuze Opties";
+            this.buttonKeuzes.UseVisualStyleBackColor = true;
+            this.buttonKeuzes.Click += new System.EventHandler(this.buttonKeuzes_Click);
             // 
             // buttonRedirect
             // 
@@ -167,23 +192,11 @@
             // panelContent
             // 
             this.panelContent.AutoScroll = true;
-            this.panelContent.Location = new System.Drawing.Point(239, 78);
+            this.panelContent.Location = new System.Drawing.Point(239, 136);
             this.panelContent.Margin = new System.Windows.Forms.Padding(4);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(1553, 859);
+            this.panelContent.Size = new System.Drawing.Size(1553, 801);
             this.panelContent.TabIndex = 2;
-            // 
-            // buttonKeuzes
-            // 
-            this.buttonKeuzes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonKeuzes.Location = new System.Drawing.Point(0, 546);
-            this.buttonKeuzes.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonKeuzes.Name = "buttonKeuzes";
-            this.buttonKeuzes.Size = new System.Drawing.Size(200, 78);
-            this.buttonKeuzes.TabIndex = 7;
-            this.buttonKeuzes.Text = "Keuze Opties";
-            this.buttonKeuzes.UseVisualStyleBackColor = true;
-            this.buttonKeuzes.Click += new System.EventHandler(this.buttonKeuzes_Click);
             // 
             // MainWindow
             // 
@@ -198,6 +211,8 @@
             this.Name = "MainWindow";
             this.Text = "MainWindow";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panelMenu.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -218,5 +233,6 @@
         private System.Windows.Forms.Button buttonMenu;
         private System.Windows.Forms.Button buttonRedirect;
         private System.Windows.Forms.Button buttonKeuzes;
+        private System.Windows.Forms.Label label1;
     }
 }

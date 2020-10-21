@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RiskManagmentTool.LogicLayer;
+using RiskManagmentTool.InterfaceLayer.AddWindows;
 
 namespace RiskManagmentTool.InterfaceLayer.EditWindows
 {
@@ -49,6 +50,22 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private void LoadData()
         {
             dataGridViewGekoppeldeIssues.DataSource = comunicator.getObjectIssues(objectNaam);
+            ShowSolvedIssues();
+
+        }
+
+        private void ShowSolvedIssues()
+        {
+            int i = 0;
+            foreach (DataGridViewRow row in dataGridViewGekoppeldeIssues.Rows)
+            {
+                if (i > 2)//row.Cells[10].ToString())
+                {
+                    row.DefaultCellStyle.ForeColor = Color.Red;
+                    
+                }
+                i++;
+            }
 
         }
 
@@ -78,6 +95,32 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             
             Form addTemplate = new AddTemplate();
             addTemplate.Show();
+        }
+
+        private void dataGridViewGekoppeldeIssues_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+            string issueId = dataGridViewGekoppeldeIssues.SelectedRows[0].Cells[0].Value.ToString();
+            //string ObjectType = dataGridViewGekoppeldeIssues.SelectedRows[0].Cells[1].Value.ToString();
+            //string ObjectBeschrijving = dataGridViewGekoppeldeIssues.SelectedRows[0].Cells[2].Value.ToString();
+
+            Form issueMaatregelen = new IssueMaatregelen(issueId);
+            issueMaatregelen.Show();
+
+
+
+        }
+
+        private void buttonAddRisico_Click(object sender, EventArgs e)
+        {
+            Form addRisico = new AddRisico();
+            addRisico.Show();
+        }
+
+        private void buttonExport_Click(object sender, EventArgs e)
+        {
+            Form exportObject = new ExportObject();
+            exportObject.Show();
         }
     }
 }

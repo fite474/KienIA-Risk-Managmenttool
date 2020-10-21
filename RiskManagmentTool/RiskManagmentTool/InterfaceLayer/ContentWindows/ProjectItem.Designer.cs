@@ -89,6 +89,7 @@
             this.listBoxGekoppeldeObjecten.Name = "listBoxGekoppeldeObjecten";
             this.listBoxGekoppeldeObjecten.Size = new System.Drawing.Size(249, 95);
             this.listBoxGekoppeldeObjecten.TabIndex = 2;
+            this.listBoxGekoppeldeObjecten.SelectedIndexChanged += new System.EventHandler(this.listBoxGekoppeldeObjecten_SelectedIndexChanged);
             // 
             // ProjectItem
             // 

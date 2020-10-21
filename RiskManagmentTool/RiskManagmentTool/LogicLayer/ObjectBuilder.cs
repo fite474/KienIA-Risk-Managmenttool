@@ -9,10 +9,10 @@ namespace RiskManagmentTool.LogicLayer
 {
     class ObjectBuilder
     {
-        //public ObjectBuilder()
-        //{
+        public ObjectBuilder()
+        {
 
-        //}
+        }
 
 
 

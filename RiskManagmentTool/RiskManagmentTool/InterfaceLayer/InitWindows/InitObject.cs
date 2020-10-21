@@ -9,19 +9,20 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RiskManagmentTool.InterfaceLayer.EditWindows;
 
-namespace RiskManagmentTool.InterfaceLayer.ContentWindows
+namespace RiskManagmentTool.InterfaceLayer.InitWindows
 {
-    public partial class ContentRedirect : Form
+    public partial class InitObject : Form
     {
-        public ContentRedirect()
+        public InitObject()
         {
             InitializeComponent();
         }
 
-        private void buttonZoekIssueNummer_Click(object sender, EventArgs e)
+        private void buttonCreateObject_Click(object sender, EventArgs e)
         {
-            Form issueMaatregelNmr = new IssueMaatregelen();
-            issueMaatregelNmr.Show();
+            Form editObject = new EditObjecten();
+            editObject.Show();
+            this.Close();
         }
     }
 }

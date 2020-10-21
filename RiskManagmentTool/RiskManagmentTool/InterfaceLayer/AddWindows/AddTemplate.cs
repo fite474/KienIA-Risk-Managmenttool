@@ -8,8 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RiskManagmentTool.LogicLayer;
+using RiskManagmentTool.InterfaceLayer.EditWindows;
 
-namespace RiskManagmentTool.InterfaceLayer.EditWindows
+namespace RiskManagmentTool.InterfaceLayer.AddWindows
 {
     public partial class AddTemplate : Form
     {

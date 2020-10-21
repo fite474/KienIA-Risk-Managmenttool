@@ -23,8 +23,6 @@ namespace RiskManagmentTool.InterfaceLayer
 
 
 
-        private Form contentObjecten;
-        private Form contentMaatregelen;
 
         public MainWindow()
         {

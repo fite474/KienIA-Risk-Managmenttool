@@ -8,50 +8,46 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RiskManagmentTool.InterfaceLayer.EditWindows;
+using RiskManagmentTool.LogicLayer;
+using RiskManagmentTool.InterfaceLayer.InitWindows;
 
 namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 {
     public partial class ContentProjecten : Form
     {
-        private int column = 0;
-        private int row = 0;
 
+        private Datacomunication comunicator;
         public ContentProjecten()
         {
             InitializeComponent();
+            comunicator = new Datacomunication();
             LoadProjects();
         }
 
         private void buttonAddNew_Click(object sender, EventArgs e)
         {
-            Form editProjecten = new EditProjecten();
-            editProjecten.Show();
+            Form initProject = new InitProject();
+            initProject.Show();
+            //Form editProjecten = new EditProjecten();
+            //editProjecten.Show();
         }
 
         private void LoadProjects()
         {
+            dataGridViewProjecten.DataSource = comunicator.GetProjectenTable();
+
+        }
+
+        private void dataGridViewProjecten_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+            string projectNaam = dataGridViewProjecten.SelectedRows[0].Cells[0].Value.ToString();
+
+            Form editProjecten = new EditProjecten(projectNaam);//,
+
+            editProjecten.Show();
 
 
-            for (int i = 0; i < 20; i++)
-            {
-                string projectText = "Rotterdam";
-                ProjectItem project = new ProjectItem(projectText)
-                {
-                    Dock = DockStyle.Fill//,
-                    //Margin.;
-                    
-                };
-                tableLayoutPanelProjecten.Controls.Add(project, column, row);
-                column++;
-                if (column == 3)
-                {
-                    row++;
-                    column = 0;
-
-                }
-
-            }
-            
 
         }
     }

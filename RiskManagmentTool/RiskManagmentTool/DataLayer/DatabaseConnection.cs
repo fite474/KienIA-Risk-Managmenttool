@@ -11,19 +11,19 @@ namespace RiskManagmentTool.DataLayer
     class DatabaseConnection
     {
         //SqlConnection sqlConnection = new SqlConnection(@"Data Source=MSI-MAURICE;Initial Catalog=ProtoTypeProject;User ID=Maurice;Password=6776756");
-        private SqlConnection sqlConnection;// = new SqlConnection(DatabaseComunication.);
+        public SqlConnection sqlConnection;// = new SqlConnection(DatabaseComunication.);
 
         public DatabaseConnection()
         {
             //maak check op het verlopen van een wachtwoord
-            sqlConnection = new SqlConnection(@"Data Source=MSI-MAURICE;Initial Catalog=ProtoTypeProject;User ID=Maurice;Password=6776756mb");
+            sqlConnection = new SqlConnection(@"Data Source=MSI-MAURICE;Initial Catalog=KRMTVersionOne;User ID=Maurice;Password=6776756mb");
 
 
         }
 
         public string GetConnectionString()
         {
-            string x = @"Data Source=MSI-MAURICE;Initial Catalog=ProtoTypeProject;User ID=Maurice;Password=6776756mb";
+            string x = @"Data Source=MSI-MAURICE;Initial Catalog=KRMTVersionOne;User ID=Maurice;Password=6776756mb";
             return x;
         }
 

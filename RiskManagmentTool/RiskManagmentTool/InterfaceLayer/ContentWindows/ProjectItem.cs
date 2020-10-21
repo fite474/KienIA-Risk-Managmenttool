@@ -19,7 +19,7 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
         {
             InitializeComponent();
             comunicator = new Datacomunication();
-            LoadDetails(projectNaam);
+            //LoadDetails(projectNaam);
             
             
         }
@@ -27,18 +27,28 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
         private void LoadDetails(string ProjectNaam)
         {
             labelProjectNaam.Text = ProjectNaam;
-            List<string> gekoppeldeObjecten = comunicator.GetGekoppeldeObjecten();
-            for (int i = 0; i < gekoppeldeObjecten.Count; i++)
-            {
-                listBoxGekoppeldeObjecten.Items.Add(gekoppeldeObjecten[i]);//.ToString());
-            }
+            //List<string> gekoppeldeObjecten = comunicator.GetGekoppeldeObjecten();
+            //for (int i = 0; i < gekoppeldeObjecten.Count; i++)
+            //{
+            //    listBoxGekoppeldeObjecten.Items.Add(gekoppeldeObjecten[i]);//.ToString());
+            //}
             
         }
 
         private void buttonOpenProject_Click(object sender, EventArgs e)
         {
-            EditProjecten editProjecten = new EditProjecten();
-            editProjecten.Show();
+            //EditProjecten editProjecten = new EditProjecten();
+            //editProjecten.Show();
+        }
+
+        private void listBoxGekoppeldeObjecten_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //string objectNaam = listBoxGekoppeldeObjecten.SelectedItem.ToString();
+            //string objectOmschrijving = "";
+            //string objectType = "";
+
+            //EditObjecten editProjecten = new EditObjecten(objectNaam, objectOmschrijving, objectType);
+            //editProjecten.Show();
         }
     }
 }

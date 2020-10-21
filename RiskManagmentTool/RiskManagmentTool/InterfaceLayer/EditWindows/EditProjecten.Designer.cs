@@ -36,10 +36,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.buttonExport = new System.Windows.Forms.Button();
             this.dataGridViewGekoppeldeObjecten = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonMakeNewObject = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -47,7 +47,8 @@
             this.checkedListBox4 = new System.Windows.Forms.CheckedListBox();
             this.label8 = new System.Windows.Forms.Label();
             this.checkedListBox3 = new System.Windows.Forms.CheckedListBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxProjectNaam = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -123,6 +124,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.buttonExport);
             this.tabPage2.Controls.Add(this.dataGridViewGekoppeldeObjecten);
             this.tabPage2.Controls.Add(this.panel2);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
@@ -132,6 +134,16 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Gekoppelde objecten";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // buttonExport
+            // 
+            this.buttonExport.Location = new System.Drawing.Point(99, 409);
+            this.buttonExport.Name = "buttonExport";
+            this.buttonExport.Size = new System.Drawing.Size(219, 33);
+            this.buttonExport.TabIndex = 2;
+            this.buttonExport.Text = "Geselecteerd object exporteren";
+            this.buttonExport.UseVisualStyleBackColor = true;
+            this.buttonExport.Click += new System.EventHandler(this.buttonExport_Click);
             // 
             // dataGridViewGekoppeldeObjecten
             // 
@@ -151,8 +163,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.buttonMakeNewObject);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.textBox2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -161,23 +172,15 @@
             this.panel2.Size = new System.Drawing.Size(1561, 100);
             this.panel2.TabIndex = 1;
             // 
-            // button3
+            // buttonMakeNewObject
             // 
-            this.button3.Location = new System.Drawing.Point(1174, 30);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(1057, 30);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Add new";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonMakeNewObject.Location = new System.Drawing.Point(1174, 30);
+            this.buttonMakeNewObject.Name = "buttonMakeNewObject";
+            this.buttonMakeNewObject.Size = new System.Drawing.Size(175, 48);
+            this.buttonMakeNewObject.TabIndex = 3;
+            this.buttonMakeNewObject.Text = "Maak nieuw object binnen dit project";
+            this.buttonMakeNewObject.UseVisualStyleBackColor = true;
+            this.buttonMakeNewObject.Click += new System.EventHandler(this.buttonMakeNewObject_Click);
             // 
             // button1
             // 
@@ -250,19 +253,27 @@
             this.checkedListBox3.Size = new System.Drawing.Size(185, 106);
             this.checkedListBox3.TabIndex = 4;
             // 
-            // textBox1
+            // textBoxProjectNaam
             // 
-            this.textBox1.Location = new System.Drawing.Point(287, 77);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 6;
+            this.textBoxProjectNaam.Location = new System.Drawing.Point(287, 77);
+            this.textBoxProjectNaam.Name = "textBoxProjectNaam";
+            this.textBoxProjectNaam.Size = new System.Drawing.Size(100, 22);
+            this.textBoxProjectNaam.TabIndex = 6;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(315, 141);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(180, 22);
+            this.textBox3.TabIndex = 7;
             // 
             // EditProjecten
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1575, 812);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBoxProjectNaam);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -300,11 +311,12 @@
         private System.Windows.Forms.CheckedListBox checkedListBox3;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridView dataGridViewGekoppeldeObjecten;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxProjectNaam;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonMakeNewObject;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button buttonExport;
     }
 }

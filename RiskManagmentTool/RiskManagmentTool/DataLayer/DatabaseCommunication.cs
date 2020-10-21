@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using RiskManagmentTool.LogicLayer.Objects.Core;
 
 namespace RiskManagmentTool.DataLayer
 {
@@ -14,7 +15,8 @@ namespace RiskManagmentTool.DataLayer
         public DatabaseCommunication()
         {
             DatabaseConnection databaseConnection = new DatabaseConnection();
-            sqlConnection = new SqlConnection(databaseConnection.GetConnectionString());
+            sqlConnection = databaseConnection.sqlConnection;
+               // new SqlConnection(databaseConnection.GetConnectionString());
 
 
         }
@@ -29,6 +31,28 @@ namespace RiskManagmentTool.DataLayer
             cmd.ExecuteNonQuery();
             sqlConnection.Close();
 
+        }
+
+
+        public void MakeProject(Item item)
+        {
+            string projectNaam = item.ItemData.ProjectNaam;
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO TableProjecten(ProjectNaam) VALUES " +
+                                                                       "(@ProjectNaam)", sqlConnection);
+            cmd.Parameters.AddWithValue("@ProjectNaam", projectNaam);
+
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+
+        public SqlDataAdapter GetProjecten()
+        {
+            sqlConnection.Open();
+            String query = "SELECT ProjectNaam FROM TableProjecten";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
+            sqlConnection.Close();
+            return adapter;
         }
 
         public SqlDataAdapter GetRisicos()

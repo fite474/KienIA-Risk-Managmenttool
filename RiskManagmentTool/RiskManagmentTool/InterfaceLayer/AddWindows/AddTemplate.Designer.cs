@@ -1,4 +1,4 @@
-﻿namespace RiskManagmentTool.InterfaceLayer.EditWindows
+﻿namespace RiskManagmentTool.InterfaceLayer.AddWindows
 {
     partial class AddTemplate
     {
@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.checkedListBoxObjectEigenschappen = new System.Windows.Forms.CheckedListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,16 +53,15 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -75,14 +75,15 @@
             this.tabPage2.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel8.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.checkedListBoxObjectEigenschappen);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -92,18 +93,26 @@
             this.panel1.Size = new System.Drawing.Size(1355, 198);
             this.panel1.TabIndex = 0;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(915, 4);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(160, 17);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Instellingen op dit object";
+            // 
             // checkedListBoxObjectEigenschappen
             // 
-            this.checkedListBoxObjectEigenschappen.Dock = System.Windows.Forms.DockStyle.Right;
             this.checkedListBoxObjectEigenschappen.FormattingEnabled = true;
             this.checkedListBoxObjectEigenschappen.Items.AddRange(new object[] {
             "Brug",
             "Fietspad",
             "120 Km/u weg",
             "Brug open en dicht"});
-            this.checkedListBoxObjectEigenschappen.Location = new System.Drawing.Point(915, 0);
+            this.checkedListBoxObjectEigenschappen.Location = new System.Drawing.Point(915, 24);
             this.checkedListBoxObjectEigenschappen.Name = "checkedListBoxObjectEigenschappen";
-            this.checkedListBoxObjectEigenschappen.Size = new System.Drawing.Size(440, 198);
+            this.checkedListBoxObjectEigenschappen.Size = new System.Drawing.Size(440, 174);
             this.checkedListBoxObjectEigenschappen.TabIndex = 2;
             // 
             // label2
@@ -151,11 +160,11 @@
             // 
             // buttonVerifieerKoppeling
             // 
-            this.buttonVerifieerKoppeling.Location = new System.Drawing.Point(62, 267);
+            this.buttonVerifieerKoppeling.Location = new System.Drawing.Point(62, 252);
             this.buttonVerifieerKoppeling.Name = "buttonVerifieerKoppeling";
-            this.buttonVerifieerKoppeling.Size = new System.Drawing.Size(122, 44);
+            this.buttonVerifieerKoppeling.Size = new System.Drawing.Size(122, 59);
             this.buttonVerifieerKoppeling.TabIndex = 1;
-            this.buttonVerifieerKoppeling.Text = "Verifiëer koppeling";
+            this.buttonVerifieerKoppeling.Text = "Verifiëer selectie van koppeling eerst";
             this.buttonVerifieerKoppeling.UseVisualStyleBackColor = true;
             this.buttonVerifieerKoppeling.Click += new System.EventHandler(this.buttonVerifieerKoppeling_Click);
             // 
@@ -296,11 +305,11 @@
             // 
             // buttonAutoSelect
             // 
-            this.buttonAutoSelect.Location = new System.Drawing.Point(446, 27);
+            this.buttonAutoSelect.Location = new System.Drawing.Point(316, 6);
             this.buttonAutoSelect.Name = "buttonAutoSelect";
-            this.buttonAutoSelect.Size = new System.Drawing.Size(151, 53);
+            this.buttonAutoSelect.Size = new System.Drawing.Size(151, 77);
             this.buttonAutoSelect.TabIndex = 0;
-            this.buttonAutoSelect.Text = "Auto selectie voor alle eisen";
+            this.buttonAutoSelect.Text = "Alle Templates voor object instellingen koppelen";
             this.buttonAutoSelect.UseVisualStyleBackColor = true;
             this.buttonAutoSelect.Click += new System.EventHandler(this.buttonAutoSelect_Click);
             // 
@@ -331,7 +340,6 @@
             // 
             this.tabControl2.Controls.Add(this.tabPage3);
             this.tabControl2.Controls.Add(this.tabPage5);
-            this.tabControl2.Controls.Add(this.tabPage4);
             this.tabControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabControl2.Location = new System.Drawing.Point(3, 67);
             this.tabControl2.Name = "tabControl2";
@@ -351,6 +359,46 @@
             this.tabPage3.Text = "Volledige issues";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 28);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(500, 263);
+            this.dataGridView1.TabIndex = 1;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.button3);
+            this.panel8.Controls.Add(this.button1);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel8.Location = new System.Drawing.Point(904, 3);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(131, 336);
+            this.panel8.TabIndex = 0;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(3, 132);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(113, 99);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "verwijder uit selectie";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(32, 53);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 50);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Verifiëer selectie";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // tabPage5
             // 
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
@@ -360,15 +408,22 @@
             this.tabPage5.Text = "Losse risico\'s";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // tabPage4
+            // panel5
             // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(526, 267);
-            this.tabPage4.TabIndex = 1;
-            this.tabPage4.Text = "Losse maatregelen";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.panel5.Controls.Add(this.comboBox2);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(3, 3);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1046, 64);
+            this.panel5.TabIndex = 1;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(39, 16);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(166, 24);
+            this.comboBox2.TabIndex = 0;
             // 
             // panel4
             // 
@@ -388,63 +443,6 @@
             this.button2.TabIndex = 0;
             this.button2.Text = "Done";
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.comboBox2);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(3, 3);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1046, 64);
-            this.panel5.TabIndex = 1;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(39, 16);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(166, 24);
-            this.comboBox2.TabIndex = 0;
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.button3);
-            this.panel8.Controls.Add(this.button1);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel8.Location = new System.Drawing.Point(904, 3);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(131, 336);
-            this.panel8.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(32, 53);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 50);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Verifiëer selectie";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(193, 56);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(500, 263);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(3, 132);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(113, 99);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Selectie niet importeren vanuit template";
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // AddTemplate
             // 
@@ -472,10 +470,10 @@
             this.tabPage2.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel8.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -509,12 +507,12 @@
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label4;
     }
 }

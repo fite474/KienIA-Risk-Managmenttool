@@ -30,10 +30,15 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanelKeuzes = new System.Windows.Forms.TableLayoutPanel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -42,6 +47,7 @@
             // 
             // tableLayoutPanelKeuzes
             // 
+            this.tableLayoutPanelKeuzes.AutoScroll = true;
             this.tableLayoutPanelKeuzes.ColumnCount = 3;
             this.tableLayoutPanelKeuzes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanelKeuzes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
@@ -56,6 +62,26 @@
             this.tableLayoutPanelKeuzes.Size = new System.Drawing.Size(1575, 731);
             this.tableLayoutPanelKeuzes.TabIndex = 1;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Instelling menu\'s",
+            "Dropdown keuzes"});
+            this.comboBox1.Location = new System.Drawing.Point(150, 31);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(121, 17);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Type keuze menu";
+            // 
             // ContentKeuzes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -65,6 +91,8 @@
             this.Controls.Add(this.panel1);
             this.Name = "ContentKeuzes";
             this.Text = "ContentKeuzes";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -73,5 +101,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelKeuzes;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

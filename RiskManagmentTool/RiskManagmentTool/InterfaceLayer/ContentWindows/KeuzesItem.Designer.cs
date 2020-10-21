@@ -67,7 +67,7 @@
             // buttonEditKeuzes
             // 
             this.buttonEditKeuzes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonEditKeuzes.Location = new System.Drawing.Point(30, 272);
+            this.buttonEditKeuzes.Location = new System.Drawing.Point(30, 273);
             this.buttonEditKeuzes.Margin = new System.Windows.Forms.Padding(30, 3, 30, 3);
             this.buttonEditKeuzes.Name = "buttonEditKeuzes";
             this.buttonEditKeuzes.Size = new System.Drawing.Size(258, 53);
@@ -87,7 +87,7 @@
             "item3",
             "item4",
             "item5"});
-            this.listBox1.Location = new System.Drawing.Point(30, 130);
+            this.listBox1.Location = new System.Drawing.Point(30, 138);
             this.listBox1.Margin = new System.Windows.Forms.Padding(30, 3, 30, 3);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(258, 84);

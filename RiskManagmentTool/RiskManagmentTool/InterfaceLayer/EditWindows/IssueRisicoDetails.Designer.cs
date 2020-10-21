@@ -35,7 +35,6 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -77,6 +76,10 @@
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
+            this.textBox21 = new System.Windows.Forms.TextBox();
+            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.textBox24 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -125,41 +128,35 @@
             // panel5
             // 
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(374, 0);
+            this.panel5.Location = new System.Drawing.Point(648, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(583, 227);
+            this.panel5.Size = new System.Drawing.Size(309, 227);
             this.panel5.TabIndex = 6;
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.textBox24);
+            this.panel4.Controls.Add(this.textBox23);
+            this.panel4.Controls.Add(this.textBox22);
+            this.panel4.Controls.Add(this.textBox21);
             this.panel4.Controls.Add(this.label4);
-            this.panel4.Controls.Add(this.label5);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(642, 227);
+            this.panel4.Size = new System.Drawing.Size(579, 227);
             this.panel4.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(37, 145);
+            this.label4.Location = new System.Drawing.Point(39, 173);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 17);
             this.label4.TabIndex = 3;
             this.label4.Text = "Gevaar";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(37, 184);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 17);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "label5";
             // 
             // label1
             // 
@@ -173,7 +170,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 67);
+            this.label2.Location = new System.Drawing.Point(39, 60);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 17);
             this.label2.TabIndex = 1;
@@ -182,7 +179,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(37, 106);
+            this.label3.Location = new System.Drawing.Point(37, 123);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 17);
             this.label3.TabIndex = 2;
@@ -571,6 +568,36 @@
             this.textBox12.Size = new System.Drawing.Size(59, 22);
             this.textBox12.TabIndex = 24;
             // 
+            // textBox21
+            // 
+            this.textBox21.Location = new System.Drawing.Point(144, 19);
+            this.textBox21.Name = "textBox21";
+            this.textBox21.Size = new System.Drawing.Size(152, 22);
+            this.textBox21.TabIndex = 5;
+            // 
+            // textBox22
+            // 
+            this.textBox22.Location = new System.Drawing.Point(144, 60);
+            this.textBox22.Multiline = true;
+            this.textBox22.Name = "textBox22";
+            this.textBox22.Size = new System.Drawing.Size(310, 36);
+            this.textBox22.TabIndex = 6;
+            // 
+            // textBox23
+            // 
+            this.textBox23.Location = new System.Drawing.Point(144, 117);
+            this.textBox23.Multiline = true;
+            this.textBox23.Name = "textBox23";
+            this.textBox23.Size = new System.Drawing.Size(310, 44);
+            this.textBox23.TabIndex = 7;
+            // 
+            // textBox24
+            // 
+            this.textBox24.Location = new System.Drawing.Point(144, 173);
+            this.textBox24.Name = "textBox24";
+            this.textBox24.Size = new System.Drawing.Size(310, 22);
+            this.textBox24.TabIndex = 8;
+            // 
             // IssueRisicoDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -597,7 +624,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -644,5 +670,9 @@
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox textBox21;
+        private System.Windows.Forms.TextBox textBox24;
+        private System.Windows.Forms.TextBox textBox23;
+        private System.Windows.Forms.TextBox textBox22;
     }
 }

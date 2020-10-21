@@ -49,6 +49,12 @@
     <Compile Include="DataLayer\DatabaseCommunication.cs" />
     <Compile Include="DataLayer\DatabaseConnection.cs" />
     <Compile Include="DataLayer\DatabaseTaskHandler.cs" />
+    <Compile Include="InterfaceLayer\AddWindows\AddMaatregel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\AddWindows\AddMaatregel.Designer.cs">
+      <DependentUpon>AddMaatregel.cs</DependentUpon>
+    </Compile>
     <Compile Include="InterfaceLayer\AddWindows\AddRisico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,10 +115,10 @@
     <Compile Include="InterfaceLayer\ContentWindows\ProjectItem.Designer.cs">
       <DependentUpon>ProjectItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="InterfaceLayer\EditWindows\AddTemplate.cs">
+    <Compile Include="InterfaceLayer\AddWindows\AddTemplate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InterfaceLayer\EditWindows\AddTemplate.Designer.cs">
+    <Compile Include="InterfaceLayer\AddWindows\AddTemplate.Designer.cs">
       <DependentUpon>AddTemplate.cs</DependentUpon>
     </Compile>
     <Compile Include="InterfaceLayer\EditWindows\IssueMaatregelen.cs">
@@ -163,6 +169,24 @@
     <Compile Include="InterfaceLayer\EditWindows\EditTemplates.Designer.cs">
       <DependentUpon>EditTemplates.cs</DependentUpon>
     </Compile>
+    <Compile Include="InterfaceLayer\ExportObject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\ExportObject.Designer.cs">
+      <DependentUpon>ExportObject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceLayer\InitWindows\InitObject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\InitWindows\InitObject.Designer.cs">
+      <DependentUpon>InitObject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceLayer\InitWindows\InitProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\InitWindows\InitProject.Designer.cs">
+      <DependentUpon>InitProject.cs</DependentUpon>
+    </Compile>
     <Compile Include="InterfaceLayer\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,12 +201,16 @@
     <Compile Include="LogicLayer\Objects\Core\ItemType.cs" />
     <Compile Include="LogicLayer\Objects\IssueObject.cs" />
     <Compile Include="LogicLayer\Objects\MaatregelObject.cs" />
+    <Compile Include="LogicLayer\Objects\ProjectObject.cs" />
     <Compile Include="LogicLayer\Objects\RisicoBeoordelingObject.cs" />
     <Compile Include="LogicLayer\Objects\ObjectSettings.cs" />
     <Compile Include="LogicLayer\Objects\RisicoObject.cs" />
     <Compile Include="LogicLayer\VerificatieStatus.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="InterfaceLayer\AddWindows\AddMaatregel.resx">
+      <DependentUpon>AddMaatregel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InterfaceLayer\AddWindows\AddRisico.resx">
       <DependentUpon>AddRisico.cs</DependentUpon>
     </EmbeddedResource>
@@ -213,7 +241,7 @@
     <EmbeddedResource Include="InterfaceLayer\ContentWindows\ProjectItem.resx">
       <DependentUpon>ProjectItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InterfaceLayer\EditWindows\AddTemplate.resx">
+    <EmbeddedResource Include="InterfaceLayer\AddWindows\AddTemplate.resx">
       <DependentUpon>AddTemplate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterfaceLayer\EditWindows\IssueMaatregelen.resx">
@@ -239,6 +267,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InterfaceLayer\EditWindows\EditTemplates.resx">
       <DependentUpon>EditTemplates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\ExportObject.resx">
+      <DependentUpon>ExportObject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\InitWindows\InitObject.resx">
+      <DependentUpon>InitObject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\InitWindows\InitProject.resx">
+      <DependentUpon>InitProject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterfaceLayer\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>

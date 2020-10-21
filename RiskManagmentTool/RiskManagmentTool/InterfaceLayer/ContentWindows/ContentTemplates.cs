@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RiskManagmentTool.LogicLayer;
+using RiskManagmentTool.InterfaceLayer.EditWindows;
 
 namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 {
@@ -29,7 +30,8 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 
         private void buttonAddNew_Click(object sender, EventArgs e)
         {
-
+            Form editTemplate = new EditTemplates();
+            editTemplate.Show();
         }
     }
 }

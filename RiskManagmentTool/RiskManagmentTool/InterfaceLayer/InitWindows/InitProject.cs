@@ -7,29 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RiskManagmentTool.LogicLayer.Objects;
 using RiskManagmentTool.LogicLayer;
 
-namespace RiskManagmentTool.InterfaceLayer.AddWindows
+namespace RiskManagmentTool.InterfaceLayer.InitWindows
 {
-    public partial class AddRisico : Form
+    public partial class InitProject : Form
     {
         private Datacomunication comunicator;
-        public AddRisico()
+        public InitProject()
         {
             InitializeComponent();
             comunicator = new Datacomunication();
-            LoadData();
         }
 
-        private void LoadData()
+        private void buttonCreateProject_Click(object sender, EventArgs e)
         {
-            dataGridViewRisicos.DataSource = comunicator.getRisicoTable();
-
-
-        }
-
-        private void buttonVoegSelectieToe_Click(object sender, EventArgs e)
-        {
+            comunicator.MakeProject(textBoxProjectNaam.Text);
             this.Close();
         }
     }

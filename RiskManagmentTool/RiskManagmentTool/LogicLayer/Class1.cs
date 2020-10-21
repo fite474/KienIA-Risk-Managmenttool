@@ -17,7 +17,7 @@ namespace RiskManagmentTool.LogicLayer
         {
             databaseConnection = new DatabaseConnection();
         }
-        //fdsf
+        //fdsfsdsfd
         public void CreateIssue()
         {
             Item issue = new Item

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace RiskManagmentTool.TestObjects
+namespace RiskManagmentTool.InterfaceLayer.EditWindows
 {
-    public partial class TestUI1 : Form
+    public partial class EditTemplates : Form
     {
-        public TestUI1()
+        public EditTemplates()
         {
             InitializeComponent();
         }

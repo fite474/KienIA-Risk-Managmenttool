@@ -28,119 +28,212 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panelMenu = new System.Windows.Forms.Panel();
+            this.buttonKeuzes = new System.Windows.Forms.Button();
+            this.buttonRedirect = new System.Windows.Forms.Button();
+            this.buttonMaatregelen = new System.Windows.Forms.Button();
+            this.buttonRisicos = new System.Windows.Forms.Button();
+            this.buttonTemplates = new System.Windows.Forms.Button();
+            this.buttonObjecten = new System.Windows.Forms.Button();
+            this.buttonProjecten = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonMenu = new System.Windows.Forms.Button();
+            this.panelContent = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
+            this.panelMenu.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(151)))), ((int)(((byte)(25)))));
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(200, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1592, 106);
+            this.panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(627, 39);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(478, 39);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "KienIA Risk Management Tool";
+            // 
+            // panelMenu
+            // 
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(33)))), ((int)(((byte)(90)))));
+            this.panelMenu.Controls.Add(this.buttonKeuzes);
+            this.panelMenu.Controls.Add(this.buttonRedirect);
+            this.panelMenu.Controls.Add(this.buttonMaatregelen);
+            this.panelMenu.Controls.Add(this.buttonRisicos);
+            this.panelMenu.Controls.Add(this.buttonTemplates);
+            this.panelMenu.Controls.Add(this.buttonObjecten);
+            this.panelMenu.Controls.Add(this.buttonProjecten);
+            this.panelMenu.Controls.Add(this.panel2);
+            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(4);
+            this.panelMenu.Name = "panelMenu";
+            this.panelMenu.Size = new System.Drawing.Size(200, 937);
+            this.panelMenu.TabIndex = 1;
+            // 
+            // buttonKeuzes
+            // 
+            this.buttonKeuzes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonKeuzes.Location = new System.Drawing.Point(0, 546);
+            this.buttonKeuzes.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonKeuzes.Name = "buttonKeuzes";
+            this.buttonKeuzes.Size = new System.Drawing.Size(200, 78);
+            this.buttonKeuzes.TabIndex = 7;
+            this.buttonKeuzes.Text = "Keuze Opties";
+            this.buttonKeuzes.UseVisualStyleBackColor = true;
+            this.buttonKeuzes.Click += new System.EventHandler(this.buttonKeuzes_Click);
+            // 
+            // buttonRedirect
+            // 
+            this.buttonRedirect.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonRedirect.Location = new System.Drawing.Point(0, 468);
+            this.buttonRedirect.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonRedirect.Name = "buttonRedirect";
+            this.buttonRedirect.Size = new System.Drawing.Size(200, 78);
+            this.buttonRedirect.TabIndex = 6;
+            this.buttonRedirect.Text = "Zoeken";
+            this.buttonRedirect.UseVisualStyleBackColor = true;
+            this.buttonRedirect.Click += new System.EventHandler(this.buttonRedirect_Click);
+            // 
+            // buttonMaatregelen
+            // 
+            this.buttonMaatregelen.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonMaatregelen.Location = new System.Drawing.Point(0, 390);
+            this.buttonMaatregelen.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonMaatregelen.Name = "buttonMaatregelen";
+            this.buttonMaatregelen.Size = new System.Drawing.Size(200, 78);
+            this.buttonMaatregelen.TabIndex = 4;
+            this.buttonMaatregelen.Text = "Maatregelen lijst";
+            this.buttonMaatregelen.UseVisualStyleBackColor = true;
+            this.buttonMaatregelen.Click += new System.EventHandler(this.buttonMaatregelen_Click);
+            // 
+            // buttonRisicos
+            // 
+            this.buttonRisicos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonRisicos.Location = new System.Drawing.Point(0, 312);
+            this.buttonRisicos.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonRisicos.Name = "buttonRisicos";
+            this.buttonRisicos.Size = new System.Drawing.Size(200, 78);
+            this.buttonRisicos.TabIndex = 3;
+            this.buttonRisicos.Text = "Gevaren lijst";
+            this.buttonRisicos.UseVisualStyleBackColor = true;
+            this.buttonRisicos.Click += new System.EventHandler(this.buttonRisicos_Click);
+            // 
+            // buttonTemplates
+            // 
+            this.buttonTemplates.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonTemplates.Location = new System.Drawing.Point(0, 234);
+            this.buttonTemplates.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonTemplates.Name = "buttonTemplates";
+            this.buttonTemplates.Size = new System.Drawing.Size(200, 78);
+            this.buttonTemplates.TabIndex = 2;
+            this.buttonTemplates.Text = "templates";
+            this.buttonTemplates.UseVisualStyleBackColor = true;
+            this.buttonTemplates.Click += new System.EventHandler(this.buttonTemplates_Click);
+            // 
+            // buttonObjecten
+            // 
+            this.buttonObjecten.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonObjecten.Location = new System.Drawing.Point(0, 156);
+            this.buttonObjecten.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonObjecten.Name = "buttonObjecten";
+            this.buttonObjecten.Size = new System.Drawing.Size(200, 78);
+            this.buttonObjecten.TabIndex = 1;
+            this.buttonObjecten.Text = "objecten";
+            this.buttonObjecten.UseVisualStyleBackColor = true;
+            this.buttonObjecten.Click += new System.EventHandler(this.buttonObjecten_Click);
+            // 
+            // buttonProjecten
+            // 
+            this.buttonProjecten.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonProjecten.Location = new System.Drawing.Point(0, 78);
+            this.buttonProjecten.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonProjecten.Name = "buttonProjecten";
+            this.buttonProjecten.Size = new System.Drawing.Size(200, 78);
+            this.buttonProjecten.TabIndex = 0;
+            this.buttonProjecten.Text = "projecten";
+            this.buttonProjecten.UseVisualStyleBackColor = true;
+            this.buttonProjecten.Click += new System.EventHandler(this.buttonProjecten_Click);
+            // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button5);
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.panel1);
+            this.panel2.Controls.Add(this.buttonMenu);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1084, 100);
-            this.panel2.TabIndex = 1;
+            this.panel2.Size = new System.Drawing.Size(200, 78);
+            this.panel2.TabIndex = 5;
             // 
-            // panel3
+            // buttonMenu
             // 
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 100);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1084, 565);
-            this.panel3.TabIndex = 2;
+            this.buttonMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonMenu.Location = new System.Drawing.Point(0, 0);
+            this.buttonMenu.Name = "buttonMenu";
+            this.buttonMenu.Size = new System.Drawing.Size(200, 78);
+            this.buttonMenu.TabIndex = 0;
+            this.buttonMenu.Text = "show / hide menu bar\r\n\r\n";
+            this.buttonMenu.UseVisualStyleBackColor = true;
+            this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
             // 
-            // panel1
+            // panelContent
             // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(890, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(194, 100);
-            this.panel1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 100);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button2.Location = new System.Drawing.Point(115, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(115, 100);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button3.Location = new System.Drawing.Point(230, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(115, 100);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button4.Location = new System.Drawing.Point(345, 0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(115, 100);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button5.Location = new System.Drawing.Point(460, 0);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(115, 100);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.panelContent.AutoScroll = true;
+            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContent.Location = new System.Drawing.Point(200, 106);
+            this.panelContent.Margin = new System.Windows.Forms.Padding(4);
+            this.panelContent.Name = "panelContent";
+            this.panelContent.Size = new System.Drawing.Size(1592, 831);
+            this.panelContent.TabIndex = 2;
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1084, 665);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(1792, 937);
+            this.Controls.Add(this.panelContent);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelMenu);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MinimumSize = new System.Drawing.Size(500, 300);
             this.Name = "MainWindow";
             this.Text = "MainWindow";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panelMenu.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
+
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panelMenu;
+        private System.Windows.Forms.Button buttonMaatregelen;
+        private System.Windows.Forms.Button buttonRisicos;
+        private System.Windows.Forms.Button buttonTemplates;
+        private System.Windows.Forms.Button buttonObjecten;
+        private System.Windows.Forms.Button buttonProjecten;
+        private System.Windows.Forms.Panel panelContent;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button buttonMenu;
+        private System.Windows.Forms.Button buttonRedirect;
+        private System.Windows.Forms.Button buttonKeuzes;
+        private System.Windows.Forms.Label label1;
     }
 }

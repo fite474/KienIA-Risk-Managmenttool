@@ -10,6 +10,11 @@ namespace RiskManagmentTool.LogicLayer.Objects
     {
         public int RisicoBeoordelingID{ get; set; }
         
+
+
+
+        public ObjectSettings RBSettings { get; set; }
+
         //list issue id
         //list maatregel id
         //

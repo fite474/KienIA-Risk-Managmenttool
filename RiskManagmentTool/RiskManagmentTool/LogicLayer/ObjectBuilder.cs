@@ -9,10 +9,12 @@ namespace RiskManagmentTool.LogicLayer
 {
     class ObjectBuilder
     {
-        //public ObjectBuilder()
-        //{
+        public ObjectBuilder()
+        {
 
-        //}
+        }
+
+
 
         public RisicoObject BuildRisico(string riskId, string riskBeschrijving, string riskGevolg, string riskDicipline, string riskGebruiksfase, string riskGebruiker, string riskGevarenzone)
         {
@@ -31,5 +33,12 @@ namespace RiskManagmentTool.LogicLayer
 
             return objectx;
         }
+
+
+
+
+
+
+
     }
 }

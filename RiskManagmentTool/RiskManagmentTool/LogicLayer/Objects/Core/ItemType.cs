@@ -12,6 +12,7 @@ namespace RiskManagmentTool.LogicLayer.Objects.Core
         Maatregel,
         Issue,
         Template,
-        Object
+        Object,
+        Project
     }
 }

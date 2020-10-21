@@ -48,6 +48,151 @@
   <ItemGroup>
     <Compile Include="DataLayer\DatabaseCommunication.cs" />
     <Compile Include="DataLayer\DatabaseConnection.cs" />
+    <Compile Include="DataLayer\DatabaseTaskHandler.cs" />
+    <Compile Include="InterfaceLayer\AddWindows\AddMaatregel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\AddWindows\AddMaatregel.Designer.cs">
+      <DependentUpon>AddMaatregel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceLayer\AddWindows\AddRisico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\AddWindows\AddRisico.Designer.cs">
+      <DependentUpon>AddRisico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceLayer\ContentWindows\ContentKeuzes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\ContentWindows\ContentKeuzes.Designer.cs">
+      <DependentUpon>ContentKeuzes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceLayer\ContentWindows\ContentMaatregelen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\ContentWindows\ContentMaatregelen.Designer.cs">
+      <DependentUpon>ContentMaatregelen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceLayer\ContentWindows\ContentObjecten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\ContentWindows\ContentObjecten.Designer.cs">
+      <DependentUpon>ContentObjecten.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceLayer\ContentWindows\ContentProjecten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\ContentWindows\ContentProjecten.Designer.cs">
+      <DependentUpon>ContentProjecten.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceLayer\ContentWindows\ContentRedirect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\ContentWindows\ContentRedirect.Designer.cs">
+      <DependentUpon>ContentRedirect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceLayer\ContentWindows\ContentRisicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\ContentWindows\ContentRisicos.Designer.cs">
+      <DependentUpon>ContentRisicos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceLayer\ContentWindows\ContentTemplates.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\ContentWindows\ContentTemplates.Designer.cs">
+      <DependentUpon>ContentTemplates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceLayer\ContentWindows\KeuzesItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\ContentWindows\KeuzesItem.Designer.cs">
+      <DependentUpon>KeuzesItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceLayer\ContentWindows\ProjectItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\ContentWindows\ProjectItem.Designer.cs">
+      <DependentUpon>ProjectItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceLayer\AddWindows\AddTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\AddWindows\AddTemplate.Designer.cs">
+      <DependentUpon>AddTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceLayer\EditWindows\EditText.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\EditWindows\EditText.Designer.cs">
+      <DependentUpon>EditText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceLayer\EditWindows\IssueMaatregelen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\EditWindows\IssueMaatregelen.Designer.cs">
+      <DependentUpon>IssueMaatregelen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceLayer\EditWindows\IssueRisicoDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\EditWindows\IssueRisicoDetails.Designer.cs">
+      <DependentUpon>IssueRisicoDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceLayer\EditWindows\EditKeuzes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\EditWindows\EditKeuzes.Designer.cs">
+      <DependentUpon>EditKeuzes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceLayer\EditWindows\EditMaatregelen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\EditWindows\EditMaatregelen.Designer.cs">
+      <DependentUpon>EditMaatregelen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceLayer\EditWindows\EditObjecten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\EditWindows\EditObjecten.Designer.cs">
+      <DependentUpon>EditObjecten.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceLayer\EditWindows\EditProjecten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\EditWindows\EditProjecten.Designer.cs">
+      <DependentUpon>EditProjecten.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceLayer\EditWindows\EditRisicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\EditWindows\EditRisicos.Designer.cs">
+      <DependentUpon>EditRisicos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceLayer\EditWindows\EditTemplates.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\EditWindows\EditTemplates.Designer.cs">
+      <DependentUpon>EditTemplates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceLayer\ExportObject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\ExportObject.Designer.cs">
+      <DependentUpon>ExportObject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceLayer\InitWindows\InitObject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\InitWindows\InitObject.Designer.cs">
+      <DependentUpon>InitObject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceLayer\InitWindows\InitProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\InitWindows\InitProject.Designer.cs">
+      <DependentUpon>InitProject.cs</DependentUpon>
+    </Compile>
     <Compile Include="InterfaceLayer\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,21 +200,93 @@
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="LogicLayer\Class1.cs" />
+    <Compile Include="LogicLayer\Datacomunication.cs" />
+    <Compile Include="LogicLayer\KeuzeMenus.cs" />
     <Compile Include="LogicLayer\ObjectBuilder.cs" />
     <Compile Include="LogicLayer\Objects\Core\Item.cs" />
     <Compile Include="LogicLayer\Objects\Core\ItemType.cs" />
     <Compile Include="LogicLayer\Objects\IssueObject.cs" />
+    <Compile Include="LogicLayer\Objects\MaatregelObject.cs" />
+    <Compile Include="LogicLayer\Objects\ObjectObject.cs" />
+    <Compile Include="LogicLayer\Objects\ProjectObject.cs" />
     <Compile Include="LogicLayer\Objects\RisicoBeoordelingObject.cs" />
+    <Compile Include="LogicLayer\Objects\ObjectSettings.cs" />
     <Compile Include="LogicLayer\Objects\RisicoObject.cs" />
     <Compile Include="LogicLayer\VerificatieStatus.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestObjects\TestUI1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TestObjects\TestUI1.Designer.cs">
-      <DependentUpon>TestUI1.cs</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="InterfaceLayer\AddWindows\AddMaatregel.resx">
+      <DependentUpon>AddMaatregel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\AddWindows\AddRisico.resx">
+      <DependentUpon>AddRisico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\ContentWindows\ContentKeuzes.resx">
+      <DependentUpon>ContentKeuzes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\ContentWindows\ContentMaatregelen.resx">
+      <DependentUpon>ContentMaatregelen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\ContentWindows\ContentObjecten.resx">
+      <DependentUpon>ContentObjecten.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\ContentWindows\ContentProjecten.resx">
+      <DependentUpon>ContentProjecten.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\ContentWindows\ContentRedirect.resx">
+      <DependentUpon>ContentRedirect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\ContentWindows\ContentRisicos.resx">
+      <DependentUpon>ContentRisicos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\ContentWindows\ContentTemplates.resx">
+      <DependentUpon>ContentTemplates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\ContentWindows\KeuzesItem.resx">
+      <DependentUpon>KeuzesItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\ContentWindows\ProjectItem.resx">
+      <DependentUpon>ProjectItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\AddWindows\AddTemplate.resx">
+      <DependentUpon>AddTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\EditWindows\EditText.resx">
+      <DependentUpon>EditText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\EditWindows\IssueMaatregelen.resx">
+      <DependentUpon>IssueMaatregelen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\EditWindows\IssueRisicoDetails.resx">
+      <DependentUpon>IssueRisicoDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\EditWindows\EditKeuzes.resx">
+      <DependentUpon>EditKeuzes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\EditWindows\EditMaatregelen.resx">
+      <DependentUpon>EditMaatregelen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\EditWindows\EditObjecten.resx">
+      <DependentUpon>EditObjecten.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\EditWindows\EditProjecten.resx">
+      <DependentUpon>EditProjecten.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\EditWindows\EditRisicos.resx">
+      <DependentUpon>EditRisicos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\EditWindows\EditTemplates.resx">
+      <DependentUpon>EditTemplates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\ExportObject.resx">
+      <DependentUpon>ExportObject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\InitWindows\InitObject.resx">
+      <DependentUpon>InitObject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\InitWindows\InitProject.resx">
+      <DependentUpon>InitProject.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InterfaceLayer\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -82,9 +299,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="TestObjects\TestUI1.resx">
-      <DependentUpon>TestUI1.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -98,8 +312,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="InterfaceLayer\ContentWindows\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

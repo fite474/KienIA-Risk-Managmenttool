@@ -15,6 +15,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
     {
         private Datacomunication comunicator;
         private string ObjectNaam;
+        private KeuzeMenus keuzeMenus;
         //public AddRisico()
         //{
         //    InitializeComponent();
@@ -25,6 +26,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
         {
             InitializeComponent();
             comunicator = new Datacomunication();
+            keuzeMenus = KeuzeMenus.GetInstance();
             this.ObjectNaam = objectNaam;
             LoadData();
         }
@@ -33,6 +35,11 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
         {
             dataGridViewRisicos.DataSource = comunicator.GetGevarenTable();
             textBoxObjectNaam.Text = ObjectNaam;
+            List<string> disciplinesList = keuzeMenus.GetDisciplinesMenu();
+            foreach (string typeString in disciplinesList)
+            {
+                comboBoxDiscipline.Items.Add(typeString);
+            }
 
         }
 

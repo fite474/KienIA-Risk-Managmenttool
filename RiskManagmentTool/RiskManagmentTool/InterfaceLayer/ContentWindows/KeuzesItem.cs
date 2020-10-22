@@ -8,24 +8,67 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RiskManagmentTool.InterfaceLayer.EditWindows;
+using RiskManagmentTool.LogicLayer;
 
 namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 {
     public partial class KeuzesItem : UserControl
     {
-        private string MenuName;
+        //private string MenuName;
+        public MenuTableName MenuTableName;
         private List<string> MenuOptions;
-        public KeuzesItem(string menuName, List<string> options)
+        private KeuzeMenus keuzeMenus;
+        private string menuTitle;
+        public KeuzesItem(MenuTableName menuName)//, List<string> options)
         {
             InitializeComponent();
-            MenuName = menuName;
-            MenuOptions = options;
+            keuzeMenus = KeuzeMenus.GetInstance();
+            MenuTableName = menuName;
+            //MenuOptions = options;
             LoadData();
         }
 
         private void LoadData()
         {
-            textBoxMenuName.Text = MenuName;
+            listBoxMenuOptions.Items.Clear();
+            switch (this.MenuTableName)
+            {
+                case MenuTableName.ObjectTypes:
+                    MenuOptions = keuzeMenus.GetTypeObjectMenu();
+                    menuTitle = "Object types";
+                    break;
+                case MenuTableName.Gevolgen:
+                    MenuOptions = keuzeMenus.GetGevolgenMenu();
+                    menuTitle = "Gevolgen";
+                    break;
+                case MenuTableName.Gevarenzones:
+                    MenuOptions = keuzeMenus.GetGevarenzoneMenu();
+                    menuTitle = "Gevaren zone";
+                    break;
+                case MenuTableName.GevaarTypes:
+                    MenuOptions = keuzeMenus.GetGevaarTypeMenu();
+                    menuTitle = "Gevaar type";
+                    break;
+                case MenuTableName.Gebruiksfases:
+                    MenuOptions = keuzeMenus.GetGebruikersfasesMenu();
+                    menuTitle = "Gebruiksfase";
+                    break;
+                case MenuTableName.Gebruikers:
+                    MenuOptions = keuzeMenus.GetGebruikersMenu();
+                    menuTitle = "Gebruikers";
+                    break;
+                case MenuTableName.Disciplines:
+                    MenuOptions = keuzeMenus.GetDisciplinesMenu();
+                    menuTitle = "Discipline";
+                    break;
+                case MenuTableName.Bedienvormen:
+                    MenuOptions = keuzeMenus.GetBedienvormenMenu();
+                    menuTitle = "Bedienvorm";
+                    break;
+                default:
+                    break;
+            }
+            textBoxMenuName.Text = menuTitle;
             
             foreach (string menuOption in MenuOptions)
             {
@@ -36,8 +79,11 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 
         private void buttonEditKeuzes_Click(object sender, EventArgs e)
         {
-            Form editKeuzes = new EditKeuzes(MenuName, MenuOptions);
-            editKeuzes.Show();
+            Form editKeuzes = new EditKeuzes(MenuTableName, MenuOptions, menuTitle);
+            editKeuzes.ShowDialog();
+            keuzeMenus.ReloadAllLists();
+            LoadData();
+  
 
         }
     }

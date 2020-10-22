@@ -15,17 +15,23 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
     public partial class AddMaatregel : Form
     {
         private Datacomunication comunicator;
+        private KeuzeMenus keuzeMenus;
         public AddMaatregel()
         {
             InitializeComponent();
             comunicator = new Datacomunication();
+            keuzeMenus = KeuzeMenus.GetInstance();
             LoadData();
         }
 
         private void LoadData()
         {
             dataGridViewTemplates.DataSource = comunicator.getTemplateTable();
-
+            List<string> disciplinesList = keuzeMenus.GetDisciplinesMenu();
+            foreach (string typeString in disciplinesList)
+            {
+                comboBoxDiscipline.Items.Add(typeString);
+            }
 
         }
 

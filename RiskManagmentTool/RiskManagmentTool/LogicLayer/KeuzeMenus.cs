@@ -11,18 +11,54 @@ namespace RiskManagmentTool.LogicLayer
     class KeuzeMenus
     {
         private List<CheckedListBox> KeuzeMenuList;
+
+
         private List<string> TypeObjectComboBox;
+        private List<string> GevolgenComboBox;
+        private List<string> GevarenzonesComboBox;
+        private List<string> GevaarTypesComboBox;
+        private List<string> GebruiksfaseComboBox;
+        private List<string> GebruikersComboBox;
+        private List<string> DisciplinesComboBox;
+        private List<string> BedienvormenComboBox;
+
+
         private Datacomunication comunicator;
-        public KeuzeMenus()
+
+        //private static Singleton instance;
+
+        //private Singleton() { }
+
+        //public static Singleton Instance
+        //{
+        //    get
+        //    {
+        //        if (instance == null)
+        //            instance = new Singleton();
+        //        return instance;
+        //    }
+        //}
+
+
+        private static KeuzeMenus instance;
+
+        private KeuzeMenus()
         {
             
             comunicator = new Datacomunication();
             MakeMenu();
         }
 
+        public static KeuzeMenus GetInstance()
+        {
+            if (instance == null)
+                instance = new KeuzeMenus();
+            return instance;
+        }
+
         public List<CheckedListBox> GetKeuzeMenus()
         {
-            
+            //needs to be editted
             return KeuzeMenuList;
 
         }
@@ -32,11 +68,57 @@ namespace RiskManagmentTool.LogicLayer
             return TypeObjectComboBox;
         }
 
+        public List<string> GetGevolgenMenu()
+        {
+            return GevolgenComboBox;
+        }
+
+        public List<string> GetGevarenzoneMenu()
+        {
+            return GevarenzonesComboBox;
+        }
+
+        public List<string> GetGevaarTypeMenu()
+        {
+            return GevaarTypesComboBox;
+        }
+
+        public List<string> GetGebruikersfasesMenu()
+        {
+            return GebruiksfaseComboBox;
+        }
+
+        public List<string> GetGebruikersMenu()
+        {
+            return GebruikersComboBox;
+        }
+
+        public List<string> GetDisciplinesMenu()
+        {
+            return DisciplinesComboBox;
+        }
+
+        public List<string> GetBedienvormenMenu()
+        {
+            return BedienvormenComboBox;
+        }
+
+        public void ReloadAllLists()
+        {//wanneer de gebruiker een nieuw item toevoegd aan de keuzes moeten de lists opnieuw opgehaald worden
+            MakeMenu();
+        }
 
         private void MakeMenu()
         {
 
             TypeObjectComboBox = comunicator.GetObjectTypes();
+            GevolgenComboBox = comunicator.GetGevolgen();
+            GevarenzonesComboBox = comunicator.GetGevarenzones();
+            GevaarTypesComboBox = comunicator.GetGevaarTypes();
+            GebruiksfaseComboBox = comunicator.GetGebruiksfases();
+            GebruikersComboBox = comunicator.GetGebruikers();
+            DisciplinesComboBox = comunicator.GetDisciplines();
+            BedienvormenComboBox = comunicator.GetBedienvormen();
 
 
 
@@ -44,8 +126,7 @@ namespace RiskManagmentTool.LogicLayer
 
 
 
-
-            KeuzeMenuList = new List<CheckedListBox>();
+        KeuzeMenuList = new List<CheckedListBox>();
 
 
 

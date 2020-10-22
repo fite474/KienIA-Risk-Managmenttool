@@ -86,15 +86,85 @@ namespace RiskManagmentTool.LogicLayer
         public List<string> GetObjectTypes()
         {
             return databaseCommunication.GetObjectTypes();
-
         }
 
-        public void AddToMenu(string menuTitel, string optionToAdd)
+        public List<string> GetGevolgen()
         {
-            databaseCommunication.AddToMenu(menuTitel, optionToAdd);
+            return databaseCommunication.GetGevolgen();
+        }
+
+        public List<string> GetGevarenzones()
+        {
+            return databaseCommunication.GetGevarenzones();
+        }
+
+        public List<string> GetGevaarTypes()
+        {
+            return databaseCommunication.GetGevaartypes();
+        }
+
+        public List<string> GetGebruiksfases()
+        {
+            return databaseCommunication.GetGebruiksfases();
+        }
+
+        public List<string> GetGebruikers()
+        {
+            return databaseCommunication.GetGebruikers();
+        }
+
+        public List<string> GetDisciplines()
+        {
+            return databaseCommunication.GetDisciplines();
+        }
+
+        public List<string> GetBedienvormen()
+        {
+            return databaseCommunication.GetBedienvormen();
         }
 
 
+
+
+        public void AddToMenu(MenuTableName menuTableName, string optionToAdd)
+        {
+            //databaseCommunication.AddToMenu
+                SendMenuOptionToDB(menuTableName, optionToAdd);
+        }
+
+        private void SendMenuOptionToDB(MenuTableName menuTableName, string inputText)
+        {
+            switch (menuTableName)
+            {
+                case MenuTableName.ObjectTypes:
+                    databaseCommunication.AddToObjectTypesMenu(inputText);
+                    break;
+                case MenuTableName.Gevolgen:
+                    databaseCommunication.AddToGevolgenMenu(inputText);
+                    break;
+                case MenuTableName.Gevarenzones:
+                    databaseCommunication.AddToGevarenzonesMenu(inputText);
+                    break;
+                case MenuTableName.GevaarTypes:
+                    databaseCommunication.AddToGevaarTypesMenu(inputText);
+                    break;
+                case MenuTableName.Gebruiksfases:
+                    databaseCommunication.AddToGebruiksfasesMenu(inputText);
+                    break;
+                case MenuTableName.Gebruikers:
+                    databaseCommunication.AddToGebruikersMenu(inputText);
+                    break;
+                case MenuTableName.Disciplines:
+                    databaseCommunication.AddToDisciplinesMenu(inputText);
+                    break;
+                case MenuTableName.Bedienvormen:
+                    databaseCommunication.AddToBedienvormenMenu(inputText);
+                    break;
+                default:
+                    break;
+            }
+
+        }
 
 
 

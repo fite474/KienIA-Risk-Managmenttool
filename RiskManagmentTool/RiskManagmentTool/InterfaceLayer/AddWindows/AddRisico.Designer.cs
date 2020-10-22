@@ -42,7 +42,7 @@
             this.textBoxObjectNaam = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxDiscipline = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.buttonVoegSelectieToe = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -197,13 +197,13 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Van toepassing voor: ";
             // 
-            // comboBox1
+            // comboBoxDiscipline
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(186, 127);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(206, 24);
-            this.comboBox1.TabIndex = 8;
+            this.comboBoxDiscipline.FormattingEnabled = true;
+            this.comboBoxDiscipline.Location = new System.Drawing.Point(186, 127);
+            this.comboBoxDiscipline.Name = "comboBoxDiscipline";
+            this.comboBoxDiscipline.Size = new System.Drawing.Size(206, 24);
+            this.comboBoxDiscipline.TabIndex = 8;
             // 
             // comboBox2
             // 
@@ -279,7 +279,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonVoegSelectieToe);
             this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxDiscipline);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxObjectNaam);
@@ -313,7 +313,7 @@
         private System.Windows.Forms.DataGridView dataGridViewRisicos;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxDiscipline;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button buttonVoegSelectieToe;
         private System.Windows.Forms.Button button1;

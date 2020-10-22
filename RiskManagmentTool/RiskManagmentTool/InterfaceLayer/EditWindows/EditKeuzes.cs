@@ -16,10 +16,14 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private string MenuName;
         private List<string> MenuOptions;
         private Datacomunication comunicator;
-        public EditKeuzes(string menuName, List<string> options)
+        KeuzeMenus keuzeMenus;
+        private MenuTableName MenuTableName;
+        public EditKeuzes(MenuTableName menuTableName, List<string> options, string menuName)
         {
             InitializeComponent();
+            keuzeMenus = KeuzeMenus.GetInstance();
             comunicator = new Datacomunication();
+            MenuTableName = menuTableName;
             MenuName = menuName;
             MenuOptions = options;
             LoadData();
@@ -27,6 +31,28 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void LoadData()
         {
+            //switch (MenuTableName)
+            //{
+            //    case MenuTableName.ObjectTypes:
+            //        MenuOptions = keuzeMenus.GetTypeObjectMenu();
+            //        break;
+            //    case MenuTableName.Gevolgen:
+            //        break;
+            //    case MenuTableName.Gevarenzones:
+            //        break;
+            //    case MenuTableName.GevaarTypes:
+            //        break;
+            //    case MenuTableName.Gebruiksfases:
+            //        break;
+            //    case MenuTableName.Gebruikers:
+            //        break;
+            //    case MenuTableName.Disciplines:
+            //        break;
+            //    case MenuTableName.Bedienvormen:
+            //        break;
+            //    default:
+            //        break;
+            //}
             textBoxMenuName.Text = MenuName;
 
             foreach (string menuOption in MenuOptions)
@@ -48,8 +74,12 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             {
                 // Read the contents of testDialog's TextBox.
                 string textResult = editText.textBoxInput.Text;
-                comunicator.AddToMenu(MenuName, textResult);
                 listBoxMenuOptions.Items.Add(textResult);
+                AddInput(textResult);
+                //comunicator.AddToMenu(MenuName, textResult);
+
+                
+                
             }
             else
             {
@@ -57,6 +87,14 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             }
             editText.Dispose();
             //editText.ShowDialog();
+        }
+
+        private void AddInput(string input)
+        {
+
+            comunicator.AddToMenu(MenuTableName, input);
+            keuzeMenus.ReloadAllLists();
+           
         }
     }
 }

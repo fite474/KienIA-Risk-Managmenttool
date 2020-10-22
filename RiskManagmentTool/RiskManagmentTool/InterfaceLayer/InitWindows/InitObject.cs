@@ -21,7 +21,7 @@ namespace RiskManagmentTool.InterfaceLayer.InitWindows
         {
             InitializeComponent();
             comunicator = new Datacomunication();
-            keuzeMenus = new KeuzeMenus();
+            keuzeMenus = KeuzeMenus.GetInstance();
             //this.ProjectNaam = projectNaam;
             LoadData(projectNaam);
         }

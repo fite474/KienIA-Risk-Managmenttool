@@ -93,23 +93,7 @@ namespace RiskManagmentTool.DataLayer
         }
 
 
-        public List<string> GetObjectTypes()
-        {
-            List<string> objectTypes = new List<string>();
-            sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT ObjectType FROM ObjectTypes", sqlConnection);
 
-            using (SqlDataReader dr = cmd.ExecuteReader())
-            {
-                while (dr.Read())
-                {
-                    objectTypes.Add((dr[0]).ToString());
-                }
-            }
-            sqlConnection.Close();
-            return objectTypes;
-
-        }
 
         public SqlDataAdapter GetGevaren()
         {
@@ -125,29 +109,266 @@ namespace RiskManagmentTool.DataLayer
 
 
         //START MENU REGION
-        public void AddToMenu(string menuTitel, string optionToAdd)
-        {
-
-
-            string databaseTableName = "ObjectTypes";
+        //public void AddToMenu(string menuTitel, string optionToAdd)
+        //{
+        //    string databaseTableName = "ObjectTypes";
             
+        //    sqlConnection.Open();
+        //    SqlCommand cmd = new SqlCommand("INSERT INTO " + databaseTableName + "(ObjectType) VALUES " +
+        //                                                               "(@ObjectType)", sqlConnection);
+        //    cmd.Parameters.AddWithValue("@ObjectType", optionToAdd);
+
+        //    cmd.ExecuteNonQuery();
+        //    sqlConnection.Close();
+        //}
+
+        public void AddToObjectTypesMenu(string optionToAdd)
+        {
+            string databaseTableName = "ObjectTypes";
+
             sqlConnection.Open();
             SqlCommand cmd = new SqlCommand("INSERT INTO " + databaseTableName + "(ObjectType) VALUES " +
                                                                        "(@ObjectType)", sqlConnection);
-            //cmd.Parameters.AddWithValue("@ProjectNaam", projectNaam);
             cmd.Parameters.AddWithValue("@ObjectType", optionToAdd);
-
 
             cmd.ExecuteNonQuery();
             sqlConnection.Close();
+        }
 
+        public void AddToGevolgenMenu(string optionToAdd)
+        {
+            string databaseTableName = "Gevolgen";
+
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO " + databaseTableName + "(Gevolg) VALUES " +
+                                                                       "(@Gevolg)", sqlConnection);
+            cmd.Parameters.AddWithValue("@Gevolg", optionToAdd);
+
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+
+        public void AddToGevarenzonesMenu(string optionToAdd)
+        {
+            string databaseTableName = "Gevarenzones";
+
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO " + databaseTableName + "(Gevarenzone) VALUES " +
+                                                                       "(@Gevarenzone)", sqlConnection);
+            cmd.Parameters.AddWithValue("@Gevarenzone", optionToAdd);
+
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+
+        public void AddToGevaarTypesMenu(string optionToAdd)
+        {
+            string databaseTableName = "GevaarTypes";
+
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO " + databaseTableName + "(GevaarType) VALUES " +
+                                                                       "(@GevaarType)", sqlConnection);
+            cmd.Parameters.AddWithValue("@GevaarType", optionToAdd);
+
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+
+        public void AddToGebruiksfasesMenu(string optionToAdd)
+        {
+            string databaseTableName = "Gebruiksfases";
+
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO " + databaseTableName + "(Gebruiksfase) VALUES " +
+                                                                       "(@Gebruiksfase)", sqlConnection);
+            cmd.Parameters.AddWithValue("@Gebruiksfase", optionToAdd);
+
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+
+        public void AddToGebruikersMenu(string optionToAdd)
+        {
+            string databaseTableName = "Gebruikers";
+
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO " + databaseTableName + "(Gebruiker) VALUES " +
+                                                                       "(@Gebruiker)", sqlConnection);
+            cmd.Parameters.AddWithValue("@Gebruiker", optionToAdd);
+
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+
+        public void AddToDisciplinesMenu(string optionToAdd)
+        {
+            string databaseTableName = "Disciplines";
+
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO " + databaseTableName + "(Discipline) VALUES " +
+                                                                       "(@Discipline)", sqlConnection);
+            cmd.Parameters.AddWithValue("@Discipline", optionToAdd);
+
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+
+        public void AddToBedienvormenMenu(string optionToAdd)
+        {
+            string databaseTableName = "Bedienvormen";
+
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO " + databaseTableName + "(Bedienvorm) VALUES " +
+                                                                       "(@Bedienvorm)", sqlConnection);
+            cmd.Parameters.AddWithValue("@Bedienvorm", optionToAdd);
+
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
         }
 
 
 
+        public List<string> GetObjectTypes()
+        {
+            List<string> objectTypes = new List<string>();
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT ObjectType FROM ObjectTypes", sqlConnection);
 
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    objectTypes.Add((dr[0]).ToString());
+                }
+            }
+            sqlConnection.Close();
+            return objectTypes;
+        }
 
+        public List<string> GetGevolgen()
+        {
+            List<string> objectTypes = new List<string>();
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT Gevolg FROM Gevolgen", sqlConnection);
 
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    objectTypes.Add((dr[0]).ToString());
+                }
+            }
+            sqlConnection.Close();
+            return objectTypes;
+        }
+
+        public List<string> GetGevarenzones()
+        {
+            List<string> objectTypes = new List<string>();
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT Gevarenzone FROM Gevarenzones", sqlConnection);
+
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    objectTypes.Add((dr[0]).ToString());
+                }
+            }
+            sqlConnection.Close();
+            return objectTypes;
+
+        }
+
+        public List<string> GetGevaartypes()
+        {
+            List<string> objectTypes = new List<string>();
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT GevaarType FROM GevaarTypes", sqlConnection);
+
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    objectTypes.Add((dr[0]).ToString());
+                }
+            }
+            sqlConnection.Close();
+            return objectTypes;
+
+        }
+
+        public List<string> GetGebruiksfases()
+        {
+            List<string> objectTypes = new List<string>();
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT Gebruiksfase FROM Gebruiksfases", sqlConnection);
+
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    objectTypes.Add((dr[0]).ToString());
+                }
+            }
+            sqlConnection.Close();
+            return objectTypes;
+
+        }
+
+        public List<string> GetGebruikers()
+        {
+            List<string> objectTypes = new List<string>();
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT Gebruiker FROM Gebruikers", sqlConnection);
+
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    objectTypes.Add((dr[0]).ToString());
+                }
+            }
+            sqlConnection.Close();
+            return objectTypes;
+
+        }
+
+        public List<string> GetDisciplines()
+        {
+            List<string> objectTypes = new List<string>();
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT Discipline FROM Disciplines", sqlConnection);
+
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    objectTypes.Add((dr[0]).ToString());
+                }
+            }
+            sqlConnection.Close();
+            return objectTypes;
+
+        }
+
+        public List<string> GetBedienvormen()
+        {
+            List<string> objectTypes = new List<string>();
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT Bedienvorm FROM Bedienvormen", sqlConnection);
+
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    objectTypes.Add((dr[0]).ToString());
+                }
+            }
+            sqlConnection.Close();
+            return objectTypes;
+
+        }
 
 
 

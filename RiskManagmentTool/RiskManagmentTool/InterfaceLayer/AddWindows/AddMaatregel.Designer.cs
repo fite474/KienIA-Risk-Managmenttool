@@ -47,25 +47,25 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridViewTemplates = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dataGridViewTemplates = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.comboBoxDiscipline = new System.Windows.Forms.ComboBox();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTemplates)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTemplates)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -240,6 +240,33 @@
             this.tabPage2.Text = "Selecteer uit templates";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.comboBox3);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1060, 70);
+            this.panel1.TabIndex = 1;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(120, 21);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(121, 24);
+            this.comboBox3.TabIndex = 1;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(30, 21);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(75, 17);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Template: ";
+            // 
             // dataGridViewTemplates
             // 
             this.dataGridViewTemplates.AllowUserToAddRows = false;
@@ -253,34 +280,6 @@
             this.dataGridViewTemplates.Size = new System.Drawing.Size(832, 282);
             this.dataGridViewTemplates.TabIndex = 0;
             this.dataGridViewTemplates.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewTemplates_MouseDoubleClick);
-
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.comboBox3);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1060, 70);
-            this.panel1.TabIndex = 1;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(30, 21);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(75, 17);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Template: ";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(120, 21);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 24);
-            this.comboBox3.TabIndex = 1;
             // 
             // label10
             // 
@@ -321,7 +320,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.comboBox5);
-            this.panel2.Controls.Add(this.comboBox4);
+            this.panel2.Controls.Add(this.comboBoxDiscipline);
             this.panel2.Controls.Add(this.checkedListBox1);
             this.panel2.Controls.Add(this.textBox4);
             this.panel2.Controls.Add(this.label1);
@@ -343,14 +342,21 @@
             this.panel2.Size = new System.Drawing.Size(1113, 349);
             this.panel2.TabIndex = 23;
             // 
-            // panel3
+            // comboBox5
             // 
-            this.panel3.Controls.Add(this.tabControl1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 349);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1113, 416);
-            this.panel3.TabIndex = 24;
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(172, 98);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(283, 24);
+            this.comboBox5.TabIndex = 21;
+            // 
+            // comboBoxDiscipline
+            // 
+            this.comboBoxDiscipline.FormattingEnabled = true;
+            this.comboBoxDiscipline.Location = new System.Drawing.Point(172, 60);
+            this.comboBoxDiscipline.Name = "comboBoxDiscipline";
+            this.comboBoxDiscipline.Size = new System.Drawing.Size(283, 24);
+            this.comboBoxDiscipline.TabIndex = 20;
             // 
             // checkedListBox1
             // 
@@ -364,21 +370,14 @@
             this.checkedListBox1.Size = new System.Drawing.Size(255, 174);
             this.checkedListBox1.TabIndex = 19;
             // 
-            // comboBox4
+            // panel3
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(172, 60);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(283, 24);
-            this.comboBox4.TabIndex = 20;
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(172, 98);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(283, 24);
-            this.comboBox5.TabIndex = 21;
+            this.panel3.Controls.Add(this.tabControl1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 349);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1113, 416);
+            this.panel3.TabIndex = 24;
             // 
             // AddMaatregel
             // 
@@ -398,9 +397,9 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTemplates)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTemplates)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -442,6 +441,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox comboBoxDiscipline;
     }
 }

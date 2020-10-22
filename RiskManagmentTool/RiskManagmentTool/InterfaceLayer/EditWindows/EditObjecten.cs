@@ -32,7 +32,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
             InitializeComponent();
             comunicator = new Datacomunication();
-            keuzeMenus = new KeuzeMenus();
+            keuzeMenus = KeuzeMenus.GetInstance();//new KeuzeMenus();
             LoadMenus();
             this.ObjectNaam = objectNaam;
             textBoxProjectNaam.Text = projectNaam;
@@ -84,8 +84,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private void SetInstellingen()
         {
 
-            KeuzeMenus instellingen = new KeuzeMenus();
-            List<CheckedListBox> menuBox = instellingen.GetKeuzeMenus();
+            //KeuzeMenus instellingen = new KeuzeMenus();
+            List<CheckedListBox> menuBox = keuzeMenus.GetKeuzeMenus();
             for (int i = 0; i < menuBox.Count; i++)
             {
                 

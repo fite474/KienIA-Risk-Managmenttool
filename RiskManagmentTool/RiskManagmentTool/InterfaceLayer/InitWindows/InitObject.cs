@@ -14,15 +14,15 @@ namespace RiskManagmentTool.InterfaceLayer.InitWindows
 {
     public partial class InitObject : Form
     {
-        //private string ProjectNaam;
+        private string ProjectId;
         private Datacomunication comunicator;
         private KeuzeMenus keuzeMenus;
-        public InitObject(string projectNaam)
+        public InitObject(string projectId, string projectNaam)
         {
             InitializeComponent();
             comunicator = new Datacomunication();
             keuzeMenus = KeuzeMenus.GetInstance();
-            //this.ProjectNaam = projectNaam;
+            this.ProjectId = projectId;
             LoadData(projectNaam);
         }
 
@@ -34,13 +34,14 @@ namespace RiskManagmentTool.InterfaceLayer.InitWindows
 
         private void buttonCreateObject_Click(object sender, EventArgs e)
         {
+            string projectId = ProjectId;
             string projectNaam = textBoxProjectNaam.Text;
             string objectNaam = textBoxObjectNaam.Text;
             string objectType = comboBoxObjectType.SelectedItem.ToString();
             string objectOmschrijving = textBoxObjectOmschrijving.Text;
-            comunicator.MakeObject(projectNaam, objectNaam, objectType, objectOmschrijving);
+            comunicator.MakeObject(projectId, projectNaam, objectNaam, objectType, objectOmschrijving);
 
-            Form editObject = new EditObjecten(projectNaam, objectNaam, objectType, objectOmschrijving);
+            Form editObject = new EditObjecten(projectId, projectNaam, objectNaam, objectType, objectOmschrijving);
             editObject.Show();
             this.Close();
         }

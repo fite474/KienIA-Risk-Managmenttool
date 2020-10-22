@@ -67,13 +67,15 @@
             // 
             // tableLayoutPanelKeuzes
             // 
+            this.tableLayoutPanelKeuzes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanelKeuzes.AutoScroll = true;
             this.tableLayoutPanelKeuzes.ColumnCount = 4;
             this.tableLayoutPanelKeuzes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.00062F));
             this.tableLayoutPanelKeuzes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.00063F));
             this.tableLayoutPanelKeuzes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.00063F));
             this.tableLayoutPanelKeuzes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.99812F));
-            this.tableLayoutPanelKeuzes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelKeuzes.Location = new System.Drawing.Point(0, 81);
             this.tableLayoutPanelKeuzes.Name = "tableLayoutPanelKeuzes";
             this.tableLayoutPanelKeuzes.RowCount = 2;

@@ -33,7 +33,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private void LoadData()
         {
             comunicator = new Datacomunication();
-            dataGridViewIssueMaatregelen.DataSource = comunicator.getMaatregelTable();
+            dataGridViewIssueMaatregelen.DataSource = comunicator.GetMaatregelTable();
 
         }
 

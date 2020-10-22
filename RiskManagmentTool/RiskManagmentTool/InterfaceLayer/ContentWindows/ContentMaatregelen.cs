@@ -40,7 +40,7 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
                     IssueId = "",
                     IssueBeschrijving = "",
                     IssueGevolg = "",
-                    IssueDicipline = "",
+                    IssueDiscipline = "",
                     IssueGebruiksfase = "",
                     IssueGebruiker = "",
                     IssueGevarenzone = "",
@@ -54,7 +54,7 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
         }
         private void RefreshTable()
         {
-            dataGridViewMaatregelen.DataSource = comunicator.getMaatregelTable();
+            dataGridViewMaatregelen.DataSource = comunicator.GetMaatregelTable();
         }
 
         private void buttonAddNew_Click(object sender, EventArgs e)

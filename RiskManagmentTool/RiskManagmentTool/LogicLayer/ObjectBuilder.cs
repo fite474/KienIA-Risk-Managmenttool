@@ -16,23 +16,23 @@ namespace RiskManagmentTool.LogicLayer
 
 
 
-        public RisicoObject BuildRisico(string riskId, string riskBeschrijving, string riskGevolg, string riskDicipline, string riskGebruiksfase, string riskGebruiker, string riskGevarenzone)
-        {
-            RisicoObject objectx = new RisicoObject
-            {
-                riskId = riskId,
-                riskBeschrijving = riskBeschrijving,
-                riskGevolg = riskGevolg,
-                riskDicipline = riskDicipline,
-                riskGebruiksfase = riskGebruiksfase,
-                riskGebruiker = riskGebruiker,
-                riskGevarenzone = riskGevarenzone,
+        //public GevaarObject BuildRisico(string riskId, string riskBeschrijving, string riskGevolg, string riskDicipline, string riskGebruiksfase, string riskGebruiker, string riskGevarenzone)
+        //{
+        //    GevaarObject objectx = new GevaarObject
+        //    {
+        //        riskId = riskId,
+        //        riskBeschrijving = riskBeschrijving,
+        //        riskGevolg = riskGevolg,
+        //        riskDicipline = riskDicipline,
+        //        riskGebruiksfase = riskGebruiksfase,
+        //        riskGebruiker = riskGebruiker,
+        //        riskGevarenzone = riskGevarenzone,
 
-            };
+        //    };
 
 
-            return objectx;
-        }
+        //    return objectx;
+        //}
 
 
 

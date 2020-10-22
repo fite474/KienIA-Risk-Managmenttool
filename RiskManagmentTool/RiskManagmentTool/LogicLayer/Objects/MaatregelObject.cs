@@ -12,7 +12,7 @@ namespace RiskManagmentTool.LogicLayer.Objects
         public string MaatregelId { get; set; }
         public string MaatregelBeschrijving { get; set; }
         public string MaatregelGevolg { get; set; }
-        public string MaatregelDicipline { get; set; }
+        public string MaatregelDiscipline { get; set; }
         public string MaatregelGebruiksfase { get; set; }
         public string MaatregelGebruiker { get; set; }
         public string MaatregelGevarenzone { get; set; }

@@ -65,6 +65,10 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
                     MenuOptions = keuzeMenus.GetBedienvormenMenu();
                     menuTitle = "Bedienvorm";
                     break;
+                case MenuTableName.Taken:
+                    MenuOptions = keuzeMenus.GetTakenMenu();
+                    menuTitle = "Taak";
+                    break;
                 default:
                     break;
             }

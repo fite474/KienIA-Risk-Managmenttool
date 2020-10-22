@@ -42,13 +42,15 @@ namespace RiskManagmentTool.DataLayer
 
         public void MakeObject(Item item)
         {
+            string projectId = item.ItemData.ProjectId;
             string projectNaam = item.ItemData.ProjectNaam;
             string objectNaam = item.ItemData.ObjectNaam;
             string objectType = item.ItemData.ObjectType;
             string objectOmschrijving = item.ItemData.ObjectOmschrijving;
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO TableObjecten(ProjectNaam, ObjectNaam, ObjectType, ObjectOmschrijving) VALUES " +
-                                                                       "(@ProjectNaam, @ObjectNaam, @ObjectType, @ObjectOmschrijving)", sqlConnection);
+            SqlCommand cmd = new SqlCommand("INSERT INTO TableObjecten(ProjectID, ProjectNaam, ObjectNaam, ObjectType, ObjectOmschrijving) VALUES " +
+                                                                       "(@ProjectID, @ProjectNaam, @ObjectNaam, @ObjectType, @ObjectOmschrijving)", sqlConnection);
+            cmd.Parameters.AddWithValue("@ProjectID", projectId);
             cmd.Parameters.AddWithValue("@ProjectNaam", projectNaam);
             cmd.Parameters.AddWithValue("@ObjectNaam", objectNaam);
             cmd.Parameters.AddWithValue("@ObjectType", objectType);
@@ -59,7 +61,60 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
         }
 
+        public void MakeGevaar(Item item)
+        {
+            string gevaarlijkeSituatie = item.ItemData.GevaarlijkeSituatie;
+            string gevaarlijkeGebeurtenis = item.ItemData.GevaarlijkeGebeurtenis;
+            string discipline = item.ItemData.Discipline;
+            string gebruiksfase = item.ItemData.Gebruiksfase;
+            string bedienvorm = item.ItemData.Bedienvorm;
+            string gebruiker = item.ItemData.Gebruiker;
+            string gevaarlijkeZone = item.ItemData.GevaarlijkeZone;
+            string taak = item.ItemData.Taak;
+            string gevaar = item.ItemData.Gevaar;
+            string gevolg = item.ItemData.Gevolg;
+            
+
+
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO TableGevaren(GevaarlijkeSituatie, GevaarlijkeGebeurtenis, Discipline, Gebruiksfase, Bedienvorm, Gebruiker, GevaarlijkeZone, Taak_Actie, Gevaar, Gevolg) VALUES " +
+                                                                       "(@GevaarlijkeSituatie, @GevaarlijkeGebeurtenis, @Discipline, @Gebruiksfase ,@Bedienvorm, @Gebruiker, @GevaarlijkeZone, @Taak_Actie, @Gevaar, @Gevolg)", sqlConnection);
+            cmd.Parameters.AddWithValue("@GevaarlijkeSituatie", gevaarlijkeSituatie);
+            cmd.Parameters.AddWithValue("@GevaarlijkeGebeurtenis", gevaarlijkeGebeurtenis);
+            cmd.Parameters.AddWithValue("@Discipline", discipline);
+            cmd.Parameters.AddWithValue("@Gebruiksfase", gebruiksfase);
+            cmd.Parameters.AddWithValue("@Bedienvorm", bedienvorm);
+            cmd.Parameters.AddWithValue("@Gebruiker", gebruiker);
+            cmd.Parameters.AddWithValue("@GevaarlijkeZone", gevaarlijkeZone);
+            cmd.Parameters.AddWithValue("@Taak_Actie", taak);
+            cmd.Parameters.AddWithValue("@Gevaar", gevaar);
+            cmd.Parameters.AddWithValue("@Gevolg", gevolg);
+
+
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+
         // END REGION INIT ITEMS
+
+        // START REGION ADD TO OBJECT
+        public void AddGevaarToObject(string objectId, string gevaarId)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO TableIssues(ObjectID, IssueGevaarID) VALUES " +
+                                                                       "(@ObjectID, @IssueGevaarID)", sqlConnection);
+            cmd.Parameters.AddWithValue("@ObjectID", objectId);
+            cmd.Parameters.AddWithValue("@IssueGevaarID", gevaarId);
+
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+
+
+
+        // END REGION ADD TO OBJECT
+
+
 
 
         // START REGION -----------GET REQUESTS FROM DATABASE
@@ -67,7 +122,7 @@ namespace RiskManagmentTool.DataLayer
         public SqlDataAdapter GetProjecten()
         {
             sqlConnection.Open();
-            String query = "SELECT ProjectNaam FROM TableProjecten";
+            String query = "SELECT ProjectID, ProjectNaam FROM TableProjecten";
             SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
             sqlConnection.Close();
             return adapter;
@@ -83,17 +138,62 @@ namespace RiskManagmentTool.DataLayer
             return adapter;
         }
 
-        public SqlDataAdapter GetObjectenFromProject(string projectNaam)
+        public SqlDataAdapter GetObjectenFromProject(string projectId)
         {
             sqlConnection.Open();
-            String query = "SELECT ProjectNaam, ObjectNaam, ObjectType, ObjectOmschrijving FROM TableObjecten WHERE ProjectNaam = '" + projectNaam + "'";
+            String query = "SELECT ProjectID, ProjectNaam, ObjectNaam, ObjectType, ObjectOmschrijving FROM TableObjecten WHERE ProjectID = '" + projectId + "'";
             SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
             sqlConnection.Close();
             return adapter;
         }
 
+        public SqlDataAdapter GetIssues(string objectID)
+        {
+            //objectNaam = "1";
+            //Risico's data
+            sqlConnection.Open();
+            //String query = "SELECT * FROM TableRisksUsedInProject WHERE UsedInProjectName = '" + ProjectName + "'";
+            String query = "SELECT TableGevaren.* FROM TableObjectIssues " +
+                " JOIN TableGevaren " +
+                "ON TableObjectIssues.IssueID = TableGevaren.GevaarID WHERE ObjectID = '" + objectID + "' ";
+            //DIT WORDT LATER GEBRUIKT IN VIEWS
 
 
+            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
+            sqlConnection.Close();
+            return adapter;
+
+            ////Maatregels data
+            //sqlConnection.Open();
+            ////query = "SELECT * FROM TableMaatregelsUsedInProject WHERE UsedInProjectName = '" + ProjectName + "'";
+            //query = "SELECT TableMaatregels.* FROM TableMaatregelsUsedInProject " +
+            //    " JOIN TableMaatregels " +
+            //    "ON TableMaatregelsUsedInProject.MaatregelID = TableMaatregels.MaatregelID WHERE UsedInProjectName = '" + ProjectName + "' ";
+            //adapter = new SqlDataAdapter(query, sqlConnection);
+            //data = new DataTable();
+            //adapter.Fill(data);
+            //dataGridViewMaatregel.DataSource = data;
+            //sqlConnection.Close();
+
+        }
+
+        public SqlDataAdapter GetTemplates()
+        {
+            sqlConnection.Open();
+            String query = "SELECT * FROM TableTemplates";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
+            sqlConnection.Close();
+            return adapter;
+        }
+
+        public SqlDataAdapter GetMaatregelen()
+        {
+            sqlConnection.Open();
+            String query = "SELECT MaatregelID, MaatregelNaam FROM TableMaatregelen";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
+            sqlConnection.Close();
+            return adapter;
+        }
 
         public SqlDataAdapter GetGevaren()
         {
@@ -109,18 +209,7 @@ namespace RiskManagmentTool.DataLayer
 
 
         //START MENU REGION
-        //public void AddToMenu(string menuTitel, string optionToAdd)
-        //{
-        //    string databaseTableName = "ObjectTypes";
-            
-        //    sqlConnection.Open();
-        //    SqlCommand cmd = new SqlCommand("INSERT INTO " + databaseTableName + "(ObjectType) VALUES " +
-        //                                                               "(@ObjectType)", sqlConnection);
-        //    cmd.Parameters.AddWithValue("@ObjectType", optionToAdd);
-
-        //    cmd.ExecuteNonQuery();
-        //    sqlConnection.Close();
-        //}
+        //      SART ADD TO MENU
 
         public void AddToObjectTypesMenu(string optionToAdd)
         {
@@ -226,7 +315,22 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
         }
 
+        public void AddToTakenMenu(string optionToAdd)
+        {
+            string databaseTableName = "Taken";
 
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO " + databaseTableName + "(Taak) VALUES " +
+                                                                       "(@Taak)", sqlConnection);
+            cmd.Parameters.AddWithValue("@Taak", optionToAdd);
+
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+        //      END ADD TO MENU
+
+
+        //      START GET FROM MENU
 
         public List<string> GetObjectTypes()
         {
@@ -370,100 +474,25 @@ namespace RiskManagmentTool.DataLayer
 
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        public SqlDataAdapter GetTemplates()
+        public List<string> GetTaken()
         {
+            List<string> objectTypes = new List<string>();
             sqlConnection.Open();
-            String query = "SELECT * FROM TableTemplatesList";
-            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
-            sqlConnection.Close();
-            return adapter;
-        }
-
-        public List<string> GetGekoppeldeObjecten()
-        {
-            List<string> objectNamen = new List<string>();
-            sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT ObjectNaam FROM TableProjectenLijst", sqlConnection);
+            SqlCommand cmd = new SqlCommand("SELECT Taak FROM Taken", sqlConnection);
 
             using (SqlDataReader dr = cmd.ExecuteReader())
             {
                 while (dr.Read())
                 {
-                    objectNamen.Add((dr[0]).ToString());
+                    objectTypes.Add((dr[0]).ToString());
                 }
             }
             sqlConnection.Close();
-            return objectNamen;
-        }
-
-        public SqlDataAdapter GetIssues(string objectNaam)
-        {
-            //Risico's data
-            sqlConnection.Open();
-            //String query = "SELECT * FROM TableRisksUsedInProject WHERE UsedInProjectName = '" + ProjectName + "'";
-            String query = "SELECT TableRisicos.* FROM TableRisksUsedInProject " +
-                " JOIN TableRisicos " +
-                "ON TableRisksUsedInProject.RisicoID = TableRisicos.RiskID WHERE UsedInProjectName = '" + objectNaam + "' ";
-
-
-            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
-            sqlConnection.Close();
-            return adapter;
-
-            ////Maatregels data
-            //sqlConnection.Open();
-            ////query = "SELECT * FROM TableMaatregelsUsedInProject WHERE UsedInProjectName = '" + ProjectName + "'";
-            //query = "SELECT TableMaatregels.* FROM TableMaatregelsUsedInProject " +
-            //    " JOIN TableMaatregels " +
-            //    "ON TableMaatregelsUsedInProject.MaatregelID = TableMaatregels.MaatregelID WHERE UsedInProjectName = '" + ProjectName + "' ";
-            //adapter = new SqlDataAdapter(query, sqlConnection);
-            //data = new DataTable();
-            //adapter.Fill(data);
-            //dataGridViewMaatregel.DataSource = data;
-            //sqlConnection.Close();
+            return objectTypes;
 
         }
+        //      END GET FROM MENUS
+        //END REGION MENUS
 
-        public SqlDataAdapter GetMaatregelen()
-        {
-            
-            sqlConnection.Open();
-            String query = "SELECT * FROM TableMaatregels";
-            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
-            //DataTable data = new DataTable();
-            //adapter.Fill(data);
-            //SqlCommand cmd = new SqlCommand("INSERT INTO TableTemplatesList(TemplateID,TemplateType,TemplateName) VALUES " +
-            //                                                           "(@TemplateID,@TemplateType,@TemplateName)", sqlConnection);
-            //cmd.Parameters.AddWithValue("@TemplateID", input);
-
-           // cmd.ExecuteNonQuery();
-            sqlConnection.Close();
-            return adapter;
-
-        }
     }
 }

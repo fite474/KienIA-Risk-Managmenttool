@@ -40,9 +40,9 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 
         private void dataGridViewProjecten_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-
-            string projectNaam = dataGridViewProjecten.SelectedRows[0].Cells[0].Value.ToString();
-            ShowEditProject(projectNaam);
+            string projectId= dataGridViewProjecten.SelectedRows[0].Cells[0].Value.ToString();
+            string projectNaam = dataGridViewProjecten.SelectedRows[0].Cells[1].Value.ToString();
+            ShowEditProject(projectId, projectNaam);
             //Form editProjecten = new EditProjecten(projectNaam);//,
 
             //editProjecten.Show();
@@ -51,9 +51,9 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 
         }
 
-        private void ShowEditProject(string projectNaam)
+        private void ShowEditProject(string projectId, string projectNaam)
         {
-            Form editProjecten = new EditProjecten(projectNaam);//activeForm = contentForm;
+            Form editProjecten = new EditProjecten(projectId, projectNaam);//activeForm = contentForm;
             editProjecten.TopLevel = false;
             editProjecten.FormBorderStyle = FormBorderStyle.None;
             editProjecten.Dock = DockStyle.Fill;

@@ -26,7 +26,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
         private void LoadData()
         {
-            dataGridViewTemplates.DataSource = comunicator.getTemplateTable();
+            dataGridViewTemplates.DataSource = comunicator.GetTemplateTable();
             List<string> disciplinesList = keuzeMenus.GetDisciplinesMenu();
             foreach (string typeString in disciplinesList)
             {

@@ -19,9 +19,6 @@ namespace RiskManagmentTool.LogicLayer
             databaseCommunication = new DatabaseCommunication();
         }
 
-
-
-
         public void MakeProject(string projectNaam)
         {
             Item projectItem = new Item
@@ -34,16 +31,16 @@ namespace RiskManagmentTool.LogicLayer
                 }
             };
             SendItemToDB(projectItem);
-
         }
 
-        public void MakeObject(string projectNaam, string objectNaam, string objectType, string objectOmschrijving)
+        public void MakeObject(string projectId, string projectNaam, string objectNaam, string objectType, string objectOmschrijving)
         {
             Item objectItem = new Item
             {
                 ItemType = ItemType.Object,
                 ItemData = new ObjectObject
                 {
+                    ProjectId = projectId,
                     ProjectNaam = projectNaam,
                     ObjectNaam = objectNaam,
                     ObjectType = objectType,
@@ -54,15 +51,39 @@ namespace RiskManagmentTool.LogicLayer
 
         }
 
+        public void MakeGevaar(string gevaarlijkeSituatie, string gevaarlijkeGebeurtenis,
+                       string discipline, string gebruiksfase,
+                       string bedienvorm, string gebruiker,
+                       string gevaarlijkeZone, string taak,
+                       string gevaar, string gevolg)
+        {
+            Item gevaarItem = new Item
+            {
+                ItemType = ItemType.Gevaar,
+                ItemData = new GevaarObject
+                {
+                    GevaarlijkeSituatie = gevaarlijkeSituatie,
+                    GevaarlijkeGebeurtenis = gevaarlijkeGebeurtenis,
+                    Discipline = discipline,
+                    Gebruiksfase = gebruiksfase,
+                    Bedienvorm = bedienvorm,
+                    Gebruiker = gebruiker,
+                    GevaarlijkeZone = gevaarlijkeZone,
+                    Taak = taak,
+                    Gevaar = gevaar,
+                    Gevolg = gevolg
 
+                }
+            };
+            SendItemToDB(gevaarItem);
 
+        }
 
+        public void AddGevaarToObject(string objectId, string gevaarId)
+        {
+            databaseCommunication.AddGevaarToObject(objectId, gevaarId);
 
-
-
-
-
-
+        }
 
 
 
@@ -74,9 +95,52 @@ namespace RiskManagmentTool.LogicLayer
             return data;
         }
 
-        public DataTable GetObjectenFromProject(string projectNaam)
+        public DataTable GetObjectenFromProject(string projectId)
         {
-            SqlDataAdapter adapter = databaseCommunication.GetObjectenFromProject(projectNaam);
+            SqlDataAdapter adapter = databaseCommunication.GetObjectenFromProject(projectId);
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            return data;
+        }
+
+
+        public DataTable GetObjectIssues(string objectID)
+        {
+            SqlDataAdapter adapter = databaseCommunication.GetIssues(objectID);
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            return data;
+        }
+
+
+
+        public DataTable GetObjectenTable()
+        {
+            SqlDataAdapter adapter = databaseCommunication.GetObjecten();
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            return data;
+        }
+
+        public DataTable GetTemplateTable()
+        {
+            SqlDataAdapter adapter = databaseCommunication.GetTemplates();
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            return data;
+        }
+
+        public DataTable GetGevarenTable()
+        {
+            SqlDataAdapter adapter = databaseCommunication.GetGevaren();
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            return data;
+        }
+
+        public DataTable GetMaatregelTable()
+        {
+            SqlDataAdapter adapter = databaseCommunication.GetMaatregelen();
             DataTable data = new DataTable();
             adapter.Fill(data);
             return data;
@@ -122,14 +186,16 @@ namespace RiskManagmentTool.LogicLayer
         {
             return databaseCommunication.GetBedienvormen();
         }
-
+        public List<string> GetTaken()
+        {
+            return databaseCommunication.GetTaken(); ;
+        }
 
 
 
         public void AddToMenu(MenuTableName menuTableName, string optionToAdd)
         {
-            //databaseCommunication.AddToMenu
-                SendMenuOptionToDB(menuTableName, optionToAdd);
+             SendMenuOptionToDB(menuTableName, optionToAdd);
         }
 
         private void SendMenuOptionToDB(MenuTableName menuTableName, string inputText)
@@ -160,6 +226,9 @@ namespace RiskManagmentTool.LogicLayer
                 case MenuTableName.Bedienvormen:
                     databaseCommunication.AddToBedienvormenMenu(inputText);
                     break;
+                case MenuTableName.Taken:
+                    databaseCommunication.AddToTakenMenu(inputText);
+                    break;
                 default:
                     break;
             }
@@ -172,8 +241,8 @@ namespace RiskManagmentTool.LogicLayer
         {
             switch (item.ItemType)
             {
-                case ItemType.Risico:
-
+                case ItemType.Gevaar:
+                    databaseCommunication.MakeGevaar(item);
                     break;
                 case ItemType.Maatregel:
 
@@ -197,55 +266,5 @@ namespace RiskManagmentTool.LogicLayer
         }
 
 
-
-
-
-
-
-        public DataTable getObjectIssues(string objectNaam)
-        {
-            SqlDataAdapter adapter = databaseCommunication.GetIssues(objectNaam);
-            DataTable data = new DataTable();
-            adapter.Fill(data);
-            return data;
-        }
-
-        public List<string> GetGekoppeldeObjecten()
-        {
-            return databaseCommunication.GetGekoppeldeObjecten();
-
-        }
-
-        public DataTable getObjectenTable()
-        {
-            SqlDataAdapter adapter = databaseCommunication.GetObjecten();
-            DataTable data = new DataTable();
-            adapter.Fill(data);
-            return data;
-        }
-
-        public DataTable getTemplateTable()
-        {
-            SqlDataAdapter adapter = databaseCommunication.GetTemplates();
-            DataTable data = new DataTable();
-            adapter.Fill(data);
-            return data;
-        }
-
-        public DataTable GetGevarenTable()
-        {
-            SqlDataAdapter adapter = databaseCommunication.GetGevaren();
-            DataTable data = new DataTable();
-            adapter.Fill(data);
-            return data;
-        }
-
-        public DataTable getMaatregelTable()
-        {
-            SqlDataAdapter adapter = databaseCommunication.GetMaatregelen();
-            DataTable data = new DataTable();
-            adapter.Fill(data);
-            return data;
-        }
     }
 }

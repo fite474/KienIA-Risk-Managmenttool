@@ -24,18 +24,19 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 
         private void LoadData()
         {
-            dataGridViewObjecten.DataSource = comunicator.getObjectenTable();
+            dataGridViewObjecten.DataSource = comunicator.GetObjectenTable();
 
         }
 
         private void dataGridViewObjecten_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            string temp = "1";
             string projectNaam = dataGridViewObjecten.SelectedRows[0].Cells[0].Value.ToString();
             string objectNaam = dataGridViewObjecten.SelectedRows[0].Cells[1].Value.ToString();
             string objectType = dataGridViewObjecten.SelectedRows[0].Cells[2].Value.ToString();
             string objectBeschrijving = dataGridViewObjecten.SelectedRows[0].Cells[3].Value.ToString();
 
-            Form editObjecten = new EditObjecten(projectNaam,
+            Form editObjecten = new EditObjecten(temp, projectNaam,
                                                  objectNaam,
                                                  objectType,
                                                  objectBeschrijving);

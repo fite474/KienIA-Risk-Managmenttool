@@ -28,7 +28,7 @@ namespace RiskManagmentTool.LogicLayer
                     IssueId = "",
                     IssueBeschrijving = "",
                     IssueGevolg = "",
-                    IssueDicipline = "",
+                    IssueDiscipline = "",
                     IssueGebruiksfase = "",
                     IssueGebruiker = "",
                     IssueGevarenzone = "",
@@ -42,7 +42,7 @@ namespace RiskManagmentTool.LogicLayer
 
             switch (issue.ItemType)
             {
-                case ItemType.Risico:
+                case ItemType.Gevaar:
 
                     break;
                 case ItemType.Maatregel:

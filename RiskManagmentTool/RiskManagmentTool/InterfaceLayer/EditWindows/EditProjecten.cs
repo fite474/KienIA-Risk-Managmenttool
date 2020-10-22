@@ -16,10 +16,13 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
     {
         private Datacomunication comunicator;
         private string ProjectNaam;
-        public EditProjecten(string projectNaam)
+        private string ProjectId;
+        public EditProjecten(string projectId, string projectNaam)
         {
             InitializeComponent();
+            this.ProjectId = projectId;
             this.ProjectNaam = projectNaam;
+
             comunicator = new Datacomunication();
             LoadData();
         }
@@ -28,18 +31,19 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         {
 
             textBoxProjectNaam.Text = ProjectNaam;
-            dataGridViewGekoppeldeObjecten.DataSource = comunicator.GetObjectenFromProject(ProjectNaam);
+            dataGridViewGekoppeldeObjecten.DataSource = comunicator.GetObjectenFromProject(ProjectId);
 
         }
 
         private void dataGridViewGekoppeldeObjecten_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            string projectNaam = dataGridViewGekoppeldeObjecten.SelectedRows[0].Cells[0].Value.ToString();
-            string objectNaam = dataGridViewGekoppeldeObjecten.SelectedRows[0].Cells[1].Value.ToString();
-            string objectType = dataGridViewGekoppeldeObjecten.SelectedRows[0].Cells[2].Value.ToString();
-            string objectOmschrijving = dataGridViewGekoppeldeObjecten.SelectedRows[0].Cells[3].Value.ToString();
+            string projectID = dataGridViewGekoppeldeObjecten.SelectedRows[0].Cells[0].Value.ToString();
+            string projectNaam = dataGridViewGekoppeldeObjecten.SelectedRows[0].Cells[1].Value.ToString();
+            string objectNaam = dataGridViewGekoppeldeObjecten.SelectedRows[0].Cells[2].Value.ToString();
+            string objectType = dataGridViewGekoppeldeObjecten.SelectedRows[0].Cells[3].Value.ToString();
+            string objectOmschrijving = dataGridViewGekoppeldeObjecten.SelectedRows[0].Cells[4].Value.ToString();
 
-            Form editObject = new EditObjecten(projectNaam, objectNaam, objectType, objectOmschrijving);
+            Form editObject = new EditObjecten(projectID, projectNaam, objectNaam, objectType, objectOmschrijving);
             editObject.Show();
 
 
@@ -48,7 +52,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void buttonMakeNewObject_Click(object sender, EventArgs e)
         {
-            Form initObject = new InitObject(ProjectNaam);
+            Form initObject = new InitObject(ProjectId, ProjectNaam);
             initObject.Show();
         }
 

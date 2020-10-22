@@ -11,7 +11,7 @@ namespace RiskManagmentTool.LogicLayer.Objects
         public string IssueId { get; set; }
         public string IssueBeschrijving { get; set; }
         public string IssueGevolg { get; set; }
-        public string IssueDicipline { get; set; }
+        public string IssueDiscipline { get; set; }
         public string IssueGebruiksfase { get; set; }
         public string IssueGebruiker { get; set; }
         public string IssueGevarenzone { get; set; }

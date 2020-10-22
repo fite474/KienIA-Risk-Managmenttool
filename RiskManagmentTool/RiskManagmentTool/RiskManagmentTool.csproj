@@ -212,7 +212,7 @@
     <Compile Include="LogicLayer\Objects\ProjectObject.cs" />
     <Compile Include="LogicLayer\Objects\RisicoBeoordelingObject.cs" />
     <Compile Include="LogicLayer\Objects\ObjectSettings.cs" />
-    <Compile Include="LogicLayer\Objects\RisicoObject.cs" />
+    <Compile Include="LogicLayer\Objects\GevaarObject.cs" />
     <Compile Include="LogicLayer\VerificatieStatus.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

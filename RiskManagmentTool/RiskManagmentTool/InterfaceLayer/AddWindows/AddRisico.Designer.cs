@@ -38,7 +38,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxSelectedItems = new System.Windows.Forms.TextBox();
             this.textBoxObjectNaam = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -50,6 +50,7 @@
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.buttonCreateNewGevaar = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRisicos)).BeginInit();
@@ -91,6 +92,7 @@
             this.dataGridViewRisicos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewRisicos.Size = new System.Drawing.Size(864, 325);
             this.dataGridViewRisicos.TabIndex = 0;
+            this.dataGridViewRisicos.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewRisicos_MouseDoubleClick);
             // 
             // tabPage2
             // 
@@ -164,12 +166,12 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Geselcteerde items";
             // 
-            // textBox1
+            // textBoxSelectedItems
             // 
-            this.textBox1.Location = new System.Drawing.Point(243, 643);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(365, 22);
-            this.textBox1.TabIndex = 4;
+            this.textBoxSelectedItems.Location = new System.Drawing.Point(243, 643);
+            this.textBoxSelectedItems.Name = "textBoxSelectedItems";
+            this.textBoxSelectedItems.Size = new System.Drawing.Size(365, 22);
+            this.textBoxSelectedItems.TabIndex = 4;
             // 
             // textBoxObjectNaam
             // 
@@ -267,11 +269,22 @@
             this.textBox3.Size = new System.Drawing.Size(206, 22);
             this.textBox3.TabIndex = 15;
             // 
+            // buttonCreateNewGevaar
+            // 
+            this.buttonCreateNewGevaar.Location = new System.Drawing.Point(920, 74);
+            this.buttonCreateNewGevaar.Name = "buttonCreateNewGevaar";
+            this.buttonCreateNewGevaar.Size = new System.Drawing.Size(124, 48);
+            this.buttonCreateNewGevaar.TabIndex = 16;
+            this.buttonCreateNewGevaar.Text = "Maak nieuw gevaar aan";
+            this.buttonCreateNewGevaar.UseVisualStyleBackColor = true;
+            this.buttonCreateNewGevaar.Click += new System.EventHandler(this.buttonCreateNewGevaar_Click);
+            // 
             // AddRisico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1107, 790);
+            this.Controls.Add(this.buttonCreateNewGevaar);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.checkedListBox1);
@@ -283,7 +296,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxObjectNaam);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxSelectedItems);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabControl1);
@@ -308,7 +321,7 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxSelectedItems;
         private System.Windows.Forms.TextBox textBoxObjectNaam;
         private System.Windows.Forms.DataGridView dataGridViewRisicos;
         private System.Windows.Forms.Label label2;
@@ -325,5 +338,6 @@
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button buttonCreateNewGevaar;
     }
 }

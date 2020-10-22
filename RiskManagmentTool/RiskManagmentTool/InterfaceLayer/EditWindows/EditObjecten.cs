@@ -16,6 +16,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
     {
         private Datacomunication comunicator;
         private string ObjectNaam;
+        private string ObjectID;
         private KeuzeMenus keuzeMenus;
 
 
@@ -24,7 +25,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             InitializeComponent();
             SetInstellingen();
         }
-        public EditObjecten(string projectNaam,
+        public EditObjecten(string objectID,
+                            string projectNaam,
                             string objectNaam,
                             string objectType,
                             string objectOmschrijving)
@@ -35,6 +37,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             keuzeMenus = KeuzeMenus.GetInstance();//new KeuzeMenus();
             LoadMenus();
             this.ObjectNaam = objectNaam;
+            this.ObjectID = objectID;
             textBoxProjectNaam.Text = projectNaam;
             textBoxObjectNaam.Text = ObjectNaam;
             textBoxOmschrijving.Text = objectOmschrijving;
@@ -43,7 +46,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             LoadData();
             SetInstellingen();
 
-            //textBoxDiscipline.Text = riskDicipline;
+            //textBoxDiscipline.Text = riskDiscipline;
             //textBoxGebruiksfase.Text = riskGebruiksfase;
             //textBoxBedienvorm.Text = riskGebruiker;
             //textBoxRiskGevarenzone.Text = riskGevarenzone;
@@ -61,7 +64,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         }
         private void LoadData()
         {
-            //dataGridViewGekoppeldeIssues.DataSource = comunicator.getObjectIssues(ObjectNaam);
+            dataGridViewGekoppeldeIssues.DataSource = comunicator.GetObjectIssues(ObjectID);
             ShowSolvedIssues();
 
         }
@@ -125,7 +128,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void buttonAddRisico_Click(object sender, EventArgs e)
         {
-            Form addRisico = new AddRisico(ObjectNaam);
+            Form addRisico = new AddRisico(ObjectNaam, ObjectID);
             addRisico.Show();
         }
 

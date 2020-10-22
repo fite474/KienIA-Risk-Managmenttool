@@ -15,6 +15,7 @@ namespace RiskManagmentTool.LogicLayer
         Gebruiksfases,
         Gebruikers,
         Disciplines,
-        Bedienvormen
+        Bedienvormen,
+        Taken
     }
 }

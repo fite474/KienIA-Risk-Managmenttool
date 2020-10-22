@@ -13,9 +13,6 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 {
     public partial class ContentKeuzes : Form
     {
-
-        private int column = 0;
-        private int row = 0;
         //private List<string> MenuNames;
         private List<MenuTableName> menuTableNames;
         //private KeuzeMenus keuzeMenus;
@@ -33,18 +30,6 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 
         private void InitComboBoxNames()
         {
-            //MenuNames = new List<string>
-            //{
-            //    "Object type",
-            //    "Gevolgen",
-            //    "Gevarenzones",
-            //    "GevaarTypes",
-            //    "Gebruiksfases",
-            //    "Gebruikers",
-            //    "Disciplines",
-            //    "Bedienvormen",
-
-            //};
             menuTableNames = new List<MenuTableName>
             {
                 MenuTableName.ObjectTypes,
@@ -55,18 +40,13 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
                 MenuTableName.Gebruikers,
                 MenuTableName.Disciplines,
                 MenuTableName.Bedienvormen,
-
-
-
+                MenuTableName.Taken
             };
-
-
         }
 
         private void InitComboBoxObjects()
         {
             //init list of each combobox
-
             InitComboBoxNames();
             //List<string> objectTypes = comunicator.GetObjectTypes();
             //object type
@@ -77,8 +57,8 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
                     Dock = DockStyle.Fill,
                     MenuTableName = menuName                
                 };
-
                 tableLayoutPanelKeuzes.Controls.Add(keuzesItem);//, column, row);
+                
             }
            
         }

@@ -41,7 +41,7 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
             //string riskId = dataGridViewRisicos.SelectedRows[0].Cells[0].Value.ToString();
             string riskBeschrijving = dataGridViewRisicos.SelectedRows[0].Cells[1].Value.ToString();
             string riskGevolg = dataGridViewRisicos.SelectedRows[0].Cells[2].Value.ToString();
-            //string riskDicipline = dataGridViewRisicos.SelectedRows[0].Cells[3].Value.ToString();
+            //string riskDiscipline = dataGridViewRisicos.SelectedRows[0].Cells[3].Value.ToString();
             //string riskGebruiksfase = dataGridViewRisicos.SelectedRows[0].Cells[4].Value.ToString();
             //string riskGebruiker = dataGridViewRisicos.SelectedRows[0].Cells[5].Value.ToString();
             //string riskGevarenzone = dataGridViewRisicos.SelectedRows[0].Cells[6].Value.ToString();
@@ -52,7 +52,7 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 
             Form editRisicosForm = new EditRisicos(riskBeschrijving,
                             riskGevolg);//,
-                            //riskDicipline,
+                            //riskDiscipline,
                             //riskGebruiksfase,
                             //riskGebruiker,
                             //riskGevarenzone);

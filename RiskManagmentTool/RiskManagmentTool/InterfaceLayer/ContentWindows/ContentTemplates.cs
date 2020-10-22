@@ -24,7 +24,7 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 
         private void LoadData()
         {
-            dataGridViewTemplates.DataSource = comunicator.getTemplateTable();
+            dataGridViewTemplates.DataSource = comunicator.GetTemplateTable();
 
         }
 

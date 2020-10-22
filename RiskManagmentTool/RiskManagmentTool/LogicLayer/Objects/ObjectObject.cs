@@ -10,6 +10,7 @@ namespace RiskManagmentTool.LogicLayer.Objects
     {
 
         //public string ObjectId { get; set; }
+        public string ProjectId { get; set; }
         public string ProjectNaam { get; set; }
         public string ObjectNaam { get; set; }
         public string ObjectType { get; set; }

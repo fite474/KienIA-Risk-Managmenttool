@@ -39,22 +39,26 @@
             this.label9 = new System.Windows.Forms.Label();
             this.labelGevSituatie = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonSave = new System.Windows.Forms.Button();
             this.textBoxGevSituatie = new System.Windows.Forms.TextBox();
             this.textBoxGevGebeurtenis = new System.Windows.Forms.TextBox();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
-            this.checkedListBox3 = new System.Windows.Forms.CheckedListBox();
-            this.checkedListBox4 = new System.Windows.Forms.CheckedListBox();
             this.textBoxDiscipline = new System.Windows.Forms.TextBox();
             this.textBoxGebruiksfase = new System.Windows.Forms.TextBox();
             this.textBoxBedienvorm = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.buttonSave = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBoxGebruiker = new System.Windows.Forms.TextBox();
+            this.textBoxGevaarlijkeZone = new System.Windows.Forms.TextBox();
+            this.textBoxTaak = new System.Windows.Forms.TextBox();
+            this.textBoxGevaar = new System.Windows.Forms.TextBox();
+            this.textBoxGevolg = new System.Windows.Forms.TextBox();
+            this.comboBoxDiscipline = new System.Windows.Forms.ComboBox();
+            this.comboBoxGebruiksfase = new System.Windows.Forms.ComboBox();
+            this.comboBoxGebruiker = new System.Windows.Forms.ComboBox();
+            this.comboBoxBedienVorm = new System.Windows.Forms.ComboBox();
+            this.comboBoxGevolg = new System.Windows.Forms.ComboBox();
+            this.comboBoxGevaar = new System.Windows.Forms.ComboBox();
+            this.comboBoxTaak = new System.Windows.Forms.ComboBox();
+            this.comboBoxGevaarlijkeZone = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -115,7 +119,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(34, 371);
+            this.label7.Location = new System.Drawing.Point(34, 362);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(87, 17);
             this.label7.TabIndex = 6;
@@ -157,6 +161,16 @@
             this.panel1.Size = new System.Drawing.Size(1577, 42);
             this.panel1.TabIndex = 11;
             // 
+            // buttonSave
+            // 
+            this.buttonSave.Location = new System.Drawing.Point(1431, 7);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(143, 32);
+            this.buttonSave.TabIndex = 0;
+            this.buttonSave.Text = "Save";
+            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            // 
             // textBoxGevSituatie
             // 
             this.textBoxGevSituatie.Location = new System.Drawing.Point(201, 39);
@@ -187,34 +201,10 @@
             "Ombouw & inbedrijfname",
             "Toegang & trappen",
             "Overig"});
-            this.checkedListBox1.Location = new System.Drawing.Point(889, 234);
+            this.checkedListBox1.Location = new System.Drawing.Point(1060, 217);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(303, 72);
             this.checkedListBox1.TabIndex = 12;
-            // 
-            // checkedListBox2
-            // 
-            this.checkedListBox2.FormattingEnabled = true;
-            this.checkedListBox2.Location = new System.Drawing.Point(837, 357);
-            this.checkedListBox2.Name = "checkedListBox2";
-            this.checkedListBox2.Size = new System.Drawing.Size(355, 72);
-            this.checkedListBox2.TabIndex = 13;
-            // 
-            // checkedListBox3
-            // 
-            this.checkedListBox3.FormattingEnabled = true;
-            this.checkedListBox3.Location = new System.Drawing.Point(837, 509);
-            this.checkedListBox3.Name = "checkedListBox3";
-            this.checkedListBox3.Size = new System.Drawing.Size(355, 72);
-            this.checkedListBox3.TabIndex = 14;
-            // 
-            // checkedListBox4
-            // 
-            this.checkedListBox4.FormattingEnabled = true;
-            this.checkedListBox4.Location = new System.Drawing.Point(837, 651);
-            this.checkedListBox4.Name = "checkedListBox4";
-            this.checkedListBox4.Size = new System.Drawing.Size(355, 72);
-            this.checkedListBox4.TabIndex = 15;
             // 
             // textBoxDiscipline
             // 
@@ -237,71 +227,131 @@
             this.textBoxBedienvorm.Size = new System.Drawing.Size(509, 22);
             this.textBoxBedienvorm.TabIndex = 18;
             // 
-            // button1
+            // textBoxGebruiker
             // 
-            this.button1.Location = new System.Drawing.Point(753, 234);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(29, 22);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "▼";
-            this.button1.UseVisualStyleBackColor = true;
+            this.textBoxGebruiker.Location = new System.Drawing.Point(201, 426);
+            this.textBoxGebruiker.Name = "textBoxGebruiker";
+            this.textBoxGebruiker.Size = new System.Drawing.Size(509, 22);
+            this.textBoxGebruiker.TabIndex = 20;
             // 
-            // buttonSave
+            // textBoxGevaarlijkeZone
             // 
-            this.buttonSave.Location = new System.Drawing.Point(1431, 7);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(143, 32);
-            this.buttonSave.TabIndex = 0;
-            this.buttonSave.Text = "Save";
-            this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            this.textBoxGevaarlijkeZone.Location = new System.Drawing.Point(201, 475);
+            this.textBoxGevaarlijkeZone.Name = "textBoxGevaarlijkeZone";
+            this.textBoxGevaarlijkeZone.Size = new System.Drawing.Size(509, 22);
+            this.textBoxGevaarlijkeZone.TabIndex = 21;
             // 
-            // textBox1
+            // textBoxTaak
             // 
-            this.textBox1.Location = new System.Drawing.Point(201, 426);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(509, 22);
-            this.textBox1.TabIndex = 20;
+            this.textBoxTaak.Location = new System.Drawing.Point(201, 530);
+            this.textBoxTaak.Name = "textBoxTaak";
+            this.textBoxTaak.Size = new System.Drawing.Size(509, 22);
+            this.textBoxTaak.TabIndex = 22;
             // 
-            // textBox2
+            // textBoxGevaar
             // 
-            this.textBox2.Location = new System.Drawing.Point(201, 475);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(509, 22);
-            this.textBox2.TabIndex = 21;
+            this.textBoxGevaar.Location = new System.Drawing.Point(201, 584);
+            this.textBoxGevaar.Name = "textBoxGevaar";
+            this.textBoxGevaar.Size = new System.Drawing.Size(509, 22);
+            this.textBoxGevaar.TabIndex = 23;
             // 
-            // textBox3
+            // textBoxGevolg
             // 
-            this.textBox3.Location = new System.Drawing.Point(201, 530);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(509, 22);
-            this.textBox3.TabIndex = 22;
+            this.textBoxGevolg.Location = new System.Drawing.Point(201, 633);
+            this.textBoxGevolg.Name = "textBoxGevolg";
+            this.textBoxGevolg.Size = new System.Drawing.Size(509, 22);
+            this.textBoxGevolg.TabIndex = 24;
             // 
-            // textBox4
+            // comboBoxDiscipline
             // 
-            this.textBox4.Location = new System.Drawing.Point(201, 584);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(509, 22);
-            this.textBox4.TabIndex = 23;
+            this.comboBoxDiscipline.FormattingEnabled = true;
+            this.comboBoxDiscipline.Location = new System.Drawing.Point(794, 234);
+            this.comboBoxDiscipline.Name = "comboBoxDiscipline";
+            this.comboBoxDiscipline.Size = new System.Drawing.Size(231, 24);
+            this.comboBoxDiscipline.TabIndex = 25;
+            this.comboBoxDiscipline.SelectedIndexChanged += new System.EventHandler(this.comboBoxDiscipline_SelectedIndexChanged);
             // 
-            // textBox5
+            // comboBoxGebruiksfase
             // 
-            this.textBox5.Location = new System.Drawing.Point(201, 633);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(509, 22);
-            this.textBox5.TabIndex = 24;
+            this.comboBoxGebruiksfase.FormattingEnabled = true;
+            this.comboBoxGebruiksfase.Location = new System.Drawing.Point(794, 289);
+            this.comboBoxGebruiksfase.Name = "comboBoxGebruiksfase";
+            this.comboBoxGebruiksfase.Size = new System.Drawing.Size(231, 24);
+            this.comboBoxGebruiksfase.TabIndex = 26;
+            this.comboBoxGebruiksfase.SelectedIndexChanged += new System.EventHandler(this.comboBoxGebruiksfase_SelectedIndexChanged);
+            // 
+            // comboBoxGebruiker
+            // 
+            this.comboBoxGebruiker.FormattingEnabled = true;
+            this.comboBoxGebruiker.Location = new System.Drawing.Point(794, 426);
+            this.comboBoxGebruiker.Name = "comboBoxGebruiker";
+            this.comboBoxGebruiker.Size = new System.Drawing.Size(231, 24);
+            this.comboBoxGebruiker.TabIndex = 28;
+            this.comboBoxGebruiker.SelectedIndexChanged += new System.EventHandler(this.comboBoxGebruiker_SelectedIndexChanged);
+            // 
+            // comboBoxBedienVorm
+            // 
+            this.comboBoxBedienVorm.FormattingEnabled = true;
+            this.comboBoxBedienVorm.Location = new System.Drawing.Point(794, 355);
+            this.comboBoxBedienVorm.Name = "comboBoxBedienVorm";
+            this.comboBoxBedienVorm.Size = new System.Drawing.Size(231, 24);
+            this.comboBoxBedienVorm.TabIndex = 27;
+            this.comboBoxBedienVorm.SelectedIndexChanged += new System.EventHandler(this.comboBoxBedienVorm_SelectedIndexChanged);
+            // 
+            // comboBoxGevolg
+            // 
+            this.comboBoxGevolg.FormattingEnabled = true;
+            this.comboBoxGevolg.Location = new System.Drawing.Point(794, 633);
+            this.comboBoxGevolg.Name = "comboBoxGevolg";
+            this.comboBoxGevolg.Size = new System.Drawing.Size(231, 24);
+            this.comboBoxGevolg.TabIndex = 32;
+            this.comboBoxGevolg.SelectedIndexChanged += new System.EventHandler(this.comboBoxGevolg_SelectedIndexChanged);
+            // 
+            // comboBoxGevaar
+            // 
+            this.comboBoxGevaar.FormattingEnabled = true;
+            this.comboBoxGevaar.Location = new System.Drawing.Point(794, 584);
+            this.comboBoxGevaar.Name = "comboBoxGevaar";
+            this.comboBoxGevaar.Size = new System.Drawing.Size(231, 24);
+            this.comboBoxGevaar.TabIndex = 31;
+            this.comboBoxGevaar.SelectedIndexChanged += new System.EventHandler(this.comboBoxGevaar_SelectedIndexChanged);
+            // 
+            // comboBoxTaak
+            // 
+            this.comboBoxTaak.FormattingEnabled = true;
+            this.comboBoxTaak.Location = new System.Drawing.Point(794, 530);
+            this.comboBoxTaak.Name = "comboBoxTaak";
+            this.comboBoxTaak.Size = new System.Drawing.Size(231, 24);
+            this.comboBoxTaak.TabIndex = 30;
+            this.comboBoxTaak.SelectedIndexChanged += new System.EventHandler(this.comboBoxTaak_SelectedIndexChanged);
+            // 
+            // comboBoxGevaarlijkeZone
+            // 
+            this.comboBoxGevaarlijkeZone.FormattingEnabled = true;
+            this.comboBoxGevaarlijkeZone.Location = new System.Drawing.Point(794, 475);
+            this.comboBoxGevaarlijkeZone.Name = "comboBoxGevaarlijkeZone";
+            this.comboBoxGevaarlijkeZone.Size = new System.Drawing.Size(231, 24);
+            this.comboBoxGevaarlijkeZone.TabIndex = 29;
+            this.comboBoxGevaarlijkeZone.SelectedIndexChanged += new System.EventHandler(this.comboBoxGevaarlijkeZone_SelectedIndexChanged);
             // 
             // EditRisicos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1577, 838);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.comboBoxGevolg);
+            this.Controls.Add(this.comboBoxGevaar);
+            this.Controls.Add(this.comboBoxTaak);
+            this.Controls.Add(this.comboBoxGevaarlijkeZone);
+            this.Controls.Add(this.comboBoxGebruiker);
+            this.Controls.Add(this.comboBoxBedienVorm);
+            this.Controls.Add(this.comboBoxGebruiksfase);
+            this.Controls.Add(this.comboBoxDiscipline);
+            this.Controls.Add(this.textBoxGevolg);
+            this.Controls.Add(this.textBoxGevaar);
+            this.Controls.Add(this.textBoxTaak);
+            this.Controls.Add(this.textBoxGevaarlijkeZone);
+            this.Controls.Add(this.textBoxGebruiker);
             this.Controls.Add(this.textBoxBedienvorm);
             this.Controls.Add(this.textBoxGebruiksfase);
             this.Controls.Add(this.textBoxDiscipline);
@@ -317,9 +367,6 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.checkedListBox1);
-            this.Controls.Add(this.checkedListBox2);
-            this.Controls.Add(this.checkedListBox3);
-            this.Controls.Add(this.checkedListBox4);
             this.Controls.Add(this.textBoxGevSituatie);
             this.Controls.Add(this.textBoxGevGebeurtenis);
             this.Name = "EditRisicos";
@@ -345,19 +392,23 @@
         private System.Windows.Forms.TextBox textBoxGevSituatie;
         private System.Windows.Forms.TextBox textBoxGevGebeurtenis;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.CheckedListBox checkedListBox2;
-        private System.Windows.Forms.CheckedListBox checkedListBox3;
-        private System.Windows.Forms.CheckedListBox checkedListBox4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBoxDiscipline;
         private System.Windows.Forms.TextBox textBoxGebruiksfase;
         private System.Windows.Forms.TextBox textBoxBedienvorm;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button buttonSave;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBoxGebruiker;
+        private System.Windows.Forms.TextBox textBoxGevaarlijkeZone;
+        private System.Windows.Forms.TextBox textBoxTaak;
+        private System.Windows.Forms.TextBox textBoxGevaar;
+        private System.Windows.Forms.TextBox textBoxGevolg;
+        private System.Windows.Forms.ComboBox comboBoxDiscipline;
+        private System.Windows.Forms.ComboBox comboBoxGebruiksfase;
+        private System.Windows.Forms.ComboBox comboBoxGebruiker;
+        private System.Windows.Forms.ComboBox comboBoxBedienVorm;
+        private System.Windows.Forms.ComboBox comboBoxGevolg;
+        private System.Windows.Forms.ComboBox comboBoxGevaar;
+        private System.Windows.Forms.ComboBox comboBoxTaak;
+        private System.Windows.Forms.ComboBox comboBoxGevaarlijkeZone;
     }
 }

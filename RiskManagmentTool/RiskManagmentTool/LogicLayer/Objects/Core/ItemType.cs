@@ -8,7 +8,7 @@ namespace RiskManagmentTool.LogicLayer.Objects.Core
 {
     public enum ItemType
     {
-        Risico,
+        Gevaar,
         Maatregel,
         Issue,
         Template,

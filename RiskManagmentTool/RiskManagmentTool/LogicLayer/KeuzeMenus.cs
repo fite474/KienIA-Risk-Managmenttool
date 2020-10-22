@@ -21,7 +21,7 @@ namespace RiskManagmentTool.LogicLayer
         private List<string> GebruikersComboBox;
         private List<string> DisciplinesComboBox;
         private List<string> BedienvormenComboBox;
-
+        private List<string> TakenComboBox;
 
         private Datacomunication comunicator;
 
@@ -103,6 +103,11 @@ namespace RiskManagmentTool.LogicLayer
             return BedienvormenComboBox;
         }
 
+        public List<string> GetTakenMenu()
+        {
+            return TakenComboBox;
+        }
+
         public void ReloadAllLists()
         {//wanneer de gebruiker een nieuw item toevoegd aan de keuzes moeten de lists opnieuw opgehaald worden
             MakeMenu();
@@ -119,6 +124,7 @@ namespace RiskManagmentTool.LogicLayer
             GebruikersComboBox = comunicator.GetGebruikers();
             DisciplinesComboBox = comunicator.GetDisciplines();
             BedienvormenComboBox = comunicator.GetBedienvormen();
+            TakenComboBox = comunicator.GetTaken();
 
 
 

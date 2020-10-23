@@ -33,17 +33,17 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.dataGridViewMaatregelen = new System.Windows.Forms.DataGridView();
+            this.textBoxIssueID = new System.Windows.Forms.TextBox();
+            this.textBoxSituatie = new System.Windows.Forms.TextBox();
+            this.textBoxGebeurtenis = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBoxMaatregelCategorie = new System.Windows.Forms.ComboBox();
+            this.comboBoxToepassingsgebied = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBoxSelectedMaatregelen = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -53,14 +53,15 @@
             this.dataGridViewTemplates = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonKoppelSelectedMaatregelen = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.buttonCreateNewMaatregel = new System.Windows.Forms.Button();
+            this.comboBoxGevaar = new System.Windows.Forms.ComboBox();
             this.comboBoxDiscipline = new System.Windows.Forms.ComboBox();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMaatregelen)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -115,40 +116,42 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Gebeurtenis";
             // 
-            // dataGridView1
+            // dataGridViewMaatregelen
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 70);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(830, 302);
-            this.dataGridView1.TabIndex = 5;
+            this.dataGridViewMaatregelen.AllowUserToAddRows = false;
+            this.dataGridViewMaatregelen.AllowUserToDeleteRows = false;
+            this.dataGridViewMaatregelen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMaatregelen.Location = new System.Drawing.Point(8, 70);
+            this.dataGridViewMaatregelen.Name = "dataGridViewMaatregelen";
+            this.dataGridViewMaatregelen.ReadOnly = true;
+            this.dataGridViewMaatregelen.RowTemplate.Height = 24;
+            this.dataGridViewMaatregelen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewMaatregelen.Size = new System.Drawing.Size(830, 302);
+            this.dataGridViewMaatregelen.TabIndex = 5;
+            this.dataGridViewMaatregelen.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewMaatregelen_MouseDoubleClick);
             // 
-            // textBox1
+            // textBoxIssueID
             // 
-            this.textBox1.Location = new System.Drawing.Point(172, 15);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(190, 22);
-            this.textBox1.TabIndex = 6;
+            this.textBoxIssueID.Location = new System.Drawing.Point(172, 15);
+            this.textBoxIssueID.Name = "textBoxIssueID";
+            this.textBoxIssueID.Size = new System.Drawing.Size(190, 22);
+            this.textBoxIssueID.TabIndex = 6;
             // 
-            // textBox4
+            // textBoxSituatie
             // 
-            this.textBox4.Location = new System.Drawing.Point(172, 132);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(450, 36);
-            this.textBox4.TabIndex = 9;
+            this.textBoxSituatie.Location = new System.Drawing.Point(172, 132);
+            this.textBoxSituatie.Multiline = true;
+            this.textBoxSituatie.Name = "textBoxSituatie";
+            this.textBoxSituatie.Size = new System.Drawing.Size(450, 36);
+            this.textBoxSituatie.TabIndex = 9;
             // 
-            // textBox5
+            // textBoxGebeurtenis
             // 
-            this.textBox5.Location = new System.Drawing.Point(172, 174);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(450, 37);
-            this.textBox5.TabIndex = 10;
+            this.textBoxGebeurtenis.Location = new System.Drawing.Point(172, 174);
+            this.textBoxGebeurtenis.Multiline = true;
+            this.textBoxGebeurtenis.Name = "textBoxGebeurtenis";
+            this.textBoxGebeurtenis.Size = new System.Drawing.Size(450, 37);
+            this.textBoxGebeurtenis.TabIndex = 10;
             // 
             // label6
             // 
@@ -168,21 +171,21 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "Toepassingsgebied";
             // 
-            // comboBox1
+            // comboBoxMaatregelCategorie
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(221, 262);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(202, 24);
-            this.comboBox1.TabIndex = 13;
+            this.comboBoxMaatregelCategorie.FormattingEnabled = true;
+            this.comboBoxMaatregelCategorie.Location = new System.Drawing.Point(221, 262);
+            this.comboBoxMaatregelCategorie.Name = "comboBoxMaatregelCategorie";
+            this.comboBoxMaatregelCategorie.Size = new System.Drawing.Size(202, 24);
+            this.comboBoxMaatregelCategorie.TabIndex = 13;
             // 
-            // comboBox2
+            // comboBoxToepassingsgebied
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(221, 295);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(202, 24);
-            this.comboBox2.TabIndex = 14;
+            this.comboBoxToepassingsgebied.FormattingEnabled = true;
+            this.comboBoxToepassingsgebied.Location = new System.Drawing.Point(221, 295);
+            this.comboBoxToepassingsgebied.Name = "comboBoxToepassingsgebied";
+            this.comboBoxToepassingsgebied.Size = new System.Drawing.Size(202, 24);
+            this.comboBoxToepassingsgebied.TabIndex = 14;
             // 
             // label8
             // 
@@ -200,12 +203,12 @@
             this.textBox6.Size = new System.Drawing.Size(202, 22);
             this.textBox6.TabIndex = 16;
             // 
-            // textBox7
+            // textBoxSelectedMaatregelen
             // 
-            this.textBox7.Location = new System.Drawing.Point(139, 790);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(592, 22);
-            this.textBox7.TabIndex = 17;
+            this.textBoxSelectedMaatregelen.Location = new System.Drawing.Point(139, 790);
+            this.textBoxSelectedMaatregelen.Name = "textBoxSelectedMaatregelen";
+            this.textBoxSelectedMaatregelen.Size = new System.Drawing.Size(592, 22);
+            this.textBoxSelectedMaatregelen.TabIndex = 17;
             // 
             // tabControl1
             // 
@@ -219,7 +222,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.dataGridViewMaatregelen);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -299,14 +302,15 @@
             this.button1.Text = "Wis selectie";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // buttonKoppelSelectedMaatregelen
             // 
-            this.button2.Location = new System.Drawing.Point(469, 822);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(248, 30);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "Koppel geselecteerde maatregelen";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonKoppelSelectedMaatregelen.Location = new System.Drawing.Point(469, 822);
+            this.buttonKoppelSelectedMaatregelen.Name = "buttonKoppelSelectedMaatregelen";
+            this.buttonKoppelSelectedMaatregelen.Size = new System.Drawing.Size(248, 30);
+            this.buttonKoppelSelectedMaatregelen.TabIndex = 21;
+            this.buttonKoppelSelectedMaatregelen.Text = "Koppel geselecteerde maatregelen";
+            this.buttonKoppelSelectedMaatregelen.UseVisualStyleBackColor = true;
+            this.buttonKoppelSelectedMaatregelen.Click += new System.EventHandler(this.buttonKoppelSelectedMaatregelen_Click);
             // 
             // button3
             // 
@@ -319,21 +323,22 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.comboBox5);
+            this.panel2.Controls.Add(this.buttonCreateNewMaatregel);
+            this.panel2.Controls.Add(this.comboBoxGevaar);
             this.panel2.Controls.Add(this.comboBoxDiscipline);
             this.panel2.Controls.Add(this.checkedListBox1);
-            this.panel2.Controls.Add(this.textBox4);
+            this.panel2.Controls.Add(this.textBoxSituatie);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.textBoxIssueID);
             this.panel2.Controls.Add(this.textBox6);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.comboBox2);
-            this.panel2.Controls.Add(this.textBox5);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.comboBoxToepassingsgebied);
+            this.panel2.Controls.Add(this.textBoxGebeurtenis);
+            this.panel2.Controls.Add(this.comboBoxMaatregelCategorie);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -342,13 +347,23 @@
             this.panel2.Size = new System.Drawing.Size(1113, 349);
             this.panel2.TabIndex = 23;
             // 
-            // comboBox5
+            // buttonCreateNewMaatregel
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(172, 98);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(283, 24);
-            this.comboBox5.TabIndex = 21;
+            this.buttonCreateNewMaatregel.Location = new System.Drawing.Point(743, 247);
+            this.buttonCreateNewMaatregel.Name = "buttonCreateNewMaatregel";
+            this.buttonCreateNewMaatregel.Size = new System.Drawing.Size(159, 65);
+            this.buttonCreateNewMaatregel.TabIndex = 22;
+            this.buttonCreateNewMaatregel.Text = "Maak nieuwe maatregel aan";
+            this.buttonCreateNewMaatregel.UseVisualStyleBackColor = true;
+            this.buttonCreateNewMaatregel.Click += new System.EventHandler(this.buttonCreateNewMaatregel_Click);
+            // 
+            // comboBoxGevaar
+            // 
+            this.comboBoxGevaar.FormattingEnabled = true;
+            this.comboBoxGevaar.Location = new System.Drawing.Point(172, 98);
+            this.comboBoxGevaar.Name = "comboBoxGevaar";
+            this.comboBoxGevaar.Size = new System.Drawing.Size(283, 24);
+            this.comboBoxGevaar.TabIndex = 21;
             // 
             // comboBoxDiscipline
             // 
@@ -387,13 +402,13 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buttonKoppelSelectedMaatregelen);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.textBoxSelectedMaatregelen);
             this.Name = "AddMaatregel";
             this.Text = "AddMaatregel";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMaatregelen)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
@@ -415,17 +430,17 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.DataGridView dataGridViewMaatregelen;
+        private System.Windows.Forms.TextBox textBoxIssueID;
+        private System.Windows.Forms.TextBox textBoxSituatie;
+        private System.Windows.Forms.TextBox textBoxGebeurtenis;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBoxMaatregelCategorie;
+        private System.Windows.Forms.ComboBox comboBoxToepassingsgebied;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBoxSelectedMaatregelen;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -435,12 +450,13 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonKoppelSelectedMaatregelen;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox comboBoxGevaar;
         private System.Windows.Forms.ComboBox comboBoxDiscipline;
+        private System.Windows.Forms.Button buttonCreateNewMaatregel;
     }
 }

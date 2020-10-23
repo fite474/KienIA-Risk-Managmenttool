@@ -16,26 +16,81 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
     {
         private Datacomunication comunicator;
         private int issueNmr;
-        public IssueMaatregelen()
+        private string RisicoID;
+        private KeuzeMenus keuzeMenus;
+
+        private string Discipline;
+        private string Gevaar;
+        private string Situatie;
+        private string Gebeurtenis;
+
+
+        //public IssueMaatregelen()
+        //{
+        //    issueNmr = 0;
+        //    InitializeComponent();
+        //    LoadData();
+        //}
+        public IssueMaatregelen(string objectNaam, string objectId, string issueId,
+                                string discipline, string gevaar, string situatie, string gebeurtenis,
+                                string init_Risico, string init_Risico_Beschrijving,
+                                string rest_Risico, string rest_Risico_Beschrijving)
         {
-            issueNmr = 0;
             InitializeComponent();
+            comunicator = new Datacomunication();
+            keuzeMenus = KeuzeMenus.GetInstance();
+            Discipline = discipline;
+            Gevaar = gevaar;
+            Situatie = situatie;
+            Gebeurtenis = gebeurtenis;
+
+
+            LoadMenus();
             LoadData();
+            //
+            issueNmr = 0;
+            RisicoID = issueId;
+
+            textBoxNaamObject.Text = objectNaam;
+            textBoxIssueID.Text = issueId;
+            comboBoxDiscipline.SelectedIndex = comboBoxDiscipline.FindStringExact(Discipline);
+            comboBoxGevaar.SelectedIndex = comboBoxGevaar.FindStringExact(Gevaar);
+            textBoxSituatie.Text = Situatie;
+            textBoxGebeurtenis.Text = Gebeurtenis;
+            textBoxInit_Risico.Text = init_Risico;
+            textBoxInit_Risico_Comment.Text = init_Risico_Beschrijving;
+            textBoxRest_Risico.Text = rest_Risico;
+            textBoxRest_Risico_Comment.Text = rest_Risico_Beschrijving;
+
+
+
+
+
+
         }
-        public IssueMaatregelen(string issueId)
+
+        private void LoadMenus()
         {
-            InitializeComponent();
-            LoadData();
-            textBoxNaamObject.Text = issueId;
-            issueNmr = 0;
+            List<string> disciplineList = keuzeMenus.GetDisciplinesMenu();
+            foreach (string discipline in disciplineList)
+            {
+                comboBoxDiscipline.Items.Add(discipline);
+            }
+
+            List<string> gevarenList = keuzeMenus.GetGevaarTypeMenu();
+            foreach (string gevaar in gevarenList)
+            {
+                comboBoxGevaar.Items.Add(gevaar);
+            }
         }
 
         private void LoadData()
         {
-            comunicator = new Datacomunication();
-            dataGridViewIssueMaatregelen.DataSource = comunicator.GetMaatregelTable();
+            
 
-        }
+        //dataGridViewIssueMaatregelen.DataSource = comunicator.GetMaatregelTable();
+
+    }
 
         private void buttonRisicoDetails_Click(object sender, EventArgs e)
         {
@@ -45,7 +100,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void buttonAddNewMaatregel_Click(object sender, EventArgs e)
         {
-            Form addMaatregel = new AddMaatregel();
+            Form addMaatregel = new AddMaatregel(RisicoID, Discipline, Gevaar, Situatie, Gebeurtenis);
             addMaatregel.Show();
         }
 
@@ -64,7 +119,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
                 // Do something  
             }
             issueNmr++;
-            textBoxNaamObject.Text = issueNmr.ToString();
+            textBoxIssueID.Text = issueNmr.ToString();
         }
     }
 }

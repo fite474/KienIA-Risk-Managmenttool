@@ -85,7 +85,21 @@ namespace RiskManagmentTool.LogicLayer
 
         }
 
+        public void MakeMaatregel(string maatregelNaam, string maatregelNorm, string maatregelCategory)
+        {
+            Item maatregelItem = new Item
+            {
+                ItemType = ItemType.Maatregel,
+                ItemData = new MaatregelObject
+                {
+                    MaatregelNaam = maatregelNaam,
+                    MaatregelNorm = maatregelNorm,
+                    MaatregelCategory = maatregelCategory
+                }
+            };
+            SendItemToDB(maatregelItem);
 
+        }
 
         public DataTable GetProjectenTable()
         {
@@ -107,6 +121,14 @@ namespace RiskManagmentTool.LogicLayer
         public DataTable GetObjectIssues(string objectID)
         {
             SqlDataAdapter adapter = databaseCommunication.GetIssues(objectID);
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            return data;
+        }
+
+        public DataTable GetObjectIssuesFull(string objectID)
+        {
+            SqlDataAdapter adapter = databaseCommunication.GetIssuesFull(objectID);
             DataTable data = new DataTable();
             adapter.Fill(data);
             return data;
@@ -191,6 +213,15 @@ namespace RiskManagmentTool.LogicLayer
             return databaseCommunication.GetTaken(); ;
         }
 
+        public List<string> GetMaatregelNorm()
+        {//ggd
+            return databaseCommunication.GetMaatregelNormen();
+        }
+
+        public List<string> GetMaatregelCategory()
+        {
+            return databaseCommunication.GetMaatregelCategory(); 
+        }
 
 
         public void AddToMenu(MenuTableName menuTableName, string optionToAdd)
@@ -229,6 +260,12 @@ namespace RiskManagmentTool.LogicLayer
                 case MenuTableName.Taken:
                     databaseCommunication.AddToTakenMenu(inputText);
                     break;
+                case MenuTableName.Normen:
+                    databaseCommunication.AddToNormenMenu(inputText);
+                    break;
+                case MenuTableName.Categories:
+                    databaseCommunication.AddToCategoriesMenu(inputText);
+                    break;
                 default:
                     break;
             }
@@ -245,7 +282,7 @@ namespace RiskManagmentTool.LogicLayer
                     databaseCommunication.MakeGevaar(item);
                     break;
                 case ItemType.Maatregel:
-
+                    databaseCommunication.MakeMaatregel(item);
                     break;
                 case ItemType.Issue:
 
@@ -258,6 +295,9 @@ namespace RiskManagmentTool.LogicLayer
                     break;
                 case ItemType.Project:
                     databaseCommunication.MakeProject(item);
+                    break;
+                case ItemType.RisicoInschatting:
+                    //databaseCommunication.MakeProject(item);
                     break;
                 default:
                     break;

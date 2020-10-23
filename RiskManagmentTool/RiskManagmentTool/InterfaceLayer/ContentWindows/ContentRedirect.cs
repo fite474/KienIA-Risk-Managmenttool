@@ -20,8 +20,8 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 
         private void buttonZoekIssueNummer_Click(object sender, EventArgs e)
         {
-            Form issueMaatregelNmr = new IssueMaatregelen();
-            issueMaatregelNmr.Show();
+            //Form issueMaatregelNmr = new IssueMaatregelen();
+            //issueMaatregelNmr.Show();
         }
     }
 }

@@ -40,22 +40,22 @@ namespace RiskManagmentTool.LogicLayer
                 }
             };
 
-            switch (issue.ItemType)
-            {
-                case ItemType.Gevaar:
+            //switch (issue.ItemType)
+            //{
+            //    case ItemType.Gevaar:
 
-                    break;
-                case ItemType.Maatregel:
+            //        break;
+            //    case ItemType.Maatregel:
 
-                    break;
-                case ItemType.Template:
+            //        break;
+            //    case ItemType.Template:
 
-                    break;
-                case ItemType.Object:
+            //        break;
+            //    case ItemType.Object:
 
-                    break;
+            //        break;
 
-            }
+            //}
 
         }
 

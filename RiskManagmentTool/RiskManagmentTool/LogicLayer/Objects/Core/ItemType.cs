@@ -13,6 +13,7 @@ namespace RiskManagmentTool.LogicLayer.Objects.Core
         Issue,
         Template,
         Object,
-        Project
+        Project,
+        RisicoInschatting
     }
 }

@@ -32,8 +32,8 @@
             this.buttonAddNew = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridViewProjecten = new System.Windows.Forms.DataGridView();
             this.panelEditProject = new System.Windows.Forms.Panel();
+            this.dataGridViewProjecten = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProjecten)).BeginInit();
@@ -77,6 +77,14 @@
             this.panel2.Size = new System.Drawing.Size(1575, 712);
             this.panel2.TabIndex = 1;
             // 
+            // panelEditProject
+            // 
+            this.panelEditProject.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelEditProject.Location = new System.Drawing.Point(198, 0);
+            this.panelEditProject.Name = "panelEditProject";
+            this.panelEditProject.Size = new System.Drawing.Size(1377, 712);
+            this.panelEditProject.TabIndex = 2;
+            // 
             // dataGridViewProjecten
             // 
             this.dataGridViewProjecten.AllowUserToAddRows = false;
@@ -88,17 +96,9 @@
             this.dataGridViewProjecten.ReadOnly = true;
             this.dataGridViewProjecten.RowTemplate.Height = 24;
             this.dataGridViewProjecten.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewProjecten.Size = new System.Drawing.Size(164, 712);
+            this.dataGridViewProjecten.Size = new System.Drawing.Size(198, 712);
             this.dataGridViewProjecten.TabIndex = 0;
             this.dataGridViewProjecten.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewProjecten_MouseDoubleClick);
-            // 
-            // panelEditProject
-            // 
-            this.panelEditProject.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelEditProject.Location = new System.Drawing.Point(164, 0);
-            this.panelEditProject.Name = "panelEditProject";
-            this.panelEditProject.Size = new System.Drawing.Size(1411, 712);
-            this.panelEditProject.TabIndex = 2;
             // 
             // ContentProjecten
             // 

@@ -22,6 +22,8 @@ namespace RiskManagmentTool.LogicLayer
         private List<string> DisciplinesComboBox;
         private List<string> BedienvormenComboBox;
         private List<string> TakenComboBox;
+        private List<string> MaatregelNormComboBox;
+        private List<string> MaatregelCategoryComboBox;
 
         private Datacomunication comunicator;
 
@@ -62,6 +64,17 @@ namespace RiskManagmentTool.LogicLayer
             return KeuzeMenuList;
 
         }
+
+        public List<string> GetMaatregelNormMenu()
+        {
+            return MaatregelNormComboBox;
+        }
+
+        public List<string> GetMaatregelCategoryMenu()
+        {
+            return MaatregelCategoryComboBox;
+        }
+
 
         public List<string> GetTypeObjectMenu()
         {
@@ -125,14 +138,16 @@ namespace RiskManagmentTool.LogicLayer
             DisciplinesComboBox = comunicator.GetDisciplines();
             BedienvormenComboBox = comunicator.GetBedienvormen();
             TakenComboBox = comunicator.GetTaken();
+            MaatregelNormComboBox = comunicator.GetMaatregelNorm();
+            MaatregelCategoryComboBox = comunicator.GetMaatregelCategory();
+            
 
 
 
 
 
 
-
-        KeuzeMenuList = new List<CheckedListBox>();
+            KeuzeMenuList = new List<CheckedListBox>();
 
 
 

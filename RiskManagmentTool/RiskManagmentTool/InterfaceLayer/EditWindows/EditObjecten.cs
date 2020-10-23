@@ -59,12 +59,12 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             {
                 comboBoxObjectType.Items.Add(typeString);
             }
-
-
         }
+
         private void LoadData()
         {
             dataGridViewGekoppeldeIssues.DataSource = comunicator.GetObjectIssues(ObjectID);
+            //dataGridViewGekoppeldeIssues.DataSource = comunicator.GetObjectIssuesFull(ObjectID);
             ShowSolvedIssues();
 
         }
@@ -101,8 +101,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void buttonIssuesOplossen_Click(object sender, EventArgs e)
         {
-            Form issueMaatregelen = new IssueMaatregelen();
-            issueMaatregelen.Show();
+            //Form issueMaatregelen = new IssueMaatregelen();
+            //issueMaatregelen.Show();
         }
 
         private void buttonAddTemplate_Click(object sender, EventArgs e)
@@ -116,10 +116,23 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         {
 
             string issueId = dataGridViewGekoppeldeIssues.SelectedRows[0].Cells[0].Value.ToString();
-            //string ObjectType = dataGridViewGekoppeldeIssues.SelectedRows[0].Cells[1].Value.ToString();
-            //string ObjectBeschrijving = dataGridViewGekoppeldeIssues.SelectedRows[0].Cells[2].Value.ToString();
+            string situatie = dataGridViewGekoppeldeIssues.SelectedRows[0].Cells[1].Value.ToString();
+            string gebeurtenis = dataGridViewGekoppeldeIssues.SelectedRows[0].Cells[2].Value.ToString();
 
-            Form issueMaatregelen = new IssueMaatregelen(issueId);
+            string discipline = dataGridViewGekoppeldeIssues.SelectedRows[0].Cells[3].Value.ToString();
+            string gevaar = dataGridViewGekoppeldeIssues.SelectedRows[0].Cells[9].Value.ToString();
+
+            string init_Risico = "";
+            string init_Risico_Beschrijving = "";
+            string rest_Risico = "";
+            string rest_Risico_Beschrijving = "";
+
+
+
+            Form issueMaatregelen = new IssueMaatregelen(ObjectNaam, ObjectID ,issueId, 
+                                                         discipline, gevaar, situatie, gebeurtenis,
+                                                         init_Risico, init_Risico_Beschrijving,
+                                                         rest_Risico, rest_Risico_Beschrijving);
             issueMaatregelen.Show();
 
 

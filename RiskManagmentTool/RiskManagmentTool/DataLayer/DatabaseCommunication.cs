@@ -106,10 +106,60 @@ namespace RiskManagmentTool.DataLayer
             cmd.Parameters.AddWithValue("@ObjectID", objectId);
             cmd.Parameters.AddWithValue("@IssueGevaarID", gevaarId);
 
+            //cmd.Parameters.AddWithValue("@MaatregelID", objectId);
+            //cmd.Parameters.AddWithValue("@RisicoInschattingID", gevaarId);
+
+            var issueID = (int)cmd.ExecuteScalar();
+            //cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+            AddMaatregelToIssue(issueID, 0);
+
+        }
+
+        public void AddMaatregelToIssue(int issueId, int maatregelId)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("UPDATE TableIssues " +
+                                             "SET MaatregelID = '" + maatregelId + "'" +
+                                              "WHERE IssueID = '" + issueId + "'", sqlConnection);
+            //cmd.Parameters.AddWithValue("@ObjectID", objectId);
+            //cmd.Parameters.AddWithValue("@IssueGevaarID", gevaarId);
+
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+            AddRisicoInschattingToIssue(issueId, 0);
+
+        }
+
+        public void AddRisicoInschattingToIssue(int issueId, int risicoInschattingId)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("UPDATE TableIssues " +
+                                 "SET RisicoInschattingID = '" + risicoInschattingId + "'" +
+                                  "WHERE IssueID = '" + issueId + "'", sqlConnection);
+
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+
+        }
+
+
+
+        public void MakeMaatregel(Item item)
+        {
+
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO TableMaatregelen(MaatregelNaam, MaatregelNorm, MaatregelCategory) VALUES " +
+                                                                       "(@MaatregelNaam, @MaatregelNorm, @MaatregelCategory)", sqlConnection);
+            cmd.Parameters.AddWithValue("@MaatregelNaam", item.ItemData.MaatregelNaam);
+            cmd.Parameters.AddWithValue("@MaatregelNorm", item.ItemData.MaatregelNorm);
+            cmd.Parameters.AddWithValue("@MaatregelCategory", item.ItemData.MaatregelCategory);
+
+
+
             cmd.ExecuteNonQuery();
             sqlConnection.Close();
         }
-
 
 
         // END REGION ADD TO OBJECT
@@ -153,7 +203,7 @@ namespace RiskManagmentTool.DataLayer
             //Risico's data
             sqlConnection.Open();
             //String query = "SELECT * FROM TableRisksUsedInProject WHERE UsedInProjectName = '" + ProjectName + "'";
-            String query = "SELECT TableGevaren.* FROM TableObjectIssues " +
+            string query = "SELECT TableGevaren.* FROM TableObjectIssues " +
                 " JOIN TableGevaren " +
                 "ON TableObjectIssues.IssueID = TableGevaren.GevaarID WHERE ObjectID = '" + objectID + "' ";
             //DIT WORDT LATER GEBRUIKT IN VIEWS
@@ -177,6 +227,29 @@ namespace RiskManagmentTool.DataLayer
 
         }
 
+        public SqlDataAdapter GetIssuesFull(string objectID)
+        {
+            //objectNaam = "1";
+            //Risico's data
+            sqlConnection.Open();
+            //String query = "SELECT * FROM TableRisksUsedInProject WHERE UsedInProjectName = '" + ProjectName + "'";
+            string query = "SELECT TableGevaren.*, TableMaatregelen.MaatregelNaam, TableMaatregelen.MaatregelCategory,TableMaatregelen.MaatregelNorm, RisicoInschatting.*" +
+                " FROM TableObjectIssues " +
+                " JOIN TableGevaren " +
+                "ON TableObjectIssues.IssueID = TableGevaren.GevaarID " +//WHERE ObjectID = '" + objectID + "' " +
+                "LEFT JOIN TableMaatregelen" +
+                "  ON TableMaatregelen.MaatregelID = TableIssues.MaatregelID " + //WHERE ObjectID = '" + objectID + "' " +
+                "LEFT JOIN RisicoInschatting " +
+                "  ON RisicoInschatting.IssueID = TableIssues.RisicoInschattingID ";//WHERE ObjectID = '" + objectID + "'";
+            //DIT WORDT LATER GEBRUIKT IN VIEWS
+
+
+            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
+            sqlConnection.Close();
+            return adapter;
+
+        }
+
         public SqlDataAdapter GetTemplates()
         {
             sqlConnection.Open();
@@ -189,7 +262,7 @@ namespace RiskManagmentTool.DataLayer
         public SqlDataAdapter GetMaatregelen()
         {
             sqlConnection.Open();
-            String query = "SELECT MaatregelID, MaatregelNaam FROM TableMaatregelen";
+            String query = "SELECT MaatregelID, MaatregelNaam, MaatregelCategory, MaatregelNorm FROM TableMaatregelen";
             SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
             sqlConnection.Close();
             return adapter;
@@ -323,6 +396,32 @@ namespace RiskManagmentTool.DataLayer
             SqlCommand cmd = new SqlCommand("INSERT INTO " + databaseTableName + "(Taak) VALUES " +
                                                                        "(@Taak)", sqlConnection);
             cmd.Parameters.AddWithValue("@Taak", optionToAdd);
+
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+
+        public void AddToNormenMenu(string optionToAdd)
+        {
+            string databaseTableName = "Normen";
+
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO " + databaseTableName + "(Norm) VALUES " +
+                                                                       "(@Norm)", sqlConnection);
+            cmd.Parameters.AddWithValue("@Norm", optionToAdd);
+
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+
+        public void AddToCategoriesMenu(string optionToAdd)
+        {
+            string databaseTableName = "Categories";
+
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO " + databaseTableName + "(Category) VALUES " +
+                                                                       "(@Category)", sqlConnection);
+            cmd.Parameters.AddWithValue("@Category", optionToAdd);
 
             cmd.ExecuteNonQuery();
             sqlConnection.Close();
@@ -491,6 +590,48 @@ namespace RiskManagmentTool.DataLayer
             return objectTypes;
 
         }
+
+        public List<string> GetMaatregelNormen()
+        {
+            List<string> objectTypes = new List<string>();
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT Norm FROM Normen", sqlConnection);
+
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    objectTypes.Add((dr[0]).ToString());
+                }
+            }
+            sqlConnection.Close();
+            return objectTypes;
+
+        }
+
+        public List<string> GetMaatregelCategory()
+        {
+            List<string> objectTypes = new List<string>();
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT Category FROM Categories", sqlConnection);
+
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    objectTypes.Add((dr[0]).ToString());
+                }
+            }
+            sqlConnection.Close();
+            return objectTypes;
+
+        }
+
+
+
+
+
+
         //      END GET FROM MENUS
         //END REGION MENUS
 

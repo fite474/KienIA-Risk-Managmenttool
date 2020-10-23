@@ -34,6 +34,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.textBox24 = new System.Windows.Forms.TextBox();
+            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.textBox21 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,8 +51,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -64,11 +66,9 @@
             this.checkBox10 = new System.Windows.Forms.CheckBox();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.textBox14 = new System.Windows.Forms.TextBox();
-            this.checkedListBox3 = new System.Windows.Forms.CheckedListBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkedListBox4 = new System.Windows.Forms.CheckedListBox();
             this.checkBox7 = new System.Windows.Forms.CheckBox();
             this.checkBox8 = new System.Windows.Forms.CheckBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
@@ -76,10 +76,10 @@
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.textBox23 = new System.Windows.Forms.TextBox();
-            this.textBox24 = new System.Windows.Forms.TextBox();
+            this.textBox25 = new System.Windows.Forms.TextBox();
+            this.textBox26 = new System.Windows.Forms.TextBox();
+            this.textBox27 = new System.Windows.Forms.TextBox();
+            this.textBox28 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -148,6 +148,36 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(579, 227);
             this.panel4.TabIndex = 5;
+            // 
+            // textBox24
+            // 
+            this.textBox24.Location = new System.Drawing.Point(144, 173);
+            this.textBox24.Name = "textBox24";
+            this.textBox24.Size = new System.Drawing.Size(310, 22);
+            this.textBox24.TabIndex = 8;
+            // 
+            // textBox23
+            // 
+            this.textBox23.Location = new System.Drawing.Point(144, 117);
+            this.textBox23.Multiline = true;
+            this.textBox23.Name = "textBox23";
+            this.textBox23.Size = new System.Drawing.Size(310, 44);
+            this.textBox23.TabIndex = 7;
+            // 
+            // textBox22
+            // 
+            this.textBox22.Location = new System.Drawing.Point(144, 60);
+            this.textBox22.Multiline = true;
+            this.textBox22.Name = "textBox22";
+            this.textBox22.Size = new System.Drawing.Size(310, 36);
+            this.textBox22.TabIndex = 6;
+            // 
+            // textBox21
+            // 
+            this.textBox21.Location = new System.Drawing.Point(144, 19);
+            this.textBox21.Name = "textBox21";
+            this.textBox21.Size = new System.Drawing.Size(152, 22);
+            this.textBox21.TabIndex = 5;
             // 
             // label4
             // 
@@ -263,56 +293,26 @@
             this.textBox4.Size = new System.Drawing.Size(592, 22);
             this.textBox4.TabIndex = 12;
             // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.CheckOnClick = true;
-            this.checkedListBox1.ColumnWidth = 30;
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.checkedListBox1.Location = new System.Drawing.Point(173, 101);
-            this.checkedListBox1.MultiColumn = true;
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(237, 38);
-            this.checkedListBox1.TabIndex = 14;
-            // 
-            // checkedListBox2
-            // 
-            this.checkedListBox2.CheckOnClick = true;
-            this.checkedListBox2.ColumnWidth = 30;
-            this.checkedListBox2.FormattingEnabled = true;
-            this.checkedListBox2.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.checkedListBox2.Location = new System.Drawing.Point(173, 131);
-            this.checkedListBox2.MultiColumn = true;
-            this.checkedListBox2.Name = "checkedListBox2";
-            this.checkedListBox2.Size = new System.Drawing.Size(237, 38);
-            this.checkedListBox2.TabIndex = 15;
-            // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(416, 101);
+            this.textBox5.Location = new System.Drawing.Point(259, 101);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(435, 22);
+            this.textBox5.Size = new System.Drawing.Size(592, 22);
             this.textBox5.TabIndex = 16;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(416, 129);
+            this.textBox6.Location = new System.Drawing.Point(259, 129);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(435, 22);
+            this.textBox6.Size = new System.Drawing.Size(592, 22);
             this.textBox6.TabIndex = 17;
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.textBox27);
+            this.panel3.Controls.Add(this.textBox28);
+            this.panel3.Controls.Add(this.textBox25);
+            this.panel3.Controls.Add(this.textBox26);
             this.panel3.Controls.Add(this.checkBox13);
             this.panel3.Controls.Add(this.textBox19);
             this.panel3.Controls.Add(this.textBox20);
@@ -325,11 +325,9 @@
             this.panel3.Controls.Add(this.checkBox10);
             this.panel3.Controls.Add(this.textBox13);
             this.panel3.Controls.Add(this.textBox14);
-            this.panel3.Controls.Add(this.checkedListBox3);
             this.panel3.Controls.Add(this.textBox7);
             this.panel3.Controls.Add(this.textBox8);
             this.panel3.Controls.Add(this.checkBox6);
-            this.panel3.Controls.Add(this.checkedListBox4);
             this.panel3.Controls.Add(this.checkBox7);
             this.panel3.Controls.Add(this.checkBox8);
             this.panel3.Controls.Add(this.textBox9);
@@ -337,12 +335,10 @@
             this.panel3.Controls.Add(this.textBox10);
             this.panel3.Controls.Add(this.textBox11);
             this.panel3.Controls.Add(this.textBox12);
-            this.panel3.Controls.Add(this.checkedListBox1);
             this.panel3.Controls.Add(this.textBox6);
             this.panel3.Controls.Add(this.checkBox1);
             this.panel3.Controls.Add(this.textBox5);
             this.panel3.Controls.Add(this.checkBox2);
-            this.panel3.Controls.Add(this.checkedListBox2);
             this.panel3.Controls.Add(this.checkBox3);
             this.panel3.Controls.Add(this.checkBox4);
             this.panel3.Controls.Add(this.textBox3);
@@ -452,35 +448,18 @@
             this.textBox14.Size = new System.Drawing.Size(592, 22);
             this.textBox14.TabIndex = 32;
             // 
-            // checkedListBox3
-            // 
-            this.checkedListBox3.CheckOnClick = true;
-            this.checkedListBox3.ColumnWidth = 30;
-            this.checkedListBox3.FormattingEnabled = true;
-            this.checkedListBox3.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.checkedListBox3.Location = new System.Drawing.Point(173, 357);
-            this.checkedListBox3.MultiColumn = true;
-            this.checkedListBox3.Name = "checkedListBox3";
-            this.checkedListBox3.Size = new System.Drawing.Size(237, 38);
-            this.checkedListBox3.TabIndex = 27;
-            // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(416, 385);
+            this.textBox7.Location = new System.Drawing.Point(259, 385);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(435, 22);
+            this.textBox7.Size = new System.Drawing.Size(592, 22);
             this.textBox7.TabIndex = 30;
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(416, 357);
+            this.textBox8.Location = new System.Drawing.Point(259, 357);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(435, 22);
+            this.textBox8.Size = new System.Drawing.Size(592, 22);
             this.textBox8.TabIndex = 29;
             // 
             // checkBox6
@@ -492,23 +471,6 @@
             this.checkBox6.TabIndex = 19;
             this.checkBox6.Text = "Rest_Se";
             this.checkBox6.UseVisualStyleBackColor = true;
-            // 
-            // checkedListBox4
-            // 
-            this.checkedListBox4.CheckOnClick = true;
-            this.checkedListBox4.ColumnWidth = 30;
-            this.checkedListBox4.FormattingEnabled = true;
-            this.checkedListBox4.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.checkedListBox4.Location = new System.Drawing.Point(173, 387);
-            this.checkedListBox4.MultiColumn = true;
-            this.checkedListBox4.Name = "checkedListBox4";
-            this.checkedListBox4.Size = new System.Drawing.Size(237, 38);
-            this.checkedListBox4.TabIndex = 28;
             // 
             // checkBox7
             // 
@@ -568,35 +530,33 @@
             this.textBox12.Size = new System.Drawing.Size(59, 22);
             this.textBox12.TabIndex = 24;
             // 
-            // textBox21
+            // textBox25
             // 
-            this.textBox21.Location = new System.Drawing.Point(144, 19);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(152, 22);
-            this.textBox21.TabIndex = 5;
+            this.textBox25.Location = new System.Drawing.Point(173, 384);
+            this.textBox25.Name = "textBox25";
+            this.textBox25.Size = new System.Drawing.Size(59, 22);
+            this.textBox25.TabIndex = 44;
             // 
-            // textBox22
+            // textBox26
             // 
-            this.textBox22.Location = new System.Drawing.Point(144, 60);
-            this.textBox22.Multiline = true;
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(310, 36);
-            this.textBox22.TabIndex = 6;
+            this.textBox26.Location = new System.Drawing.Point(173, 356);
+            this.textBox26.Name = "textBox26";
+            this.textBox26.Size = new System.Drawing.Size(59, 22);
+            this.textBox26.TabIndex = 43;
             // 
-            // textBox23
+            // textBox27
             // 
-            this.textBox23.Location = new System.Drawing.Point(144, 117);
-            this.textBox23.Multiline = true;
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(310, 44);
-            this.textBox23.TabIndex = 7;
+            this.textBox27.Location = new System.Drawing.Point(173, 128);
+            this.textBox27.Name = "textBox27";
+            this.textBox27.Size = new System.Drawing.Size(59, 22);
+            this.textBox27.TabIndex = 46;
             // 
-            // textBox24
+            // textBox28
             // 
-            this.textBox24.Location = new System.Drawing.Point(144, 173);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(310, 22);
-            this.textBox24.TabIndex = 8;
+            this.textBox28.Location = new System.Drawing.Point(173, 100);
+            this.textBox28.Name = "textBox28";
+            this.textBox28.Size = new System.Drawing.Size(59, 22);
+            this.textBox28.TabIndex = 45;
             // 
             // IssueRisicoDetails
             // 
@@ -637,8 +597,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.CheckedListBox checkedListBox2;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Panel panel5;
@@ -658,11 +616,9 @@
         private System.Windows.Forms.CheckBox checkBox10;
         private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.CheckedListBox checkedListBox3;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.CheckedListBox checkedListBox4;
         private System.Windows.Forms.CheckBox checkBox7;
         private System.Windows.Forms.CheckBox checkBox8;
         private System.Windows.Forms.TextBox textBox9;
@@ -674,5 +630,9 @@
         private System.Windows.Forms.TextBox textBox24;
         private System.Windows.Forms.TextBox textBox23;
         private System.Windows.Forms.TextBox textBox22;
+        private System.Windows.Forms.TextBox textBox27;
+        private System.Windows.Forms.TextBox textBox28;
+        private System.Windows.Forms.TextBox textBox25;
+        private System.Windows.Forms.TextBox textBox26;
     }
 }

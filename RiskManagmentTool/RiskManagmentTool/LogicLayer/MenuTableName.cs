@@ -16,6 +16,8 @@ namespace RiskManagmentTool.LogicLayer
         Gebruikers,
         Disciplines,
         Bedienvormen,
-        Taken
+        Taken,
+        Normen,
+        Categories
     }
 }

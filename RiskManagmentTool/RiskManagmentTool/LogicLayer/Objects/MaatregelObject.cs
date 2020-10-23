@@ -8,13 +8,15 @@ namespace RiskManagmentTool.LogicLayer.Objects
 {
     class MaatregelObject
     {
-
-        public string MaatregelId { get; set; }
-        public string MaatregelBeschrijving { get; set; }
-        public string MaatregelGevolg { get; set; }
-        public string MaatregelDiscipline { get; set; }
-        public string MaatregelGebruiksfase { get; set; }
-        public string MaatregelGebruiker { get; set; }
-        public string MaatregelGevarenzone { get; set; }
+        public string MaatregelNaam { get; set; }
+        public string MaatregelNorm { get; set; }
+        public string MaatregelCategory { get; set; }
+        //public string MaatregelId { get; set; }
+        //public string MaatregelBeschrijving { get; set; }
+        //public string MaatregelGevolg { get; set; }
+        //public string MaatregelDiscipline { get; set; }
+        //public string MaatregelGebruiksfase { get; set; }
+        //public string MaatregelGebruiker { get; set; }
+        //public string MaatregelGevarenzone { get; set; }
     }
 }

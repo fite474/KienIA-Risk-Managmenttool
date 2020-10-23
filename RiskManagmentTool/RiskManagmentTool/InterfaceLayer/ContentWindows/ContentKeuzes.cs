@@ -40,7 +40,9 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
                 MenuTableName.Gebruikers,
                 MenuTableName.Disciplines,
                 MenuTableName.Bedienvormen,
-                MenuTableName.Taken
+                MenuTableName.Taken,
+                MenuTableName.Normen,
+                MenuTableName.Categories
             };
         }
 

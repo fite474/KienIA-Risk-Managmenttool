@@ -16,21 +16,46 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
     {
         private Datacomunication comunicator;
         private KeuzeMenus keuzeMenus;
-        public AddMaatregel()
+        private List<string> SelectedMaatregelId;
+        private string RisicoID;
+        public AddMaatregel(string risicoID, string discipline, string gevaar, string situatie, string gebeurtenis)
         {
             InitializeComponent();
             comunicator = new Datacomunication();
             keuzeMenus = KeuzeMenus.GetInstance();
+            SelectedMaatregelId = new List<string>();
+            RisicoID = risicoID;
             LoadData();
+
+
+            textBoxIssueID.Text = risicoID;
+            comboBoxDiscipline.SelectedIndex = comboBoxDiscipline.FindStringExact(discipline);
+            comboBoxGevaar.SelectedIndex = comboBoxGevaar.FindStringExact(gevaar);
+            textBoxSituatie.Text = situatie;
+            textBoxGebeurtenis.Text = gebeurtenis;
         }
 
         private void LoadData()
         {
             dataGridViewTemplates.DataSource = comunicator.GetTemplateTable();
+            dataGridViewMaatregelen.DataSource = comunicator.GetMaatregelTable();
+
             List<string> disciplinesList = keuzeMenus.GetDisciplinesMenu();
             foreach (string typeString in disciplinesList)
             {
                 comboBoxDiscipline.Items.Add(typeString);
+            }
+
+            List<string> gevarenList = keuzeMenus.GetGevaarTypeMenu();
+            foreach (string gevaar in gevarenList)
+            {
+                comboBoxGevaar.Items.Add(gevaar);
+            }
+
+            List<string> maatregelCategoryList = keuzeMenus.GetMaatregelCategoryMenu();
+            foreach (string categoryString in maatregelCategoryList)
+            {
+                comboBoxMaatregelCategorie.Items.Add(categoryString);
             }
 
         }
@@ -50,6 +75,32 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
 
 
+        }
+
+        private void dataGridViewMaatregelen_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            string maatregelID = dataGridViewMaatregelen.SelectedRows[0].Cells[0].Value.ToString();
+            if (!SelectedMaatregelId.Contains(maatregelID))
+            {
+                SelectedMaatregelId.Add(maatregelID);
+                textBoxSelectedMaatregelen.Text += maatregelID + ", ";
+            }
+        }
+
+
+        private void buttonCreateNewMaatregel_Click(object sender, EventArgs e)
+        {
+            Form editMaatregelen = new EditMaatregelen();
+            editMaatregelen.Show();
+        }
+
+        private void buttonKoppelSelectedMaatregelen_Click(object sender, EventArgs e)
+        {
+                foreach (string maatregelId in SelectedMaatregelId)
+                {
+                    comunicator.AddGevaarToObject(RisicoID, maatregelId);
+                }
+                this.Close();
         }
     }
 }

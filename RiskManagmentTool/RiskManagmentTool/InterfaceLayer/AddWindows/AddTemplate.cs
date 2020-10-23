@@ -49,8 +49,8 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
         private void buttonVerifieerKoppeling_Click(object sender, EventArgs e)
         {
-            Form issueMaatregelen = new IssueMaatregelen();
-            issueMaatregelen.Show();
+            //Form issueMaatregelen = new IssueMaatregelen();
+            //issueMaatregelen.Show();
         }
     }
 }

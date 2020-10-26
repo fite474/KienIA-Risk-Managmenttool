@@ -95,56 +95,6 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
         }
 
-        // END REGION INIT ITEMS
-
-        // START REGION ADD TO OBJECT
-        public void AddGevaarToObject(string objectId, string gevaarId)
-        {
-            sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO TableIssues(ObjectID, IssueGevaarID) VALUES " +
-                                                                       "(@ObjectID, @IssueGevaarID)", sqlConnection);
-            cmd.Parameters.AddWithValue("@ObjectID", objectId);
-            cmd.Parameters.AddWithValue("@IssueGevaarID", gevaarId);
-
-            //cmd.Parameters.AddWithValue("@MaatregelID", objectId);
-            //cmd.Parameters.AddWithValue("@RisicoInschattingID", gevaarId);
-
-            var issueID = (int)cmd.ExecuteScalar();
-            //cmd.ExecuteNonQuery();
-            sqlConnection.Close();
-            AddMaatregelToIssue(issueID, 0);
-
-        }
-
-        public void AddMaatregelToIssue(int issueId, int maatregelId)
-        {
-            sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("UPDATE TableIssues " +
-                                             "SET MaatregelID = '" + maatregelId + "'" +
-                                              "WHERE IssueID = '" + issueId + "'", sqlConnection);
-            //cmd.Parameters.AddWithValue("@ObjectID", objectId);
-            //cmd.Parameters.AddWithValue("@IssueGevaarID", gevaarId);
-
-            cmd.ExecuteNonQuery();
-            sqlConnection.Close();
-            AddRisicoInschattingToIssue(issueId, 0);
-
-        }
-
-        public void AddRisicoInschattingToIssue(int issueId, int risicoInschattingId)
-        {
-            sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("UPDATE TableIssues " +
-                                 "SET RisicoInschattingID = '" + risicoInschattingId + "'" +
-                                  "WHERE IssueID = '" + issueId + "'", sqlConnection);
-
-            cmd.ExecuteNonQuery();
-            sqlConnection.Close();
-
-        }
-
-
-
         public void MakeMaatregel(Item item)
         {
 
@@ -160,6 +110,103 @@ namespace RiskManagmentTool.DataLayer
             cmd.ExecuteNonQuery();
             sqlConnection.Close();
         }
+
+        // END REGION INIT ITEMS
+
+        // START REGION ADD TO OBJECT
+        public void AddAndCreateIssueToObject(string objectId, string gevaarId)
+        {
+            //table objectissues
+            //gevaar id, beoordeling id
+            int issueId = InitIssue(gevaarId);
+
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO TableObjectIssues(ObjectID, IssueID) VALUES " +
+                                                                       "(@ObjectID, @IssueID)" +
+                                                                       "SELECT CAST(SCOPE_IDENTITY() AS INT)", sqlConnection);
+            cmd.Parameters.AddWithValue("@ObjectID", objectId);
+            cmd.Parameters.AddWithValue("@IssueID", issueId);
+
+            //cmd.Parameters.AddWithValue("@MaatregelID", objectId);
+            //cmd.Parameters.AddWithValue("@RisicoInschattingID", gevaarId);
+
+            Int32 issueID = (Int32)cmd.ExecuteScalar();
+
+
+
+            //  = cmd.ExecuteScalar();
+            //cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+
+            int risicoBeoordelingId = InitRisicoBeoordeling(issueId);
+            AddRisicoBeoordelingToIssue(risicoBeoordelingId, issueId);
+
+        }
+
+        private int InitIssue(string gevaarId)
+        {
+            
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO TableIssues(IssueGevaarID) VALUES " +
+                                                                       "(@IssueGevaarID)" +
+                                                                       "SELECT CAST(SCOPE_IDENTITY() AS INT)", sqlConnection);
+            cmd.Parameters.AddWithValue("@IssueGevaarID", gevaarId);
+
+            Int32 issueID = (Int32)cmd.ExecuteScalar();
+            sqlConnection.Close();
+            return issueID;
+        }
+
+        private int InitRisicoBeoordeling(int issueId)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO RisicoBeoordeling(IssueID) VALUES " +
+                                                                       "(@IssueID)" +
+                                                                       "SELECT CAST(SCOPE_IDENTITY() AS INT)", sqlConnection);
+            cmd.Parameters.AddWithValue("@IssueID", issueId);
+
+            Int32 risicoBeoordelingID = (Int32)cmd.ExecuteScalar();
+            sqlConnection.Close();
+            return risicoBeoordelingID;
+        }
+
+
+
+
+        private void AddRisicoBeoordelingToIssue(int risicoBeoordelingId, int issueId)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("UPDATE TableIssues " +
+                                 "SET IssueRisicoBeoordelingID = '" + risicoBeoordelingId + "'" +
+                                  "WHERE IssueID = '" + issueId + "'", sqlConnection);
+
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+
+
+
+        public void AddMaatregelToIssue(int issueId, int maatregelId)
+        {
+
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO TableIssueMaatregelen(IssueID, MaatregelID) VALUES " +
+                                                                       "(@IssueID, @MaatregelID)", sqlConnection); //+
+                                                                      // "SELECT CAST(SCOPE_IDENTITY() AS INT)", sqlConnection);
+            cmd.Parameters.AddWithValue("@IssueID", issueId);
+            cmd.Parameters.AddWithValue("@MaatregelID", maatregelId);
+
+
+            //Int32 issueID = (Int32)cmd.ExecuteScalar();
+
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+
+        }
+
+
+
+
 
 
         // END REGION ADD TO OBJECT
@@ -205,7 +252,20 @@ namespace RiskManagmentTool.DataLayer
             //String query = "SELECT * FROM TableRisksUsedInProject WHERE UsedInProjectName = '" + ProjectName + "'";
             string query = "SELECT TableGevaren.* FROM TableObjectIssues " +
                 " JOIN TableGevaren " +
-                "ON TableObjectIssues.IssueID = TableGevaren.GevaarID WHERE ObjectID = '" + objectID + "' ";
+                "ON TableGevaren.GevaarID IN(" +
+                "SELECT TableIssues.IssueGevaarID FROM TableIssues WHERE TableIssues.IssueID = TableObjectIssues.IssueID)" +
+                "AND TableObjectIssues.ObjectID = '" + objectID + "' ";
+            
+            
+            //string query2 = "SELECT TableGevaren.* FROM TableObjectIssues " +
+            //                    " JOIN TableGevaren " +
+            //                         "ON TableObjectIssues.IssueID = TableIssues.IssueGevaarID WHERE TableObjectIssues.ObjectID = '" + objectID + "'" +
+            //                         "AND TableObjectIssues.IssueID IN (" +
+            //                         "SELECT TableIssueKoppeling.RisicoID FROM TableIssueKoppeling WHERE TableIssueKoppeling.UsedMaatregelID IN (" +
+            //                         "SELECT TableMaatregelsUsedInProject.MaatregelID FROM TableMaatregelsUsedInProject WHERE UsedInProjectName = '" + ProjectName + "'))";
+
+
+
             //DIT WORDT LATER GEBRUIKT IN VIEWS
 
 
@@ -229,24 +289,54 @@ namespace RiskManagmentTool.DataLayer
 
         public SqlDataAdapter GetIssuesFull(string objectID)
         {
-            //objectNaam = "1";
-            //Risico's data
+            //QUERY IS NOG ERNISTIG FOUT*************************
+
+
             sqlConnection.Open();
             //String query = "SELECT * FROM TableRisksUsedInProject WHERE UsedInProjectName = '" + ProjectName + "'";
-            string query = "SELECT TableGevaren.*, TableMaatregelen.MaatregelNaam, TableMaatregelen.MaatregelCategory,TableMaatregelen.MaatregelNorm, RisicoInschatting.*" +
-                " FROM TableObjectIssues " +
-                " JOIN TableGevaren " +
-                "ON TableObjectIssues.IssueID = TableGevaren.GevaarID " +//WHERE ObjectID = '" + objectID + "' " +
+            string query = "SELECT TableGevaren.*, TableMaatregelen.* , RisicoBeoordeling.*" +
+                "FROM TableObjectIssues"+//" FROM TableIssues, TableIssueMaatregelen, TableObjectIssues, TableMaatregelen, TableGevaren, RisicoBeoordeling " +
+                " LEFT JOIN TableGevaren " +
+                "ON TableGevaren.GevaarID = TableIssues.IssueGevaarID " +//WHERE ObjectID = '" + objectID + "' " +
                 "LEFT JOIN TableMaatregelen" +
-                "  ON TableMaatregelen.MaatregelID = TableIssues.MaatregelID " + //WHERE ObjectID = '" + objectID + "' " +
-                "LEFT JOIN RisicoInschatting " +
-                "  ON RisicoInschatting.IssueID = TableIssues.RisicoInschattingID ";//WHERE ObjectID = '" + objectID + "'";
+                "  ON TableMaatregelen.MaatregelID = TableIssuesMaatregelen.MaatregelID " +
+                "AND TableIssuesMaatregelen.IssueID = TableIssues.IssueID" + //WHERE ObjectID = '" + objectID + "' " +
+                "LEFT JOIN RisicoBeoordeling " +
+                "  ON RisicoBeoordeling.IssueID = TableIssues.IssueRisicoBeoordelingID ";//WHERE ObjectID = '" + objectID + "'";
             //DIT WORDT LATER GEBRUIKT IN VIEWS
 
 
             SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
             sqlConnection.Close();
             return adapter;
+
+        }
+
+        public SqlDataAdapter GetIssueMaatregelen(string objectID, string issueID)
+        {
+            
+            int objectIDInt = int.Parse(objectID);
+            int issueIDInt = int.Parse(issueID);
+            //objectNaam = "1";
+            //Risico's data
+            sqlConnection.Open();
+            //String query = "SELECT * FROM TableRisksUsedInProject WHERE UsedInProjectName = '" + ProjectName + "'";
+            string query = "SELECT TableMaatregelen.* FROM TableIssues " +
+                " JOIN TableMaatregelen " +
+                "ON TableMaatregelen.MaatregelID IN(" +
+                "SELECT TableIssueMaatregelen.MaatregelID FROM TableIssueMaatregelen WHERE TableIssues.IssueGevaarID = '" + issueIDInt + "')";//+
+               // " AND TableObjectIssues.ObjectID = '" + objectIDInt + "' " +
+               // "AND IssueGevaarID = '" +issueIDInt + "'";
+            //DIT WORDT LATER GEBRUIKT IN VIEWS
+            //"ON TableGevaren.GevaarID IN(" +
+            //    "SELECT TableIssues.IssueGevaarID FROM TableIssues WHERE TableIssues.IssueID = TableObjectIssues.IssueID)" +
+            //    "AND TableObjectIssues.ObjectID = '" + objectID + "' ";
+
+
+            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
+            sqlConnection.Close();
+            return adapter;
+
 
         }
 

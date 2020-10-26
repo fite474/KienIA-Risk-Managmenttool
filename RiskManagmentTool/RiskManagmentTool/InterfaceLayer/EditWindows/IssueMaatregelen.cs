@@ -17,6 +17,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private Datacomunication comunicator;
         private int issueNmr;
         private string RisicoID;
+        private string ObjectID;
         private KeuzeMenus keuzeMenus;
 
         private string Discipline;
@@ -44,12 +45,14 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             Situatie = situatie;
             Gebeurtenis = gebeurtenis;
 
+            RisicoID = issueId;
+            ObjectID = objectId;
 
             LoadMenus();
             LoadData();
             //
             issueNmr = 0;
-            RisicoID = issueId;
+
 
             textBoxNaamObject.Text = objectNaam;
             textBoxIssueID.Text = issueId;
@@ -86,11 +89,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void LoadData()
         {
-            
-
-        //dataGridViewIssueMaatregelen.DataSource = comunicator.GetMaatregelTable();
-
-    }
+            dataGridViewIssueMaatregelen.DataSource = comunicator.GetIssueMaatregelen(ObjectID, RisicoID);//GetMaatregelTable();
+        }
 
         private void buttonRisicoDetails_Click(object sender, EventArgs e)
         {

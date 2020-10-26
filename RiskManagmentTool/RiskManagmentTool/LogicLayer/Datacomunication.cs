@@ -81,7 +81,14 @@ namespace RiskManagmentTool.LogicLayer
 
         public void AddGevaarToObject(string objectId, string gevaarId)
         {
-            databaseCommunication.AddGevaarToObject(objectId, gevaarId);
+            databaseCommunication.AddAndCreateIssueToObject(objectId, gevaarId);
+
+        }
+
+        public void AddMaatregelToIssue(string issueId, string maatregelId)
+        {
+
+            databaseCommunication.AddMaatregelToIssue(Int32.Parse(issueId), Int32.Parse(maatregelId));
 
         }
 
@@ -129,6 +136,14 @@ namespace RiskManagmentTool.LogicLayer
         public DataTable GetObjectIssuesFull(string objectID)
         {
             SqlDataAdapter adapter = databaseCommunication.GetIssuesFull(objectID);
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            return data;
+        }
+
+        public DataTable GetIssueMaatregelen(string objectID, string issueID)
+        {
+            SqlDataAdapter adapter = databaseCommunication.GetIssueMaatregelen(objectID, issueID);
             DataTable data = new DataTable();
             adapter.Fill(data);
             return data;

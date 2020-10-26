@@ -199,7 +199,6 @@
     <Compile Include="InterfaceLayer\MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="LogicLayer\Class1.cs" />
     <Compile Include="LogicLayer\Datacomunication.cs" />
     <Compile Include="LogicLayer\KeuzeMenus.cs" />
     <Compile Include="LogicLayer\MenuTableName.cs" />

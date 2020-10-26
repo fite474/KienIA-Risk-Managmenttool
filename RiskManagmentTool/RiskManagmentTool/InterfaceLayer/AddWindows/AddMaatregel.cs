@@ -98,7 +98,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
         {
                 foreach (string maatregelId in SelectedMaatregelId)
                 {
-                    comunicator.AddGevaarToObject(RisicoID, maatregelId);
+                    comunicator.AddMaatregelToIssue(RisicoID, maatregelId);
                 }
                 this.Close();
         }

@@ -15,8 +15,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
     public partial class IssueMaatregelen : Form
     {
         private Datacomunication comunicator;
-        private int issueNmr;
-        private string RisicoID;
+        //private int issueNmr;
+        private string IssueID;
         private string ObjectID;
         private KeuzeMenus keuzeMenus;
 
@@ -45,13 +45,13 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             Situatie = situatie;
             Gebeurtenis = gebeurtenis;
 
-            RisicoID = issueId;
+            IssueID = issueId;
             ObjectID = objectId;
 
             LoadMenus();
             LoadData();
             //
-            issueNmr = 0;
+            //issueNmr = 0;
 
 
             textBoxNaamObject.Text = objectNaam;
@@ -89,18 +89,18 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void LoadData()
         {
-            dataGridViewIssueMaatregelen.DataSource = comunicator.GetIssueMaatregelen(ObjectID, RisicoID);//GetMaatregelTable();
+            dataGridViewIssueMaatregelen.DataSource = comunicator.GetIssueMaatregelen(ObjectID, IssueID);//GetMaatregelTable();
         }
 
         private void buttonRisicoDetails_Click(object sender, EventArgs e)
         {
-            Form issueRisicoDetails = new IssueRisicoDetails();
+            Form issueRisicoDetails = new IssueRisicoDetails(IssueID);
             issueRisicoDetails.Show();
         }
 
         private void buttonAddNewMaatregel_Click(object sender, EventArgs e)
         {
-            Form addMaatregel = new AddMaatregel(RisicoID, Discipline, Gevaar, Situatie, Gebeurtenis);
+            Form addMaatregel = new AddMaatregel(IssueID, Discipline, Gevaar, Situatie, Gebeurtenis);
             addMaatregel.Show();
         }
 
@@ -118,8 +118,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             {
                 // Do something  
             }
-            issueNmr++;
-            textBoxIssueID.Text = issueNmr.ToString();
+            //issueNmr++;
+            //textBoxIssueID.Text = issueNmr.ToString();
         }
     }
 }

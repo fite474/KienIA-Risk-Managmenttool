@@ -108,6 +108,29 @@ namespace RiskManagmentTool.LogicLayer
 
         }
 
+        public void UpdateRisicoBeoordeling(string issueID, string init_Se, string init_Fr, string init_Pr, string init_Av, string init_Cl, string init_Risico,
+                                            string init_Se_Comment, string init_Fr_Comment, string init_Pr_Comment, string init_Av_Comment, string init_Cl_Comment, string init_Risico_Comment,
+                                            string rest_Se, string rest_Fr, string rest_Pr, string rest_Av, string rest_Cl, string rest_Risico,
+                                            string rest_Se_Comment, string rest_Fr_Comment, string rest_Pr_Comment, string rest_Av_Comment, string rest_Cl_Comment, string rest_Risico_Comment, string rest_Ok)
+        {
+            Item risicoInschattingItem = new Item
+            {
+                ItemType = ItemType.RisicoInschatting,
+                ItemData = new RisicoInschattingObject
+                {
+                    
+                }
+            };
+            SendItemToDB(risicoInschattingItem);
+
+        }
+
+
+
+
+
+
+
         public DataTable GetProjectenTable()
         {
             SqlDataAdapter adapter = databaseCommunication.GetProjecten();
@@ -312,7 +335,7 @@ namespace RiskManagmentTool.LogicLayer
                     databaseCommunication.MakeProject(item);
                     break;
                 case ItemType.RisicoInschatting:
-                    //databaseCommunication.MakeProject(item);
+                    databaseCommunication.UpdateRisicoBeoordeling(item);
                     break;
                 default:
                     break;

@@ -25,11 +25,36 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void LoadData()
         {
-            textBoxIssueID.Text = IssueID;
-            //textBoxProjectNaam.Text = projectNaam;
-            //textBoxObjectNaam.Text = ObjectNaam;
-            //textBoxOmschrijving.Text = objectOmschrijving;
+            //textBoxIssueID.Text = IssueID;
+            DataTable risicoBeoordelingData = comunicator.GetRisicoBeoordelingFromIssue(IssueID);
 
+            //DataRow row = risicoBeoordelingData.Rows[1];
+
+            //textBoxIssueID.Text = risicoBeoordelingData.Columns[1].ToString();//Andere optie is Collums["name"]
+            textBoxInit_Se.Text = risicoBeoordelingData.Rows[0].Field<int?>(2).ToString();//risicoBeoordelingData.Columns[2].ToString();
+            textBoxInit_Fr.Text = risicoBeoordelingData.Rows[0].Field<int?>(3).ToString();
+            textBoxInit_Pr.Text = risicoBeoordelingData.Rows[0].Field<int?>(4).ToString();
+            textBoxInit_Av.Text = risicoBeoordelingData.Rows[0].Field<int?>(5).ToString();
+            textBoxInit_Cl.Text = risicoBeoordelingData.Rows[0].Field<int?>(6).ToString();
+            textBoxInit_Risico.Text = risicoBeoordelingData.Rows[0].Field<int?>(7).ToString();
+            textBoxInit_Se_Comment.Text = risicoBeoordelingData.Rows[0].Field<char?>(8).ToString();
+            textBoxInit_Fr_Comment.Text = risicoBeoordelingData.Rows[0].Field<char?>(9).ToString();
+            textBoxInit_Pr_Comment.Text = risicoBeoordelingData.Rows[0].Field<char?>(10).ToString();
+            textBoxInit_Av_Comment.Text = risicoBeoordelingData.Rows[0].Field<char?>(11).ToString();
+            textBoxInit_Cl_Comment.Text = risicoBeoordelingData.Rows[0].Field<char?>(12).ToString();
+            textBoxInitRisico_Comment.Text = risicoBeoordelingData.Rows[0].Field<char?>(13).ToString();
+            textBoxRest_Se.Text = risicoBeoordelingData.Rows[0].Field<int?>(14).ToString();
+            textBoxRest_Fr.Text = risicoBeoordelingData.Rows[0].Field<int?>(15).ToString();
+            textBoxRest_Pr.Text = risicoBeoordelingData.Rows[0].Field<int?>(16).ToString();
+            textBoxRest_Av.Text = risicoBeoordelingData.Rows[0].Field<int?>(17).ToString();
+            textBoxRest_Cl.Text = risicoBeoordelingData.Rows[0].Field<int?>(18).ToString();
+            textBoxRest_Risico.Text = risicoBeoordelingData.Rows[0].Field<int?>(19).ToString();
+            textBoxRest_Se_Comment.Text = risicoBeoordelingData.Rows[0].Field<char?>(20).ToString();
+            textBoxRest_Fr_Comment.Text = risicoBeoordelingData.Rows[0].Field<char?>(21).ToString();
+            textBoxRest_Pr_Comment.Text = risicoBeoordelingData.Rows[0].Field<char?>(22).ToString();
+            textBoxRest_Av_Comment.Text = risicoBeoordelingData.Rows[0].Field<char?>(23).ToString();
+            textBoxRest_Cl_Comment.Text = risicoBeoordelingData.Rows[0].Field<char?>(24).ToString();
+            textBoxRest_Risico_Comment.Text = risicoBeoordelingData.Rows[0].Field<char?>(25).ToString();
         }
 
 

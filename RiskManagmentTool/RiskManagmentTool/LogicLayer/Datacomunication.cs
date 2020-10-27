@@ -206,6 +206,14 @@ namespace RiskManagmentTool.LogicLayer
             return data;
         }
 
+        public DataTable GetRisicoBeoordelingFromIssue(string issueID)
+        {
+            SqlDataAdapter adapter = databaseCommunication.GetRisicoBeoordelingFromIssue(issueID);
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            return data;
+        }
+
 
         public List<string> GetObjectTypes()
         {

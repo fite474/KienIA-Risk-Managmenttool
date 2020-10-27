@@ -221,6 +221,7 @@ namespace RiskManagmentTool.DataLayer
 
 
         // START REGION UPDATE
+        //***********************************************************
         public void UpdateRisicoBeoordeling(Item item)
         {
             string issueID = item.ItemData.IssueID;
@@ -468,6 +469,16 @@ namespace RiskManagmentTool.DataLayer
         {
             sqlConnection.Open();
             String query = "SELECT * FROM TableGevaren";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
+            sqlConnection.Close();
+            return adapter;
+        }
+
+        public SqlDataAdapter GetRisicoBeoordelingFromIssue(string issueID)
+        {
+            string temp = "12";
+            sqlConnection.Open();
+            String query = "SELECT * FROM RisicoBeoordeling WHERE IssueID = '"+ temp +"'";
             SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
             sqlConnection.Close();
             return adapter;

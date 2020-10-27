@@ -147,7 +147,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void buttonExport_Click(object sender, EventArgs e)
         {
-            Form exportObject = new ExportObject();
+            Form exportObject = new ExportObject(comunicator.GetObjectIssues(ObjectID));
             exportObject.Show();
         }
     }

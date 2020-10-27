@@ -58,8 +58,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void buttonExport_Click(object sender, EventArgs e)
         {
-            Form exportObject = new ExportObject();
-            exportObject.Show();
+            //Form exportObject = new ExportObject();
+            //exportObject.Show();
         }
     }
 }

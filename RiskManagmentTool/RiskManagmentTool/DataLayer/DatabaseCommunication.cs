@@ -349,6 +349,8 @@ namespace RiskManagmentTool.DataLayer
             return adapter;
         }
 
+
+
         public SqlDataAdapter GetIssues(string objectID)
         {
             //objectNaam = "1";
@@ -391,6 +393,21 @@ namespace RiskManagmentTool.DataLayer
             //sqlConnection.Close();
 
         }
+
+        //public SqlDataAdapter GetIssuesSimple(string objectID)
+        //{
+
+        //    sqlConnection.Open();
+        //    //String query = "SELECT * FROM TableRisksUsedInProject WHERE UsedInProjectName = '" + ProjectName + "'";
+        //    string query = "SELECT TableIssues.* FROM TableObjectIssues " +
+        //        " WHERE TableIssues.IssueID = TableObjectIssues.IssueID)" +
+        //        "AND TableObjectIssues.ObjectID = '" + objectID + "' ";
+
+        //    SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
+        //    sqlConnection.Close();
+        //    return adapter;
+
+        //}
 
         public SqlDataAdapter GetIssuesFull(string objectID)
         {

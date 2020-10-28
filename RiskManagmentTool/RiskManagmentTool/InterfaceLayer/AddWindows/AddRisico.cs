@@ -91,6 +91,11 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
         }
 
+        private void comboBoxDiscipline_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+            dataGridViewRisicos.DataSource = comunicator.GetGevarenTableByDiscipline(comboBoxDiscipline.SelectedItem.ToString());
+            
+        }
     }
 }

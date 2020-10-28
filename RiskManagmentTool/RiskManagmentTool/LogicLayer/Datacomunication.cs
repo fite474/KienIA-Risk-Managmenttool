@@ -76,6 +76,21 @@ namespace RiskManagmentTool.LogicLayer
                 }
             };
             SendItemToDB(gevaarItem);
+        }
+
+        public void MakeTemplate(string templateNaam, string templateType, string templateToepassing)
+        {
+            Item templateItem = new Item
+            {
+                ItemType = ItemType.Template,
+                ItemData = new TemplateObject
+                {
+                    TemplateNaam = templateNaam,
+                    TemplateType = templateType,
+                    TemplateToepassing = templateToepassing
+                }
+            };
+            SendItemToDB(templateItem);
 
         }
 
@@ -118,7 +133,33 @@ namespace RiskManagmentTool.LogicLayer
                 ItemType = ItemType.RisicoInschatting,
                 ItemData = new RisicoInschattingObject
                 {
-                    
+                    IssueID = issueID,
+                    Init_Se = init_Se,
+                    Init_Fr = init_Fr,
+                    Init_Pr = init_Pr,
+                    Init_Av = init_Av,
+                    Init_Cl = init_Cl,
+                    Init_Risico = init_Risico,
+                    Init_Se_Comment = init_Se_Comment,
+                    Init_Fr_Comment = init_Fr_Comment,
+                    Init_Pr_Comment = init_Pr_Comment,
+                    Init_Av_Comment = init_Av_Comment,
+                    Init_Cl_Comment = init_Cl_Comment,
+                    Init_Risico_Comment =init_Risico_Comment,
+
+                    Rest_Se = rest_Se,
+                    Rest_Fr = rest_Fr,
+                    Rest_Pr = rest_Pr, 
+                    Rest_Av = rest_Av,
+                    Rest_Cl = rest_Cl,
+                    Rest_Risico = rest_Risico,
+                    Rest_Se_Comment = rest_Se_Comment,
+                    Rest_Fr_Comment = rest_Fr_Comment,
+                    Rest_Pr_Comment = rest_Pr_Comment,
+                    Rest_Av_Comment = rest_Av_Comment,
+                    Rest_Cl_Comment = rest_Cl_Comment,
+                    Rest_Risico_Comment = rest_Risico_Comment,
+                    Rest_Ok = rest_Ok
                 }
             };
             SendItemToDB(risicoInschattingItem);
@@ -158,7 +199,15 @@ namespace RiskManagmentTool.LogicLayer
 
         public DataTable GetObjectIssuesFull(string objectID)
         {
-            SqlDataAdapter adapter = databaseCommunication.GetIssuesFull(objectID);
+            SqlDataAdapter adapter = databaseCommunication.GetIssuesWorking(objectID);
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            return data;
+        }
+
+        public DataTable GetAllIssues()
+        {
+            SqlDataAdapter adapter = databaseCommunication.GetAllIssues();
             DataTable data = new DataTable();
             adapter.Fill(data);
             return data;
@@ -209,6 +258,22 @@ namespace RiskManagmentTool.LogicLayer
         public DataTable GetRisicoBeoordelingFromIssue(string issueID)
         {
             SqlDataAdapter adapter = databaseCommunication.GetRisicoBeoordelingFromIssue(issueID);
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            return data;
+        }
+
+        public DataTable GetTemplateGevaren(string templateID)
+        {
+            SqlDataAdapter adapter = databaseCommunication.GetTemplateGevaren(templateID);
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            return data;
+        }
+
+        public DataTable GetTemplateIssues(string templateID)
+        {
+            SqlDataAdapter adapter = databaseCommunication.GetTemplateIssues(templateID);
             DataTable data = new DataTable();
             adapter.Fill(data);
             return data;
@@ -269,6 +334,36 @@ namespace RiskManagmentTool.LogicLayer
             return databaseCommunication.GetMaatregelCategory(); 
         }
 
+        public List<string> GetTemplateTypes()
+        {
+            return databaseCommunication.GetTemplateTypes();
+        }
+
+        public List<string> GetTemplateToepassingen()
+        {
+            return databaseCommunication.GetTemplateToepassingen();
+        }
+
+
+        //filter opties begin
+        public DataTable GetGevarenTableByDiscipline(string disciplineType)
+        {
+            SqlDataAdapter adapter = databaseCommunication.GetGevarenTableByDiscipline(disciplineType);
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            return data;
+        }
+
+
+
+
+        //filter opties eind
+
+
+
+
+
+
 
         public void AddToMenu(MenuTableName menuTableName, string optionToAdd)
         {
@@ -312,6 +407,12 @@ namespace RiskManagmentTool.LogicLayer
                 case MenuTableName.Categories:
                     databaseCommunication.AddToCategoriesMenu(inputText);
                     break;
+                case MenuTableName.TemplateTypes:
+                    databaseCommunication.AddToTemplateTypes(inputText);
+                    break;
+                case MenuTableName.TemplateToepassing:
+                    databaseCommunication.AddToTemplateToepassingen(inputText);
+                    break;
                 default:
                     break;
             }
@@ -334,7 +435,7 @@ namespace RiskManagmentTool.LogicLayer
 
                     break;
                 case ItemType.Template:
-
+                    databaseCommunication.MakeTemplate(item);
                     break;
                 case ItemType.Object:
                     databaseCommunication.MakeObject(item);

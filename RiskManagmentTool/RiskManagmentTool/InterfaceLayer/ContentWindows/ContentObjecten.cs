@@ -50,8 +50,8 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
         private void buttonAddNew_Click(object sender, EventArgs e)
         {
 
-            Form editObject = new EditObjecten();
-            editObject.Show();
+            //Form editObject = new EditObjecten();
+            //editObject.Show();
         }
     }
 }

@@ -18,6 +18,8 @@ namespace RiskManagmentTool.LogicLayer
         Bedienvormen,
         Taken,
         Normen,
-        Categories
+        Categories,
+        TemplateTypes,
+        TemplateToepassing
     }
 }

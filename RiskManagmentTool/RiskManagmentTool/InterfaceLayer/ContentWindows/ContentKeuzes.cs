@@ -42,7 +42,9 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
                 MenuTableName.Bedienvormen,
                 MenuTableName.Taken,
                 MenuTableName.Normen,
-                MenuTableName.Categories
+                MenuTableName.Categories,
+                MenuTableName.TemplateTypes,
+                MenuTableName.TemplateToepassing
             };
         }
 

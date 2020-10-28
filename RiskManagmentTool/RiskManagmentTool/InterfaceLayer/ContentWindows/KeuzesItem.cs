@@ -77,6 +77,14 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
                     MenuOptions = keuzeMenus.GetMaatregelCategoryMenu();
                     menuTitle = "Maatregel categorie";
                     break;
+                case MenuTableName.TemplateTypes:
+                    MenuOptions = keuzeMenus.GetTemplateTypesMenu();
+                    menuTitle = "Template types";
+                    break;
+                case MenuTableName.TemplateToepassing:
+                    MenuOptions = keuzeMenus.GetTemplateToepassingenMenu();
+                    menuTitle = "Template toepassing";
+                    break;
                 default:
                     break;
             }

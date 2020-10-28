@@ -30,34 +30,35 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
             //DataRow row = risicoBeoordelingData.Rows[1];
 
-            //textBoxIssueID.Text = risicoBeoordelingData.Columns[1].ToString();//Andere optie is Collums["name"]
+            textBoxIssueID.Text = IssueID;//risicoBeoordelingData.Columns[1].ToString();//Andere optie is Collums["name"]
             textBoxInit_Se.Text = risicoBeoordelingData.Rows[0].Field<int?>(2).ToString();//risicoBeoordelingData.Columns[2].ToString();
             textBoxInit_Fr.Text = risicoBeoordelingData.Rows[0].Field<int?>(3).ToString();
             textBoxInit_Pr.Text = risicoBeoordelingData.Rows[0].Field<int?>(4).ToString();
             textBoxInit_Av.Text = risicoBeoordelingData.Rows[0].Field<int?>(5).ToString();
             textBoxInit_Cl.Text = risicoBeoordelingData.Rows[0].Field<int?>(6).ToString();
             textBoxInit_Risico.Text = risicoBeoordelingData.Rows[0].Field<int?>(7).ToString();
-            textBoxInit_Se_Comment.Text = risicoBeoordelingData.Rows[0].Field<char?>(8).ToString();
-            textBoxInit_Fr_Comment.Text = risicoBeoordelingData.Rows[0].Field<char?>(9).ToString();
-            textBoxInit_Pr_Comment.Text = risicoBeoordelingData.Rows[0].Field<char?>(10).ToString();
-            textBoxInit_Av_Comment.Text = risicoBeoordelingData.Rows[0].Field<char?>(11).ToString();
-            textBoxInit_Cl_Comment.Text = risicoBeoordelingData.Rows[0].Field<char?>(12).ToString();
-            textBoxInitRisico_Comment.Text = risicoBeoordelingData.Rows[0].Field<char?>(13).ToString();
+            textBoxInit_Se_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(8).ToString();
+            textBoxInit_Fr_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(9).ToString();
+            textBoxInit_Pr_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(10).ToString();
+            textBoxInit_Av_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(11).ToString();
+            textBoxInit_Cl_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(12).ToString();
+            textBoxInitRisico_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(13).ToString();
             textBoxRest_Se.Text = risicoBeoordelingData.Rows[0].Field<int?>(14).ToString();
             textBoxRest_Fr.Text = risicoBeoordelingData.Rows[0].Field<int?>(15).ToString();
             textBoxRest_Pr.Text = risicoBeoordelingData.Rows[0].Field<int?>(16).ToString();
             textBoxRest_Av.Text = risicoBeoordelingData.Rows[0].Field<int?>(17).ToString();
             textBoxRest_Cl.Text = risicoBeoordelingData.Rows[0].Field<int?>(18).ToString();
             textBoxRest_Risico.Text = risicoBeoordelingData.Rows[0].Field<int?>(19).ToString();
-            textBoxRest_Se_Comment.Text = risicoBeoordelingData.Rows[0].Field<char?>(20).ToString();
-            textBoxRest_Fr_Comment.Text = risicoBeoordelingData.Rows[0].Field<char?>(21).ToString();
-            textBoxRest_Pr_Comment.Text = risicoBeoordelingData.Rows[0].Field<char?>(22).ToString();
-            textBoxRest_Av_Comment.Text = risicoBeoordelingData.Rows[0].Field<char?>(23).ToString();
-            textBoxRest_Cl_Comment.Text = risicoBeoordelingData.Rows[0].Field<char?>(24).ToString();
-            textBoxRest_Risico_Comment.Text = risicoBeoordelingData.Rows[0].Field<char?>(25).ToString();
+            textBoxRest_Se_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(20).ToString();
+            textBoxRest_Fr_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(21).ToString();
+            textBoxRest_Pr_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(22).ToString();
+            textBoxRest_Av_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(23).ToString();
+            textBoxRest_Cl_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(24).ToString();
+            textBoxRest_Risico_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(25).ToString();
+            checkBoxRest_Risico_Ok.Checked = risicoBeoordelingData.Rows[0].Field<string>(26).ToString() == "1";
         }
 
-
+        //
 
 
 
@@ -88,7 +89,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             string rest_Av_Comment = textBoxRest_Av_Comment.Text;
             string rest_Cl_Comment = textBoxRest_Cl_Comment.Text;
             string rest_Risico_Comment = textBoxRest_Risico_Comment.Text;
-            string rest_Ok = "1";
+            string rest_Ok = checkBoxRest_Risico_Ok.Checked == true? "1" : "0";//"1";
             //if (true)
             //{
 
@@ -96,13 +97,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
                                             init_Se_Comment, init_Fr_Comment, init_Pr_Comment, init_Av_Comment, init_Cl_Comment, init_Risico_Comment,
                                             rest_Se, rest_Fr, rest_Pr, rest_Av, rest_Cl, rest_Risico,
                                             rest_Se_Comment, rest_Fr_Comment, rest_Pr_Comment, rest_Av_Comment, rest_Cl_Comment, rest_Risico_Comment, rest_Ok);
-
-
-
-
-
             //}
-
+            this.Close();
         }
     }
 }

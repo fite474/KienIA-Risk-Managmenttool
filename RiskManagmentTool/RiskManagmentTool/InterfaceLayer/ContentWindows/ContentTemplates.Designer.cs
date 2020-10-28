@@ -89,6 +89,7 @@
             this.dataGridViewTemplates.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewTemplates.Size = new System.Drawing.Size(1575, 712);
             this.dataGridViewTemplates.TabIndex = 0;
+            this.dataGridViewTemplates.DoubleClick += new System.EventHandler(this.dataGridViewTemplates_DoubleClick);
             // 
             // ContentTemplates
             // 

@@ -193,6 +193,12 @@
     <Compile Include="InterfaceLayer\InitWindows\InitProject.Designer.cs">
       <DependentUpon>InitProject.cs</DependentUpon>
     </Compile>
+    <Compile Include="InterfaceLayer\InitWindows\InitTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\InitWindows\InitTemplate.Designer.cs">
+      <DependentUpon>InitTemplate.cs</DependentUpon>
+    </Compile>
     <Compile Include="InterfaceLayer\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +218,7 @@
     <Compile Include="LogicLayer\Objects\RisicoInschattingObject.cs" />
     <Compile Include="LogicLayer\Objects\ObjectSettings.cs" />
     <Compile Include="LogicLayer\Objects\GevaarObject.cs" />
+    <Compile Include="LogicLayer\Objects\TemplateObject.cs" />
     <Compile Include="LogicLayer\VerificatieStatus.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -286,6 +293,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InterfaceLayer\InitWindows\InitProject.resx">
       <DependentUpon>InitProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\InitWindows\InitTemplate.resx">
+      <DependentUpon>InitTemplate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterfaceLayer\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>

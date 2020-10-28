@@ -51,6 +51,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.buttonCreateNewGevaar = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRisicos)).BeginInit();
@@ -206,6 +207,7 @@
             this.comboBoxDiscipline.Name = "comboBoxDiscipline";
             this.comboBoxDiscipline.Size = new System.Drawing.Size(206, 24);
             this.comboBoxDiscipline.TabIndex = 8;
+            this.comboBoxDiscipline.SelectedIndexChanged += new System.EventHandler(this.comboBoxDiscipline_SelectedIndexChanged);
             // 
             // comboBox2
             // 
@@ -279,11 +281,21 @@
             this.buttonCreateNewGevaar.UseVisualStyleBackColor = true;
             this.buttonCreateNewGevaar.Click += new System.EventHandler(this.buttonCreateNewGevaar_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(186, 206);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(243, 17);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "vragen: clear filter opties toevoegen?";
+            // 
             // AddRisico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1107, 790);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.buttonCreateNewGevaar);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label5);
@@ -339,5 +351,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button buttonCreateNewGevaar;
+        private System.Windows.Forms.Label label7;
     }
 }

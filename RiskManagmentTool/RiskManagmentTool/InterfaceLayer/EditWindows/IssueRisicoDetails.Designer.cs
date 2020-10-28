@@ -42,11 +42,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.checkBoxSelectAll = new System.Windows.Forms.CheckBox();
+            this.checkBoxInit_Se = new System.Windows.Forms.CheckBox();
+            this.checkBoxInit_Fr = new System.Windows.Forms.CheckBox();
+            this.checkBoxInit_Pr = new System.Windows.Forms.CheckBox();
+            this.checkBoxInit_Av = new System.Windows.Forms.CheckBox();
             this.textBoxInit_Se_Comment = new System.Windows.Forms.TextBox();
             this.textBoxInit_Se = new System.Windows.Forms.TextBox();
             this.textBoxInit_Fr = new System.Windows.Forms.TextBox();
@@ -58,7 +58,7 @@
             this.textBoxInit_Pr = new System.Windows.Forms.TextBox();
             this.textBoxRest_Av = new System.Windows.Forms.TextBox();
             this.textBoxRest_Pr = new System.Windows.Forms.TextBox();
-            this.checkBox13 = new System.Windows.Forms.CheckBox();
+            this.checkBoxInit_Risico = new System.Windows.Forms.CheckBox();
             this.textBoxInit_Risico = new System.Windows.Forms.TextBox();
             this.textBoxInitRisico_Comment = new System.Windows.Forms.TextBox();
             this.checkBox12 = new System.Windows.Forms.CheckBox();
@@ -67,7 +67,7 @@
             this.checkBox11 = new System.Windows.Forms.CheckBox();
             this.textBoxRest_Cl = new System.Windows.Forms.TextBox();
             this.textBoxRest_Cl_Comment = new System.Windows.Forms.TextBox();
-            this.checkBox10 = new System.Windows.Forms.CheckBox();
+            this.checkBoxInit_Cl = new System.Windows.Forms.CheckBox();
             this.textBoxInit_Cl = new System.Windows.Forms.TextBox();
             this.textBoxInit_Cl_Comment = new System.Windows.Forms.TextBox();
             this.textBoxRest_Av_Comment = new System.Windows.Forms.TextBox();
@@ -216,55 +216,55 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Gebeurtenis";
             // 
-            // checkBox1
+            // checkBoxSelectAll
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(3, 6);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(87, 21);
-            this.checkBox1.TabIndex = 5;
-            this.checkBox1.Text = "Select all";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxSelectAll.AutoSize = true;
+            this.checkBoxSelectAll.Location = new System.Drawing.Point(3, 6);
+            this.checkBoxSelectAll.Name = "checkBoxSelectAll";
+            this.checkBoxSelectAll.Size = new System.Drawing.Size(87, 21);
+            this.checkBoxSelectAll.TabIndex = 5;
+            this.checkBoxSelectAll.Text = "Select all";
+            this.checkBoxSelectAll.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // checkBoxInit_Se
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(22, 45);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(73, 21);
-            this.checkBox2.TabIndex = 6;
-            this.checkBox2.Text = "Init_Se";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBoxInit_Se.AutoSize = true;
+            this.checkBoxInit_Se.Location = new System.Drawing.Point(22, 45);
+            this.checkBoxInit_Se.Name = "checkBoxInit_Se";
+            this.checkBoxInit_Se.Size = new System.Drawing.Size(73, 21);
+            this.checkBoxInit_Se.TabIndex = 6;
+            this.checkBoxInit_Se.Text = "Init_Se";
+            this.checkBoxInit_Se.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // checkBoxInit_Fr
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(22, 73);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(69, 21);
-            this.checkBox3.TabIndex = 7;
-            this.checkBox3.Text = "Init_Fr";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBoxInit_Fr.AutoSize = true;
+            this.checkBoxInit_Fr.Location = new System.Drawing.Point(22, 73);
+            this.checkBoxInit_Fr.Name = "checkBoxInit_Fr";
+            this.checkBoxInit_Fr.Size = new System.Drawing.Size(69, 21);
+            this.checkBoxInit_Fr.TabIndex = 7;
+            this.checkBoxInit_Fr.Text = "Init_Fr";
+            this.checkBoxInit_Fr.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // checkBoxInit_Pr
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(22, 101);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(70, 21);
-            this.checkBox4.TabIndex = 8;
-            this.checkBox4.Text = "Init_Pr";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBoxInit_Pr.AutoSize = true;
+            this.checkBoxInit_Pr.Location = new System.Drawing.Point(22, 101);
+            this.checkBoxInit_Pr.Name = "checkBoxInit_Pr";
+            this.checkBoxInit_Pr.Size = new System.Drawing.Size(70, 21);
+            this.checkBoxInit_Pr.TabIndex = 8;
+            this.checkBoxInit_Pr.Text = "Init_Pr";
+            this.checkBoxInit_Pr.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // checkBoxInit_Av
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(22, 131);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(72, 21);
-            this.checkBox5.TabIndex = 9;
-            this.checkBox5.Text = "Init_Av";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.checkBoxInit_Av.AutoSize = true;
+            this.checkBoxInit_Av.Location = new System.Drawing.Point(22, 131);
+            this.checkBoxInit_Av.Name = "checkBoxInit_Av";
+            this.checkBoxInit_Av.Size = new System.Drawing.Size(72, 21);
+            this.checkBoxInit_Av.TabIndex = 9;
+            this.checkBoxInit_Av.Text = "Init_Av";
+            this.checkBoxInit_Av.UseVisualStyleBackColor = true;
             // 
             // textBoxInit_Se_Comment
             // 
@@ -314,7 +314,7 @@
             this.panel3.Controls.Add(this.textBoxInit_Pr);
             this.panel3.Controls.Add(this.textBoxRest_Av);
             this.panel3.Controls.Add(this.textBoxRest_Pr);
-            this.panel3.Controls.Add(this.checkBox13);
+            this.panel3.Controls.Add(this.checkBoxInit_Risico);
             this.panel3.Controls.Add(this.textBoxInit_Risico);
             this.panel3.Controls.Add(this.textBoxInitRisico_Comment);
             this.panel3.Controls.Add(this.checkBox12);
@@ -323,7 +323,7 @@
             this.panel3.Controls.Add(this.checkBox11);
             this.panel3.Controls.Add(this.textBoxRest_Cl);
             this.panel3.Controls.Add(this.textBoxRest_Cl_Comment);
-            this.panel3.Controls.Add(this.checkBox10);
+            this.panel3.Controls.Add(this.checkBoxInit_Cl);
             this.panel3.Controls.Add(this.textBoxInit_Cl);
             this.panel3.Controls.Add(this.textBoxInit_Cl_Comment);
             this.panel3.Controls.Add(this.textBoxRest_Av_Comment);
@@ -337,13 +337,13 @@
             this.panel3.Controls.Add(this.textBoxRest_Se_Comment);
             this.panel3.Controls.Add(this.textBoxRest_Se);
             this.panel3.Controls.Add(this.textBoxInit_Av_Comment);
-            this.panel3.Controls.Add(this.checkBox1);
+            this.panel3.Controls.Add(this.checkBoxSelectAll);
             this.panel3.Controls.Add(this.textBoxInit_Pr_Comment);
-            this.panel3.Controls.Add(this.checkBox2);
-            this.panel3.Controls.Add(this.checkBox3);
-            this.panel3.Controls.Add(this.checkBox4);
+            this.panel3.Controls.Add(this.checkBoxInit_Se);
+            this.panel3.Controls.Add(this.checkBoxInit_Fr);
+            this.panel3.Controls.Add(this.checkBoxInit_Pr);
             this.panel3.Controls.Add(this.textBoxInit_Fr);
-            this.panel3.Controls.Add(this.checkBox5);
+            this.panel3.Controls.Add(this.checkBoxInit_Av);
             this.panel3.Controls.Add(this.textBoxInit_Fr_Comment);
             this.panel3.Controls.Add(this.textBoxInit_Se_Comment);
             this.panel3.Controls.Add(this.textBoxInit_Se);
@@ -381,15 +381,15 @@
             this.textBoxRest_Pr.Size = new System.Drawing.Size(59, 22);
             this.textBoxRest_Pr.TabIndex = 43;
             // 
-            // checkBox13
+            // checkBoxInit_Risico
             // 
-            this.checkBox13.AutoSize = true;
-            this.checkBox13.Location = new System.Drawing.Point(22, 195);
-            this.checkBox13.Name = "checkBox13";
-            this.checkBox13.Size = new System.Drawing.Size(94, 21);
-            this.checkBox13.TabIndex = 40;
-            this.checkBox13.Text = "Init_Risico";
-            this.checkBox13.UseVisualStyleBackColor = true;
+            this.checkBoxInit_Risico.AutoSize = true;
+            this.checkBoxInit_Risico.Location = new System.Drawing.Point(22, 195);
+            this.checkBoxInit_Risico.Name = "checkBoxInit_Risico";
+            this.checkBoxInit_Risico.Size = new System.Drawing.Size(94, 21);
+            this.checkBoxInit_Risico.TabIndex = 40;
+            this.checkBoxInit_Risico.Text = "Init_Risico";
+            this.checkBoxInit_Risico.UseVisualStyleBackColor = true;
             // 
             // textBoxInit_Risico
             // 
@@ -453,15 +453,15 @@
             this.textBoxRest_Cl_Comment.Size = new System.Drawing.Size(592, 22);
             this.textBoxRest_Cl_Comment.TabIndex = 35;
             // 
-            // checkBox10
+            // checkBoxInit_Cl
             // 
-            this.checkBox10.AutoSize = true;
-            this.checkBox10.Location = new System.Drawing.Point(22, 157);
-            this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(68, 21);
-            this.checkBox10.TabIndex = 31;
-            this.checkBox10.Text = "Init_Cl";
-            this.checkBox10.UseVisualStyleBackColor = true;
+            this.checkBoxInit_Cl.AutoSize = true;
+            this.checkBoxInit_Cl.Location = new System.Drawing.Point(22, 157);
+            this.checkBoxInit_Cl.Name = "checkBoxInit_Cl";
+            this.checkBoxInit_Cl.Size = new System.Drawing.Size(68, 21);
+            this.checkBoxInit_Cl.TabIndex = 31;
+            this.checkBoxInit_Cl.Text = "Init_Cl";
+            this.checkBoxInit_Cl.UseVisualStyleBackColor = true;
             // 
             // textBoxInit_Cl
             // 
@@ -589,11 +589,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox5;
+        private System.Windows.Forms.CheckBox checkBoxSelectAll;
+        private System.Windows.Forms.CheckBox checkBoxInit_Se;
+        private System.Windows.Forms.CheckBox checkBoxInit_Fr;
+        private System.Windows.Forms.CheckBox checkBoxInit_Pr;
+        private System.Windows.Forms.CheckBox checkBoxInit_Av;
         private System.Windows.Forms.TextBox textBoxInit_Se_Comment;
         private System.Windows.Forms.TextBox textBoxInit_Se;
         private System.Windows.Forms.TextBox textBoxInit_Fr;
@@ -605,7 +605,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button buttonConfirm;
         private System.Windows.Forms.CheckBox checkBoxRest_Risico_Ok;
-        private System.Windows.Forms.CheckBox checkBox13;
+        private System.Windows.Forms.CheckBox checkBoxInit_Risico;
         private System.Windows.Forms.TextBox textBoxInit_Risico;
         private System.Windows.Forms.TextBox textBoxInitRisico_Comment;
         private System.Windows.Forms.CheckBox checkBox12;
@@ -614,7 +614,7 @@
         private System.Windows.Forms.CheckBox checkBox11;
         private System.Windows.Forms.TextBox textBoxRest_Cl;
         private System.Windows.Forms.TextBox textBoxRest_Cl_Comment;
-        private System.Windows.Forms.CheckBox checkBox10;
+        private System.Windows.Forms.CheckBox checkBoxInit_Cl;
         private System.Windows.Forms.TextBox textBoxInit_Cl;
         private System.Windows.Forms.TextBox textBoxInit_Cl_Comment;
         private System.Windows.Forms.TextBox textBoxRest_Av_Comment;

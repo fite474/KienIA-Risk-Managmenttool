@@ -30,10 +30,9 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxTemplateType = new System.Windows.Forms.ComboBox();
             this.buttonImportFromObject = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxTemplateNaam = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
@@ -43,9 +42,9 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewGekoppeldeIssues = new System.Windows.Forms.DataGridView();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewGekoppeldeGevaren = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.textBoxSelectedGevaren = new System.Windows.Forms.TextBox();
             this.buttonConfirmSelection = new System.Windows.Forms.Button();
@@ -59,15 +58,16 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonSaveTemplate = new System.Windows.Forms.Button();
+            this.comboBoxTemplateToepassing = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl3.SuspendLayout();
             this.tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGekoppeldeIssues)).BeginInit();
             this.tabPage6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGekoppeldeGevaren)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -78,11 +78,11 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.comboBoxTemplateToepassing);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.comboBoxTemplateType);
             this.panel1.Controls.Add(this.buttonImportFromObject);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.textBoxTemplateNaam);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -95,26 +95,19 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(77, 183);
+            this.label6.Location = new System.Drawing.Point(56, 183);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(199, 17);
             this.label6.TabIndex = 6;
             this.label6.Text = "Template van toepassing voor";
             // 
-            // textBox4
+            // comboBoxTemplateType
             // 
-            this.textBox4.Location = new System.Drawing.Point(282, 183);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(166, 22);
-            this.textBox4.TabIndex = 5;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(282, 91);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(166, 24);
-            this.comboBox1.TabIndex = 4;
+            this.comboBoxTemplateType.FormattingEnabled = true;
+            this.comboBoxTemplateType.Location = new System.Drawing.Point(282, 91);
+            this.comboBoxTemplateType.Name = "comboBoxTemplateType";
+            this.comboBoxTemplateType.Size = new System.Drawing.Size(166, 24);
+            this.comboBoxTemplateType.TabIndex = 4;
             // 
             // buttonImportFromObject
             // 
@@ -125,12 +118,12 @@
             this.buttonImportFromObject.Text = "Importeren vanuit andere template of object";
             this.buttonImportFromObject.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // textBoxTemplateNaam
             // 
-            this.textBox1.Location = new System.Drawing.Point(282, 48);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(166, 22);
-            this.textBox1.TabIndex = 3;
+            this.textBoxTemplateNaam.Location = new System.Drawing.Point(282, 48);
+            this.textBoxTemplateNaam.Name = "textBoxTemplateNaam";
+            this.textBoxTemplateNaam.Size = new System.Drawing.Size(166, 22);
+            this.textBoxTemplateNaam.TabIndex = 3;
             // 
             // panel2
             // 
@@ -166,7 +159,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(80, 91);
+            this.label2.Location = new System.Drawing.Point(56, 94);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 17);
             this.label2.TabIndex = 1;
@@ -175,7 +168,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(77, 51);
+            this.label1.Location = new System.Drawing.Point(56, 51);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(103, 17);
             this.label1.TabIndex = 0;
@@ -214,7 +207,7 @@
             // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.dataGridView1);
+            this.tabPage5.Controls.Add(this.dataGridViewGekoppeldeIssues);
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
@@ -223,22 +216,22 @@
             this.tabPage5.Text = "Gekoppelde Issues";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dataGridViewGekoppeldeIssues
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 6);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(820, 353);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridViewGekoppeldeIssues.AllowUserToAddRows = false;
+            this.dataGridViewGekoppeldeIssues.AllowUserToDeleteRows = false;
+            this.dataGridViewGekoppeldeIssues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewGekoppeldeIssues.Location = new System.Drawing.Point(6, 6);
+            this.dataGridViewGekoppeldeIssues.Name = "dataGridViewGekoppeldeIssues";
+            this.dataGridViewGekoppeldeIssues.ReadOnly = true;
+            this.dataGridViewGekoppeldeIssues.RowTemplate.Height = 24;
+            this.dataGridViewGekoppeldeIssues.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewGekoppeldeIssues.Size = new System.Drawing.Size(820, 353);
+            this.dataGridViewGekoppeldeIssues.TabIndex = 0;
             // 
             // tabPage6
             // 
-            this.tabPage6.Controls.Add(this.dataGridView2);
+            this.tabPage6.Controls.Add(this.dataGridViewGekoppeldeGevaren);
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
@@ -247,17 +240,17 @@
             this.tabPage6.Text = "Gekoppelde gevaren";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
+            // dataGridViewGekoppeldeGevaren
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 6);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(810, 353);
-            this.dataGridView2.TabIndex = 0;
+            this.dataGridViewGekoppeldeGevaren.AllowUserToAddRows = false;
+            this.dataGridViewGekoppeldeGevaren.AllowUserToDeleteRows = false;
+            this.dataGridViewGekoppeldeGevaren.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewGekoppeldeGevaren.Location = new System.Drawing.Point(6, 6);
+            this.dataGridViewGekoppeldeGevaren.Name = "dataGridViewGekoppeldeGevaren";
+            this.dataGridViewGekoppeldeGevaren.ReadOnly = true;
+            this.dataGridViewGekoppeldeGevaren.RowTemplate.Height = 24;
+            this.dataGridViewGekoppeldeGevaren.Size = new System.Drawing.Size(810, 353);
+            this.dataGridViewGekoppeldeGevaren.TabIndex = 0;
             // 
             // tabPage2
             // 
@@ -344,6 +337,7 @@
             this.dataGridViewAddIssue.Size = new System.Drawing.Size(833, 359);
             this.dataGridViewAddIssue.TabIndex = 0;
             this.dataGridViewAddIssue.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewAddIssue_DataBindingComplete);
+            this.dataGridViewAddIssue.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewAddIssue_MouseDoubleClick);
             // 
             // tabPage4
             // 
@@ -396,6 +390,14 @@
             this.buttonSaveTemplate.Text = "Save template";
             this.buttonSaveTemplate.UseVisualStyleBackColor = true;
             // 
+            // comboBoxTemplateToepassing
+            // 
+            this.comboBoxTemplateToepassing.FormattingEnabled = true;
+            this.comboBoxTemplateToepassing.Location = new System.Drawing.Point(282, 183);
+            this.comboBoxTemplateToepassing.Name = "comboBoxTemplateToepassing";
+            this.comboBoxTemplateToepassing.Size = new System.Drawing.Size(166, 24);
+            this.comboBoxTemplateToepassing.TabIndex = 7;
+            // 
             // EditTemplates
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -414,9 +416,9 @@
             this.tabPage1.ResumeLayout(false);
             this.tabControl3.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGekoppeldeIssues)).EndInit();
             this.tabPage6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGekoppeldeGevaren)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabControl2.ResumeLayout(false);
@@ -440,26 +442,26 @@
         private System.Windows.Forms.Button buttonImportFromObject;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewGekoppeldeIssues;
         private System.Windows.Forms.Button buttonConfirmSelection;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.DataGridView dataGridViewAddIssue;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.DataGridView dataGridViewAddGevaar;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox comboBoxTemplateType;
+        private System.Windows.Forms.TextBox textBoxTemplateNaam;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBoxSelectedIssues;
         private System.Windows.Forms.TextBox textBoxSelectedGevaren;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TabControl tabControl3;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.TabPage tabPage6;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridViewGekoppeldeGevaren;
         private System.Windows.Forms.Button buttonSaveTemplate;
         private System.Windows.Forms.Button buttonAddSelection;
+        private System.Windows.Forms.ComboBox comboBoxTemplateToepassing;
     }
 }

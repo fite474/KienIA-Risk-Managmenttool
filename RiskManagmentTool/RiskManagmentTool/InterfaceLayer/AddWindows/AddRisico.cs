@@ -40,11 +40,44 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
         {
             dataGridViewRisicos.DataSource = comunicator.GetGevarenTable();
             textBoxObjectNaam.Text = ObjectNaam;
+
+            LoadComboboxes();
+        }
+
+
+
+        private void LoadComboboxes()
+        {
+
             List<string> disciplinesList = keuzeMenus.GetDisciplinesMenu();
             foreach (string typeString in disciplinesList)
             {
                 comboBoxDiscipline.Items.Add(typeString);
             }
+
+
+            List<string> objectNamenList = keuzeMenus.GetObjectNamen();
+            foreach (string objectNaam in objectNamenList)
+            {
+                if (objectNaam != ObjectNaam)
+                {
+                    comboBoxViewObjectNaam.Items.Add(objectNaam);
+                    comboBoxWeergaveObjectNaam.Items.Add(objectNaam);
+                }
+            }
+
+            List<string> templateNamenList = keuzeMenus.GetTemplateNamen();
+            foreach (string templateNaam in templateNamenList)
+            {
+                comboBoxViewTemplate.Items.Add(templateNaam);
+                comboBoxWeergaveTemplateNaam.Items.Add(templateNaam);
+            }
+
+
+            
+
+
+
 
         }
 
@@ -67,28 +100,12 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
         private void dataGridViewRisicos_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-
             string gevaarID = dataGridViewRisicos.SelectedRows[0].Cells[0].Value.ToString();
-            //foreach (string selected in SelectedGevarenId)
-            //{
                 if (!SelectedGevarenId.Contains(gevaarID))
                 {
                     SelectedGevarenId.Add(gevaarID);
                     textBoxSelectedItems.Text += gevaarID + ", ";
                 }
-           // }
-            
-
-
-            //list int selectie id's add gevaar id
-
-
-            //Form editProjecten = new EditProjecten(projectNaam);//,
-
-            //editProjecten.Show();
-
-
-
         }
 
         private void comboBoxDiscipline_SelectedIndexChanged(object sender, EventArgs e)
@@ -96,6 +113,26 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
             dataGridViewRisicos.DataSource = comunicator.GetGevarenTableByDiscipline(comboBoxDiscipline.SelectedItem.ToString());
             
+        }
+
+        private void comboBoxWeergaveObjectNaam_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxWeergaveTemplateNaam_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxViewTemplate_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxViewObjectNaam_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

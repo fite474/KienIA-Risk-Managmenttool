@@ -16,16 +16,16 @@ namespace RiskManagmentTool.DataLayer
         {
             DatabaseConnection databaseConnection = new DatabaseConnection();
             sqlConnection = databaseConnection.sqlConnection;
-               // new SqlConnection(databaseConnection.GetConnectionString());
+            // new SqlConnection(databaseConnection.GetConnectionString());
 
-
+            //vieuws doe je door: string strquery = "select * from View_App_Academic where recruitment_id = @recruitment_id
         }
 
 
 
 
         // START REGION INIT ITEMS
-        
+
         public void MakeProject(Item item)
         {
             string projectNaam = item.ItemData.ProjectNaam;
@@ -150,15 +150,9 @@ namespace RiskManagmentTool.DataLayer
             cmd.Parameters.AddWithValue("@ObjectID", objectId);
             cmd.Parameters.AddWithValue("@IssueID", issueId);
 
-            //cmd.Parameters.AddWithValue("@MaatregelID", objectId);
-            //cmd.Parameters.AddWithValue("@RisicoInschattingID", gevaarId);
-
+            //mag weg******************************************************
             Int32 issueID = (Int32)cmd.ExecuteScalar();
 
-
-
-            //  = cmd.ExecuteScalar();
-            //cmd.ExecuteNonQuery();
             sqlConnection.Close();
 
             int risicoBeoordelingId = InitRisicoBeoordeling(issueId);
@@ -185,10 +179,10 @@ namespace RiskManagmentTool.DataLayer
             int emptyIntFields = 0;
             string emptyStringFields = "";
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO RisicoBeoordeling(IssueID, Init_Fr, Init_Pr, Init_Av, Init_Cl, Init_Risico, Init_Se_Comment, Init_Fr_Comment, Init_Pr_Comment, Init_Av_Comment, Init_Cl_Comment, Init_Risico_Comment" +
-                                                                          "Rest_Se, Rest_Fr, Rest_Pr, Rest_Av, Rest_Cl, Rest_Risico, Rest_Se_Comment, Rest_Fr_Comment, Rest_Pr_Comment, Rest_Av_Comment, Rest_Cl_Comment, Rest_Risico_Comment, Rest_Risico_Ok)" +
+            SqlCommand cmd = new SqlCommand("INSERT INTO RisicoBeoordeling(IssueID, Init_Se, Init_Fr, Init_Pr, Init_Av, Init_Cl, Init_Risico, Init_Se_Comment, Init_Fr_Comment, Init_Pr_Comment, Init_Av_Comment, Init_Cl_Comment, Init_Risico_Comment, " +
+                                                                          "Rest_Se, Rest_Fr, Rest_Pr, Rest_Av, Rest_Cl, Rest_Risico, Rest_Se_Comment, Rest_Fr_Comment, Rest_Pr_Comment, Rest_Av_Comment, Rest_Cl_Comment, Rest_Risico_Comment, Rest_Risico_Ok) " +
                                                                           " VALUES " +
-                                                                          "(@IssueID, @Init_Fr, @Init_Pr, @Init_Av, @Init_Cl, @Init_Risico, @Init_Se_Comment, @Init_Fr_Comment, @Init_Pr_Comment, @Init_Av_Comment, @Init_Cl_Comment, @Init_Risico_Comment" +
+                                                                          "(@IssueID, @Init_Se, @Init_Fr, @Init_Pr, @Init_Av, @Init_Cl, @Init_Risico, @Init_Se_Comment, @Init_Fr_Comment, @Init_Pr_Comment, @Init_Av_Comment, @Init_Cl_Comment, @Init_Risico_Comment, " +
                                                                           "@Rest_Se, @Rest_Fr, @Rest_Pr, @Rest_Av, @Rest_Cl, @Rest_Risico, @Rest_Se_Comment, @Rest_Fr_Comment, @Rest_Pr_Comment, @Rest_Av_Comment, @Rest_Cl_Comment, @Rest_Risico_Comment, @Rest_Risico_Ok)" +
                                                                           "SELECT CAST(SCOPE_IDENTITY() AS INT)", sqlConnection);
 
@@ -224,9 +218,26 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
             return risicoBeoordelingID;
         }
+        private int InitRisicoBeoordelingDuplicate(int issueId, string originalIssueID)
+        {
+
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO RisicoBeoordeling(IssueID, Init_Se, Init_Fr, Init_Pr, Init_Av, Init_Cl, Init_Risico, Init_Se_Comment, Init_Fr_Comment, Init_Pr_Comment, Init_Av_Comment, Init_Cl_Comment, Init_Risico_Comment," +
+                                                                          " Rest_Se, Rest_Fr, Rest_Pr, Rest_Av, Rest_Cl, Rest_Risico, Rest_Se_Comment, Rest_Fr_Comment, Rest_Pr_Comment, Rest_Av_Comment, Rest_Cl_Comment, Rest_Risico_Comment, Rest_Risico_Ok)" +
+                                                                          " SELECT '"+ issueId + "', Init_Se, Init_Fr, Init_Pr, Init_Av, Init_Cl, Init_Risico, Init_Se_Comment, Init_Fr_Comment, Init_Pr_Comment, Init_Av_Comment, Init_Cl_Comment, Init_Risico_Comment," +
+                                                                          " Rest_Se, Rest_Fr, Rest_Pr, Rest_Av, Rest_Cl, Rest_Risico, Rest_Se_Comment, Rest_Fr_Comment, Rest_Pr_Comment, Rest_Av_Comment, Rest_Cl_Comment, Rest_Risico_Comment, Rest_Risico_Ok " +
+                                                                          " FROM RisicoBeoordeling " +
+                                                                          " WHERE IssueID = '"+ originalIssueID +"'" +
+                                                                          "SELECT CAST(SCOPE_IDENTITY() AS INT)", sqlConnection);
 
 
+            //cmd.Parameters.AddWithValue("@IssueID", issueId);
+            
 
+            Int32 risicoBeoordelingID = (Int32)cmd.ExecuteScalar();
+            sqlConnection.Close();
+            return risicoBeoordelingID;
+        }
 
         private void AddRisicoBeoordelingToIssue(int risicoBeoordelingId, int issueId)
         {
@@ -238,8 +249,6 @@ namespace RiskManagmentTool.DataLayer
             cmd.ExecuteNonQuery();
             sqlConnection.Close();
         }
-
-
 
         public void AddMaatregelToIssue(int issueId, int maatregelId)
         {
@@ -260,8 +269,71 @@ namespace RiskManagmentTool.DataLayer
         }
 
 
+        public void AddAndCreateIssueToTemplate(string templateId, string issueId)
+        {
 
+            string gevaarID = FindGevaarID(issueId);
+            List<string> gekoppeldeMaatregelenVanIssue = FindGekoppeldeMaatregelenVanIssue(issueId);
 
+            int duplicateIssueId = InitIssue(gevaarID);
+
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO TableTemplateIssues(TemplateID, IssueID) VALUES " +
+                                                                       "(@TemplateID, @IssueID) " +
+                                                                       "SELECT CAST(SCOPE_IDENTITY() AS INT)", sqlConnection);
+            cmd.Parameters.AddWithValue("@TemplateID", templateId);
+            cmd.Parameters.AddWithValue("@IssueID", duplicateIssueId);
+
+            cmd.ExecuteNonQuery();
+            //Int32 issueID = (Int32)cmd.ExecuteScalar();
+
+            sqlConnection.Close();
+
+            int risicoBeoordelingId = InitRisicoBeoordelingDuplicate(duplicateIssueId, issueId);
+            AddRisicoBeoordelingToIssue(risicoBeoordelingId, duplicateIssueId);
+
+            for (int i = 0; i < gekoppeldeMaatregelenVanIssue.Count; i++)
+            {
+                AddMaatregelToIssue(duplicateIssueId, int.Parse(gekoppeldeMaatregelenVanIssue[i]));
+            }
+
+        }
+
+        private string FindGevaarID(string issueID)
+        {
+            string gevaarID = "error";
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT IssueGevaarID FROM TableIssues " +
+                                            "WHERE TableIssues.IssueID = '" + issueID + "'", sqlConnection);
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    gevaarID = (dr[0]).ToString();     
+                }
+            }
+            sqlConnection.Close();
+            return gevaarID;
+        }
+
+        private List<string> FindGekoppeldeMaatregelenVanIssue(string issueID)
+        {
+            //string gevaarID = "error";
+            List<string> maatregelIDs = new List<string>();
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT MaatregelID FROM TableIssueMaatregelen " +
+                                            "WHERE IssueID = '"+ issueID +"'", sqlConnection);
+
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    maatregelIDs.Add((dr[0]).ToString());
+                }
+            }
+            sqlConnection.Close();
+            return maatregelIDs;
+        }
 
 
         // END REGION ADD TO OBJECT
@@ -402,44 +474,18 @@ namespace RiskManagmentTool.DataLayer
 
         public SqlDataAdapter GetIssues(string objectID)
         {
-            //objectNaam = "1";
-            //Risico's data
+           //DELETE*********************************************************
             sqlConnection.Open();
-            //String query = "SELECT * FROM TableRisksUsedInProject WHERE UsedInProjectName = '" + ProjectName + "'";
+           
             string query = "SELECT TableGevaren.* FROM TableObjectIssues " +
                 " JOIN TableGevaren " +
                 "ON TableGevaren.GevaarID IN(" +
                 "SELECT TableIssues.IssueGevaarID FROM TableIssues WHERE TableIssues.IssueID = TableObjectIssues.IssueID)" +
                 "AND TableObjectIssues.ObjectID = '" + objectID + "' ";
-            
-            
-            //string query2 = "SELECT TableGevaren.* FROM TableObjectIssues " +
-            //                    " JOIN TableGevaren " +
-            //                         "ON TableObjectIssues.IssueID = TableIssues.IssueGevaarID WHERE TableObjectIssues.ObjectID = '" + objectID + "'" +
-            //                         "AND TableObjectIssues.IssueID IN (" +
-            //                         "SELECT TableIssueKoppeling.RisicoID FROM TableIssueKoppeling WHERE TableIssueKoppeling.UsedMaatregelID IN (" +
-            //                         "SELECT TableMaatregelsUsedInProject.MaatregelID FROM TableMaatregelsUsedInProject WHERE UsedInProjectName = '" + ProjectName + "'))";
-
-
-
-            //DIT WORDT LATER GEBRUIKT IN VIEWS
-
 
             SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
             sqlConnection.Close();
             return adapter;
-
-            ////Maatregels data
-            //sqlConnection.Open();
-            ////query = "SELECT * FROM TableMaatregelsUsedInProject WHERE UsedInProjectName = '" + ProjectName + "'";
-            //query = "SELECT TableMaatregels.* FROM TableMaatregelsUsedInProject " +
-            //    " JOIN TableMaatregels " +
-            //    "ON TableMaatregelsUsedInProject.MaatregelID = TableMaatregels.MaatregelID WHERE UsedInProjectName = '" + ProjectName + "' ";
-            //adapter = new SqlDataAdapter(query, sqlConnection);
-            //data = new DataTable();
-            //adapter.Fill(data);
-            //dataGridViewMaatregel.DataSource = data;
-            //sqlConnection.Close();
 
         }
 
@@ -502,10 +548,12 @@ namespace RiskManagmentTool.DataLayer
             //    "SELECT TableIssueMaatregelen.MaatregelID FROM TableIssueMaatregelen WHERE TableIssues.IssueGevaarID = '" + issueIDInt + "'" +
             //    "AND (SELECT TableObjectIssues.ObjectID FROM TableObjectIssues WHERE TableIssues.IssueID = TableObjectIssues.IssueID) = '" + objectID + "' ) ";
 
-            string query = "SELECT TableMaatregelen.* FROM TableIssues " +
+            string query = "SELECT TableMaatregelen.* FROM TableIssueMaatregelen " +
                 " JOIN TableMaatregelen " +
-                "ON TableMaatregelen.MaatregelID IN(" +
-                "SELECT TableIssueMaatregelen.MaatregelID FROM TableIssueMaatregelen WHERE TableIssues.IssueGevaarID = '" + issueIDInt + "')";
+                "ON TableMaatregelen.MaatregelID = TableIssueMaatregelen.MaatregelID " +
+                "WHERE TableIssueMaatregelen.IssueID = '"+ issueID +"'"; //+
+                //"IN(" +
+                //"SELECT TableIssueMaatregelen.MaatregelID FROM TableIssueMaatregelen WHERE TableIssues.IssueID = '" + issueIDInt + "')";
 
 
 
@@ -590,8 +638,6 @@ namespace RiskManagmentTool.DataLayer
 
 
         //begin inner region filtered get requests
-
-
 
 
 
@@ -1019,6 +1065,39 @@ namespace RiskManagmentTool.DataLayer
 
         }
 
+        public List<string> GetTemplateNamen()
+        {
+            List<string> objectTypes = new List<string>();
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT TemplateNaam FROM TableTemplates", sqlConnection);
+
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    objectTypes.Add((dr[0]).ToString());
+                }
+            }
+            sqlConnection.Close();
+            return objectTypes;
+
+        }
+        public List<string> GetObjectNamen()
+        {
+            List<string> objectTypes = new List<string>();
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT ObjectNaam FROM TableObjecten", sqlConnection);
+
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    objectTypes.Add((dr[0]).ToString());
+                }
+            }
+            sqlConnection.Close();
+            return objectTypes;
+        }
 
 
 

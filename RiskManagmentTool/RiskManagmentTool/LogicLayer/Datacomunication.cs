@@ -100,6 +100,25 @@ namespace RiskManagmentTool.LogicLayer
 
         }
 
+        //templates
+        public void AddGevaarToTemplate(string templateId, string gevaarId)
+        {
+            //databaseCommunication.AddAndCreateIssueToObject(objectId, gevaarId);
+
+        }
+        public void AddIssueToTemplate(string templateId, string issueId)
+        {
+            databaseCommunication.AddAndCreateIssueToTemplate(templateId, issueId);
+
+        }
+
+
+        //templates
+
+
+
+
+
         public void AddMaatregelToIssue(string issueId, string maatregelId)
         {
 
@@ -343,6 +362,17 @@ namespace RiskManagmentTool.LogicLayer
         {
             return databaseCommunication.GetTemplateToepassingen();
         }
+
+        public List<string> GetTemplateNamen()
+        {
+            return databaseCommunication.GetTemplateNamen();
+        }
+
+        public List<string> GetObjectNamen()
+        {
+            return databaseCommunication.GetObjectNamen();
+        }
+
 
 
         //filter opties begin

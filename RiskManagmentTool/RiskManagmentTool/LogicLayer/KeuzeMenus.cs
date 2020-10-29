@@ -22,10 +22,15 @@ namespace RiskManagmentTool.LogicLayer
         private List<string> DisciplinesComboBox;
         private List<string> BedienvormenComboBox;
         private List<string> TakenComboBox;
+
         private List<string> MaatregelNormComboBox;
         private List<string> MaatregelCategoryComboBox;
+
         private List<string> TemplateTypesComboBox;
         private List<string> TemplateToepassingenComboBox;
+
+        private List<string> ObjectNamenComboBox;
+        private List<string> TemplateNamenComboBox;
 
         private Datacomunication comunicator;
 
@@ -133,6 +138,18 @@ namespace RiskManagmentTool.LogicLayer
             return TemplateToepassingenComboBox;
         }
 
+
+        public List<string> GetTemplateNamen()
+        {
+            return TemplateNamenComboBox;
+        }
+        public List<string> GetObjectNamen()
+        {
+            return ObjectNamenComboBox;
+        }
+
+
+
         public void ReloadAllLists()
         {//wanneer de gebruiker een nieuw item toevoegd aan de keuzes moeten de lists opnieuw opgehaald worden
             MakeMenu();
@@ -152,8 +169,12 @@ namespace RiskManagmentTool.LogicLayer
             TakenComboBox = comunicator.GetTaken();
             MaatregelNormComboBox = comunicator.GetMaatregelNorm();
             MaatregelCategoryComboBox = comunicator.GetMaatregelCategory();
+
             TemplateTypesComboBox = comunicator.GetTemplateTypes();
             TemplateToepassingenComboBox = comunicator.GetTemplateToepassingen();
+
+            ObjectNamenComboBox = comunicator.GetObjectNamen();
+            TemplateNamenComboBox = comunicator.GetTemplateNamen();
 
 
 

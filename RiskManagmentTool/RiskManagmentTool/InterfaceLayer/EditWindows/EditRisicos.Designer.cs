@@ -59,6 +59,7 @@
             this.comboBoxGevaar = new System.Windows.Forms.ComboBox();
             this.comboBoxTaak = new System.Windows.Forms.ComboBox();
             this.comboBoxGevaarlijkeZone = new System.Windows.Forms.ComboBox();
+            this.buttonDisciplines = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -334,11 +335,22 @@
             this.comboBoxGevaarlijkeZone.TabIndex = 29;
             this.comboBoxGevaarlijkeZone.SelectedIndexChanged += new System.EventHandler(this.comboBoxGevaarlijkeZone_SelectedIndexChanged);
             // 
+            // buttonDisciplines
+            // 
+            this.buttonDisciplines.Location = new System.Drawing.Point(706, 234);
+            this.buttonDisciplines.Name = "buttonDisciplines";
+            this.buttonDisciplines.Size = new System.Drawing.Size(85, 23);
+            this.buttonDisciplines.TabIndex = 33;
+            this.buttonDisciplines.Text = "Discipline";
+            this.buttonDisciplines.UseVisualStyleBackColor = true;
+            this.buttonDisciplines.Click += new System.EventHandler(this.buttonDisciplines_Click);
+            // 
             // EditRisicos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1577, 838);
+            this.Controls.Add(this.buttonDisciplines);
             this.Controls.Add(this.comboBoxGevolg);
             this.Controls.Add(this.comboBoxGevaar);
             this.Controls.Add(this.comboBoxTaak);
@@ -410,5 +422,6 @@
         private System.Windows.Forms.ComboBox comboBoxGevaar;
         private System.Windows.Forms.ComboBox comboBoxTaak;
         private System.Windows.Forms.ComboBox comboBoxGevaarlijkeZone;
+        private System.Windows.Forms.Button buttonDisciplines;
     }
 }

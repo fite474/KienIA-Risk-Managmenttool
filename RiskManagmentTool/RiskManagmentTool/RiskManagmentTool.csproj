@@ -49,6 +49,12 @@
     <Compile Include="DataLayer\DatabaseCommunication.cs" />
     <Compile Include="DataLayer\DatabaseConnection.cs" />
     <Compile Include="DataLayer\DatabaseTaskHandler.cs" />
+    <Compile Include="InterfaceLayer\AddWindows\AddItemToGevaar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\AddWindows\AddItemToGevaar.Designer.cs">
+      <DependentUpon>AddItemToGevaar.cs</DependentUpon>
+    </Compile>
     <Compile Include="InterfaceLayer\AddWindows\AddMaatregel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +228,9 @@
     <Compile Include="LogicLayer\VerificatieStatus.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="InterfaceLayer\AddWindows\AddItemToGevaar.resx">
+      <DependentUpon>AddItemToGevaar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InterfaceLayer\AddWindows\AddMaatregel.resx">
       <DependentUpon>AddMaatregel.cs</DependentUpon>
     </EmbeddedResource>

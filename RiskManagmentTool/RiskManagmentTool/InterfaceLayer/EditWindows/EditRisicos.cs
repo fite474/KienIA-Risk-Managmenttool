@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RiskManagmentTool.LogicLayer;
+using RiskManagmentTool.InterfaceLayer.AddWindows;
 
 namespace RiskManagmentTool.InterfaceLayer.EditWindows
 {
@@ -170,6 +171,12 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private void comboBoxGevolg_SelectedIndexChanged(object sender, EventArgs e)
         {
             textBoxGevolg.Text = comboBoxGevolg.SelectedItem.ToString();
+        }
+
+        private void buttonDisciplines_Click(object sender, EventArgs e)
+        {
+            Form addItem = new AddItemToGevaar(MenuTableName.Disciplines, DisciplinesItems, "disciplines");
+            addItem.ShowDialog();
         }
     }
 }

@@ -34,7 +34,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private void LoadData()
         {
             textBoxSelectedIssues.Text = "";
-
+            textBoxTemplateID.Text = TemplateID;
 
             dataGridViewAddIssue.DataSource = comunicator.GetAllIssues();
             dataGridViewAddGevaar.DataSource = comunicator.GetGevarenTable();
@@ -71,13 +71,13 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         {
             foreach (string gevaarId in SelectedGevarenId)
             {
-                comunicator.AddGevaarToObject(TemplateID, gevaarId);
+                comunicator.AddGevaarToTemplate(TemplateID, gevaarId);
             }
             foreach (string issueId in SelectedIssuesId)
             {
-                //comunicator.AddGevaarToObject(TemplateID, issueId);
+                comunicator.AddIssueToTemplate(TemplateID, issueId);
             }
-            //ReloadTemplateData();
+            ReloadTemplateData();
         }
 
         private void dataGridViewAddIssue_MouseDoubleClick(object sender, MouseEventArgs e)

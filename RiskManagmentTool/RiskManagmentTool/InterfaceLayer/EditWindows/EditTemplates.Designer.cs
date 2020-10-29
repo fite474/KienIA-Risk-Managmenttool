@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBoxTemplateToepassing = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBoxTemplateType = new System.Windows.Forms.ComboBox();
             this.buttonImportFromObject = new System.Windows.Forms.Button();
@@ -58,7 +59,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonSaveTemplate = new System.Windows.Forms.Button();
-            this.comboBoxTemplateToepassing = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBoxTemplateID = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -78,6 +80,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.textBoxTemplateID);
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.comboBoxTemplateToepassing);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.comboBoxTemplateType);
@@ -91,6 +95,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1575, 306);
             this.panel1.TabIndex = 1;
+            // 
+            // comboBoxTemplateToepassing
+            // 
+            this.comboBoxTemplateToepassing.FormattingEnabled = true;
+            this.comboBoxTemplateToepassing.Location = new System.Drawing.Point(282, 183);
+            this.comboBoxTemplateToepassing.Name = "comboBoxTemplateToepassing";
+            this.comboBoxTemplateToepassing.Size = new System.Drawing.Size(166, 24);
+            this.comboBoxTemplateToepassing.TabIndex = 7;
             // 
             // label6
             // 
@@ -390,13 +402,21 @@
             this.buttonSaveTemplate.Text = "Save template";
             this.buttonSaveTemplate.UseVisualStyleBackColor = true;
             // 
-            // comboBoxTemplateToepassing
+            // label7
             // 
-            this.comboBoxTemplateToepassing.FormattingEnabled = true;
-            this.comboBoxTemplateToepassing.Location = new System.Drawing.Point(282, 183);
-            this.comboBoxTemplateToepassing.Name = "comboBoxTemplateToepassing";
-            this.comboBoxTemplateToepassing.Size = new System.Drawing.Size(166, 24);
-            this.comboBoxTemplateToepassing.TabIndex = 7;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(875, 50);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(127, 17);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "(Temp template id)";
+            // 
+            // textBoxTemplateID
+            // 
+            this.textBoxTemplateID.Location = new System.Drawing.Point(878, 81);
+            this.textBoxTemplateID.Name = "textBoxTemplateID";
+            this.textBoxTemplateID.Size = new System.Drawing.Size(100, 22);
+            this.textBoxTemplateID.TabIndex = 9;
             // 
             // EditTemplates
             // 
@@ -463,5 +483,7 @@
         private System.Windows.Forms.Button buttonSaveTemplate;
         private System.Windows.Forms.Button buttonAddSelection;
         private System.Windows.Forms.ComboBox comboBoxTemplateToepassing;
+        private System.Windows.Forms.TextBox textBoxTemplateID;
+        private System.Windows.Forms.Label label7;
     }
 }

@@ -22,7 +22,7 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
         public KeuzesItem(MenuTableName menuName)//, List<string> options)
         {
             InitializeComponent();
-            keuzeMenus = KeuzeMenus.GetInstance();
+            keuzeMenus = new KeuzeMenus();//KeuzeMenus.GetInstance();
             MenuTableName = menuName;
             //MenuOptions = options;
             LoadData();

@@ -80,9 +80,9 @@
             // panelEditProject
             // 
             this.panelEditProject.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelEditProject.Location = new System.Drawing.Point(198, 0);
+            this.panelEditProject.Location = new System.Drawing.Point(284, 0);
             this.panelEditProject.Name = "panelEditProject";
-            this.panelEditProject.Size = new System.Drawing.Size(1377, 712);
+            this.panelEditProject.Size = new System.Drawing.Size(1291, 712);
             this.panelEditProject.TabIndex = 2;
             // 
             // dataGridViewProjecten
@@ -96,7 +96,7 @@
             this.dataGridViewProjecten.ReadOnly = true;
             this.dataGridViewProjecten.RowTemplate.Height = 24;
             this.dataGridViewProjecten.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewProjecten.Size = new System.Drawing.Size(198, 712);
+            this.dataGridViewProjecten.Size = new System.Drawing.Size(284, 712);
             this.dataGridViewProjecten.TabIndex = 0;
             this.dataGridViewProjecten.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewProjecten_MouseDoubleClick);
             // 

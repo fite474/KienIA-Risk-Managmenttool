@@ -97,8 +97,13 @@ namespace RiskManagmentTool.LogicLayer
         public void AddGevaarToObject(string objectId, string gevaarId)
         {
             databaseCommunication.AddAndCreateIssueToObject(objectId, gevaarId);
-
         }
+
+        public void AddIssueToObject(string objectId, string issueId)
+        {
+            databaseCommunication.AddCoppiedIssueToObject(objectId, issueId);
+        }
+
 
         //templates
         public void AddGevaarToTemplate(string templateId, string gevaarId)
@@ -250,6 +255,56 @@ namespace RiskManagmentTool.LogicLayer
             adapter.Fill(data);
             return data;
         }
+
+
+
+        //get selected
+        public DataTable GetSelectedObjectIssues(string objectNaam, List<string> selectedIssuesId)
+        {
+            string objectId = databaseCommunication.GetObjectIdByName(objectNaam);
+            SqlDataAdapter adapter = databaseCommunication.GetSelectedIssuesFromObject(objectId, selectedIssuesId);
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            return data;
+        }
+
+        public DataTable GetSelectedTemplateIssues(string templateNaam, List<string> selectedIssuesId)
+        {
+            string templateId = databaseCommunication.GetTemplateIdByName(templateNaam);
+            SqlDataAdapter adapter = databaseCommunication.GetSelectedIssuesFromTemplate(templateId, selectedIssuesId);
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            return data;
+        }
+
+        public DataTable GetSelectedTemplateGevaren(string templateNaam, List<string> selectedGevarenId)
+        {
+            string templateId = databaseCommunication.GetTemplateIdByName(templateNaam);
+            SqlDataAdapter adapter = databaseCommunication.GetSelectedGevarenFromTemplate(templateId, selectedGevarenId);
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            return data;
+        }
+
+        public DataTable GetSelectedGevaren(List<string> selectedGevarenId)
+        {
+            //string templateId = databaseCommunication.GetTemplateIdByName(templateNaam);
+            SqlDataAdapter adapter = databaseCommunication.GetSelectedGevaren(selectedGevarenId);//GetSelectedGevarenFromTemplate(templateId, selectedGevarenId);
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            return data;
+        }
+
+
+
+        //get selected
+
+
+
+
+
+
+
 
 
 

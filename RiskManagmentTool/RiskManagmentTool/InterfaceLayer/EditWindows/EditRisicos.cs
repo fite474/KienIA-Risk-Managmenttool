@@ -55,7 +55,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void LoadData()
         {
-            keuzeMenus = KeuzeMenus.GetInstance();
+            keuzeMenus = new KeuzeMenus();
             comunicator = new Datacomunication();
             LoadComboBoxes();
         }
@@ -115,6 +115,20 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
 
         }
+
+        private void UpdateText()
+        {
+            string checkedItems = string.Empty;
+            foreach (object Item in checkedListBoxOptions.CheckedItems)
+            {
+                checkedItems += Item.ToString();
+            }
+            //MessageBox.Show(checkedItems);
+            textBoxGevolg.Text = checkedItems;
+
+        }
+
+
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
@@ -177,6 +191,40 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         {
             Form addItem = new AddItemToGevaar(MenuTableName.Disciplines, DisciplinesItems, "disciplines");
             addItem.ShowDialog();
+        }
+
+        private void buttonGebruiksfase_Click(object sender, EventArgs e)
+        {
+            checkedListBoxOptions.Items.Clear();
+            foreach(string menuOption in GebruiksfaseItems)
+            {
+                checkedListBoxOptions.Items.Add(menuOption);
+            }
+            
+        }
+
+        private void buttonBedienvorm_Click(object sender, EventArgs e)
+        {
+            checkedListBoxOptions.Items.Clear();
+            foreach (string menuOption in BedienvormenItems)
+            {
+                checkedListBoxOptions.Items.Add(menuOption);
+            }
+        }
+
+        private void buttonGebruiker_Click(object sender, EventArgs e)
+        {
+            checkedListBoxOptions.Items.Clear();
+            foreach (string menuOption in GebruikersItems)
+            {
+                checkedListBoxOptions.Items.Add(menuOption);
+            }
+        }
+
+        private void checkedListBoxOptions_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            UpdateText();
+            //textBoxGevolg.Text += checkedListBoxOptions.SelectedItem.ToString() + ", ";//comboBoxGevolg.SelectedItem.ToString();
         }
     }
 }

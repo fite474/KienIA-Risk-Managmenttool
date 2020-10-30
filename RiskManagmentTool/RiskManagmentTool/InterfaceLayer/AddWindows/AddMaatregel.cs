@@ -22,7 +22,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
         {
             InitializeComponent();
             comunicator = new Datacomunication();
-            keuzeMenus = KeuzeMenus.GetInstance();
+            keuzeMenus = new KeuzeMenus();
             SelectedMaatregelId = new List<string>();
             RisicoID = risicoID;
             LoadData();

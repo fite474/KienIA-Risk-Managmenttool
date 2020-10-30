@@ -42,7 +42,6 @@
             this.buttonSave = new System.Windows.Forms.Button();
             this.textBoxGevSituatie = new System.Windows.Forms.TextBox();
             this.textBoxGevGebeurtenis = new System.Windows.Forms.TextBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.textBoxDiscipline = new System.Windows.Forms.TextBox();
             this.textBoxGebruiksfase = new System.Windows.Forms.TextBox();
             this.textBoxBedienvorm = new System.Windows.Forms.TextBox();
@@ -60,7 +59,17 @@
             this.comboBoxTaak = new System.Windows.Forms.ComboBox();
             this.comboBoxGevaarlijkeZone = new System.Windows.Forms.ComboBox();
             this.buttonDisciplines = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonBedienvorm = new System.Windows.Forms.Button();
+            this.buttonGebruiksfase = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.buttonGebruiker = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.checkedListBoxOptions = new System.Windows.Forms.CheckedListBox();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -122,9 +131,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(34, 362);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(87, 17);
+            this.label7.Size = new System.Drawing.Size(83, 17);
             this.label7.TabIndex = 6;
-            this.label7.Text = "Bedien vorm";
+            this.label7.Text = "Bedienvorm";
             // 
             // label8
             // 
@@ -187,25 +196,6 @@
             this.textBoxGevGebeurtenis.Name = "textBoxGevGebeurtenis";
             this.textBoxGevGebeurtenis.Size = new System.Drawing.Size(509, 79);
             this.textBoxGevGebeurtenis.TabIndex = 11;
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.CheckOnClick = true;
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "3B & Elektro",
-            "Aandrijving",
-            "Afscherming",
-            "Bediening op afstand",
-            "Constructieve veiligheid",
-            "Communicatie & zicht",
-            "Ombouw & inbedrijfname",
-            "Toegang & trappen",
-            "Overig"});
-            this.checkedListBox1.Location = new System.Drawing.Point(1060, 217);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(303, 72);
-            this.checkedListBox1.TabIndex = 12;
             // 
             // textBoxDiscipline
             // 
@@ -345,11 +335,104 @@
             this.buttonDisciplines.UseVisualStyleBackColor = true;
             this.buttonDisciplines.Click += new System.EventHandler(this.buttonDisciplines_Click);
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.checkedListBoxOptions);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(1066, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(511, 796);
+            this.panel2.TabIndex = 34;
+            // 
+            // buttonBedienvorm
+            // 
+            this.buttonBedienvorm.Location = new System.Drawing.Point(706, 359);
+            this.buttonBedienvorm.Name = "buttonBedienvorm";
+            this.buttonBedienvorm.Size = new System.Drawing.Size(85, 23);
+            this.buttonBedienvorm.TabIndex = 35;
+            this.buttonBedienvorm.Text = "Bedienvorm";
+            this.buttonBedienvorm.UseVisualStyleBackColor = true;
+            this.buttonBedienvorm.Click += new System.EventHandler(this.buttonBedienvorm_Click);
+            // 
+            // buttonGebruiksfase
+            // 
+            this.buttonGebruiksfase.Location = new System.Drawing.Point(706, 290);
+            this.buttonGebruiksfase.Name = "buttonGebruiksfase";
+            this.buttonGebruiksfase.Size = new System.Drawing.Size(85, 23);
+            this.buttonGebruiksfase.TabIndex = 36;
+            this.buttonGebruiksfase.Text = "Gebruiksfase";
+            this.buttonGebruiksfase.UseVisualStyleBackColor = true;
+            this.buttonGebruiksfase.Click += new System.EventHandler(this.buttonGebruiksfase_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(706, 585);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(85, 23);
+            this.button3.TabIndex = 37;
+            this.button3.Text = "Gevaar";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // buttonGebruiker
+            // 
+            this.buttonGebruiker.Location = new System.Drawing.Point(706, 425);
+            this.buttonGebruiker.Name = "buttonGebruiker";
+            this.buttonGebruiker.Size = new System.Drawing.Size(85, 23);
+            this.buttonGebruiker.TabIndex = 38;
+            this.buttonGebruiker.Text = "Gebruiker";
+            this.buttonGebruiker.UseVisualStyleBackColor = true;
+            this.buttonGebruiker.Click += new System.EventHandler(this.buttonGebruiker_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(706, 475);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(85, 23);
+            this.button5.TabIndex = 39;
+            this.button5.Text = "Gevaarlijke zone";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(706, 530);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(85, 23);
+            this.button6.TabIndex = 40;
+            this.button6.Text = "Taak";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(706, 633);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(85, 23);
+            this.button7.TabIndex = 41;
+            this.button7.Text = "Gevolg";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // checkedListBoxOptions
+            // 
+            this.checkedListBoxOptions.CheckOnClick = true;
+            this.checkedListBoxOptions.FormattingEnabled = true;
+            this.checkedListBoxOptions.Location = new System.Drawing.Point(3, 227);
+            this.checkedListBoxOptions.Name = "checkedListBoxOptions";
+            this.checkedListBoxOptions.Size = new System.Drawing.Size(505, 429);
+            this.checkedListBoxOptions.TabIndex = 0;
+            this.checkedListBoxOptions.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxOptions_ItemCheck);
+            // 
             // EditRisicos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1577, 838);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.buttonGebruiker);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.buttonGebruiksfase);
+            this.Controls.Add(this.buttonBedienvorm);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.buttonDisciplines);
             this.Controls.Add(this.comboBoxGevolg);
             this.Controls.Add(this.comboBoxGevaar);
@@ -378,12 +461,12 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.textBoxGevSituatie);
             this.Controls.Add(this.textBoxGevGebeurtenis);
             this.Name = "EditRisicos";
             this.Text = "EditRisicos";
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -403,7 +486,6 @@
         private System.Windows.Forms.Label labelGevSituatie;
         private System.Windows.Forms.TextBox textBoxGevSituatie;
         private System.Windows.Forms.TextBox textBoxGevGebeurtenis;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBoxDiscipline;
         private System.Windows.Forms.TextBox textBoxGebruiksfase;
@@ -423,5 +505,14 @@
         private System.Windows.Forms.ComboBox comboBoxTaak;
         private System.Windows.Forms.ComboBox comboBoxGevaarlijkeZone;
         private System.Windows.Forms.Button buttonDisciplines;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.CheckedListBox checkedListBoxOptions;
+        private System.Windows.Forms.Button buttonBedienvorm;
+        private System.Windows.Forms.Button buttonGebruiksfase;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonGebruiker;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
     }
 }

@@ -49,21 +49,21 @@ namespace RiskManagmentTool.LogicLayer
         //}
 
 
-        private static KeuzeMenus instance;
+       // private static KeuzeMenus instance;
 
-        private KeuzeMenus()
+        public KeuzeMenus()
         {
             
             comunicator = new Datacomunication();
             MakeMenu();
         }
 
-        public static KeuzeMenus GetInstance()
-        {
-            if (instance == null)
-                instance = new KeuzeMenus();
-            return instance;
-        }
+        //public static KeuzeMenus GetInstance()
+        //{
+        //    if (instance == null)
+        //        instance = new KeuzeMenus();
+        //    return instance;
+        //}
 
         public List<CheckedListBox> GetKeuzeMenus()
         {

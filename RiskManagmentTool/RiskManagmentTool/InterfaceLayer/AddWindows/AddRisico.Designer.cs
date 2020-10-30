@@ -66,7 +66,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.comboBoxWeergaveTemplateNaam = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.dataGridViewWeergaveUitTemplate = new System.Windows.Forms.DataGridView();
+            this.dataGridViewWeergaveGevarenUitTemplate = new System.Windows.Forms.DataGridView();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.dataGridViewWeergaveUitObjecten = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -83,7 +83,7 @@
             this.tabControl5 = new System.Windows.Forms.TabControl();
             this.tabPage11 = new System.Windows.Forms.TabPage();
             this.tabPage12 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewWeergaveIssuesUitTemplate = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLosseItems)).BeginInit();
@@ -101,7 +101,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWeergaveLosseItems)).BeginInit();
             this.tabPage9.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWeergaveUitTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWeergaveGevarenUitTemplate)).BeginInit();
             this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWeergaveUitObjecten)).BeginInit();
             this.panel2.SuspendLayout();
@@ -112,7 +112,7 @@
             this.tabControl5.SuspendLayout();
             this.tabPage11.SuspendLayout();
             this.tabPage12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWeergaveIssuesUitTemplate)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -497,18 +497,18 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "Template naam";
             // 
-            // dataGridViewWeergaveUitTemplate
+            // dataGridViewWeergaveGevarenUitTemplate
             // 
-            this.dataGridViewWeergaveUitTemplate.AllowUserToAddRows = false;
-            this.dataGridViewWeergaveUitTemplate.AllowUserToDeleteRows = false;
-            this.dataGridViewWeergaveUitTemplate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewWeergaveUitTemplate.Location = new System.Drawing.Point(6, 6);
-            this.dataGridViewWeergaveUitTemplate.Name = "dataGridViewWeergaveUitTemplate";
-            this.dataGridViewWeergaveUitTemplate.ReadOnly = true;
-            this.dataGridViewWeergaveUitTemplate.RowTemplate.Height = 24;
-            this.dataGridViewWeergaveUitTemplate.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewWeergaveUitTemplate.Size = new System.Drawing.Size(522, 361);
-            this.dataGridViewWeergaveUitTemplate.TabIndex = 0;
+            this.dataGridViewWeergaveGevarenUitTemplate.AllowUserToAddRows = false;
+            this.dataGridViewWeergaveGevarenUitTemplate.AllowUserToDeleteRows = false;
+            this.dataGridViewWeergaveGevarenUitTemplate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewWeergaveGevarenUitTemplate.Location = new System.Drawing.Point(6, 6);
+            this.dataGridViewWeergaveGevarenUitTemplate.Name = "dataGridViewWeergaveGevarenUitTemplate";
+            this.dataGridViewWeergaveGevarenUitTemplate.ReadOnly = true;
+            this.dataGridViewWeergaveGevarenUitTemplate.RowTemplate.Height = 24;
+            this.dataGridViewWeergaveGevarenUitTemplate.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewWeergaveGevarenUitTemplate.Size = new System.Drawing.Size(522, 361);
+            this.dataGridViewWeergaveGevarenUitTemplate.TabIndex = 0;
             // 
             // tabPage7
             // 
@@ -663,7 +663,7 @@
             // 
             // tabPage11
             // 
-            this.tabPage11.Controls.Add(this.dataGridViewWeergaveUitTemplate);
+            this.tabPage11.Controls.Add(this.dataGridViewWeergaveGevarenUitTemplate);
             this.tabPage11.Location = new System.Drawing.Point(4, 25);
             this.tabPage11.Name = "tabPage11";
             this.tabPage11.Padding = new System.Windows.Forms.Padding(3);
@@ -674,7 +674,7 @@
             // 
             // tabPage12
             // 
-            this.tabPage12.Controls.Add(this.dataGridView1);
+            this.tabPage12.Controls.Add(this.dataGridViewWeergaveIssuesUitTemplate);
             this.tabPage12.Location = new System.Drawing.Point(4, 25);
             this.tabPage12.Name = "tabPage12";
             this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
@@ -683,18 +683,18 @@
             this.tabPage12.Text = "Issues";
             this.tabPage12.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dataGridViewWeergaveIssuesUitTemplate
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 6);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(602, 361);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridViewWeergaveIssuesUitTemplate.AllowUserToAddRows = false;
+            this.dataGridViewWeergaveIssuesUitTemplate.AllowUserToDeleteRows = false;
+            this.dataGridViewWeergaveIssuesUitTemplate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewWeergaveIssuesUitTemplate.Location = new System.Drawing.Point(6, 6);
+            this.dataGridViewWeergaveIssuesUitTemplate.Name = "dataGridViewWeergaveIssuesUitTemplate";
+            this.dataGridViewWeergaveIssuesUitTemplate.ReadOnly = true;
+            this.dataGridViewWeergaveIssuesUitTemplate.RowTemplate.Height = 24;
+            this.dataGridViewWeergaveIssuesUitTemplate.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewWeergaveIssuesUitTemplate.Size = new System.Drawing.Size(602, 361);
+            this.dataGridViewWeergaveIssuesUitTemplate.TabIndex = 0;
             // 
             // AddRisico
             // 
@@ -739,7 +739,7 @@
             this.tabPage9.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWeergaveUitTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWeergaveGevarenUitTemplate)).EndInit();
             this.tabPage7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWeergaveUitObjecten)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -751,7 +751,7 @@
             this.tabControl5.ResumeLayout(false);
             this.tabPage11.ResumeLayout(false);
             this.tabPage12.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWeergaveIssuesUitTemplate)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -797,7 +797,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.ComboBox comboBoxWeergaveTemplateNaam;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridView dataGridViewWeergaveUitTemplate;
+        private System.Windows.Forms.DataGridView dataGridViewWeergaveGevarenUitTemplate;
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.DataGridView dataGridViewWeergaveUitObjecten;
         private System.Windows.Forms.Panel panel2;
@@ -814,6 +814,6 @@
         private System.Windows.Forms.TabControl tabControl5;
         private System.Windows.Forms.TabPage tabPage11;
         private System.Windows.Forms.TabPage tabPage12;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewWeergaveIssuesUitTemplate;
     }
 }

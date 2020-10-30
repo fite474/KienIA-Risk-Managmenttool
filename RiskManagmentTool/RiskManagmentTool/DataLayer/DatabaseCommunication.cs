@@ -153,6 +153,36 @@ namespace RiskManagmentTool.DataLayer
 
         }
 
+        public void AddCoppiedIssueToObject(string objectId, string issueID)
+        {
+
+            string gevaarID = FindGevaarID(issueID);
+            List<string> gekoppeldeMaatregelenVanIssue = FindGekoppeldeMaatregelenVanIssue(issueID);
+
+            int duplicateIssueId = InitIssue(gevaarID);
+
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO TableObjectIssues(ObjectID, IssueID) VALUES " +
+                                                                       "(@ObjectID, @IssueID)" +
+                                                                       "SELECT CAST(SCOPE_IDENTITY() AS INT)", sqlConnection);
+            cmd.Parameters.AddWithValue("@ObjectID", objectId);
+            cmd.Parameters.AddWithValue("@IssueID", duplicateIssueId);
+
+            cmd.ExecuteNonQuery();
+            //Int32 issueID = (Int32)cmd.ExecuteScalar();
+
+            sqlConnection.Close();
+
+            int risicoBeoordelingId = InitRisicoBeoordelingDuplicate(duplicateIssueId, issueID);
+            AddRisicoBeoordelingToIssue(risicoBeoordelingId, duplicateIssueId);
+
+            for (int i = 0; i < gekoppeldeMaatregelenVanIssue.Count; i++)
+            {
+                AddMaatregelToIssue(duplicateIssueId, int.Parse(gekoppeldeMaatregelenVanIssue[i]));
+            }
+        }
+
+
         private int InitIssue(string gevaarId)
         {
             
@@ -589,8 +619,7 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Open();
             String query = "SELECT TableGevaren.* FROM TableTemplateGevaren " +
                 " JOIN TableGevaren " +
-                "ON TableGevaren.GevaarID = TableTemplateGevaren.GevaarID WHERE TableGevaren.GevaarID IN(" +
-                "SELECT TableTemplateGevaren.GevaarID FROM TableTemplateGevaren WHERE TableTemplateGevaren.TemplateID = '" + templateID + "')";
+                "ON TableGevaren.GevaarID = TableTemplateGevaren.GevaarID WHERE TableTemplateGevaren.TemplateID = '" + templateID + "'";
                 
             SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
             sqlConnection.Close();
@@ -674,7 +703,79 @@ namespace RiskManagmentTool.DataLayer
         //end inner region get id
 
 
+        //Begin inner region get selected Ids before copying
+        public SqlDataAdapter GetSelectedIssuesFromObject(string objectID, List<string> selectedIssuesId)
+        {
+            sqlConnection.Open();
 
+            string query = "SELECT TableIssues.IssueID, TableGevaren.GevaarlijkeSituatie, TableGevaren.GevaarlijkeGebeurtenis, TableGevaren.Discipline, TableGevaren.Gebruiksfase, TableGevaren.Bedienvorm," +
+                            "TableGevaren.Gebruiker, TableGevaren.GevaarlijkeZone, TableGevaren.Taak_Actie, TableGevaren.Gevaar, TableGevaren.Gevolg " +
+                            " FROM TableIssues INNER JOIN TableGevaren" +
+                            " ON TableGevaren.GevaarID = TableIssues.IssueGevaarID WHERE TableIssues.IssueID" +
+                            " IN(" +
+                            " SELECT TableObjectIssues.IssueID FROM TableObjectIssues WHERE TableObjectIssues.ObjectID = '" + objectID + "') " +
+                            "AND TableIssues.IssueID IN(" +
+                            string.Join( ",", selectedIssuesId) +
+                             ")";
+
+            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
+            sqlConnection.Close();
+            return adapter;
+
+        }
+
+        public SqlDataAdapter GetSelectedIssuesFromTemplate(string templateID, List<string> selectedIssuesId)
+        {
+            sqlConnection.Open();
+            string query = "SELECT TableIssues.IssueID, TableGevaren.GevaarlijkeSituatie, TableGevaren.GevaarlijkeGebeurtenis, TableGevaren.Discipline, TableGevaren.Gebruiksfase, TableGevaren.Bedienvorm," +
+                            "TableGevaren.Gebruiker, TableGevaren.GevaarlijkeZone, TableGevaren.Taak_Actie, TableGevaren.Gevaar, TableGevaren.Gevolg " +
+                            " FROM TableIssues INNER JOIN TableGevaren" +
+                            " ON TableGevaren.GevaarID = TableIssues.IssueGevaarID WHERE TableIssues.IssueID" +
+                            " IN(" +
+                            " SELECT TableTemplateIssues.IssueID FROM TableTemplateIssues WHERE TableTemplateIssues.TemplateID = '" + templateID + "') " +
+                            " AND TableIssues.IssueID IN( " +
+                            string.Join(",", selectedIssuesId) +
+                             " )";
+
+            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
+            sqlConnection.Close();
+            return adapter;
+
+        }
+
+        public SqlDataAdapter GetSelectedGevarenFromTemplate(string templateID, List<string> selectedGevarenId)
+        {
+            sqlConnection.Open();
+
+            string query = "SELECT TableGevaren.* FROM TableTemplateGevaren " +
+                            " JOIN TableGevaren " +
+                            " ON TableGevaren.GevaarID = TableTemplateGevaren.GevaarID WHERE TableGevaren.GevaarID IN(" +
+                            " SELECT TableTemplateGevaren.GevaarID FROM TableTemplateGevaren WHERE TableTemplateGevaren.TemplateID = '" + templateID + "') " +
+                            " AND TableGevaren.GevaarID IN( " +
+                            string.Join(",", selectedGevarenId) +
+                             " )";
+
+            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
+            sqlConnection.Close();
+            return adapter;
+
+        }
+
+        public SqlDataAdapter GetSelectedGevaren(List<string> selectedGevarenId)
+        {
+            sqlConnection.Open();
+
+            string query = "SELECT TableGevaren.* FROM TableGevaren " +
+                           "WHERE TableGevaren.GevaarID IN( " +
+                           string.Join(",", selectedGevarenId) +
+                           " )";
+
+            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
+            sqlConnection.Close();
+            return adapter;
+
+        }
+        //end inner region get selected Ids before copying
 
 
 

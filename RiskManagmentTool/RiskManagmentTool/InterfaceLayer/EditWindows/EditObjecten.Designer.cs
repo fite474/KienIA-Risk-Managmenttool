@@ -31,6 +31,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBoxProjectNaam = new System.Windows.Forms.TextBox();
             this.comboBoxObjectType = new System.Windows.Forms.ComboBox();
             this.textBoxOmschrijving = new System.Windows.Forms.TextBox();
             this.textBoxObjectNaam = new System.Windows.Forms.TextBox();
@@ -65,10 +66,9 @@
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonDeleteGevaren = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.buttonAddRisico = new System.Windows.Forms.Button();
-            this.textBoxProjectNaam = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -137,6 +137,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(853, 262);
             this.panel1.TabIndex = 0;
+            // 
+            // textBoxProjectNaam
+            // 
+            this.textBoxProjectNaam.Location = new System.Drawing.Point(188, 24);
+            this.textBoxProjectNaam.Name = "textBoxProjectNaam";
+            this.textBoxProjectNaam.ReadOnly = true;
+            this.textBoxProjectNaam.Size = new System.Drawing.Size(280, 22);
+            this.textBoxProjectNaam.TabIndex = 7;
             // 
             // comboBoxObjectType
             // 
@@ -479,7 +487,7 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.button2);
+            this.panel4.Controls.Add(this.buttonDeleteGevaren);
             this.panel4.Controls.Add(this.button1);
             this.panel4.Controls.Add(this.buttonAddRisico);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -488,14 +496,15 @@
             this.panel4.Size = new System.Drawing.Size(1569, 79);
             this.panel4.TabIndex = 3;
             // 
-            // button2
+            // buttonDeleteGevaren
             // 
-            this.button2.Location = new System.Drawing.Point(257, 25);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(214, 35);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Verwijder gekoppelde gevaren";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonDeleteGevaren.Location = new System.Drawing.Point(257, 25);
+            this.buttonDeleteGevaren.Name = "buttonDeleteGevaren";
+            this.buttonDeleteGevaren.Size = new System.Drawing.Size(214, 35);
+            this.buttonDeleteGevaren.TabIndex = 3;
+            this.buttonDeleteGevaren.Text = "Verwijder gekoppelde gevaren";
+            this.buttonDeleteGevaren.UseVisualStyleBackColor = true;
+            this.buttonDeleteGevaren.Click += new System.EventHandler(this.buttonDeleteGevaren_Click);
             // 
             // button1
             // 
@@ -516,14 +525,6 @@
             this.buttonAddRisico.Text = "Voeg gevaar toe";
             this.buttonAddRisico.UseVisualStyleBackColor = true;
             this.buttonAddRisico.Click += new System.EventHandler(this.buttonAddRisico_Click);
-            // 
-            // textBoxProjectNaam
-            // 
-            this.textBoxProjectNaam.Location = new System.Drawing.Point(188, 24);
-            this.textBoxProjectNaam.Name = "textBoxProjectNaam";
-            this.textBoxProjectNaam.ReadOnly = true;
-            this.textBoxProjectNaam.Size = new System.Drawing.Size(280, 22);
-            this.textBoxProjectNaam.TabIndex = 7;
             // 
             // EditObjecten
             // 
@@ -589,7 +590,7 @@
         private System.Windows.Forms.Button buttonIssuesOplossen;
         private System.Windows.Forms.Button buttonAddTemplate;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonDeleteGevaren;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label9;

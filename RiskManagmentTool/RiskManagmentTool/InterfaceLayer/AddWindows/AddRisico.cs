@@ -18,7 +18,11 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
         private string ObjectNaam;
         private string ObjectID;
         private KeuzeMenus keuzeMenus;
+
         private List<string> SelectedGevarenId;
+        private List<string> SelectedObjectIssueId;
+        private List<string> SelectedTemplateIssueId;
+        private List<string> SelectedTemplateGevaarId;
         //public AddRisico()
         //{
         //    InitializeComponent();
@@ -29,8 +33,13 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
         {
             InitializeComponent();
             comunicator = new Datacomunication();
-            keuzeMenus = KeuzeMenus.GetInstance();
+            keuzeMenus = new KeuzeMenus();
+
             SelectedGevarenId = new List<string>();
+            SelectedObjectIssueId = new List<string>();
+            SelectedTemplateIssueId = new List<string>();
+            SelectedTemplateGevaarId = new List<string>();
+
             this.ObjectNaam = objectNaam;
             this.ObjectID = objectID;
             LoadData();
@@ -39,13 +48,6 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
         private void LoadData()
         {
             dataGridViewLosseItems.DataSource = comunicator.GetGevarenTable();
-
-            
-            
-
-
-
-
 
 
             textBoxObjectNaam.Text = ObjectNaam;
@@ -64,14 +66,12 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
                 comboBoxDiscipline.Items.Add(typeString);
             }
 
-
             List<string> objectNamenList = keuzeMenus.GetObjectNamen();
             foreach (string objectNaam in objectNamenList)
             {
                 if (objectNaam != ObjectNaam)
                 {
                     comboBoxViewObjectNaam.Items.Add(objectNaam);
-                   // comboBoxWeergaveObjectNaam.Items.Add(objectNaam);
                 }
             }
 
@@ -79,16 +79,11 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
             foreach (string templateNaam in templateNamenList)
             {
                 comboBoxViewTemplate.Items.Add(templateNaam);
-                //comboBoxWeergaveTemplateNaam.Items.Add(templateNaam);
             }
 
         }
 
-        
-
-
-
-
+    
         private void buttonVoegSelectieToe_Click(object sender, EventArgs e)
         {
             //for list selectie id, datacom . add gevaar to object
@@ -96,6 +91,24 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
             {
                 comunicator.AddGevaarToObject(ObjectID, gevaarId);
             }
+
+            foreach (string templateGevaarId in SelectedTemplateGevaarId)
+            {
+                comunicator.AddGevaarToObject(ObjectID, templateGevaarId);
+            }
+
+            foreach (string templateIssueId in SelectedTemplateIssueId)
+            {
+                comunicator.AddIssueToObject(ObjectID, templateIssueId);
+            }
+
+            foreach (string objectIssueId in SelectedObjectIssueId)
+            {
+                comunicator.AddIssueToObject(ObjectID, objectIssueId);
+            }
+
+
+
             this.Close();
         }
 
@@ -108,12 +121,12 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
         private void dataGridViewRisicos_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            string gevaarID = dataGridViewLosseItems.SelectedRows[0].Cells[0].Value.ToString();
-                if (!SelectedGevarenId.Contains(gevaarID))
-                {
-                    SelectedGevarenId.Add(gevaarID);
-                    textBoxSelectedItems.Text += gevaarID + ", ";
-                }
+            //string gevaarID = dataGridViewLosseItems.SelectedRows[0].Cells[0].Value.ToString();
+            //    if (!SelectedGevarenId.Contains(gevaarID))
+            //    {
+            //        SelectedGevarenId.Add(gevaarID);
+            //        textBoxSelectedItems.Text += gevaarID + ", ";
+            //    }
         }
 
         private void comboBoxDiscipline_SelectedIndexChanged(object sender, EventArgs e)
@@ -123,18 +136,32 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
         private void comboBoxWeergaveObjectNaam_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            string selectedObjectName = comboBoxWeergaveObjectNaam.SelectedItem.ToString();
+            dataGridViewWeergaveUitObjecten.DataSource = comunicator.GetSelectedObjectIssues(selectedObjectName, SelectedObjectIssueId);
         }
 
         private void comboBoxWeergaveTemplateNaam_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string selectedTemplateName = comboBoxWeergaveTemplateNaam.SelectedItem.ToString();
+            if (SelectedTemplateGevaarId.Count >= 1)
+            {
+                dataGridViewWeergaveGevarenUitTemplate.DataSource = comunicator.GetSelectedTemplateGevaren(selectedTemplateName, SelectedTemplateGevaarId);
 
+            }
+            if (SelectedTemplateIssueId.Count >= 1)
+            {
+                dataGridViewWeergaveIssuesUitTemplate.DataSource = comunicator.GetSelectedTemplateIssues(selectedTemplateName, SelectedTemplateIssueId);
+
+            }
         }
 
         private void comboBoxViewTemplate_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dataGridViewTemplateViewIssues.DataSource = comunicator.GetTemplateGevarenByName(comboBoxViewTemplate.SelectedItem.ToString());//TemplateID);
-            dataGridViewTemplateViewGevaren.DataSource = comunicator.GetTemplateIssuesByName(comboBoxViewTemplate.SelectedItem.ToString());//TemplateID);
+            string selectedTemplateName = comboBoxViewTemplate.SelectedItem.ToString();
+
+            dataGridViewTemplateViewIssues.DataSource = comunicator.GetTemplateIssuesByName(selectedTemplateName);
+
+            dataGridViewTemplateViewGevaren.DataSource = comunicator.GetTemplateGevarenByName(selectedTemplateName);
         }
 
         private void comboBoxViewObjectNaam_SelectedIndexChanged(object sender, EventArgs e)
@@ -159,14 +186,19 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
         private void buttonAddSingleItems_Click(object sender, EventArgs e)
         {
-
-
-
-
-
+            string gevaarID = "";
+            foreach (DataGridViewRow row in dataGridViewLosseItems.SelectedRows)
+            {
+                gevaarID = row.Cells[0].Value.ToString();
+                if (!SelectedGevarenId.Contains(gevaarID))
+                {
+                    SelectedGevarenId.Add(gevaarID);
+                }
+            }
 
             dataGridViewLosseItems.ClearSelection();
 
+            dataGridViewWeergaveLosseItems.DataSource = comunicator.GetSelectedGevaren(SelectedGevarenId);
         }
 
 
@@ -180,7 +212,15 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
             {
                 comboBoxWeergaveTemplateNaam.Items.Add(selectedTemplateName);
             }
-
+            string gevaarID = "";
+            foreach (DataGridViewRow row in dataGridViewTemplateViewGevaren.SelectedRows)
+            {
+                gevaarID = row.Cells[0].Value.ToString();
+                if (!SelectedTemplateGevaarId.Contains(gevaarID))
+                {
+                    SelectedTemplateGevaarId.Add(gevaarID);
+                }
+            }
 
 
 
@@ -199,6 +239,16 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
             {
                 comboBoxWeergaveTemplateNaam.Items.Add(selectedTemplateName);
             }
+            string issueID = "";
+            foreach (DataGridViewRow row in dataGridViewTemplateViewIssues.SelectedRows)
+            {
+                issueID = row.Cells[0].Value.ToString();
+                if (!SelectedTemplateIssueId.Contains(issueID))
+                {
+                    SelectedTemplateIssueId.Add(issueID);
+                }
+            }
+
             
 
 
@@ -219,7 +269,15 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
                 comboBoxWeergaveObjectNaam.Items.Add(selectedObjectName);
             }
 
-
+            string issueID = "";
+            foreach (DataGridViewRow row in dataGridViewObjectView.SelectedRows)
+            {
+                issueID = row.Cells[0].Value.ToString();
+                if (!SelectedObjectIssueId.Contains(issueID))
+                {
+                    SelectedObjectIssueId.Add(issueID);
+                }
+            }
 
             dataGridViewObjectView.ClearSelection();
 

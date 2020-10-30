@@ -127,6 +127,12 @@
     <Compile Include="InterfaceLayer\AddWindows\AddTemplate.Designer.cs">
       <DependentUpon>AddTemplate.cs</DependentUpon>
     </Compile>
+    <Compile Include="InterfaceLayer\DeleteWindows\DeleteGevaren.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\DeleteWindows\DeleteGevaren.Designer.cs">
+      <DependentUpon>DeleteGevaren.cs</DependentUpon>
+    </Compile>
     <Compile Include="InterfaceLayer\EditWindows\EditText.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -266,6 +272,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InterfaceLayer\AddWindows\AddTemplate.resx">
       <DependentUpon>AddTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\DeleteWindows\DeleteGevaren.resx">
+      <DependentUpon>DeleteGevaren.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterfaceLayer\EditWindows\EditText.resx">
       <DependentUpon>EditText.cs</DependentUpon>

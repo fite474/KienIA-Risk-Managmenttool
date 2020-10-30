@@ -21,7 +21,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
         public AddItemToGevaar(MenuTableName menuTableName, List<string> options, string menuName)
         {
             InitializeComponent();
-            keuzeMenus = KeuzeMenus.GetInstance();
+            keuzeMenus = new KeuzeMenus();
             comunicator = new Datacomunication();
             MenuTableName = menuTableName;
             MenuName = menuName;

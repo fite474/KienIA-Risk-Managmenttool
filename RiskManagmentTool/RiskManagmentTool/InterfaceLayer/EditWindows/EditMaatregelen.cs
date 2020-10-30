@@ -20,7 +20,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         {
             InitializeComponent();
             comunicator = new Datacomunication();
-            keuzeMenus = KeuzeMenus.GetInstance();
+            keuzeMenus = new KeuzeMenus();
             LoadMenus();
         }
 

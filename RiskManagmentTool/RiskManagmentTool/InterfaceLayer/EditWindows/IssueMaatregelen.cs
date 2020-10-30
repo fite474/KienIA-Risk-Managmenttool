@@ -39,7 +39,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         {
             InitializeComponent();
             comunicator = new Datacomunication();
-            keuzeMenus = KeuzeMenus.GetInstance();
+            keuzeMenus = new KeuzeMenus();
             Discipline = discipline;
             Gevaar = gevaar;
             Situatie = situatie;

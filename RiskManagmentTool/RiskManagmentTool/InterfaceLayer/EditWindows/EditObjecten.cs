@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RiskManagmentTool.LogicLayer;
 using RiskManagmentTool.InterfaceLayer.AddWindows;
+using RiskManagmentTool.InterfaceLayer.DeleteWindows;
 
 namespace RiskManagmentTool.InterfaceLayer.EditWindows
 {
@@ -34,7 +35,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
             InitializeComponent();
             comunicator = new Datacomunication();
-            keuzeMenus = KeuzeMenus.GetInstance();//new KeuzeMenus();
+            keuzeMenus = new KeuzeMenus();
             LoadMenus();
             this.ObjectNaam = objectNaam;
             this.ObjectID = objectID;
@@ -150,6 +151,13 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         {
             //Form exportObject = new ExportObject(comunicator.GetObjectIssues(ObjectID));
             //exportObject.Show();
+        }
+
+        private void buttonDeleteGevaren_Click(object sender, EventArgs e)
+        {
+            Form deleteRisico = new DeleteGevaren();
+            deleteRisico.Show();
+
         }
     }
 }

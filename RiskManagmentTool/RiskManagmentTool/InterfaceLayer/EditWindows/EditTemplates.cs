@@ -38,8 +38,9 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
             dataGridViewAddIssue.DataSource = comunicator.GetAllIssues();
             dataGridViewAddGevaar.DataSource = comunicator.GetGevarenTable();
+            ReloadTemplateData();
             //dataGridViewAddIssue.ClearSelection();
-            
+
         }
 
         private void LoadCombobox()
@@ -91,19 +92,20 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
                 SelectedIssuesId.Add(issueID);
                 textBoxSelectedIssues.Text += issueID + ", ";
             }
-            // }
 
 
+        }
 
-            //list int selectie id's add gevaar id
-
-
-            //Form editProjecten = new EditProjecten(projectNaam);//,
-
-            //editProjecten.Show();
-
-
-
+        private void dataGridViewAddGevaar_DoubleClick(object sender, EventArgs e)
+        {
+            string gevaarID = dataGridViewAddGevaar.SelectedRows[0].Cells[0].Value.ToString();
+            //foreach (string selected in SelectedGevarenId)
+            //{
+            if (!SelectedGevarenId.Contains(gevaarID))
+            {
+                SelectedGevarenId.Add(gevaarID);
+                textBoxSelectedGevaren.Text += gevaarID + ", ";
+            }
         }
 
         private void buttonAddSelection_Click(object sender, EventArgs e)
@@ -122,5 +124,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         {
             dataGridViewAddIssue.ClearSelection();
         }
+
+
     }
 }

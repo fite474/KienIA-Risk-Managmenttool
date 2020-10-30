@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBoxTemplateID = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.comboBoxTemplateToepassing = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBoxTemplateType = new System.Windows.Forms.ComboBox();
@@ -59,8 +61,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonSaveTemplate = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBoxTemplateID = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -95,6 +95,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1575, 306);
             this.panel1.TabIndex = 1;
+            // 
+            // textBoxTemplateID
+            // 
+            this.textBoxTemplateID.Location = new System.Drawing.Point(878, 81);
+            this.textBoxTemplateID.Name = "textBoxTemplateID";
+            this.textBoxTemplateID.Size = new System.Drawing.Size(100, 22);
+            this.textBoxTemplateID.TabIndex = 9;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(875, 50);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(127, 17);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "(Temp template id)";
             // 
             // comboBoxTemplateToepassing
             // 
@@ -374,6 +390,7 @@
             this.dataGridViewAddGevaar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewAddGevaar.Size = new System.Drawing.Size(834, 359);
             this.dataGridViewAddGevaar.TabIndex = 0;
+            this.dataGridViewAddGevaar.DoubleClick += new System.EventHandler(this.dataGridViewAddGevaar_DoubleClick);
             // 
             // label5
             // 
@@ -401,22 +418,6 @@
             this.buttonSaveTemplate.TabIndex = 3;
             this.buttonSaveTemplate.Text = "Save template";
             this.buttonSaveTemplate.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(875, 50);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(127, 17);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "(Temp template id)";
-            // 
-            // textBoxTemplateID
-            // 
-            this.textBoxTemplateID.Location = new System.Drawing.Point(878, 81);
-            this.textBoxTemplateID.Name = "textBoxTemplateID";
-            this.textBoxTemplateID.Size = new System.Drawing.Size(100, 22);
-            this.textBoxTemplateID.TabIndex = 9;
             // 
             // EditTemplates
             // 

@@ -22,8 +22,6 @@ namespace RiskManagmentTool.DataLayer
         }
 
 
-
-
         // START REGION INIT ITEMS
 
         public void MakeProject(Item item)
@@ -37,8 +35,6 @@ namespace RiskManagmentTool.DataLayer
             cmd.ExecuteNonQuery();
             sqlConnection.Close();
         }
-
-
 
         public void MakeObject(Item item)
         {
@@ -131,9 +127,6 @@ namespace RiskManagmentTool.DataLayer
 
 
         // END REGION INIT ITEMS
-
-
-
 
 
         // START REGION ADD TO OBJECT
@@ -268,6 +261,26 @@ namespace RiskManagmentTool.DataLayer
 
         }
 
+        public void AddGevaarToTemplate(string templateId, string gevaarID)
+        {
+
+            //string gevaarID = FindGevaarID(issueId);
+            //List<string> gekoppeldeMaatregelenVanIssue = FindGekoppeldeMaatregelenVanIssue(issueId);
+
+            //int duplicateIssueId = InitIssue(gevaarID);
+
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO TableTemplateGevaren(TemplateID, GevaarID) VALUES " +
+                                                                       "(@TemplateID, @GevaarID) ", sqlConnection);
+            cmd.Parameters.AddWithValue("@TemplateID", templateId);
+            cmd.Parameters.AddWithValue("@GevaarID", gevaarID);
+
+            cmd.ExecuteNonQuery();
+            //Int32 issueID = (Int32)cmd.ExecuteScalar();
+
+            sqlConnection.Close();
+
+        }
 
         public void AddAndCreateIssueToTemplate(string templateId, string issueId)
         {
@@ -299,22 +312,7 @@ namespace RiskManagmentTool.DataLayer
 
         }
 
-        private string FindGevaarID(string issueID)
-        {
-            string gevaarID = "error";
-            sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT IssueGevaarID FROM TableIssues " +
-                                            "WHERE TableIssues.IssueID = '" + issueID + "'", sqlConnection);
-            using (SqlDataReader dr = cmd.ExecuteReader())
-            {
-                while (dr.Read())
-                {
-                    gevaarID = (dr[0]).ToString();     
-                }
-            }
-            sqlConnection.Close();
-            return gevaarID;
-        }
+
 
         private List<string> FindGekoppeldeMaatregelenVanIssue(string issueID)
         {
@@ -464,7 +462,7 @@ namespace RiskManagmentTool.DataLayer
         public SqlDataAdapter GetObjectenFromProject(string projectId)
         {
             sqlConnection.Open();
-            String query = "SELECT ProjectID, ProjectNaam, ObjectNaam, ObjectType, ObjectOmschrijving FROM TableObjecten WHERE ProjectID = '" + projectId + "'";
+            String query = "SELECT ObjectID, ProjectNaam, ObjectNaam, ObjectType, ObjectOmschrijving FROM TableObjecten WHERE ProjectID = '" + projectId + "'";
             SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
             sqlConnection.Close();
             return adapter;
@@ -472,24 +470,8 @@ namespace RiskManagmentTool.DataLayer
 
 
 
-        public SqlDataAdapter GetIssues(string objectID)
-        {
-           //DELETE*********************************************************
-            sqlConnection.Open();
-           
-            string query = "SELECT TableGevaren.* FROM TableObjectIssues " +
-                " JOIN TableGevaren " +
-                "ON TableGevaren.GevaarID IN(" +
-                "SELECT TableIssues.IssueGevaarID FROM TableIssues WHERE TableIssues.IssueID = TableObjectIssues.IssueID)" +
-                "AND TableObjectIssues.ObjectID = '" + objectID + "' ";
 
-            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
-            sqlConnection.Close();
-            return adapter;
-
-        }
-
-        public SqlDataAdapter GetIssuesWorking(string objectID)
+        public SqlDataAdapter GetIssuesFromObject(string objectID)
         {
 
             sqlConnection.Open();
@@ -500,15 +482,6 @@ namespace RiskManagmentTool.DataLayer
                             " ON TableGevaren.GevaarID = TableIssues.IssueGevaarID WHERE TableIssues.IssueID" +
                             " IN(" +
                             " SELECT TableObjectIssues.IssueID FROM TableObjectIssues WHERE TableObjectIssues.ObjectID = '" + objectID + "')";
-                            
-                  
-
-
-
-
-                //"ON TableGevaren.GevaarID IN(" +
-                //"SELECT TableIssues.IssueGevaarID FROM TableIssues WHERE TableIssues.IssueID = TableObjectIssues.IssueID)" +
-                //"AND TableObjectIssues.ObjectID = '" + objectID + "' ";
 
             SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
             sqlConnection.Close();
@@ -516,11 +489,10 @@ namespace RiskManagmentTool.DataLayer
 
         }
 
+
         public SqlDataAdapter GetAllIssues()
         {
-
             sqlConnection.Open();
-            //String query = "SELECT * FROM TableRisksUsedInProject WHERE UsedInProjectName = '" + ProjectName + "'";
             string query = "SELECT TableIssues.IssueID, TableGevaren.GevaarlijkeSituatie, TableGevaren.GevaarlijkeGebeurtenis, TableGevaren.Discipline, TableGevaren.Gebruiksfase, TableGevaren.Bedienvorm," +
                             "TableGevaren.Gebruiker, TableGevaren.GevaarlijkeZone, TableGevaren.Taak_Actie, TableGevaren.Gevaar, TableGevaren.Gevolg " +
                             " FROM TableIssues INNER JOIN TableGevaren" +
@@ -542,21 +514,10 @@ namespace RiskManagmentTool.DataLayer
 
             sqlConnection.Open();
 
-            //string query = "SELECT TableMaatregelen.* FROM TableIssues " +
-            //    " JOIN TableMaatregelen " +
-            //    "ON TableMaatregelen.MaatregelID IN(" +
-            //    "SELECT TableIssueMaatregelen.MaatregelID FROM TableIssueMaatregelen WHERE TableIssues.IssueGevaarID = '" + issueIDInt + "'" +
-            //    "AND (SELECT TableObjectIssues.ObjectID FROM TableObjectIssues WHERE TableIssues.IssueID = TableObjectIssues.IssueID) = '" + objectID + "' ) ";
-
             string query = "SELECT TableMaatregelen.* FROM TableIssueMaatregelen " +
                 " JOIN TableMaatregelen " +
                 "ON TableMaatregelen.MaatregelID = TableIssueMaatregelen.MaatregelID " +
                 "WHERE TableIssueMaatregelen.IssueID = '"+ issueID +"'"; //+
-                //"IN(" +
-                //"SELECT TableIssueMaatregelen.MaatregelID FROM TableIssueMaatregelen WHERE TableIssues.IssueID = '" + issueIDInt + "')";
-
-
-
 
 
             SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
@@ -653,6 +614,75 @@ namespace RiskManagmentTool.DataLayer
         }
 
         //end inner region filtered get requests
+
+
+        //Inner region get id
+
+        private string FindGevaarID(string issueID)
+        {
+            string gevaarID = "error";
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT IssueGevaarID FROM TableIssues " +
+                                            "WHERE TableIssues.IssueID = '" + issueID + "'", sqlConnection);
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    gevaarID = (dr[0]).ToString();
+                }
+            }
+            sqlConnection.Close();
+            return gevaarID;
+        }
+
+        public string GetObjectIdByName(string objectName)
+        {
+            string objectID = "error";
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT ObjectID FROM TableObjecten " +
+                                            "WHERE TableObjecten.ObjectNaam = '" + objectName + "'", sqlConnection);
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    objectID = (dr[0]).ToString();
+                }
+            }
+            sqlConnection.Close();
+            return objectID;
+        }
+
+        public string GetTemplateIdByName(string templateName)
+        {
+            string templateID = "error";
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT TemplateID FROM TableTemplates " +
+                                            "WHERE TableTemplates.TemplateNaam = '" + templateName + "'", sqlConnection);
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    templateID = (dr[0]).ToString();
+                }
+            }
+            sqlConnection.Close();
+            return templateID;
+        }
+
+
+
+        //end inner region get id
+
+
+
+
+
+
+
+
+
+
+
 
         //END REGION -----GET REQUESTS FROM DATABASE
 

@@ -65,7 +65,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         {
             //dataGridViewGekoppeldeIssues.DataSource = comunicator.GetObjectIssues(ObjectID);
             //
-            dataGridViewGekoppeldeIssues.DataSource = comunicator.GetObjectIssuesFull(ObjectID);
+            dataGridViewGekoppeldeIssues.DataSource = comunicator.GetObjectIssues(ObjectID);
             ShowSolvedIssues();
 
         }

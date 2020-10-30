@@ -103,7 +103,7 @@ namespace RiskManagmentTool.LogicLayer
         //templates
         public void AddGevaarToTemplate(string templateId, string gevaarId)
         {
-            //databaseCommunication.AddAndCreateIssueToObject(objectId, gevaarId);
+            databaseCommunication.AddGevaarToTemplate(templateId, gevaarId);
 
         }
         public void AddIssueToTemplate(string templateId, string issueId)
@@ -208,21 +208,52 @@ namespace RiskManagmentTool.LogicLayer
         }
 
 
+        //public DataTable GetObjectIssues(string objectID)
+        //{
+        //    SqlDataAdapter adapter = databaseCommunication.GetIssues(objectID);
+        //    DataTable data = new DataTable();
+        //    adapter.Fill(data);
+        //    return data;
+        //}
+
         public DataTable GetObjectIssues(string objectID)
         {
-            SqlDataAdapter adapter = databaseCommunication.GetIssues(objectID);
+            SqlDataAdapter adapter = databaseCommunication.GetIssuesFromObject(objectID);
             DataTable data = new DataTable();
             adapter.Fill(data);
             return data;
         }
 
-        public DataTable GetObjectIssuesFull(string objectID)
+        public DataTable GetObjectIssuesByObjectName(string objectNaam)
         {
-            SqlDataAdapter adapter = databaseCommunication.GetIssuesWorking(objectID);
+            string objectId = databaseCommunication.GetObjectIdByName(objectNaam);
+            //SqlDataAdapter adapter = databaseCommunication.GetIssuesWorking(objectId);
+            DataTable data = GetObjectIssues(objectId);//new DataTable();
+            //adapter.Fill(data);
+            return data;
+        }
+
+        public DataTable GetTemplateIssuesByName(string templateNaam)
+        {
+            string templateId = databaseCommunication.GetTemplateIdByName(templateNaam);
+            SqlDataAdapter adapter = databaseCommunication.GetTemplateIssues(templateId);
             DataTable data = new DataTable();
             adapter.Fill(data);
             return data;
         }
+
+        public DataTable GetTemplateGevarenByName(string templateNaam)
+        {
+            string templateId = databaseCommunication.GetTemplateIdByName(templateNaam);
+            SqlDataAdapter adapter = databaseCommunication.GetTemplateGevaren(templateId);
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            return data;
+        }
+
+
+
+
 
         public DataTable GetAllIssues()
         {

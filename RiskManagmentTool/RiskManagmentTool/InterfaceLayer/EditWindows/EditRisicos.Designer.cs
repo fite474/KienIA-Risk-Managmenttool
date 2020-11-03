@@ -60,14 +60,14 @@
             this.comboBoxGevaarlijkeZone = new System.Windows.Forms.ComboBox();
             this.buttonDisciplines = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.checkedListBoxOptions = new System.Windows.Forms.CheckedListBox();
             this.buttonBedienvorm = new System.Windows.Forms.Button();
             this.buttonGebruiksfase = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonGevaar = new System.Windows.Forms.Button();
             this.buttonGebruiker = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.checkedListBoxOptions = new System.Windows.Forms.CheckedListBox();
+            this.buttonGevaarlijkeZone = new System.Windows.Forms.Button();
+            this.buttonTaak = new System.Windows.Forms.Button();
+            this.buttonGevolg = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -344,6 +344,16 @@
             this.panel2.Size = new System.Drawing.Size(511, 796);
             this.panel2.TabIndex = 34;
             // 
+            // checkedListBoxOptions
+            // 
+            this.checkedListBoxOptions.CheckOnClick = true;
+            this.checkedListBoxOptions.FormattingEnabled = true;
+            this.checkedListBoxOptions.Location = new System.Drawing.Point(3, 227);
+            this.checkedListBoxOptions.Name = "checkedListBoxOptions";
+            this.checkedListBoxOptions.Size = new System.Drawing.Size(505, 429);
+            this.checkedListBoxOptions.TabIndex = 0;
+            this.checkedListBoxOptions.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxOptions_ItemCheck);
+            // 
             // buttonBedienvorm
             // 
             this.buttonBedienvorm.Location = new System.Drawing.Point(706, 359);
@@ -364,14 +374,15 @@
             this.buttonGebruiksfase.UseVisualStyleBackColor = true;
             this.buttonGebruiksfase.Click += new System.EventHandler(this.buttonGebruiksfase_Click);
             // 
-            // button3
+            // buttonGevaar
             // 
-            this.button3.Location = new System.Drawing.Point(706, 585);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(85, 23);
-            this.button3.TabIndex = 37;
-            this.button3.Text = "Gevaar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonGevaar.Location = new System.Drawing.Point(706, 585);
+            this.buttonGevaar.Name = "buttonGevaar";
+            this.buttonGevaar.Size = new System.Drawing.Size(85, 23);
+            this.buttonGevaar.TabIndex = 37;
+            this.buttonGevaar.Text = "Gevaar";
+            this.buttonGevaar.UseVisualStyleBackColor = true;
+            this.buttonGevaar.Click += new System.EventHandler(this.buttonGevaar_Click);
             // 
             // buttonGebruiker
             // 
@@ -383,53 +394,46 @@
             this.buttonGebruiker.UseVisualStyleBackColor = true;
             this.buttonGebruiker.Click += new System.EventHandler(this.buttonGebruiker_Click);
             // 
-            // button5
+            // buttonGevaarlijkeZone
             // 
-            this.button5.Location = new System.Drawing.Point(706, 475);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(85, 23);
-            this.button5.TabIndex = 39;
-            this.button5.Text = "Gevaarlijke zone";
-            this.button5.UseVisualStyleBackColor = true;
+            this.buttonGevaarlijkeZone.Location = new System.Drawing.Point(706, 475);
+            this.buttonGevaarlijkeZone.Name = "buttonGevaarlijkeZone";
+            this.buttonGevaarlijkeZone.Size = new System.Drawing.Size(85, 23);
+            this.buttonGevaarlijkeZone.TabIndex = 39;
+            this.buttonGevaarlijkeZone.Text = "Gevaarlijke zone";
+            this.buttonGevaarlijkeZone.UseVisualStyleBackColor = true;
+            this.buttonGevaarlijkeZone.Click += new System.EventHandler(this.buttonGevaarlijkeZone_Click);
             // 
-            // button6
+            // buttonTaak
             // 
-            this.button6.Location = new System.Drawing.Point(706, 530);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(85, 23);
-            this.button6.TabIndex = 40;
-            this.button6.Text = "Taak";
-            this.button6.UseVisualStyleBackColor = true;
+            this.buttonTaak.Location = new System.Drawing.Point(706, 530);
+            this.buttonTaak.Name = "buttonTaak";
+            this.buttonTaak.Size = new System.Drawing.Size(85, 23);
+            this.buttonTaak.TabIndex = 40;
+            this.buttonTaak.Text = "Taak";
+            this.buttonTaak.UseVisualStyleBackColor = true;
+            this.buttonTaak.Click += new System.EventHandler(this.buttonTaak_Click);
             // 
-            // button7
+            // buttonGevolg
             // 
-            this.button7.Location = new System.Drawing.Point(706, 633);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(85, 23);
-            this.button7.TabIndex = 41;
-            this.button7.Text = "Gevolg";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // checkedListBoxOptions
-            // 
-            this.checkedListBoxOptions.CheckOnClick = true;
-            this.checkedListBoxOptions.FormattingEnabled = true;
-            this.checkedListBoxOptions.Location = new System.Drawing.Point(3, 227);
-            this.checkedListBoxOptions.Name = "checkedListBoxOptions";
-            this.checkedListBoxOptions.Size = new System.Drawing.Size(505, 429);
-            this.checkedListBoxOptions.TabIndex = 0;
-            this.checkedListBoxOptions.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxOptions_ItemCheck);
+            this.buttonGevolg.Location = new System.Drawing.Point(706, 633);
+            this.buttonGevolg.Name = "buttonGevolg";
+            this.buttonGevolg.Size = new System.Drawing.Size(85, 23);
+            this.buttonGevolg.TabIndex = 41;
+            this.buttonGevolg.Text = "Gevolg";
+            this.buttonGevolg.UseVisualStyleBackColor = true;
+            this.buttonGevolg.Click += new System.EventHandler(this.buttonGevolg_Click);
             // 
             // EditRisicos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1577, 838);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.buttonGevolg);
+            this.Controls.Add(this.buttonTaak);
+            this.Controls.Add(this.buttonGevaarlijkeZone);
             this.Controls.Add(this.buttonGebruiker);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.buttonGevaar);
             this.Controls.Add(this.buttonGebruiksfase);
             this.Controls.Add(this.buttonBedienvorm);
             this.Controls.Add(this.panel2);
@@ -509,10 +513,10 @@
         private System.Windows.Forms.CheckedListBox checkedListBoxOptions;
         private System.Windows.Forms.Button buttonBedienvorm;
         private System.Windows.Forms.Button buttonGebruiksfase;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonGevaar;
         private System.Windows.Forms.Button buttonGebruiker;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button buttonGevaarlijkeZone;
+        private System.Windows.Forms.Button buttonTaak;
+        private System.Windows.Forms.Button buttonGevolg;
     }
 }

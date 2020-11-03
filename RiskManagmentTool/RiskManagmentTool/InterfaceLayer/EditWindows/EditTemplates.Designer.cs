@@ -61,6 +61,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonSaveTemplate = new System.Windows.Forms.Button();
+            this.buttonVerwijderIssues = new System.Windows.Forms.Button();
+            this.buttonVerwijderGevaren = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -230,16 +232,17 @@
             this.tabControl3.Location = new System.Drawing.Point(6, 6);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(928, 394);
+            this.tabControl3.Size = new System.Drawing.Size(1128, 394);
             this.tabControl3.TabIndex = 1;
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.buttonVerwijderIssues);
             this.tabPage5.Controls.Add(this.dataGridViewGekoppeldeIssues);
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(920, 365);
+            this.tabPage5.Size = new System.Drawing.Size(1120, 365);
             this.tabPage5.TabIndex = 0;
             this.tabPage5.Text = "Gekoppelde Issues";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -259,11 +262,12 @@
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.buttonVerwijderGevaren);
             this.tabPage6.Controls.Add(this.dataGridViewGekoppeldeGevaren);
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(920, 365);
+            this.tabPage6.Size = new System.Drawing.Size(1120, 365);
             this.tabPage6.TabIndex = 1;
             this.tabPage6.Text = "Gekoppelde gevaren";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -419,6 +423,26 @@
             this.buttonSaveTemplate.Text = "Save template";
             this.buttonSaveTemplate.UseVisualStyleBackColor = true;
             // 
+            // buttonVerwijderIssues
+            // 
+            this.buttonVerwijderIssues.Location = new System.Drawing.Point(900, 61);
+            this.buttonVerwijderIssues.Name = "buttonVerwijderIssues";
+            this.buttonVerwijderIssues.Size = new System.Drawing.Size(108, 45);
+            this.buttonVerwijderIssues.TabIndex = 1;
+            this.buttonVerwijderIssues.Text = "Verwijder selectie";
+            this.buttonVerwijderIssues.UseVisualStyleBackColor = true;
+            this.buttonVerwijderIssues.Click += new System.EventHandler(this.buttonVerwijderIssues_Click);
+            // 
+            // buttonVerwijderGevaren
+            // 
+            this.buttonVerwijderGevaren.Location = new System.Drawing.Point(876, 61);
+            this.buttonVerwijderGevaren.Name = "buttonVerwijderGevaren";
+            this.buttonVerwijderGevaren.Size = new System.Drawing.Size(100, 46);
+            this.buttonVerwijderGevaren.TabIndex = 1;
+            this.buttonVerwijderGevaren.Text = "Verwijder selectie";
+            this.buttonVerwijderGevaren.UseVisualStyleBackColor = true;
+            this.buttonVerwijderGevaren.Click += new System.EventHandler(this.buttonVerwijderGevaren_Click);
+            // 
             // EditTemplates
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -486,5 +510,7 @@
         private System.Windows.Forms.ComboBox comboBoxTemplateToepassing;
         private System.Windows.Forms.TextBox textBoxTemplateID;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button buttonVerwijderIssues;
+        private System.Windows.Forms.Button buttonVerwijderGevaren;
     }
 }

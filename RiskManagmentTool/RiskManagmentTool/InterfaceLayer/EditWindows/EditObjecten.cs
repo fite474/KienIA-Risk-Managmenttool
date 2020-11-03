@@ -20,6 +20,9 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private string ObjectID;
         private KeuzeMenus keuzeMenus;
 
+        //private List<string> GekoppeldeGevarenId;
+        //private List<string> GekoppeldeIssuesId;
+
 
         public EditObjecten()
         {
@@ -64,8 +67,11 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void LoadData()
         {
-            //dataGridViewGekoppeldeIssues.DataSource = comunicator.GetObjectIssues(ObjectID);
-            //
+
+           // GekoppeldeGevarenId = comunicator.GetGekoppeldeGevarenFromObjectAsList(ObjectID);
+            //GekoppeldeIssuesId = comunicator.GetGekoppeldeIssuesFromObjectAsList(ObjectID);
+        //dataGridViewGekoppeldeIssues.DataSource = comunicator.GetObjectIssues(ObjectID);
+        //
             dataGridViewGekoppeldeIssues.DataSource = comunicator.GetObjectIssues(ObjectID);
             ShowSolvedIssues();
 
@@ -155,7 +161,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void buttonDeleteGevaren_Click(object sender, EventArgs e)
         {
-            Form deleteRisico = new DeleteGevaren();
+            Form deleteRisico = new DeleteGevaren(ObjectNaam, ObjectID);
             deleteRisico.Show();
 
         }

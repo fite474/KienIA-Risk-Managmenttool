@@ -15,8 +15,13 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
     {
         private Datacomunication comunicator;
         private KeuzeMenus keuzeMenus;
+
         private List<string> SelectedGevarenId;
         private List<string> SelectedIssuesId;
+
+        private List<string> GekoppeldeGevarenId;
+        private List<string> GekoppeldeIssuesId;
+
         private string TemplateID;
 
         public EditTemplates(string templateId)
@@ -26,6 +31,10 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             keuzeMenus = new KeuzeMenus();
             SelectedGevarenId = new List<string>();
             SelectedIssuesId = new List<string>();
+
+            GekoppeldeGevarenId = new List<string>();
+            GekoppeldeIssuesId = new List<string>();
+
             TemplateID = templateId;
             LoadData();
             LoadCombobox();
@@ -35,6 +44,10 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         {
             textBoxSelectedIssues.Text = "";
             textBoxTemplateID.Text = TemplateID;
+
+
+            GekoppeldeGevarenId = comunicator.GetGekoppeldeGevarenFromTemplateAsList(TemplateID);
+            GekoppeldeIssuesId = comunicator.GetGekoppeldeIssuesFromTemplateAsList(TemplateID);
 
             dataGridViewAddIssue.DataSource = comunicator.GetAllIssues();
             dataGridViewAddGevaar.DataSource = comunicator.GetGevarenTable();
@@ -125,6 +138,28 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             dataGridViewAddIssue.ClearSelection();
         }
 
+        private void buttonVerwijderGevaren_Click(object sender, EventArgs e)
+        {
+            //foreach (DataGridViewRow row in dataGridViewGekoppeldeGevaren.SelectedRows)
+            //{
+            //    gevaarID = row.Cells[0].Value.ToString();
+            //    if (!SelectedGevarenId.Contains(gevaarID))
+            //    {
+            //        SelectedGevarenId.Add(gevaarID);
+            //    }
+            //}
+        }
 
+        private void buttonVerwijderIssues_Click(object sender, EventArgs e)
+        {
+            //foreach (DataGridViewRow row in dataGridViewGekoppeldeIssues.SelectedRows)
+            //{
+            //    gevaarID = row.Cells[0].Value.ToString();
+            //    if (!SelectedGevarenId.Contains(gevaarID))
+            //    {
+            //        SelectedGevarenId.Add(gevaarID);
+            //    }
+            //}
+        }
     }
 }

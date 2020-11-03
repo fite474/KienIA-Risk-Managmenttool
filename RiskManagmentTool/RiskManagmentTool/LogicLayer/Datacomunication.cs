@@ -194,6 +194,31 @@ namespace RiskManagmentTool.LogicLayer
 
 
 
+        // START Delete region
+
+        public void DeleteIssuesFromObject(string objectId, List<string> issueIds)
+        {
+            //databaseCommunication.FindGevaarID();
+            foreach (string issueId in issueIds)
+            {
+                databaseCommunication.VerwijderIssuesVanObject(objectId, issueId);
+            }
+           
+        }
+
+        // END delete region
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         public DataTable GetProjectenTable()
@@ -256,6 +281,40 @@ namespace RiskManagmentTool.LogicLayer
             return data;
         }
 
+        public List<string> GetGekoppeldeGevarenFromTemplateAsList(string templateId)
+        {
+
+            return databaseCommunication.GetGekoppeldeGevarenFromTemplateAsList(templateId);
+        }
+
+        public List<string> GetGekoppeldeIssuesFromTemplateAsList(string templateId)
+        {
+
+            return databaseCommunication.GetGekoppeldeIssuesFromTemplateAsList(templateId);
+        }
+
+        public List<string> GetGekoppeldeIssuesFromObjectAsList(string objectId)
+        {
+
+            return databaseCommunication.GetGekoppeldeIssuesFromObjectAsList(objectId);
+        }
+
+        public List<string> GetGekoppeldeGevarenFromObjectAsList(string objectId)
+        {
+
+            return databaseCommunication.GetGekoppeldeGevarenFromObjectAsList(objectId);
+        }
+
+        public List<string> GetGevarenFromIssuesAsList(List<string> selectedIssuesId)
+        {
+
+            return databaseCommunication.GetGevarenFromIssuesAsList(selectedIssuesId);
+        }
+
+
+
+
+
 
 
         //get selected
@@ -301,7 +360,17 @@ namespace RiskManagmentTool.LogicLayer
 
 
 
+        //Begin redirect options
 
+        public string GetObjectIdByIssueNmr(string issueID)
+        {
+            string objectId = "";
+            objectId = databaseCommunication.GetObjectIdByIssue(issueID);
+
+            return objectId;
+        }
+
+        //End redirect options
 
 
 

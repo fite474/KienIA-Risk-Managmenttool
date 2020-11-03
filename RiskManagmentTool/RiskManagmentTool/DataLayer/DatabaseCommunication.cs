@@ -241,6 +241,7 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
             return risicoBeoordelingID;
         }
+
         private int InitRisicoBeoordelingDuplicate(int issueId, string originalIssueID)
         {
 
@@ -365,6 +366,42 @@ namespace RiskManagmentTool.DataLayer
 
 
         // END REGION ADD TO OBJECT
+
+
+        // START REGION DELETE 
+
+        public void VerwijderIssuesVanObject(string objectID, string issueID)
+        {
+            sqlConnection.Open();
+            string query = "DELETE FROM ObjectIssues WHERE IssueID = '"+ issueID +"'";
+
+            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
+            sqlConnection.Close();
+            
+
+
+
+        }
+
+
+
+        // END REGION DELETE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -647,7 +684,7 @@ namespace RiskManagmentTool.DataLayer
 
         //Inner region get id
 
-        private string FindGevaarID(string issueID)
+        public string FindGevaarID(string issueID)
         {
             string gevaarID = "error";
             sqlConnection.Open();
@@ -698,7 +735,22 @@ namespace RiskManagmentTool.DataLayer
             return templateID;
         }
 
-
+        public string GetObjectIdByIssue(string issueId)
+        {
+            string objectID = "0";
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT ObjectID FROM TableObjectIssues " +
+                                            "WHERE TableObjectIssues.IssueID = '" + issueId + "'", sqlConnection);
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    objectID = (dr[0]).ToString();
+                }
+            }
+            sqlConnection.Close();
+            return objectID;
+        }
 
         //end inner region get id
 
@@ -779,11 +831,119 @@ namespace RiskManagmentTool.DataLayer
 
 
 
+        public List<string> GetGekoppeldeIssuesFromObjectAsList(string objectID)
+        {
+            List<string> gekoppeldeIssues = new List<string>();
+
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT IssueID FROM TableObjectIssues " +
+                                            "WHERE ObjectID = '"+ objectID +"' ", sqlConnection);
+
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    gekoppeldeIssues.Add((dr[0]).ToString());
+                }
+            }
+            sqlConnection.Close();
+
+            return gekoppeldeIssues;
+        }
+
+        public List<string> GetGekoppeldeGevarenFromObjectAsList(string objectID)
+        {
+            List<string> gekoppeldeGevaren = new List<string>();
+
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT IssueGevaarID FROM TableIssues " +
+                                            "WHERE TableIssues.IssueID IN ( " +
+                                            "SELECT IssueID FROM TableObjectIssues " +
+                                            "WHERE ObjectID = '" + objectID + "')", sqlConnection);
+
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    gekoppeldeGevaren.Add((dr[0]).ToString());
+                }
+            }
+            sqlConnection.Close();
+
+            return gekoppeldeGevaren;
+        }
 
 
 
 
 
+
+
+        public List<string> GetGekoppeldeIssuesFromTemplateAsList(string templateID)
+        {
+            List<string> gekoppeldeIssues = new List<string>();
+
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT IssueID FROM TableTemplateIssues " +
+                                            "WHERE TemplateID = '" + templateID + "' ", sqlConnection);
+
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    gekoppeldeIssues.Add((dr[0]).ToString());
+                }
+            }
+            sqlConnection.Close();
+
+            return gekoppeldeIssues;
+        }
+
+        public List<string> GetGekoppeldeGevarenFromTemplateAsList(string templateID)
+        {
+            List<string> gekoppeldeIssues = new List<string>();
+
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT GevaarID FROM TableTemplateGevaren " +
+                                            "WHERE TemplateID = '" + templateID + "' ", sqlConnection);
+
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    gekoppeldeIssues.Add((dr[0]).ToString());
+                }
+            }
+            sqlConnection.Close();
+
+            return gekoppeldeIssues;
+        }
+
+
+
+
+
+        public List<string> GetGevarenFromIssuesAsList(List<string> selectedIssuesId)
+        {
+            List<string> gevarenIDs = new List<string>();
+
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT IssueGevaarID FROM TableIssues " +
+                                            "WHERE TableIssues.IssueID IN (  " +
+                                            string.Join(",", selectedIssuesId) +
+                                            " )", sqlConnection);
+
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    gevarenIDs.Add((dr[0]).ToString());
+                }
+            }
+            sqlConnection.Close();
+
+            return gevarenIDs;
+        }
 
         //END REGION -----GET REQUESTS FROM DATABASE
 

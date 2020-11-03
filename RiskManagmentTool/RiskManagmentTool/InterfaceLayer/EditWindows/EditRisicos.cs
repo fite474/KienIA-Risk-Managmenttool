@@ -27,6 +27,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private List<string> BedienvormenItems;
         private List<string> TakenItems;
 
+        private TextBox currentTextBox;
+
         public EditRisicos()
         {
             InitializeComponent();
@@ -121,10 +123,15 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             string checkedItems = string.Empty;
             foreach (object Item in checkedListBoxOptions.CheckedItems)
             {
-                checkedItems += Item.ToString();
+                checkedItems += Item.ToString() + ";  ";
             }
             //MessageBox.Show(checkedItems);
-            textBoxGevolg.Text = checkedItems;
+            //textBoxGevolg.Text = checkedItems;
+            if (currentTextBox != null)
+            {
+                currentTextBox.Text = checkedItems;
+            }
+            
 
         }
 
@@ -189,8 +196,15 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void buttonDisciplines_Click(object sender, EventArgs e)
         {
-            Form addItem = new AddItemToGevaar(MenuTableName.Disciplines, DisciplinesItems, "disciplines");
-            addItem.ShowDialog();
+            checkedListBoxOptions.Items.Clear();
+            foreach (string menuOption in DisciplinesItems)
+            {
+                checkedListBoxOptions.Items.Add(menuOption);
+            }
+            currentTextBox = textBoxDiscipline;
+
+            //Form addItem = new AddItemToGevaar(MenuTableName.Disciplines, DisciplinesItems, "disciplines");
+            //addItem.ShowDialog();
         }
 
         private void buttonGebruiksfase_Click(object sender, EventArgs e)
@@ -200,6 +214,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             {
                 checkedListBoxOptions.Items.Add(menuOption);
             }
+            currentTextBox = textBoxGebruiksfase;
             
         }
 
@@ -210,6 +225,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             {
                 checkedListBoxOptions.Items.Add(menuOption);
             }
+            currentTextBox = textBoxBedienvorm;
         }
 
         private void buttonGebruiker_Click(object sender, EventArgs e)
@@ -219,12 +235,55 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             {
                 checkedListBoxOptions.Items.Add(menuOption);
             }
+            currentTextBox = textBoxGebruiker;
+        }
+
+
+
+        private void buttonGevaarlijkeZone_Click(object sender, EventArgs e)
+        {
+            checkedListBoxOptions.Items.Clear();
+            foreach (string menuOption in GevarenzonesItems)
+            {
+                checkedListBoxOptions.Items.Add(menuOption);
+            }
+            currentTextBox = textBoxGevaarlijkeZone;
+        }
+
+        private void buttonTaak_Click(object sender, EventArgs e)
+        {
+            checkedListBoxOptions.Items.Clear();
+            foreach (string menuOption in TakenItems)
+            {
+                checkedListBoxOptions.Items.Add(menuOption);
+            }
+            currentTextBox = textBoxTaak;
+        }
+
+        private void buttonGevaar_Click(object sender, EventArgs e)
+        {
+            checkedListBoxOptions.Items.Clear();
+            foreach (string menuOption in GevaarTypesItems)
+            {
+                checkedListBoxOptions.Items.Add(menuOption);
+            }
+            currentTextBox = textBoxGevaar;
+        }
+
+        private void buttonGevolg_Click(object sender, EventArgs e)
+        {
+            checkedListBoxOptions.Items.Clear();
+            foreach (string menuOption in GevolgenItems)
+            {
+                checkedListBoxOptions.Items.Add(menuOption);
+            }
+            currentTextBox = textBoxGevolg;
         }
 
         private void checkedListBoxOptions_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            UpdateText();
-            //textBoxGevolg.Text += checkedListBoxOptions.SelectedItem.ToString() + ", ";//comboBoxGevolg.SelectedItem.ToString();
+            this.BeginInvoke((MethodInvoker)(
+            () => UpdateText()));
         }
     }
 }

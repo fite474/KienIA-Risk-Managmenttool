@@ -23,12 +23,11 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
         private List<string> SelectedObjectIssueId;
         private List<string> SelectedTemplateIssueId;
         private List<string> SelectedTemplateGevaarId;
-        //public AddRisico()
-        //{
-        //    InitializeComponent();
-        //    comunicator = new Datacomunication();
-        //    LoadData();
-        //}
+
+        private List<string> GekoppeldeGevarenId;
+        private List<string> GekoppeldeIssuesId;
+
+
         public AddRisico(string objectNaam, string objectID)
         {
             InitializeComponent();
@@ -48,9 +47,10 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
         private void LoadData()
         {
             dataGridViewLosseItems.DataSource = comunicator.GetGevarenTable();
-
-
             textBoxObjectNaam.Text = ObjectNaam;
+
+            GekoppeldeGevarenId = comunicator.GetGekoppeldeGevarenFromObjectAsList(ObjectID);
+            GekoppeldeIssuesId = comunicator.GetGekoppeldeIssuesFromObjectAsList(ObjectID);
 
             LoadComboboxes();
         }
@@ -84,9 +84,40 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
         }
 
     
+        private void CheckForDubble()
+        {
+            List<string> gevarenFromSelectedIssues = comunicator.GetGevarenFromIssuesAsList(SelectedTemplateIssueId);
+            foreach  (string gevaarID in gevarenFromSelectedIssues)
+            {
+                if (GekoppeldeGevarenId.Contains(gevaarID))
+                {
+                    //SelectedTemplateIssueId.Remove()
+                    string message = "Dit object bevat een issue met hetzelfde gevaar id.\n" +
+                        "Wilt u alleen de maatregelen en risicobeoordeling overnemen en bij het \n" +
+                        "bijbehorende issue updaten?";
+                    string title = "Reminder Risico waardes";
+                    MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                    DialogResult result = MessageBox.Show(message, title, buttons);
+                    if (result == DialogResult.Yes)
+                    {
+                        //this.Close();
+                    }
+                    else
+                    {
+                        // Do something  
+                    }
+                }
+            }
+            
+
+        }
+
         private void buttonVoegSelectieToe_Click(object sender, EventArgs e)
         {
             //for list selectie id, datacom . add gevaar to object
+
+
+
             foreach (string gevaarId in SelectedGevarenId)
             {
                 comunicator.AddGevaarToObject(ObjectID, gevaarId);
@@ -106,9 +137,6 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
             {
                 comunicator.AddIssueToObject(ObjectID, objectIssueId);
             }
-
-
-
             this.Close();
         }
 
@@ -221,12 +249,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
                     SelectedTemplateGevaarId.Add(gevaarID);
                 }
             }
-
-
-
-
             dataGridViewTemplateViewGevaren.ClearSelection();
-
         }
 
 
@@ -239,23 +262,19 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
             {
                 comboBoxWeergaveTemplateNaam.Items.Add(selectedTemplateName);
             }
+
             string issueID = "";
             foreach (DataGridViewRow row in dataGridViewTemplateViewIssues.SelectedRows)
             {
                 issueID = row.Cells[0].Value.ToString();
+
                 if (!SelectedTemplateIssueId.Contains(issueID))
                 {
                     SelectedTemplateIssueId.Add(issueID);
                 }
             }
-
-            
-
-
-
-
             dataGridViewTemplateViewIssues.ClearSelection();
-
+            CheckForDubble();
         }
 
 

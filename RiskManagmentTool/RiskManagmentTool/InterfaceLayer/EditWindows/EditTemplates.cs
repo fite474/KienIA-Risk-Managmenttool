@@ -15,6 +15,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
     {
         private Datacomunication comunicator;
         private KeuzeMenus keuzeMenus;
+        private DataControler controler;
 
         private List<string> SelectedGevarenId;
         private List<string> SelectedIssuesId;
@@ -27,15 +28,18 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         public EditTemplates(string templateId)
         {
             InitializeComponent();
+            TemplateID = templateId;
             comunicator = new Datacomunication();
             keuzeMenus = new KeuzeMenus();
+            controler = new DataControler(TemplateID);
+
             SelectedGevarenId = new List<string>();
             SelectedIssuesId = new List<string>();
 
             GekoppeldeGevarenId = new List<string>();
             GekoppeldeIssuesId = new List<string>();
 
-            TemplateID = templateId;
+            
             LoadData();
             LoadCombobox();
         }
@@ -81,18 +85,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
 
 
-        private void buttonConfirmSelection_Click(object sender, EventArgs e)
-        {
-            foreach (string gevaarId in SelectedGevarenId)
-            {
-                comunicator.AddGevaarToTemplate(TemplateID, gevaarId);
-            }
-            foreach (string issueId in SelectedIssuesId)
-            {
-                comunicator.AddIssueToTemplate(TemplateID, issueId);
-            }
-            ReloadTemplateData();
-        }
+
 
         private void dataGridViewAddIssue_MouseDoubleClick(object sender, MouseEventArgs e)
         {
@@ -121,21 +114,36 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             }
         }
 
-        private void buttonAddSelection_Click(object sender, EventArgs e)
-        {
-           // for (int i = dataGridViewAddIssue.SelectedRows.Count - 1; i >= 0; i--)
-           // {
-           //     textBoxSelectedIssues.Text += dataGridViewAddIssue.SelectedRows[i].Cells[0].Value.ToString();
-                
-           //     // ...
-           // }
-           //// = dataGridViewAddIssue.SelectedRows[0].Cells[0].Value.ToString();
-           // dataGridViewAddIssue.ClearSelection();
-        }
+
 
         private void dataGridViewAddIssue_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             dataGridViewAddIssue.ClearSelection();
+        }
+
+        private void buttonConfirmSelection_Click(object sender, EventArgs e)
+        {
+            foreach (string gevaarId in SelectedGevarenId)
+            {
+                comunicator.AddGevaarToTemplate(TemplateID, gevaarId);
+            }
+            foreach (string issueId in SelectedIssuesId)
+            {
+                comunicator.AddIssueToTemplate(TemplateID, issueId);
+            }
+            ReloadTemplateData();
+        }
+
+        private void buttonAddSelection_Click(object sender, EventArgs e)
+        {
+            // for (int i = dataGridViewAddIssue.SelectedRows.Count - 1; i >= 0; i--)
+            // {
+            //     textBoxSelectedIssues.Text += dataGridViewAddIssue.SelectedRows[i].Cells[0].Value.ToString();
+
+            //     // ...
+            // }
+            //// = dataGridViewAddIssue.SelectedRows[0].Cells[0].Value.ToString();
+            // dataGridViewAddIssue.ClearSelection();
         }
 
         private void buttonVerwijderGevaren_Click(object sender, EventArgs e)

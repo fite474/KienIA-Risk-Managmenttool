@@ -79,13 +79,15 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void ShowSolvedIssues()
         {
+
+            
             //int i = 0;
             //foreach (DataGridViewRow row in dataGridViewGekoppeldeIssues.Rows)
             //{
-            //    if (i > 2)//row.Cells[10].ToString())
+            //    if (i < 2)//row.Cells[10].ToString())
             //    {
             //        row.DefaultCellStyle.ForeColor = Color.Red;
-                    
+
             //    }
             //    i++;
             //}
@@ -164,6 +166,14 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             Form deleteRisico = new DeleteGevaren(ObjectNaam, ObjectID);
             deleteRisico.Show();
 
+        }
+
+        private void buttonShow_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dataGridViewGekoppeldeIssues.Rows.Count; i++)
+            {
+                dataGridViewGekoppeldeIssues.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+            }
         }
     }
 }

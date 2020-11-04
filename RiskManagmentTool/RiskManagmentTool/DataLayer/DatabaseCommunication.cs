@@ -132,8 +132,6 @@ namespace RiskManagmentTool.DataLayer
         // START REGION ADD TO OBJECT
         public void AddAndCreateIssueToObject(string objectId, string gevaarId)
         {
-            //table objectissues
-            //gevaar id, beoordeling id
             int issueId = InitIssue(gevaarId);
 
             sqlConnection.Open();
@@ -185,7 +183,6 @@ namespace RiskManagmentTool.DataLayer
 
         private int InitIssue(string gevaarId)
         {
-            
             sqlConnection.Open();
             SqlCommand cmd = new SqlCommand("INSERT INTO TableIssues(IssueGevaarID) VALUES " +
                                                                        "(@IssueGevaarID)" +
@@ -284,9 +281,6 @@ namespace RiskManagmentTool.DataLayer
             cmd.Parameters.AddWithValue("@IssueID", issueId);
             cmd.Parameters.AddWithValue("@MaatregelID", maatregelId);
 
-
-            //Int32 issueID = (Int32)cmd.ExecuteScalar();
-
             cmd.ExecuteNonQuery();
             sqlConnection.Close();
 
@@ -373,14 +367,43 @@ namespace RiskManagmentTool.DataLayer
         public void VerwijderIssuesVanObject(string objectID, string issueID)
         {
             sqlConnection.Open();
-            string query = "DELETE FROM ObjectIssues WHERE IssueID = '"+ issueID +"'";
+            SqlCommand cmd = new SqlCommand("DELETE FROM TableObjectIssues WHERE IssueID = @IssueID " +
+                                            "AND ObjectID = @ObjectID", sqlConnection);
 
-            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
+            cmd.Parameters.AddWithValue("@IssueID", issueID);
+            cmd.Parameters.AddWithValue("@ObjectID", objectID);
+            cmd.ExecuteNonQuery();
             sqlConnection.Close();
-            
+        }
 
+        public void VerwijderRisicoBeoordelingVanIssue(string issueID)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("DELETE FROM RisicoBeoordeling WHERE IssueID = @IssueID", sqlConnection);
 
+            cmd.Parameters.AddWithValue("@IssueID", issueID);
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
 
+        public void VerwijderMaatregelenVanIssue(string issueID)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("DELETE FROM TableIssueMaatregelen WHERE IssueID = @IssueID", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@IssueID", issueID);
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+
+        public void VerwijderIssue(string issueID)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("DELETE FROM TableIssues WHERE IssueID = @IssueID", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@IssueID", issueID);
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
         }
 
 
@@ -573,25 +596,17 @@ namespace RiskManagmentTool.DataLayer
 
         }
 
-        public SqlDataAdapter GetIssueMaatregelen(string objectID, string issueID)
+        public SqlDataAdapter GetIssueMaatregelen(string issueID)
         {
-            
-            int objectIDInt = int.Parse(objectID);
-            int issueIDInt = int.Parse(issueID);
-
             sqlConnection.Open();
-
             string query = "SELECT TableMaatregelen.* FROM TableIssueMaatregelen " +
                 " JOIN TableMaatregelen " +
                 "ON TableMaatregelen.MaatregelID = TableIssueMaatregelen.MaatregelID " +
                 "WHERE TableIssueMaatregelen.IssueID = '"+ issueID +"'"; //+
 
-
             SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
             sqlConnection.Close();
             return adapter;
-
-
         }
 
         public SqlDataAdapter GetTemplates()
@@ -943,6 +958,26 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
 
             return gevarenIDs;
+        }
+
+        public List<string> GetMaatregelenFromIssues(string issueId)
+        {
+            List<string> maatregelIds = new List<string>();
+
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT MaatregelID FROM TableIssueMaatregelen " +
+                                            "WHERE TableIssueMaatregelen.IssueID = '" + issueId +"' ", sqlConnection);
+
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    maatregelIds.Add((dr[0]).ToString());
+                }
+            }
+            sqlConnection.Close();
+
+            return maatregelIds;
         }
 
         //END REGION -----GET REQUESTS FROM DATABASE

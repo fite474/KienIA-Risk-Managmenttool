@@ -207,7 +207,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1567, 465);
+            this.tabPage1.Size = new System.Drawing.Size(1567, 573);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Project instellingen";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -257,6 +257,7 @@
             // 
             this.textBoxProjectNaam.Location = new System.Drawing.Point(227, 20);
             this.textBoxProjectNaam.Name = "textBoxProjectNaam";
+            this.textBoxProjectNaam.ReadOnly = true;
             this.textBoxProjectNaam.Size = new System.Drawing.Size(186, 22);
             this.textBoxProjectNaam.TabIndex = 6;
             // 

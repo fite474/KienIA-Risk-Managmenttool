@@ -45,8 +45,10 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.buttonVerwijderIssues = new System.Windows.Forms.Button();
             this.dataGridViewGekoppeldeIssues = new System.Windows.Forms.DataGridView();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.buttonVerwijderGevaren = new System.Windows.Forms.Button();
             this.dataGridViewGekoppeldeGevaren = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.textBoxSelectedGevaren = new System.Windows.Forms.TextBox();
@@ -61,8 +63,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonSaveTemplate = new System.Windows.Forms.Button();
-            this.buttonVerwijderIssues = new System.Windows.Forms.Button();
-            this.buttonVerwijderGevaren = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -227,8 +227,8 @@
             // 
             // tabControl3
             // 
-            this.tabControl3.Controls.Add(this.tabPage5);
             this.tabControl3.Controls.Add(this.tabPage6);
+            this.tabControl3.Controls.Add(this.tabPage5);
             this.tabControl3.Location = new System.Drawing.Point(6, 6);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
@@ -246,6 +246,16 @@
             this.tabPage5.TabIndex = 0;
             this.tabPage5.Text = "Gekoppelde Issues";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // buttonVerwijderIssues
+            // 
+            this.buttonVerwijderIssues.Location = new System.Drawing.Point(900, 61);
+            this.buttonVerwijderIssues.Name = "buttonVerwijderIssues";
+            this.buttonVerwijderIssues.Size = new System.Drawing.Size(108, 45);
+            this.buttonVerwijderIssues.TabIndex = 1;
+            this.buttonVerwijderIssues.Text = "Verwijder selectie";
+            this.buttonVerwijderIssues.UseVisualStyleBackColor = true;
+            this.buttonVerwijderIssues.Click += new System.EventHandler(this.buttonVerwijderIssues_Click);
             // 
             // dataGridViewGekoppeldeIssues
             // 
@@ -271,6 +281,16 @@
             this.tabPage6.TabIndex = 1;
             this.tabPage6.Text = "Gekoppelde gevaren";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // buttonVerwijderGevaren
+            // 
+            this.buttonVerwijderGevaren.Location = new System.Drawing.Point(876, 61);
+            this.buttonVerwijderGevaren.Name = "buttonVerwijderGevaren";
+            this.buttonVerwijderGevaren.Size = new System.Drawing.Size(100, 46);
+            this.buttonVerwijderGevaren.TabIndex = 1;
+            this.buttonVerwijderGevaren.Text = "Verwijder selectie";
+            this.buttonVerwijderGevaren.UseVisualStyleBackColor = true;
+            this.buttonVerwijderGevaren.Click += new System.EventHandler(this.buttonVerwijderGevaren_Click);
             // 
             // dataGridViewGekoppeldeGevaren
             // 
@@ -326,8 +346,8 @@
             // 
             // tabControl2
             // 
-            this.tabControl2.Controls.Add(this.tabPage3);
             this.tabControl2.Controls.Add(this.tabPage4);
+            this.tabControl2.Controls.Add(this.tabPage3);
             this.tabControl2.Location = new System.Drawing.Point(6, 20);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
@@ -422,26 +442,6 @@
             this.buttonSaveTemplate.TabIndex = 3;
             this.buttonSaveTemplate.Text = "Save template";
             this.buttonSaveTemplate.UseVisualStyleBackColor = true;
-            // 
-            // buttonVerwijderIssues
-            // 
-            this.buttonVerwijderIssues.Location = new System.Drawing.Point(900, 61);
-            this.buttonVerwijderIssues.Name = "buttonVerwijderIssues";
-            this.buttonVerwijderIssues.Size = new System.Drawing.Size(108, 45);
-            this.buttonVerwijderIssues.TabIndex = 1;
-            this.buttonVerwijderIssues.Text = "Verwijder selectie";
-            this.buttonVerwijderIssues.UseVisualStyleBackColor = true;
-            this.buttonVerwijderIssues.Click += new System.EventHandler(this.buttonVerwijderIssues_Click);
-            // 
-            // buttonVerwijderGevaren
-            // 
-            this.buttonVerwijderGevaren.Location = new System.Drawing.Point(876, 61);
-            this.buttonVerwijderGevaren.Name = "buttonVerwijderGevaren";
-            this.buttonVerwijderGevaren.Size = new System.Drawing.Size(100, 46);
-            this.buttonVerwijderGevaren.TabIndex = 1;
-            this.buttonVerwijderGevaren.Text = "Verwijder selectie";
-            this.buttonVerwijderGevaren.UseVisualStyleBackColor = true;
-            this.buttonVerwijderGevaren.Click += new System.EventHandler(this.buttonVerwijderGevaren_Click);
             // 
             // EditTemplates
             // 

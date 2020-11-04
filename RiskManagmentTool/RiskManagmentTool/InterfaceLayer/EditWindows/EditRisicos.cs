@@ -214,8 +214,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             {
                 checkedListBoxOptions.Items.Add(menuOption);
             }
-            currentTextBox = textBoxGebruiksfase;
-            
+            currentTextBox = textBoxGebruiksfase;    
         }
 
         private void buttonBedienvorm_Click(object sender, EventArgs e)
@@ -237,8 +236,6 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             }
             currentTextBox = textBoxGebruiker;
         }
-
-
 
         private void buttonGevaarlijkeZone_Click(object sender, EventArgs e)
         {

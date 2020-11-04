@@ -196,14 +196,12 @@ namespace RiskManagmentTool.LogicLayer
 
         // START Delete region
 
-        public void DeleteIssuesFromObject(string objectId, List<string> issueIds)
+        public void DeleteIssueFromObject(string objectId, string issueId)
         {
-            //databaseCommunication.FindGevaarID();
-            foreach (string issueId in issueIds)
-            {
-                databaseCommunication.VerwijderIssuesVanObject(objectId, issueId);
-            }
-           
+            databaseCommunication.VerwijderIssuesVanObject(objectId, issueId);
+            databaseCommunication.VerwijderMaatregelenVanIssue(issueId);
+            databaseCommunication.VerwijderRisicoBeoordelingVanIssue(issueId);
+            databaseCommunication.VerwijderIssue(issueId);
         }
 
         // END delete region
@@ -312,6 +310,11 @@ namespace RiskManagmentTool.LogicLayer
         }
 
 
+        public List<string> GetMaatregelenFromIssuesAsList(string issueID)
+        {
+
+            return databaseCommunication.GetMaatregelenFromIssues(issueID);
+        }
 
 
 
@@ -387,9 +390,9 @@ namespace RiskManagmentTool.LogicLayer
             return data;
         }
 
-        public DataTable GetIssueMaatregelen(string objectID, string issueID)
+        public DataTable GetIssueMaatregelen(string issueID)
         {
-            SqlDataAdapter adapter = databaseCommunication.GetIssueMaatregelen(objectID, issueID);
+            SqlDataAdapter adapter = databaseCommunication.GetIssueMaatregelen(issueID);
             DataTable data = new DataTable();
             adapter.Fill(data);
             return data;

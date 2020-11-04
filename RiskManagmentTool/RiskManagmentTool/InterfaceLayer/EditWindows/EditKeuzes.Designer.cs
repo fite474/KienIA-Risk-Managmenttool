@@ -97,6 +97,7 @@
             // 
             this.textBoxMenuName.Location = new System.Drawing.Point(111, 34);
             this.textBoxMenuName.Name = "textBoxMenuName";
+            this.textBoxMenuName.ReadOnly = true;
             this.textBoxMenuName.Size = new System.Drawing.Size(207, 22);
             this.textBoxMenuName.TabIndex = 6;
             // 

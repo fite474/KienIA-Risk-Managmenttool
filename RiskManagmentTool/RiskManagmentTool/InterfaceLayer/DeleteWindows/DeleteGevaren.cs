@@ -35,24 +35,20 @@ namespace RiskManagmentTool.InterfaceLayer.DeleteWindows
         private void LoadData()
         {
             dataGridViewGekoppeldeGevaren.DataSource = comunicator.GetObjectIssues(ObjectID);
-
-
             textBoxObjectNaam.Text = ObjectNaam;
-
-            
         }
 
         private void buttonDeleteSelection_Click(object sender, EventArgs e)
         {
-            string gevaarID = "";
+            string issueID = "";
             string messageGevarenId = "";
             foreach (DataGridViewRow row in dataGridViewGekoppeldeGevaren.SelectedRows)
             {
-                gevaarID = row.Cells[0].Value.ToString();
-                if (!SelectedGevarenId.Contains(gevaarID))
+                issueID = row.Cells[0].Value.ToString();
+                if (!SelectedGevarenId.Contains(issueID))
                 {
-                    SelectedGevarenId.Add(gevaarID);
-                    messageGevarenId += gevaarID + ", ";
+                    SelectedGevarenId.Add(issueID);
+                    messageGevarenId += issueID + ", ";
                 }
             }
 
@@ -63,12 +59,17 @@ namespace RiskManagmentTool.InterfaceLayer.DeleteWindows
             DialogResult result = MessageBox.Show(message, title, buttons);
             if (result == DialogResult.Yes)
             {
-                comunicator.DeleteIssuesFromObject(ObjectID, SelectedGevarenId);
+                foreach (string issueId in SelectedGevarenId)
+                {
+                    comunicator.DeleteIssueFromObject(ObjectID, issueId);
+                }
             }
             else
             {
                 // Do something  
             }
+
+            
             
         }
     }

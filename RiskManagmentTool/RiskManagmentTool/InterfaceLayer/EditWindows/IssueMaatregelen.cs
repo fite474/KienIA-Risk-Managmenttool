@@ -26,12 +26,6 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private string Gebeurtenis;
 
 
-        //public IssueMaatregelen()
-        //{
-        //    issueNmr = 0;
-        //    InitializeComponent();
-        //    LoadData();
-        //}
         public IssueMaatregelen(string objectNaam, string objectId, string issueId,
                                 string discipline, string gevaar, string situatie, string gebeurtenis,
                                 string init_Risico, string init_Risico_Beschrijving,
@@ -51,9 +45,6 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             LoadMenus();
             LoadData();
             //
-            //issueNmr = 0;
-
-
             textBoxNaamObject.Text = objectNaam;
             textBoxIssueID.Text = issueId;
             comboBoxDiscipline.SelectedIndex = comboBoxDiscipline.FindStringExact(Discipline);
@@ -64,11 +55,6 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             textBoxInit_Risico_Comment.Text = init_Risico_Beschrijving;
             textBoxRest_Risico.Text = rest_Risico;
             textBoxRest_Risico_Comment.Text = rest_Risico_Beschrijving;
-
-
-
-
-
 
         }
 
@@ -89,7 +75,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void LoadData()
         {
-            dataGridViewIssueMaatregelen.DataSource = comunicator.GetIssueMaatregelen(ObjectID, IssueID);//GetMaatregelTable();
+            dataGridViewIssueMaatregelen.DataSource = comunicator.GetIssueMaatregelen(IssueID);
         }
 
         private void buttonRisicoDetails_Click(object sender, EventArgs e)

@@ -230,6 +230,7 @@
             // 
             this.textBoxNaamObject.Location = new System.Drawing.Point(135, 21);
             this.textBoxNaamObject.Name = "textBoxNaamObject";
+            this.textBoxNaamObject.ReadOnly = true;
             this.textBoxNaamObject.Size = new System.Drawing.Size(100, 22);
             this.textBoxNaamObject.TabIndex = 12;
             // 
@@ -255,6 +256,7 @@
             // 
             this.textBoxIssueID.Location = new System.Drawing.Point(135, 49);
             this.textBoxIssueID.Name = "textBoxIssueID";
+            this.textBoxIssueID.ReadOnly = true;
             this.textBoxIssueID.Size = new System.Drawing.Size(100, 22);
             this.textBoxIssueID.TabIndex = 9;
             // 

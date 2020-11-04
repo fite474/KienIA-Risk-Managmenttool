@@ -69,6 +69,7 @@
             this.buttonDeleteGevaren = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.buttonAddRisico = new System.Windows.Forms.Button();
+            this.buttonShow = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -124,6 +125,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.buttonShow);
             this.panel1.Controls.Add(this.textBoxProjectNaam);
             this.panel1.Controls.Add(this.comboBoxObjectType);
             this.panel1.Controls.Add(this.textBoxOmschrijving);
@@ -526,6 +528,16 @@
             this.buttonAddRisico.UseVisualStyleBackColor = true;
             this.buttonAddRisico.Click += new System.EventHandler(this.buttonAddRisico_Click);
             // 
+            // buttonShow
+            // 
+            this.buttonShow.Location = new System.Drawing.Point(381, 215);
+            this.buttonShow.Name = "buttonShow";
+            this.buttonShow.Size = new System.Drawing.Size(133, 23);
+            this.buttonShow.TabIndex = 8;
+            this.buttonShow.Text = "Show Problems";
+            this.buttonShow.UseVisualStyleBackColor = true;
+            this.buttonShow.Click += new System.EventHandler(this.buttonShow_Click);
+            // 
             // EditObjecten
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -604,5 +616,6 @@
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.TextBox textBoxProjectNaam;
+        private System.Windows.Forms.Button buttonShow;
     }
 }

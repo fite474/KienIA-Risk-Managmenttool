@@ -16,19 +16,23 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
     {
         private Datacomunication comunicator;
         private KeuzeMenus keuzeMenus;
+        private DataControler controler;
+
         private List<string> SelectedMaatregelId;
-        private string RisicoID;
-        public AddMaatregel(string risicoID, string discipline, string gevaar, string situatie, string gebeurtenis)
+        private string IssueID;
+        public AddMaatregel(string issueId, string discipline, string gevaar, string situatie, string gebeurtenis)
         {
             InitializeComponent();
+            IssueID = issueId;
             comunicator = new Datacomunication();
             keuzeMenus = new KeuzeMenus();
+            controler = new DataControler(IssueID);
             SelectedMaatregelId = new List<string>();
-            RisicoID = risicoID;
+            
             LoadData();
 
 
-            textBoxIssueID.Text = risicoID;
+            textBoxIssueID.Text = issueId;
             comboBoxDiscipline.SelectedIndex = comboBoxDiscipline.FindStringExact(discipline);
             comboBoxGevaar.SelectedIndex = comboBoxGevaar.FindStringExact(gevaar);
             textBoxSituatie.Text = situatie;
@@ -79,12 +83,12 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
         private void dataGridViewMaatregelen_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            string maatregelID = dataGridViewMaatregelen.SelectedRows[0].Cells[0].Value.ToString();
-            if (!SelectedMaatregelId.Contains(maatregelID))
-            {
-                SelectedMaatregelId.Add(maatregelID);
-                textBoxSelectedMaatregelen.Text += maatregelID + ", ";
-            }
+            //string maatregelID = dataGridViewMaatregelen.SelectedRows[0].Cells[0].Value.ToString();
+            //if (!SelectedMaatregelId.Contains(maatregelID))
+            //{
+            //    SelectedMaatregelId.Add(maatregelID);
+            //    textBoxSelectedMaatregelen.Text += maatregelID + ", ";
+            //}
         }
 
 
@@ -96,11 +100,31 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
         private void buttonKoppelSelectedMaatregelen_Click(object sender, EventArgs e)
         {
-                foreach (string maatregelId in SelectedMaatregelId)
+            string maatregelID = "";
+            foreach (DataGridViewRow row in dataGridViewMaatregelen.SelectedRows)
+            {
+                maatregelID = row.Cells[0].Value.ToString();
+
+                if (!SelectedMaatregelId.Contains(maatregelID))
                 {
-                    comunicator.AddMaatregelToIssue(RisicoID, maatregelId);
+                    SelectedMaatregelId.Add(maatregelID);
+                    textBoxSelectedMaatregelen.Text += maatregelID + ", ";
                 }
-                this.Close();
+                //    if (!SelectedTemplateIssueId.Contains(maatregelID))
+                //{
+                //    SelectedTemplateIssueId.Add(maatregelID);
+                //}
+            }
+            dataGridViewMaatregelen.ClearSelection();
+            controler.CheckIssueForDubbleMaatregelen(SelectedMaatregelId);
+            SelectedMaatregelId.Clear();
+
+
+            //foreach (string maatregelId in SelectedMaatregelId)
+            //    {
+            //        comunicator.AddMaatregelToIssue(IssueID, maatregelId);
+            //    }
+             
         }
     }
 }

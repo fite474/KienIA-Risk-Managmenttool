@@ -350,7 +350,7 @@
             this.checkedListBoxOptions.FormattingEnabled = true;
             this.checkedListBoxOptions.Location = new System.Drawing.Point(3, 227);
             this.checkedListBoxOptions.Name = "checkedListBoxOptions";
-            this.checkedListBoxOptions.Size = new System.Drawing.Size(505, 429);
+            this.checkedListBoxOptions.Size = new System.Drawing.Size(505, 327);
             this.checkedListBoxOptions.TabIndex = 0;
             this.checkedListBoxOptions.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxOptions_ItemCheck);
             // 

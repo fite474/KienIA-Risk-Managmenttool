@@ -154,6 +154,7 @@
             // 
             this.textBoxGevaar.Location = new System.Drawing.Point(144, 173);
             this.textBoxGevaar.Name = "textBoxGevaar";
+            this.textBoxGevaar.ReadOnly = true;
             this.textBoxGevaar.Size = new System.Drawing.Size(310, 22);
             this.textBoxGevaar.TabIndex = 8;
             // 
@@ -162,6 +163,7 @@
             this.textBoxGebeurtenis.Location = new System.Drawing.Point(144, 117);
             this.textBoxGebeurtenis.Multiline = true;
             this.textBoxGebeurtenis.Name = "textBoxGebeurtenis";
+            this.textBoxGebeurtenis.ReadOnly = true;
             this.textBoxGebeurtenis.Size = new System.Drawing.Size(310, 44);
             this.textBoxGebeurtenis.TabIndex = 7;
             // 
@@ -170,6 +172,7 @@
             this.textBoxSituatie.Location = new System.Drawing.Point(144, 60);
             this.textBoxSituatie.Multiline = true;
             this.textBoxSituatie.Name = "textBoxSituatie";
+            this.textBoxSituatie.ReadOnly = true;
             this.textBoxSituatie.Size = new System.Drawing.Size(310, 36);
             this.textBoxSituatie.TabIndex = 6;
             // 
@@ -177,6 +180,7 @@
             // 
             this.textBoxIssueID.Location = new System.Drawing.Point(144, 19);
             this.textBoxIssueID.Name = "textBoxIssueID";
+            this.textBoxIssueID.ReadOnly = true;
             this.textBoxIssueID.Size = new System.Drawing.Size(152, 22);
             this.textBoxIssueID.TabIndex = 5;
             // 

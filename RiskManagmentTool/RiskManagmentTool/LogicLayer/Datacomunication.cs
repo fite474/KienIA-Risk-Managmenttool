@@ -373,6 +373,17 @@ namespace RiskManagmentTool.LogicLayer
             return objectId;
         }
 
+
+        public string GetIssueIdByObjectAndGevaarId(string objectId, string gevaarId)
+        {
+            return databaseCommunication.GetIssueIdByObjectAndGevaarId(objectId, gevaarId);
+        }
+
+        public List<string> GetIssueInfo(string issueId)
+        {
+            return databaseCommunication.GetIssuesInfo(issueId);
+        }
+
         //End redirect options
 
 

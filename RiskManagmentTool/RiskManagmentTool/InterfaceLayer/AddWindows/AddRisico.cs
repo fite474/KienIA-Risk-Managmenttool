@@ -169,6 +169,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
         private void comboBoxViewObjectNaam_SelectedIndexChanged(object sender, EventArgs e)
         {
             dataGridViewObjectView.DataSource = comunicator.GetObjectIssuesByObjectName(comboBoxViewObjectNaam.SelectedItem.ToString());
+            SelectedObjectIssueId.Clear();
         }
 
         private void dataGridViewTemplateViewGevaren_DoubleClick(object sender, EventArgs e)
@@ -199,7 +200,10 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
             }
 
             dataGridViewLosseItems.ClearSelection();
-            controler.CheckObjectForDubbleGevaren(SelectedGevarenId);
+            List<string> temp = controler.CheckObjectForDubbleGevaren(SelectedGevarenId);
+            SelectedGevarenId = temp;
+
+            //controler.CheckObjectForDubbleGevaren(SelectedGevarenId);
             //SelectedGevarenId.Clear();
             dataGridViewWeergaveLosseItems.DataSource = comunicator.GetSelectedGevaren(SelectedGevarenId);
         }
@@ -225,7 +229,9 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
                 }
             }
             dataGridViewTemplateViewGevaren.ClearSelection();
-            controler.CheckObjectForDubbleGevaren(SelectedTemplateGevaarId);
+
+            List<string> temp = controler.CheckObjectForDubbleGevaren(SelectedTemplateGevaarId);
+            SelectedTemplateGevaarId = temp;
             //SelectedTemplateGevaarId.Clear();
         }
 

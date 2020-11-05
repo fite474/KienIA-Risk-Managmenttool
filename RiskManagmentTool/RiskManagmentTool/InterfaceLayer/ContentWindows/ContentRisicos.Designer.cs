@@ -79,7 +79,6 @@
             // 
             this.dataGridViewRisicos.AllowUserToAddRows = false;
             this.dataGridViewRisicos.AllowUserToDeleteRows = false;
-            this.dataGridViewRisicos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewRisicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewRisicos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewRisicos.Location = new System.Drawing.Point(0, 0);
@@ -89,6 +88,7 @@
             this.dataGridViewRisicos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewRisicos.Size = new System.Drawing.Size(1575, 712);
             this.dataGridViewRisicos.TabIndex = 0;
+            this.dataGridViewRisicos.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewRisicos_DataBindingComplete);
             this.dataGridViewRisicos.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewRisicos_MouseDoubleClick);
             // 
             // ContentRisicos

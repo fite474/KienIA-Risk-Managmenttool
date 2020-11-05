@@ -28,8 +28,28 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
         {
             string zoekNummer = textBoxZoekIssueNummer.Text;
             string objectId = comunicator.GetObjectIdByIssueNmr(zoekNummer);
-            Form editObject = new EditObjecten(objectId, "", "", "", "");
-            editObject.Show();
+            if (!objectId.Equals("0"))
+            {
+                Form editObject = new EditObjecten(objectId, "", "", "", "");
+                editObject.Show();
+            }
+            else
+            {
+                string message = "Geen zoekresultaten";
+                string title = "Reminder Risico waardes";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show(message, title, buttons);
+
+                if (result == DialogResult.Yes)
+                {
+                    //this.Close();
+                }
+                else
+                {
+                    // Do something  
+                }
+            }
+            
             //Form issueMaatregelNmr = new IssueMaatregelen();
             //issueMaatregelNmr.Show();
         }

@@ -66,6 +66,16 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 
         }
 
-
+        private void dataGridViewRisicos_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            for (int i = 0; i < (dataGridViewRisicos.ColumnCount - 1); i++)
+            {
+                dataGridViewRisicos.AutoResizeColumn((i + 1), DataGridViewAutoSizeColumnMode.AllCells );
+                if (dataGridViewRisicos.Columns[i + 1].Width > 400)
+                {
+                    dataGridViewRisicos.Columns[i + 1].Width = 400;
+                }
+            }
+        }
     }
 }

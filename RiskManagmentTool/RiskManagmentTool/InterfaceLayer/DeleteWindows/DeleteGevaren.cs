@@ -72,6 +72,18 @@ namespace RiskManagmentTool.InterfaceLayer.DeleteWindows
             
             
         }
+
+        private void dataGridViewGekoppeldeGevaren_SelectionChanged(object sender, EventArgs e)
+        {
+            textBoxSelectedItems.Text = string.Empty;
+            string issueID = "";
+            foreach (DataGridViewRow row in dataGridViewGekoppeldeGevaren.SelectedRows)
+            {
+                issueID = row.Cells[0].Value.ToString();
+                textBoxSelectedItems.Text += issueID + ", ";
+            }
+
+        }
     }
     
 }

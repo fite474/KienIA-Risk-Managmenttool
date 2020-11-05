@@ -98,6 +98,7 @@
             this.dataGridViewProjecten.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewProjecten.Size = new System.Drawing.Size(284, 712);
             this.dataGridViewProjecten.TabIndex = 0;
+            this.dataGridViewProjecten.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewProjecten_DataBindingComplete);
             this.dataGridViewProjecten.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewProjecten_MouseDoubleClick);
             // 
             // ContentProjecten

@@ -48,7 +48,6 @@
   <ItemGroup>
     <Compile Include="DataLayer\DatabaseCommunication.cs" />
     <Compile Include="DataLayer\DatabaseConnection.cs" />
-    <Compile Include="DataLayer\DatabaseTaskHandler.cs" />
     <Compile Include="InterfaceLayer\AddWindows\AddMaatregel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +210,12 @@
     <Compile Include="InterfaceLayer\MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="InterfaceLayer\WarningWindows\WarningAddToObject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\WarningWindows\WarningAddToObject.Designer.cs">
+      <DependentUpon>WarningAddToObject.cs</DependentUpon>
+    </Compile>
     <Compile Include="LogicLayer\Datacomunication.cs" />
     <Compile Include="LogicLayer\DataControler.cs" />
     <Compile Include="LogicLayer\KeuzeMenus.cs" />
@@ -308,6 +313,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InterfaceLayer\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\WarningWindows\WarningAddToObject.resx">
+      <DependentUpon>WarningAddToObject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

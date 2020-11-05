@@ -24,6 +24,16 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             LoadMenus();
         }
 
+        public EditMaatregelen(string maatregelID, string maatregelNaam, string maatregelCategory, string maatregelNorm)
+        {
+            InitializeComponent();
+            comunicator = new Datacomunication();
+            keuzeMenus = new KeuzeMenus();
+            LoadMenus();
+            textBoxMaatregelNaam.Text = maatregelNaam;
+        }
+
+
 
         private void LoadMenus()
         {

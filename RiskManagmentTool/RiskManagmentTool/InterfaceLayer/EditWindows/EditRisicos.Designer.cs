@@ -68,6 +68,7 @@
             this.buttonGevaarlijkeZone = new System.Windows.Forms.Button();
             this.buttonTaak = new System.Windows.Forms.Button();
             this.buttonGevolg = new System.Windows.Forms.Button();
+            this.buttonSaveNewGevaar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -258,7 +259,7 @@
             this.comboBoxDiscipline.FormattingEnabled = true;
             this.comboBoxDiscipline.Location = new System.Drawing.Point(794, 234);
             this.comboBoxDiscipline.Name = "comboBoxDiscipline";
-            this.comboBoxDiscipline.Size = new System.Drawing.Size(231, 24);
+            this.comboBoxDiscipline.Size = new System.Drawing.Size(28, 24);
             this.comboBoxDiscipline.TabIndex = 25;
             this.comboBoxDiscipline.SelectedIndexChanged += new System.EventHandler(this.comboBoxDiscipline_SelectedIndexChanged);
             // 
@@ -267,7 +268,7 @@
             this.comboBoxGebruiksfase.FormattingEnabled = true;
             this.comboBoxGebruiksfase.Location = new System.Drawing.Point(794, 289);
             this.comboBoxGebruiksfase.Name = "comboBoxGebruiksfase";
-            this.comboBoxGebruiksfase.Size = new System.Drawing.Size(231, 24);
+            this.comboBoxGebruiksfase.Size = new System.Drawing.Size(28, 24);
             this.comboBoxGebruiksfase.TabIndex = 26;
             this.comboBoxGebruiksfase.SelectedIndexChanged += new System.EventHandler(this.comboBoxGebruiksfase_SelectedIndexChanged);
             // 
@@ -276,7 +277,7 @@
             this.comboBoxGebruiker.FormattingEnabled = true;
             this.comboBoxGebruiker.Location = new System.Drawing.Point(794, 426);
             this.comboBoxGebruiker.Name = "comboBoxGebruiker";
-            this.comboBoxGebruiker.Size = new System.Drawing.Size(231, 24);
+            this.comboBoxGebruiker.Size = new System.Drawing.Size(28, 24);
             this.comboBoxGebruiker.TabIndex = 28;
             this.comboBoxGebruiker.SelectedIndexChanged += new System.EventHandler(this.comboBoxGebruiker_SelectedIndexChanged);
             // 
@@ -285,7 +286,7 @@
             this.comboBoxBedienVorm.FormattingEnabled = true;
             this.comboBoxBedienVorm.Location = new System.Drawing.Point(794, 355);
             this.comboBoxBedienVorm.Name = "comboBoxBedienVorm";
-            this.comboBoxBedienVorm.Size = new System.Drawing.Size(231, 24);
+            this.comboBoxBedienVorm.Size = new System.Drawing.Size(28, 24);
             this.comboBoxBedienVorm.TabIndex = 27;
             this.comboBoxBedienVorm.SelectedIndexChanged += new System.EventHandler(this.comboBoxBedienVorm_SelectedIndexChanged);
             // 
@@ -294,7 +295,7 @@
             this.comboBoxGevolg.FormattingEnabled = true;
             this.comboBoxGevolg.Location = new System.Drawing.Point(794, 633);
             this.comboBoxGevolg.Name = "comboBoxGevolg";
-            this.comboBoxGevolg.Size = new System.Drawing.Size(231, 24);
+            this.comboBoxGevolg.Size = new System.Drawing.Size(28, 24);
             this.comboBoxGevolg.TabIndex = 32;
             this.comboBoxGevolg.SelectedIndexChanged += new System.EventHandler(this.comboBoxGevolg_SelectedIndexChanged);
             // 
@@ -303,7 +304,7 @@
             this.comboBoxGevaar.FormattingEnabled = true;
             this.comboBoxGevaar.Location = new System.Drawing.Point(794, 584);
             this.comboBoxGevaar.Name = "comboBoxGevaar";
-            this.comboBoxGevaar.Size = new System.Drawing.Size(231, 24);
+            this.comboBoxGevaar.Size = new System.Drawing.Size(28, 24);
             this.comboBoxGevaar.TabIndex = 31;
             this.comboBoxGevaar.SelectedIndexChanged += new System.EventHandler(this.comboBoxGevaar_SelectedIndexChanged);
             // 
@@ -312,7 +313,7 @@
             this.comboBoxTaak.FormattingEnabled = true;
             this.comboBoxTaak.Location = new System.Drawing.Point(794, 530);
             this.comboBoxTaak.Name = "comboBoxTaak";
-            this.comboBoxTaak.Size = new System.Drawing.Size(231, 24);
+            this.comboBoxTaak.Size = new System.Drawing.Size(28, 24);
             this.comboBoxTaak.TabIndex = 30;
             this.comboBoxTaak.SelectedIndexChanged += new System.EventHandler(this.comboBoxTaak_SelectedIndexChanged);
             // 
@@ -321,7 +322,7 @@
             this.comboBoxGevaarlijkeZone.FormattingEnabled = true;
             this.comboBoxGevaarlijkeZone.Location = new System.Drawing.Point(794, 475);
             this.comboBoxGevaarlijkeZone.Name = "comboBoxGevaarlijkeZone";
-            this.comboBoxGevaarlijkeZone.Size = new System.Drawing.Size(231, 24);
+            this.comboBoxGevaarlijkeZone.Size = new System.Drawing.Size(28, 24);
             this.comboBoxGevaarlijkeZone.TabIndex = 29;
             this.comboBoxGevaarlijkeZone.SelectedIndexChanged += new System.EventHandler(this.comboBoxGevaarlijkeZone_SelectedIndexChanged);
             // 
@@ -339,9 +340,9 @@
             // 
             this.panel2.Controls.Add(this.checkedListBoxOptions);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(1066, 0);
+            this.panel2.Location = new System.Drawing.Point(828, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(511, 796);
+            this.panel2.Size = new System.Drawing.Size(749, 796);
             this.panel2.TabIndex = 34;
             // 
             // checkedListBoxOptions
@@ -424,11 +425,22 @@
             this.buttonGevolg.UseVisualStyleBackColor = true;
             this.buttonGevolg.Click += new System.EventHandler(this.buttonGevolg_Click);
             // 
+            // buttonSaveNewGevaar
+            // 
+            this.buttonSaveNewGevaar.Location = new System.Drawing.Point(732, 28);
+            this.buttonSaveNewGevaar.Name = "buttonSaveNewGevaar";
+            this.buttonSaveNewGevaar.Size = new System.Drawing.Size(75, 138);
+            this.buttonSaveNewGevaar.TabIndex = 42;
+            this.buttonSaveNewGevaar.Text = "Test New Version";
+            this.buttonSaveNewGevaar.UseVisualStyleBackColor = true;
+            this.buttonSaveNewGevaar.Click += new System.EventHandler(this.buttonSaveNewGevaar_Click);
+            // 
             // EditRisicos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1577, 838);
+            this.Controls.Add(this.buttonSaveNewGevaar);
             this.Controls.Add(this.buttonGevolg);
             this.Controls.Add(this.buttonTaak);
             this.Controls.Add(this.buttonGevaarlijkeZone);
@@ -518,5 +530,6 @@
         private System.Windows.Forms.Button buttonGevaarlijkeZone;
         private System.Windows.Forms.Button buttonTaak;
         private System.Windows.Forms.Button buttonGevolg;
+        private System.Windows.Forms.Button buttonSaveNewGevaar;
     }
 }

@@ -70,6 +70,7 @@
             this.dataGridViewGekoppeldeGevaren.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewGekoppeldeGevaren.Size = new System.Drawing.Size(910, 418);
             this.dataGridViewGekoppeldeGevaren.TabIndex = 2;
+            this.dataGridViewGekoppeldeGevaren.SelectionChanged += new System.EventHandler(this.dataGridViewGekoppeldeGevaren_SelectionChanged);
             // 
             // buttonDeleteSelection
             // 
@@ -92,6 +93,7 @@
             // 
             this.textBoxObjectNaam.Location = new System.Drawing.Point(246, 62);
             this.textBoxObjectNaam.Name = "textBoxObjectNaam";
+            this.textBoxObjectNaam.ReadOnly = true;
             this.textBoxObjectNaam.Size = new System.Drawing.Size(192, 22);
             this.textBoxObjectNaam.TabIndex = 5;
             // 

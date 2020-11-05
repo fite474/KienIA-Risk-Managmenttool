@@ -63,5 +63,17 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
             //mainWindowForm.OpenContentWindow(editMaatregelenForm);
             editMaatregelenForm.Show();
         }
+
+        private void dataGridViewMaatregelen_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            string maatregelId = dataGridViewMaatregelen.SelectedRows[0].Cells[0].Value.ToString();
+            string maatregelNaam = dataGridViewMaatregelen.SelectedRows[0].Cells[1].Value.ToString();
+            string maatregelCategory = "";//dataGridViewObjecten.SelectedRows[0].Cells[2].Value.ToString();
+            string maatregelNorm = "";//dataGridViewObjecten.SelectedRows[0].Cells[3].Value.ToString();
+
+            Form editMaatregelen = new EditMaatregelen(maatregelId, maatregelNaam, maatregelCategory, maatregelNorm);
+
+            editMaatregelen.Show();
+        }
     }
 }

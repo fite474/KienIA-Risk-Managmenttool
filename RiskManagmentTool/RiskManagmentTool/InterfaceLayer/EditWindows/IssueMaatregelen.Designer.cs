@@ -32,8 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBoxRest_Risico_Comment = new System.Windows.Forms.TextBox();
             this.textBoxInit_Risico_Comment = new System.Windows.Forms.TextBox();
             this.textBoxRest_Risico = new System.Windows.Forms.TextBox();
@@ -64,27 +62,22 @@
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridViewIssueMaatregelen = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panel3 = new System.Windows.Forms.Panel();
             this.buttonAddNewMaatregel = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIssueMaatregelen)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonRisicoDetails
@@ -117,8 +110,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.textBoxRest_Risico_Comment);
             this.panel1.Controls.Add(this.textBoxInit_Risico_Comment);
             this.panel1.Controls.Add(this.textBoxRest_Risico);
@@ -147,24 +138,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1297, 370);
             this.panel1.TabIndex = 3;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(971, 184);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(136, 36);
-            this.button5.TabIndex = 22;
-            this.button5.Text = "Foto bij dit issue";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox1.Location = new System.Drawing.Point(864, 170);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.TabIndex = 21;
-            this.pictureBox1.TabStop = false;
             // 
             // textBoxRest_Risico_Comment
             // 
@@ -418,90 +391,27 @@
             // 
             this.dataGridViewIssueMaatregelen.AllowUserToAddRows = false;
             this.dataGridViewIssueMaatregelen.AllowUserToDeleteRows = false;
+            this.dataGridViewIssueMaatregelen.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridViewIssueMaatregelen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewIssueMaatregelen.Location = new System.Drawing.Point(6, 59);
             this.dataGridViewIssueMaatregelen.Name = "dataGridViewIssueMaatregelen";
             this.dataGridViewIssueMaatregelen.ReadOnly = true;
             this.dataGridViewIssueMaatregelen.RowTemplate.Height = 24;
+            this.dataGridViewIssueMaatregelen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewIssueMaatregelen.Size = new System.Drawing.Size(866, 292);
             this.dataGridViewIssueMaatregelen.TabIndex = 0;
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.button7);
-            this.tabPage2.Controls.Add(this.button6);
-            this.tabPage2.Controls.Add(this.checkBox2);
-            this.tabPage2.Controls.Add(this.textBox9);
-            this.tabPage2.Controls.Add(this.textBox8);
-            this.tabPage2.Controls.Add(this.label14);
-            this.tabPage2.Controls.Add(this.label13);
+            this.tabPage2.Controls.Add(this.button5);
+            this.tabPage2.Controls.Add(this.pictureBox1);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1099, 372);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Risico details";
+            this.tabPage2.Text = "Issue Foto";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(721, 34);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(131, 36);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "Later controleren";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(586, 34);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(119, 36);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Accepteer";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(586, 6);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(87, 21);
-            this.checkBox2.TabIndex = 4;
-            this.checkBox2.Text = "Select all";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(95, 92);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(393, 22);
-            this.textBox9.TabIndex = 3;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(95, 48);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(393, 22);
-            this.textBox8.TabIndex = 2;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(30, 92);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(47, 17);
-            this.label14.TabIndex = 1;
-            this.label14.Text = "Init_Fr";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(27, 48);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(51, 17);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "Init_Se";
             // 
             // tabPage3
             // 
@@ -560,6 +470,24 @@
             this.button2.Text = "Verwijder maatregelen";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(492, 190);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(136, 36);
+            this.button5.TabIndex = 24;
+            this.button5.Text = "Foto bij dit issue";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(417, 309);
+            this.pictureBox1.TabIndex = 23;
+            this.pictureBox1.TabStop = false;
+            // 
             // IssueMaatregelen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -574,15 +502,14 @@
             this.Text = "IssueMaatregelen";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIssueMaatregelen)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -625,18 +552,11 @@
         private System.Windows.Forms.ComboBox comboBoxGevaar;
         private System.Windows.Forms.ComboBox comboBoxDiscipline;
         private System.Windows.Forms.TextBox textBoxNaamObject;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.CheckBox checkBox2;
     }
 }

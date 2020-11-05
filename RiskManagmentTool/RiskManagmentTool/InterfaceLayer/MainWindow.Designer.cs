@@ -88,6 +88,7 @@
             // buttonKeuzes
             // 
             this.buttonKeuzes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonKeuzes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonKeuzes.Location = new System.Drawing.Point(0, 546);
             this.buttonKeuzes.Margin = new System.Windows.Forms.Padding(4);
             this.buttonKeuzes.Name = "buttonKeuzes";
@@ -100,6 +101,7 @@
             // buttonRedirect
             // 
             this.buttonRedirect.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonRedirect.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRedirect.Location = new System.Drawing.Point(0, 468);
             this.buttonRedirect.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRedirect.Name = "buttonRedirect";
@@ -112,6 +114,7 @@
             // buttonMaatregelen
             // 
             this.buttonMaatregelen.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonMaatregelen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonMaatregelen.Location = new System.Drawing.Point(0, 390);
             this.buttonMaatregelen.Margin = new System.Windows.Forms.Padding(4);
             this.buttonMaatregelen.Name = "buttonMaatregelen";
@@ -124,6 +127,7 @@
             // buttonRisicos
             // 
             this.buttonRisicos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonRisicos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRisicos.Location = new System.Drawing.Point(0, 312);
             this.buttonRisicos.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRisicos.Name = "buttonRisicos";
@@ -136,36 +140,39 @@
             // buttonTemplates
             // 
             this.buttonTemplates.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonTemplates.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTemplates.Location = new System.Drawing.Point(0, 234);
             this.buttonTemplates.Margin = new System.Windows.Forms.Padding(4);
             this.buttonTemplates.Name = "buttonTemplates";
             this.buttonTemplates.Size = new System.Drawing.Size(200, 78);
             this.buttonTemplates.TabIndex = 2;
-            this.buttonTemplates.Text = "templates";
+            this.buttonTemplates.Text = "Templates";
             this.buttonTemplates.UseVisualStyleBackColor = true;
             this.buttonTemplates.Click += new System.EventHandler(this.buttonTemplates_Click);
             // 
             // buttonObjecten
             // 
             this.buttonObjecten.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonObjecten.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonObjecten.Location = new System.Drawing.Point(0, 156);
             this.buttonObjecten.Margin = new System.Windows.Forms.Padding(4);
             this.buttonObjecten.Name = "buttonObjecten";
             this.buttonObjecten.Size = new System.Drawing.Size(200, 78);
             this.buttonObjecten.TabIndex = 1;
-            this.buttonObjecten.Text = "objecten";
+            this.buttonObjecten.Text = "Objecten";
             this.buttonObjecten.UseVisualStyleBackColor = true;
             this.buttonObjecten.Click += new System.EventHandler(this.buttonObjecten_Click);
             // 
             // buttonProjecten
             // 
             this.buttonProjecten.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonProjecten.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonProjecten.Location = new System.Drawing.Point(0, 78);
             this.buttonProjecten.Margin = new System.Windows.Forms.Padding(4);
             this.buttonProjecten.Name = "buttonProjecten";
             this.buttonProjecten.Size = new System.Drawing.Size(200, 78);
             this.buttonProjecten.TabIndex = 0;
-            this.buttonProjecten.Text = "projecten";
+            this.buttonProjecten.Text = "Projecten";
             this.buttonProjecten.UseVisualStyleBackColor = true;
             this.buttonProjecten.Click += new System.EventHandler(this.buttonProjecten_Click);
             // 
@@ -187,6 +194,7 @@
             this.buttonMenu.TabIndex = 0;
             this.buttonMenu.Text = "show / hide menu bar\r\n\r\n";
             this.buttonMenu.UseVisualStyleBackColor = true;
+            this.buttonMenu.Visible = false;
             this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
             // 
             // panelContent

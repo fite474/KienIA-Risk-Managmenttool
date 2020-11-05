@@ -19,6 +19,24 @@ namespace RiskManagmentTool.DataLayer
             // new SqlConnection(databaseConnection.GetConnectionString());
 
             //vieuws doe je door: string strquery = "select * from View_App_Academic where recruitment_id = @recruitment_id
+
+            //SELECT StudentID,  
+            //CourseNames = STUFF
+            //(
+            //    (
+            //      SELECT DISTINCT ', ' + CAST(g.CourseName AS VARCHAR(MAX))
+            
+            //      FROM Courses g, StudentCourses e
+            
+            //      WHERE g.CourseID = e.CourseID and e.StudentID = t1.StudentID
+            
+            //      FOR XMl PATH('')
+            //    ),1,1,''
+            //    )  
+            //FROM StudentCourses t1
+            //GROUP BY StudentID
+
+
         }
 
 
@@ -407,6 +425,19 @@ namespace RiskManagmentTool.DataLayer
         }
 
 
+        public void VerwijderIssueVanTemplate()
+        {
+
+        }
+
+        public void VerwijderGevaarVanTemplate(string templateID, string gevaarID)
+        {
+
+
+        }
+
+        
+
 
         // END REGION DELETE
 
@@ -563,7 +594,6 @@ namespace RiskManagmentTool.DataLayer
 
         public SqlDataAdapter GetIssuesFromObject(string objectID)
         {
-
             sqlConnection.Open();
             //String query = "SELECT * FROM TableRisksUsedInProject WHERE UsedInProjectName = '" + ProjectName + "'";
             string query = "SELECT TableIssues.IssueID, TableGevaren.GevaarlijkeSituatie, TableGevaren.GevaarlijkeGebeurtenis, TableGevaren.Discipline, TableGevaren.Gebruiksfase, TableGevaren.Bedienvorm," +
@@ -766,6 +796,54 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
             return objectID;
         }
+
+        public string GetIssueIdByObjectAndGevaarId(string objectId, string gevaarId)
+        {
+            string issueId = "null";
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT IssueID FROM TableObjectIssues " +
+                                            "WHERE TableObjectIssues.ObjectID = '" + objectId + "' " +
+                                            "AND TableObjectIssues.IssueID IN ( " +
+                                            "SELECT IssueID FROM TableIssues WHERE IssueGevaarID = '" + gevaarId + "' ) ", sqlConnection);
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    issueId = (dr[0]).ToString();
+                }
+            }
+            sqlConnection.Close();
+
+
+            return issueId;
+        }
+
+
+
+        public List<string> GetIssuesInfo(string issueID)
+        {
+            
+            List<string> issueInfo = new List<string>();
+
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT TableIssues.IssueID, TableGevaren.GevaarlijkeSituatie, TableGevaren.GevaarlijkeGebeurtenis " +
+                                            "FROM TableIssues INNER JOIN TableGevaren" +
+                                            " ON TableGevaren.GevaarID = TableIssues.IssueGevaarID WHERE TableIssues.IssueID = '" + issueID + "' ", sqlConnection);
+
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    issueInfo.Add((dr[0]).ToString());
+                    issueInfo.Add((dr[1]).ToString());
+                    issueInfo.Add((dr[2]).ToString());
+                }
+            }
+            sqlConnection.Close();
+
+            return issueInfo;
+        }
+
 
         //end inner region get id
 
@@ -981,6 +1059,34 @@ namespace RiskManagmentTool.DataLayer
         }
 
         //END REGION -----GET REQUESTS FROM DATABASE
+
+        // START Images
+
+        public void AddImageToObject()
+        {
+
+
+        }
+
+        public void GetObjectImage(string objectID)
+        {
+
+        }
+
+
+        // END Images
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         //START MENU REGION

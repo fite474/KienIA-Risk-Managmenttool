@@ -31,6 +31,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonShow = new System.Windows.Forms.Button();
             this.textBoxProjectNaam = new System.Windows.Forms.TextBox();
             this.comboBoxObjectType = new System.Windows.Forms.ComboBox();
             this.textBoxOmschrijving = new System.Windows.Forms.TextBox();
@@ -69,7 +70,8 @@
             this.buttonDeleteGevaren = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.buttonAddRisico = new System.Windows.Forms.Button();
-            this.buttonShow = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.pictureBoxObjectFoto = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -89,6 +91,8 @@
             this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.panel4.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxObjectFoto)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -110,16 +114,18 @@
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.81198F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.18802F));
+            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.25175F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.53792F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.27406F));
             this.tableLayoutPanel2.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.panel2, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.panel6, 2, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1569, 268);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
@@ -137,8 +143,18 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(853, 262);
+            this.panel1.Size = new System.Drawing.Size(703, 262);
             this.panel1.TabIndex = 0;
+            // 
+            // buttonShow
+            // 
+            this.buttonShow.Location = new System.Drawing.Point(381, 215);
+            this.buttonShow.Name = "buttonShow";
+            this.buttonShow.Size = new System.Drawing.Size(133, 23);
+            this.buttonShow.TabIndex = 8;
+            this.buttonShow.Text = "Show Problems";
+            this.buttonShow.UseVisualStyleBackColor = true;
+            this.buttonShow.Click += new System.EventHandler(this.buttonShow_Click);
             // 
             // textBoxProjectNaam
             // 
@@ -161,7 +177,7 @@
             this.textBoxOmschrijving.Location = new System.Drawing.Point(188, 137);
             this.textBoxOmschrijving.Multiline = true;
             this.textBoxOmschrijving.Name = "textBoxOmschrijving";
-            this.textBoxOmschrijving.Size = new System.Drawing.Size(503, 68);
+            this.textBoxOmschrijving.Size = new System.Drawing.Size(496, 68);
             this.textBoxOmschrijving.TabIndex = 5;
             // 
             // textBoxObjectNaam
@@ -216,9 +232,9 @@
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(862, 3);
+            this.panel2.Location = new System.Drawing.Point(712, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(704, 262);
+            this.panel2.Size = new System.Drawing.Size(378, 262);
             this.panel2.TabIndex = 1;
             // 
             // buttonExport
@@ -270,7 +286,6 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.buttonIssuesOplossen);
             this.panel3.Controls.Add(this.tabControl1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 277);
@@ -280,7 +295,7 @@
             // 
             // buttonIssuesOplossen
             // 
-            this.buttonIssuesOplossen.Location = new System.Drawing.Point(1277, 369);
+            this.buttonIssuesOplossen.Location = new System.Drawing.Point(1217, 7);
             this.buttonIssuesOplossen.Name = "buttonIssuesOplossen";
             this.buttonIssuesOplossen.Size = new System.Drawing.Size(166, 71);
             this.buttonIssuesOplossen.TabIndex = 4;
@@ -294,11 +309,11 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1271, 447);
+            this.tabControl1.Size = new System.Drawing.Size(1569, 447);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -308,7 +323,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1263, 418);
+            this.tabPage1.Size = new System.Drawing.Size(1561, 418);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Gekoppelde issues";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -324,8 +339,9 @@
             this.dataGridViewGekoppeldeIssues.ReadOnly = true;
             this.dataGridViewGekoppeldeIssues.RowTemplate.Height = 24;
             this.dataGridViewGekoppeldeIssues.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewGekoppeldeIssues.Size = new System.Drawing.Size(1257, 362);
+            this.dataGridViewGekoppeldeIssues.Size = new System.Drawing.Size(1555, 362);
             this.dataGridViewGekoppeldeIssues.TabIndex = 0;
+            this.dataGridViewGekoppeldeIssues.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewGekoppeldeIssues_DataBindingComplete);
             this.dataGridViewGekoppeldeIssues.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewGekoppeldeIssues_MouseDoubleClick);
             // 
             // panel5
@@ -335,7 +351,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(3, 3);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1257, 50);
+            this.panel5.Size = new System.Drawing.Size(1555, 50);
             this.panel5.TabIndex = 1;
             // 
             // label8
@@ -367,7 +383,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1263, 418);
+            this.tabPage2.Size = new System.Drawing.Size(1481, 418);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Object informatie";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -489,6 +505,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.buttonIssuesOplossen);
             this.panel4.Controls.Add(this.buttonDeleteGevaren);
             this.panel4.Controls.Add(this.button1);
             this.panel4.Controls.Add(this.buttonAddRisico);
@@ -528,15 +545,23 @@
             this.buttonAddRisico.UseVisualStyleBackColor = true;
             this.buttonAddRisico.Click += new System.EventHandler(this.buttonAddRisico_Click);
             // 
-            // buttonShow
+            // panel6
             // 
-            this.buttonShow.Location = new System.Drawing.Point(381, 215);
-            this.buttonShow.Name = "buttonShow";
-            this.buttonShow.Size = new System.Drawing.Size(133, 23);
-            this.buttonShow.TabIndex = 8;
-            this.buttonShow.Text = "Show Problems";
-            this.buttonShow.UseVisualStyleBackColor = true;
-            this.buttonShow.Click += new System.EventHandler(this.buttonShow_Click);
+            this.panel6.Controls.Add(this.pictureBoxObjectFoto);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(1096, 3);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(470, 262);
+            this.panel6.TabIndex = 2;
+            // 
+            // pictureBoxObjectFoto
+            // 
+            this.pictureBoxObjectFoto.Location = new System.Drawing.Point(3, 6);
+            this.pictureBoxObjectFoto.Name = "pictureBoxObjectFoto";
+            this.pictureBoxObjectFoto.Size = new System.Drawing.Size(461, 211);
+            this.pictureBoxObjectFoto.TabIndex = 0;
+            this.pictureBoxObjectFoto.TabStop = false;
+            this.pictureBoxObjectFoto.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pictureBoxObjectFoto_MouseDoubleClick);
             // 
             // EditObjecten
             // 
@@ -546,6 +571,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "EditObjecten";
             this.Text = "EditObjecten";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -569,6 +595,8 @@
             this.tabPage7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.panel4.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxObjectFoto)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -617,5 +645,7 @@
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.TextBox textBoxProjectNaam;
         private System.Windows.Forms.Button buttonShow;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.PictureBox pictureBoxObjectFoto;
     }
 }

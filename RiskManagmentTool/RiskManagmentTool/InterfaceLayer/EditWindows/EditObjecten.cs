@@ -73,26 +73,17 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         //dataGridViewGekoppeldeIssues.DataSource = comunicator.GetObjectIssues(ObjectID);
         //
             dataGridViewGekoppeldeIssues.DataSource = comunicator.GetObjectIssues(ObjectID);
-            ShowSolvedIssues();
-
-        }
-
-        private void ShowSolvedIssues()
-        {
-
             
-            //int i = 0;
-            //foreach (DataGridViewRow row in dataGridViewGekoppeldeIssues.Rows)
-            //{
-            //    if (i < 2)//row.Cells[10].ToString())
-            //    {
-            //        row.DefaultCellStyle.ForeColor = Color.Red;
-
-            //    }
-            //    i++;
-            //}
+            
 
         }
+
+        private void SetObjectImage()
+        {
+            //get object image(ObjectID)
+
+        }
+
 
         private void SetInstellingen()
         {
@@ -173,6 +164,43 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             for (int i = 0; i < dataGridViewGekoppeldeIssues.Rows.Count; i++)
             {
                 dataGridViewGekoppeldeIssues.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+            }
+        }
+
+        private void pictureBoxObjectFoto_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            // image filters  
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                // display image in picture box  
+                pictureBoxObjectFoto.Image = new Bitmap(open.FileName);
+                pictureBoxObjectFoto.SizeMode = PictureBoxSizeMode.StretchImage;
+                // image file path  
+                textBox1.Text = open.FileName;
+            }
+        }
+
+        private void dataGridViewGekoppeldeIssues_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            for (int i = 0; i < (dataGridViewGekoppeldeIssues.ColumnCount - 1); i++)
+            {
+                dataGridViewGekoppeldeIssues.AutoResizeColumn((i+1), DataGridViewAutoSizeColumnMode.AllCells);
+                if (dataGridViewGekoppeldeIssues.Columns[i + 1].Width > 400)
+                {
+                    dataGridViewGekoppeldeIssues.Columns[i + 1].Width = 400;
+                }
+            }
+
+            dataGridViewGekoppeldeIssues.ClearSelection();
+            for (int i = 0; i < dataGridViewGekoppeldeIssues.Rows.Count; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    dataGridViewGekoppeldeIssues.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                }
+                
             }
         }
     }

@@ -80,7 +80,7 @@
             // 
             this.textBoxMaatregelNaam.Location = new System.Drawing.Point(294, 48);
             this.textBoxMaatregelNaam.Name = "textBoxMaatregelNaam";
-            this.textBoxMaatregelNaam.Size = new System.Drawing.Size(196, 22);
+            this.textBoxMaatregelNaam.Size = new System.Drawing.Size(495, 22);
             this.textBoxMaatregelNaam.TabIndex = 5;
             // 
             // comboBoxMaatregelCategory
@@ -88,7 +88,7 @@
             this.comboBoxMaatregelCategory.FormattingEnabled = true;
             this.comboBoxMaatregelCategory.Location = new System.Drawing.Point(294, 166);
             this.comboBoxMaatregelCategory.Name = "comboBoxMaatregelCategory";
-            this.comboBoxMaatregelCategory.Size = new System.Drawing.Size(196, 24);
+            this.comboBoxMaatregelCategory.Size = new System.Drawing.Size(495, 24);
             this.comboBoxMaatregelCategory.TabIndex = 7;
             // 
             // comboBox2
@@ -115,7 +115,7 @@
             this.comboBoxMaatregelNorm.FormattingEnabled = true;
             this.comboBoxMaatregelNorm.Location = new System.Drawing.Point(294, 104);
             this.comboBoxMaatregelNorm.Name = "comboBoxMaatregelNorm";
-            this.comboBoxMaatregelNorm.Size = new System.Drawing.Size(196, 24);
+            this.comboBoxMaatregelNorm.Size = new System.Drawing.Size(495, 24);
             this.comboBoxMaatregelNorm.TabIndex = 10;
             // 
             // EditMaatregelen

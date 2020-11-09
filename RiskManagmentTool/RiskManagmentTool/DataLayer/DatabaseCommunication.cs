@@ -75,6 +75,131 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
         }
 
+
+        public int InitMakeGevaar(string gevaarlijkeSituatie, string gevaarlijkeGebeurtenis)
+        {
+
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO TableGevaarMulti(GevaarlijkeSituatie, GevaarlijkeGebeurtenis) VALUES " +
+                                                                       "(@GevaarlijkeSituatie, @GevaarlijkeGebeurtenis)" +
+                                                                       "SELECT CAST(SCOPE_IDENTITY() AS INT)", sqlConnection);
+            cmd.Parameters.AddWithValue("@GevaarlijkeSituatie", gevaarlijkeSituatie);
+            cmd.Parameters.AddWithValue("@GevaarlijkeGebeurtenis", gevaarlijkeGebeurtenis);
+
+            Int32 gevaarID = (Int32)cmd.ExecuteScalar();
+
+            sqlConnection.Close();
+            return gevaarID;
+        }
+
+        public void MakeGevaar_Disciplines(int gevaarID, int disciplineID)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO Gevaar_Discipline(GevaarID, DisciplineID) VALUES " +
+                                                                       "(@GevaarID, @DisciplineID)", sqlConnection); 
+            cmd.Parameters.AddWithValue("@GevaarID", gevaarID);
+            cmd.Parameters.AddWithValue("@DisciplineID", disciplineID);
+
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+
+        public void MakeGevaar_Gebruiksfase(int gevaarID, int gebruiksfaseID)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO Gevaar_Gebruiksfase(GevaarID, GebruiksfaseID) VALUES " +
+                                                                       "(@GevaarID, @GebruiksfaseID)", sqlConnection);
+            cmd.Parameters.AddWithValue("@GevaarID", gevaarID);
+            cmd.Parameters.AddWithValue("@GebruiksfaseID", gebruiksfaseID);
+
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+
+        public void MakeGevaar_Bedienvorm(int gevaarID, int bedienvormID)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO Gevaar_Bedienvorm(GevaarID, BedienvormID) VALUES " +
+                                                                       "(@GevaarID, @BedienvormID)", sqlConnection);
+            cmd.Parameters.AddWithValue("@GevaarID", gevaarID);
+            cmd.Parameters.AddWithValue("@BedienvormID", bedienvormID);
+
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+
+        public void MakeGevaar_Gebruiker(int gevaarID, int gebruikerID)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO Gevaar_Gebruiker(GevaarID, GebruikerID) VALUES " +
+                                                                       "(@GevaarID, @GebruikerID)", sqlConnection);
+            cmd.Parameters.AddWithValue("@GevaarID", gevaarID);
+            cmd.Parameters.AddWithValue("@GebruikerID", gebruikerID);
+
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+
+        public void MakeGevaar_GevaarlijkeZone(int gevaarID, int gevaarlijkeZoneID)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO Gevaar_GevaarlijkeZone(GevaarID, GevaarlijkeZoneID) VALUES " +
+                                                                       "(@GevaarID, @GevaarlijkeZoneID)", sqlConnection);
+            cmd.Parameters.AddWithValue("@GevaarID", gevaarID);
+            cmd.Parameters.AddWithValue("@GevaarlijkeZoneID", gevaarlijkeZoneID);
+
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+
+        public void MakeGevaar_Taak(int gevaarID, int taakID)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO Gevaar_Taak(GevaarID, TaakID) VALUES " +
+                                                                       "(@GevaarID, @TaakID)", sqlConnection);
+            cmd.Parameters.AddWithValue("@GevaarID", gevaarID);
+            cmd.Parameters.AddWithValue("@TaakID", taakID);
+
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+
+        public void MakeGevaar_GevaarType(int gevaarID, int gevaarTypeID)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO Gevaar_GevaarType(GevaarID, GevaarTypeID) VALUES " +
+                                                                       "(@GevaarID, @GevaarTypeID)", sqlConnection);
+            cmd.Parameters.AddWithValue("@GevaarID", gevaarID);
+            cmd.Parameters.AddWithValue("@GevaarTypeID", gevaarTypeID);
+
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+
+        public void MakeGevaar_Gevolg(int gevaarID, int gevolgID)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO Gevaar_Gevolg(GevaarID, GevolgID) VALUES " +
+                                                                       "(@GevaarID, @GevolgID)", sqlConnection);
+            cmd.Parameters.AddWithValue("@GevaarID", gevaarID);
+            cmd.Parameters.AddWithValue("@GevolgID", gevolgID);
+
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
         public void MakeGevaar(Item item)
         {
             string gevaarlijkeSituatie = item.ItemData.GevaarlijkeSituatie;
@@ -660,11 +785,12 @@ namespace RiskManagmentTool.DataLayer
         public SqlDataAdapter GetGevaren()
         {
             sqlConnection.Open();
-            String query = "SELECT * FROM TableGevaren";
+            String query = "SELECT * FROM View_Gevaren";//TableGevaren";
             SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
             sqlConnection.Close();
             return adapter;
         }
+
 
         public SqlDataAdapter GetRisicoBeoordelingFromIssue(string issueID)
         {

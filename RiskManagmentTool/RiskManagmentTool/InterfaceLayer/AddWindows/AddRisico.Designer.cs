@@ -58,8 +58,6 @@
             this.comboBoxDiscipline = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.buttonVoegSelectieToe = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -84,6 +82,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.comboBoxWeergaveObjectNaam = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLosseItems)).BeginInit();
@@ -98,7 +98,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewObjectView)).BeginInit();
             this.panel3.SuspendLayout();
             this.tabControl2.SuspendLayout();
-            this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabControl3.SuspendLayout();
             this.tabPage6.SuspendLayout();
@@ -120,10 +119,10 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(6, 6);
+            this.tabControl1.Location = new System.Drawing.Point(19, 263);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1322, 569);
+            this.tabControl1.Size = new System.Drawing.Size(1269, 632);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -169,7 +168,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1314, 540);
+            this.tabPage2.Size = new System.Drawing.Size(1261, 603);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Items uit templates";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -182,7 +181,7 @@
             this.tabControl4.Location = new System.Drawing.Point(3, 66);
             this.tabControl4.Name = "tabControl4";
             this.tabControl4.SelectedIndex = 0;
-            this.tabControl4.Size = new System.Drawing.Size(1308, 471);
+            this.tabControl4.Size = new System.Drawing.Size(1255, 471);
             this.tabControl4.TabIndex = 2;
             // 
             // tabPage8
@@ -192,7 +191,7 @@
             this.tabPage8.Location = new System.Drawing.Point(4, 25);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(1300, 442);
+            this.tabPage8.Size = new System.Drawing.Size(1247, 442);
             this.tabPage8.TabIndex = 0;
             this.tabPage8.Text = "Gevaren";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -228,7 +227,7 @@
             this.tabPage10.Location = new System.Drawing.Point(4, 25);
             this.tabPage10.Name = "tabPage10";
             this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage10.Size = new System.Drawing.Size(1189, 380);
+            this.tabPage10.Size = new System.Drawing.Size(1300, 442);
             this.tabPage10.TabIndex = 1;
             this.tabPage10.Text = "Issues";
             this.tabPage10.UseVisualStyleBackColor = true;
@@ -263,7 +262,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1308, 63);
+            this.panel1.Size = new System.Drawing.Size(1255, 63);
             this.panel1.TabIndex = 0;
             // 
             // comboBoxViewTemplate
@@ -291,7 +290,7 @@
             this.tabPage3.Controls.Add(this.panel3);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1314, 540);
+            this.tabPage3.Size = new System.Drawing.Size(1261, 603);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Uit andere objecten selecteren";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -327,7 +326,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1314, 66);
+            this.panel3.Size = new System.Drawing.Size(1261, 66);
             this.panel3.TabIndex = 0;
             // 
             // comboBoxViewObjectNaam
@@ -360,7 +359,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(57, 826);
+            this.label3.Location = new System.Drawing.Point(52, 923);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(130, 17);
             this.label3.TabIndex = 3;
@@ -368,7 +367,7 @@
             // 
             // textBoxSelectedItems
             // 
-            this.textBoxSelectedItems.Location = new System.Drawing.Point(217, 826);
+            this.textBoxSelectedItems.Location = new System.Drawing.Point(212, 923);
             this.textBoxSelectedItems.Name = "textBoxSelectedItems";
             this.textBoxSelectedItems.Size = new System.Drawing.Size(365, 22);
             this.textBoxSelectedItems.TabIndex = 4;
@@ -418,31 +417,13 @@
             // 
             // buttonVoegSelectieToe
             // 
-            this.buttonVoegSelectieToe.Location = new System.Drawing.Point(514, 898);
+            this.buttonVoegSelectieToe.Location = new System.Drawing.Point(509, 995);
             this.buttonVoegSelectieToe.Name = "buttonVoegSelectieToe";
             this.buttonVoegSelectieToe.Size = new System.Drawing.Size(156, 32);
             this.buttonVoegSelectieToe.TabIndex = 10;
             this.buttonVoegSelectieToe.Text = "Voeg selectie toe";
             this.buttonVoegSelectieToe.UseVisualStyleBackColor = true;
             this.buttonVoegSelectieToe.Click += new System.EventHandler(this.buttonVoegSelectieToe_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(269, 898);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(170, 32);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Toon selectie als string";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(60, 897);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(139, 33);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Wis selectie";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // checkedListBox1
             // 
@@ -484,19 +465,18 @@
             // 
             this.tabControl2.Controls.Add(this.tabPage4);
             this.tabControl2.Controls.Add(this.tabPage5);
-            this.tabControl2.Location = new System.Drawing.Point(19, 194);
+            this.tabControl2.Location = new System.Drawing.Point(1068, 19);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1342, 607);
+            this.tabControl2.Size = new System.Drawing.Size(198, 200);
             this.tabControl2.TabIndex = 17;
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.tabControl1);
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1334, 578);
+            this.tabPage4.Size = new System.Drawing.Size(190, 171);
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "Toevoegen";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -507,7 +487,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1223, 578);
+            this.tabPage5.Size = new System.Drawing.Size(1334, 578);
             this.tabPage5.TabIndex = 1;
             this.tabPage5.Text = "Weergave geselecteerde items";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -696,11 +676,30 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Object naam";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(264, 995);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(170, 32);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Toon selectie als string";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(55, 994);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(139, 33);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Wis selectie";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // AddRisico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1782, 1055);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.tabControl2);
             this.Controls.Add(this.buttonCreateNewGevaar);
             this.Controls.Add(this.textBox3);
@@ -736,7 +735,6 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.tabControl2.ResumeLayout(false);
-            this.tabPage4.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.tabControl3.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
@@ -773,8 +771,6 @@
         private System.Windows.Forms.ComboBox comboBoxDiscipline;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button buttonVoegSelectieToe;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
@@ -816,5 +812,7 @@
         private System.Windows.Forms.TabPage tabPage11;
         private System.Windows.Forms.TabPage tabPage12;
         private System.Windows.Forms.DataGridView dataGridViewWeergaveIssuesUitTemplate;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

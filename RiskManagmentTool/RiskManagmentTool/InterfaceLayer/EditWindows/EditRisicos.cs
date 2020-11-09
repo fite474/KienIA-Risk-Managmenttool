@@ -194,16 +194,28 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         {
             string gevaarlijkeSituatie = textBoxGevGebeurtenis.Text;
             string gevaarlijkeGebeurtenis = textBoxGevSituatie.Text;
-            string discipline = textBoxDiscipline.Text;
-            string gebruiksfase = textBoxGebruiksfase.Text;
-            string bedienvorm = textBoxBedienvorm.Text;
-            string gebruiker = textBoxGebruiker.Text;
-            string gevaarlijkeZone = textBoxGevaarlijkeZone.Text;
-            string taak = textBoxTaak.Text;
-            string gevaar = textBoxGevaar.Text;
-            string gevolg = textBoxGevolg.Text;
-            comunicator.MakeGevaar(gevaarlijkeSituatie, gevaarlijkeGebeurtenis, discipline, gebruiksfase, bedienvorm, gebruiker, gevaarlijkeZone, taak, gevaar, gevolg);
+
+
+            comunicator.MakeGevaar2(gevaarlijkeSituatie, gevaarlijkeGebeurtenis,
+                DisciplinesCheckedItems, GebruiksfaseCheckedItems,
+                BedienvormenCheckedItems, GebruikersCheckedItems,
+                GevarenzonesCheckedItems, TakenCheckedItems,
+                GevaarTypesCheckedItems, GevolgenCheckedItems);
+
             this.Close();
+
+            //string gevaarlijkeSituatie = textBoxGevGebeurtenis.Text;
+            //string gevaarlijkeGebeurtenis = textBoxGevSituatie.Text;
+            //string discipline = textBoxDiscipline.Text;
+            //string gebruiksfase = textBoxGebruiksfase.Text;
+            //string bedienvorm = textBoxBedienvorm.Text;
+            //string gebruiker = textBoxGebruiker.Text;
+            //string gevaarlijkeZone = textBoxGevaarlijkeZone.Text;
+            //string taak = textBoxTaak.Text;
+            //string gevaar = textBoxGevaar.Text;
+            //string gevolg = textBoxGevolg.Text;
+            //comunicator.MakeGevaar(gevaarlijkeSituatie, gevaarlijkeGebeurtenis, discipline, gebruiksfase, bedienvorm, gebruiker, gevaarlijkeZone, taak, gevaar, gevolg);
+            //this.Close();
 
         }
 
@@ -401,23 +413,5 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             () => UpdateText()));
         }
 
-        private void buttonSaveNewGevaar_Click(object sender, EventArgs e)
-        {
-
-
-
-            string gevaarlijkeSituatie = textBoxGevGebeurtenis.Text;
-            string gevaarlijkeGebeurtenis = textBoxGevSituatie.Text;
-            string discipline = textBoxDiscipline.Text;
-            string gebruiksfase = textBoxGebruiksfase.Text;
-            string bedienvorm = textBoxBedienvorm.Text;
-            string gebruiker = textBoxGebruiker.Text;
-            string gevaarlijkeZone = textBoxGevaarlijkeZone.Text;
-            string taak = textBoxTaak.Text;
-            string gevaar = textBoxGevaar.Text;
-            string gevolg = textBoxGevolg.Text;
-            //comunicator.MakeGevaar(gevaarlijkeSituatie, gevaarlijkeGebeurtenis, discipline, gebruiksfase, bedienvorm, gebruiker, gevaarlijkeZone, taak, gevaar, gevolg);
-            this.Close();
-        }
     }
 }

@@ -143,7 +143,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private void buttonAddRisico_Click(object sender, EventArgs e)
         {
             Form addRisico = new AddRisico(ObjectNaam, ObjectID);
-            addRisico.Show();
+            addRisico.ShowDialog();
+            LoadData();
         }
 
         private void buttonExport_Click(object sender, EventArgs e)

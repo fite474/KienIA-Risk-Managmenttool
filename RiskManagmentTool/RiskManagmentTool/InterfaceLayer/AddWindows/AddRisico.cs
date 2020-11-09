@@ -203,9 +203,15 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
             List<string> temp = controler.CheckObjectForDubbleGevaren(SelectedGevarenId);
             SelectedGevarenId = temp;
 
+
+            foreach (string gevaarToAddID in SelectedGevarenId)
+            {
+                comunicator.AddGevaarToObject(ObjectID, gevaarToAddID);
+            }
+            
             //controler.CheckObjectForDubbleGevaren(SelectedGevarenId);
             //SelectedGevarenId.Clear();
-            dataGridViewWeergaveLosseItems.DataSource = comunicator.GetSelectedGevaren(SelectedGevarenId);
+            //dataGridViewWeergaveLosseItems.DataSource = comunicator.GetSelectedGevaren(SelectedGevarenId);
         }
 
 

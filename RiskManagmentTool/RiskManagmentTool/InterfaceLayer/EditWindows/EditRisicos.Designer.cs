@@ -68,7 +68,6 @@
             this.buttonGevaarlijkeZone = new System.Windows.Forms.Button();
             this.buttonTaak = new System.Windows.Forms.Button();
             this.buttonGevolg = new System.Windows.Forms.Button();
-            this.buttonSaveNewGevaar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -425,22 +424,11 @@
             this.buttonGevolg.UseVisualStyleBackColor = true;
             this.buttonGevolg.Click += new System.EventHandler(this.buttonGevolg_Click);
             // 
-            // buttonSaveNewGevaar
-            // 
-            this.buttonSaveNewGevaar.Location = new System.Drawing.Point(732, 28);
-            this.buttonSaveNewGevaar.Name = "buttonSaveNewGevaar";
-            this.buttonSaveNewGevaar.Size = new System.Drawing.Size(75, 138);
-            this.buttonSaveNewGevaar.TabIndex = 42;
-            this.buttonSaveNewGevaar.Text = "Test New Version";
-            this.buttonSaveNewGevaar.UseVisualStyleBackColor = true;
-            this.buttonSaveNewGevaar.Click += new System.EventHandler(this.buttonSaveNewGevaar_Click);
-            // 
             // EditRisicos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1577, 838);
-            this.Controls.Add(this.buttonSaveNewGevaar);
             this.Controls.Add(this.buttonGevolg);
             this.Controls.Add(this.buttonTaak);
             this.Controls.Add(this.buttonGevaarlijkeZone);
@@ -530,6 +518,5 @@
         private System.Windows.Forms.Button buttonGevaarlijkeZone;
         private System.Windows.Forms.Button buttonTaak;
         private System.Windows.Forms.Button buttonGevolg;
-        private System.Windows.Forms.Button buttonSaveNewGevaar;
     }
 }

@@ -51,6 +51,43 @@ namespace RiskManagmentTool.LogicLayer
 
         }
 
+        public void MakeGevaar2(string gevaarlijkeSituatie, string gevaarlijkeGebeurtenis,
+                      List<int> GevaarDisciplines, List<int> GevaarGebruiksfase,
+                      List<int> GevaarBedienvorm, List<int> GevaarGebruiker,
+                      List<int> GevaarGevaarlijkeZone, List<int> GevaarTaak,
+                      List<int> GevaarGevaarType, List<int> GevaarGevolg)
+        {
+            int gevaarID = databaseCommunication.InitMakeGevaar(gevaarlijkeSituatie, gevaarlijkeGebeurtenis);
+
+            foreach (int disciplineID in GevaarDisciplines)
+            {databaseCommunication.MakeGevaar_Disciplines(gevaarID, (disciplineID + 1 )); }
+
+            foreach (int gebruiksfaseID in GevaarGebruiksfase)
+            { databaseCommunication.MakeGevaar_Gebruiksfase(gevaarID, (gebruiksfaseID + 1)); }
+
+            foreach (int bedienvormID in GevaarBedienvorm)
+            { databaseCommunication.MakeGevaar_Bedienvorm(gevaarID, (bedienvormID + 1)); }
+
+            foreach (int gebruikerID in GevaarGebruiker)
+            { databaseCommunication.MakeGevaar_Gebruiker(gevaarID, (gebruikerID + 1)); }
+
+            foreach (int gevaarlijkeZoneID in GevaarGevaarlijkeZone)
+            { databaseCommunication.MakeGevaar_GevaarlijkeZone(gevaarID, (gevaarlijkeZoneID + 1)); }
+
+            foreach (int taakID in GevaarTaak)
+            { databaseCommunication.MakeGevaar_Taak(gevaarID, (taakID + 1)); }
+
+            foreach (int gevaarTypeID in GevaarGevaarType)
+            { databaseCommunication.MakeGevaar_GevaarType(gevaarID, (gevaarTypeID + 1)); }
+
+            foreach (int gevolgID in GevaarGevolg)
+            { databaseCommunication.MakeGevaar_Gevolg(gevaarID, (gevolgID + 1)); }
+
+        }
+
+
+
+
         public void MakeGevaar(string gevaarlijkeSituatie, string gevaarlijkeGebeurtenis,
                        string discipline, string gebruiksfase,
                        string bedienvorm, string gebruiker,

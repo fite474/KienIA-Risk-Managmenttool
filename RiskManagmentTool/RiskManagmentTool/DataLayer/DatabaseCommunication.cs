@@ -273,7 +273,7 @@ namespace RiskManagmentTool.DataLayer
 
 
         // START REGION ADD TO OBJECT
-        public void AddAndCreateIssueToObject(string objectId, string gevaarId)
+        public int AddAndCreateIssueToObject(string objectId, string gevaarId)
         {
             int issueId = InitIssue(gevaarId);
 
@@ -285,13 +285,13 @@ namespace RiskManagmentTool.DataLayer
             cmd.Parameters.AddWithValue("@IssueID", issueId);
 
             //mag weg******************************************************
-            Int32 issueID = (Int32)cmd.ExecuteScalar();
+            Int32 issueIDNotUsedInCode = (Int32)cmd.ExecuteScalar();
 
             sqlConnection.Close();
 
             int risicoBeoordelingId = InitRisicoBeoordeling(issueId);
             AddRisicoBeoordelingToIssue(risicoBeoordelingId, issueId);
-
+            return issueId;
         }
 
         public void AddCoppiedIssueToObject(string objectId, string issueID)
@@ -785,7 +785,8 @@ namespace RiskManagmentTool.DataLayer
         public SqlDataAdapter GetGevaren()
         {
             sqlConnection.Open();
-            String query = "SELECT * FROM View_Gevaren";//TableGevaren";
+            //String query = "SELECT * FROM View_Gevaren";//TableGevaren";
+            String query = "SELECT * FROM TableGevaren";
             SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
             sqlConnection.Close();
             return adapter;

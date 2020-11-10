@@ -131,16 +131,28 @@ namespace RiskManagmentTool.LogicLayer
 
         }
 
-        public void AddGevaarToObject(string objectId, string gevaarId)
+        public int AddGevaarToObject(string objectId, string gevaarId)
         {
-            databaseCommunication.AddAndCreateIssueToObject(objectId, gevaarId);
+            return databaseCommunication.AddAndCreateIssueToObject(objectId, gevaarId);
         }
 
-        public void AddIssueToObject(string objectId, string issueId)
+        public void AddIssueToObject(string objectId, string issueId, bool addMaatregelen, bool addBeoordeling)
         {
             databaseCommunication.AddCoppiedIssueToObject(objectId, issueId);
         }
 
+
+        //public void AddIssueToObjectWithoutMaatregelen(string objectId, string issueId)
+        //{
+        //    databaseCommunication.AddCoppiedIssueToObject(objectId, issueId);
+        //}
+
+
+
+        //public void AddIssueToObjectWithoutBeoordeling(string objectId, string issueId)
+        //{
+        //    databaseCommunication.AddCoppiedIssueToObject(objectId, issueId);
+        //}
 
         //templates
         public void AddGevaarToTemplate(string templateId, string gevaarId)

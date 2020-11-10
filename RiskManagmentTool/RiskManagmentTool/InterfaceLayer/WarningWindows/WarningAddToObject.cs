@@ -14,14 +14,21 @@ namespace RiskManagmentTool.InterfaceLayer.WarningWindows
 {
     public partial class WarningAddToObject : Form
     {
+        private bool switchToCustomMaatregelen;
+        private bool switchToCustomBeoordeling;
+
+
         private Datacomunication comunicator;
         private string ObjectIssueID;
         public WarningAddToObject()
         {
 
             InitializeComponent();
-
+            this.buttonOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             comunicator = new Datacomunication();
+
+            switchToCustomMaatregelen = true;
+            switchToCustomBeoordeling = true;
         }
 
         public void MakeWarningOnIssue(string objectId, string objectIssueId, string issueToAddId, string gevaarId)
@@ -46,6 +53,31 @@ namespace RiskManagmentTool.InterfaceLayer.WarningWindows
         {
             Form issueRisicoDetails = new IssueRisicoDetails(ObjectIssueID);
             issueRisicoDetails.Show();
+
+        }
+
+        private void SwitchCheckState()
+        {
+            if (checkedListBoxWarningSettings.GetItemChecked(3) && switchToCustomMaatregelen == true)
+            {
+                switchToCustomMaatregelen = false;
+                
+            }
+            if (checkedListBoxWarningSettings.GetItemChecked(4) && switchToCustomBeoordeling == true)
+            {
+                switchToCustomBeoordeling = false;
+            }
+
+        }
+
+        private void checkedListBoxWarningSettings_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            //this.BeginInvoke((MethodInvoker)(
+            //() => SwitchCheckState()));
+        }
+
+        private void buttonOnlySelectedMaatregelen_Click(object sender, EventArgs e)
+        {
 
         }
     }

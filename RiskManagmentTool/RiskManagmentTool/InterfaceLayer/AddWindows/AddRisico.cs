@@ -23,7 +23,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
         private List<string> SelectedGevarenId;
         private List<string> SelectedObjectIssueId;
         private List<string> SelectedTemplateIssueId;
-        private List<string> SelectedTemplateGevaarId;
+        //private List<string> SelectedTemplateGevaarId;
 
 
 
@@ -38,7 +38,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
             SelectedGevarenId = new List<string>();
             SelectedObjectIssueId = new List<string>();
             SelectedTemplateIssueId = new List<string>();
-            SelectedTemplateGevaarId = new List<string>();
+            //SelectedTemplateGevaarId = new List<string>();
 
             this.ObjectNaam = objectNaam;
             this.ObjectID = objectID;
@@ -49,7 +49,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
         {
             dataGridViewLosseItems.DataSource = comunicator.GetGevarenTable();
             textBoxObjectNaam.Text = ObjectNaam;
-
+            SetAddSettings();
             
 
             LoadComboboxes();
@@ -84,6 +84,12 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
         }
 
     
+        private void SetAddSettings()
+        {
+            checkedListBoxAddSettings.SetItemChecked(0, true);
+            checkedListBoxAddSettings.SetItemChecked(1, true);
+            checkedListBoxAddSettings.SetItemChecked(2, true);
+        }
         
 
         private void buttonVoegSelectieToe_Click(object sender, EventArgs e)
@@ -109,7 +115,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
             //foreach (string objectIssueId in SelectedObjectIssueId)
             //{
-            //    comunicator.AddIssueToObject(ObjectID, objectIssueId);
+             //   comunicator.AddIssueToObject(ObjectID, objectIssueId);
             //}
             //this.Close();
         }
@@ -136,26 +142,9 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
             dataGridViewLosseItems.DataSource = comunicator.GetGevarenTableByDiscipline(comboBoxDiscipline.SelectedItem.ToString());
         }
 
-        private void comboBoxWeergaveObjectNaam_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string selectedObjectName = comboBoxWeergaveObjectNaam.SelectedItem.ToString();
-            dataGridViewWeergaveUitObjecten.DataSource = comunicator.GetSelectedObjectIssues(selectedObjectName, SelectedObjectIssueId);
-        }
 
-        private void comboBoxWeergaveTemplateNaam_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string selectedTemplateName = comboBoxWeergaveTemplateNaam.SelectedItem.ToString();
-            if (SelectedTemplateGevaarId.Count >= 1)
-            {
-                dataGridViewWeergaveGevarenUitTemplate.DataSource = comunicator.GetSelectedTemplateGevaren(selectedTemplateName, SelectedTemplateGevaarId);
 
-            }
-            if (SelectedTemplateIssueId.Count >= 1)
-            {
-                dataGridViewWeergaveIssuesUitTemplate.DataSource = comunicator.GetSelectedTemplateIssues(selectedTemplateName, SelectedTemplateIssueId);
 
-            }
-        }
 
         private void comboBoxViewTemplate_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -163,7 +152,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
             dataGridViewTemplateViewIssues.DataSource = comunicator.GetTemplateIssuesByName(selectedTemplateName);
 
-            dataGridViewTemplateViewGevaren.DataSource = comunicator.GetTemplateGevarenByName(selectedTemplateName);
+            //dataGridViewTemplateViewGevaren.DataSource = comunicator.GetTemplateGevarenByName(selectedTemplateName);
         }
 
         private void comboBoxViewObjectNaam_SelectedIndexChanged(object sender, EventArgs e)
@@ -206,7 +195,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
             foreach (string gevaarToAddID in SelectedGevarenId)
             {
-                comunicator.AddGevaarToObject(ObjectID, gevaarToAddID);
+                //comunicator.AddGevaarToObject(ObjectID, gevaarToAddID);
             }
             
             //controler.CheckObjectForDubbleGevaren(SelectedGevarenId);
@@ -220,24 +209,24 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
         private void buttonAddFromTemplateGevaren_Click(object sender, EventArgs e)
         {
-            string selectedTemplateName = comboBoxViewTemplate.SelectedItem.ToString();
-            if (!comboBoxWeergaveTemplateNaam.Items.Contains(selectedTemplateName))
-            {
-                comboBoxWeergaveTemplateNaam.Items.Add(selectedTemplateName);
-            }
-            string gevaarID = "";
-            foreach (DataGridViewRow row in dataGridViewTemplateViewGevaren.SelectedRows)
-            {
-                gevaarID = row.Cells[0].Value.ToString();
-                if (!SelectedTemplateGevaarId.Contains(gevaarID))
-                {
-                    SelectedTemplateGevaarId.Add(gevaarID);
-                }
-            }
-            dataGridViewTemplateViewGevaren.ClearSelection();
+            //string selectedTemplateName = comboBoxViewTemplate.SelectedItem.ToString();
+            //if (!comboBoxWeergaveTemplateNaam.Items.Contains(selectedTemplateName))
+            //{
+            //    comboBoxWeergaveTemplateNaam.Items.Add(selectedTemplateName);
+            //}
+            //string gevaarID = "";
+            //foreach (DataGridViewRow row in dataGridViewTemplateViewGevaren.SelectedRows)
+            //{
+            //    gevaarID = row.Cells[0].Value.ToString();
+            //    if (!SelectedTemplateGevaarId.Contains(gevaarID))
+            //    {
+            //        SelectedTemplateGevaarId.Add(gevaarID);
+            //    }
+            //}
+            //dataGridViewTemplateViewGevaren.ClearSelection();
 
-            List<string> temp = controler.CheckObjectForDubbleGevaren(SelectedTemplateGevaarId);
-            SelectedTemplateGevaarId = temp;
+            //List<string> temp = controler.CheckObjectForDubbleGevaren(SelectedTemplateGevaarId);
+            //SelectedTemplateGevaarId = temp;
             //SelectedTemplateGevaarId.Clear();
         }
 
@@ -246,11 +235,11 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
         private void buttonAddFromTemplateIssues_Click(object sender, EventArgs e)
         {
-            string selectedTemplateName = comboBoxViewTemplate.SelectedItem.ToString();
-            if (!comboBoxWeergaveTemplateNaam.Items.Contains(selectedTemplateName))
-            {
-                comboBoxWeergaveTemplateNaam.Items.Add(selectedTemplateName);
-            }
+            //string selectedTemplateName = comboBoxViewTemplate.SelectedItem.ToString();
+            //if (!comboBoxWeergaveTemplateNaam.Items.Contains(selectedTemplateName))
+            //{
+            //    comboBoxWeergaveTemplateNaam.Items.Add(selectedTemplateName);
+            //}
 
             string issueID = "";
             foreach (DataGridViewRow row in dataGridViewTemplateViewIssues.SelectedRows)
@@ -262,9 +251,16 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
                     SelectedTemplateIssueId.Add(issueID);
                 }
             }
-            dataGridViewTemplateViewIssues.ClearSelection();
-            controler.CheckObjectForDubbleGevarenUitIssues(SelectedTemplateIssueId);
-            
+            //dataGridViewTemplateViewIssues.ClearSelection();
+            List<string> temp = controler.CheckObjectForDubbleGevarenUitIssues(SelectedTemplateIssueId);
+
+
+            SelectedTemplateIssueId = temp;
+            foreach (string gevaarToAddID in SelectedTemplateIssueId)
+            {
+                //comunicator.AddGevaarToObject(ObjectID, gevaarToAddID);
+            }
+
             //SelectedTemplateIssueId.Clear();
             //CheckForDubble();
         }
@@ -274,11 +270,11 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
         private void buttonAddFromObject_Click(object sender, EventArgs e)
         {
-            string selectedObjectName = comboBoxViewObjectNaam.SelectedItem.ToString();
-            if (!comboBoxWeergaveObjectNaam.Items.Contains(selectedObjectName))
-            {
-                comboBoxWeergaveObjectNaam.Items.Add(selectedObjectName);
-            }
+            //string selectedObjectName = comboBoxViewObjectNaam.SelectedItem.ToString();
+            //if (!comboBoxWeergaveObjectNaam.Items.Contains(selectedObjectName))
+            //{
+            //    comboBoxWeergaveObjectNaam.Items.Add(selectedObjectName);
+            //}
 
             string issueID = "";
             foreach (DataGridViewRow row in dataGridViewObjectView.SelectedRows)
@@ -289,8 +285,13 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
                     SelectedObjectIssueId.Add(issueID);
                 }
             }
-            controler.CheckObjectForDubbleGevarenUitIssues(SelectedObjectIssueId);
-            dataGridViewObjectView.ClearSelection();
+            List<string> temp = controler.CheckObjectForDubbleGevarenUitIssues(SelectedObjectIssueId);
+            // dataGridViewObjectView.ClearSelection();
+            SelectedObjectIssueId = temp;
+            foreach (string gevaarToAddID in SelectedObjectIssueId)
+            {
+                //comunicator.AddGevaarToObject(ObjectID, gevaarToAddID);
+            }
 
         }
     }

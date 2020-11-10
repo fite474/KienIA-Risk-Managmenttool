@@ -31,6 +31,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonCompare = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -43,18 +44,15 @@
             this.dataGridViewMaatregelenNewIssue = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.textBoxGevaarId = new System.Windows.Forms.TextBox();
-            this.buttonCompare = new System.Windows.Forms.Button();
             this.textBoxIssueToAddID = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.buttonOnlySelectedMaatregelen = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.checkedListBoxWarningSettings = new System.Windows.Forms.CheckedListBox();
+            this.buttonOK = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMaatregelenCurrentIssue)).BeginInit();
@@ -85,12 +83,23 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.buttonOK);
             this.panel1.Controls.Add(this.buttonCompare);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 835);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1474, 96);
             this.panel1.TabIndex = 6;
+            // 
+            // buttonCompare
+            // 
+            this.buttonCompare.Location = new System.Drawing.Point(572, 25);
+            this.buttonCompare.Name = "buttonCompare";
+            this.buttonCompare.Size = new System.Drawing.Size(164, 49);
+            this.buttonCompare.TabIndex = 22;
+            this.buttonCompare.Text = "Vergelijk Risicobeoordeling";
+            this.buttonCompare.UseVisualStyleBackColor = true;
+            this.buttonCompare.Click += new System.EventHandler(this.buttonCompare_Click);
             // 
             // label9
             // 
@@ -167,7 +176,7 @@
             this.dataGridViewMaatregelenCurrentIssue.AllowUserToAddRows = false;
             this.dataGridViewMaatregelenCurrentIssue.AllowUserToDeleteRows = false;
             this.dataGridViewMaatregelenCurrentIssue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMaatregelenCurrentIssue.Location = new System.Drawing.Point(3, 67);
+            this.dataGridViewMaatregelenCurrentIssue.Location = new System.Drawing.Point(3, 143);
             this.dataGridViewMaatregelenCurrentIssue.Name = "dataGridViewMaatregelenCurrentIssue";
             this.dataGridViewMaatregelenCurrentIssue.ReadOnly = true;
             this.dataGridViewMaatregelenCurrentIssue.RowTemplate.Height = 24;
@@ -177,7 +186,7 @@
             // dataGridViewMaatregelenNewIssue
             // 
             this.dataGridViewMaatregelenNewIssue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMaatregelenNewIssue.Location = new System.Drawing.Point(3, 67);
+            this.dataGridViewMaatregelenNewIssue.Location = new System.Drawing.Point(3, 143);
             this.dataGridViewMaatregelenNewIssue.Name = "dataGridViewMaatregelenNewIssue";
             this.dataGridViewMaatregelenNewIssue.RowTemplate.Height = 24;
             this.dataGridViewMaatregelenNewIssue.Size = new System.Drawing.Size(692, 298);
@@ -199,16 +208,6 @@
             this.textBoxGevaarId.ReadOnly = true;
             this.textBoxGevaarId.Size = new System.Drawing.Size(566, 22);
             this.textBoxGevaarId.TabIndex = 21;
-            // 
-            // buttonCompare
-            // 
-            this.buttonCompare.Location = new System.Drawing.Point(572, 25);
-            this.buttonCompare.Name = "buttonCompare";
-            this.buttonCompare.Size = new System.Drawing.Size(164, 49);
-            this.buttonCompare.TabIndex = 22;
-            this.buttonCompare.Text = "Vergelijk Risicobeoordeling";
-            this.buttonCompare.UseVisualStyleBackColor = true;
-            this.buttonCompare.Click += new System.EventHandler(this.buttonCompare_Click);
             // 
             // textBoxIssueToAddID
             // 
@@ -234,7 +233,7 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.button4);
+            this.panel3.Controls.Add(this.buttonOnlySelectedMaatregelen);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.textBoxIssueToAddID);
             this.panel3.Controls.Add(this.label2);
@@ -244,6 +243,16 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(731, 493);
             this.panel3.TabIndex = 0;
+            // 
+            // buttonOnlySelectedMaatregelen
+            // 
+            this.buttonOnlySelectedMaatregelen.Location = new System.Drawing.Point(493, 6);
+            this.buttonOnlySelectedMaatregelen.Name = "buttonOnlySelectedMaatregelen";
+            this.buttonOnlySelectedMaatregelen.Size = new System.Drawing.Size(202, 55);
+            this.buttonOnlySelectedMaatregelen.TabIndex = 24;
+            this.buttonOnlySelectedMaatregelen.Text = "Geselecteerde maatregelen overnemen";
+            this.buttonOnlySelectedMaatregelen.UseVisualStyleBackColor = true;
+            this.buttonOnlySelectedMaatregelen.Click += new System.EventHandler(this.buttonOnlySelectedMaatregelen_Click);
             // 
             // panel4
             // 
@@ -257,12 +266,18 @@
             this.panel4.Size = new System.Drawing.Size(731, 493);
             this.panel4.TabIndex = 1;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 47);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 17);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Maatregelen";
+            // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.button3);
-            this.panel5.Controls.Add(this.button2);
-            this.panel5.Controls.Add(this.button1);
-            this.panel5.Controls.Add(this.checkedListBox1);
+            this.panel5.Controls.Add(this.checkedListBoxWarningSettings);
             this.panel5.Controls.Add(this.textBoxGevaarId);
             this.panel5.Controls.Add(this.label7);
             this.panel5.Controls.Add(this.textBoxSituatie);
@@ -275,61 +290,28 @@
             this.panel5.Size = new System.Drawing.Size(1474, 260);
             this.panel5.TabIndex = 25;
             // 
-            // label1
+            // checkedListBoxWarningSettings
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 47);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 17);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "Maatregelen";
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
+            this.checkedListBoxWarningSettings.FormattingEnabled = true;
+            this.checkedListBoxWarningSettings.Items.AddRange(new object[] {
             "Neem maatregelen over",
-            "Neem Risicobeoordeling over"});
-            this.checkedListBox1.Location = new System.Drawing.Point(811, 6);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(344, 242);
-            this.checkedListBox1.TabIndex = 22;
+            "Neem risicobeoordeling over",
+            "Aangepaste selectie maatregelen",
+            "Aangepaste risicobeoordeling"});
+            this.checkedListBoxWarningSettings.Location = new System.Drawing.Point(811, 6);
+            this.checkedListBoxWarningSettings.Name = "checkedListBoxWarningSettings";
+            this.checkedListBoxWarningSettings.Size = new System.Drawing.Size(344, 242);
+            this.checkedListBoxWarningSettings.TabIndex = 22;
+            this.checkedListBoxWarningSettings.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxWarningSettings_ItemCheck);
             // 
-            // button1
+            // buttonOK
             // 
-            this.button1.Location = new System.Drawing.Point(1261, 23);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 52);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Dit issue niet overnemen";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(1261, 101);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(108, 62);
-            this.button2.TabIndex = 24;
-            this.button2.Text = "Gebruik instellingen en volgende";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(1261, 184);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(108, 64);
-            this.button3.TabIndex = 25;
-            this.button3.Text = "Gebruik deze keuze voor alle";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(104, 393);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(167, 72);
-            this.button4.TabIndex = 24;
-            this.button4.Text = "Geselecteerde maatregelen overnemen";
-            this.button4.UseVisualStyleBackColor = true;
+            this.buttonOK.Location = new System.Drawing.Point(1145, 15);
+            this.buttonOK.Name = "buttonOK";
+            this.buttonOK.Size = new System.Drawing.Size(144, 59);
+            this.buttonOK.TabIndex = 23;
+            this.buttonOK.Text = "Done";
+            this.buttonOK.UseVisualStyleBackColor = true;
             // 
             // WarningAddToObject
             // 
@@ -381,10 +363,8 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button buttonOnlySelectedMaatregelen;
+        private System.Windows.Forms.Button buttonOK;
+        public System.Windows.Forms.CheckedListBox checkedListBoxWarningSettings;
     }
 }

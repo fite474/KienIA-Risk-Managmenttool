@@ -10,17 +10,23 @@ namespace RiskManagmentTool.LogicLayer
 {
     class DataControler
     {
-        
         private Datacomunication comunicator;
-
-
+        private bool addMaatregelen;
+        private bool addBeoordeling;
+        private bool customAddMaatregelen;
+        private bool customAddBeoordeling;
 
         private readonly string CurrentID;
+
         public DataControler(string idToCheck)
         {
 
             comunicator = new Datacomunication();
             CurrentID = idToCheck;
+
+
+            addMaatregelen = true;
+            addBeoordeling = true;
         }
 
 
@@ -43,7 +49,10 @@ namespace RiskManagmentTool.LogicLayer
                     {
                         // Read the contents of testDialog's TextBox.
                         //string textResult = warningWindow.textBoxInput.Text;
-
+                        addMaatregelen = warningWindow.checkedListBoxWarningSettings.GetItemChecked(0);
+                        addBeoordeling = warningWindow.checkedListBoxWarningSettings.GetItemChecked(1);
+                        customAddBeoordeling = true;
+                        customAddMaatregelen = true;
 
                     }
                     else
@@ -107,8 +116,8 @@ namespace RiskManagmentTool.LogicLayer
                 if (maatregelenVanIssue.Contains(maatregelID))
                 {
 
-                    Form warningWindow = new WarningAddToObject();
-                    warningWindow.ShowDialog();
+                    WarningAddToObject warningWindow = new WarningAddToObject();
+                    //warningWindow.ShowDialog();
                     //SelectedTemplateIssueId.Remove()
                     //string message = "Dit object bevat een issue met hetzelfde gevaar id.\n" +
                     //    "Wilt u alleen de maatregelen en risicobeoordeling \n" +
@@ -116,14 +125,15 @@ namespace RiskManagmentTool.LogicLayer
                     //string title = "Reminder Risico waardes";
                     //MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                     //DialogResult result = MessageBox.Show(message, title, buttons);
-                    //if (result == DialogResult.Yes)
-                    //{
-                    //    //this.Close();
-                    //}
-                    //else
-                    //{
-                    //    // Do something  
-                    //}
+                    if (warningWindow.ShowDialog() == DialogResult.OK)
+                    {
+                        //this.Close();
+                    }
+                    else
+                    {
+                        // Do something  
+                    }
+                    warningWindow.Dispose();
                 }
             }
         }
@@ -179,6 +189,31 @@ namespace RiskManagmentTool.LogicLayer
             //        }
             //    }
             //}
+        }
+
+
+
+        private void AddGevaarToObjectWithSettings(string gevaarID)
+        {
+
+            if (addBeoordeling && addMaatregelen)
+            {
+                //comunicator.AddFullIssueToObject(CurrentID, gevaarID);
+            }
+            else if (addBeoordeling && !addMaatregelen)
+            {
+
+            }
+            else if(!addBeoordeling && addMaatregelen)
+            {
+                int issueID = comunicator.AddGevaarToObject(CurrentID, gevaarID);
+                string issueIDString = issueID.ToString();
+                comunicator.AddMaatregelToIssue(issueIDString, "");
+            }
+            else
+            {
+                comunicator.AddGevaarToObject(CurrentID, gevaarID);
+            }
         }
 
 

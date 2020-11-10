@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -168,21 +168,6 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             }
         }
 
-        private void pictureBoxObjectFoto_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            OpenFileDialog open = new OpenFileDialog();
-            // image filters  
-            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
-            if (open.ShowDialog() == DialogResult.OK)
-            {
-                // display image in picture box  
-                pictureBoxObjectFoto.Image = new Bitmap(open.FileName);
-                pictureBoxObjectFoto.SizeMode = PictureBoxSizeMode.StretchImage;
-                // image file path  
-                textBox1.Text = open.FileName;
-            }
-        }
-
         private void dataGridViewGekoppeldeIssues_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             for (int i = 0; i < (dataGridViewGekoppeldeIssues.ColumnCount - 1); i++)
@@ -202,6 +187,21 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
                     dataGridViewGekoppeldeIssues.Rows[i].DefaultCellStyle.BackColor = Color.Red;
                 }
                 
+            }
+        }
+
+        private void pictureBoxObjectFoto_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            // image filters  
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                // display image in picture box  
+                pictureBoxObjectFoto.Image = new Bitmap(open.FileName);
+                pictureBoxObjectFoto.SizeMode = PictureBoxSizeMode.StretchImage;
+                // image file path  
+                textBox1.Text = open.FileName;
             }
         }
     }

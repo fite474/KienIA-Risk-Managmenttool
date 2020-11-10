@@ -307,9 +307,9 @@
             // 
             this.checkedListBoxAddSettings.FormattingEnabled = true;
             this.checkedListBoxAddSettings.Items.AddRange(new object[] {
-            "Overgenomen items als \"Nog te verifieren\" overnemen",
             "Gekoppelde maatregelen overnemen(waar mogelijk)",
-            "Bijbehorende risicobeoordeling overnemen(waar mogelijk)"});
+            "Bijbehorende risicobeoordeling overnemen(waar mogelijk)",
+            "Overgenomen items als \"Nog te verifieren\" overnemen"});
             this.checkedListBoxAddSettings.Location = new System.Drawing.Point(615, 19);
             this.checkedListBoxAddSettings.Name = "checkedListBoxAddSettings";
             this.checkedListBoxAddSettings.Size = new System.Drawing.Size(431, 208);

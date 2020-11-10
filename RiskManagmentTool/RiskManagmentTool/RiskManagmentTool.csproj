@@ -210,6 +210,12 @@
     <Compile Include="InterfaceLayer\MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="InterfaceLayer\WarningWindows\CompareIssueRisicoBeoordeling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\WarningWindows\CompareIssueRisicoBeoordeling.Designer.cs">
+      <DependentUpon>CompareIssueRisicoBeoordeling.cs</DependentUpon>
+    </Compile>
     <Compile Include="InterfaceLayer\WarningWindows\WarningAddToObject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -313,6 +319,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InterfaceLayer\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\WarningWindows\CompareIssueRisicoBeoordeling.resx">
+      <DependentUpon>CompareIssueRisicoBeoordeling.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterfaceLayer\WarningWindows\WarningAddToObject.resx">
       <DependentUpon>WarningAddToObject.cs</DependentUpon>

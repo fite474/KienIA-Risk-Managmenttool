@@ -29,6 +29,12 @@ namespace RiskManagmentTool.LogicLayer
             addBeoordeling = true;
         }
 
+        private void HandleAddIssueToObject(string issueID, bool maatregelen, bool beoordeling, bool customMaatregelen, bool customBeoordeling)
+        {
+
+
+        }
+
 
         public List<string> CheckObjectForDubbleGevarenUitIssues(List<string> itemsToAdd)
         {
@@ -51,9 +57,9 @@ namespace RiskManagmentTool.LogicLayer
                         //string textResult = warningWindow.textBoxInput.Text;
                         addMaatregelen = warningWindow.checkedListBoxWarningSettings.GetItemChecked(0);
                         addBeoordeling = warningWindow.checkedListBoxWarningSettings.GetItemChecked(1);
-                        customAddBeoordeling = true;
-                        customAddMaatregelen = true;
-
+                        customAddMaatregelen = warningWindow.checkedListBoxCustomSettings.GetItemChecked(0);
+                        customAddBeoordeling = warningWindow.checkedListBoxCustomSettings.GetItemChecked(1);
+                        HandleAddIssueToObject(gevaarID, addMaatregelen, addBeoordeling, customAddMaatregelen, customAddBeoordeling);
                     }
                     else
                     {

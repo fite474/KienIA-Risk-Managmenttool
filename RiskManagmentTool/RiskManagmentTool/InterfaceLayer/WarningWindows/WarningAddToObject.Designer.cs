@@ -31,6 +31,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonOK = new System.Windows.Forms.Button();
             this.buttonCompare = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -52,7 +53,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.checkedListBoxWarningSettings = new System.Windows.Forms.CheckedListBox();
-            this.buttonOK = new System.Windows.Forms.Button();
+            this.checkedListBoxCustomSettings = new System.Windows.Forms.CheckedListBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMaatregelenCurrentIssue)).BeginInit();
@@ -90,6 +91,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1474, 96);
             this.panel1.TabIndex = 6;
+            // 
+            // buttonOK
+            // 
+            this.buttonOK.Location = new System.Drawing.Point(1145, 15);
+            this.buttonOK.Name = "buttonOK";
+            this.buttonOK.Size = new System.Drawing.Size(144, 59);
+            this.buttonOK.TabIndex = 23;
+            this.buttonOK.Text = "Done";
+            this.buttonOK.UseVisualStyleBackColor = true;
             // 
             // buttonCompare
             // 
@@ -180,17 +190,25 @@
             this.dataGridViewMaatregelenCurrentIssue.Name = "dataGridViewMaatregelenCurrentIssue";
             this.dataGridViewMaatregelenCurrentIssue.ReadOnly = true;
             this.dataGridViewMaatregelenCurrentIssue.RowTemplate.Height = 24;
+            this.dataGridViewMaatregelenCurrentIssue.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewMaatregelenCurrentIssue.Size = new System.Drawing.Size(704, 298);
             this.dataGridViewMaatregelenCurrentIssue.TabIndex = 18;
+            this.dataGridViewMaatregelenCurrentIssue.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewMaatregelenCurrentIssue_DataBindingComplete);
             // 
             // dataGridViewMaatregelenNewIssue
             // 
+            this.dataGridViewMaatregelenNewIssue.AllowUserToAddRows = false;
+            this.dataGridViewMaatregelenNewIssue.AllowUserToDeleteRows = false;
             this.dataGridViewMaatregelenNewIssue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewMaatregelenNewIssue.Location = new System.Drawing.Point(3, 143);
             this.dataGridViewMaatregelenNewIssue.Name = "dataGridViewMaatregelenNewIssue";
+            this.dataGridViewMaatregelenNewIssue.ReadOnly = true;
             this.dataGridViewMaatregelenNewIssue.RowTemplate.Height = 24;
+            this.dataGridViewMaatregelenNewIssue.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewMaatregelenNewIssue.Size = new System.Drawing.Size(692, 298);
             this.dataGridViewMaatregelenNewIssue.TabIndex = 19;
+            this.dataGridViewMaatregelenNewIssue.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewMaatregelenNewIssue_DataBindingComplete);
+            this.dataGridViewMaatregelenNewIssue.SelectionChanged += new System.EventHandler(this.dataGridViewMaatregelenNewIssue_SelectionChanged);
             // 
             // label7
             // 
@@ -277,6 +295,7 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.checkedListBoxCustomSettings);
             this.panel5.Controls.Add(this.checkedListBoxWarningSettings);
             this.panel5.Controls.Add(this.textBoxGevaarId);
             this.panel5.Controls.Add(this.label7);
@@ -296,22 +315,24 @@
             this.checkedListBoxWarningSettings.Items.AddRange(new object[] {
             "Neem maatregelen over",
             "Neem risicobeoordeling over",
-            "Aangepaste selectie maatregelen",
-            "Aangepaste risicobeoordeling"});
+            "Vereisen van verificatie"});
             this.checkedListBoxWarningSettings.Location = new System.Drawing.Point(811, 6);
             this.checkedListBoxWarningSettings.Name = "checkedListBoxWarningSettings";
-            this.checkedListBoxWarningSettings.Size = new System.Drawing.Size(344, 242);
+            this.checkedListBoxWarningSettings.Size = new System.Drawing.Size(335, 157);
             this.checkedListBoxWarningSettings.TabIndex = 22;
             this.checkedListBoxWarningSettings.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxWarningSettings_ItemCheck);
             // 
-            // buttonOK
+            // checkedListBoxCustomSettings
             // 
-            this.buttonOK.Location = new System.Drawing.Point(1145, 15);
-            this.buttonOK.Name = "buttonOK";
-            this.buttonOK.Size = new System.Drawing.Size(144, 59);
-            this.buttonOK.TabIndex = 23;
-            this.buttonOK.Text = "Done";
-            this.buttonOK.UseVisualStyleBackColor = true;
+            this.checkedListBoxCustomSettings.FormattingEnabled = true;
+            this.checkedListBoxCustomSettings.Items.AddRange(new object[] {
+            "Aangepaste selectie maatregelen",
+            "Aangepaste risicobeoordeling"});
+            this.checkedListBoxCustomSettings.Location = new System.Drawing.Point(1191, 6);
+            this.checkedListBoxCustomSettings.Name = "checkedListBoxCustomSettings";
+            this.checkedListBoxCustomSettings.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.checkedListBoxCustomSettings.Size = new System.Drawing.Size(244, 106);
+            this.checkedListBoxCustomSettings.TabIndex = 23;
             // 
             // WarningAddToObject
             // 
@@ -366,5 +387,6 @@
         private System.Windows.Forms.Button buttonOnlySelectedMaatregelen;
         private System.Windows.Forms.Button buttonOK;
         public System.Windows.Forms.CheckedListBox checkedListBoxWarningSettings;
+        public System.Windows.Forms.CheckedListBox checkedListBoxCustomSettings;
     }
 }

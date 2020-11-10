@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditObjecten));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -46,8 +47,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.pictureBoxObjectFoto = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.buttonIssuesOplossen = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridViewGekoppeldeIssues = new System.Windows.Forms.DataGridView();
@@ -67,15 +69,16 @@
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.buttonIssuesOplossen = new System.Windows.Forms.Button();
             this.buttonDeleteGevaren = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.buttonAddRisico = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.pictureBoxObjectFoto = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxObjectFoto)).BeginInit();
             this.panel3.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -91,8 +94,6 @@
             this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.panel4.SuspendLayout();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxObjectFoto)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -284,6 +285,25 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Incomplete issues: 17";
             // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.pictureBoxObjectFoto);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(1096, 3);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(470, 262);
+            this.panel6.TabIndex = 2;
+            // 
+            // pictureBoxObjectFoto
+            // 
+            this.pictureBoxObjectFoto.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxObjectFoto.Image")));
+            this.pictureBoxObjectFoto.Location = new System.Drawing.Point(3, 6);
+            this.pictureBoxObjectFoto.Name = "pictureBoxObjectFoto";
+            this.pictureBoxObjectFoto.Size = new System.Drawing.Size(461, 211);
+            this.pictureBoxObjectFoto.TabIndex = 0;
+            this.pictureBoxObjectFoto.TabStop = false;
+            this.pictureBoxObjectFoto.Click += new System.EventHandler(this.pictureBoxObjectFoto_Click);
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.tabControl1);
@@ -292,16 +312,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1569, 447);
             this.panel3.TabIndex = 2;
-            // 
-            // buttonIssuesOplossen
-            // 
-            this.buttonIssuesOplossen.Location = new System.Drawing.Point(1217, 7);
-            this.buttonIssuesOplossen.Name = "buttonIssuesOplossen";
-            this.buttonIssuesOplossen.Size = new System.Drawing.Size(166, 71);
-            this.buttonIssuesOplossen.TabIndex = 4;
-            this.buttonIssuesOplossen.Text = "Onopgeloste issues stapsgewijs doorlopen";
-            this.buttonIssuesOplossen.UseVisualStyleBackColor = true;
-            this.buttonIssuesOplossen.Click += new System.EventHandler(this.buttonIssuesOplossen_Click);
             // 
             // tabControl1
             // 
@@ -383,7 +393,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1481, 418);
+            this.tabPage2.Size = new System.Drawing.Size(1561, 418);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Object informatie";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -409,7 +419,7 @@
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1263, 418);
+            this.tabPage3.Size = new System.Drawing.Size(1561, 418);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Instellingen";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -419,7 +429,7 @@
             this.tabPage4.Controls.Add(this.tabControl2);
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1263, 418);
+            this.tabPage4.Size = new System.Drawing.Size(1561, 418);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Issues weergave 2";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -515,6 +525,16 @@
             this.panel4.Size = new System.Drawing.Size(1569, 79);
             this.panel4.TabIndex = 3;
             // 
+            // buttonIssuesOplossen
+            // 
+            this.buttonIssuesOplossen.Location = new System.Drawing.Point(1217, 7);
+            this.buttonIssuesOplossen.Name = "buttonIssuesOplossen";
+            this.buttonIssuesOplossen.Size = new System.Drawing.Size(166, 71);
+            this.buttonIssuesOplossen.TabIndex = 4;
+            this.buttonIssuesOplossen.Text = "Onopgeloste issues stapsgewijs doorlopen";
+            this.buttonIssuesOplossen.UseVisualStyleBackColor = true;
+            this.buttonIssuesOplossen.Click += new System.EventHandler(this.buttonIssuesOplossen_Click);
+            // 
             // buttonDeleteGevaren
             // 
             this.buttonDeleteGevaren.Location = new System.Drawing.Point(257, 25);
@@ -545,24 +565,6 @@
             this.buttonAddRisico.UseVisualStyleBackColor = true;
             this.buttonAddRisico.Click += new System.EventHandler(this.buttonAddRisico_Click);
             // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.pictureBoxObjectFoto);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(1096, 3);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(470, 262);
-            this.panel6.TabIndex = 2;
-            // 
-            // pictureBoxObjectFoto
-            // 
-            this.pictureBoxObjectFoto.Location = new System.Drawing.Point(3, 6);
-            this.pictureBoxObjectFoto.Name = "pictureBoxObjectFoto";
-            this.pictureBoxObjectFoto.Size = new System.Drawing.Size(461, 211);
-            this.pictureBoxObjectFoto.TabIndex = 0;
-            this.pictureBoxObjectFoto.TabStop = false;
-            this.pictureBoxObjectFoto.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pictureBoxObjectFoto_MouseDoubleClick);
-            // 
             // EditObjecten
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -578,6 +580,8 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxObjectFoto)).EndInit();
             this.panel3.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -595,8 +599,6 @@
             this.tabPage7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.panel4.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxObjectFoto)).EndInit();
             this.ResumeLayout(false);
 
         }

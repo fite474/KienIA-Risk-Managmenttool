@@ -185,7 +185,6 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             //{
             //    currentList.Add(1);
             //}
-            int x = 0;
         }
 
 
@@ -413,5 +412,78 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             () => UpdateText()));
         }
 
+        private void buttonKeuzeOption_Click(object sender, EventArgs e)
+        {
+            //EditKeuzes editKeuze = new EditKeuzes(null, currentList, null);
+            //editKeuze.ShowDialog();
+            //currentList.Add(" ");
+        }
+
+
+        private void GetState()
+        {
+            //        MenuTableName MenuTableName;
+            //        List<string> MenuOptions;
+
+            //        string menuTitle;
+            //switch (MenuTableName)
+            //{
+            //    case MenuTableName.ObjectTypes:
+            //        MenuOptions = keuzeMenus.GetTypeObjectMenu();
+            //        menuTitle = "Object types";
+            //        break;
+            //    case MenuTableName.Gevolgen:
+            //        MenuOptions = keuzeMenus.GetGevolgenMenu();
+            //        menuTitle = "Gevolgen";
+            //        break;
+            //    case MenuTableName.Gevarenzones:
+            //        MenuOptions = keuzeMenus.GetGevarenzoneMenu();
+            //        menuTitle = "Gevaren zone";
+            //        break;
+            //    case MenuTableName.GevaarTypes:
+            //        MenuOptions = keuzeMenus.GetGevaarTypeMenu();
+            //        menuTitle = "Gevaar type";
+            //        break;
+            //    case MenuTableName.Gebruiksfases:
+            //        MenuOptions = keuzeMenus.GetGebruikersfasesMenu();
+            //        menuTitle = "Gebruiksfase";
+            //        break;
+            //    case MenuTableName.Gebruikers:
+            //        MenuOptions = keuzeMenus.GetGebruikersMenu();
+            //        menuTitle = "Gebruikers";
+            //        break;
+            //    case MenuTableName.Disciplines:
+            //        MenuOptions = keuzeMenus.GetDisciplinesMenu();
+            //        menuTitle = "Discipline";
+            //        break;
+            //    case MenuTableName.Bedienvormen:
+            //        MenuOptions = keuzeMenus.GetBedienvormenMenu();
+            //        menuTitle = "Bedienvorm";
+            //        break;
+            //    case MenuTableName.Taken:
+            //        MenuOptions = keuzeMenus.GetTakenMenu();
+            //        menuTitle = "Taak";
+            //        break;
+            //    case MenuTableName.Normen:
+            //        MenuOptions = keuzeMenus.GetMaatregelNormMenu();
+            //        menuTitle = "Maatregel norm";
+            //        break;
+            //    case MenuTableName.Categories:
+            //        MenuOptions = keuzeMenus.GetMaatregelCategoryMenu();
+            //        menuTitle = "Maatregel categorie";
+            //        break;
+            //    case MenuTableName.TemplateTypes:
+            //        MenuOptions = keuzeMenus.GetTemplateTypesMenu();
+            //        menuTitle = "Template types";
+            //        break;
+            //    case MenuTableName.TemplateToepassing:
+            //        MenuOptions = keuzeMenus.GetTemplateToepassingenMenu();
+            //        menuTitle = "Template toepassing";
+            //        break;
+            //    default:
+            //        break;
+            //}
+
+        }
     }
 }

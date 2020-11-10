@@ -68,6 +68,7 @@
             this.buttonGevaarlijkeZone = new System.Windows.Forms.Button();
             this.buttonTaak = new System.Windows.Forms.Button();
             this.buttonGevolg = new System.Windows.Forms.Button();
+            this.buttonKeuzeOption = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -337,6 +338,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.buttonKeuzeOption);
             this.panel2.Controls.Add(this.checkedListBoxOptions);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(828, 0);
@@ -423,6 +425,16 @@
             this.buttonGevolg.Text = "Gevolg";
             this.buttonGevolg.UseVisualStyleBackColor = true;
             this.buttonGevolg.Click += new System.EventHandler(this.buttonGevolg_Click);
+            // 
+            // buttonKeuzeOption
+            // 
+            this.buttonKeuzeOption.Location = new System.Drawing.Point(4, 185);
+            this.buttonKeuzeOption.Name = "buttonKeuzeOption";
+            this.buttonKeuzeOption.Size = new System.Drawing.Size(110, 23);
+            this.buttonKeuzeOption.TabIndex = 1;
+            this.buttonKeuzeOption.Text = "Add Option";
+            this.buttonKeuzeOption.UseVisualStyleBackColor = true;
+            this.buttonKeuzeOption.Click += new System.EventHandler(this.buttonKeuzeOption_Click);
             // 
             // EditRisicos
             // 
@@ -518,5 +530,6 @@
         private System.Windows.Forms.Button buttonGevaarlijkeZone;
         private System.Windows.Forms.Button buttonTaak;
         private System.Windows.Forms.Button buttonGevolg;
+        private System.Windows.Forms.Button buttonKeuzeOption;
     }
 }

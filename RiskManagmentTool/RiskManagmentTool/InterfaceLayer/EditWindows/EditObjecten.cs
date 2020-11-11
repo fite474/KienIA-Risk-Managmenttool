@@ -180,14 +180,14 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             }
 
             dataGridViewGekoppeldeIssues.ClearSelection();
-            for (int i = 0; i < dataGridViewGekoppeldeIssues.Rows.Count; i++)
-            {
-                if (i % 2 == 0)
-                {
-                    dataGridViewGekoppeldeIssues.Rows[i].DefaultCellStyle.BackColor = Color.Red;
-                }
+            //for (int i = 0; i < dataGridViewGekoppeldeIssues.Rows.Count; i++)
+            //{
+            //    if (i % 2 == 0)
+            //    {
+            //        dataGridViewGekoppeldeIssues.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+            //    }
                 
-            }
+            //}
         }
 
         private void pictureBoxObjectFoto_Click(object sender, EventArgs e)

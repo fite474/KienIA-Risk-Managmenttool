@@ -126,5 +126,10 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
             //    }
              
         }
+
+        private void dataGridViewMaatregelen_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dataGridViewMaatregelen.ClearSelection();
+        }
     }
 }

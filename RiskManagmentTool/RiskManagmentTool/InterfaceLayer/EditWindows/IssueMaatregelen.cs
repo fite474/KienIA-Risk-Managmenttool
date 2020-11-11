@@ -107,5 +107,10 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             //issueNmr++;
             //textBoxIssueID.Text = issueNmr.ToString();
         }
+
+        private void dataGridViewIssueMaatregelen_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dataGridViewIssueMaatregelen.ClearSelection();
+        }
     }
 }

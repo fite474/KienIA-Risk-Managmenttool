@@ -68,14 +68,8 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 
             dataGridViewProjecten.Columns[0].Width = 65;
             dataGridViewProjecten.Columns[1].Width = 150;
-            //for (int i = 0; i < (dataGridViewProjecten.ColumnCount - 1); i++)
-            //{
-            //    dataGridViewProjecten.AutoResizeColumn((i + 1), DataGridViewAutoSizeColumnMode.AllCells);
-            //    if (dataGridViewProjecten.Columns[i + 1].Width > 400)
-            //    {
-            //        dataGridViewProjecten.Columns[i + 1].Width = 400;
-            //    }
-            //}
+
+            dataGridViewProjecten.ClearSelection();
         }
     }
 }

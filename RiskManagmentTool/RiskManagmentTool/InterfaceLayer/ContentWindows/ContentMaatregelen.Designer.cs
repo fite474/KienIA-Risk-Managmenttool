@@ -109,6 +109,7 @@
             this.dataGridViewMaatregelen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewMaatregelen.Size = new System.Drawing.Size(1575, 712);
             this.dataGridViewMaatregelen.TabIndex = 0;
+            this.dataGridViewMaatregelen.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewMaatregelen_DataBindingComplete);
             this.dataGridViewMaatregelen.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewMaatregelen_MouseDoubleClick);
             // 
             // ContentMaatregelen

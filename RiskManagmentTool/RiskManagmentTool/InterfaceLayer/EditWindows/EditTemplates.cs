@@ -116,10 +116,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
 
 
-        private void dataGridViewAddIssue_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            dataGridViewAddIssue.ClearSelection();
-        }
+
 
         private void buttonConfirmSelection_Click(object sender, EventArgs e)
         {
@@ -168,6 +165,26 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             //        SelectedGevarenId.Add(gevaarID);
             //    }
             //}
+        }
+
+        private void dataGridViewAddIssue_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dataGridViewAddIssue.ClearSelection();
+        }
+
+        private void dataGridViewGekoppeldeGevaren_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dataGridViewGekoppeldeGevaren.ClearSelection();
+        }
+
+        private void dataGridViewGekoppeldeIssues_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dataGridViewGekoppeldeIssues.ClearSelection();
+        }
+
+        private void dataGridViewAddGevaar_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dataGridViewAddGevaar.ClearSelection();
         }
     }
 }

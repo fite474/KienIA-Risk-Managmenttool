@@ -159,6 +159,7 @@
             this.dataGridViewGekoppeldeObjecten.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewGekoppeldeObjecten.Size = new System.Drawing.Size(1561, 377);
             this.dataGridViewGekoppeldeObjecten.TabIndex = 0;
+            this.dataGridViewGekoppeldeObjecten.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewGekoppeldeObjecten_DataBindingComplete);
             this.dataGridViewGekoppeldeObjecten.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewGekoppeldeObjecten_MouseDoubleClick);
             // 
             // panel2

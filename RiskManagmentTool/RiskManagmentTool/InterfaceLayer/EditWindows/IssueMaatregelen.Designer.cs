@@ -62,22 +62,22 @@
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridViewIssueMaatregelen = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button5 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panel3 = new System.Windows.Forms.Panel();
             this.buttonAddNewMaatregel = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIssueMaatregelen)).BeginInit();
             this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonRisicoDetails
@@ -224,6 +224,7 @@
             this.button1.TabIndex = 10;
             this.button1.Text = "Later controleren";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
             // 
             // textBoxIssueID
             // 
@@ -260,6 +261,7 @@
             this.buttonNextIssue.TabIndex = 4;
             this.buttonNextIssue.Text = "Accepteer";
             this.buttonNextIssue.UseVisualStyleBackColor = true;
+            this.buttonNextIssue.Visible = false;
             this.buttonNextIssue.Click += new System.EventHandler(this.buttonNextIssue_Click);
             // 
             // label10
@@ -386,6 +388,7 @@
             this.button3.TabIndex = 1;
             this.button3.Text = "Accepteer geselecteerde items";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Visible = false;
             // 
             // dataGridViewIssueMaatregelen
             // 
@@ -400,6 +403,7 @@
             this.dataGridViewIssueMaatregelen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewIssueMaatregelen.Size = new System.Drawing.Size(866, 292);
             this.dataGridViewIssueMaatregelen.TabIndex = 0;
+            this.dataGridViewIssueMaatregelen.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewIssueMaatregelen_DataBindingComplete);
             // 
             // tabPage2
             // 
@@ -412,6 +416,24 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Issue Foto";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(492, 190);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(136, 36);
+            this.button5.TabIndex = 24;
+            this.button5.Text = "Foto bij dit issue";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(417, 309);
+            this.pictureBox1.TabIndex = 23;
+            this.pictureBox1.TabStop = false;
             // 
             // tabPage3
             // 
@@ -470,24 +492,6 @@
             this.button2.Text = "Verwijder maatregelen";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(492, 190);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(136, 36);
-            this.button5.TabIndex = 24;
-            this.button5.Text = "Foto bij dit issue";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(417, 309);
-            this.pictureBox1.TabIndex = 23;
-            this.pictureBox1.TabStop = false;
-            // 
             // IssueMaatregelen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -508,8 +512,8 @@
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIssueMaatregelen)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

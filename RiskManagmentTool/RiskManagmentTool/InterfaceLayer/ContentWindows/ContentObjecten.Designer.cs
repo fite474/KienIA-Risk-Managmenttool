@@ -109,6 +109,7 @@
             this.dataGridViewObjecten.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewObjecten.Size = new System.Drawing.Size(1575, 712);
             this.dataGridViewObjecten.TabIndex = 0;
+            this.dataGridViewObjecten.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewObjecten_DataBindingComplete);
             this.dataGridViewObjecten.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewObjecten_MouseDoubleClick);
             // 
             // ContentObjecten

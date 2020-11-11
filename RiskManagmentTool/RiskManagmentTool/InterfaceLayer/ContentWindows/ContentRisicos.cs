@@ -76,6 +76,8 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
                     dataGridViewRisicos.Columns[i + 1].Width = 400;
                 }
             }
+
+            dataGridViewRisicos.ClearSelection();
         }
     }
 }

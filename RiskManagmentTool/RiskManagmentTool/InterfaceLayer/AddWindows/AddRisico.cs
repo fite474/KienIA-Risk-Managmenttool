@@ -294,5 +294,20 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
             }
 
         }
+
+        private void dataGridViewLosseItems_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dataGridViewLosseItems.ClearSelection();
+        }
+
+        private void dataGridViewTemplateViewIssues_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dataGridViewTemplateViewIssues.ClearSelection();
+        }
+
+        private void dataGridViewObjectView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dataGridViewObjectView.ClearSelection();
+        }
     }
 }

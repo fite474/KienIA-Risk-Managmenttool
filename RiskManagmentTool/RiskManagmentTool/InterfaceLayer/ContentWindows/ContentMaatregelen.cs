@@ -75,5 +75,10 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 
             editMaatregelen.Show();
         }
+
+        private void dataGridViewMaatregelen_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dataGridViewMaatregelen.ClearSelection();
+        }
     }
 }

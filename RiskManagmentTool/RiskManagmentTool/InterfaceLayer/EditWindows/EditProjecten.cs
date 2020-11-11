@@ -61,5 +61,10 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             //Form exportObject = new ExportObject();
             //exportObject.Show();
         }
+
+        private void dataGridViewGekoppeldeObjecten_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dataGridViewGekoppeldeObjecten.ClearSelection();
+        }
     }
 }

@@ -111,6 +111,7 @@
             this.dataGridViewLosseItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewLosseItems.Size = new System.Drawing.Size(1195, 456);
             this.dataGridViewLosseItems.TabIndex = 0;
+            this.dataGridViewLosseItems.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewLosseItems_DataBindingComplete);
             this.dataGridViewLosseItems.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewRisicos_MouseDoubleClick);
             // 
             // tabPage2
@@ -176,6 +177,7 @@
             this.dataGridViewTemplateViewIssues.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewTemplateViewIssues.Size = new System.Drawing.Size(1070, 491);
             this.dataGridViewTemplateViewIssues.TabIndex = 0;
+            this.dataGridViewTemplateViewIssues.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewTemplateViewIssues_DataBindingComplete);
             // 
             // tabPage3
             // 
@@ -200,6 +202,7 @@
             this.dataGridViewObjectView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewObjectView.Size = new System.Drawing.Size(943, 406);
             this.dataGridViewObjectView.TabIndex = 1;
+            this.dataGridViewObjectView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewObjectView_DataBindingComplete);
             this.dataGridViewObjectView.DoubleClick += new System.EventHandler(this.dataGridViewObjectView_DoubleClick);
             // 
             // panel3
@@ -305,6 +308,7 @@
             // 
             // checkedListBoxAddSettings
             // 
+            this.checkedListBoxAddSettings.CheckOnClick = true;
             this.checkedListBoxAddSettings.FormattingEnabled = true;
             this.checkedListBoxAddSettings.Items.AddRange(new object[] {
             "Gekoppelde maatregelen overnemen(waar mogelijk)",

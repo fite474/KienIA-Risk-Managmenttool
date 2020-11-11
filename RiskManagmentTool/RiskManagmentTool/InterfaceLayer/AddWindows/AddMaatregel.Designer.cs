@@ -128,6 +128,7 @@
             this.dataGridViewMaatregelen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewMaatregelen.Size = new System.Drawing.Size(830, 302);
             this.dataGridViewMaatregelen.TabIndex = 5;
+            this.dataGridViewMaatregelen.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewMaatregelen_DataBindingComplete);
             this.dataGridViewMaatregelen.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewMaatregelen_MouseDoubleClick);
             // 
             // textBoxIssueID
@@ -321,6 +322,7 @@
             this.button3.TabIndex = 22;
             this.button3.Text = "Toon selectie als string";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Visible = false;
             // 
             // panel2
             // 

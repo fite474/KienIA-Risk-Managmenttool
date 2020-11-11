@@ -44,22 +44,22 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.buttonVerwijderIssues = new System.Windows.Forms.Button();
-            this.dataGridViewGekoppeldeIssues = new System.Windows.Forms.DataGridView();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.buttonVerwijderGevaren = new System.Windows.Forms.Button();
             this.dataGridViewGekoppeldeGevaren = new System.Windows.Forms.DataGridView();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.buttonVerwijderIssues = new System.Windows.Forms.Button();
+            this.dataGridViewGekoppeldeIssues = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.textBoxSelectedGevaren = new System.Windows.Forms.TextBox();
             this.buttonConfirmSelection = new System.Windows.Forms.Button();
             this.textBoxSelectedIssues = new System.Windows.Forms.TextBox();
             this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.dataGridViewAddGevaar = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.buttonAddSelection = new System.Windows.Forms.Button();
             this.dataGridViewAddIssue = new System.Windows.Forms.DataGridView();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.dataGridViewAddGevaar = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonSaveTemplate = new System.Windows.Forms.Button();
@@ -68,16 +68,16 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl3.SuspendLayout();
-            this.tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGekoppeldeIssues)).BeginInit();
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGekoppeldeGevaren)).BeginInit();
+            this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGekoppeldeIssues)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabControl2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAddIssue)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAddGevaar)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAddIssue)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -235,6 +235,41 @@
             this.tabControl3.Size = new System.Drawing.Size(1128, 394);
             this.tabControl3.TabIndex = 1;
             // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.buttonVerwijderGevaren);
+            this.tabPage6.Controls.Add(this.dataGridViewGekoppeldeGevaren);
+            this.tabPage6.Location = new System.Drawing.Point(4, 25);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(1120, 365);
+            this.tabPage6.TabIndex = 1;
+            this.tabPage6.Text = "Gekoppelde gevaren";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // buttonVerwijderGevaren
+            // 
+            this.buttonVerwijderGevaren.Location = new System.Drawing.Point(876, 61);
+            this.buttonVerwijderGevaren.Name = "buttonVerwijderGevaren";
+            this.buttonVerwijderGevaren.Size = new System.Drawing.Size(100, 46);
+            this.buttonVerwijderGevaren.TabIndex = 1;
+            this.buttonVerwijderGevaren.Text = "Verwijder selectie";
+            this.buttonVerwijderGevaren.UseVisualStyleBackColor = true;
+            this.buttonVerwijderGevaren.Click += new System.EventHandler(this.buttonVerwijderGevaren_Click);
+            // 
+            // dataGridViewGekoppeldeGevaren
+            // 
+            this.dataGridViewGekoppeldeGevaren.AllowUserToAddRows = false;
+            this.dataGridViewGekoppeldeGevaren.AllowUserToDeleteRows = false;
+            this.dataGridViewGekoppeldeGevaren.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewGekoppeldeGevaren.Location = new System.Drawing.Point(6, 6);
+            this.dataGridViewGekoppeldeGevaren.Name = "dataGridViewGekoppeldeGevaren";
+            this.dataGridViewGekoppeldeGevaren.ReadOnly = true;
+            this.dataGridViewGekoppeldeGevaren.RowTemplate.Height = 24;
+            this.dataGridViewGekoppeldeGevaren.Size = new System.Drawing.Size(810, 353);
+            this.dataGridViewGekoppeldeGevaren.TabIndex = 0;
+            this.dataGridViewGekoppeldeGevaren.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewGekoppeldeGevaren_DataBindingComplete);
+            // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.buttonVerwijderIssues);
@@ -269,40 +304,7 @@
             this.dataGridViewGekoppeldeIssues.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewGekoppeldeIssues.Size = new System.Drawing.Size(820, 353);
             this.dataGridViewGekoppeldeIssues.TabIndex = 0;
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.Controls.Add(this.buttonVerwijderGevaren);
-            this.tabPage6.Controls.Add(this.dataGridViewGekoppeldeGevaren);
-            this.tabPage6.Location = new System.Drawing.Point(4, 25);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1120, 365);
-            this.tabPage6.TabIndex = 1;
-            this.tabPage6.Text = "Gekoppelde gevaren";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // buttonVerwijderGevaren
-            // 
-            this.buttonVerwijderGevaren.Location = new System.Drawing.Point(876, 61);
-            this.buttonVerwijderGevaren.Name = "buttonVerwijderGevaren";
-            this.buttonVerwijderGevaren.Size = new System.Drawing.Size(100, 46);
-            this.buttonVerwijderGevaren.TabIndex = 1;
-            this.buttonVerwijderGevaren.Text = "Verwijder selectie";
-            this.buttonVerwijderGevaren.UseVisualStyleBackColor = true;
-            this.buttonVerwijderGevaren.Click += new System.EventHandler(this.buttonVerwijderGevaren_Click);
-            // 
-            // dataGridViewGekoppeldeGevaren
-            // 
-            this.dataGridViewGekoppeldeGevaren.AllowUserToAddRows = false;
-            this.dataGridViewGekoppeldeGevaren.AllowUserToDeleteRows = false;
-            this.dataGridViewGekoppeldeGevaren.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewGekoppeldeGevaren.Location = new System.Drawing.Point(6, 6);
-            this.dataGridViewGekoppeldeGevaren.Name = "dataGridViewGekoppeldeGevaren";
-            this.dataGridViewGekoppeldeGevaren.ReadOnly = true;
-            this.dataGridViewGekoppeldeGevaren.RowTemplate.Height = 24;
-            this.dataGridViewGekoppeldeGevaren.Size = new System.Drawing.Size(810, 353);
-            this.dataGridViewGekoppeldeGevaren.TabIndex = 0;
+            this.dataGridViewGekoppeldeIssues.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewGekoppeldeIssues_DataBindingComplete);
             // 
             // tabPage2
             // 
@@ -354,6 +356,32 @@
             this.tabControl2.Size = new System.Drawing.Size(1131, 401);
             this.tabControl2.TabIndex = 0;
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.dataGridViewAddGevaar);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(1123, 372);
+            this.tabPage4.TabIndex = 1;
+            this.tabPage4.Text = "Gevaren";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewAddGevaar
+            // 
+            this.dataGridViewAddGevaar.AllowUserToAddRows = false;
+            this.dataGridViewAddGevaar.AllowUserToDeleteRows = false;
+            this.dataGridViewAddGevaar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAddGevaar.Location = new System.Drawing.Point(6, 7);
+            this.dataGridViewAddGevaar.Name = "dataGridViewAddGevaar";
+            this.dataGridViewAddGevaar.ReadOnly = true;
+            this.dataGridViewAddGevaar.RowTemplate.Height = 24;
+            this.dataGridViewAddGevaar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewAddGevaar.Size = new System.Drawing.Size(834, 359);
+            this.dataGridViewAddGevaar.TabIndex = 0;
+            this.dataGridViewAddGevaar.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewAddGevaar_DataBindingComplete);
+            this.dataGridViewAddGevaar.DoubleClick += new System.EventHandler(this.dataGridViewAddGevaar_DoubleClick);
+            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.buttonAddSelection);
@@ -390,31 +418,6 @@
             this.dataGridViewAddIssue.TabIndex = 0;
             this.dataGridViewAddIssue.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewAddIssue_DataBindingComplete);
             this.dataGridViewAddIssue.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewAddIssue_MouseDoubleClick);
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.dataGridViewAddGevaar);
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1123, 372);
-            this.tabPage4.TabIndex = 1;
-            this.tabPage4.Text = "Gevaren";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // dataGridViewAddGevaar
-            // 
-            this.dataGridViewAddGevaar.AllowUserToAddRows = false;
-            this.dataGridViewAddGevaar.AllowUserToDeleteRows = false;
-            this.dataGridViewAddGevaar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewAddGevaar.Location = new System.Drawing.Point(6, 7);
-            this.dataGridViewAddGevaar.Name = "dataGridViewAddGevaar";
-            this.dataGridViewAddGevaar.ReadOnly = true;
-            this.dataGridViewAddGevaar.RowTemplate.Height = 24;
-            this.dataGridViewAddGevaar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewAddGevaar.Size = new System.Drawing.Size(834, 359);
-            this.dataGridViewAddGevaar.TabIndex = 0;
-            this.dataGridViewAddGevaar.DoubleClick += new System.EventHandler(this.dataGridViewAddGevaar_DoubleClick);
             // 
             // label5
             // 
@@ -460,17 +463,17 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabControl3.ResumeLayout(false);
-            this.tabPage5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGekoppeldeIssues)).EndInit();
             this.tabPage6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGekoppeldeGevaren)).EndInit();
+            this.tabPage5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGekoppeldeIssues)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabControl2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAddIssue)).EndInit();
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAddGevaar)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAddIssue)).EndInit();
             this.ResumeLayout(false);
 
         }

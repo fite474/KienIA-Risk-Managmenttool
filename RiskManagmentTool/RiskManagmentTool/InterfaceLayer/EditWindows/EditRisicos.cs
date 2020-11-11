@@ -16,6 +16,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
     {
         private Datacomunication comunicator;
         private KeuzeMenus keuzeMenus;
+        private MenuTableName MenuTableName;
+        private string menuTitle;
 
         //private List<string> TypeObjectItems;
         private List<string> GevolgenItems;
@@ -26,6 +28,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private List<string> DisciplinesItems;
         private List<string> BedienvormenItems;
         private List<string> TakenItems;
+
+        private List<string> CurrentMenuToAddTo;
 
 
         private List<int> GevolgenCheckedItems;
@@ -72,6 +76,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         {
             keuzeMenus = new KeuzeMenus();
             comunicator = new Datacomunication();
+            CurrentMenuToAddTo = new List<string>();
 
             GevolgenItems = keuzeMenus.GetGevolgenMenu();
             GevarenzonesItems = keuzeMenus.GetGevarenzoneMenu();
@@ -275,8 +280,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
                 indexHelper++;
             }
-            currentTextBox = textBoxDiscipline;
-            currentList = DisciplinesCheckedItems;
+            MenuTableName = MenuTableName.Disciplines;
+            UpdateState();
 
         }
 
@@ -294,8 +299,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
                 indexHelper++;
             }
-            currentTextBox = textBoxGebruiksfase;
-            currentList = GebruiksfaseCheckedItems;
+            MenuTableName = MenuTableName.Gebruiksfases;
+            UpdateState();
         }
 
         private void buttonBedienvorm_Click(object sender, EventArgs e)
@@ -312,8 +317,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
                 indexHelper++;
             }
-            currentTextBox = textBoxBedienvorm;
-            currentList = BedienvormenCheckedItems;
+            MenuTableName = MenuTableName.Bedienvormen;
+            UpdateState();
         }
 
         private void buttonGebruiker_Click(object sender, EventArgs e)
@@ -330,8 +335,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
                 indexHelper++;
             }
-            currentTextBox = textBoxGebruiker;
-            currentList = GebruikersCheckedItems;
+            MenuTableName = MenuTableName.Gebruikers;
+            UpdateState();
         }
 
         private void buttonGevaarlijkeZone_Click(object sender, EventArgs e)
@@ -348,8 +353,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
                 indexHelper++;
             }
-            currentTextBox = textBoxGevaarlijkeZone;
-            currentList = GevarenzonesCheckedItems;
+            MenuTableName = MenuTableName.Gevarenzones;
+            UpdateState();
         }
 
         private void buttonTaak_Click(object sender, EventArgs e)
@@ -366,8 +371,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
                 indexHelper++;
             }
-            currentTextBox = textBoxTaak;
-            currentList = TakenCheckedItems;
+            MenuTableName = MenuTableName.Taken;
+            UpdateState();
         }
 
         private void buttonGevaar_Click(object sender, EventArgs e)
@@ -384,8 +389,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
                 indexHelper++;
             }
-            currentTextBox = textBoxGevaar;
-            currentList = GevaarTypesCheckedItems;
+            MenuTableName = MenuTableName.GevaarTypes;
+            UpdateState();
         }
 
         private void buttonGevolg_Click(object sender, EventArgs e)
@@ -402,8 +407,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
                 indexHelper++;
             }
-            currentTextBox = textBoxGevolg;
-            currentList = GevolgenCheckedItems;
+            MenuTableName = MenuTableName.Gevolgen;
+            UpdateState();
         }
 
         private void checkedListBoxOptions_ItemCheck(object sender, ItemCheckEventArgs e)
@@ -414,75 +419,67 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void buttonKeuzeOption_Click(object sender, EventArgs e)
         {
-            //EditKeuzes editKeuze = new EditKeuzes(null, currentList, null);
-            //editKeuze.ShowDialog();
+            EditKeuzes editKeuze = new EditKeuzes(MenuTableName, CurrentMenuToAddTo, menuTitle);
+            editKeuze.ShowDialog();
             //currentList.Add(" ");
         }
 
 
-        private void GetState()
+        private void UpdateState()
         {
-            //        MenuTableName MenuTableName;
-            //        List<string> MenuOptions;
-
-            //        string menuTitle;
-            //switch (MenuTableName)
-            //{
-            //    case MenuTableName.ObjectTypes:
-            //        MenuOptions = keuzeMenus.GetTypeObjectMenu();
-            //        menuTitle = "Object types";
-            //        break;
-            //    case MenuTableName.Gevolgen:
-            //        MenuOptions = keuzeMenus.GetGevolgenMenu();
-            //        menuTitle = "Gevolgen";
-            //        break;
-            //    case MenuTableName.Gevarenzones:
-            //        MenuOptions = keuzeMenus.GetGevarenzoneMenu();
-            //        menuTitle = "Gevaren zone";
-            //        break;
-            //    case MenuTableName.GevaarTypes:
-            //        MenuOptions = keuzeMenus.GetGevaarTypeMenu();
-            //        menuTitle = "Gevaar type";
-            //        break;
-            //    case MenuTableName.Gebruiksfases:
-            //        MenuOptions = keuzeMenus.GetGebruikersfasesMenu();
-            //        menuTitle = "Gebruiksfase";
-            //        break;
-            //    case MenuTableName.Gebruikers:
-            //        MenuOptions = keuzeMenus.GetGebruikersMenu();
-            //        menuTitle = "Gebruikers";
-            //        break;
-            //    case MenuTableName.Disciplines:
-            //        MenuOptions = keuzeMenus.GetDisciplinesMenu();
-            //        menuTitle = "Discipline";
-            //        break;
-            //    case MenuTableName.Bedienvormen:
-            //        MenuOptions = keuzeMenus.GetBedienvormenMenu();
-            //        menuTitle = "Bedienvorm";
-            //        break;
-            //    case MenuTableName.Taken:
-            //        MenuOptions = keuzeMenus.GetTakenMenu();
-            //        menuTitle = "Taak";
-            //        break;
-            //    case MenuTableName.Normen:
-            //        MenuOptions = keuzeMenus.GetMaatregelNormMenu();
-            //        menuTitle = "Maatregel norm";
-            //        break;
-            //    case MenuTableName.Categories:
-            //        MenuOptions = keuzeMenus.GetMaatregelCategoryMenu();
-            //        menuTitle = "Maatregel categorie";
-            //        break;
-            //    case MenuTableName.TemplateTypes:
-            //        MenuOptions = keuzeMenus.GetTemplateTypesMenu();
-            //        menuTitle = "Template types";
-            //        break;
-            //    case MenuTableName.TemplateToepassing:
-            //        MenuOptions = keuzeMenus.GetTemplateToepassingenMenu();
-            //        menuTitle = "Template toepassing";
-            //        break;
-            //    default:
-            //        break;
-            //}
+            switch (MenuTableName)
+            {
+                case MenuTableName.Gevolgen:
+                    currentTextBox = textBoxGevolg;
+                    currentList = GevolgenCheckedItems;
+                    CurrentMenuToAddTo = GevolgenItems;
+                    menuTitle = "Gevolgen";
+                    break;
+                case MenuTableName.Gevarenzones:
+                    currentTextBox = textBoxGevaarlijkeZone;
+                    currentList = GevarenzonesCheckedItems;
+                    CurrentMenuToAddTo = GevarenzonesItems;
+                    menuTitle = "Gevaren zone";
+                    break;
+                case MenuTableName.GevaarTypes:
+                    currentTextBox = textBoxGevaar;
+                    currentList = GevaarTypesCheckedItems;
+                    CurrentMenuToAddTo = GevaarTypesItems;
+                    menuTitle = "Gevaar type";
+                    break;
+                case MenuTableName.Gebruiksfases:
+                    currentTextBox = textBoxGebruiksfase;
+                    currentList = GebruiksfaseCheckedItems;
+                    CurrentMenuToAddTo = GebruiksfaseItems;
+                    menuTitle = "Gebruiksfase";
+                    break;
+                case MenuTableName.Gebruikers:
+                    currentTextBox = textBoxGebruiker;
+                    currentList = GebruikersCheckedItems;
+                    CurrentMenuToAddTo = GebruikersItems;
+                    menuTitle = "Gebruikers";
+                    break;
+                case MenuTableName.Disciplines:
+                    currentTextBox = textBoxDiscipline;
+                    currentList = DisciplinesCheckedItems;
+                    CurrentMenuToAddTo = DisciplinesItems;
+                    menuTitle = "Discipline";
+                    break;
+                case MenuTableName.Bedienvormen:
+                    currentTextBox = textBoxBedienvorm;
+                    currentList = BedienvormenCheckedItems;
+                    CurrentMenuToAddTo = BedienvormenItems;
+                    menuTitle = "Bedienvorm";
+                    break;
+                case MenuTableName.Taken:
+                    currentTextBox = textBoxTaak;
+                    currentList = TakenCheckedItems;
+                    CurrentMenuToAddTo = TakenItems;
+                    menuTitle = "Taak";
+                    break;
+                default:
+                    break;
+            }
 
         }
     }

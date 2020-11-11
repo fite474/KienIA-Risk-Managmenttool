@@ -84,6 +84,11 @@ namespace RiskManagmentTool.InterfaceLayer.DeleteWindows
             }
 
         }
+
+        private void dataGridViewGekoppeldeGevaren_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dataGridViewGekoppeldeGevaren.ClearSelection();
+        }
     }
     
 }

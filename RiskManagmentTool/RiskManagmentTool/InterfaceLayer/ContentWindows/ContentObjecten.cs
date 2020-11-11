@@ -53,5 +53,10 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
             //Form editObject = new EditObjecten();
             //editObject.Show();
         }
+
+        private void dataGridViewObjecten_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dataGridViewObjecten.ClearSelection();
+        }
     }
 }

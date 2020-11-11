@@ -70,6 +70,7 @@
             this.dataGridViewGekoppeldeGevaren.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewGekoppeldeGevaren.Size = new System.Drawing.Size(910, 418);
             this.dataGridViewGekoppeldeGevaren.TabIndex = 2;
+            this.dataGridViewGekoppeldeGevaren.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewGekoppeldeGevaren_DataBindingComplete);
             this.dataGridViewGekoppeldeGevaren.SelectionChanged += new System.EventHandler(this.dataGridViewGekoppeldeGevaren_SelectionChanged);
             // 
             // buttonDeleteSelection

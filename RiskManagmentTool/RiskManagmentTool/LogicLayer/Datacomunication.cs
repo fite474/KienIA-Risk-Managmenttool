@@ -196,6 +196,7 @@ namespace RiskManagmentTool.LogicLayer
 
         }
 
+        //Start update region
         public void UpdateRisicoBeoordeling(string issueID, string init_Se, string init_Fr, string init_Pr, string init_Av, string init_Cl, string init_Risico,
                                             string init_Se_Comment, string init_Fr_Comment, string init_Pr_Comment, string init_Av_Comment, string init_Cl_Comment, string init_Risico_Comment,
                                             string rest_Se, string rest_Fr, string rest_Pr, string rest_Av, string rest_Cl, string rest_Risico,
@@ -239,9 +240,12 @@ namespace RiskManagmentTool.LogicLayer
 
         }
 
+        public void UpdateIssueState(string issueId, string newState)
+        {
+            databaseCommunication.UpdateIssueState(issueId, newState);
+        }
 
-
-
+        // End update region
 
         // START Delete region
 
@@ -299,6 +303,11 @@ namespace RiskManagmentTool.LogicLayer
             DataTable data = new DataTable();
             adapter.Fill(data);
             return data;
+        }
+
+        public List<string> GetObjectIssuesStates(string objectID)
+        {
+            return databaseCommunication.GetObjectIssuesState(objectID);
         }
 
         public DataTable GetObjectIssuesByObjectName(string objectNaam)
@@ -431,6 +440,11 @@ namespace RiskManagmentTool.LogicLayer
         public List<string> GetIssueInfo(string issueId)
         {
             return databaseCommunication.GetIssuesInfo(issueId);
+        }
+
+        public string GetIssueState(string issueId)
+        {
+            return databaseCommunication.GetIssueState(issueId);
         }
 
         //End redirect options

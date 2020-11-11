@@ -19,10 +19,11 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private string ObjectNaam;
         private string ObjectID;
         private KeuzeMenus keuzeMenus;
+        private ViewsColumnNames viewsColumnNames;
 
         //private List<string> GekoppeldeGevarenId;
         //private List<string> GekoppeldeIssuesId;
-
+        private List<string> IssuesState;
 
         public EditObjecten()
         {
@@ -39,6 +40,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             InitializeComponent();
             comunicator = new Datacomunication();
             keuzeMenus = new KeuzeMenus();
+            viewsColumnNames = new ViewsColumnNames();
+            //string x = viewsColumnNames.IssueBeschrijving;
             LoadMenus();
             this.ObjectNaam = objectNaam;
             this.ObjectID = objectID;
@@ -50,10 +53,6 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             LoadData();
             SetInstellingen();
 
-            //textBoxDiscipline.Text = riskDiscipline;
-            //textBoxGebruiksfase.Text = riskGebruiksfase;
-            //textBoxBedienvorm.Text = riskGebruiker;
-            //textBoxRiskGevarenzone.Text = riskGevarenzone;
         }
 
         private void LoadMenus()
@@ -68,10 +67,22 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private void LoadData()
         {
 
-           // GekoppeldeGevarenId = comunicator.GetGekoppeldeGevarenFromObjectAsList(ObjectID);
+            // GekoppeldeGevarenId = comunicator.GetGekoppeldeGevarenFromObjectAsList(ObjectID);
             //GekoppeldeIssuesId = comunicator.GetGekoppeldeIssuesFromObjectAsList(ObjectID);
-        //dataGridViewGekoppeldeIssues.DataSource = comunicator.GetObjectIssues(ObjectID);
-        //
+            //dataGridViewGekoppeldeIssues.DataSource = comunicator.GetObjectIssues(ObjectID);
+            //
+            IssuesState = comunicator.GetObjectIssuesStates(ObjectID);
+            DataGridViewCheckBoxColumn CheckboxColumn = new DataGridViewCheckBoxColumn();
+            CheckBox chk = new CheckBox();
+            CheckboxColumn.Width = 20;
+            CheckboxColumn.HeaderText = "";
+            CheckboxColumn.TrueValue = true;
+            dataGridViewGekoppeldeIssues.Columns.Add(CheckboxColumn);
+
+
+
+
+
             dataGridViewGekoppeldeIssues.DataSource = comunicator.GetObjectIssues(ObjectID);
             
             
@@ -87,17 +98,12 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void SetInstellingen()
         {
-
-            //KeuzeMenus instellingen = new KeuzeMenus();
             List<CheckedListBox> menuBox = keuzeMenus.GetKeuzeMenus();
             for (int i = 0; i < menuBox.Count; i++)
             {
-                
-                
+
                 tabPage3.Controls.Add(menuBox[i]);
-            }
-            
-            
+            }   
         }
 
         private void buttonIssuesOplossen_Click(object sender, EventArgs e)
@@ -116,12 +122,12 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private void dataGridViewGekoppeldeIssues_MouseDoubleClick(object sender, MouseEventArgs e)
         {
 
-            string issueId = dataGridViewGekoppeldeIssues.SelectedRows[0].Cells[0].Value.ToString();
-            string situatie = dataGridViewGekoppeldeIssues.SelectedRows[0].Cells[1].Value.ToString();
-            string gebeurtenis = dataGridViewGekoppeldeIssues.SelectedRows[0].Cells[2].Value.ToString();
+            string issueId = dataGridViewGekoppeldeIssues.SelectedRows[0].Cells[viewsColumnNames.IssueIDColumn].Value.ToString();//[0].Value.ToString();
+            string situatie = dataGridViewGekoppeldeIssues.SelectedRows[0].Cells[viewsColumnNames.GevaarlijkeSituatieColumn].Value.ToString();
+            string gebeurtenis = dataGridViewGekoppeldeIssues.SelectedRows[0].Cells[viewsColumnNames.GevaarlijkeGebeurtenisColumn].Value.ToString();
 
-            string discipline = dataGridViewGekoppeldeIssues.SelectedRows[0].Cells[3].Value.ToString();
-            string gevaar = dataGridViewGekoppeldeIssues.SelectedRows[0].Cells[9].Value.ToString();
+            string discipline = dataGridViewGekoppeldeIssues.SelectedRows[0].Cells[viewsColumnNames.GevaarDisciplineColumn].Value.ToString();
+            string gevaar = dataGridViewGekoppeldeIssues.SelectedRows[0].Cells[viewsColumnNames.GevaarGevaarTypeColumn].Value.ToString();
 
             string init_Risico = "";
             string init_Risico_Beschrijving = "";
@@ -134,8 +140,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
                                                          discipline, gevaar, situatie, gebeurtenis,
                                                          init_Risico, init_Risico_Beschrijving,
                                                          rest_Risico, rest_Risico_Beschrijving);
-            issueMaatregelen.Show();
-
+            issueMaatregelen.ShowDialog();
+            LoadData();
 
 
         }
@@ -168,27 +174,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             }
         }
 
-        private void dataGridViewGekoppeldeIssues_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            for (int i = 0; i < (dataGridViewGekoppeldeIssues.ColumnCount - 1); i++)
-            {
-                dataGridViewGekoppeldeIssues.AutoResizeColumn((i+1), DataGridViewAutoSizeColumnMode.AllCells);
-                if (dataGridViewGekoppeldeIssues.Columns[i + 1].Width > 400)
-                {
-                    dataGridViewGekoppeldeIssues.Columns[i + 1].Width = 400;
-                }
-            }
 
-            dataGridViewGekoppeldeIssues.ClearSelection();
-            //for (int i = 0; i < dataGridViewGekoppeldeIssues.Rows.Count; i++)
-            //{
-            //    if (i % 2 == 0)
-            //    {
-            //        dataGridViewGekoppeldeIssues.Rows[i].DefaultCellStyle.BackColor = Color.Red;
-            //    }
-                
-            //}
-        }
 
         private void pictureBoxObjectFoto_Click(object sender, EventArgs e)
         {
@@ -202,6 +188,51 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
                 pictureBoxObjectFoto.SizeMode = PictureBoxSizeMode.StretchImage;
                 // image file path  
                 textBox1.Text = open.FileName;
+            }
+        }
+
+        private void dataGridViewGekoppeldeIssues_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            for (int i = 0; i < (dataGridViewGekoppeldeIssues.ColumnCount - 1); i++)
+            {
+                dataGridViewGekoppeldeIssues.AutoResizeColumn((i + 1), DataGridViewAutoSizeColumnMode.AllCells);
+                if (dataGridViewGekoppeldeIssues.Columns[i + 1].Width > 400)
+                {
+                    dataGridViewGekoppeldeIssues.Columns[i + 1].Width = 400;
+                }
+            }
+
+            dataGridViewGekoppeldeIssues.ClearSelection();
+            //for (int i = 0; i < dataGridViewGekoppeldeIssues.Rows.Count; i++)
+            //{
+            //    if (i % 2 == 0)
+            //    {
+            //        dataGridViewGekoppeldeIssues.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+            //    }
+
+            //}
+            int rowIndex = 0;
+            foreach (DataGridViewRow row in dataGridViewGekoppeldeIssues.Rows)
+            {
+                if (IssuesState[rowIndex].Equals("0"))
+                {
+                    dataGridViewGekoppeldeIssues.Rows[rowIndex].DefaultCellStyle.BackColor = Color.Red;
+                }
+                else if (IssuesState[rowIndex].Equals("1"))
+                {
+                    dataGridViewGekoppeldeIssues.Rows[rowIndex].DefaultCellStyle.BackColor = Color.White;
+                    row.Cells[0].Value = true;
+                }
+                //string issueId = row.Cells[1].Value.ToString();
+                //if (issueId.Equals("9"))
+                //{
+                //    row.Cells[0].Value = true;
+                //}
+                //else
+                //{
+                //    dataGridViewGekoppeldeIssues.Rows[rowIndex].DefaultCellStyle.BackColor = Color.Red;
+                //}
+                rowIndex++;
             }
         }
     }

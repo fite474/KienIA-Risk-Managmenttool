@@ -56,6 +56,9 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             textBoxRest_Risico.Text = rest_Risico;
             textBoxRest_Risico_Comment.Text = rest_Risico_Beschrijving;
 
+            checkBoxIssueOK.Checked = comunicator.GetIssueState(IssueID) == "1";
+            //string rest_Ok = checkBoxRest_Risico_Ok.Checked == true ? "1" : "0";
+
         }
 
         private void LoadMenus()
@@ -111,6 +114,12 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private void dataGridViewIssueMaatregelen_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             dataGridViewIssueMaatregelen.ClearSelection();
+        }
+
+        private void checkBoxIssueOK_CheckedChanged(object sender, EventArgs e)
+        {
+            string issueState = checkBoxIssueOK.Checked == true ? "1" : "0";
+            comunicator.UpdateIssueState(IssueID, issueState);
         }
     }
 }

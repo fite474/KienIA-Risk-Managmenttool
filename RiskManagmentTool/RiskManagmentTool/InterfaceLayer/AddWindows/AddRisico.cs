@@ -195,7 +195,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
             foreach (string gevaarToAddID in SelectedGevarenId)
             {
-                //comunicator.AddGevaarToObject(ObjectID, gevaarToAddID);
+                comunicator.AddGevaarToObject(ObjectID, gevaarToAddID);
             }
             
             //controler.CheckObjectForDubbleGevaren(SelectedGevarenId);

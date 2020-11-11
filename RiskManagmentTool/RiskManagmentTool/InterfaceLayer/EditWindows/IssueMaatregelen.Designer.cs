@@ -70,6 +70,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.buttonAddNewMaatregel = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.checkBoxIssueOK = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -302,6 +303,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.checkBoxIssueOK);
             this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
@@ -492,6 +494,18 @@
             this.button2.Text = "Verwijder maatregelen";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // checkBoxIssueOK
+            // 
+            this.checkBoxIssueOK.AutoSize = true;
+            this.checkBoxIssueOK.Location = new System.Drawing.Point(116, 101);
+            this.checkBoxIssueOK.Name = "checkBoxIssueOK";
+            this.checkBoxIssueOK.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.checkBoxIssueOK.Size = new System.Drawing.Size(117, 21);
+            this.checkBoxIssueOK.TabIndex = 5;
+            this.checkBoxIssueOK.Text = "Goedgekeurd";
+            this.checkBoxIssueOK.UseVisualStyleBackColor = true;
+            this.checkBoxIssueOK.CheckedChanged += new System.EventHandler(this.checkBoxIssueOK_CheckedChanged);
+            // 
             // IssueMaatregelen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -562,5 +576,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.CheckBox checkBoxIssueOK;
     }
 }

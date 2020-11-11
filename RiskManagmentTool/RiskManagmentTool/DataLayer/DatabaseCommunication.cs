@@ -326,11 +326,13 @@ namespace RiskManagmentTool.DataLayer
 
         private int InitIssue(string gevaarId)
         {
+            string issueStatus = "0";
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO TableIssues(IssueGevaarID) VALUES " +
-                                                                       "(@IssueGevaarID)" +
+            SqlCommand cmd = new SqlCommand("INSERT INTO TableIssues(IssueGevaarID, IssueStatus) VALUES " +
+                                                                       "(@IssueGevaarID, @IssueStatus)" +
                                                                        "SELECT CAST(SCOPE_IDENTITY() AS INT)", sqlConnection);
             cmd.Parameters.AddWithValue("@IssueGevaarID", gevaarId);
+            cmd.Parameters.AddWithValue("@IssueStatus", issueStatus);
 
             Int32 issueID = (Int32)cmd.ExecuteScalar();
             sqlConnection.Close();
@@ -680,6 +682,19 @@ namespace RiskManagmentTool.DataLayer
         }
 
 
+        public void UpdateIssueState(string issueID, string newState)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("UPDATE TableIssues " +
+                                             "SET IssueStatus = @IssueStatus" +
+                                            " WHERE IssueID = '" + issueID + "'", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@IssueStatus", newState);
+            cmd.ExecuteNonQuery();
+
+            sqlConnection.Close();
+        }
+
         //END REGION UPDATE
 
 
@@ -732,6 +747,28 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
             return adapter;
 
+        }
+
+        public List<string> GetObjectIssuesState(string objectID)
+        {
+            List<string> issueStates = new List<string>();
+
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT TableIssues.IssueStatus " +
+                                            "FROM TableIssues WHERE TableIssues.IssueID" +
+                                            " IN(" +
+                                            " SELECT TableObjectIssues.IssueID FROM TableObjectIssues WHERE TableObjectIssues.ObjectID = '" + objectID + "')", sqlConnection);
+
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    issueStates.Add((dr[0]).ToString());
+                }
+            }
+            sqlConnection.Close();
+
+            return issueStates;
         }
 
 
@@ -969,6 +1006,23 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
 
             return issueInfo;
+        }
+
+        public string GetIssueState(string issueId)
+        {
+            string issueState = "-1";
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT TableIssues.IssueStatus " +
+                                            "FROM TableIssues WHERE TableIssues.IssueID = '" + issueId + "'", sqlConnection);
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    issueState = (dr[0]).ToString();
+                }
+            }
+            sqlConnection.Close();
+            return issueState;
         }
 
 

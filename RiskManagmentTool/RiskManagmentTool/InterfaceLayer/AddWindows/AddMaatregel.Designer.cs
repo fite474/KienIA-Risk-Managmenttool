@@ -61,6 +61,7 @@
             this.comboBoxDiscipline = new System.Windows.Forms.ComboBox();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMaatregelen)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -120,6 +121,7 @@
             // 
             this.dataGridViewMaatregelen.AllowUserToAddRows = false;
             this.dataGridViewMaatregelen.AllowUserToDeleteRows = false;
+            this.dataGridViewMaatregelen.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewMaatregelen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewMaatregelen.Location = new System.Drawing.Point(8, 70);
             this.dataGridViewMaatregelen.Name = "dataGridViewMaatregelen";
@@ -326,6 +328,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.buttonCreateNewMaatregel);
             this.panel2.Controls.Add(this.comboBoxGevaar);
             this.panel2.Controls.Add(this.comboBoxDiscipline);
@@ -387,6 +390,7 @@
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(255, 174);
             this.checkedListBox1.TabIndex = 19;
+            this.checkedListBox1.Visible = false;
             // 
             // panel3
             // 
@@ -396,6 +400,16 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1113, 416);
             this.panel3.TabIndex = 24;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(743, 15);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(94, 17);
+            this.label11.TabIndex = 23;
+            this.label11.Text = "MAG WEG!!!!!!";
+            this.label11.Visible = false;
             // 
             // AddMaatregel
             // 
@@ -461,5 +475,6 @@
         private System.Windows.Forms.ComboBox comboBoxGevaar;
         private System.Windows.Forms.ComboBox comboBoxDiscipline;
         private System.Windows.Forms.Button buttonCreateNewMaatregel;
+        private System.Windows.Forms.Label label11;
     }
 }

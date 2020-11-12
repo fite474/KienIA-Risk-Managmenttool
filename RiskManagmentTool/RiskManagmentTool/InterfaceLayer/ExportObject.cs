@@ -7,21 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RiskManagmentTool.LogicLayer;
 
 namespace RiskManagmentTool.InterfaceLayer
 {
     public partial class ExportObject : Form
     {
-        public ExportObject(DataTable data)
+        private Datacomunication comunicator;
+        private string ObjectID;
+        public ExportObject(string objectID)//DataTable data)
         {
             InitializeComponent();
-            LoadData(data);
+            comunicator = new Datacomunication();
+            ObjectID = objectID;
+            LoadData();//;data);
         }
 
-        private void LoadData(DataTable data)
+        private void LoadData()//DataTable data)
         {
-            dataGridViewCompleteBeoordeling.DataSource = data;
-            //dataGridViewGekoppeldeIssues.DataSource = comunicator.GetObjectIssuesFull(ObjectID);
+            //dataGridViewCompleteBeoordeling.DataSource = data;
+            dataGridViewCompleteBeoordeling.DataSource = comunicator.GetObjectIssues(ObjectID);
             
 
         }

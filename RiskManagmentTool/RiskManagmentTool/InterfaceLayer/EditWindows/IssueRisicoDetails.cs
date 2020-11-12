@@ -59,7 +59,37 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         }
 
         //
+        public void SetReadOnlyMode()
+        {
+            textBoxIssueID.Enabled = false;//risicoBeoordelingData.Columns[1].ToString();//Andere optie is Collums["name"]
+            textBoxInit_Se.Enabled = false; ;//risicoBeoordelingData.Columns[2].ToString();
+            textBoxInit_Fr.Enabled = false;
+            textBoxInit_Pr.Enabled = false;
+            textBoxInit_Av.Enabled = false;
+            textBoxInit_Cl.Enabled = false;
+            textBoxInit_Risico.Enabled = false;
+            textBoxInit_Se_Comment.Enabled = false;
+            textBoxInit_Fr_Comment.Enabled = false;
+            textBoxInit_Pr_Comment.Enabled = false;
+            textBoxInit_Av_Comment.Enabled = false;
+            textBoxInit_Cl_Comment.Enabled = false;
+            textBoxInitRisico_Comment.Enabled = false;
+            textBoxRest_Se.Enabled = false;
+            textBoxRest_Fr.Enabled = false;
+            textBoxRest_Pr.Enabled = false;
+            textBoxRest_Av.Enabled = false;
+            textBoxRest_Cl.Enabled = false;
+            textBoxRest_Risico.Enabled = false;
+            textBoxRest_Se_Comment.Enabled = false;
+            textBoxRest_Fr_Comment.Enabled = false;
+            textBoxRest_Pr_Comment.Enabled = false;
+            textBoxRest_Av_Comment.Enabled = false;
+            textBoxRest_Cl_Comment.Enabled = false;
+            textBoxRest_Risico_Comment.Enabled = false;
+            checkBoxRest_Risico_Ok.Enabled = false;
+            buttonConfirm.Enabled = false;
 
+        }
 
 
         private void buttonConfirm_Click(object sender, EventArgs e)

@@ -55,6 +55,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.buttonCreateNewGevaar = new System.Windows.Forms.Button();
+            this.buttonCreateNewTemplate = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLosseItems)).BeginInit();
@@ -128,6 +129,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.buttonCreateNewTemplate);
             this.panel1.Controls.Add(this.buttonAddFromTemplateIssues);
             this.panel1.Controls.Add(this.comboBoxViewTemplate);
             this.panel1.Controls.Add(this.label6);
@@ -178,6 +180,7 @@
             this.dataGridViewTemplateViewIssues.Size = new System.Drawing.Size(1070, 491);
             this.dataGridViewTemplateViewIssues.TabIndex = 0;
             this.dataGridViewTemplateViewIssues.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewTemplateViewIssues_DataBindingComplete);
+            this.dataGridViewTemplateViewIssues.DoubleClick += new System.EventHandler(this.dataGridViewTemplateViewIssues_DoubleClick);
             // 
             // tabPage3
             // 
@@ -345,6 +348,16 @@
             this.buttonCreateNewGevaar.UseVisualStyleBackColor = true;
             this.buttonCreateNewGevaar.Click += new System.EventHandler(this.buttonCreateNewGevaar_Click);
             // 
+            // buttonCreateNewTemplate
+            // 
+            this.buttonCreateNewTemplate.Location = new System.Drawing.Point(360, 14);
+            this.buttonCreateNewTemplate.Name = "buttonCreateNewTemplate";
+            this.buttonCreateNewTemplate.Size = new System.Drawing.Size(163, 33);
+            this.buttonCreateNewTemplate.TabIndex = 3;
+            this.buttonCreateNewTemplate.Text = "Maak nieuw template";
+            this.buttonCreateNewTemplate.UseVisualStyleBackColor = true;
+            this.buttonCreateNewTemplate.Click += new System.EventHandler(this.buttonCreateNewTemplate_Click);
+            // 
             // AddRisico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -364,6 +377,7 @@
             this.Controls.Add(this.label1);
             this.MinimumSize = new System.Drawing.Size(1000, 1028);
             this.Name = "AddRisico";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddRisico";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -410,5 +424,6 @@
         private System.Windows.Forms.Button buttonAddSingleItems;
         private System.Windows.Forms.Button buttonAddFromTemplateIssues;
         private System.Windows.Forms.Button buttonAddFromObject;
+        private System.Windows.Forms.Button buttonCreateNewTemplate;
     }
 }

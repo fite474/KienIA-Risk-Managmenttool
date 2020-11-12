@@ -33,7 +33,7 @@ namespace RiskManagmentTool.LogicLayer
             SendItemToDB(projectItem);
         }
 
-        public void MakeObject(string projectId, string projectNaam, string objectNaam, string objectType, string objectOmschrijving)
+        public int MakeObject(string projectId, string projectNaam, string objectNaam, string objectType, string objectOmschrijving)
         {
             Item objectItem = new Item
             {
@@ -47,8 +47,8 @@ namespace RiskManagmentTool.LogicLayer
                     ObjectOmschrijving = objectOmschrijving
                 }
             };
-            SendItemToDB(objectItem);
-
+            //SendItemToDB(objectItem);
+            return databaseCommunication.MakeObject(objectItem);
         }
 
         public void MakeGevaar2(string gevaarlijkeSituatie, string gevaarlijkeGebeurtenis,
@@ -136,9 +136,41 @@ namespace RiskManagmentTool.LogicLayer
             return databaseCommunication.AddAndCreateIssueToObject(objectId, gevaarId);
         }
 
-        public void AddIssueToObject(string objectId, string issueId, bool addMaatregelen, bool addBeoordeling)
+        public void AddIssueToObject(string objectId, string issueId, bool addMaatregelen, bool addBeoordeling, bool issueNeedsToVerify)
         {
-            databaseCommunication.AddCoppiedIssueToObject(objectId, issueId);
+            string issueState = "-1";
+            if (issueNeedsToVerify)
+            {
+                issueState = "0";// 0 is nog niet goedgekeurd
+            }
+            else
+            {
+                issueState = "1"; // 1 betekent goedgekeurd
+            }
+
+            int newIssueId = databaseCommunication.AddCoppiedIssueToObject(objectId, issueId, issueState);
+
+            if (addMaatregelen)
+            {
+                List<string> maatregelenFromCopiedIssue = databaseCommunication.GetMaatregelenFromIssues(issueId);
+                foreach (string maatregelId in maatregelenFromCopiedIssue)
+                {
+                    databaseCommunication.AddMaatregelToIssue(newIssueId, int.Parse(maatregelId));
+                }
+
+            }
+
+            if (addBeoordeling)
+            {
+                int risicoBeoordelingId = databaseCommunication.InitRisicoBeoordelingDuplicate(newIssueId, issueId);
+                databaseCommunication.AddRisicoBeoordelingToIssue(risicoBeoordelingId, newIssueId);
+            }
+            else
+            {
+                int risicoBeoordelingId = databaseCommunication.InitRisicoBeoordeling(newIssueId);
+                databaseCommunication.AddRisicoBeoordelingToIssue(risicoBeoordelingId, newIssueId);
+            }
+            int x = 0;
         }
 
 
@@ -431,6 +463,12 @@ namespace RiskManagmentTool.LogicLayer
             return objectId;
         }
 
+        public string GetObjectIdByName(string objectNaam)
+        {
+            return databaseCommunication.GetObjectIdByName(objectNaam);
+            //return objectId;
+        }
+
 
         public string GetIssueIdByObjectAndGevaarId(string objectId, string gevaarId)
         {
@@ -442,9 +480,19 @@ namespace RiskManagmentTool.LogicLayer
             return databaseCommunication.GetIssuesInfo(issueId);
         }
 
+        public List<string> GetObjectInfo(string objectId)
+        {
+            return databaseCommunication.GetObjectInfo(objectId);
+        }
+
         public string GetIssueState(string issueId)
         {
             return databaseCommunication.GetIssueState(issueId);
+        }
+
+        public string GetLastTemplateID()
+        {
+            return databaseCommunication.GetLastTemplateID();
         }
 
         //End redirect options
@@ -700,7 +748,7 @@ namespace RiskManagmentTool.LogicLayer
                     databaseCommunication.MakeTemplate(item);
                     break;
                 case ItemType.Object:
-                    databaseCommunication.MakeObject(item);
+                    //databaseCommunication.MakeObject(item);
                     break;
                 case ItemType.Project:
                     databaseCommunication.MakeProject(item);

@@ -52,8 +52,11 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.checkedListBoxWarningSettings = new System.Windows.Forms.CheckedListBox();
             this.checkedListBoxCustomSettings = new System.Windows.Forms.CheckedListBox();
+            this.checkedListBoxWarningSettings = new System.Windows.Forms.CheckedListBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxGevaar = new System.Windows.Forms.TextBox();
+            this.textBoxWarningMessage = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMaatregelenCurrentIssue)).BeginInit();
@@ -116,18 +119,18 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(35, 55);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(55, 17);
+            this.label9.Size = new System.Drawing.Size(59, 17);
             this.label9.TabIndex = 9;
-            this.label9.Text = "Situatie";
+            this.label9.Text = "Situatie:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(35, 121);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(86, 17);
+            this.label10.Size = new System.Drawing.Size(90, 17);
             this.label10.TabIndex = 10;
-            this.label10.Text = "Gebeurtenis";
+            this.label10.Text = "Gebeurtenis:";
             // 
             // label11
             // 
@@ -165,6 +168,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.textBoxWarningMessage);
             this.panel2.Controls.Add(this.labelWarningMessage);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -175,7 +179,7 @@
             // labelWarningMessage
             // 
             this.labelWarningMessage.AutoSize = true;
-            this.labelWarningMessage.Location = new System.Drawing.Point(105, 25);
+            this.labelWarningMessage.Location = new System.Drawing.Point(35, 25);
             this.labelWarningMessage.Name = "labelWarningMessage";
             this.labelWarningMessage.Size = new System.Drawing.Size(73, 17);
             this.labelWarningMessage.TabIndex = 0;
@@ -295,6 +299,8 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.textBoxGevaar);
+            this.panel5.Controls.Add(this.label3);
             this.panel5.Controls.Add(this.checkedListBoxCustomSettings);
             this.panel5.Controls.Add(this.checkedListBoxWarningSettings);
             this.panel5.Controls.Add(this.textBoxGevaarId);
@@ -309,6 +315,18 @@
             this.panel5.Size = new System.Drawing.Size(1474, 260);
             this.panel5.TabIndex = 25;
             // 
+            // checkedListBoxCustomSettings
+            // 
+            this.checkedListBoxCustomSettings.FormattingEnabled = true;
+            this.checkedListBoxCustomSettings.Items.AddRange(new object[] {
+            "Aangepaste selectie maatregelen",
+            "Aangepaste risicobeoordeling"});
+            this.checkedListBoxCustomSettings.Location = new System.Drawing.Point(1191, 6);
+            this.checkedListBoxCustomSettings.Name = "checkedListBoxCustomSettings";
+            this.checkedListBoxCustomSettings.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.checkedListBoxCustomSettings.Size = new System.Drawing.Size(244, 106);
+            this.checkedListBoxCustomSettings.TabIndex = 23;
+            // 
             // checkedListBoxWarningSettings
             // 
             this.checkedListBoxWarningSettings.FormattingEnabled = true;
@@ -322,17 +340,32 @@
             this.checkedListBoxWarningSettings.TabIndex = 22;
             this.checkedListBoxWarningSettings.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxWarningSettings_ItemCheck);
             // 
-            // checkedListBoxCustomSettings
+            // label3
             // 
-            this.checkedListBoxCustomSettings.FormattingEnabled = true;
-            this.checkedListBoxCustomSettings.Items.AddRange(new object[] {
-            "Aangepaste selectie maatregelen",
-            "Aangepaste risicobeoordeling"});
-            this.checkedListBoxCustomSettings.Location = new System.Drawing.Point(1191, 6);
-            this.checkedListBoxCustomSettings.Name = "checkedListBoxCustomSettings";
-            this.checkedListBoxCustomSettings.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.checkedListBoxCustomSettings.Size = new System.Drawing.Size(244, 106);
-            this.checkedListBoxCustomSettings.TabIndex = 23;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(38, 209);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 17);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "Gevaar: ";
+            // 
+            // textBoxGevaar
+            // 
+            this.textBoxGevaar.Location = new System.Drawing.Point(168, 209);
+            this.textBoxGevaar.Name = "textBoxGevaar";
+            this.textBoxGevaar.ReadOnly = true;
+            this.textBoxGevaar.Size = new System.Drawing.Size(568, 22);
+            this.textBoxGevaar.TabIndex = 25;
+            // 
+            // textBoxWarningMessage
+            // 
+            this.textBoxWarningMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxWarningMessage.Location = new System.Drawing.Point(168, 12);
+            this.textBoxWarningMessage.Multiline = true;
+            this.textBoxWarningMessage.Name = "textBoxWarningMessage";
+            this.textBoxWarningMessage.ReadOnly = true;
+            this.textBoxWarningMessage.Size = new System.Drawing.Size(999, 58);
+            this.textBoxWarningMessage.TabIndex = 1;
             // 
             // WarningAddToObject
             // 
@@ -388,5 +421,8 @@
         private System.Windows.Forms.Button buttonOK;
         public System.Windows.Forms.CheckedListBox checkedListBoxWarningSettings;
         public System.Windows.Forms.CheckedListBox checkedListBoxCustomSettings;
+        private System.Windows.Forms.TextBox textBoxGevaar;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBoxWarningMessage;
     }
 }

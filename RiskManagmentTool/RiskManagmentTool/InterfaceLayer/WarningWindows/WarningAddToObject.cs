@@ -22,6 +22,8 @@ namespace RiskManagmentTool.InterfaceLayer.WarningWindows
 
         private Datacomunication comunicator;
         private string ObjectIssueID;
+        private string IssueToAddID;
+
         public WarningAddToObject()
         {
 
@@ -46,11 +48,18 @@ namespace RiskManagmentTool.InterfaceLayer.WarningWindows
         {
             List<string> issueInfo = comunicator.GetIssueInfo(objectIssueId);
             ObjectIssueID = objectIssueId;
+            IssueToAddID = issueToAddId;
             textBoxGevaarId.Text = gevaarId;
             textBoxObjectIssueId.Text = issueInfo[0];
             textBoxSituatie.Text = issueInfo[1];
             textBoxGebeurtenis.Text = issueInfo[2];
+            textBoxGevaar.Text = issueInfo[3];
+
             textBoxIssueToAddID.Text = issueToAddId;
+
+            textBoxWarningMessage.Text = "Het huidige object bevat al een issue waarbij het gevaar ID overeen" +
+                " komt met het issue dat u probeert toe te voegen. \n" +
+                "Maak een keuze wat u wilt overnemen van het gekozen issue";
 
 
             dataGridViewMaatregelenCurrentIssue.DataSource = comunicator.GetIssueMaatregelen(objectIssueId);
@@ -92,7 +101,7 @@ namespace RiskManagmentTool.InterfaceLayer.WarningWindows
 
         private void buttonCompare_Click(object sender, EventArgs e)
         {
-            Form compareIssueRisicoBeoordeling = new CompareIssueRisicoBeoordeling(ObjectIssueID);
+            Form compareIssueRisicoBeoordeling = new CompareIssueRisicoBeoordeling(ObjectIssueID, IssueToAddID);
             if (compareIssueRisicoBeoordeling.ShowDialog() == DialogResult.OK)
             {
 

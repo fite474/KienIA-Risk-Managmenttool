@@ -25,6 +25,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private string Situatie;
         private string Gebeurtenis;
 
+        private bool ReadOnlyMode;
+
 
         public IssueMaatregelen(string objectNaam, string objectId, string issueId,
                                 string discipline, string gevaar, string situatie, string gebeurtenis,
@@ -38,7 +40,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             Gevaar = gevaar;
             Situatie = situatie;
             Gebeurtenis = gebeurtenis;
-
+            ReadOnlyMode = false;
             IssueID = issueId;
             ObjectID = objectId;
 
@@ -81,9 +83,28 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             dataGridViewIssueMaatregelen.DataSource = comunicator.GetIssueMaatregelen(IssueID);
         }
 
+        public void SetReadOnlyMode()
+        {
+
+            checkBoxIssueOK.Enabled = false;
+            buttonAddNewMaatregel.Enabled = false;
+            buttonDeleteMaatregelen.Enabled = false;
+            ReadOnlyMode = true;
+
+        }
+
+
+
+
+
         private void buttonRisicoDetails_Click(object sender, EventArgs e)
         {
-            Form issueRisicoDetails = new IssueRisicoDetails(IssueID);
+            IssueRisicoDetails issueRisicoDetails = new IssueRisicoDetails(IssueID);
+            if (ReadOnlyMode)
+            {
+                issueRisicoDetails.SetReadOnlyMode();
+            }
+
             issueRisicoDetails.Show();
         }
 

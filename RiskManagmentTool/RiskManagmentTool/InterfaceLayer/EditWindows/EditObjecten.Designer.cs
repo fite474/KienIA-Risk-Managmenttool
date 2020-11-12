@@ -65,6 +65,8 @@
             this.buttonDeleteGevaren = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.buttonAddRisico = new System.Windows.Forms.Button();
+            this.textBoxIssuesToVerify = new System.Windows.Forms.TextBox();
+            this.buttonExportToExcel = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -139,6 +141,7 @@
             this.buttonShow.TabIndex = 8;
             this.buttonShow.Text = "Show Problems";
             this.buttonShow.UseVisualStyleBackColor = true;
+            this.buttonShow.Visible = false;
             this.buttonShow.Click += new System.EventHandler(this.buttonShow_Click);
             // 
             // textBoxProjectNaam
@@ -211,6 +214,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.textBoxIssuesToVerify);
             this.panel2.Controls.Add(this.buttonExport);
             this.panel2.Controls.Add(this.buttonAddTemplate);
             this.panel2.Controls.Add(this.label7);
@@ -257,9 +261,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(37, 87);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(173, 17);
+            this.label6.Size = new System.Drawing.Size(161, 17);
             this.label6.TabIndex = 1;
-            this.label6.Text = "Nog te verifiëren issues: 2";
+            this.label6.Text = "Nog te verifiëren issues:";
             // 
             // label5
             // 
@@ -272,6 +276,7 @@
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.buttonExportToExcel);
             this.panel6.Controls.Add(this.pictureBoxObjectFoto);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(1096, 3);
@@ -460,6 +465,25 @@
             this.buttonAddRisico.UseVisualStyleBackColor = true;
             this.buttonAddRisico.Click += new System.EventHandler(this.buttonAddRisico_Click);
             // 
+            // textBoxIssuesToVerify
+            // 
+            this.textBoxIssuesToVerify.Location = new System.Drawing.Point(215, 87);
+            this.textBoxIssuesToVerify.Name = "textBoxIssuesToVerify";
+            this.textBoxIssuesToVerify.ReadOnly = true;
+            this.textBoxIssuesToVerify.Size = new System.Drawing.Size(65, 22);
+            this.textBoxIssuesToVerify.TabIndex = 7;
+            // 
+            // buttonExportToExcel
+            // 
+            this.buttonExportToExcel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.buttonExportToExcel.Location = new System.Drawing.Point(0, 226);
+            this.buttonExportToExcel.Name = "buttonExportToExcel";
+            this.buttonExportToExcel.Size = new System.Drawing.Size(470, 36);
+            this.buttonExportToExcel.TabIndex = 1;
+            this.buttonExportToExcel.Text = "Export naar Excel";
+            this.buttonExportToExcel.UseVisualStyleBackColor = true;
+            this.buttonExportToExcel.Click += new System.EventHandler(this.buttonExportToExcel_Click);
+            // 
             // EditObjecten
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -467,6 +491,7 @@
             this.ClientSize = new System.Drawing.Size(1575, 812);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "EditObjecten";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditObjecten";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -528,5 +553,7 @@
         private System.Windows.Forms.Button buttonShow;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.PictureBox pictureBoxObjectFoto;
+        private System.Windows.Forms.TextBox textBoxIssuesToVerify;
+        private System.Windows.Forms.Button buttonExportToExcel;
     }
 }

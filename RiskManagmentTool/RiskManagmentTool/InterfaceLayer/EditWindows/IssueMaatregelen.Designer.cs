@@ -52,6 +52,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.checkBoxIssueOK = new System.Windows.Forms.CheckBox();
             this.button4 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -69,8 +70,8 @@
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panel3 = new System.Windows.Forms.Panel();
             this.buttonAddNewMaatregel = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.checkBoxIssueOK = new System.Windows.Forms.CheckBox();
+            this.buttonDeleteMaatregelen = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -79,6 +80,7 @@
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage3.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonRisicoDetails
@@ -111,6 +113,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.textBoxRest_Risico_Comment);
             this.panel1.Controls.Add(this.textBoxInit_Risico_Comment);
             this.panel1.Controls.Add(this.textBoxRest_Risico);
@@ -137,21 +140,21 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1297, 370);
+            this.panel1.Size = new System.Drawing.Size(1507, 370);
             this.panel1.TabIndex = 3;
             // 
             // textBoxRest_Risico_Comment
             // 
             this.textBoxRest_Risico_Comment.Location = new System.Drawing.Point(263, 287);
             this.textBoxRest_Risico_Comment.Name = "textBoxRest_Risico_Comment";
-            this.textBoxRest_Risico_Comment.Size = new System.Drawing.Size(354, 22);
+            this.textBoxRest_Risico_Comment.Size = new System.Drawing.Size(508, 22);
             this.textBoxRest_Risico_Comment.TabIndex = 20;
             // 
             // textBoxInit_Risico_Comment
             // 
             this.textBoxInit_Risico_Comment.Location = new System.Drawing.Point(263, 253);
             this.textBoxInit_Risico_Comment.Name = "textBoxInit_Risico_Comment";
-            this.textBoxInit_Risico_Comment.Size = new System.Drawing.Size(354, 22);
+            this.textBoxInit_Risico_Comment.Size = new System.Drawing.Size(508, 22);
             this.textBoxInit_Risico_Comment.TabIndex = 19;
             // 
             // textBoxRest_Risico
@@ -173,7 +176,7 @@
             this.textBoxGebeurtenis.Location = new System.Drawing.Point(135, 200);
             this.textBoxGebeurtenis.Multiline = true;
             this.textBoxGebeurtenis.Name = "textBoxGebeurtenis";
-            this.textBoxGebeurtenis.Size = new System.Drawing.Size(482, 45);
+            this.textBoxGebeurtenis.Size = new System.Drawing.Size(636, 45);
             this.textBoxGebeurtenis.TabIndex = 16;
             // 
             // textBoxSituatie
@@ -181,7 +184,7 @@
             this.textBoxSituatie.Location = new System.Drawing.Point(135, 150);
             this.textBoxSituatie.Multiline = true;
             this.textBoxSituatie.Name = "textBoxSituatie";
-            this.textBoxSituatie.Size = new System.Drawing.Size(482, 44);
+            this.textBoxSituatie.Size = new System.Drawing.Size(636, 44);
             this.textBoxSituatie.TabIndex = 15;
             // 
             // comboBoxGevaar
@@ -189,7 +192,7 @@
             this.comboBoxGevaar.FormattingEnabled = true;
             this.comboBoxGevaar.Location = new System.Drawing.Point(135, 119);
             this.comboBoxGevaar.Name = "comboBoxGevaar";
-            this.comboBoxGevaar.Size = new System.Drawing.Size(342, 24);
+            this.comboBoxGevaar.Size = new System.Drawing.Size(496, 24);
             this.comboBoxGevaar.TabIndex = 14;
             // 
             // comboBoxDiscipline
@@ -197,7 +200,7 @@
             this.comboBoxDiscipline.FormattingEnabled = true;
             this.comboBoxDiscipline.Location = new System.Drawing.Point(135, 88);
             this.comboBoxDiscipline.Name = "comboBoxDiscipline";
-            this.comboBoxDiscipline.Size = new System.Drawing.Size(342, 24);
+            this.comboBoxDiscipline.Size = new System.Drawing.Size(496, 24);
             this.comboBoxDiscipline.TabIndex = 13;
             // 
             // textBoxNaamObject
@@ -205,7 +208,7 @@
             this.textBoxNaamObject.Location = new System.Drawing.Point(135, 21);
             this.textBoxNaamObject.Name = "textBoxNaamObject";
             this.textBoxNaamObject.ReadOnly = true;
-            this.textBoxNaamObject.Size = new System.Drawing.Size(100, 22);
+            this.textBoxNaamObject.Size = new System.Drawing.Size(185, 22);
             this.textBoxNaamObject.TabIndex = 12;
             // 
             // label12
@@ -232,7 +235,7 @@
             this.textBoxIssueID.Location = new System.Drawing.Point(135, 49);
             this.textBoxIssueID.Name = "textBoxIssueID";
             this.textBoxIssueID.ReadOnly = true;
-            this.textBoxIssueID.Size = new System.Drawing.Size(100, 22);
+            this.textBoxIssueID.Size = new System.Drawing.Size(185, 22);
             this.textBoxIssueID.TabIndex = 9;
             // 
             // checkBox1
@@ -309,10 +312,22 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(725, 3);
+            this.panel2.Location = new System.Drawing.Point(935, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(572, 161);
             this.panel2.TabIndex = 0;
+            // 
+            // checkBoxIssueOK
+            // 
+            this.checkBoxIssueOK.AutoSize = true;
+            this.checkBoxIssueOK.Location = new System.Drawing.Point(116, 101);
+            this.checkBoxIssueOK.Name = "checkBoxIssueOK";
+            this.checkBoxIssueOK.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.checkBoxIssueOK.Size = new System.Drawing.Size(117, 21);
+            this.checkBoxIssueOK.TabIndex = 5;
+            this.checkBoxIssueOK.Text = "Goedgekeurd";
+            this.checkBoxIssueOK.UseVisualStyleBackColor = true;
+            this.checkBoxIssueOK.CheckedChanged += new System.EventHandler(this.checkBoxIssueOK_CheckedChanged);
             // 
             // button4
             // 
@@ -367,24 +382,23 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 393);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1107, 401);
+            this.tabControl1.Size = new System.Drawing.Size(1177, 452);
             this.tabControl1.TabIndex = 5;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.dataGridViewIssueMaatregelen);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1099, 372);
+            this.tabPage1.Size = new System.Drawing.Size(1169, 423);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Maatregelen";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(888, 59);
+            this.button3.Location = new System.Drawing.Point(1309, 253);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(134, 72);
             this.button3.TabIndex = 1;
@@ -396,14 +410,14 @@
             // 
             this.dataGridViewIssueMaatregelen.AllowUserToAddRows = false;
             this.dataGridViewIssueMaatregelen.AllowUserToDeleteRows = false;
-            this.dataGridViewIssueMaatregelen.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewIssueMaatregelen.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewIssueMaatregelen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewIssueMaatregelen.Location = new System.Drawing.Point(6, 59);
+            this.dataGridViewIssueMaatregelen.Location = new System.Drawing.Point(6, 40);
             this.dataGridViewIssueMaatregelen.Name = "dataGridViewIssueMaatregelen";
             this.dataGridViewIssueMaatregelen.ReadOnly = true;
             this.dataGridViewIssueMaatregelen.RowTemplate.Height = 24;
             this.dataGridViewIssueMaatregelen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewIssueMaatregelen.Size = new System.Drawing.Size(866, 292);
+            this.dataGridViewIssueMaatregelen.Size = new System.Drawing.Size(1158, 379);
             this.dataGridViewIssueMaatregelen.TabIndex = 0;
             this.dataGridViewIssueMaatregelen.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewIssueMaatregelen_DataBindingComplete);
             // 
@@ -477,7 +491,7 @@
             // 
             // buttonAddNewMaatregel
             // 
-            this.buttonAddNewMaatregel.Location = new System.Drawing.Point(16, 801);
+            this.buttonAddNewMaatregel.Location = new System.Drawing.Point(25, 21);
             this.buttonAddNewMaatregel.Name = "buttonAddNewMaatregel";
             this.buttonAddNewMaatregel.Size = new System.Drawing.Size(199, 35);
             this.buttonAddNewMaatregel.TabIndex = 6;
@@ -485,38 +499,36 @@
             this.buttonAddNewMaatregel.UseVisualStyleBackColor = true;
             this.buttonAddNewMaatregel.Click += new System.EventHandler(this.buttonAddNewMaatregel_Click);
             // 
-            // button2
+            // buttonDeleteMaatregelen
             // 
-            this.button2.Location = new System.Drawing.Point(710, 801);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(166, 35);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Verwijder maatregelen";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonDeleteMaatregelen.Location = new System.Drawing.Point(719, 21);
+            this.buttonDeleteMaatregelen.Name = "buttonDeleteMaatregelen";
+            this.buttonDeleteMaatregelen.Size = new System.Drawing.Size(166, 35);
+            this.buttonDeleteMaatregelen.TabIndex = 7;
+            this.buttonDeleteMaatregelen.Text = "Verwijder maatregelen";
+            this.buttonDeleteMaatregelen.UseVisualStyleBackColor = true;
             // 
-            // checkBoxIssueOK
+            // panel5
             // 
-            this.checkBoxIssueOK.AutoSize = true;
-            this.checkBoxIssueOK.Location = new System.Drawing.Point(116, 101);
-            this.checkBoxIssueOK.Name = "checkBoxIssueOK";
-            this.checkBoxIssueOK.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBoxIssueOK.Size = new System.Drawing.Size(117, 21);
-            this.checkBoxIssueOK.TabIndex = 5;
-            this.checkBoxIssueOK.Text = "Goedgekeurd";
-            this.checkBoxIssueOK.UseVisualStyleBackColor = true;
-            this.checkBoxIssueOK.CheckedChanged += new System.EventHandler(this.checkBoxIssueOK_CheckedChanged);
+            this.panel5.Controls.Add(this.buttonAddNewMaatregel);
+            this.panel5.Controls.Add(this.buttonDeleteMaatregelen);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel5.Location = new System.Drawing.Point(0, 888);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1507, 77);
+            this.panel5.TabIndex = 8;
             // 
             // IssueMaatregelen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1297, 908);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.buttonAddNewMaatregel);
+            this.ClientSize = new System.Drawing.Size(1507, 965);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
             this.MinimumSize = new System.Drawing.Size(1315, 955);
             this.Name = "IssueMaatregelen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IssueMaatregelen";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -528,6 +540,7 @@
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage3.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -556,7 +569,7 @@
         private System.Windows.Forms.TextBox textBoxIssueID;
         private System.Windows.Forms.DataGridView dataGridViewIssueMaatregelen;
         private System.Windows.Forms.Button buttonAddNewMaatregel;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonDeleteMaatregelen;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button button3;
@@ -577,5 +590,6 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.CheckBox checkBoxIssueOK;
+        private System.Windows.Forms.Panel panel5;
     }
 }

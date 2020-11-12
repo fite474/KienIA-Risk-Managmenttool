@@ -18,6 +18,9 @@ namespace RiskManagmentTool.InterfaceLayer.InitWindows
         public InitTemplate()
         {
             InitializeComponent();
+
+            buttonCreateTemplate.DialogResult = System.Windows.Forms.DialogResult.OK;
+
             comunicator = new Datacomunication();
             keuzeMenus = new KeuzeMenus();
             //this.ProjectId = projectId;

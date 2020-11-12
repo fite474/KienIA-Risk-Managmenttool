@@ -70,7 +70,7 @@ namespace RiskManagmentTool.LogicLayer
                 }
                 else
                 {
-                    resultList.Add(gevaarID);
+                    resultList.Add(itemsToAdd[currentIndex]);//resultList.Add(gevaarID);
                 }
                 currentIndex++;
             }
@@ -140,6 +140,10 @@ namespace RiskManagmentTool.LogicLayer
                         // Do something  
                     }
                     warningWindow.Dispose();
+                }
+                else
+                {
+                    comunicator.AddMaatregelToIssue(CurrentID, maatregelID);
                 }
             }
         }

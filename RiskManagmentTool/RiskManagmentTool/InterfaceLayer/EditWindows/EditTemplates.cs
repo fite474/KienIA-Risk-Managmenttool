@@ -46,14 +46,14 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void LoadData()
         {
-            textBoxSelectedIssues.Text = "";
+            //textBoxSelectedIssues.Text = "";
             textBoxTemplateID.Text = TemplateID;
 
 
             GekoppeldeGevarenId = comunicator.GetGekoppeldeGevarenFromTemplateAsList(TemplateID);
             GekoppeldeIssuesId = comunicator.GetGekoppeldeIssuesFromTemplateAsList(TemplateID);
 
-            dataGridViewAddIssue.DataSource = comunicator.GetAllIssues();
+            //dataGridViewAddIssue.DataSource = comunicator.GetAllIssues();
             dataGridViewAddGevaar.DataSource = comunicator.GetGevarenTable();
             ReloadTemplateData();
             //dataGridViewAddIssue.ClearSelection();
@@ -78,7 +78,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void ReloadTemplateData()
         {
-            dataGridViewGekoppeldeGevaren.DataSource = comunicator.GetTemplateGevaren(TemplateID);
+            //dataGridViewGekoppeldeGevaren.DataSource = comunicator.GetTemplateGevaren(TemplateID);
             dataGridViewGekoppeldeIssues.DataSource = comunicator.GetTemplateIssues(TemplateID);
 
         }
@@ -90,14 +90,14 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private void dataGridViewAddIssue_MouseDoubleClick(object sender, MouseEventArgs e)
         {
 
-            string issueID = dataGridViewAddIssue.SelectedRows[0].Cells[0].Value.ToString();
-            //foreach (string selected in SelectedGevarenId)
+            //string issueID = dataGridViewAddIssue.SelectedRows[0].Cells[0].Value.ToString();
+            ////foreach (string selected in SelectedGevarenId)
+            ////{
+            //if (!SelectedIssuesId.Contains(issueID))
             //{
-            if (!SelectedIssuesId.Contains(issueID))
-            {
-                SelectedIssuesId.Add(issueID);
-                textBoxSelectedIssues.Text += issueID + ", ";
-            }
+            //    SelectedIssuesId.Add(issueID);
+            //    //textBoxSelectedIssues.Text += issueID + ", ";
+            //}
 
 
         }

@@ -60,6 +60,7 @@
             this.comboBoxGevaarlijkeZone = new System.Windows.Forms.ComboBox();
             this.buttonDisciplines = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonKeuzeOption = new System.Windows.Forms.Button();
             this.checkedListBoxOptions = new System.Windows.Forms.CheckedListBox();
             this.buttonBedienvorm = new System.Windows.Forms.Button();
             this.buttonGebruiksfase = new System.Windows.Forms.Button();
@@ -68,7 +69,6 @@
             this.buttonGevaarlijkeZone = new System.Windows.Forms.Button();
             this.buttonTaak = new System.Windows.Forms.Button();
             this.buttonGevolg = new System.Windows.Forms.Button();
-            this.buttonKeuzeOption = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -346,6 +346,16 @@
             this.panel2.Size = new System.Drawing.Size(749, 796);
             this.panel2.TabIndex = 34;
             // 
+            // buttonKeuzeOption
+            // 
+            this.buttonKeuzeOption.Location = new System.Drawing.Point(4, 185);
+            this.buttonKeuzeOption.Name = "buttonKeuzeOption";
+            this.buttonKeuzeOption.Size = new System.Drawing.Size(110, 23);
+            this.buttonKeuzeOption.TabIndex = 1;
+            this.buttonKeuzeOption.Text = "Add Option";
+            this.buttonKeuzeOption.UseVisualStyleBackColor = true;
+            this.buttonKeuzeOption.Click += new System.EventHandler(this.buttonKeuzeOption_Click);
+            // 
             // checkedListBoxOptions
             // 
             this.checkedListBoxOptions.CheckOnClick = true;
@@ -426,16 +436,6 @@
             this.buttonGevolg.UseVisualStyleBackColor = true;
             this.buttonGevolg.Click += new System.EventHandler(this.buttonGevolg_Click);
             // 
-            // buttonKeuzeOption
-            // 
-            this.buttonKeuzeOption.Location = new System.Drawing.Point(4, 185);
-            this.buttonKeuzeOption.Name = "buttonKeuzeOption";
-            this.buttonKeuzeOption.Size = new System.Drawing.Size(110, 23);
-            this.buttonKeuzeOption.TabIndex = 1;
-            this.buttonKeuzeOption.Text = "Add Option";
-            this.buttonKeuzeOption.UseVisualStyleBackColor = true;
-            this.buttonKeuzeOption.Click += new System.EventHandler(this.buttonKeuzeOption_Click);
-            // 
             // EditRisicos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -480,6 +480,7 @@
             this.Controls.Add(this.textBoxGevSituatie);
             this.Controls.Add(this.textBoxGevGebeurtenis);
             this.Name = "EditRisicos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditRisicos";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

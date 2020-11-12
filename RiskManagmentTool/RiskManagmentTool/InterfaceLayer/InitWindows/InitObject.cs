@@ -39,9 +39,9 @@ namespace RiskManagmentTool.InterfaceLayer.InitWindows
             string objectNaam = textBoxObjectNaam.Text;
             string objectType = comboBoxObjectType.SelectedItem.ToString();
             string objectOmschrijving = textBoxObjectOmschrijving.Text;
-            comunicator.MakeObject(projectId, projectNaam, objectNaam, objectType, objectOmschrijving);
-
-            Form editObject = new EditObjecten(projectId, projectNaam, objectNaam, objectType, objectOmschrijving);
+            int objectID = comunicator.MakeObject(projectId, projectNaam, objectNaam, objectType, objectOmschrijving);
+            
+            Form editObject = new EditObjecten(objectID.ToString(), projectNaam, objectNaam, objectType, objectOmschrijving);
             editObject.Show();
             this.Close();
         }

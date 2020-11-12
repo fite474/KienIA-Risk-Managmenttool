@@ -28,9 +28,22 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
         {
             string zoekNummer = textBoxZoekIssueNummer.Text;
             string objectId = comunicator.GetObjectIdByIssueNmr(zoekNummer);
+
+
+
+
+
+
+
             if (!objectId.Equals("0"))
             {
-                Form editObject = new EditObjecten(objectId, "", "", "", "");
+                List<string> objectInfo = comunicator.GetObjectInfo(objectId);
+                string projectId = objectInfo[0];
+                string projectNaam = objectInfo[1];
+                string objectNaam = objectInfo[2];
+                string objectType = objectInfo[3];
+                string objectOmschrijving = objectInfo[4];
+                Form editObject = new EditObjecten(objectId, projectNaam, objectNaam, objectType, objectOmschrijving);
                 editObject.Show();
             }
             else

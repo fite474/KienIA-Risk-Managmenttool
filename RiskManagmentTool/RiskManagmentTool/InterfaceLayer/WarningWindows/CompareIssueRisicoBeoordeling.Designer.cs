@@ -79,64 +79,64 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.checkBoxRest_Risico_Ok_IssueToAdd = new System.Windows.Forms.CheckBox();
+            this.textBoxInit_Av_IssueToAdd = new System.Windows.Forms.TextBox();
+            this.textBoxInit_Pr_IssueToAdd = new System.Windows.Forms.TextBox();
+            this.textBoxRest_Av_IssueToAdd = new System.Windows.Forms.TextBox();
+            this.textBoxRest_Pr_IssueToAdd = new System.Windows.Forms.TextBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.textBoxInit_Risico_IssueToAdd = new System.Windows.Forms.TextBox();
+            this.textBoxInitRisico_Comment_IssueToAdd = new System.Windows.Forms.TextBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.textBoxRest_Risico_IssueToAdd = new System.Windows.Forms.TextBox();
+            this.textBoxRest_Risico_Comment_IssueToAdd = new System.Windows.Forms.TextBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.textBoxRest_Cl_IssueToAdd = new System.Windows.Forms.TextBox();
+            this.textBoxRest_Cl_Comment_IssueToAdd = new System.Windows.Forms.TextBox();
+            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.textBoxInit_Cl_IssueToAdd = new System.Windows.Forms.TextBox();
+            this.textBoxInit_Cl_Comment_IssueToAdd = new System.Windows.Forms.TextBox();
+            this.textBoxRest_Av_Comment_IssueToAdd = new System.Windows.Forms.TextBox();
+            this.textBoxRest_Pr_Comment_IssueToAdd = new System.Windows.Forms.TextBox();
+            this.checkBox10 = new System.Windows.Forms.CheckBox();
+            this.checkBox13 = new System.Windows.Forms.CheckBox();
+            this.checkBox14 = new System.Windows.Forms.CheckBox();
+            this.textBoxRest_Fr_IssueToAdd = new System.Windows.Forms.TextBox();
+            this.checkBox15 = new System.Windows.Forms.CheckBox();
+            this.textBoxRest_Fr_Comment_IssueToAdd = new System.Windows.Forms.TextBox();
+            this.textBoxRest_Se_Comment_IssueToAdd = new System.Windows.Forms.TextBox();
+            this.textBoxRest_Se_IssueToAdd = new System.Windows.Forms.TextBox();
+            this.textBoxInit_Av_Comment_IssueToAdd = new System.Windows.Forms.TextBox();
+            this.checkBox16 = new System.Windows.Forms.CheckBox();
+            this.textBoxInit_Pr_Comment_IssueToAdd = new System.Windows.Forms.TextBox();
+            this.checkBox17 = new System.Windows.Forms.CheckBox();
+            this.checkBox18 = new System.Windows.Forms.CheckBox();
+            this.checkBox19 = new System.Windows.Forms.CheckBox();
+            this.textBoxInit_Fr_IssueToAdd = new System.Windows.Forms.TextBox();
+            this.checkBox20 = new System.Windows.Forms.CheckBox();
+            this.textBoxInit_Fr_Comment_IssueToAdd = new System.Windows.Forms.TextBox();
+            this.textBoxInit_Se_Comment_IssueToAdd = new System.Windows.Forms.TextBox();
+            this.textBoxInit_Se_IssueToAdd = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBoxGevaar_IssueToAdd = new System.Windows.Forms.TextBox();
+            this.textBoxGebeurtenis_IssueToAdd = new System.Windows.Forms.TextBox();
+            this.textBoxSituatie_IssueToAdd = new System.Windows.Forms.TextBox();
+            this.textBoxIssueID_IssueToAdd = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.checkBox10 = new System.Windows.Forms.CheckBox();
-            this.checkBox13 = new System.Windows.Forms.CheckBox();
-            this.checkBox14 = new System.Windows.Forms.CheckBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.checkBox15 = new System.Windows.Forms.CheckBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.textBox23 = new System.Windows.Forms.TextBox();
-            this.checkBox16 = new System.Windows.Forms.CheckBox();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.checkBox17 = new System.Windows.Forms.CheckBox();
-            this.checkBox18 = new System.Windows.Forms.CheckBox();
-            this.checkBox19 = new System.Windows.Forms.CheckBox();
-            this.textBox25 = new System.Windows.Forms.TextBox();
-            this.checkBox20 = new System.Windows.Forms.CheckBox();
-            this.textBox26 = new System.Windows.Forms.TextBox();
-            this.textBox27 = new System.Windows.Forms.TextBox();
-            this.textBox28 = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.buttonSave = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel4
@@ -614,21 +614,366 @@
             this.panel7.Size = new System.Drawing.Size(679, 830);
             this.panel7.TabIndex = 1;
             // 
-            // panel2
+            // panel5
             // 
-            this.panel2.Controls.Add(this.buttonSave);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 836);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1370, 62);
-            this.panel2.TabIndex = 24;
+            this.panel5.Controls.Add(this.checkBoxRest_Risico_Ok_IssueToAdd);
+            this.panel5.Controls.Add(this.textBoxInit_Av_IssueToAdd);
+            this.panel5.Controls.Add(this.textBoxInit_Pr_IssueToAdd);
+            this.panel5.Controls.Add(this.textBoxRest_Av_IssueToAdd);
+            this.panel5.Controls.Add(this.textBoxRest_Pr_IssueToAdd);
+            this.panel5.Controls.Add(this.checkBox2);
+            this.panel5.Controls.Add(this.textBoxInit_Risico_IssueToAdd);
+            this.panel5.Controls.Add(this.textBoxInitRisico_Comment_IssueToAdd);
+            this.panel5.Controls.Add(this.checkBox3);
+            this.panel5.Controls.Add(this.textBoxRest_Risico_IssueToAdd);
+            this.panel5.Controls.Add(this.textBoxRest_Risico_Comment_IssueToAdd);
+            this.panel5.Controls.Add(this.checkBox4);
+            this.panel5.Controls.Add(this.textBoxRest_Cl_IssueToAdd);
+            this.panel5.Controls.Add(this.textBoxRest_Cl_Comment_IssueToAdd);
+            this.panel5.Controls.Add(this.checkBox5);
+            this.panel5.Controls.Add(this.textBoxInit_Cl_IssueToAdd);
+            this.panel5.Controls.Add(this.textBoxInit_Cl_Comment_IssueToAdd);
+            this.panel5.Controls.Add(this.textBoxRest_Av_Comment_IssueToAdd);
+            this.panel5.Controls.Add(this.textBoxRest_Pr_Comment_IssueToAdd);
+            this.panel5.Controls.Add(this.checkBox10);
+            this.panel5.Controls.Add(this.checkBox13);
+            this.panel5.Controls.Add(this.checkBox14);
+            this.panel5.Controls.Add(this.textBoxRest_Fr_IssueToAdd);
+            this.panel5.Controls.Add(this.checkBox15);
+            this.panel5.Controls.Add(this.textBoxRest_Fr_Comment_IssueToAdd);
+            this.panel5.Controls.Add(this.textBoxRest_Se_Comment_IssueToAdd);
+            this.panel5.Controls.Add(this.textBoxRest_Se_IssueToAdd);
+            this.panel5.Controls.Add(this.textBoxInit_Av_Comment_IssueToAdd);
+            this.panel5.Controls.Add(this.checkBox16);
+            this.panel5.Controls.Add(this.textBoxInit_Pr_Comment_IssueToAdd);
+            this.panel5.Controls.Add(this.checkBox17);
+            this.panel5.Controls.Add(this.checkBox18);
+            this.panel5.Controls.Add(this.checkBox19);
+            this.panel5.Controls.Add(this.textBoxInit_Fr_IssueToAdd);
+            this.panel5.Controls.Add(this.checkBox20);
+            this.panel5.Controls.Add(this.textBoxInit_Fr_Comment_IssueToAdd);
+            this.panel5.Controls.Add(this.textBoxInit_Se_Comment_IssueToAdd);
+            this.panel5.Controls.Add(this.textBoxInit_Se_IssueToAdd);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(0, 216);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(679, 614);
+            this.panel5.TabIndex = 23;
+            // 
+            // checkBoxRest_Risico_Ok_IssueToAdd
+            // 
+            this.checkBoxRest_Risico_Ok_IssueToAdd.AutoSize = true;
+            this.checkBoxRest_Risico_Ok_IssueToAdd.Location = new System.Drawing.Point(22, 495);
+            this.checkBoxRest_Risico_Ok_IssueToAdd.Name = "checkBoxRest_Risico_Ok_IssueToAdd";
+            this.checkBoxRest_Risico_Ok_IssueToAdd.Size = new System.Drawing.Size(133, 21);
+            this.checkBoxRest_Risico_Ok_IssueToAdd.TabIndex = 43;
+            this.checkBoxRest_Risico_Ok_IssueToAdd.Text = "Rest_Risico_OK";
+            this.checkBoxRest_Risico_Ok_IssueToAdd.UseVisualStyleBackColor = true;
+            // 
+            // textBoxInit_Av_IssueToAdd
+            // 
+            this.textBoxInit_Av_IssueToAdd.Location = new System.Drawing.Point(173, 128);
+            this.textBoxInit_Av_IssueToAdd.Name = "textBoxInit_Av_IssueToAdd";
+            this.textBoxInit_Av_IssueToAdd.Size = new System.Drawing.Size(59, 22);
+            this.textBoxInit_Av_IssueToAdd.TabIndex = 46;
+            // 
+            // textBoxInit_Pr_IssueToAdd
+            // 
+            this.textBoxInit_Pr_IssueToAdd.Location = new System.Drawing.Point(173, 100);
+            this.textBoxInit_Pr_IssueToAdd.Name = "textBoxInit_Pr_IssueToAdd";
+            this.textBoxInit_Pr_IssueToAdd.Size = new System.Drawing.Size(59, 22);
+            this.textBoxInit_Pr_IssueToAdd.TabIndex = 45;
+            // 
+            // textBoxRest_Av_IssueToAdd
+            // 
+            this.textBoxRest_Av_IssueToAdd.Location = new System.Drawing.Point(173, 384);
+            this.textBoxRest_Av_IssueToAdd.Name = "textBoxRest_Av_IssueToAdd";
+            this.textBoxRest_Av_IssueToAdd.Size = new System.Drawing.Size(59, 22);
+            this.textBoxRest_Av_IssueToAdd.TabIndex = 44;
+            // 
+            // textBoxRest_Pr_IssueToAdd
+            // 
+            this.textBoxRest_Pr_IssueToAdd.Location = new System.Drawing.Point(173, 356);
+            this.textBoxRest_Pr_IssueToAdd.Name = "textBoxRest_Pr_IssueToAdd";
+            this.textBoxRest_Pr_IssueToAdd.Size = new System.Drawing.Size(59, 22);
+            this.textBoxRest_Pr_IssueToAdd.TabIndex = 43;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(22, 195);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(94, 21);
+            this.checkBox2.TabIndex = 40;
+            this.checkBox2.Text = "Init_Risico";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // textBoxInit_Risico_IssueToAdd
+            // 
+            this.textBoxInit_Risico_IssueToAdd.Location = new System.Drawing.Point(173, 194);
+            this.textBoxInit_Risico_IssueToAdd.Name = "textBoxInit_Risico_IssueToAdd";
+            this.textBoxInit_Risico_IssueToAdd.Size = new System.Drawing.Size(59, 22);
+            this.textBoxInit_Risico_IssueToAdd.TabIndex = 42;
+            // 
+            // textBoxInitRisico_Comment_IssueToAdd
+            // 
+            this.textBoxInitRisico_Comment_IssueToAdd.Location = new System.Drawing.Point(259, 195);
+            this.textBoxInitRisico_Comment_IssueToAdd.Name = "textBoxInitRisico_Comment_IssueToAdd";
+            this.textBoxInitRisico_Comment_IssueToAdd.Size = new System.Drawing.Size(355, 22);
+            this.textBoxInitRisico_Comment_IssueToAdd.TabIndex = 41;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(22, 441);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(105, 21);
+            this.checkBox3.TabIndex = 37;
+            this.checkBox3.Text = "Rest_Risico";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // textBoxRest_Risico_IssueToAdd
+            // 
+            this.textBoxRest_Risico_IssueToAdd.Location = new System.Drawing.Point(173, 440);
+            this.textBoxRest_Risico_IssueToAdd.Name = "textBoxRest_Risico_IssueToAdd";
+            this.textBoxRest_Risico_IssueToAdd.Size = new System.Drawing.Size(59, 22);
+            this.textBoxRest_Risico_IssueToAdd.TabIndex = 39;
+            // 
+            // textBoxRest_Risico_Comment_IssueToAdd
+            // 
+            this.textBoxRest_Risico_Comment_IssueToAdd.Location = new System.Drawing.Point(259, 441);
+            this.textBoxRest_Risico_Comment_IssueToAdd.Name = "textBoxRest_Risico_Comment_IssueToAdd";
+            this.textBoxRest_Risico_Comment_IssueToAdd.Size = new System.Drawing.Size(355, 22);
+            this.textBoxRest_Risico_Comment_IssueToAdd.TabIndex = 38;
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(22, 413);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(79, 21);
+            this.checkBox4.TabIndex = 34;
+            this.checkBox4.Text = "Rest_Cl";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // textBoxRest_Cl_IssueToAdd
+            // 
+            this.textBoxRest_Cl_IssueToAdd.Location = new System.Drawing.Point(173, 412);
+            this.textBoxRest_Cl_IssueToAdd.Name = "textBoxRest_Cl_IssueToAdd";
+            this.textBoxRest_Cl_IssueToAdd.Size = new System.Drawing.Size(59, 22);
+            this.textBoxRest_Cl_IssueToAdd.TabIndex = 36;
+            // 
+            // textBoxRest_Cl_Comment_IssueToAdd
+            // 
+            this.textBoxRest_Cl_Comment_IssueToAdd.Location = new System.Drawing.Point(259, 413);
+            this.textBoxRest_Cl_Comment_IssueToAdd.Name = "textBoxRest_Cl_Comment_IssueToAdd";
+            this.textBoxRest_Cl_Comment_IssueToAdd.Size = new System.Drawing.Size(355, 22);
+            this.textBoxRest_Cl_Comment_IssueToAdd.TabIndex = 35;
+            // 
+            // checkBox5
+            // 
+            this.checkBox5.AutoSize = true;
+            this.checkBox5.Location = new System.Drawing.Point(22, 157);
+            this.checkBox5.Name = "checkBox5";
+            this.checkBox5.Size = new System.Drawing.Size(68, 21);
+            this.checkBox5.TabIndex = 31;
+            this.checkBox5.Text = "Init_Cl";
+            this.checkBox5.UseVisualStyleBackColor = true;
+            // 
+            // textBoxInit_Cl_IssueToAdd
+            // 
+            this.textBoxInit_Cl_IssueToAdd.Location = new System.Drawing.Point(173, 156);
+            this.textBoxInit_Cl_IssueToAdd.Name = "textBoxInit_Cl_IssueToAdd";
+            this.textBoxInit_Cl_IssueToAdd.Size = new System.Drawing.Size(59, 22);
+            this.textBoxInit_Cl_IssueToAdd.TabIndex = 33;
+            // 
+            // textBoxInit_Cl_Comment_IssueToAdd
+            // 
+            this.textBoxInit_Cl_Comment_IssueToAdd.Location = new System.Drawing.Point(259, 157);
+            this.textBoxInit_Cl_Comment_IssueToAdd.Name = "textBoxInit_Cl_Comment_IssueToAdd";
+            this.textBoxInit_Cl_Comment_IssueToAdd.Size = new System.Drawing.Size(355, 22);
+            this.textBoxInit_Cl_Comment_IssueToAdd.TabIndex = 32;
+            // 
+            // textBoxRest_Av_Comment_IssueToAdd
+            // 
+            this.textBoxRest_Av_Comment_IssueToAdd.Location = new System.Drawing.Point(259, 385);
+            this.textBoxRest_Av_Comment_IssueToAdd.Name = "textBoxRest_Av_Comment_IssueToAdd";
+            this.textBoxRest_Av_Comment_IssueToAdd.Size = new System.Drawing.Size(355, 22);
+            this.textBoxRest_Av_Comment_IssueToAdd.TabIndex = 30;
+            // 
+            // textBoxRest_Pr_Comment_IssueToAdd
+            // 
+            this.textBoxRest_Pr_Comment_IssueToAdd.Location = new System.Drawing.Point(259, 357);
+            this.textBoxRest_Pr_Comment_IssueToAdd.Name = "textBoxRest_Pr_Comment_IssueToAdd";
+            this.textBoxRest_Pr_Comment_IssueToAdd.Size = new System.Drawing.Size(355, 22);
+            this.textBoxRest_Pr_Comment_IssueToAdd.TabIndex = 29;
+            // 
+            // checkBox10
+            // 
+            this.checkBox10.AutoSize = true;
+            this.checkBox10.Location = new System.Drawing.Point(22, 301);
+            this.checkBox10.Name = "checkBox10";
+            this.checkBox10.Size = new System.Drawing.Size(84, 21);
+            this.checkBox10.TabIndex = 19;
+            this.checkBox10.Text = "Rest_Se";
+            this.checkBox10.UseVisualStyleBackColor = true;
+            // 
+            // checkBox13
+            // 
+            this.checkBox13.AutoSize = true;
+            this.checkBox13.Location = new System.Drawing.Point(22, 329);
+            this.checkBox13.Name = "checkBox13";
+            this.checkBox13.Size = new System.Drawing.Size(80, 21);
+            this.checkBox13.TabIndex = 20;
+            this.checkBox13.Text = "Rest_Fr";
+            this.checkBox13.UseVisualStyleBackColor = true;
+            // 
+            // checkBox14
+            // 
+            this.checkBox14.AutoSize = true;
+            this.checkBox14.Location = new System.Drawing.Point(22, 357);
+            this.checkBox14.Name = "checkBox14";
+            this.checkBox14.Size = new System.Drawing.Size(81, 21);
+            this.checkBox14.TabIndex = 21;
+            this.checkBox14.Text = "Rest_Pr";
+            this.checkBox14.UseVisualStyleBackColor = true;
+            // 
+            // textBoxRest_Fr_IssueToAdd
+            // 
+            this.textBoxRest_Fr_IssueToAdd.Location = new System.Drawing.Point(173, 328);
+            this.textBoxRest_Fr_IssueToAdd.Name = "textBoxRest_Fr_IssueToAdd";
+            this.textBoxRest_Fr_IssueToAdd.Size = new System.Drawing.Size(59, 22);
+            this.textBoxRest_Fr_IssueToAdd.TabIndex = 26;
+            // 
+            // checkBox15
+            // 
+            this.checkBox15.AutoSize = true;
+            this.checkBox15.Location = new System.Drawing.Point(22, 387);
+            this.checkBox15.Name = "checkBox15";
+            this.checkBox15.Size = new System.Drawing.Size(83, 21);
+            this.checkBox15.TabIndex = 22;
+            this.checkBox15.Text = "Rest_Av";
+            this.checkBox15.UseVisualStyleBackColor = true;
+            // 
+            // textBoxRest_Fr_Comment_IssueToAdd
+            // 
+            this.textBoxRest_Fr_Comment_IssueToAdd.Location = new System.Drawing.Point(259, 329);
+            this.textBoxRest_Fr_Comment_IssueToAdd.Name = "textBoxRest_Fr_Comment_IssueToAdd";
+            this.textBoxRest_Fr_Comment_IssueToAdd.Size = new System.Drawing.Size(355, 22);
+            this.textBoxRest_Fr_Comment_IssueToAdd.TabIndex = 25;
+            // 
+            // textBoxRest_Se_Comment_IssueToAdd
+            // 
+            this.textBoxRest_Se_Comment_IssueToAdd.Location = new System.Drawing.Point(259, 301);
+            this.textBoxRest_Se_Comment_IssueToAdd.Name = "textBoxRest_Se_Comment_IssueToAdd";
+            this.textBoxRest_Se_Comment_IssueToAdd.Size = new System.Drawing.Size(355, 22);
+            this.textBoxRest_Se_Comment_IssueToAdd.TabIndex = 23;
+            // 
+            // textBoxRest_Se_IssueToAdd
+            // 
+            this.textBoxRest_Se_IssueToAdd.Location = new System.Drawing.Point(173, 300);
+            this.textBoxRest_Se_IssueToAdd.Name = "textBoxRest_Se_IssueToAdd";
+            this.textBoxRest_Se_IssueToAdd.Size = new System.Drawing.Size(59, 22);
+            this.textBoxRest_Se_IssueToAdd.TabIndex = 24;
+            // 
+            // textBoxInit_Av_Comment_IssueToAdd
+            // 
+            this.textBoxInit_Av_Comment_IssueToAdd.Location = new System.Drawing.Point(259, 129);
+            this.textBoxInit_Av_Comment_IssueToAdd.Name = "textBoxInit_Av_Comment_IssueToAdd";
+            this.textBoxInit_Av_Comment_IssueToAdd.Size = new System.Drawing.Size(355, 22);
+            this.textBoxInit_Av_Comment_IssueToAdd.TabIndex = 17;
+            // 
+            // checkBox16
+            // 
+            this.checkBox16.AutoSize = true;
+            this.checkBox16.Location = new System.Drawing.Point(3, 6);
+            this.checkBox16.Name = "checkBox16";
+            this.checkBox16.Size = new System.Drawing.Size(87, 21);
+            this.checkBox16.TabIndex = 5;
+            this.checkBox16.Text = "Select all";
+            this.checkBox16.UseVisualStyleBackColor = true;
+            // 
+            // textBoxInit_Pr_Comment_IssueToAdd
+            // 
+            this.textBoxInit_Pr_Comment_IssueToAdd.Location = new System.Drawing.Point(259, 101);
+            this.textBoxInit_Pr_Comment_IssueToAdd.Name = "textBoxInit_Pr_Comment_IssueToAdd";
+            this.textBoxInit_Pr_Comment_IssueToAdd.Size = new System.Drawing.Size(355, 22);
+            this.textBoxInit_Pr_Comment_IssueToAdd.TabIndex = 16;
+            // 
+            // checkBox17
+            // 
+            this.checkBox17.AutoSize = true;
+            this.checkBox17.Location = new System.Drawing.Point(22, 45);
+            this.checkBox17.Name = "checkBox17";
+            this.checkBox17.Size = new System.Drawing.Size(73, 21);
+            this.checkBox17.TabIndex = 6;
+            this.checkBox17.Text = "Init_Se";
+            this.checkBox17.UseVisualStyleBackColor = true;
+            // 
+            // checkBox18
+            // 
+            this.checkBox18.AutoSize = true;
+            this.checkBox18.Location = new System.Drawing.Point(22, 73);
+            this.checkBox18.Name = "checkBox18";
+            this.checkBox18.Size = new System.Drawing.Size(69, 21);
+            this.checkBox18.TabIndex = 7;
+            this.checkBox18.Text = "Init_Fr";
+            this.checkBox18.UseVisualStyleBackColor = true;
+            // 
+            // checkBox19
+            // 
+            this.checkBox19.AutoSize = true;
+            this.checkBox19.Location = new System.Drawing.Point(22, 101);
+            this.checkBox19.Name = "checkBox19";
+            this.checkBox19.Size = new System.Drawing.Size(70, 21);
+            this.checkBox19.TabIndex = 8;
+            this.checkBox19.Text = "Init_Pr";
+            this.checkBox19.UseVisualStyleBackColor = true;
+            // 
+            // textBoxInit_Fr_IssueToAdd
+            // 
+            this.textBoxInit_Fr_IssueToAdd.Location = new System.Drawing.Point(173, 72);
+            this.textBoxInit_Fr_IssueToAdd.Name = "textBoxInit_Fr_IssueToAdd";
+            this.textBoxInit_Fr_IssueToAdd.Size = new System.Drawing.Size(59, 22);
+            this.textBoxInit_Fr_IssueToAdd.TabIndex = 13;
+            // 
+            // checkBox20
+            // 
+            this.checkBox20.AutoSize = true;
+            this.checkBox20.Location = new System.Drawing.Point(22, 131);
+            this.checkBox20.Name = "checkBox20";
+            this.checkBox20.Size = new System.Drawing.Size(72, 21);
+            this.checkBox20.TabIndex = 9;
+            this.checkBox20.Text = "Init_Av";
+            this.checkBox20.UseVisualStyleBackColor = true;
+            // 
+            // textBoxInit_Fr_Comment_IssueToAdd
+            // 
+            this.textBoxInit_Fr_Comment_IssueToAdd.Location = new System.Drawing.Point(259, 73);
+            this.textBoxInit_Fr_Comment_IssueToAdd.Name = "textBoxInit_Fr_Comment_IssueToAdd";
+            this.textBoxInit_Fr_Comment_IssueToAdd.Size = new System.Drawing.Size(355, 22);
+            this.textBoxInit_Fr_Comment_IssueToAdd.TabIndex = 12;
+            // 
+            // textBoxInit_Se_Comment_IssueToAdd
+            // 
+            this.textBoxInit_Se_Comment_IssueToAdd.Location = new System.Drawing.Point(259, 45);
+            this.textBoxInit_Se_Comment_IssueToAdd.Name = "textBoxInit_Se_Comment_IssueToAdd";
+            this.textBoxInit_Se_Comment_IssueToAdd.Size = new System.Drawing.Size(355, 22);
+            this.textBoxInit_Se_Comment_IssueToAdd.TabIndex = 10;
+            // 
+            // textBoxInit_Se_IssueToAdd
+            // 
+            this.textBoxInit_Se_IssueToAdd.Location = new System.Drawing.Point(173, 44);
+            this.textBoxInit_Se_IssueToAdd.Name = "textBoxInit_Se_IssueToAdd";
+            this.textBoxInit_Se_IssueToAdd.Size = new System.Drawing.Size(59, 22);
+            this.textBoxInit_Se_IssueToAdd.TabIndex = 11;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.textBoxGevaar_IssueToAdd);
+            this.panel1.Controls.Add(this.textBoxGebeurtenis_IssueToAdd);
+            this.panel1.Controls.Add(this.textBoxSituatie_IssueToAdd);
+            this.panel1.Controls.Add(this.textBoxIssueID_IssueToAdd);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label7);
@@ -639,39 +984,39 @@
             this.panel1.Size = new System.Drawing.Size(679, 216);
             this.panel1.TabIndex = 6;
             // 
-            // textBox1
+            // textBoxGevaar_IssueToAdd
             // 
-            this.textBox1.Location = new System.Drawing.Point(144, 173);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(310, 22);
-            this.textBox1.TabIndex = 8;
+            this.textBoxGevaar_IssueToAdd.Location = new System.Drawing.Point(144, 173);
+            this.textBoxGevaar_IssueToAdd.Name = "textBoxGevaar_IssueToAdd";
+            this.textBoxGevaar_IssueToAdd.ReadOnly = true;
+            this.textBoxGevaar_IssueToAdd.Size = new System.Drawing.Size(310, 22);
+            this.textBoxGevaar_IssueToAdd.TabIndex = 8;
             // 
-            // textBox2
+            // textBoxGebeurtenis_IssueToAdd
             // 
-            this.textBox2.Location = new System.Drawing.Point(144, 117);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(310, 44);
-            this.textBox2.TabIndex = 7;
+            this.textBoxGebeurtenis_IssueToAdd.Location = new System.Drawing.Point(144, 117);
+            this.textBoxGebeurtenis_IssueToAdd.Multiline = true;
+            this.textBoxGebeurtenis_IssueToAdd.Name = "textBoxGebeurtenis_IssueToAdd";
+            this.textBoxGebeurtenis_IssueToAdd.ReadOnly = true;
+            this.textBoxGebeurtenis_IssueToAdd.Size = new System.Drawing.Size(310, 44);
+            this.textBoxGebeurtenis_IssueToAdd.TabIndex = 7;
             // 
-            // textBox3
+            // textBoxSituatie_IssueToAdd
             // 
-            this.textBox3.Location = new System.Drawing.Point(144, 60);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(310, 36);
-            this.textBox3.TabIndex = 6;
+            this.textBoxSituatie_IssueToAdd.Location = new System.Drawing.Point(144, 60);
+            this.textBoxSituatie_IssueToAdd.Multiline = true;
+            this.textBoxSituatie_IssueToAdd.Name = "textBoxSituatie_IssueToAdd";
+            this.textBoxSituatie_IssueToAdd.ReadOnly = true;
+            this.textBoxSituatie_IssueToAdd.Size = new System.Drawing.Size(310, 36);
+            this.textBoxSituatie_IssueToAdd.TabIndex = 6;
             // 
-            // textBox4
+            // textBoxIssueID_IssueToAdd
             // 
-            this.textBox4.Location = new System.Drawing.Point(144, 19);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(152, 22);
-            this.textBox4.TabIndex = 5;
+            this.textBoxIssueID_IssueToAdd.Location = new System.Drawing.Point(144, 19);
+            this.textBoxIssueID_IssueToAdd.Name = "textBoxIssueID_IssueToAdd";
+            this.textBoxIssueID_IssueToAdd.ReadOnly = true;
+            this.textBoxIssueID_IssueToAdd.Size = new System.Drawing.Size(152, 22);
+            this.textBoxIssueID_IssueToAdd.TabIndex = 5;
             // 
             // label5
             // 
@@ -709,359 +1054,14 @@
             this.label8.TabIndex = 2;
             this.label8.Text = "Gebeurtenis";
             // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.checkBox1);
-            this.panel5.Controls.Add(this.textBox5);
-            this.panel5.Controls.Add(this.textBox6);
-            this.panel5.Controls.Add(this.textBox7);
-            this.panel5.Controls.Add(this.textBox8);
-            this.panel5.Controls.Add(this.checkBox2);
-            this.panel5.Controls.Add(this.textBox9);
-            this.panel5.Controls.Add(this.textBox10);
-            this.panel5.Controls.Add(this.checkBox3);
-            this.panel5.Controls.Add(this.textBox11);
-            this.panel5.Controls.Add(this.textBox12);
-            this.panel5.Controls.Add(this.checkBox4);
-            this.panel5.Controls.Add(this.textBox13);
-            this.panel5.Controls.Add(this.textBox14);
-            this.panel5.Controls.Add(this.checkBox5);
-            this.panel5.Controls.Add(this.textBox15);
-            this.panel5.Controls.Add(this.textBox16);
-            this.panel5.Controls.Add(this.textBox17);
-            this.panel5.Controls.Add(this.textBox18);
-            this.panel5.Controls.Add(this.checkBox10);
-            this.panel5.Controls.Add(this.checkBox13);
-            this.panel5.Controls.Add(this.checkBox14);
-            this.panel5.Controls.Add(this.textBox19);
-            this.panel5.Controls.Add(this.checkBox15);
-            this.panel5.Controls.Add(this.textBox20);
-            this.panel5.Controls.Add(this.textBox21);
-            this.panel5.Controls.Add(this.textBox22);
-            this.panel5.Controls.Add(this.textBox23);
-            this.panel5.Controls.Add(this.checkBox16);
-            this.panel5.Controls.Add(this.textBox24);
-            this.panel5.Controls.Add(this.checkBox17);
-            this.panel5.Controls.Add(this.checkBox18);
-            this.panel5.Controls.Add(this.checkBox19);
-            this.panel5.Controls.Add(this.textBox25);
-            this.panel5.Controls.Add(this.checkBox20);
-            this.panel5.Controls.Add(this.textBox26);
-            this.panel5.Controls.Add(this.textBox27);
-            this.panel5.Controls.Add(this.textBox28);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(0, 216);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(679, 614);
-            this.panel5.TabIndex = 23;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(22, 495);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(133, 21);
-            this.checkBox1.TabIndex = 43;
-            this.checkBox1.Text = "Rest_Risico_OK";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(173, 128);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(59, 22);
-            this.textBox5.TabIndex = 46;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(173, 100);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(59, 22);
-            this.textBox6.TabIndex = 45;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(173, 384);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(59, 22);
-            this.textBox7.TabIndex = 44;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(173, 356);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(59, 22);
-            this.textBox8.TabIndex = 43;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(22, 195);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(94, 21);
-            this.checkBox2.TabIndex = 40;
-            this.checkBox2.Text = "Init_Risico";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(173, 194);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(59, 22);
-            this.textBox9.TabIndex = 42;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(259, 195);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(355, 22);
-            this.textBox10.TabIndex = 41;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(22, 441);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(105, 21);
-            this.checkBox3.TabIndex = 37;
-            this.checkBox3.Text = "Rest_Risico";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(173, 440);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(59, 22);
-            this.textBox11.TabIndex = 39;
-            // 
-            // textBox12
-            // 
-            this.textBox12.Location = new System.Drawing.Point(259, 441);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(355, 22);
-            this.textBox12.TabIndex = 38;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(22, 413);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(79, 21);
-            this.checkBox4.TabIndex = 34;
-            this.checkBox4.Text = "Rest_Cl";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // textBox13
-            // 
-            this.textBox13.Location = new System.Drawing.Point(173, 412);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(59, 22);
-            this.textBox13.TabIndex = 36;
-            // 
-            // textBox14
-            // 
-            this.textBox14.Location = new System.Drawing.Point(259, 413);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(355, 22);
-            this.textBox14.TabIndex = 35;
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(22, 157);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(68, 21);
-            this.checkBox5.TabIndex = 31;
-            this.checkBox5.Text = "Init_Cl";
-            this.checkBox5.UseVisualStyleBackColor = true;
-            // 
-            // textBox15
-            // 
-            this.textBox15.Location = new System.Drawing.Point(173, 156);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(59, 22);
-            this.textBox15.TabIndex = 33;
-            // 
-            // textBox16
-            // 
-            this.textBox16.Location = new System.Drawing.Point(259, 157);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(355, 22);
-            this.textBox16.TabIndex = 32;
-            // 
-            // textBox17
-            // 
-            this.textBox17.Location = new System.Drawing.Point(259, 385);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(355, 22);
-            this.textBox17.TabIndex = 30;
-            // 
-            // textBox18
-            // 
-            this.textBox18.Location = new System.Drawing.Point(259, 357);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(355, 22);
-            this.textBox18.TabIndex = 29;
-            // 
-            // checkBox10
-            // 
-            this.checkBox10.AutoSize = true;
-            this.checkBox10.Location = new System.Drawing.Point(22, 301);
-            this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(84, 21);
-            this.checkBox10.TabIndex = 19;
-            this.checkBox10.Text = "Rest_Se";
-            this.checkBox10.UseVisualStyleBackColor = true;
-            // 
-            // checkBox13
-            // 
-            this.checkBox13.AutoSize = true;
-            this.checkBox13.Location = new System.Drawing.Point(22, 329);
-            this.checkBox13.Name = "checkBox13";
-            this.checkBox13.Size = new System.Drawing.Size(80, 21);
-            this.checkBox13.TabIndex = 20;
-            this.checkBox13.Text = "Rest_Fr";
-            this.checkBox13.UseVisualStyleBackColor = true;
-            // 
-            // checkBox14
-            // 
-            this.checkBox14.AutoSize = true;
-            this.checkBox14.Location = new System.Drawing.Point(22, 357);
-            this.checkBox14.Name = "checkBox14";
-            this.checkBox14.Size = new System.Drawing.Size(81, 21);
-            this.checkBox14.TabIndex = 21;
-            this.checkBox14.Text = "Rest_Pr";
-            this.checkBox14.UseVisualStyleBackColor = true;
-            // 
-            // textBox19
-            // 
-            this.textBox19.Location = new System.Drawing.Point(173, 328);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(59, 22);
-            this.textBox19.TabIndex = 26;
-            // 
-            // checkBox15
-            // 
-            this.checkBox15.AutoSize = true;
-            this.checkBox15.Location = new System.Drawing.Point(22, 387);
-            this.checkBox15.Name = "checkBox15";
-            this.checkBox15.Size = new System.Drawing.Size(83, 21);
-            this.checkBox15.TabIndex = 22;
-            this.checkBox15.Text = "Rest_Av";
-            this.checkBox15.UseVisualStyleBackColor = true;
-            // 
-            // textBox20
-            // 
-            this.textBox20.Location = new System.Drawing.Point(259, 329);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(355, 22);
-            this.textBox20.TabIndex = 25;
-            // 
-            // textBox21
-            // 
-            this.textBox21.Location = new System.Drawing.Point(259, 301);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(355, 22);
-            this.textBox21.TabIndex = 23;
-            // 
-            // textBox22
-            // 
-            this.textBox22.Location = new System.Drawing.Point(173, 300);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(59, 22);
-            this.textBox22.TabIndex = 24;
-            // 
-            // textBox23
-            // 
-            this.textBox23.Location = new System.Drawing.Point(259, 129);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(355, 22);
-            this.textBox23.TabIndex = 17;
-            // 
-            // checkBox16
-            // 
-            this.checkBox16.AutoSize = true;
-            this.checkBox16.Location = new System.Drawing.Point(3, 6);
-            this.checkBox16.Name = "checkBox16";
-            this.checkBox16.Size = new System.Drawing.Size(87, 21);
-            this.checkBox16.TabIndex = 5;
-            this.checkBox16.Text = "Select all";
-            this.checkBox16.UseVisualStyleBackColor = true;
-            // 
-            // textBox24
-            // 
-            this.textBox24.Location = new System.Drawing.Point(259, 101);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(355, 22);
-            this.textBox24.TabIndex = 16;
-            // 
-            // checkBox17
-            // 
-            this.checkBox17.AutoSize = true;
-            this.checkBox17.Location = new System.Drawing.Point(22, 45);
-            this.checkBox17.Name = "checkBox17";
-            this.checkBox17.Size = new System.Drawing.Size(73, 21);
-            this.checkBox17.TabIndex = 6;
-            this.checkBox17.Text = "Init_Se";
-            this.checkBox17.UseVisualStyleBackColor = true;
-            // 
-            // checkBox18
-            // 
-            this.checkBox18.AutoSize = true;
-            this.checkBox18.Location = new System.Drawing.Point(22, 73);
-            this.checkBox18.Name = "checkBox18";
-            this.checkBox18.Size = new System.Drawing.Size(69, 21);
-            this.checkBox18.TabIndex = 7;
-            this.checkBox18.Text = "Init_Fr";
-            this.checkBox18.UseVisualStyleBackColor = true;
-            // 
-            // checkBox19
-            // 
-            this.checkBox19.AutoSize = true;
-            this.checkBox19.Location = new System.Drawing.Point(22, 101);
-            this.checkBox19.Name = "checkBox19";
-            this.checkBox19.Size = new System.Drawing.Size(70, 21);
-            this.checkBox19.TabIndex = 8;
-            this.checkBox19.Text = "Init_Pr";
-            this.checkBox19.UseVisualStyleBackColor = true;
-            // 
-            // textBox25
-            // 
-            this.textBox25.Location = new System.Drawing.Point(173, 72);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(59, 22);
-            this.textBox25.TabIndex = 13;
-            // 
-            // checkBox20
-            // 
-            this.checkBox20.AutoSize = true;
-            this.checkBox20.Location = new System.Drawing.Point(22, 131);
-            this.checkBox20.Name = "checkBox20";
-            this.checkBox20.Size = new System.Drawing.Size(72, 21);
-            this.checkBox20.TabIndex = 9;
-            this.checkBox20.Text = "Init_Av";
-            this.checkBox20.UseVisualStyleBackColor = true;
-            // 
-            // textBox26
-            // 
-            this.textBox26.Location = new System.Drawing.Point(259, 73);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(355, 22);
-            this.textBox26.TabIndex = 12;
-            // 
-            // textBox27
-            // 
-            this.textBox27.Location = new System.Drawing.Point(259, 45);
-            this.textBox27.Name = "textBox27";
-            this.textBox27.Size = new System.Drawing.Size(355, 22);
-            this.textBox27.TabIndex = 10;
-            // 
-            // textBox28
-            // 
-            this.textBox28.Location = new System.Drawing.Point(173, 44);
-            this.textBox28.Name = "textBox28";
-            this.textBox28.Size = new System.Drawing.Size(59, 22);
-            this.textBox28.TabIndex = 11;
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.buttonSave);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 836);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1370, 62);
+            this.panel2.TabIndex = 24;
             // 
             // buttonSave
             // 
@@ -1088,11 +1088,11 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1150,49 +1150,49 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.CheckBox checkBoxRest_Risico_Ok_IssueToAdd;
+        private System.Windows.Forms.TextBox textBoxInit_Av_IssueToAdd;
+        private System.Windows.Forms.TextBox textBoxInit_Pr_IssueToAdd;
+        private System.Windows.Forms.TextBox textBoxRest_Av_IssueToAdd;
+        private System.Windows.Forms.TextBox textBoxRest_Pr_IssueToAdd;
         private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textBoxInit_Risico_IssueToAdd;
+        private System.Windows.Forms.TextBox textBoxInitRisico_Comment_IssueToAdd;
         private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox textBoxRest_Risico_IssueToAdd;
+        private System.Windows.Forms.TextBox textBoxRest_Risico_Comment_IssueToAdd;
         private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox textBoxRest_Cl_IssueToAdd;
+        private System.Windows.Forms.TextBox textBoxRest_Cl_Comment_IssueToAdd;
         private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.TextBox textBoxInit_Cl_IssueToAdd;
+        private System.Windows.Forms.TextBox textBoxInit_Cl_Comment_IssueToAdd;
+        private System.Windows.Forms.TextBox textBoxRest_Av_Comment_IssueToAdd;
+        private System.Windows.Forms.TextBox textBoxRest_Pr_Comment_IssueToAdd;
         private System.Windows.Forms.CheckBox checkBox10;
         private System.Windows.Forms.CheckBox checkBox13;
         private System.Windows.Forms.CheckBox checkBox14;
-        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.TextBox textBoxRest_Fr_IssueToAdd;
         private System.Windows.Forms.CheckBox checkBox15;
-        private System.Windows.Forms.TextBox textBox20;
-        private System.Windows.Forms.TextBox textBox21;
-        private System.Windows.Forms.TextBox textBox22;
-        private System.Windows.Forms.TextBox textBox23;
+        private System.Windows.Forms.TextBox textBoxRest_Fr_Comment_IssueToAdd;
+        private System.Windows.Forms.TextBox textBoxRest_Se_Comment_IssueToAdd;
+        private System.Windows.Forms.TextBox textBoxRest_Se_IssueToAdd;
+        private System.Windows.Forms.TextBox textBoxInit_Av_Comment_IssueToAdd;
         private System.Windows.Forms.CheckBox checkBox16;
-        private System.Windows.Forms.TextBox textBox24;
+        private System.Windows.Forms.TextBox textBoxInit_Pr_Comment_IssueToAdd;
         private System.Windows.Forms.CheckBox checkBox17;
         private System.Windows.Forms.CheckBox checkBox18;
         private System.Windows.Forms.CheckBox checkBox19;
-        private System.Windows.Forms.TextBox textBox25;
+        private System.Windows.Forms.TextBox textBoxInit_Fr_IssueToAdd;
         private System.Windows.Forms.CheckBox checkBox20;
-        private System.Windows.Forms.TextBox textBox26;
-        private System.Windows.Forms.TextBox textBox27;
-        private System.Windows.Forms.TextBox textBox28;
+        private System.Windows.Forms.TextBox textBoxInit_Fr_Comment_IssueToAdd;
+        private System.Windows.Forms.TextBox textBoxInit_Se_Comment_IssueToAdd;
+        private System.Windows.Forms.TextBox textBoxInit_Se_IssueToAdd;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBoxGevaar_IssueToAdd;
+        private System.Windows.Forms.TextBox textBoxGebeurtenis_IssueToAdd;
+        private System.Windows.Forms.TextBox textBoxSituatie_IssueToAdd;
+        private System.Windows.Forms.TextBox textBoxIssueID_IssueToAdd;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;

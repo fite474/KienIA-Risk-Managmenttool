@@ -22,7 +22,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private ViewsColumnNames viewsColumnNames;
 
         //private List<string> GekoppeldeGevarenId;
-        //private List<string> GekoppeldeIssuesId;
+        private List<string> IssuesToVerify;
         private List<string> IssuesState;
 
         public EditObjecten()
@@ -41,6 +41,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             comunicator = new Datacomunication();
             keuzeMenus = new KeuzeMenus();
             viewsColumnNames = new ViewsColumnNames();
+            
             //string x = viewsColumnNames.IssueBeschrijving;
             LoadMenus();
             this.ObjectNaam = objectNaam;
@@ -108,6 +109,25 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void buttonIssuesOplossen_Click(object sender, EventArgs e)
         {
+            string situatie = "";//dataGridViewGekoppeldeIssues.SelectedRows[0].Cells[viewsColumnNames.GevaarlijkeSituatieColumn].Value.ToString();
+            string gebeurtenis = "";//dataGridViewGekoppeldeIssues.SelectedRows[0].Cells[viewsColumnNames.GevaarlijkeGebeurtenisColumn].Value.ToString();
+
+            string discipline = "";//dataGridViewGekoppeldeIssues.SelectedRows[0].Cells[viewsColumnNames.GevaarDisciplineColumn].Value.ToString();
+            string gevaar = "";//dataGridViewGekoppeldeIssues.SelectedRows[0].Cells[viewsColumnNames.GevaarGevaarTypeColumn].Value.ToString();
+
+            string init_Risico = "";
+            string init_Risico_Beschrijving = "";
+            string rest_Risico = "";
+            string rest_Risico_Beschrijving = "";
+            foreach (string issueID in IssuesToVerify)
+            {
+                Form issueMaatregelen = new IssueMaatregelen(ObjectNaam, ObjectID, issueID,
+                                                        discipline, gevaar, situatie, gebeurtenis,
+                                                        init_Risico, init_Risico_Beschrijving,
+                                                        rest_Risico, rest_Risico_Beschrijving);
+                issueMaatregelen.ShowDialog();
+            }
+            
             //Form issueMaatregelen = new IssueMaatregelen();
             //issueMaatregelen.Show();
         }
@@ -193,6 +213,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void dataGridViewGekoppeldeIssues_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
+            IssuesToVerify = new List<string>();
+            //int issuesToVerify = 0;
             for (int i = 0; i < (dataGridViewGekoppeldeIssues.ColumnCount - 1); i++)
             {
                 dataGridViewGekoppeldeIssues.AutoResizeColumn((i + 1), DataGridViewAutoSizeColumnMode.AllCells);
@@ -216,7 +238,9 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             {
                 if (IssuesState[rowIndex].Equals("0"))
                 {
+                    //issuesToVerify++;
                     dataGridViewGekoppeldeIssues.Rows[rowIndex].DefaultCellStyle.BackColor = Color.Red;
+                    IssuesToVerify.Add(dataGridViewGekoppeldeIssues.Rows[rowIndex].Cells[viewsColumnNames.IssueIDColumn].Value.ToString());
                 }
                 else if (IssuesState[rowIndex].Equals("1"))
                 {
@@ -234,6 +258,14 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
                 //}
                 rowIndex++;
             }
+
+            textBoxIssuesToVerify.Text = IssuesToVerify.Count.ToString();//issuesToVerify.ToString(); ;
+        }
+
+        private void buttonExportToExcel_Click(object sender, EventArgs e)
+        {
+            Form exportObject = new ExportObject(ObjectID);
+            exportObject.Show();
         }
     }
 }

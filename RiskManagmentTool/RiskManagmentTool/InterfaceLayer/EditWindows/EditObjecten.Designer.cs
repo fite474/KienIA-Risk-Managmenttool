@@ -42,12 +42,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.buttonExport = new System.Windows.Forms.Button();
+            this.textBoxIssuesToVerify = new System.Windows.Forms.TextBox();
             this.buttonAddTemplate = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.buttonExportToExcel = new System.Windows.Forms.Button();
             this.pictureBoxObjectFoto = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -55,7 +56,7 @@
             this.dataGridViewGekoppeldeIssues = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBoxFilterIssues = new System.Windows.Forms.ComboBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -65,8 +66,6 @@
             this.buttonDeleteGevaren = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.buttonAddRisico = new System.Windows.Forms.Button();
-            this.textBoxIssuesToVerify = new System.Windows.Forms.TextBox();
-            this.buttonExportToExcel = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -93,8 +92,8 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.74384F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.78818F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.1133F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.41872F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.34483F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1575, 812);
             this.tableLayoutPanel1.TabIndex = 0;
@@ -102,8 +101,8 @@
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.25175F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.53792F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.06055F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.60166F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.27406F));
             this.tableLayoutPanel2.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.panel2, 1, 0);
@@ -113,7 +112,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1569, 268);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1569, 271);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // panel1
@@ -130,7 +129,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(703, 262);
+            this.panel1.Size = new System.Drawing.Size(701, 265);
             this.panel1.TabIndex = 0;
             // 
             // buttonShow
@@ -215,26 +214,23 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.textBoxIssuesToVerify);
-            this.panel2.Controls.Add(this.buttonExport);
             this.panel2.Controls.Add(this.buttonAddTemplate);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(712, 3);
+            this.panel2.Location = new System.Drawing.Point(710, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(378, 262);
+            this.panel2.Size = new System.Drawing.Size(380, 265);
             this.panel2.TabIndex = 1;
             // 
-            // buttonExport
+            // textBoxIssuesToVerify
             // 
-            this.buttonExport.Location = new System.Drawing.Point(505, 11);
-            this.buttonExport.Name = "buttonExport";
-            this.buttonExport.Size = new System.Drawing.Size(93, 42);
-            this.buttonExport.TabIndex = 6;
-            this.buttonExport.Text = "Export";
-            this.buttonExport.UseVisualStyleBackColor = true;
-            this.buttonExport.Click += new System.EventHandler(this.buttonExport_Click);
+            this.textBoxIssuesToVerify.Location = new System.Drawing.Point(215, 87);
+            this.textBoxIssuesToVerify.Name = "textBoxIssuesToVerify";
+            this.textBoxIssuesToVerify.ReadOnly = true;
+            this.textBoxIssuesToVerify.Size = new System.Drawing.Size(65, 22);
+            this.textBoxIssuesToVerify.TabIndex = 7;
             // 
             // buttonAddTemplate
             // 
@@ -281,8 +277,19 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(1096, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(470, 262);
+            this.panel6.Size = new System.Drawing.Size(470, 265);
             this.panel6.TabIndex = 2;
+            // 
+            // buttonExportToExcel
+            // 
+            this.buttonExportToExcel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.buttonExportToExcel.Location = new System.Drawing.Point(0, 229);
+            this.buttonExportToExcel.Name = "buttonExportToExcel";
+            this.buttonExportToExcel.Size = new System.Drawing.Size(470, 36);
+            this.buttonExportToExcel.TabIndex = 1;
+            this.buttonExportToExcel.Text = "Export naar Excel";
+            this.buttonExportToExcel.UseVisualStyleBackColor = true;
+            this.buttonExportToExcel.Click += new System.EventHandler(this.buttonExportToExcel_Click);
             // 
             // pictureBoxObjectFoto
             // 
@@ -298,9 +305,9 @@
             // 
             this.panel3.Controls.Add(this.tabControl1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(3, 277);
+            this.panel3.Location = new System.Drawing.Point(3, 280);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1569, 447);
+            this.panel3.Size = new System.Drawing.Size(1569, 444);
             this.panel3.TabIndex = 2;
             // 
             // tabControl1
@@ -312,7 +319,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1569, 447);
+            this.tabControl1.Size = new System.Drawing.Size(1569, 444);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -322,7 +329,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1561, 418);
+            this.tabPage1.Size = new System.Drawing.Size(1561, 415);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Gekoppelde issues";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -338,7 +345,7 @@
             this.dataGridViewGekoppeldeIssues.ReadOnly = true;
             this.dataGridViewGekoppeldeIssues.RowTemplate.Height = 24;
             this.dataGridViewGekoppeldeIssues.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewGekoppeldeIssues.Size = new System.Drawing.Size(1555, 362);
+            this.dataGridViewGekoppeldeIssues.Size = new System.Drawing.Size(1555, 359);
             this.dataGridViewGekoppeldeIssues.TabIndex = 0;
             this.dataGridViewGekoppeldeIssues.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewGekoppeldeIssues_DataBindingComplete);
             this.dataGridViewGekoppeldeIssues.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewGekoppeldeIssues_MouseDoubleClick);
@@ -346,7 +353,7 @@
             // panel5
             // 
             this.panel5.Controls.Add(this.label8);
-            this.panel5.Controls.Add(this.comboBox3);
+            this.panel5.Controls.Add(this.comboBoxFilterIssues);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(3, 3);
             this.panel5.Name = "panel5";
@@ -362,18 +369,20 @@
             this.label8.TabIndex = 2;
             this.label8.Text = "Filter weergave";
             // 
-            // comboBox3
+            // comboBoxFilterIssues
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.comboBoxFilterIssues.FormattingEnabled = true;
+            this.comboBoxFilterIssues.Items.AddRange(new object[] {
             "Alle issues",
             "Onopgeloste issues",
             "Nog te verifiëren",
-            "Nog te bespreken met klant"});
-            this.comboBox3.Location = new System.Drawing.Point(114, 6);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(184, 24);
-            this.comboBox3.TabIndex = 1;
+            "Nog te bespreken met klant",
+            "Issues zonder maatregelen"});
+            this.comboBoxFilterIssues.Location = new System.Drawing.Point(114, 6);
+            this.comboBoxFilterIssues.Name = "comboBoxFilterIssues";
+            this.comboBoxFilterIssues.Size = new System.Drawing.Size(184, 24);
+            this.comboBoxFilterIssues.TabIndex = 1;
+            this.comboBoxFilterIssues.SelectedIndexChanged += new System.EventHandler(this.comboBoxFilterIssues_SelectedIndexChanged);
             // 
             // tabPage2
             // 
@@ -465,25 +474,6 @@
             this.buttonAddRisico.UseVisualStyleBackColor = true;
             this.buttonAddRisico.Click += new System.EventHandler(this.buttonAddRisico_Click);
             // 
-            // textBoxIssuesToVerify
-            // 
-            this.textBoxIssuesToVerify.Location = new System.Drawing.Point(215, 87);
-            this.textBoxIssuesToVerify.Name = "textBoxIssuesToVerify";
-            this.textBoxIssuesToVerify.ReadOnly = true;
-            this.textBoxIssuesToVerify.Size = new System.Drawing.Size(65, 22);
-            this.textBoxIssuesToVerify.TabIndex = 7;
-            // 
-            // buttonExportToExcel
-            // 
-            this.buttonExportToExcel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.buttonExportToExcel.Location = new System.Drawing.Point(0, 226);
-            this.buttonExportToExcel.Name = "buttonExportToExcel";
-            this.buttonExportToExcel.Size = new System.Drawing.Size(470, 36);
-            this.buttonExportToExcel.TabIndex = 1;
-            this.buttonExportToExcel.Text = "Export naar Excel";
-            this.buttonExportToExcel.UseVisualStyleBackColor = true;
-            this.buttonExportToExcel.Click += new System.EventHandler(this.buttonExportToExcel_Click);
-            // 
             // EditObjecten
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -533,7 +523,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBoxFilterIssues;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridView dataGridViewGekoppeldeIssues;
@@ -548,7 +538,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button buttonExport;
         private System.Windows.Forms.TextBox textBoxProjectNaam;
         private System.Windows.Forms.Button buttonShow;
         private System.Windows.Forms.Panel panel6;

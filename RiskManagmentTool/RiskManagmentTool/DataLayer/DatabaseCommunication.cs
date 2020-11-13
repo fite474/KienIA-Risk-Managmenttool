@@ -754,27 +754,7 @@ namespace RiskManagmentTool.DataLayer
 
         }
 
-        public List<string> GetObjectIssuesState(string objectID)
-        {
-            List<string> issueStates = new List<string>();
-
-            sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT TableIssues.IssueStatus " +
-                                            "FROM TableIssues WHERE TableIssues.IssueID" +
-                                            " IN(" +
-                                            " SELECT TableObjectIssues.IssueID FROM TableObjectIssues WHERE TableObjectIssues.ObjectID = '" + objectID + "')", sqlConnection);
-
-            using (SqlDataReader dr = cmd.ExecuteReader())
-            {
-                while (dr.Read())
-                {
-                    issueStates.Add((dr[0]).ToString());
-                }
-            }
-            sqlConnection.Close();
-
-            return issueStates;
-        }
+        
 
 
         public SqlDataAdapter GetAllIssues()
@@ -1038,22 +1018,7 @@ namespace RiskManagmentTool.DataLayer
             return objectInfo;
         }
 
-        public string GetIssueState(string issueId)
-        {
-            string issueState = "-1";
-            sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT TableIssues.IssueStatus " +
-                                            "FROM TableIssues WHERE TableIssues.IssueID = '" + issueId + "'", sqlConnection);
-            using (SqlDataReader dr = cmd.ExecuteReader())
-            {
-                while (dr.Read())
-                {
-                    issueState = (dr[0]).ToString();
-                }
-            }
-            sqlConnection.Close();
-            return issueState;
-        }
+
        
         
         public string GetLastTemplateID()
@@ -1075,6 +1040,94 @@ namespace RiskManagmentTool.DataLayer
         //End get info region
 
         //end inner region get id
+
+
+        //begin get states
+        public Dictionary<string, string> GetObjectIssuesState(string objectID)
+        {
+            Dictionary<string, string> issueStates = new Dictionary<string, string>();
+
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT TableIssues.IssueID, TableIssues.IssueStatus " +
+                                            "FROM TableIssues WHERE TableIssues.IssueID" +
+                                            " IN(" +
+                                            " SELECT TableObjectIssues.IssueID FROM TableObjectIssues WHERE TableObjectIssues.ObjectID = '" + objectID + "')", sqlConnection);
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    issueStates.Add((dr[0]).ToString(), (dr[1]).ToString());
+                }
+            }
+            sqlConnection.Close();
+
+            return issueStates;
+        }
+
+        //public Dictionary<string, string> GetObjectIssuesMaatregelenState(string objectID)
+        //{
+        //    Dictionary<string, string> issueMaatregelenStates = new Dictionary<string, string>();
+
+        //    sqlConnection.Open();
+
+        //    SqlCommand cmd = new SqlCommand("SELECT COUNT(MaatregelID) FROM TableIssueMaatregelen " +
+        //                                    "WHERE TableIssueMaatregelen.IssueID = '" + issueId + "' ", sqlConnection);
+
+
+        //    //SqlCommand cmd = new SqlCommand("SELECT TableIssues.IssueID, TableIssues.IssueStatus " +
+        //    //                                "FROM TableIssues WHERE TableIssues.IssueID" +
+        //    //                                " IN(" +
+        //    //                                " SELECT TableObjectIssues.IssueID FROM TableObjectIssues WHERE TableObjectIssues.ObjectID = '" + objectID + "')", sqlConnection);
+        //    using (SqlDataReader dr = cmd.ExecuteReader())
+        //    {
+        //        while (dr.Read())
+        //        {
+        //            issueMaatregelenStates.Add((dr[0]).ToString(), (dr[1]).ToString());
+        //        }
+        //    }
+        //    sqlConnection.Close();
+
+        //    return issueMaatregelenStates;
+        //}
+
+        
+
+        public string GetIssueState(string issueId)
+        {
+            string issueState = "-1";
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT TableIssues.IssueStatus " +
+                                            "FROM TableIssues WHERE TableIssues.IssueID = '" + issueId + "'", sqlConnection);
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    issueState = (dr[0]).ToString();
+                }
+            }
+            sqlConnection.Close();
+            return issueState;
+        }
+
+        //end get states
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         //Begin inner region get selected Ids before copying

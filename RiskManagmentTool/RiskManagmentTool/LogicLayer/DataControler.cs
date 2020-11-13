@@ -29,9 +29,16 @@ namespace RiskManagmentTool.LogicLayer
             addBeoordeling = true;
         }
 
-        private void HandleAddIssueToObject(string issueID, bool maatregelen, bool beoordeling, bool customMaatregelen, bool customBeoordeling)
+        private void HandleAddIssueToObject(string gevaarID, bool maatregelen, bool beoordeling, bool customMaatregelen, bool customBeoordeling)
         {
+            //bool addMaatregelen = checkedListBoxAddSettings.GetItemChecked(0);
+            //bool addRisicoBeoordeling = checkedListBoxAddSettings.GetItemChecked(1);
+            //bool issueNeedsToVirify = checkedListBoxAddSettings.GetItemChecked(2);
 
+            //foreach (string gevaarToAddID in SelectedObjectIssueId)
+            //{
+                //comunicator.AddIssueToObject(CurrentID, gevaarID, maatregelen, beoordeling, issueNeedsToVirify);
+            //}
 
         }
 

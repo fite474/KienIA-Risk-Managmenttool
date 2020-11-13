@@ -18,6 +18,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         //private int issueNmr;
         private string IssueID;
         private string ObjectID;
+        private string ObjectNaam;
         private KeuzeMenus keuzeMenus;
 
         private string Discipline;
@@ -43,11 +44,12 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             ReadOnlyMode = false;
             IssueID = issueId;
             ObjectID = objectId;
+            ObjectNaam = objectNaam;
 
             LoadMenus();
             LoadData();
             //
-            textBoxNaamObject.Text = objectNaam;
+            textBoxNaamObject.Text = ObjectNaam;//objectNaam;
             textBoxIssueID.Text = issueId;
             comboBoxDiscipline.SelectedIndex = comboBoxDiscipline.FindStringExact(Discipline);
             comboBoxGevaar.SelectedIndex = comboBoxGevaar.FindStringExact(Gevaar);
@@ -110,8 +112,9 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void buttonAddNewMaatregel_Click(object sender, EventArgs e)
         {
-            Form addMaatregel = new AddMaatregel(IssueID, Discipline, Gevaar, Situatie, Gebeurtenis);
-            addMaatregel.Show();
+            Form addMaatregel = new AddMaatregel(ObjectNaam, ObjectID,  IssueID, Discipline, Gevaar, Situatie, Gebeurtenis);
+            addMaatregel.ShowDialog();
+            LoadData();
         }
 
         private void buttonNextIssue_Click(object sender, EventArgs e)

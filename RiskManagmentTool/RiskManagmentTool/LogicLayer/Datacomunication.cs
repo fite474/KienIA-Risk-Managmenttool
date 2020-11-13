@@ -170,7 +170,7 @@ namespace RiskManagmentTool.LogicLayer
                 int risicoBeoordelingId = databaseCommunication.InitRisicoBeoordeling(newIssueId);
                 databaseCommunication.AddRisicoBeoordelingToIssue(risicoBeoordelingId, newIssueId);
             }
-            int x = 0;
+            
         }
 
 
@@ -337,10 +337,7 @@ namespace RiskManagmentTool.LogicLayer
             return data;
         }
 
-        public List<string> GetObjectIssuesStates(string objectID)
-        {
-            return databaseCommunication.GetObjectIssuesState(objectID);
-        }
+
 
         public DataTable GetObjectIssuesByObjectName(string objectNaam)
         {
@@ -371,38 +368,31 @@ namespace RiskManagmentTool.LogicLayer
 
         public List<string> GetGekoppeldeGevarenFromTemplateAsList(string templateId)
         {
-
             return databaseCommunication.GetGekoppeldeGevarenFromTemplateAsList(templateId);
         }
 
         public List<string> GetGekoppeldeIssuesFromTemplateAsList(string templateId)
         {
-
             return databaseCommunication.GetGekoppeldeIssuesFromTemplateAsList(templateId);
         }
 
         public List<string> GetGekoppeldeIssuesFromObjectAsList(string objectId)
         {
-
             return databaseCommunication.GetGekoppeldeIssuesFromObjectAsList(objectId);
         }
 
         public List<string> GetGekoppeldeGevarenFromObjectAsList(string objectId)
         {
-
             return databaseCommunication.GetGekoppeldeGevarenFromObjectAsList(objectId);
         }
 
         public List<string> GetGevarenFromIssuesAsList(List<string> selectedIssuesId)
         {
-
             return databaseCommunication.GetGevarenFromIssuesAsList(selectedIssuesId);
         }
 
-
         public List<string> GetMaatregelenFromIssuesAsList(string issueID)
         {
-
             return databaseCommunication.GetMaatregelenFromIssues(issueID);
         }
 
@@ -520,8 +510,6 @@ namespace RiskManagmentTool.LogicLayer
             return data;
         }
 
-
-
         public DataTable GetObjectenTable()
         {
             SqlDataAdapter adapter = databaseCommunication.GetObjecten();
@@ -618,13 +606,14 @@ namespace RiskManagmentTool.LogicLayer
         {
             return databaseCommunication.GetBedienvormen();
         }
+
         public List<string> GetTaken()
         {
             return databaseCommunication.GetTaken(); ;
         }
 
         public List<string> GetMaatregelNorm()
-        {//ggd
+        {
             return databaseCommunication.GetMaatregelNormen();
         }
 
@@ -665,9 +654,42 @@ namespace RiskManagmentTool.LogicLayer
         }
 
 
-
-
         //filter opties eind
+
+
+
+
+        //begin check states 
+        public Dictionary<string, string> GetObjectIssuesStates(string objectID)//List<string> GetObjectIssuesStates(string objectID)
+        {
+            return databaseCommunication.GetObjectIssuesState(objectID);
+        }
+
+        public Dictionary<string, int> GetObjectIssuesMaatregelenCount(string objectID)
+        {
+            Dictionary<string, int> issuesMaatregelenCount = new Dictionary<string, int>();
+            foreach (string issueID in databaseCommunication.GetGekoppeldeIssuesFromObjectAsList(objectID))
+            {
+                int amountOfMaatregelen = databaseCommunication.GetMaatregelenFromIssues(issueID).Count;
+                issuesMaatregelenCount.Add(issueID, amountOfMaatregelen);
+            }
+
+
+            return issuesMaatregelenCount;
+        }
+
+        // end check states
+
+
+
+
+
+
+
+
+
+
+
 
 
 

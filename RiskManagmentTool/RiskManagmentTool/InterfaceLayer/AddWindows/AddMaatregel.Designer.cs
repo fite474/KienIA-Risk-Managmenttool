@@ -48,7 +48,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBoxWeergaveTemplate = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridViewTemplates = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
@@ -56,12 +56,17 @@
             this.buttonKoppelSelectedMaatregelen = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
             this.buttonCreateNewMaatregel = new System.Windows.Forms.Button();
             this.comboBoxGevaar = new System.Windows.Forms.ComboBox();
             this.comboBoxDiscipline = new System.Windows.Forms.ComboBox();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.comboBoxObjectenWeergave = new System.Windows.Forms.ComboBox();
+            this.dataGridViewObjectIssues = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMaatregelen)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -70,6 +75,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTemplates)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewObjectIssues)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -218,6 +226,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(12, 6);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -249,7 +258,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.comboBox3);
+            this.panel1.Controls.Add(this.comboBoxWeergaveTemplate);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 3);
@@ -257,13 +266,14 @@
             this.panel1.Size = new System.Drawing.Size(1060, 70);
             this.panel1.TabIndex = 1;
             // 
-            // comboBox3
+            // comboBoxWeergaveTemplate
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(120, 21);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 24);
-            this.comboBox3.TabIndex = 1;
+            this.comboBoxWeergaveTemplate.FormattingEnabled = true;
+            this.comboBoxWeergaveTemplate.Location = new System.Drawing.Point(120, 21);
+            this.comboBoxWeergaveTemplate.Name = "comboBoxWeergaveTemplate";
+            this.comboBoxWeergaveTemplate.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxWeergaveTemplate.TabIndex = 1;
+            this.comboBoxWeergaveTemplate.SelectedIndexChanged += new System.EventHandler(this.comboBoxWeergaveTemplate_SelectedIndexChanged);
             // 
             // label9
             // 
@@ -353,6 +363,16 @@
             this.panel2.Size = new System.Drawing.Size(1113, 349);
             this.panel2.TabIndex = 23;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(743, 15);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(94, 17);
+            this.label11.TabIndex = 23;
+            this.label11.Text = "MAG WEG!!!!!!";
+            this.label11.Visible = false;
+            // 
             // buttonCreateNewMaatregel
             // 
             this.buttonCreateNewMaatregel.Location = new System.Drawing.Point(743, 247);
@@ -401,15 +421,60 @@
             this.panel3.Size = new System.Drawing.Size(1113, 416);
             this.panel3.TabIndex = 24;
             // 
-            // label11
+            // tabPage3
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(743, 15);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(94, 17);
-            this.label11.TabIndex = 23;
-            this.label11.Text = "MAG WEG!!!!!!";
-            this.label11.Visible = false;
+            this.tabPage3.Controls.Add(this.dataGridViewObjectIssues);
+            this.tabPage3.Controls.Add(this.panel4);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1066, 378);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Selecteer uit issues van andere objecten";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.comboBoxObjectenWeergave);
+            this.panel4.Controls.Add(this.label12);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(3, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1060, 70);
+            this.panel4.TabIndex = 0;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(27, 23);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(57, 17);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Object: ";
+            // 
+            // comboBoxObjectenWeergave
+            // 
+            this.comboBoxObjectenWeergave.FormattingEnabled = true;
+            this.comboBoxObjectenWeergave.Location = new System.Drawing.Point(120, 20);
+            this.comboBoxObjectenWeergave.Name = "comboBoxObjectenWeergave";
+            this.comboBoxObjectenWeergave.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxObjectenWeergave.TabIndex = 1;
+            this.comboBoxObjectenWeergave.SelectedIndexChanged += new System.EventHandler(this.comboBoxObjectenWeergave_SelectedIndexChanged);
+            // 
+            // dataGridViewObjectIssues
+            // 
+            this.dataGridViewObjectIssues.AllowUserToAddRows = false;
+            this.dataGridViewObjectIssues.AllowUserToDeleteRows = false;
+            this.dataGridViewObjectIssues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewObjectIssues.Location = new System.Drawing.Point(4, 79);
+            this.dataGridViewObjectIssues.Name = "dataGridViewObjectIssues";
+            this.dataGridViewObjectIssues.ReadOnly = true;
+            this.dataGridViewObjectIssues.RowTemplate.Height = 24;
+            this.dataGridViewObjectIssues.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewObjectIssues.Size = new System.Drawing.Size(978, 282);
+            this.dataGridViewObjectIssues.TabIndex = 1;
+            this.dataGridViewObjectIssues.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewObjectIssues_DataBindingComplete);
+            this.dataGridViewObjectIssues.DoubleClick += new System.EventHandler(this.dataGridViewObjectIssues_DoubleClick);
             // 
             // AddMaatregel
             // 
@@ -435,6 +500,10 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewObjectIssues)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -463,7 +532,7 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridView dataGridViewTemplates;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBoxWeergaveTemplate;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button1;
@@ -476,5 +545,10 @@
         private System.Windows.Forms.ComboBox comboBoxDiscipline;
         private System.Windows.Forms.Button buttonCreateNewMaatregel;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.ComboBox comboBoxObjectenWeergave;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DataGridView dataGridViewObjectIssues;
     }
 }

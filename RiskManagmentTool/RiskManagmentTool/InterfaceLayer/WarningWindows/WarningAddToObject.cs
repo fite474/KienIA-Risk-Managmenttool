@@ -155,7 +155,7 @@ namespace RiskManagmentTool.InterfaceLayer.WarningWindows
 
         private void dataGridViewMaatregelenCurrentIssue_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            dataGridViewMaatregelenCurrentIssue.SelectAll();
+            dataGridViewMaatregelenCurrentIssue.ClearSelection();//SelectAll();
             
         }
 

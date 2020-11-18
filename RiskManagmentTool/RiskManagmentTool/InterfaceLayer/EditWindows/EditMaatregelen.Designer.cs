@@ -133,6 +133,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "EditMaatregelen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditMaatregelen";
             this.ResumeLayout(false);
             this.PerformLayout();

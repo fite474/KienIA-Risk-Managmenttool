@@ -15,6 +15,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
     {
         private Datacomunication comunicator;
         private string IssueID;
+        private string test;
         public IssueRisicoDetails(string issueID)
         {
             InitializeComponent();
@@ -29,7 +30,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             DataTable risicoBeoordelingData = comunicator.GetRisicoBeoordelingFromIssue(IssueID);
 
             //DataRow row = risicoBeoordelingData.Rows[1];
-
+            
             textBoxIssueID.Text = IssueID;//risicoBeoordelingData.Columns[1].ToString();//Andere optie is Collums["name"]
             textBoxInit_Se.Text = risicoBeoordelingData.Rows[0].Field<int?>(2).ToString();//risicoBeoordelingData.Columns[2].ToString();
             textBoxInit_Fr.Text = risicoBeoordelingData.Rows[0].Field<int?>(3).ToString();
@@ -37,7 +38,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             textBoxInit_Av.Text = risicoBeoordelingData.Rows[0].Field<int?>(5).ToString();
             textBoxInit_Cl.Text = risicoBeoordelingData.Rows[0].Field<int?>(6).ToString();
             textBoxInit_Risico.Text = risicoBeoordelingData.Rows[0].Field<int?>(7).ToString();
-            textBoxInit_Se_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(8).ToString();
+            test = textBoxInit_Se_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(8).ToString();
             textBoxInit_Fr_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(9).ToString();
             textBoxInit_Pr_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(10).ToString();
             textBoxInit_Av_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(11).ToString();
@@ -129,6 +130,21 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
                                             rest_Se_Comment, rest_Fr_Comment, rest_Pr_Comment, rest_Av_Comment, rest_Cl_Comment, rest_Risico_Comment, rest_Ok);
             //}
             this.Close();
+        }
+
+        private void IssueRisicoDetails_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (textBoxInit_Se_Comment.Text != test)
+            {
+                // Display a MsgBox asking the user to save changes or abort.
+                if (MessageBox.Show("Do you want to save changes to your text?", "My Application",
+                   MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    // Cancel the Closing event from closing the form.
+                    e.Cancel = true;
+                    // Call method to save file...
+                }
+            }
         }
     }
 }

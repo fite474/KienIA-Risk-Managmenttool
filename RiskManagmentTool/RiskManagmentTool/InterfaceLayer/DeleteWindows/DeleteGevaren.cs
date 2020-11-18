@@ -61,7 +61,7 @@ namespace RiskManagmentTool.InterfaceLayer.DeleteWindows
             {
                 foreach (string issueId in SelectedGevarenId)
                 {
-                    comunicator.DeleteIssueFromObject(ObjectID, issueId);
+                    //comunicator.DeleteIssueFromObject(ObjectID, issueId);
                 }
             }
             else

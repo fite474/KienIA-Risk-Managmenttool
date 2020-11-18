@@ -128,17 +128,13 @@ namespace RiskManagmentTool.LogicLayer
             {
                 if (maatregelenVanIssue.Contains(maatregelID))
                 {
+                    string message = "Dit issue bevat al de maatregel met id: " + maatregelID + " \n En kan niet worden toegevoegd.";
 
-                    WarningAddToObject warningWindow = new WarningAddToObject();
-                    //warningWindow.ShowDialog();
-                    //SelectedTemplateIssueId.Remove()
-                    //string message = "Dit object bevat een issue met hetzelfde gevaar id.\n" +
-                    //    "Wilt u alleen de maatregelen en risicobeoordeling \n" +
-                    //    "overnemen en bij het bijbehorende issue updaten?";
-                    //string title = "Reminder Risico waardes";
-                    //MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                    //DialogResult result = MessageBox.Show(message, title, buttons);
-                    if (warningWindow.ShowDialog() == DialogResult.OK)
+                    string title = "Reminder Risico waardes";
+                    MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                    DialogResult result = MessageBox.Show(message, title, buttons);
+
+                    if (result == DialogResult.Yes)
                     {
                         //this.Close();
                     }
@@ -146,7 +142,25 @@ namespace RiskManagmentTool.LogicLayer
                     {
                         // Do something  
                     }
-                    warningWindow.Dispose();
+                    //WarningAddToObject warningWindow = new WarningAddToObject();
+                    ////warningWindow.MakeWarningOnMaatregelen();
+                    ////warningWindow.ShowDialog();
+                    ////SelectedTemplateIssueId.Remove()
+                    ////string message = "Dit object bevat een issue met hetzelfde gevaar id.\n" +
+                    ////    "Wilt u alleen de maatregelen en risicobeoordeling \n" +
+                    ////    "overnemen en bij het bijbehorende issue updaten?";
+                    ////string title = "Reminder Risico waardes";
+                    ////MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                    ////DialogResult result = MessageBox.Show(message, title, buttons);
+                    //if (warningWindow.ShowDialog() == DialogResult.OK)
+                    //{
+                    //    //this.Close();
+                    //}
+                    //else
+                    //{
+                    //    // Do something  
+                    //}
+                    //warningWindow.Dispose();
                 }
                 else
                 {

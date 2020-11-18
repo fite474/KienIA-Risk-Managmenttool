@@ -238,19 +238,24 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
         }
 
-        public void FindGevaarDisciplinesNull(string gevaarID)
-        {
 
 
 
 
-            //            SELECT id,
-            //  first_name,
-            //  last_name
-            //FROM children
-            //WHERE middle_name IS NULL;
 
-        }
+        //public void FindGevaarDisciplinesNull(string gevaarID)
+        //{
+
+
+
+
+        //    //            SELECT id,
+        //    //  first_name,
+        //    //  last_name
+        //    //FROM children
+        //    //WHERE middle_name IS NULL;
+
+        //}
 
 
 
@@ -633,7 +638,83 @@ namespace RiskManagmentTool.DataLayer
 
         }
 
-        
+
+        public void VerwijderGevaar_Disciplines(int gevaarID)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("DELETE FROM Gevaar_Discipline WHERE GevaarID = @GevaarID", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@GevaarID", gevaarID);
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+        public void VerwijderGevaar_Gebruiksfases(int gevaarID)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("DELETE FROM Gevaar_Gebruiksfase WHERE GevaarID = @GevaarID", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@GevaarID", gevaarID);
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+        public void VerwijderGevaar_Bedienvorm(int gevaarID)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("DELETE FROM Gevaar_Bedienvorm WHERE GevaarID = @GevaarID", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@GevaarID", gevaarID);
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+        public void VerwijderGevaar_Gebruiker(int gevaarID)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("DELETE FROM Gevaar_Gebruiker WHERE GevaarID = @GevaarID", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@GevaarID", gevaarID);
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+        public void VerwijderGevaar_GevaarlijkeZone(int gevaarID)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("DELETE FROM Gevaar_GevaarlijkeZone WHERE GevaarID = @GevaarID", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@GevaarID", gevaarID);
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+        public void VerwijderGevaar_Taak(int gevaarID)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("DELETE FROM Gevaar_Taak WHERE GevaarID = @GevaarID", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@GevaarID", gevaarID);
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+        public void VerwijderGevaar_GevaarType(int gevaarID)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("DELETE FROM Gevaar_GevaarType WHERE GevaarID = @GevaarID", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@GevaarID", gevaarID);
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+        public void VerwijderGevaar_Gevolg(int gevaarID)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("DELETE FROM Gevaar_Gevolg WHERE GevaarID = @GevaarID", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@GevaarID", gevaarID);
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+
+
+
+
 
 
         // END REGION DELETE
@@ -766,24 +847,7 @@ namespace RiskManagmentTool.DataLayer
         }
 
 
-        //update gevaren
-        public void UpdateGevaar_Disciplines(int gevaarID, int? disciplineID)
-        {
-            //sqlConnection.Open();
-            //SqlCommand cmd = new SqlCommand("INSERT INTO Gevaar_Discipline(GevaarID, DisciplineID) VALUES " +
-            //                                                           "(@GevaarID, @DisciplineID)", sqlConnection);
-            //cmd.Parameters.AddWithValue("@GevaarID", gevaarID);
-            //if (disciplineID == null)
-            //{
-            //    cmd.Parameters.AddWithValue("@DisciplineID", DBNull.Value);
-            //}
-            //else
-            //{
-            //    cmd.Parameters.AddWithValue("@DisciplineID", disciplineID);
-            //}
-            //cmd.ExecuteNonQuery();
-            //sqlConnection.Close();
-        }
+
 
 
 
@@ -1229,7 +1293,153 @@ namespace RiskManagmentTool.DataLayer
         //end get states
 
 
+        //start Gevaren data
 
+        public List<int> GetGevaar_Disciplines(string gevaarID)
+        {
+            List<int> gevaarDisciplines = new List<int>();
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT DisciplineID FROM Gevaar_Discipline " +
+                                            "WHERE GevaarID = '" + gevaarID + "'", sqlConnection);
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    if (!dr.IsDBNull(0))
+                    { gevaarDisciplines.Add(int.Parse((dr[0]).ToString()) - 1);}
+                }
+            }
+            sqlConnection.Close();
+            return gevaarDisciplines;
+        }
+        public List<int> GetGevaar_Bedienvorm(string gevaarID)
+        {
+            List<int> gevaarDisciplines = new List<int>();
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT BedienvormID FROM Gevaar_Bedienvorm " +
+                                            "WHERE GevaarID = '" + gevaarID + "'", sqlConnection);
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    if (!dr.IsDBNull(0))
+                    { gevaarDisciplines.Add(int.Parse((dr[0]).ToString()) - 1); }
+                }
+            }
+            sqlConnection.Close();
+            return gevaarDisciplines;
+        }
+
+        public List<int> GetGevaar_Gebruiker(string gevaarID)
+        {
+            List<int> gevaarDisciplines = new List<int>();
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT GebruikerID FROM Gevaar_Gebruiker " +
+                                            "WHERE GevaarID = '" + gevaarID + "'", sqlConnection);
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    if (!dr.IsDBNull(0))
+                    { gevaarDisciplines.Add(int.Parse((dr[0]).ToString()) - 1); }
+                }
+            }
+            sqlConnection.Close();
+            return gevaarDisciplines;
+        }
+
+        public List<int> GetGevaar_Gebruiksfase(string gevaarID)
+        {
+            List<int> gevaarDisciplines = new List<int>();
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT GebruiksfaseID FROM Gevaar_Gebruiksfase " +
+                                            "WHERE GevaarID = '" + gevaarID + "'", sqlConnection);
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    if (!dr.IsDBNull(0))
+                    { gevaarDisciplines.Add(int.Parse((dr[0]).ToString()) - 1); }
+                }
+            }
+            sqlConnection.Close();
+            return gevaarDisciplines;
+        }
+
+        public List<int> GetGevaar_GevaarlijkeZone(string gevaarID)
+        {
+            List<int> gevaarDisciplines = new List<int>();
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT GevaarlijkeZoneID FROM Gevaar_GevaarlijkeZone " +
+                                            "WHERE GevaarID = '" + gevaarID + "'", sqlConnection);
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    if (!dr.IsDBNull(0))
+                    { gevaarDisciplines.Add(int.Parse((dr[0]).ToString()) - 1); }
+                }
+            }
+            sqlConnection.Close();
+            return gevaarDisciplines;
+        }
+
+        public List<int> GetGevaar_GevaarType(string gevaarID)
+        {
+            List<int> gevaarDisciplines = new List<int>();
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT GevaarTypeID FROM Gevaar_GevaarType " +
+                                            "WHERE GevaarID = '" + gevaarID + "'", sqlConnection);
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    if (!dr.IsDBNull(0))
+                    { gevaarDisciplines.Add(int.Parse((dr[0]).ToString()) - 1); }
+                }
+            }
+            sqlConnection.Close();
+            return gevaarDisciplines;
+        }
+        public List<int> GetGevaar_Gevolg(string gevaarID)
+        {
+            List<int> gevaarDisciplines = new List<int>();
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT GevolgID FROM Gevaar_Gevolg " +
+                                            "WHERE GevaarID = '" + gevaarID + "'", sqlConnection);
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    if (!dr.IsDBNull(0))
+                    { gevaarDisciplines.Add(int.Parse((dr[0]).ToString()) - 1); }
+                }
+            }
+            sqlConnection.Close();
+            return gevaarDisciplines;
+        }
+
+        public List<int> GetGevaar_Taak(string gevaarID)
+        {
+            List<int> gevaarDisciplines = new List<int>();
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT TaakID FROM Gevaar_Taak " +
+                                            "WHERE GevaarID = '" + gevaarID + "'", sqlConnection);
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    if (!dr.IsDBNull(0))
+                    { gevaarDisciplines.Add(int.Parse((dr[0]).ToString()) - 1); }
+                }
+            }
+            sqlConnection.Close();
+            return gevaarDisciplines;
+        }
+
+
+
+        // end gevaren data
 
 
 

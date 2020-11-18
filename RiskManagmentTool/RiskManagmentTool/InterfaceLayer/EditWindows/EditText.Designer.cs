@@ -69,6 +69,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "EditText";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditText";
             this.ResumeLayout(false);
             this.PerformLayout();

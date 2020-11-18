@@ -114,6 +114,7 @@
             this.Controls.Add(this.buttonAddOption);
             this.Controls.Add(this.listBoxMenuOptions);
             this.Name = "EditKeuzes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditKeuzes";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -264,29 +264,6 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
 
 
-        private void buttonAddFromTemplateGevaren_Click(object sender, EventArgs e)
-        {
-            //string selectedTemplateName = comboBoxViewTemplate.SelectedItem.ToString();
-            //if (!comboBoxWeergaveTemplateNaam.Items.Contains(selectedTemplateName))
-            //{
-            //    comboBoxWeergaveTemplateNaam.Items.Add(selectedTemplateName);
-            //}
-            //string gevaarID = "";
-            //foreach (DataGridViewRow row in dataGridViewTemplateViewGevaren.SelectedRows)
-            //{
-            //    gevaarID = row.Cells[0].Value.ToString();
-            //    if (!SelectedTemplateGevaarId.Contains(gevaarID))
-            //    {
-            //        SelectedTemplateGevaarId.Add(gevaarID);
-            //    }
-            //}
-            //dataGridViewTemplateViewGevaren.ClearSelection();
-
-            //List<string> temp = controler.CheckObjectForDubbleGevaren(SelectedTemplateGevaarId);
-            //SelectedTemplateGevaarId = temp;
-            //SelectedTemplateGevaarId.Clear();
-        }
-
 
 
 

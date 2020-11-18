@@ -38,9 +38,9 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 
         private void dataGridViewRisicos_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            //string riskId = dataGridViewRisicos.SelectedRows[0].Cells[0].Value.ToString();
-            string riskBeschrijving = dataGridViewRisicos.SelectedRows[0].Cells[1].Value.ToString();
-            string riskGevolg = dataGridViewRisicos.SelectedRows[0].Cells[2].Value.ToString();
+            string gevaarId = dataGridViewRisicos.SelectedRows[0].Cells[0].Value.ToString();
+            //string riskBeschrijving = dataGridViewRisicos.SelectedRows[0].Cells[1].Value.ToString();
+            //string riskGevolg = dataGridViewRisicos.SelectedRows[0].Cells[2].Value.ToString();
             //string riskDiscipline = dataGridViewRisicos.SelectedRows[0].Cells[3].Value.ToString();
             //string riskGebruiksfase = dataGridViewRisicos.SelectedRows[0].Cells[4].Value.ToString();
             //string riskGebruiker = dataGridViewRisicos.SelectedRows[0].Cells[5].Value.ToString();
@@ -50,17 +50,21 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
             //string riskProbability = dataGridViewRisicos.SelectedRows[0].Cells[9].Value.ToString();
             //string riskAvoidance = dataGridViewRisicos.SelectedRows[0].Cells[10].Value.ToString();
 
-            Form editRisicosForm = new EditRisicos(riskBeschrijving,
-                            riskGevolg);//,
-                            //riskDiscipline,
-                            //riskGebruiksfase,
-                            //riskGebruiker,
-                            //riskGevarenzone);
-            //                riskSeverity,
-            //                riskFrequency,
-            //                riskProbability,
-            //                riskAvoidance);
+            Form editRisicosForm = new EditRisicos(gevaarId);
             editRisicosForm.Show();
+
+
+            //Form editRisicosForm = new EditRisicos(riskBeschrijving,
+            //                riskGevolg);//,
+            //                //riskDiscipline,
+            //                //riskGebruiksfase,
+            //                //riskGebruiker,
+            //                //riskGevarenzone);
+            ////                riskSeverity,
+            ////                riskFrequency,
+            ////                riskProbability,
+            ////                riskAvoidance);
+            //editRisicosForm.Show();
             //RefreshTable();
 
 

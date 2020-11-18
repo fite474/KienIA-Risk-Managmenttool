@@ -201,8 +201,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private void buttonAddTemplate_Click(object sender, EventArgs e)
         {
             
-            Form addTemplate = new AddTemplate();
-            addTemplate.Show();
+            //Form addTemplate = new AddTemplate();
+            //addTemplate.Show();
         }
 
         private void dataGridViewGekoppeldeIssues_MouseDoubleClick(object sender, MouseEventArgs e)

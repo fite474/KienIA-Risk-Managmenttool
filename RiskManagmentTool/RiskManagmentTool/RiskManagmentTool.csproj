@@ -126,6 +126,12 @@
     <Compile Include="InterfaceLayer\AddWindows\AddTemplate.Designer.cs">
       <DependentUpon>AddTemplate.cs</DependentUpon>
     </Compile>
+    <Compile Include="InterfaceLayer\DeleteWindows\DeleteGekoppeldeMaatregelen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\DeleteWindows\DeleteGekoppeldeMaatregelen.Designer.cs">
+      <DependentUpon>DeleteGekoppeldeMaatregelen.cs</DependentUpon>
+    </Compile>
     <Compile Include="InterfaceLayer\DeleteWindows\DeleteGevaren.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -284,6 +290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InterfaceLayer\AddWindows\AddTemplate.resx">
       <DependentUpon>AddTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\DeleteWindows\DeleteGekoppeldeMaatregelen.resx">
+      <DependentUpon>DeleteGekoppeldeMaatregelen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterfaceLayer\DeleteWindows\DeleteGevaren.resx">
       <DependentUpon>DeleteGevaren.cs</DependentUpon>

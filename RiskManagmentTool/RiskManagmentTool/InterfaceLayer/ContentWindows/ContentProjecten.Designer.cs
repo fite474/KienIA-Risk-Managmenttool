@@ -34,8 +34,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelEditProject = new System.Windows.Forms.Panel();
             this.dataGridViewProjecten = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panelEditProject.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProjecten)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,6 +81,7 @@
             // 
             // panelEditProject
             // 
+            this.panelEditProject.Controls.Add(this.label1);
             this.panelEditProject.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEditProject.Location = new System.Drawing.Point(284, 0);
             this.panelEditProject.Name = "panelEditProject";
@@ -101,6 +104,16 @@
             this.dataGridViewProjecten.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewProjecten_DataBindingComplete);
             this.dataGridViewProjecten.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewProjecten_MouseDoubleClick);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(17, 139);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(298, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Klik op een project om de objecten te bekijken";
+            this.label1.Visible = false;
+            // 
             // ContentProjecten
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -112,6 +125,8 @@
             this.Text = "ContentProjecten";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panelEditProject.ResumeLayout(false);
+            this.panelEditProject.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProjecten)).EndInit();
             this.ResumeLayout(false);
 
@@ -125,5 +140,6 @@
         private System.Windows.Forms.Button buttonAddNew;
         private System.Windows.Forms.DataGridView dataGridViewProjecten;
         private System.Windows.Forms.Panel panelEditProject;
+        private System.Windows.Forms.Label label1;
     }
 }

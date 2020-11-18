@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RiskManagmentTool.LogicLayer;
 using RiskManagmentTool.InterfaceLayer.AddWindows;
+using RiskManagmentTool.InterfaceLayer.DeleteWindows;
 
 namespace RiskManagmentTool.InterfaceLayer.EditWindows
 {
@@ -144,6 +145,12 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         {
             string issueState = checkBoxIssueOK.Checked == true ? "1" : "0";
             comunicator.UpdateIssueState(IssueID, issueState);
+        }
+
+        private void buttonDeleteMaatregelen_Click(object sender, EventArgs e)
+        {
+            DeleteGekoppeldeMaatregelen deleteGekoppeldeMaatregelen = new DeleteGekoppeldeMaatregelen();
+            deleteGekoppeldeMaatregelen.Show();
         }
     }
 }

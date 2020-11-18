@@ -133,6 +133,7 @@
             this.Controls.Add(this.dataGridViewIssueMaatregelen);
             this.Controls.Add(this.panel1);
             this.Name = "AddMaatregelenFromOtherIssue";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddMaatregelenFromOtherIssue";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

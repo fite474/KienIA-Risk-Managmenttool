@@ -354,6 +354,7 @@
             this.checkedListBoxCustomSettings.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.checkedListBoxCustomSettings.Size = new System.Drawing.Size(244, 106);
             this.checkedListBoxCustomSettings.TabIndex = 23;
+            this.checkedListBoxCustomSettings.Visible = false;
             // 
             // checkedListBoxWarningSettings
             // 

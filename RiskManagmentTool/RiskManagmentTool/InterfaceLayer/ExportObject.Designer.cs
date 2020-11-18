@@ -34,15 +34,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dataGridViewCompleteBeoordeling = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.buttonConfirmExport = new System.Windows.Forms.Button();
-            this.dataGridViewCompleteBeoordeling = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCompleteBeoordeling)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -102,29 +102,8 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1089, 562);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "Issues weergave";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.checkedListBox1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(429, 229);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // buttonConfirmExport
-            // 
-            this.buttonConfirmExport.Location = new System.Drawing.Point(565, 12);
-            this.buttonConfirmExport.Name = "buttonConfirmExport";
-            this.buttonConfirmExport.Size = new System.Drawing.Size(153, 67);
-            this.buttonConfirmExport.TabIndex = 5;
-            this.buttonConfirmExport.Text = "Export";
-            this.buttonConfirmExport.UseVisualStyleBackColor = true;
-            this.buttonConfirmExport.Click += new System.EventHandler(this.buttonConfirmExport_Click);
             // 
             // dataGridViewCompleteBeoordeling
             // 
@@ -138,6 +117,27 @@
             this.dataGridViewCompleteBeoordeling.RowTemplate.Height = 24;
             this.dataGridViewCompleteBeoordeling.Size = new System.Drawing.Size(1083, 556);
             this.dataGridViewCompleteBeoordeling.TabIndex = 0;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.checkedListBox1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1089, 562);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Export instellingen";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // buttonConfirmExport
+            // 
+            this.buttonConfirmExport.Location = new System.Drawing.Point(565, 12);
+            this.buttonConfirmExport.Name = "buttonConfirmExport";
+            this.buttonConfirmExport.Size = new System.Drawing.Size(153, 67);
+            this.buttonConfirmExport.TabIndex = 5;
+            this.buttonConfirmExport.Text = "Export";
+            this.buttonConfirmExport.UseVisualStyleBackColor = true;
+            this.buttonConfirmExport.Click += new System.EventHandler(this.buttonConfirmExport_Click);
             // 
             // panel1
             // 
@@ -171,8 +171,8 @@
             this.Text = "ExportObject";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCompleteBeoordeling)).EndInit();
+            this.tabPage2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

@@ -29,10 +29,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void LoadData()
         {
-
             textBoxProjectNaam.Text = ProjectNaam;
             dataGridViewGekoppeldeObjecten.DataSource = comunicator.GetObjectenFromProject(ProjectId);
-
         }
 
         private void dataGridViewGekoppeldeObjecten_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -46,20 +44,12 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             Form editObject = new EditObjecten(projectID, projectNaam, objectNaam, objectType, objectOmschrijving);
             editObject.Show();
 
-
-
         }
 
         private void buttonMakeNewObject_Click(object sender, EventArgs e)
         {
             Form initObject = new InitObject(ProjectId, ProjectNaam);
             initObject.Show();
-        }
-
-        private void buttonExport_Click(object sender, EventArgs e)
-        {
-            //Form exportObject = new ExportObject();
-            //exportObject.Show();
         }
 
         private void dataGridViewGekoppeldeObjecten_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)

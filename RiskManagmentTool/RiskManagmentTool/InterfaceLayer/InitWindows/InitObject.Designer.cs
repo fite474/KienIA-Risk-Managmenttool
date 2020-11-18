@@ -130,6 +130,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(582, 353);
             this.tabControl1.TabIndex = 8;
+            this.tabControl1.Visible = false;
             // 
             // tabPage1
             // 
@@ -197,6 +198,7 @@
             this.label4.Size = new System.Drawing.Size(124, 17);
             this.label4.TabIndex = 9;
             this.label4.Text = "Object instellingen";
+            this.label4.Visible = false;
             // 
             // label7
             // 

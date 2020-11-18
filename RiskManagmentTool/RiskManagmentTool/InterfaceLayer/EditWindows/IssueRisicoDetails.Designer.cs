@@ -573,7 +573,9 @@
             this.Controls.Add(this.panel2);
             this.MinimumSize = new System.Drawing.Size(970, 1028);
             this.Name = "IssueRisicoDetails";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditIssue";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.IssueRisicoDetails_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

@@ -23,8 +23,8 @@ namespace RiskManagmentTool.DataLayer
 
         public string GetConnectionString()
         {
-            string x = @"Data Source=MSI-MAURICE;Initial Catalog=KRMTVersionOne;User ID=Maurice;Password=6776756mb";
-            return x;
+            string connectionString = @"Data Source=MSI-MAURICE;Initial Catalog=KRMTVersionOne;User ID=Maurice;Password=6776756mb";
+            return connectionString;
         }
 
 

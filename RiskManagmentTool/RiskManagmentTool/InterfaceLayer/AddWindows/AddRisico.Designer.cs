@@ -34,6 +34,7 @@
             this.dataGridViewLosseItems = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonCreateNewTemplate = new System.Windows.Forms.Button();
             this.buttonAddFromTemplateIssues = new System.Windows.Forms.Button();
             this.comboBoxViewTemplate = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -55,7 +56,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.buttonCreateNewGevaar = new System.Windows.Forms.Button();
-            this.buttonCreateNewTemplate = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLosseItems)).BeginInit();
@@ -92,11 +92,11 @@
             // 
             // buttonAddSingleItems
             // 
-            this.buttonAddSingleItems.Location = new System.Drawing.Point(1094, 16);
+            this.buttonAddSingleItems.Location = new System.Drawing.Point(1043, 16);
             this.buttonAddSingleItems.Name = "buttonAddSingleItems";
-            this.buttonAddSingleItems.Size = new System.Drawing.Size(104, 43);
+            this.buttonAddSingleItems.Size = new System.Drawing.Size(155, 56);
             this.buttonAddSingleItems.TabIndex = 1;
-            this.buttonAddSingleItems.Text = "Add selection";
+            this.buttonAddSingleItems.Text = "Koppel geselecteerde gevaren";
             this.buttonAddSingleItems.UseVisualStyleBackColor = true;
             this.buttonAddSingleItems.Click += new System.EventHandler(this.buttonAddSingleItems_Click);
             // 
@@ -139,13 +139,23 @@
             this.panel1.Size = new System.Drawing.Size(1326, 63);
             this.panel1.TabIndex = 0;
             // 
+            // buttonCreateNewTemplate
+            // 
+            this.buttonCreateNewTemplate.Location = new System.Drawing.Point(360, 14);
+            this.buttonCreateNewTemplate.Name = "buttonCreateNewTemplate";
+            this.buttonCreateNewTemplate.Size = new System.Drawing.Size(163, 33);
+            this.buttonCreateNewTemplate.TabIndex = 3;
+            this.buttonCreateNewTemplate.Text = "Maak nieuw template";
+            this.buttonCreateNewTemplate.UseVisualStyleBackColor = true;
+            this.buttonCreateNewTemplate.Click += new System.EventHandler(this.buttonCreateNewTemplate_Click);
+            // 
             // buttonAddFromTemplateIssues
             // 
-            this.buttonAddFromTemplateIssues.Location = new System.Drawing.Point(1016, 14);
+            this.buttonAddFromTemplateIssues.Location = new System.Drawing.Point(892, 14);
             this.buttonAddFromTemplateIssues.Name = "buttonAddFromTemplateIssues";
-            this.buttonAddFromTemplateIssues.Size = new System.Drawing.Size(104, 43);
+            this.buttonAddFromTemplateIssues.Size = new System.Drawing.Size(181, 43);
             this.buttonAddFromTemplateIssues.TabIndex = 2;
-            this.buttonAddFromTemplateIssues.Text = "Add selection";
+            this.buttonAddFromTemplateIssues.Text = "Koppel geselecteerde gevaren";
             this.buttonAddFromTemplateIssues.UseVisualStyleBackColor = true;
             this.buttonAddFromTemplateIssues.Click += new System.EventHandler(this.buttonAddFromTemplateIssues_Click);
             // 
@@ -221,11 +231,11 @@
             // 
             // buttonAddFromObject
             // 
-            this.buttonAddFromObject.Location = new System.Drawing.Point(812, 11);
+            this.buttonAddFromObject.Location = new System.Drawing.Point(787, 11);
             this.buttonAddFromObject.Name = "buttonAddFromObject";
-            this.buttonAddFromObject.Size = new System.Drawing.Size(104, 43);
+            this.buttonAddFromObject.Size = new System.Drawing.Size(159, 52);
             this.buttonAddFromObject.TabIndex = 2;
-            this.buttonAddFromObject.Text = "Add selection";
+            this.buttonAddFromObject.Text = "Koppel geselecteerde gevaren";
             this.buttonAddFromObject.UseVisualStyleBackColor = true;
             this.buttonAddFromObject.Click += new System.EventHandler(this.buttonAddFromObject_Click);
             // 
@@ -347,16 +357,6 @@
             this.buttonCreateNewGevaar.Text = "Maak nieuw gevaar aan";
             this.buttonCreateNewGevaar.UseVisualStyleBackColor = true;
             this.buttonCreateNewGevaar.Click += new System.EventHandler(this.buttonCreateNewGevaar_Click);
-            // 
-            // buttonCreateNewTemplate
-            // 
-            this.buttonCreateNewTemplate.Location = new System.Drawing.Point(360, 14);
-            this.buttonCreateNewTemplate.Name = "buttonCreateNewTemplate";
-            this.buttonCreateNewTemplate.Size = new System.Drawing.Size(163, 33);
-            this.buttonCreateNewTemplate.TabIndex = 3;
-            this.buttonCreateNewTemplate.Text = "Maak nieuw template";
-            this.buttonCreateNewTemplate.UseVisualStyleBackColor = true;
-            this.buttonCreateNewTemplate.Click += new System.EventHandler(this.buttonCreateNewTemplate_Click);
             // 
             // AddRisico
             // 

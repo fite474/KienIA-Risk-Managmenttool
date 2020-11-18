@@ -65,8 +65,16 @@ namespace RiskManagmentTool.InterfaceLayer.WarningWindows
             dataGridViewMaatregelenCurrentIssue.DataSource = comunicator.GetIssueMaatregelen(objectIssueId);
             dataGridViewMaatregelenNewIssue.DataSource = comunicator.GetIssueMaatregelen(issueToAddId);
 
-
         }
+
+        //public void MakeWarningOnMaatregelen()
+        //{
+
+        //    textBoxWarningMessage.Text = "Het huidige object bevat al een issue waarbij het gevaar ID overeen" +
+        //        " komt met het issue dat u probeert toe te voegen. \n" +
+        //        "Maak een keuze wat u wilt overnemen van het gekozen issue";
+
+        //}
 
         private void MakeCustomBeoordeling()
         {

@@ -463,6 +463,7 @@
             this.buttonDeleteMaatregelen.TabIndex = 7;
             this.buttonDeleteMaatregelen.Text = "Verwijder maatregelen";
             this.buttonDeleteMaatregelen.UseVisualStyleBackColor = true;
+            this.buttonDeleteMaatregelen.Click += new System.EventHandler(this.buttonDeleteMaatregelen_Click);
             // 
             // panel5
             // 

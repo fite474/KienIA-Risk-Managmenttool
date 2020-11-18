@@ -379,6 +379,7 @@
             this.comboBoxObjectenWeergave.Name = "comboBoxObjectenWeergave";
             this.comboBoxObjectenWeergave.Size = new System.Drawing.Size(121, 24);
             this.comboBoxObjectenWeergave.TabIndex = 1;
+            this.comboBoxObjectenWeergave.Visible = false;
             this.comboBoxObjectenWeergave.SelectedIndexChanged += new System.EventHandler(this.comboBoxObjectenWeergave_SelectedIndexChanged);
             // 
             // label12
@@ -389,6 +390,7 @@
             this.label12.Size = new System.Drawing.Size(57, 17);
             this.label12.TabIndex = 0;
             this.label12.Text = "Object: ";
+            this.label12.Visible = false;
             // 
             // panel2
             // 
@@ -426,6 +428,7 @@
             this.label11.Size = new System.Drawing.Size(94, 17);
             this.label11.TabIndex = 23;
             this.label11.Text = "MAG WEG!!!!!!";
+            this.label11.Visible = false;
             // 
             // buttonCreateNewMaatregel
             // 
@@ -499,6 +502,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Name = "AddMaatregel";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddMaatregel";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMaatregelen)).EndInit();
             this.tabControl1.ResumeLayout(false);

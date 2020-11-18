@@ -69,6 +69,7 @@
             this.button2.TabIndex = 5;
             this.button2.Text = "Zoeken";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
             // 
             // label1
             // 
@@ -96,6 +97,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(383, 22);
             this.textBox2.TabIndex = 2;
+            this.textBox2.Visible = false;
             // 
             // label2
             // 
@@ -107,13 +109,14 @@
             this.label2.Size = new System.Drawing.Size(279, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "Zoek op kernwoord";
+            this.label2.Visible = false;
             // 
             // buttonZoekIssueNummer
             // 
             this.buttonZoekIssueNummer.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.buttonZoekIssueNummer.Location = new System.Drawing.Point(677, 123);
+            this.buttonZoekIssueNummer.Location = new System.Drawing.Point(677, 119);
             this.buttonZoekIssueNummer.Name = "buttonZoekIssueNummer";
-            this.buttonZoekIssueNummer.Size = new System.Drawing.Size(75, 23);
+            this.buttonZoekIssueNummer.Size = new System.Drawing.Size(93, 32);
             this.buttonZoekIssueNummer.TabIndex = 4;
             this.buttonZoekIssueNummer.Text = "Zoeken";
             this.buttonZoekIssueNummer.UseVisualStyleBackColor = true;

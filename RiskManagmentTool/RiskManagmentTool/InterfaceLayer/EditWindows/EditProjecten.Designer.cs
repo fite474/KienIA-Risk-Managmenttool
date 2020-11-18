@@ -36,7 +36,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.buttonExport = new System.Windows.Forms.Button();
             this.dataGridViewGekoppeldeObjecten = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonMakeNewObject = new System.Windows.Forms.Button();
@@ -96,7 +95,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(894, 147);
+            this.label5.Location = new System.Drawing.Point(891, 102);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 17);
             this.label5.TabIndex = 4;
@@ -106,9 +105,9 @@
             // 
             this.panel1.Controls.Add(this.tabControl1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 210);
+            this.panel1.Location = new System.Drawing.Point(0, 169);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1575, 602);
+            this.panel1.Size = new System.Drawing.Size(1575, 643);
             this.panel1.TabIndex = 5;
             // 
             // tabControl1
@@ -119,31 +118,20 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1575, 602);
+            this.tabControl1.Size = new System.Drawing.Size(1575, 643);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.buttonExport);
             this.tabPage2.Controls.Add(this.dataGridViewGekoppeldeObjecten);
             this.tabPage2.Controls.Add(this.panel2);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1567, 573);
+            this.tabPage2.Size = new System.Drawing.Size(1567, 614);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Gekoppelde objecten";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // buttonExport
-            // 
-            this.buttonExport.Location = new System.Drawing.Point(99, 486);
-            this.buttonExport.Name = "buttonExport";
-            this.buttonExport.Size = new System.Drawing.Size(219, 33);
-            this.buttonExport.TabIndex = 2;
-            this.buttonExport.Text = "Geselecteerd object exporteren";
-            this.buttonExport.UseVisualStyleBackColor = true;
-            this.buttonExport.Click += new System.EventHandler(this.buttonExport_Click);
             // 
             // dataGridViewGekoppeldeObjecten
             // 
@@ -157,7 +145,7 @@
             this.dataGridViewGekoppeldeObjecten.ReadOnly = true;
             this.dataGridViewGekoppeldeObjecten.RowTemplate.Height = 24;
             this.dataGridViewGekoppeldeObjecten.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewGekoppeldeObjecten.Size = new System.Drawing.Size(1561, 377);
+            this.dataGridViewGekoppeldeObjecten.Size = new System.Drawing.Size(1561, 503);
             this.dataGridViewGekoppeldeObjecten.TabIndex = 0;
             this.dataGridViewGekoppeldeObjecten.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewGekoppeldeObjecten_DataBindingComplete);
             this.dataGridViewGekoppeldeObjecten.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewGekoppeldeObjecten_MouseDoubleClick);
@@ -191,6 +179,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Zoeken";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
             // 
             // textBox2
             // 
@@ -198,6 +187,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(208, 22);
             this.textBox2.TabIndex = 0;
+            this.textBox2.Visible = false;
             // 
             // tabPage1
             // 
@@ -319,6 +309,5 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button buttonExport;
     }
 }

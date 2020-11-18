@@ -54,6 +54,12 @@
     <Compile Include="InterfaceLayer\AddWindows\AddMaatregel.Designer.cs">
       <DependentUpon>AddMaatregel.cs</DependentUpon>
     </Compile>
+    <Compile Include="InterfaceLayer\AddWindows\AddMaatregelenFromOtherIssue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\AddWindows\AddMaatregelenFromOtherIssue.Designer.cs">
+      <DependentUpon>AddMaatregelenFromOtherIssue.cs</DependentUpon>
+    </Compile>
     <Compile Include="InterfaceLayer\AddWindows\AddRisico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +248,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="InterfaceLayer\AddWindows\AddMaatregel.resx">
       <DependentUpon>AddMaatregel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\AddWindows\AddMaatregelenFromOtherIssue.resx">
+      <DependentUpon>AddMaatregelenFromOtherIssue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterfaceLayer\AddWindows\AddRisico.resx">
       <DependentUpon>AddRisico.cs</DependentUpon>

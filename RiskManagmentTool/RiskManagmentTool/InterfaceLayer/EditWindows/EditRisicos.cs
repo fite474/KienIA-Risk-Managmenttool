@@ -118,54 +118,54 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private void LoadComboBoxes()
         {
             //TypeObjectItems = keuzeMenus.GetTypeObjectMenu();
-            GevolgenItems = keuzeMenus.GetGevolgenMenu();
-            GevarenzonesItems = keuzeMenus.GetGevarenzoneMenu();
-            GevaarTypesItems = keuzeMenus.GetGevaarTypeMenu();
-            GebruiksfaseItems = keuzeMenus.GetGebruikersfasesMenu();
-            GebruikersItems = keuzeMenus.GetGebruikersMenu();
-            DisciplinesItems = keuzeMenus.GetDisciplinesMenu();
-            BedienvormenItems = keuzeMenus.GetBedienvormenMenu();
-            TakenItems = keuzeMenus.GetTakenMenu();
+            //GevolgenItems = keuzeMenus.GetGevolgenMenu();
+            //GevarenzonesItems = keuzeMenus.GetGevarenzoneMenu();
+            //GevaarTypesItems = keuzeMenus.GetGevaarTypeMenu();
+            //GebruiksfaseItems = keuzeMenus.GetGebruikersfasesMenu();
+            //GebruikersItems = keuzeMenus.GetGebruikersMenu();
+            //DisciplinesItems = keuzeMenus.GetDisciplinesMenu();
+            //BedienvormenItems = keuzeMenus.GetBedienvormenMenu();
+            //TakenItems = keuzeMenus.GetTakenMenu();
 
-            foreach (string menuOption in GevolgenItems)
-            {
-                comboBoxGevolg.Items.Add(menuOption);
-            }
+            //foreach (string menuOption in GevolgenItems)
+            //{
+            //    comboBoxGevolg.Items.Add(menuOption);
+            //}
 
-            foreach (string menuOption in GevarenzonesItems)
-            {
-                comboBoxGevaarlijkeZone.Items.Add(menuOption);
-            }
+            //foreach (string menuOption in GevarenzonesItems)
+            //{
+            //    comboBoxGevaarlijkeZone.Items.Add(menuOption);
+            //}
 
-            foreach (string menuOption in GevaarTypesItems)
-            {
-                comboBoxGevaar.Items.Add(menuOption);
-            }
+            //foreach (string menuOption in GevaarTypesItems)
+            //{
+            //    comboBoxGevaar.Items.Add(menuOption);
+            //}
 
-            foreach (string menuOption in GebruiksfaseItems)
-            {
-                comboBoxGebruiksfase.Items.Add(menuOption);
-            }
+            //foreach (string menuOption in GebruiksfaseItems)
+            //{
+            //    comboBoxGebruiksfase.Items.Add(menuOption);
+            //}
 
-            foreach (string menuOption in GebruikersItems)
-            {
-                comboBoxGebruiker.Items.Add(menuOption);
-            }
+            //foreach (string menuOption in GebruikersItems)
+            //{
+            //    comboBoxGebruiker.Items.Add(menuOption);
+            //}
 
-            foreach (string menuOption in DisciplinesItems)
-            {
-                comboBoxDiscipline.Items.Add(menuOption);
-            }
+            //foreach (string menuOption in DisciplinesItems)
+            //{
+            //    comboBoxDiscipline.Items.Add(menuOption);
+            //}
 
-            foreach (string menuOption in BedienvormenItems)
-            {
-                comboBoxBedienVorm.Items.Add(menuOption);
-            }
+            //foreach (string menuOption in BedienvormenItems)
+            //{
+            //    comboBoxBedienVorm.Items.Add(menuOption);
+            //}
 
-            foreach (string menuOption in TakenItems)
-            {
-                comboBoxTaak.Items.Add(menuOption);
-            }
+            //foreach (string menuOption in TakenItems)
+            //{
+            //    comboBoxTaak.Items.Add(menuOption);
+            //}
 
 
 

@@ -59,30 +59,76 @@ namespace RiskManagmentTool.LogicLayer
         {
             int gevaarID = databaseCommunication.InitMakeGevaar(gevaarlijkeSituatie, gevaarlijkeGebeurtenis);
 
-            foreach (int disciplineID in GevaarDisciplines)
-            {databaseCommunication.MakeGevaar_Disciplines(gevaarID, (disciplineID + 1 )); }
+            if (GevaarDisciplines.Count > 0)
+            {
+                foreach (int disciplineID in GevaarDisciplines)
+                { databaseCommunication.MakeGevaar_Disciplines(gevaarID, (disciplineID + 1)); }
+            }
+            else
+            {databaseCommunication.MakeGevaar_Disciplines(gevaarID, null);}
+            
 
-            foreach (int gebruiksfaseID in GevaarGebruiksfase)
-            { databaseCommunication.MakeGevaar_Gebruiksfase(gevaarID, (gebruiksfaseID + 1)); }
+            if (GevaarGebruiksfase.Count > 0)
+            {
+                foreach (int gebruiksfaseID in GevaarGebruiksfase)
+                { databaseCommunication.MakeGevaar_Gebruiksfase(gevaarID, (gebruiksfaseID + 1)); }
+            }
+            else
+            { databaseCommunication.MakeGevaar_Gebruiksfase(gevaarID, null); }
+            
 
-            foreach (int bedienvormID in GevaarBedienvorm)
-            { databaseCommunication.MakeGevaar_Bedienvorm(gevaarID, (bedienvormID + 1)); }
+            if (GevaarBedienvorm.Count > 0)
+            {
+                foreach (int bedienvormID in GevaarBedienvorm)
+                { databaseCommunication.MakeGevaar_Bedienvorm(gevaarID, (bedienvormID + 1)); }
+            }
+            else
+            {databaseCommunication.MakeGevaar_Bedienvorm(gevaarID, null); }
+            
 
-            foreach (int gebruikerID in GevaarGebruiker)
-            { databaseCommunication.MakeGevaar_Gebruiker(gevaarID, (gebruikerID + 1)); }
+            if (GevaarGebruiker.Count > 0)
+            {
+                foreach (int gebruikerID in GevaarGebruiker)
+                { databaseCommunication.MakeGevaar_Gebruiker(gevaarID, (gebruikerID + 1)); }
+            }
+            else
+            { databaseCommunication.MakeGevaar_Gebruiker(gevaarID, null);}
+            
 
-            foreach (int gevaarlijkeZoneID in GevaarGevaarlijkeZone)
-            { databaseCommunication.MakeGevaar_GevaarlijkeZone(gevaarID, (gevaarlijkeZoneID + 1)); }
+            if (GevaarGevaarlijkeZone.Count > 0)
+            {
+                foreach (int gevaarlijkeZoneID in GevaarGevaarlijkeZone)
+                { databaseCommunication.MakeGevaar_GevaarlijkeZone(gevaarID, (gevaarlijkeZoneID + 1)); }
+            }
+            else
+            { databaseCommunication.MakeGevaar_GevaarlijkeZone(gevaarID, null); }
+            
 
-            foreach (int taakID in GevaarTaak)
-            { databaseCommunication.MakeGevaar_Taak(gevaarID, (taakID + 1)); }
+            if (GevaarTaak.Count > 0)
+            {
+                foreach (int taakID in GevaarTaak)
+                { databaseCommunication.MakeGevaar_Taak(gevaarID, (taakID + 1)); }
+            }
+            else
+            {databaseCommunication.MakeGevaar_Taak(gevaarID, null);}
+            
 
-            foreach (int gevaarTypeID in GevaarGevaarType)
-            { databaseCommunication.MakeGevaar_GevaarType(gevaarID, (gevaarTypeID + 1)); }
+            if (GevaarGevaarType.Count > 0)
+            {
+                foreach (int gevaarTypeID in GevaarGevaarType)
+                { databaseCommunication.MakeGevaar_GevaarType(gevaarID, (gevaarTypeID + 1)); }
+            }
+            else
+            {databaseCommunication.MakeGevaar_GevaarType(gevaarID, null); }
+            
 
-            foreach (int gevolgID in GevaarGevolg)
-            { databaseCommunication.MakeGevaar_Gevolg(gevaarID, (gevolgID + 1)); }
-
+            if (GevaarGevolg.Count > 0)
+            {
+                foreach (int gevolgID in GevaarGevolg)
+                { databaseCommunication.MakeGevaar_Gevolg(gevaarID, (gevolgID + 1)); }
+            }
+            else
+            {databaseCommunication.MakeGevaar_Gevolg(gevaarID, null); }
         }
 
 
@@ -444,6 +490,14 @@ namespace RiskManagmentTool.LogicLayer
 
 
         //Begin redirect options
+        public string GetGevaarIdByIssueID(string issueID)
+        {
+            string gevaarId = "";
+            gevaarId = databaseCommunication.FindGevaarID(issueID);
+
+            return gevaarId;
+        }
+
 
         public string GetObjectIdByIssueNmr(string issueID)
         {
@@ -497,6 +551,14 @@ namespace RiskManagmentTool.LogicLayer
         public DataTable GetAllIssues()
         {
             SqlDataAdapter adapter = databaseCommunication.GetAllIssues();
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            return data;
+        }
+
+        public DataTable GetAllIssuesWithGevaarID(string gevaarID)
+        {
+            SqlDataAdapter adapter = databaseCommunication.GetAllIssuesWithGevaarID(gevaarID);
             DataTable data = new DataTable();
             adapter.Fill(data);
             return data;
@@ -681,7 +743,25 @@ namespace RiskManagmentTool.LogicLayer
         // end check states
 
 
+        // START GEVAREN LISTS
+        public void FindGevaarDisciplinesNull(string gevaarID)
+        {
 
+            
+            
+            
+            //            SELECT id,
+//  first_name,
+//  last_name
+//FROM children
+//WHERE middle_name IS NULL;
+
+        }
+
+
+
+
+        // END GEVAREN LISTS
 
 
 
@@ -758,7 +838,7 @@ namespace RiskManagmentTool.LogicLayer
             switch (item.ItemType)
             {
                 case ItemType.Gevaar:
-                    databaseCommunication.MakeGevaar(item);
+                    //databaseCommunication.MakeGevaar(item);
                     break;
                 case ItemType.Maatregel:
                     databaseCommunication.MakeMaatregel(item);

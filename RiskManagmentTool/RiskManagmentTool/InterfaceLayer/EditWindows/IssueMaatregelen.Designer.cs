@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.textBoxRest_Risico_Comment = new System.Windows.Forms.TextBox();
             this.textBoxInit_Risico_Comment = new System.Windows.Forms.TextBox();
             this.textBoxRest_Risico = new System.Windows.Forms.TextBox();
@@ -60,15 +61,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button3 = new System.Windows.Forms.Button();
             this.dataGridViewIssueMaatregelen = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button5 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.splitter1 = new System.Windows.Forms.Splitter();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.buttonAddNewMaatregel = new System.Windows.Forms.Button();
             this.buttonDeleteMaatregelen = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -79,7 +75,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIssueMaatregelen)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.tabPage3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -142,6 +137,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1507, 370);
             this.panel1.TabIndex = 3;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(1309, 253);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(134, 72);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "Accepteer geselecteerde items";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Visible = false;
             // 
             // textBoxRest_Risico_Comment
             // 
@@ -378,7 +383,6 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(0, 393);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -395,16 +399,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Maatregelen";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(1309, 253);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(134, 72);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Accepteer geselecteerde items";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Visible = false;
             // 
             // dataGridViewIssueMaatregelen
             // 
@@ -428,7 +422,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1099, 372);
+            this.tabPage2.Size = new System.Drawing.Size(1169, 423);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Issue Foto";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -450,44 +444,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(417, 309);
             this.pictureBox1.TabIndex = 23;
             this.pictureBox1.TabStop = false;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.panel4);
-            this.tabPage3.Controls.Add(this.splitter1);
-            this.tabPage3.Controls.Add(this.panel3);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1099, 372);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Weergave maatregelen en details";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.RosyBrown;
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(435, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(664, 372);
-            this.panel4.TabIndex = 2;
-            // 
-            // splitter1
-            // 
-            this.splitter1.Location = new System.Drawing.Point(432, 0);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 372);
-            this.splitter1.TabIndex = 1;
-            this.splitter1.TabStop = false;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Silver;
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(432, 372);
-            this.panel3.TabIndex = 0;
             // 
             // buttonAddNewMaatregel
             // 
@@ -539,7 +495,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIssueMaatregelen)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.tabPage3.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -583,10 +538,6 @@
         private System.Windows.Forms.ComboBox comboBoxGevaar;
         private System.Windows.Forms.ComboBox comboBoxDiscipline;
         private System.Windows.Forms.TextBox textBoxNaamObject;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Splitter splitter1;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.CheckBox checkBoxIssueOK;

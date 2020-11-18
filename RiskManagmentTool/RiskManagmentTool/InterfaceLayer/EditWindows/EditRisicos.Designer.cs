@@ -167,16 +167,17 @@
             // 
             this.panel1.Controls.Add(this.buttonSave);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 796);
+            this.panel1.Location = new System.Drawing.Point(0, 765);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1577, 42);
+            this.panel1.Size = new System.Drawing.Size(1577, 73);
             this.panel1.TabIndex = 11;
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(1431, 7);
+            this.buttonSave.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSave.Location = new System.Drawing.Point(0, 0);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(143, 32);
+            this.buttonSave.Size = new System.Drawing.Size(1577, 73);
             this.buttonSave.TabIndex = 0;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
@@ -343,7 +344,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(828, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(749, 796);
+            this.panel2.Size = new System.Drawing.Size(749, 765);
             this.panel2.TabIndex = 34;
             // 
             // buttonKeuzeOption
@@ -362,7 +363,7 @@
             this.checkedListBoxOptions.FormattingEnabled = true;
             this.checkedListBoxOptions.Location = new System.Drawing.Point(3, 227);
             this.checkedListBoxOptions.Name = "checkedListBoxOptions";
-            this.checkedListBoxOptions.Size = new System.Drawing.Size(505, 327);
+            this.checkedListBoxOptions.Size = new System.Drawing.Size(505, 446);
             this.checkedListBoxOptions.TabIndex = 0;
             this.checkedListBoxOptions.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxOptions_ItemCheck);
             // 

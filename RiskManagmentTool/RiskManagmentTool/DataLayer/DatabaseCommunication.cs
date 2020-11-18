@@ -94,103 +94,168 @@ namespace RiskManagmentTool.DataLayer
             return gevaarID;
         }
 
-        public void MakeGevaar_Disciplines(int gevaarID, int disciplineID)
+        public void MakeGevaar_Disciplines(int gevaarID, int? disciplineID)
         {
             sqlConnection.Open();
             SqlCommand cmd = new SqlCommand("INSERT INTO Gevaar_Discipline(GevaarID, DisciplineID) VALUES " +
                                                                        "(@GevaarID, @DisciplineID)", sqlConnection); 
             cmd.Parameters.AddWithValue("@GevaarID", gevaarID);
-            cmd.Parameters.AddWithValue("@DisciplineID", disciplineID);
-
+            if (disciplineID == null)
+            {
+                cmd.Parameters.AddWithValue("@DisciplineID", DBNull.Value);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@DisciplineID", disciplineID);
+            }
             cmd.ExecuteNonQuery();
             sqlConnection.Close();
         }
 
-        public void MakeGevaar_Gebruiksfase(int gevaarID, int gebruiksfaseID)
+        public void MakeGevaar_Gebruiksfase(int gevaarID, int? gebruiksfaseID)
         {
             sqlConnection.Open();
             SqlCommand cmd = new SqlCommand("INSERT INTO Gevaar_Gebruiksfase(GevaarID, GebruiksfaseID) VALUES " +
                                                                        "(@GevaarID, @GebruiksfaseID)", sqlConnection);
             cmd.Parameters.AddWithValue("@GevaarID", gevaarID);
-            cmd.Parameters.AddWithValue("@GebruiksfaseID", gebruiksfaseID);
-
+            if (gebruiksfaseID == null)
+            {
+                cmd.Parameters.AddWithValue("@GebruiksfaseID", DBNull.Value);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@GebruiksfaseID", gebruiksfaseID);
+            }
             cmd.ExecuteNonQuery();
             sqlConnection.Close();
         }
 
-        public void MakeGevaar_Bedienvorm(int gevaarID, int bedienvormID)
+        public void MakeGevaar_Bedienvorm(int gevaarID, int? bedienvormID)
         {
             sqlConnection.Open();
             SqlCommand cmd = new SqlCommand("INSERT INTO Gevaar_Bedienvorm(GevaarID, BedienvormID) VALUES " +
                                                                        "(@GevaarID, @BedienvormID)", sqlConnection);
             cmd.Parameters.AddWithValue("@GevaarID", gevaarID);
-            cmd.Parameters.AddWithValue("@BedienvormID", bedienvormID);
-
+            if (bedienvormID == null)
+            {
+                cmd.Parameters.AddWithValue("@BedienvormID", DBNull.Value);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@BedienvormID", bedienvormID);
+            }
             cmd.ExecuteNonQuery();
             sqlConnection.Close();
         }
 
-        public void MakeGevaar_Gebruiker(int gevaarID, int gebruikerID)
+        public void MakeGevaar_Gebruiker(int gevaarID, int? gebruikerID)
         {
             sqlConnection.Open();
             SqlCommand cmd = new SqlCommand("INSERT INTO Gevaar_Gebruiker(GevaarID, GebruikerID) VALUES " +
                                                                        "(@GevaarID, @GebruikerID)", sqlConnection);
             cmd.Parameters.AddWithValue("@GevaarID", gevaarID);
-            cmd.Parameters.AddWithValue("@GebruikerID", gebruikerID);
-
+            if (gebruikerID == null)
+            {
+                cmd.Parameters.AddWithValue("@GebruikerID", DBNull.Value);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@GebruikerID", gebruikerID);
+            }
             cmd.ExecuteNonQuery();
             sqlConnection.Close();
         }
 
-        public void MakeGevaar_GevaarlijkeZone(int gevaarID, int gevaarlijkeZoneID)
+        public void MakeGevaar_GevaarlijkeZone(int gevaarID, int? gevaarlijkeZoneID)
         {
             sqlConnection.Open();
             SqlCommand cmd = new SqlCommand("INSERT INTO Gevaar_GevaarlijkeZone(GevaarID, GevaarlijkeZoneID) VALUES " +
                                                                        "(@GevaarID, @GevaarlijkeZoneID)", sqlConnection);
             cmd.Parameters.AddWithValue("@GevaarID", gevaarID);
-            cmd.Parameters.AddWithValue("@GevaarlijkeZoneID", gevaarlijkeZoneID);
-
+            if (gevaarlijkeZoneID == null)
+            {
+                cmd.Parameters.AddWithValue("@GevaarlijkeZoneID", DBNull.Value);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@GevaarlijkeZoneID", gevaarlijkeZoneID);
+            }
             cmd.ExecuteNonQuery();
             sqlConnection.Close();
         }
 
-        public void MakeGevaar_Taak(int gevaarID, int taakID)
+        public void MakeGevaar_Taak(int gevaarID, int? taakID)
         {
             sqlConnection.Open();
             SqlCommand cmd = new SqlCommand("INSERT INTO Gevaar_Taak(GevaarID, TaakID) VALUES " +
                                                                        "(@GevaarID, @TaakID)", sqlConnection);
             cmd.Parameters.AddWithValue("@GevaarID", gevaarID);
-            cmd.Parameters.AddWithValue("@TaakID", taakID);
-
+            if (taakID == null)
+            {
+                cmd.Parameters.AddWithValue("@TaakID", DBNull.Value);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@TaakID", taakID);
+            }
             cmd.ExecuteNonQuery();
             sqlConnection.Close();
         }
 
-        public void MakeGevaar_GevaarType(int gevaarID, int gevaarTypeID)
+        public void MakeGevaar_GevaarType(int gevaarID, int? gevaarTypeID)
         {
             sqlConnection.Open();
             SqlCommand cmd = new SqlCommand("INSERT INTO Gevaar_GevaarType(GevaarID, GevaarTypeID) VALUES " +
                                                                        "(@GevaarID, @GevaarTypeID)", sqlConnection);
             cmd.Parameters.AddWithValue("@GevaarID", gevaarID);
-            cmd.Parameters.AddWithValue("@GevaarTypeID", gevaarTypeID);
-
+            if (gevaarTypeID == null)
+            {
+                cmd.Parameters.AddWithValue("@GevaarTypeID", DBNull.Value);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@GevaarTypeID", gevaarTypeID);
+            }
             cmd.ExecuteNonQuery();
             sqlConnection.Close();
         }
 
-        public void MakeGevaar_Gevolg(int gevaarID, int gevolgID)
+        public void MakeGevaar_Gevolg(int gevaarID, int? gevolgID)
         {
             sqlConnection.Open();
             SqlCommand cmd = new SqlCommand("INSERT INTO Gevaar_Gevolg(GevaarID, GevolgID) VALUES " +
                                                                        "(@GevaarID, @GevolgID)", sqlConnection);
             cmd.Parameters.AddWithValue("@GevaarID", gevaarID);
-            cmd.Parameters.AddWithValue("@GevolgID", gevolgID);
-
+            if (gevolgID == null)
+            {
+                cmd.Parameters.AddWithValue("@GevolgID", DBNull.Value);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@GevolgID", gevolgID);
+            }
             cmd.ExecuteNonQuery();
             sqlConnection.Close();
         }
 
+        public void FindGevaarDisciplinesNull(string gevaarID)
+        {
 
+
+
+
+            //            SELECT id,
+            //  first_name,
+            //  last_name
+            //FROM children
+            //WHERE middle_name IS NULL;
+
+        }
+
+
+
+
+        // END GEVAREN LISTS
 
 
 
@@ -204,36 +269,36 @@ namespace RiskManagmentTool.DataLayer
 
         public void MakeGevaar(Item item)
         {
-            string gevaarlijkeSituatie = item.ItemData.GevaarlijkeSituatie;
-            string gevaarlijkeGebeurtenis = item.ItemData.GevaarlijkeGebeurtenis;
-            string discipline = item.ItemData.Discipline;
-            string gebruiksfase = item.ItemData.Gebruiksfase;
-            string bedienvorm = item.ItemData.Bedienvorm;
-            string gebruiker = item.ItemData.Gebruiker;
-            string gevaarlijkeZone = item.ItemData.GevaarlijkeZone;
-            string taak = item.ItemData.Taak;
-            string gevaar = item.ItemData.Gevaar;
-            string gevolg = item.ItemData.Gevolg;
+            //string gevaarlijkeSituatie = item.ItemData.GevaarlijkeSituatie;
+            //string gevaarlijkeGebeurtenis = item.ItemData.GevaarlijkeGebeurtenis;
+            //string discipline = item.ItemData.Discipline;
+            //string gebruiksfase = item.ItemData.Gebruiksfase;
+            //string bedienvorm = item.ItemData.Bedienvorm;
+            //string gebruiker = item.ItemData.Gebruiker;
+            //string gevaarlijkeZone = item.ItemData.GevaarlijkeZone;
+            //string taak = item.ItemData.Taak;
+            //string gevaar = item.ItemData.Gevaar;
+            //string gevolg = item.ItemData.Gevolg;
             
 
 
-            sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO TableGevaren(GevaarlijkeSituatie, GevaarlijkeGebeurtenis, Discipline, Gebruiksfase, Bedienvorm, Gebruiker, GevaarlijkeZone, Taak_Actie, Gevaar, Gevolg) VALUES " +
-                                                                       "(@GevaarlijkeSituatie, @GevaarlijkeGebeurtenis, @Discipline, @Gebruiksfase ,@Bedienvorm, @Gebruiker, @GevaarlijkeZone, @Taak_Actie, @Gevaar, @Gevolg)", sqlConnection);
-            cmd.Parameters.AddWithValue("@GevaarlijkeSituatie", gevaarlijkeSituatie);
-            cmd.Parameters.AddWithValue("@GevaarlijkeGebeurtenis", gevaarlijkeGebeurtenis);
-            cmd.Parameters.AddWithValue("@Discipline", discipline);
-            cmd.Parameters.AddWithValue("@Gebruiksfase", gebruiksfase);
-            cmd.Parameters.AddWithValue("@Bedienvorm", bedienvorm);
-            cmd.Parameters.AddWithValue("@Gebruiker", gebruiker);
-            cmd.Parameters.AddWithValue("@GevaarlijkeZone", gevaarlijkeZone);
-            cmd.Parameters.AddWithValue("@Taak_Actie", taak);
-            cmd.Parameters.AddWithValue("@Gevaar", gevaar);
-            cmd.Parameters.AddWithValue("@Gevolg", gevolg);
+            //sqlConnection.Open();
+            //SqlCommand cmd = new SqlCommand("INSERT INTO TableGevaren(GevaarlijkeSituatie, GevaarlijkeGebeurtenis, Discipline, Gebruiksfase, Bedienvorm, Gebruiker, GevaarlijkeZone, Taak_Actie, Gevaar, Gevolg) VALUES " +
+            //                                                           "(@GevaarlijkeSituatie, @GevaarlijkeGebeurtenis, @Discipline, @Gebruiksfase ,@Bedienvorm, @Gebruiker, @GevaarlijkeZone, @Taak_Actie, @Gevaar, @Gevolg)", sqlConnection);
+            //cmd.Parameters.AddWithValue("@GevaarlijkeSituatie", gevaarlijkeSituatie);
+            //cmd.Parameters.AddWithValue("@GevaarlijkeGebeurtenis", gevaarlijkeGebeurtenis);
+            //cmd.Parameters.AddWithValue("@Discipline", discipline);
+            //cmd.Parameters.AddWithValue("@Gebruiksfase", gebruiksfase);
+            //cmd.Parameters.AddWithValue("@Bedienvorm", bedienvorm);
+            //cmd.Parameters.AddWithValue("@Gebruiker", gebruiker);
+            //cmd.Parameters.AddWithValue("@GevaarlijkeZone", gevaarlijkeZone);
+            //cmd.Parameters.AddWithValue("@Taak_Actie", taak);
+            //cmd.Parameters.AddWithValue("@Gevaar", gevaar);
+            //cmd.Parameters.AddWithValue("@Gevolg", gevolg);
 
 
-            cmd.ExecuteNonQuery();
-            sqlConnection.Close();
+            //cmd.ExecuteNonQuery();
+            //sqlConnection.Close();
         }
 
         public void MakeMaatregel(Item item)
@@ -700,6 +765,32 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
         }
 
+
+        //update gevaren
+        public void UpdateGevaar_Disciplines(int gevaarID, int? disciplineID)
+        {
+            //sqlConnection.Open();
+            //SqlCommand cmd = new SqlCommand("INSERT INTO Gevaar_Discipline(GevaarID, DisciplineID) VALUES " +
+            //                                                           "(@GevaarID, @DisciplineID)", sqlConnection);
+            //cmd.Parameters.AddWithValue("@GevaarID", gevaarID);
+            //if (disciplineID == null)
+            //{
+            //    cmd.Parameters.AddWithValue("@DisciplineID", DBNull.Value);
+            //}
+            //else
+            //{
+            //    cmd.Parameters.AddWithValue("@DisciplineID", disciplineID);
+            //}
+            //cmd.ExecuteNonQuery();
+            //sqlConnection.Close();
+        }
+
+
+
+
+
+
+
         //END REGION UPDATE
 
 
@@ -773,6 +864,29 @@ namespace RiskManagmentTool.DataLayer
 
         }
 
+        public SqlDataAdapter GetAllIssuesWithGevaarID(string gevaarID)
+        {
+            sqlConnection.Open();
+            string query = "SELECT TableObjecten.ObjectNaam, View_ObjectIssues.* " +
+                            "FROM TableObjecten INNER JOIN " +
+                            "TableObjectIssues ON TableObjecten.ObjectID = TableObjectIssues.ObjectID INNER JOIN " +
+                            "View_ObjectIssues ON TableObjectIssues.IssueID = View_ObjectIssues.IssueID " +
+                            "WHERE View_ObjectIssues.GevaarID = '" + gevaarID + "' ";
+           
+
+            //string query = "SELECT TableIssues.IssueID, TableGevaren.GevaarlijkeSituatie, TableGevaren.GevaarlijkeGebeurtenis, TableGevaren.Discipline, TableGevaren.Gebruiksfase, TableGevaren.Bedienvorm," +
+            //                "TableGevaren.Gebruiker, TableGevaren.GevaarlijkeZone, TableGevaren.Taak_Actie, TableGevaren.Gevaar, TableGevaren.Gevolg " +
+            //                " FROM TableIssues INNER JOIN TableGevaren" +
+            //                " ON TableGevaren.GevaarID = TableIssues.IssueGevaarID WHERE TableIssues.IssueID" +
+            //                " IN(" +
+            //                " SELECT TableObjectIssues.IssueID FROM TableObjectIssues)";
+
+            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
+            sqlConnection.Close();
+            return adapter;
+
+        }
+
         public SqlDataAdapter GetIssueMaatregelen(string issueID)
         {
             sqlConnection.Open();
@@ -807,12 +921,15 @@ namespace RiskManagmentTool.DataLayer
         public SqlDataAdapter GetGevaren()
         {
             sqlConnection.Open();
-            //String query = "SELECT * FROM View_Gevaren";//TableGevaren";
-            String query = "SELECT * FROM TableGevaren";
+            String query = "SELECT * FROM View_GevarenCompleet";//TableGevaren";
+            //String query = "SELECT * FROM TableGevaren";
             SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
             sqlConnection.Close();
             return adapter;
         }
+
+
+
 
 
         public SqlDataAdapter GetRisicoBeoordelingFromIssue(string issueID)
@@ -1373,7 +1490,7 @@ namespace RiskManagmentTool.DataLayer
 
 
         //START MENU REGION
-        //      SART ADD TO MENU
+        //      StART ADD TO MENU
 
         public void AddToObjectTypesMenu(string optionToAdd)
         {

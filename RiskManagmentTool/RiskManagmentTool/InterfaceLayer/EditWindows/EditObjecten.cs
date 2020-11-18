@@ -94,12 +94,12 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void SetInstellingen()
         {
-            List<CheckedListBox> menuBox = keuzeMenus.GetKeuzeMenus();
-            for (int i = 0; i < menuBox.Count; i++)
-            {
+            //List<CheckedListBox> menuBox = keuzeMenus.GetKeuzeMenus();
+            //for (int i = 0; i < menuBox.Count; i++)
+            //{
 
-                tabPage3.Controls.Add(menuBox[i]);
-            }   
+            //    tabPage3.Controls.Add(menuBox[i]);
+            //}   
         }
 
         private void ShowDataWithFiltering()

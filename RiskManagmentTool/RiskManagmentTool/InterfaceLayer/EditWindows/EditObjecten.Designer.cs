@@ -339,6 +339,7 @@
             this.dataGridViewGekoppeldeIssues.AllowUserToAddRows = false;
             this.dataGridViewGekoppeldeIssues.AllowUserToDeleteRows = false;
             this.dataGridViewGekoppeldeIssues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            //this.dataGridViewGekoppeldeIssues.ColumnHeadersDefaultCellStyle = System.Windows.Forms.DataGridViewAutoFilterColumnHeaderCell;
             this.dataGridViewGekoppeldeIssues.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewGekoppeldeIssues.Location = new System.Drawing.Point(3, 53);
             this.dataGridViewGekoppeldeIssues.Name = "dataGridViewGekoppeldeIssues";

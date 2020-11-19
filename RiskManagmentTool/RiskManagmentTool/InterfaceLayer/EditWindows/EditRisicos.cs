@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RiskManagmentTool.LogicLayer;
 using RiskManagmentTool.InterfaceLayer.AddWindows;
+using RiskManagmentTool.InterfaceLayer.WeergeefWindows;
 
 namespace RiskManagmentTool.InterfaceLayer.EditWindows
 {
@@ -20,44 +21,42 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private string menuTitle;
 
         //private List<string> TypeObjectItems;
-        private List<string> GevolgenItems;
-        private List<string> GevarenzonesItems;
-        private List<string> GevaarTypesItems;
-        private List<string> GebruiksfaseItems;
-        private List<string> GebruikersItems;
-        private List<string> DisciplinesItems;
-        private List<string> BedienvormenItems;
-        private List<string> TakenItems;
+        //private List<string> GevolgenItems;
+        //private List<string> GevarenzonesItems;
+        //private List<string> GevaarTypesItems;
+        //private List<string> GebruiksfaseItems;
+        //private List<string> GebruikersItems;
+        //private List<string> DisciplinesItems;
+        //private List<string> BedienvormenItems;
+        //private List<string> TakenItems;
 
-        private Dictionary<string, int> GevolgenItems_DBIndex;
-        private Dictionary<string, int> GevarenzonesItems_DBIndex;
-        private Dictionary<string, int> GevaarTypesItems_DBIndex;
-        private Dictionary<string, int> GebruiksfaseItems_DBIndex;
-        private Dictionary<string, int> GebruikersItems_DBIndex;
-        private Dictionary<string, int> DisciplinesItems_DBIndex;
-        private Dictionary<string, int> BedienvormenItems_DBIndex;
-        private Dictionary<string, int> TakenItems_DBIndex;
+        private Dictionary<int, string> GevolgenItems_DBIndex;
+        private Dictionary<int, string> GevarenzonesItems_DBIndex;
+        private Dictionary<int, string> GevaarTypesItems_DBIndex;
+        private Dictionary<int, string> GebruiksfaseItems_DBIndex;
+        private Dictionary<int, string> GebruikersItems_DBIndex;
+        private Dictionary<int, string> DisciplinesItems_DBIndex;
+        private Dictionary<int, string> BedienvormenItems_DBIndex;
+        private Dictionary<int, string> TakenItems_DBIndex;
 
-
-
-
-        private List<string> CurrentMenuToAddTo;
+        private Dictionary<int, string> CurrentMenuToAddTo;
 
 
-        private List<int> GevolgenCheckedItems;
-        private List<int> GevarenzonesCheckedItems;
-        private List<int> GevaarTypesCheckedItems;
-        private List<int> GebruiksfaseCheckedItems;
-        private List<int> GebruikersCheckedItems;
-        private List<int> DisciplinesCheckedItems;
-        private List<int> BedienvormenCheckedItems;
-        private List<int> TakenCheckedItems;
+        private Dictionary<int, int> GevolgenCheckedItems;
+        private Dictionary<int, int> GevarenzonesCheckedItems;
+        private Dictionary<int, int> GevaarTypesCheckedItems;
+        private Dictionary<int, int> GebruiksfaseCheckedItems;
+        private Dictionary<int, int> GebruikersCheckedItems;
+        private Dictionary<int, int> DisciplinesCheckedItems;
+        private Dictionary<int, int> BedienvormenCheckedItems;
+        private Dictionary<int, int> TakenCheckedItems;
 
+        private Dictionary<int, int> currentList;
 
 
 
         private TextBox currentTextBox;
-        private List<int> currentList;
+        
 
         private bool isNewGevaar;
 
@@ -96,36 +95,51 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         {
             keuzeMenus = new KeuzeMenus();
             comunicator = new Datacomunication();
-            CurrentMenuToAddTo = new List<string>();
+            CurrentMenuToAddTo = new Dictionary<int, string>();
 
-            GevolgenItems = keuzeMenus.GetGevolgenMenu();
-            GevarenzonesItems = keuzeMenus.GetGevarenzoneMenu();
-            GevaarTypesItems = keuzeMenus.GetGevaarTypeMenu();
-            GebruiksfaseItems = keuzeMenus.GetGebruikersfasesMenu();
-            GebruikersItems = keuzeMenus.GetGebruikersMenu();
-            DisciplinesItems = keuzeMenus.GetDisciplinesMenu();
-            BedienvormenItems = keuzeMenus.GetBedienvormenMenu();
-            TakenItems = keuzeMenus.GetTakenMenu();
+            GevolgenItems_DBIndex = keuzeMenus.GetGevolgenMenu();
+            GevarenzonesItems_DBIndex = keuzeMenus.GetGevarenzoneMenu();
+
+            //############################
+            GevaarTypesItems_DBIndex = keuzeMenus.GetGevaarTypeMenu();
+
+
+            GebruiksfaseItems_DBIndex = keuzeMenus.GetGebruikersfasesMenu();
+            GebruikersItems_DBIndex = keuzeMenus.GetGebruikersMenu();
+            DisciplinesItems_DBIndex = keuzeMenus.GetDisciplinesMenu();
+            BedienvormenItems_DBIndex = keuzeMenus.GetBedienvormenMenu();
+            TakenItems_DBIndex = keuzeMenus.GetTakenMenu();
+
+        }
+
+        private void LoadCheckedListBoxes()
+        {
+
 
         }
 
         private void LoadEmptyGevaarData()
         {
-            GevolgenCheckedItems = new List<int>();
-            GevarenzonesCheckedItems = new List<int>();
-            GevaarTypesCheckedItems = new List<int>();
-            GebruiksfaseCheckedItems = new List<int>();
-            GebruikersCheckedItems = new List<int>();
-            DisciplinesCheckedItems = new List<int>();
-            BedienvormenCheckedItems = new List<int>();
-            TakenCheckedItems = new List<int>();
+            GevolgenCheckedItems = new Dictionary<int, int>();
+            GevarenzonesCheckedItems = new Dictionary<int, int>();
+            GevaarTypesCheckedItems = new Dictionary<int, int>();
+            GebruiksfaseCheckedItems = new Dictionary<int, int>();
+            GebruikersCheckedItems = new Dictionary<int, int>();
+            DisciplinesCheckedItems = new Dictionary<int, int>();
+            BedienvormenCheckedItems = new Dictionary<int, int>();
+            TakenCheckedItems = new Dictionary<int, int>();
 
         }
 
         private void LoadGevaarData(string gevaarID)
         {
-            GevolgenCheckedItems = comunicator.GetGevaar_Gevolg(gevaarID);
+            DataTable risicoBeoordelingData = comunicator.GetGevaar_Situatie_gebeurtenis(gevaarID);
+            //textBoxInit_Se.Text = risicoBeoordelingData.Rows[0].Field<int?>(2).ToString();
+            textBoxGevSituatie.Text = risicoBeoordelingData.Rows[0].Field<string>(1).ToString();
+            textBoxGevGebeurtenis.Text = risicoBeoordelingData.Rows[0].Field<string>(2).ToString();
 
+
+            GevolgenCheckedItems = comunicator.GetGevaar_Gevolg(gevaarID);
             GevarenzonesCheckedItems = comunicator.GetGevaar_GevaarlijkeZone(gevaarID);
             GevaarTypesCheckedItems = comunicator.GetGevaar_GevaarType(gevaarID);
             GebruiksfaseCheckedItems = comunicator.GetGevaar_Gebruiksfase(gevaarID);
@@ -140,12 +154,22 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void UpdateText()
         {
+
+            List<int> itemDBIDList = new List<int>();
+            foreach (KeyValuePair<int, string> kvpChecked in CurrentMenuToAddTo)
+            {
+                itemDBIDList.Add(kvpChecked.Key);
+            }
+
+
             string checkedItems = string.Empty;
             currentList.Clear();
             foreach (object Item in checkedListBoxOptions.CheckedItems)
             {
+                int checkboxIndex = checkedListBoxOptions.Items.IndexOf(Item);
+                int itemDBID = itemDBIDList[checkboxIndex];
                 checkedItems += Item.ToString() + ";  ";
-                currentList.Add(checkedListBoxOptions.Items.IndexOf(Item));
+                currentList.Add(checkboxIndex, itemDBID);
             }
 
             if (currentTextBox != null)
@@ -169,13 +193,13 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
             if (isNewGevaar)
             {
-                comunicator.InitMakeGevaar2(gevaarlijkeSituatie, gevaarlijkeGebeurtenis,
-                DisciplinesCheckedItems, GebruiksfaseCheckedItems,
-                BedienvormenCheckedItems, GebruikersCheckedItems,
-                GevarenzonesCheckedItems, TakenCheckedItems,
-                GevaarTypesCheckedItems, GevolgenCheckedItems);
+                //comunicator.InitMakeGevaar2(gevaarlijkeSituatie, gevaarlijkeGebeurtenis,
+                //DisciplinesCheckedItems, GebruiksfaseCheckedItems,
+                //BedienvormenCheckedItems, GebruikersCheckedItems,
+                //GevarenzonesCheckedItems, TakenCheckedItems,
+                //GevaarTypesCheckedItems, GevolgenCheckedItems);
             }
-            else if(!isNewGevaar)
+            else if (!isNewGevaar)
             {
                 int gevaarIDToUpdate = int.Parse(editGevaarID);
                 comunicator.UpdateGevaarData(gevaarIDToUpdate, DisciplinesCheckedItems, GebruiksfaseCheckedItems,
@@ -184,7 +208,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
                 GevaarTypesCheckedItems, GevolgenCheckedItems);
             }
 
-            
+
 
             this.Close();
 
@@ -200,32 +224,60 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             //string gevolg = textBoxGevolg.Text;
             //comunicator.MakeGevaar(gevaarlijkeSituatie, gevaarlijkeGebeurtenis, discipline, gebruiksfase, bedienvorm, gebruiker, gevaarlijkeZone, taak, gevaar, gevolg);
             //this.Close();
-
         }
 
-       
-        private void ChangeCheckedListBox(List<string> items, List<int> checkedItems)
+        private void ChangeCheckedListBox(Dictionary<int, string> items, Dictionary<int, int> checkedItems)
         {
-            int indexHelper = 0;
             checkedListBoxOptions.Items.Clear();
-            foreach (string menuOption in items)
+
+            List<int> CheckedIndexes = new List<int>();
+            foreach (KeyValuePair<int, int> kvpChecked in checkedItems)
             {
-                checkedListBoxOptions.Items.Add(menuOption);
-                if (checkedItems.Contains(indexHelper))
+                CheckedIndexes.Add(kvpChecked.Value);
+            }
+
+
+            int indexHelper = 0;
+            foreach (KeyValuePair<int, string> kvp in items)
+            {
+                checkedListBoxOptions.Items.Add(kvp.Value);
+
+                if (CheckedIndexes.Contains(kvp.Key))
                 {
                     checkedListBoxOptions.SetItemChecked(indexHelper, true);
                 }
-
                 indexHelper++;
             }
 
+
         }
+
+
+
+
+        //private void ChangeCheckedListBox(List<string> items, List<int> checkedItems)
+        //{
+
+        //    int indexHelper = 0;
+        //    checkedListBoxOptions.Items.Clear();
+        //    foreach (string menuOption in items)
+        //    {
+        //        checkedListBoxOptions.Items.Add(menuOption);
+        //        if (checkedItems.Contains(indexHelper))
+        //        {
+        //            checkedListBoxOptions.SetItemChecked(indexHelper, true);
+        //        }
+
+        //        indexHelper++;
+        //    }
+
+        //}
 
 
 
         private void buttonDisciplines_Click(object sender, EventArgs e)
         {
-            ChangeCheckedListBox(DisciplinesItems, DisciplinesCheckedItems);
+            ChangeCheckedListBox(DisciplinesItems_DBIndex, DisciplinesCheckedItems);
 
             MenuTableName = MenuTableName.Disciplines;
             UpdateState();
@@ -234,7 +286,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void buttonGebruiksfase_Click(object sender, EventArgs e)
         {
-            ChangeCheckedListBox(GebruiksfaseItems, GebruiksfaseCheckedItems);
+            ChangeCheckedListBox(GebruiksfaseItems_DBIndex, GebruiksfaseCheckedItems);
 
             MenuTableName = MenuTableName.Gebruiksfases;
             UpdateState();
@@ -242,7 +294,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void buttonBedienvorm_Click(object sender, EventArgs e)
         {
-            ChangeCheckedListBox(BedienvormenItems, BedienvormenCheckedItems);
+            ChangeCheckedListBox(BedienvormenItems_DBIndex, BedienvormenCheckedItems);
 
             MenuTableName = MenuTableName.Bedienvormen;
             UpdateState();
@@ -250,7 +302,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void buttonGebruiker_Click(object sender, EventArgs e)
         {
-            ChangeCheckedListBox(GebruikersItems, GebruikersCheckedItems);
+            ChangeCheckedListBox(GebruikersItems_DBIndex, GebruikersCheckedItems);
 
             MenuTableName = MenuTableName.Gebruikers;
             UpdateState();
@@ -258,7 +310,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void buttonGevaarlijkeZone_Click(object sender, EventArgs e)
         {
-            ChangeCheckedListBox(GevarenzonesItems, GevarenzonesCheckedItems);
+            ChangeCheckedListBox(GevarenzonesItems_DBIndex, GevarenzonesCheckedItems);
 
             MenuTableName = MenuTableName.Gevarenzones;
             UpdateState();
@@ -266,7 +318,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void buttonTaak_Click(object sender, EventArgs e)
         {
-            ChangeCheckedListBox(TakenItems, TakenCheckedItems);
+            ChangeCheckedListBox(TakenItems_DBIndex, TakenCheckedItems);
 
             MenuTableName = MenuTableName.Taken;
             UpdateState();
@@ -274,15 +326,15 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void buttonGevaar_Click(object sender, EventArgs e)
         {
-            ChangeCheckedListBox(GevaarTypesItems, GevaarTypesCheckedItems);
 
+            ChangeCheckedListBox(GevaarTypesItems_DBIndex, GevaarTypesCheckedItems);
             MenuTableName = MenuTableName.GevaarTypes;
             UpdateState();
         }
 
         private void buttonGevolg_Click(object sender, EventArgs e)
         {
-            ChangeCheckedListBox(GevolgenItems, GevolgenCheckedItems);
+            ChangeCheckedListBox(GevolgenItems_DBIndex, GevolgenCheckedItems);
 
             MenuTableName = MenuTableName.Gevolgen;
             UpdateState();
@@ -297,8 +349,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void buttonKeuzeOption_Click(object sender, EventArgs e)
         {
-             EditKeuzes editKeuze = new EditKeuzes(MenuTableName, CurrentMenuToAddTo, menuTitle);
-             editKeuze.ShowDialog();
+             //EditKeuzes editKeuze = new EditKeuzes(MenuTableName, CurrentMenuToAddTo, menuTitle);
+             //editKeuze.ShowDialog();
         }
 
 
@@ -309,49 +361,49 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
                 case MenuTableName.Gevolgen:
                     currentTextBox = textBoxGevolg;
                     currentList = GevolgenCheckedItems;
-                    CurrentMenuToAddTo = GevolgenItems;
+                    CurrentMenuToAddTo = GevolgenItems_DBIndex;
                     menuTitle = "Gevolgen";
                     break;
                 case MenuTableName.Gevarenzones:
                     currentTextBox = textBoxGevaarlijkeZone;
                     currentList = GevarenzonesCheckedItems;
-                    CurrentMenuToAddTo = GevarenzonesItems;
+                    CurrentMenuToAddTo = GevarenzonesItems_DBIndex;
                     menuTitle = "Gevaren zone";
                     break;
                 case MenuTableName.GevaarTypes:
                     currentTextBox = textBoxGevaar;
                     currentList = GevaarTypesCheckedItems;
-                    CurrentMenuToAddTo = GevaarTypesItems;
+                    CurrentMenuToAddTo = GevaarTypesItems_DBIndex;
                     menuTitle = "Gevaar type";
                     break;
                 case MenuTableName.Gebruiksfases:
                     currentTextBox = textBoxGebruiksfase;
                     currentList = GebruiksfaseCheckedItems;
-                    CurrentMenuToAddTo = GebruiksfaseItems;
+                    CurrentMenuToAddTo = GebruiksfaseItems_DBIndex;
                     menuTitle = "Gebruiksfase";
                     break;
                 case MenuTableName.Gebruikers:
                     currentTextBox = textBoxGebruiker;
                     currentList = GebruikersCheckedItems;
-                    CurrentMenuToAddTo = GebruikersItems;
+                    CurrentMenuToAddTo = GebruikersItems_DBIndex;
                     menuTitle = "Gebruikers";
                     break;
                 case MenuTableName.Disciplines:
                     currentTextBox = textBoxDiscipline;
                     currentList = DisciplinesCheckedItems;
-                    CurrentMenuToAddTo = DisciplinesItems;
+                    CurrentMenuToAddTo = DisciplinesItems_DBIndex;
                     menuTitle = "Discipline";
                     break;
                 case MenuTableName.Bedienvormen:
                     currentTextBox = textBoxBedienvorm;
                     currentList = BedienvormenCheckedItems;
-                    CurrentMenuToAddTo = BedienvormenItems;
+                    CurrentMenuToAddTo = BedienvormenItems_DBIndex;
                     menuTitle = "Bedienvorm";
                     break;
                 case MenuTableName.Taken:
                     currentTextBox = textBoxTaak;
                     currentList = TakenCheckedItems;
-                    CurrentMenuToAddTo = TakenItems;
+                    CurrentMenuToAddTo = TakenItems_DBIndex;
                     menuTitle = "Taak";
                     break;
                 default:
@@ -388,8 +440,14 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             }
         }
 
-
-
-        
+        private void buttonViewGevaarUsage_Click(object sender, EventArgs e)
+        {
+            if (!isNewGevaar)
+            {
+                ShowGevaarUsage showGevaarUsage = new ShowGevaarUsage(editGevaarID);
+                showGevaarUsage.ShowDialog();
+            }
+            
+        }
     }
 }

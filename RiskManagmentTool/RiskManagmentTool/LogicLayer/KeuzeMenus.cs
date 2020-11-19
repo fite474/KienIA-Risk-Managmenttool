@@ -15,14 +15,17 @@ namespace RiskManagmentTool.LogicLayer
 
         private List<string> TypeObjectComboBox;
 
-        private List<string> GevolgenKeuzes;
-        private List<string> GevarenzonesKeuzes;
-        private List<string> GevaarTypesKeuzes;
-        private List<string> GebruiksfaseKeuzes;
-        private List<string> GebruikersComboBox;
-        private List<string> DisciplinesComboBox;
-        private List<string> BedienvormenComboBox;
-        private List<string> TakenComboBox;
+        private Dictionary<int, string> GevolgenKeuzes;
+        private Dictionary<int, string> GevarenzonesKeuzes;
+
+
+        private Dictionary<int, string> GevaarTypesKeuzes;
+
+        private Dictionary<int, string> GebruiksfaseKeuzes;
+        private Dictionary<int, string> GebruikersComboBox;
+        private Dictionary<int, string> DisciplinesComboBox;
+        private Dictionary<int, string> BedienvormenComboBox;
+        private Dictionary<int, string> TakenComboBox;
 
         private List<string> MaatregelNormComboBox;
         private List<string> MaatregelCategoryComboBox;
@@ -68,42 +71,45 @@ namespace RiskManagmentTool.LogicLayer
             return TypeObjectComboBox;
         }
 
-        public List<string> GetGevolgenMenu()
+        public Dictionary<int, string> GetGevolgenMenu()
         {
             return GevolgenKeuzes;
         }
 
-        public List<string> GetGevarenzoneMenu()
+        public Dictionary<int, string> GetGevarenzoneMenu()
         {
             return GevarenzonesKeuzes;
         }
 
-        public List<string> GetGevaarTypeMenu()
+
+
+        public Dictionary<int, string> GetGevaarTypeMenu()
         {
             return GevaarTypesKeuzes;
         }
 
-        public List<string> GetGebruikersfasesMenu()
+
+        public Dictionary<int, string> GetGebruikersfasesMenu()
         {
             return GebruiksfaseKeuzes;
         }
 
-        public List<string> GetGebruikersMenu()
+        public Dictionary<int, string> GetGebruikersMenu()
         {
             return GebruikersComboBox;
         }
 
-        public List<string> GetDisciplinesMenu()
+        public Dictionary<int, string> GetDisciplinesMenu()
         {
             return DisciplinesComboBox;
         }
 
-        public List<string> GetBedienvormenMenu()
+        public Dictionary<int, string> GetBedienvormenMenu()
         {
             return BedienvormenComboBox;
         }
 
-        public List<string> GetTakenMenu()
+        public Dictionary<int, string> GetTakenMenu()
         {
             return TakenComboBox;
         }
@@ -139,6 +145,11 @@ namespace RiskManagmentTool.LogicLayer
         {
 
             TypeObjectComboBox = comunicator.GetObjectTypes();
+
+
+
+            //-------------
+
             GevolgenKeuzes = comunicator.GetGevolgen();
             GevarenzonesKeuzes = comunicator.GetGevarenzones();
             GevaarTypesKeuzes = comunicator.GetGevaarTypes();
@@ -147,6 +158,15 @@ namespace RiskManagmentTool.LogicLayer
             DisciplinesComboBox = comunicator.GetDisciplines();
             BedienvormenComboBox = comunicator.GetBedienvormen();
             TakenComboBox = comunicator.GetTaken();
+
+
+            //-------------
+
+
+
+
+
+
             MaatregelNormComboBox = comunicator.GetMaatregelNorm();
             MaatregelCategoryComboBox = comunicator.GetMaatregelCategory();
 

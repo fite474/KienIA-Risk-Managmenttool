@@ -45,7 +45,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxIssueID = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBoxRest_Risico_OK = new System.Windows.Forms.CheckBox();
             this.label11 = new System.Windows.Forms.Label();
             this.buttonNextIssue = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
@@ -121,7 +121,7 @@
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.textBoxIssueID);
-            this.panel1.Controls.Add(this.checkBox1);
+            this.panel1.Controls.Add(this.checkBoxRest_Risico_OK);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.buttonNextIssue);
             this.panel1.Controls.Add(this.buttonRisicoDetails);
@@ -243,15 +243,15 @@
             this.textBoxIssueID.Size = new System.Drawing.Size(185, 22);
             this.textBoxIssueID.TabIndex = 9;
             // 
-            // checkBox1
+            // checkBoxRest_Risico_OK
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(167, 331);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(133, 21);
-            this.checkBox1.TabIndex = 8;
-            this.checkBox1.Text = "Rest_Risico_OK";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxRest_Risico_OK.AutoSize = true;
+            this.checkBoxRest_Risico_OK.Location = new System.Drawing.Point(167, 331);
+            this.checkBoxRest_Risico_OK.Name = "checkBoxRest_Risico_OK";
+            this.checkBoxRest_Risico_OK.Size = new System.Drawing.Size(133, 21);
+            this.checkBoxRest_Risico_OK.TabIndex = 8;
+            this.checkBoxRest_Risico_OK.Text = "Rest_Risico_OK";
+            this.checkBoxRest_Risico_OK.UseVisualStyleBackColor = true;
             // 
             // label11
             // 
@@ -507,7 +507,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBoxRest_Risico_OK;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;

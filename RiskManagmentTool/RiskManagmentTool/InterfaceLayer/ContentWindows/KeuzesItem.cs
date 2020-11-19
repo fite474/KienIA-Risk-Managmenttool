@@ -16,7 +16,7 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
     {
         //private string MenuName;
         public MenuTableName MenuTableName;
-        private List<string> MenuOptions;
+        private Dictionary<int, string> MenuOptions;
         private KeuzeMenus keuzeMenus;
         private string menuTitle;
         public KeuzesItem(MenuTableName menuName)//, List<string> options)
@@ -34,7 +34,7 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
             switch (this.MenuTableName)
             {
                 case MenuTableName.ObjectTypes:
-                    MenuOptions = keuzeMenus.GetTypeObjectMenu();
+                    //MenuOptions = keuzeMenus.GetTypeObjectMenu();
                     menuTitle = "Object types";
                     break;
                 case MenuTableName.Gevolgen:
@@ -70,19 +70,19 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
                     menuTitle = "Taak";
                     break;
                 case MenuTableName.Normen:
-                    MenuOptions = keuzeMenus.GetMaatregelNormMenu();
+                    //MenuOptions = keuzeMenus.GetMaatregelNormMenu();
                     menuTitle = "Maatregel norm";
                     break;
                 case MenuTableName.Categories:
-                    MenuOptions = keuzeMenus.GetMaatregelCategoryMenu();
+                    //MenuOptions = keuzeMenus.GetMaatregelCategoryMenu();
                     menuTitle = "Maatregel categorie";
                     break;
                 case MenuTableName.TemplateTypes:
-                    MenuOptions = keuzeMenus.GetTemplateTypesMenu();
+                    //MenuOptions = keuzeMenus.GetTemplateTypesMenu();
                     menuTitle = "Template types";
                     break;
                 case MenuTableName.TemplateToepassing:
-                    MenuOptions = keuzeMenus.GetTemplateToepassingenMenu();
+                    //MenuOptions = keuzeMenus.GetTemplateToepassingenMenu();
                     menuTitle = "Template toepassing";
                     break;
                 default:
@@ -90,19 +90,19 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
             }
             textBoxMenuName.Text = menuTitle;
             
-            foreach (string menuOption in MenuOptions)
-            {
-                listBoxMenuOptions.Items.Add(menuOption);
-                //comboBoxObjectType.Items.Add(typeString);
-            }
+            //foreach (string menuOption in MenuOptions)
+            //{
+            //    listBoxMenuOptions.Items.Add(menuOption);
+            //    //comboBoxObjectType.Items.Add(typeString);
+            //}
         }
 
         private void buttonEditKeuzes_Click(object sender, EventArgs e)
         {
-            Form editKeuzes = new EditKeuzes(MenuTableName, MenuOptions, menuTitle);
-            editKeuzes.ShowDialog();
-            keuzeMenus.ReloadAllLists();
-            LoadData();
+            //Form editKeuzes = new EditKeuzes(MenuTableName, MenuOptions, menuTitle);
+            //editKeuzes.ShowDialog();
+            //keuzeMenus.ReloadAllLists();
+            //LoadData();
   
 
         }

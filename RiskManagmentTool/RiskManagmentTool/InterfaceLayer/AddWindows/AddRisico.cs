@@ -63,11 +63,11 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
         private void LoadComboboxes()
         {
 
-            List<string> disciplinesList = keuzeMenus.GetDisciplinesMenu();
-            foreach (string typeString in disciplinesList)
-            {
-                comboBoxDiscipline.Items.Add(typeString);
-            }
+            //List<string> disciplinesList = keuzeMenus.GetDisciplinesMenu();
+            //foreach (string typeString in disciplinesList)
+            //{
+            //    comboBoxDiscipline.Items.Add(typeString);
+            //}
 
             List<string> objectNamenList = keuzeMenus.GetObjectNamen();
             foreach (string objectNaam in objectNamenList)

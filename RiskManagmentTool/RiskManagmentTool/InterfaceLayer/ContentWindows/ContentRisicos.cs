@@ -51,7 +51,8 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
             //string riskAvoidance = dataGridViewRisicos.SelectedRows[0].Cells[10].Value.ToString();
 
             Form editRisicosForm = new EditRisicos(gevaarId);
-            editRisicosForm.Show();
+            editRisicosForm.ShowDialog();
+            LoadData();
 
 
             //Form editRisicosForm = new EditRisicos(riskBeschrijving,

@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using RiskManagmentTool.DataLayer;
 using RiskManagmentTool.LogicLayer.Objects;
 using RiskManagmentTool.LogicLayer.Objects.Core;
+using System.Windows.Forms;
 
 namespace RiskManagmentTool.LogicLayer
 {
@@ -52,10 +53,10 @@ namespace RiskManagmentTool.LogicLayer
         }
 
         public void UpdateGevaarData(int gevaarID,
-                      List<int> GevaarDisciplines, List<int> GevaarGebruiksfase,
-                      List<int> GevaarBedienvorm, List<int> GevaarGebruiker,
-                      List<int> GevaarGevaarlijkeZone, List<int> GevaarTaak,
-                      List<int> GevaarGevaarType, List<int> GevaarGevolg)
+                      Dictionary<int, int> GevaarDisciplines, Dictionary<int, int> GevaarGebruiksfase,
+                      Dictionary<int, int> GevaarBedienvorm, Dictionary<int, int> GevaarGebruiker,
+                      Dictionary<int, int> GevaarGevaarlijkeZone, Dictionary<int, int> GevaarTaak,
+                      Dictionary<int, int> GevaarGevaarType, Dictionary<int, int> GevaarGevolg)
         {
             //clean
             databaseCommunication.VerwijderGevaar_Disciplines(gevaarID);
@@ -70,17 +71,20 @@ namespace RiskManagmentTool.LogicLayer
             //insert for all
             if (GevaarDisciplines.Count > 0)
             {
-                foreach (int disciplineID in GevaarDisciplines)
-                { databaseCommunication.MakeGevaar_Disciplines(gevaarID, (disciplineID + 1)); }
+                foreach (KeyValuePair<int, int> kvp in GevaarDisciplines)
+                {
+                    databaseCommunication.MakeGevaar_Disciplines(gevaarID, kvp.Value);
+                }
             }
             else
             { databaseCommunication.MakeGevaar_Disciplines(gevaarID, null); }
 
-
             if (GevaarGebruiksfase.Count > 0)
             {
-                foreach (int gebruiksfaseID in GevaarGebruiksfase)
-                { databaseCommunication.MakeGevaar_Gebruiksfase(gevaarID, (gebruiksfaseID + 1)); }
+                foreach (KeyValuePair<int, int> kvp in GevaarGebruiksfase)
+                {
+                    databaseCommunication.MakeGevaar_Gebruiksfase(gevaarID, kvp.Value);
+                }
             }
             else
             { databaseCommunication.MakeGevaar_Gebruiksfase(gevaarID, null); }
@@ -88,8 +92,10 @@ namespace RiskManagmentTool.LogicLayer
 
             if (GevaarBedienvorm.Count > 0)
             {
-                foreach (int bedienvormID in GevaarBedienvorm)
-                { databaseCommunication.MakeGevaar_Bedienvorm(gevaarID, (bedienvormID + 1)); }
+                foreach (KeyValuePair<int, int> kvp in GevaarBedienvorm)
+                {
+                    databaseCommunication.MakeGevaar_Bedienvorm(gevaarID, kvp.Value);
+                }
             }
             else
             { databaseCommunication.MakeGevaar_Bedienvorm(gevaarID, null); }
@@ -97,8 +103,10 @@ namespace RiskManagmentTool.LogicLayer
 
             if (GevaarGebruiker.Count > 0)
             {
-                foreach (int gebruikerID in GevaarGebruiker)
-                { databaseCommunication.MakeGevaar_Gebruiker(gevaarID, (gebruikerID + 1)); }
+                foreach (KeyValuePair<int, int> kvp in GevaarGebruiker)
+                {
+                    databaseCommunication.MakeGevaar_Gebruiker(gevaarID, kvp.Value);
+                }
             }
             else
             { databaseCommunication.MakeGevaar_Gebruiker(gevaarID, null); }
@@ -106,8 +114,10 @@ namespace RiskManagmentTool.LogicLayer
 
             if (GevaarGevaarlijkeZone.Count > 0)
             {
-                foreach (int gevaarlijkeZoneID in GevaarGevaarlijkeZone)
-                { databaseCommunication.MakeGevaar_GevaarlijkeZone(gevaarID, (gevaarlijkeZoneID + 1)); }
+                foreach (KeyValuePair<int, int> kvp in GevaarGevaarlijkeZone)
+                {
+                    databaseCommunication.MakeGevaar_GevaarlijkeZone(gevaarID, kvp.Value);
+                }
             }
             else
             { databaseCommunication.MakeGevaar_GevaarlijkeZone(gevaarID, null); }
@@ -115,8 +125,10 @@ namespace RiskManagmentTool.LogicLayer
 
             if (GevaarTaak.Count > 0)
             {
-                foreach (int taakID in GevaarTaak)
-                { databaseCommunication.MakeGevaar_Taak(gevaarID, (taakID + 1)); }
+                foreach (KeyValuePair<int, int> kvp in GevaarTaak)
+                {
+                    databaseCommunication.MakeGevaar_Taak(gevaarID, kvp.Value);
+                }
             }
             else
             { databaseCommunication.MakeGevaar_Taak(gevaarID, null); }
@@ -124,8 +136,10 @@ namespace RiskManagmentTool.LogicLayer
 
             if (GevaarGevaarType.Count > 0)
             {
-                foreach (int gevaarTypeID in GevaarGevaarType)
-                { databaseCommunication.MakeGevaar_GevaarType(gevaarID, (gevaarTypeID + 1)); }
+                foreach (KeyValuePair<int, int> kvp in GevaarGevaarType)
+                {
+                    databaseCommunication.MakeGevaar_GevaarType(gevaarID, kvp.Value);
+                }
             }
             else
             { databaseCommunication.MakeGevaar_GevaarType(gevaarID, null); }
@@ -133,8 +147,10 @@ namespace RiskManagmentTool.LogicLayer
 
             if (GevaarGevolg.Count > 0)
             {
-                foreach (int gevolgID in GevaarGevolg)
-                { databaseCommunication.MakeGevaar_Gevolg(gevaarID, (gevolgID + 1)); }
+                foreach (KeyValuePair<int, int> kvp in GevaarGevolg)
+                {
+                    databaseCommunication.MakeGevaar_Gevolg(gevaarID, kvp.Value);
+                }
             }
             else
             { databaseCommunication.MakeGevaar_Gevolg(gevaarID, null); }
@@ -225,32 +241,32 @@ namespace RiskManagmentTool.LogicLayer
 
 
 
-        public void MakeGevaar(string gevaarlijkeSituatie, string gevaarlijkeGebeurtenis,
-                       string discipline, string gebruiksfase,
-                       string bedienvorm, string gebruiker,
-                       string gevaarlijkeZone, string taak,
-                       string gevaar, string gevolg)
-        {
-            Item gevaarItem = new Item
-            {
-                ItemType = ItemType.Gevaar,
-                ItemData = new GevaarObject
-                {
-                    GevaarlijkeSituatie = gevaarlijkeSituatie,
-                    GevaarlijkeGebeurtenis = gevaarlijkeGebeurtenis,
-                    Discipline = discipline,
-                    Gebruiksfase = gebruiksfase,
-                    Bedienvorm = bedienvorm,
-                    Gebruiker = gebruiker,
-                    GevaarlijkeZone = gevaarlijkeZone,
-                    Taak = taak,
-                    Gevaar = gevaar,
-                    Gevolg = gevolg
+        //public void MakeGevaar(string gevaarlijkeSituatie, string gevaarlijkeGebeurtenis,
+        //               string discipline, string gebruiksfase,
+        //               string bedienvorm, string gebruiker,
+        //               string gevaarlijkeZone, string taak,
+        //               string gevaar, string gevolg)
+        //{
+        //    Item gevaarItem = new Item
+        //    {
+        //        ItemType = ItemType.Gevaar,
+        //        ItemData = new GevaarObject
+        //        {
+        //            GevaarlijkeSituatie = gevaarlijkeSituatie,
+        //            GevaarlijkeGebeurtenis = gevaarlijkeGebeurtenis,
+        //            Discipline = discipline,
+        //            Gebruiksfase = gebruiksfase,
+        //            Bedienvorm = bedienvorm,
+        //            Gebruiker = gebruiker,
+        //            GevaarlijkeZone = gevaarlijkeZone,
+        //            Taak = taak,
+        //            Gevaar = gevaar,
+        //            Gevolg = gevolg
 
-                }
-            };
-            SendItemToDB(gevaarItem);
-        }
+        //        }
+        //    };
+        //    SendItemToDB(gevaarItem);
+        //}
 
         public void MakeTemplate(string templateNaam, string templateType, string templateToepassing)
         {
@@ -479,12 +495,15 @@ namespace RiskManagmentTool.LogicLayer
         //    return data;
         //}
 
-        public DataTable GetObjectIssues(string objectID)
+        public BindingSource GetObjectIssues(string objectID)//DataTable GetObjectIssues(string objectID)
         {
             SqlDataAdapter adapter = databaseCommunication.GetIssuesFromObject(objectID);
             DataTable data = new DataTable();
             adapter.Fill(data);
-            return data;
+
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = data;
+            return bindingSource;//data;
         }
 
 
@@ -493,7 +512,7 @@ namespace RiskManagmentTool.LogicLayer
         {
             string objectId = databaseCommunication.GetObjectIdByName(objectNaam);
             //SqlDataAdapter adapter = databaseCommunication.GetIssuesWorking(objectId);
-            DataTable data = GetObjectIssues(objectId);//new DataTable();
+            DataTable data = new DataTable();//GetObjectIssues(objectId);//new DataTable();
             //adapter.Fill(data);
             return data;
         }
@@ -738,45 +757,60 @@ namespace RiskManagmentTool.LogicLayer
             return databaseCommunication.GetObjectTypes();
         }
 
-        public List<string> GetGevolgen()
+
+
+
+
+        //-----------------
+
+        public Dictionary<int, string> GetGevolgen()
         {
             return databaseCommunication.GetGevolgen();
         }
 
-        public List<string> GetGevarenzones()
+
+        public Dictionary<int, string> GetGevarenzones()
         {
             return databaseCommunication.GetGevarenzones();
         }
 
-        public List<string> GetGevaarTypes()
+        public Dictionary<int, string> GetGevaarTypes()
         {
-            return databaseCommunication.GetGevaartypes();
+            return databaseCommunication.GetGevaarTypes();
         }
 
-        public List<string> GetGebruiksfases()
+        public Dictionary<int, string> GetGebruiksfases()
         {
             return databaseCommunication.GetGebruiksfases();
         }
 
-        public List<string> GetGebruikers()
+        public Dictionary<int, string> GetGebruikers()
         {
             return databaseCommunication.GetGebruikers();
         }
 
-        public List<string> GetDisciplines()
+        public Dictionary<int, string> GetDisciplines()
         {
             return databaseCommunication.GetDisciplines();
         }
 
-        public List<string> GetBedienvormen()
+        public Dictionary<int, string> GetBedienvormen()
         {
             return databaseCommunication.GetBedienvormen();
         }
 
-        public List<string> GetTaken()
+        public Dictionary<int, string> GetTaken()
         {
-            return databaseCommunication.GetTaken(); ;
+            return databaseCommunication.GetTaken();
         }
+
+
+
+
+
+
+        //-----------------------
+
 
         public List<string> GetMaatregelNorm()
         {
@@ -849,42 +883,57 @@ namespace RiskManagmentTool.LogicLayer
 
         // START GEVAREN LISTS
 
-        public List<int> GetGevaar_Disciplines(string gevaarID)
+
+
+
+
+        public DataTable GetGevaar_Situatie_gebeurtenis(string gevaarID)
+        {
+            SqlDataAdapter adapter = databaseCommunication.GetGevaar_Situatie_gebeurtenis(gevaarID);
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            return data;
+        }
+
+
+
+
+        public Dictionary<int, int> GetGevaar_Disciplines(string gevaarID)
         {
             return databaseCommunication.GetGevaar_Disciplines(gevaarID);
         }
 
-        public List<int> GetGevaar_Bedienvorm(string gevaarID)
+        public Dictionary<int, int> GetGevaar_Bedienvorm(string gevaarID)
         {
             return databaseCommunication.GetGevaar_Bedienvorm(gevaarID);
         }
 
-        public List<int> GetGevaar_Gebruiker(string gevaarID)
+        public Dictionary<int, int> GetGevaar_Gebruiker(string gevaarID)
         {
             return databaseCommunication.GetGevaar_Gebruiker(gevaarID);
         }
 
-        public List<int> GetGevaar_Gebruiksfase(string gevaarID)
+        public Dictionary<int, int> GetGevaar_Gebruiksfase(string gevaarID)
         {
             return databaseCommunication.GetGevaar_Gebruiksfase(gevaarID);
         }
 
-        public List<int> GetGevaar_GevaarlijkeZone(string gevaarID)
+        public Dictionary<int, int> GetGevaar_GevaarlijkeZone(string gevaarID)
         {
             return databaseCommunication.GetGevaar_GevaarlijkeZone(gevaarID);
         }
 
-        public List<int> GetGevaar_GevaarType(string gevaarID)
+        public Dictionary<int, int> GetGevaar_GevaarType(string gevaarID)
         {
             return databaseCommunication.GetGevaar_GevaarType(gevaarID);
         }
 
-        public List<int> GetGevaar_Gevolg(string gevaarID)
+        public Dictionary<int, int> GetGevaar_Gevolg(string gevaarID)
         {
             return databaseCommunication.GetGevaar_Gevolg(gevaarID);
         }
 
-        public List<int> GetGevaar_Taak(string gevaarID)
+        public Dictionary<int, int> GetGevaar_Taak(string gevaarID)
         {
             return databaseCommunication.GetGevaar_Taak(gevaarID);
         }

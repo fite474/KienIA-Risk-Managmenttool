@@ -62,28 +62,47 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             textBoxRest_Risico_Comment.Text = rest_Risico_Beschrijving;
 
             checkBoxIssueOK.Checked = comunicator.GetIssueState(IssueID) == "1";
-            //string rest_Ok = checkBoxRest_Risico_Ok.Checked == true ? "1" : "0";
+
+            DataTable risicoBeoordelingData = comunicator.GetRisicoBeoordelingFromIssue(IssueID);
+            textBoxInit_Risico.Text = risicoBeoordelingData.Rows[0].Field<int?>(7).ToString();
+            textBoxInit_Risico_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(13).ToString();
+            textBoxRest_Risico.Text = risicoBeoordelingData.Rows[0].Field<int?>(19).ToString();
+            textBoxRest_Risico_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(25).ToString();
+            checkBoxRest_Risico_OK.Checked = risicoBeoordelingData.Rows[0].Field<string>(26).ToString() == "1";
+            risicoBeoordelingData.Dispose();
 
         }
 
         private void LoadMenus()
         {
-            List<string> disciplineList = keuzeMenus.GetDisciplinesMenu();
-            foreach (string discipline in disciplineList)
-            {
-                comboBoxDiscipline.Items.Add(discipline);
-            }
+            //List<string> disciplineList = keuzeMenus.GetDisciplinesMenu();
+            //foreach (string discipline in disciplineList)
+            //{
+            //    comboBoxDiscipline.Items.Add(discipline);
+            //}
 
-            List<string> gevarenList = keuzeMenus.GetGevaarTypeMenu();
-            foreach (string gevaar in gevarenList)
-            {
-                comboBoxGevaar.Items.Add(gevaar);
-            }
+            //List<string> gevarenList = keuzeMenus.GetGevaarTypeMenu();
+            //foreach (string gevaar in gevarenList)
+            //{
+            //    comboBoxGevaar.Items.Add(gevaar);
+            //}
         }
 
         private void LoadData()
         {
+            LoadRisicoBeoordelingDetails();
             dataGridViewIssueMaatregelen.DataSource = comunicator.GetIssueMaatregelen(IssueID);
+            
+        }
+
+        private void LoadRisicoBeoordelingDetails()
+        {
+            DataTable risicoBeoordelingData = comunicator.GetRisicoBeoordelingFromIssue(IssueID);
+            textBoxInit_Risico.Text = risicoBeoordelingData.Rows[0].Field<int?>(7).ToString();
+            textBoxInit_Risico_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(13).ToString();
+            textBoxRest_Risico.Text = risicoBeoordelingData.Rows[0].Field<int?>(19).ToString();
+            textBoxRest_Risico_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(25).ToString();
+            checkBoxRest_Risico_OK.Checked = risicoBeoordelingData.Rows[0].Field<string>(26).ToString() == "1";
         }
 
         public void SetReadOnlyMode()
@@ -108,7 +127,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
                 issueRisicoDetails.SetReadOnlyMode();
             }
 
-            issueRisicoDetails.Show();
+            issueRisicoDetails.ShowDialog();
+            LoadData();
         }
 
         private void buttonAddNewMaatregel_Click(object sender, EventArgs e)

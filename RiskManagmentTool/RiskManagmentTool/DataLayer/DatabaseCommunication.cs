@@ -94,6 +94,8 @@ namespace RiskManagmentTool.DataLayer
             return gevaarID;
         }
 
+        #region gevaar details
+
         public void MakeGevaar_Disciplines(int gevaarID, int? disciplineID)
         {
             sqlConnection.Open();
@@ -238,7 +240,7 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
         }
 
-
+        #endregion gevaar details
 
 
 
@@ -582,7 +584,7 @@ namespace RiskManagmentTool.DataLayer
         // END REGION ADD TO OBJECT
 
 
-        // START REGION DELETE 
+        #region delete
 
         public void VerwijderIssuesVanObject(string objectID, string issueID)
         {
@@ -711,33 +713,14 @@ namespace RiskManagmentTool.DataLayer
             cmd.ExecuteNonQuery();
             sqlConnection.Close();
         }
+        #endregion delete
 
 
 
 
 
 
-        // END REGION DELETE
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // START REGION UPDATE
+        #region UPDATE
         //***********************************************************
         public void UpdateRisicoBeoordeling(Item item)
         {
@@ -848,19 +831,13 @@ namespace RiskManagmentTool.DataLayer
 
 
 
+        #endregion UPDATE
 
 
 
+        #region GET REQUESTS FROM DATABASE
 
-
-
-
-        //END REGION UPDATE
-
-
-
-        // START REGION -----------GET REQUESTS FROM DATABASE
-
+        #region get tables
         public SqlDataAdapter GetProjecten()
         {
             sqlConnection.Open();
@@ -896,12 +873,14 @@ namespace RiskManagmentTool.DataLayer
         {
             sqlConnection.Open();
             //String query = "SELECT * FROM TableRisksUsedInProject WHERE UsedInProjectName = '" + ProjectName + "'";
-            string query = "SELECT TableIssues.IssueID, TableGevaren.GevaarID, TableGevaren.GevaarlijkeSituatie, TableGevaren.GevaarlijkeGebeurtenis, TableGevaren.Discipline, TableGevaren.Gebruiksfase, TableGevaren.Bedienvorm," +
-                            "TableGevaren.Gebruiker, TableGevaren.GevaarlijkeZone, TableGevaren.Taak_Actie, TableGevaren.Gevaar, TableGevaren.Gevolg " +
-                            " FROM TableIssues INNER JOIN TableGevaren" +
-                            " ON TableGevaren.GevaarID = TableIssues.IssueGevaarID WHERE TableIssues.IssueID" +
-                            " IN(" +
-                            " SELECT TableObjectIssues.IssueID FROM TableObjectIssues WHERE TableObjectIssues.ObjectID = '" + objectID + "')";
+            //string query = "SELECT TableIssues.IssueID, TableGevaren.GevaarID, TableGevaren.GevaarlijkeSituatie, TableGevaren.GevaarlijkeGebeurtenis, TableGevaren.Discipline, TableGevaren.Gebruiksfase, TableGevaren.Bedienvorm," +
+            //                "TableGevaren.Gebruiker, TableGevaren.GevaarlijkeZone, TableGevaren.Taak_Actie, TableGevaren.Gevaar, TableGevaren.Gevolg " +
+            //                " FROM TableIssues INNER JOIN TableGevaren" +
+            //                " ON TableGevaren.GevaarID = TableIssues.IssueGevaarID WHERE TableIssues.IssueID" +
+            //                " IN(" +
+            //                " SELECT TableObjectIssues.IssueID FROM TableObjectIssues WHERE TableObjectIssues.ObjectID = '" + objectID + "')";
+            string query = "SELECT * FROM View_ObjectIssues " +
+                            "WHERE View_ObjectIssues.IssueID IN (SELECT TableObjectIssues.IssueID FROM TableObjectIssues WHERE TableObjectIssues.ObjectID = '" + objectID + "') ";
 
             SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
             sqlConnection.Close();
@@ -1054,6 +1033,7 @@ namespace RiskManagmentTool.DataLayer
             return adapter;
         }
 
+        #endregion get tables
         //end inner region filtered get requests
 
 
@@ -1149,7 +1129,7 @@ namespace RiskManagmentTool.DataLayer
         }
 
 
-        // Begin Get Info region
+        #region get info
         public List<string> GetIssuesInfo(string issueID)
         {
             
@@ -1218,11 +1198,10 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
             return templateID;
         }
-        //End get info region
-
-        //end inner region get id
+        #endregion get info
 
 
+        #region get states
         //begin get states
         public Dictionary<string, string> GetObjectIssuesState(string objectID)
         {
@@ -1290,14 +1269,26 @@ namespace RiskManagmentTool.DataLayer
             return issueState;
         }
 
-        //end get states
+        #endregion get states
 
 
-        //start Gevaren data
+        #region get gevaar data
 
-        public List<int> GetGevaar_Disciplines(string gevaarID)
+       public SqlDataAdapter GetGevaar_Situatie_gebeurtenis(string gevaarID)
+       {
+
+            sqlConnection.Open();
+            String query = "SELECT * FROM TableGevaarMulti WHERE GevaarID = '" + gevaarID + "'";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
+            sqlConnection.Close();
+            return adapter;
+       }
+
+
+        public Dictionary<int, int> GetGevaar_Disciplines(string gevaarID)
         {
-            List<int> gevaarDisciplines = new List<int>();
+            int checkBoxIndex = 0;
+            Dictionary<int, int> gevaarDisciplines = new Dictionary<int, int>();
             sqlConnection.Open();
             SqlCommand cmd = new SqlCommand("SELECT DisciplineID FROM Gevaar_Discipline " +
                                             "WHERE GevaarID = '" + gevaarID + "'", sqlConnection);
@@ -1306,15 +1297,20 @@ namespace RiskManagmentTool.DataLayer
                 while (dr.Read())
                 {
                     if (!dr.IsDBNull(0))
-                    { gevaarDisciplines.Add(int.Parse((dr[0]).ToString()) - 1);}
+                    {
+                        gevaarDisciplines.Add(checkBoxIndex, int.Parse((dr[0]).ToString()));
+                    }
+                    checkBoxIndex++;
                 }
             }
             sqlConnection.Close();
             return gevaarDisciplines;
         }
-        public List<int> GetGevaar_Bedienvorm(string gevaarID)
+
+        public Dictionary<int, int> GetGevaar_Bedienvorm(string gevaarID)
         {
-            List<int> gevaarDisciplines = new List<int>();
+            int checkBoxIndex = 0;
+            Dictionary<int, int> gevaarBedienvorm_Index = new Dictionary<int, int>();
             sqlConnection.Open();
             SqlCommand cmd = new SqlCommand("SELECT BedienvormID FROM Gevaar_Bedienvorm " +
                                             "WHERE GevaarID = '" + gevaarID + "'", sqlConnection);
@@ -1323,16 +1319,20 @@ namespace RiskManagmentTool.DataLayer
                 while (dr.Read())
                 {
                     if (!dr.IsDBNull(0))
-                    { gevaarDisciplines.Add(int.Parse((dr[0]).ToString()) - 1); }
+                    {
+                        gevaarBedienvorm_Index.Add(checkBoxIndex, int.Parse((dr[0]).ToString()));
+                    }
+                    checkBoxIndex++;
                 }
             }
             sqlConnection.Close();
-            return gevaarDisciplines;
+            return gevaarBedienvorm_Index;
         }
 
-        public List<int> GetGevaar_Gebruiker(string gevaarID)
+        public Dictionary<int, int> GetGevaar_Gebruiker(string gevaarID)
         {
-            List<int> gevaarDisciplines = new List<int>();
+            int checkBoxIndex = 0;
+            Dictionary<int, int> gevaarGebruiker_Index = new Dictionary<int, int>();
             sqlConnection.Open();
             SqlCommand cmd = new SqlCommand("SELECT GebruikerID FROM Gevaar_Gebruiker " +
                                             "WHERE GevaarID = '" + gevaarID + "'", sqlConnection);
@@ -1341,16 +1341,20 @@ namespace RiskManagmentTool.DataLayer
                 while (dr.Read())
                 {
                     if (!dr.IsDBNull(0))
-                    { gevaarDisciplines.Add(int.Parse((dr[0]).ToString()) - 1); }
+                    {
+                        gevaarGebruiker_Index.Add(checkBoxIndex, int.Parse((dr[0]).ToString()));
+                    }
+                    checkBoxIndex++;
                 }
             }
             sqlConnection.Close();
-            return gevaarDisciplines;
+            return gevaarGebruiker_Index;
         }
 
-        public List<int> GetGevaar_Gebruiksfase(string gevaarID)
+        public Dictionary<int, int> GetGevaar_Gebruiksfase(string gevaarID)
         {
-            List<int> gevaarDisciplines = new List<int>();
+            int checkBoxIndex = 0;
+            Dictionary<int, int> gevaarGebruiksfase_Index = new Dictionary<int, int>();
             sqlConnection.Open();
             SqlCommand cmd = new SqlCommand("SELECT GebruiksfaseID FROM Gevaar_Gebruiksfase " +
                                             "WHERE GevaarID = '" + gevaarID + "'", sqlConnection);
@@ -1359,16 +1363,20 @@ namespace RiskManagmentTool.DataLayer
                 while (dr.Read())
                 {
                     if (!dr.IsDBNull(0))
-                    { gevaarDisciplines.Add(int.Parse((dr[0]).ToString()) - 1); }
+                    {
+                        gevaarGebruiksfase_Index.Add(checkBoxIndex, int.Parse((dr[0]).ToString()));
+                    }
+                    checkBoxIndex++;
                 }
             }
             sqlConnection.Close();
-            return gevaarDisciplines;
+            return gevaarGebruiksfase_Index;
         }
 
-        public List<int> GetGevaar_GevaarlijkeZone(string gevaarID)
+        public Dictionary<int, int> GetGevaar_GevaarlijkeZone(string gevaarID)
         {
-            List<int> gevaarDisciplines = new List<int>();
+            int checkBoxIndex = 0;
+            Dictionary<int, int> gevaarGevaarlijkeZone_Index = new Dictionary<int, int>();
             sqlConnection.Open();
             SqlCommand cmd = new SqlCommand("SELECT GevaarlijkeZoneID FROM Gevaar_GevaarlijkeZone " +
                                             "WHERE GevaarID = '" + gevaarID + "'", sqlConnection);
@@ -1377,16 +1385,41 @@ namespace RiskManagmentTool.DataLayer
                 while (dr.Read())
                 {
                     if (!dr.IsDBNull(0))
-                    { gevaarDisciplines.Add(int.Parse((dr[0]).ToString()) - 1); }
+                    {
+                        gevaarGevaarlijkeZone_Index.Add(checkBoxIndex, int.Parse((dr[0]).ToString()));
+                    }
+                    checkBoxIndex++;
                 }
             }
             sqlConnection.Close();
-            return gevaarDisciplines;
+            return gevaarGevaarlijkeZone_Index;
         }
 
-        public List<int> GetGevaar_GevaarType(string gevaarID)
+
+
+        //#####################################################################################
+
+        //public Dictionary<int, string> GetGevaarTypesD()
+        //{
+        //    Dictionary<int, string> index_gevolg = new Dictionary<int, string>();
+        //    sqlConnection.Open();
+        //    SqlCommand cmd = new SqlCommand("SELECT GevaarTypeID, GevaarType FROM GevaarTypes", sqlConnection);
+        //    using (SqlDataReader dr = cmd.ExecuteReader())
+        //    {
+        //        while (dr.Read())
+        //        { index_gevolg.Add(int.Parse((dr[0]).ToString()), (dr[1]).ToString()); }
+        //    }
+        //    sqlConnection.Close();
+        //    return index_gevolg;
+        //}
+
+
+
+
+        public Dictionary<int, int> GetGevaar_GevaarType(string gevaarID)
         {
-            List<int> gevaarDisciplines = new List<int>();
+            int checkBoxIndex = 0;
+            Dictionary<int, int> gevaarType_Index = new Dictionary<int, int>();
             sqlConnection.Open();
             SqlCommand cmd = new SqlCommand("SELECT GevaarTypeID FROM Gevaar_GevaarType " +
                                             "WHERE GevaarID = '" + gevaarID + "'", sqlConnection);
@@ -1395,15 +1428,21 @@ namespace RiskManagmentTool.DataLayer
                 while (dr.Read())
                 {
                     if (!dr.IsDBNull(0))
-                    { gevaarDisciplines.Add(int.Parse((dr[0]).ToString()) - 1); }
+                    {
+                        gevaarType_Index.Add(checkBoxIndex, int.Parse((dr[0]).ToString()));
+                    }
+                    checkBoxIndex++;
                 }
             }
             sqlConnection.Close();
-            return gevaarDisciplines;
+            return gevaarType_Index;
         }
-        public List<int> GetGevaar_Gevolg(string gevaarID)
+
+
+        public Dictionary<int, int> GetGevaar_Gevolg(string gevaarID)
         {
-            List<int> gevaarDisciplines = new List<int>();
+            int checkBoxIndex = 0;
+            Dictionary<int, int> gevaarGevolg_Index = new Dictionary<int, int>();
             sqlConnection.Open();
             SqlCommand cmd = new SqlCommand("SELECT GevolgID FROM Gevaar_Gevolg " +
                                             "WHERE GevaarID = '" + gevaarID + "'", sqlConnection);
@@ -1412,16 +1451,20 @@ namespace RiskManagmentTool.DataLayer
                 while (dr.Read())
                 {
                     if (!dr.IsDBNull(0))
-                    { gevaarDisciplines.Add(int.Parse((dr[0]).ToString()) - 1); }
+                    {
+                        gevaarGevolg_Index.Add(checkBoxIndex, int.Parse((dr[0]).ToString()));
+                    }
+                    checkBoxIndex++;
                 }
             }
             sqlConnection.Close();
-            return gevaarDisciplines;
+            return gevaarGevolg_Index;
         }
 
-        public List<int> GetGevaar_Taak(string gevaarID)
+        public Dictionary<int, int> GetGevaar_Taak(string gevaarID)
         {
-            List<int> gevaarDisciplines = new List<int>();
+            int checkBoxIndex = 0;
+            Dictionary<int, int> gevaarTaak_Index = new Dictionary<int, int>();
             sqlConnection.Open();
             SqlCommand cmd = new SqlCommand("SELECT TaakID FROM Gevaar_Taak " +
                                             "WHERE GevaarID = '" + gevaarID + "'", sqlConnection);
@@ -1430,16 +1473,19 @@ namespace RiskManagmentTool.DataLayer
                 while (dr.Read())
                 {
                     if (!dr.IsDBNull(0))
-                    { gevaarDisciplines.Add(int.Parse((dr[0]).ToString()) - 1); }
+                    {
+                        gevaarTaak_Index.Add(checkBoxIndex, int.Parse((dr[0]).ToString()));
+                    }
+                    checkBoxIndex++;
                 }
             }
             sqlConnection.Close();
-            return gevaarDisciplines;
+            return gevaarTaak_Index;
         }
 
 
 
-        // end gevaren data
+        #endregion get gevaar data
 
 
 
@@ -1668,9 +1714,9 @@ namespace RiskManagmentTool.DataLayer
             return maatregelIds;
         }
 
-        //END REGION -----GET REQUESTS FROM DATABASE
+        #endregion GET REQUESTS FROM DATABASE
 
-        // START Images
+        #region Images
 
         public void AddImageToObject()
         {
@@ -1684,7 +1730,7 @@ namespace RiskManagmentTool.DataLayer
         }
 
 
-        // END Images
+        #endregion Images
 
 
 
@@ -1699,8 +1745,8 @@ namespace RiskManagmentTool.DataLayer
 
 
 
-        //START MENU REGION
-        //      StART ADD TO MENU
+        #region menus
+
 
         public void AddToObjectTypesMenu(string optionToAdd)
         {
@@ -1870,10 +1916,10 @@ namespace RiskManagmentTool.DataLayer
             cmd.ExecuteNonQuery();
             sqlConnection.Close();
         }
-        //      END ADD TO MENU
+        #endregion menus
 
 
-        //      START GET FROM MENU
+        #region getmenus
 
         public List<string> GetObjectTypes()
         {
@@ -1892,52 +1938,33 @@ namespace RiskManagmentTool.DataLayer
             return objectTypes;
         }
 
-        public List<string> GetGevolgen()
-        {
-            List<string> objectTypes = new List<string>();
-            sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT Gevolg FROM Gevolgen", sqlConnection);
 
+        public Dictionary<int, string> GetGevolgen()
+        {
+            Dictionary<int, string> index_gevolg = new Dictionary<int, string>();
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT GevolgID, Gevolg FROM Gevolgen", sqlConnection);
             using (SqlDataReader dr = cmd.ExecuteReader())
             {
                 while (dr.Read())
-                {
-                    objectTypes.Add((dr[0]).ToString());
-                }
+                {index_gevolg.Add(int.Parse((dr[0]).ToString()), (dr[1]).ToString());}
             }
             sqlConnection.Close();
-            return objectTypes;
+            return index_gevolg;
         }
 
-        public List<string> GetGevarenzones()
+
+        public Dictionary<int, string> GetGevarenzones()
         {
-            List<string> objectTypes = new List<string>();
+            Dictionary<int, string> objectTypes = new Dictionary<int, string>();
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT Gevarenzone FROM Gevarenzones", sqlConnection);
+            SqlCommand cmd = new SqlCommand("SELECT GevarenzoneID, Gevarenzone FROM Gevarenzones", sqlConnection);
 
             using (SqlDataReader dr = cmd.ExecuteReader())
             {
                 while (dr.Read())
                 {
-                    objectTypes.Add((dr[0]).ToString());
-                }
-            }
-            sqlConnection.Close();
-            return objectTypes;
-
-        }
-
-        public List<string> GetGevaartypes()
-        {
-            List<string> objectTypes = new List<string>();
-            sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT GevaarType FROM GevaarTypes", sqlConnection);
-
-            using (SqlDataReader dr = cmd.ExecuteReader())
-            {
-                while (dr.Read())
-                {
-                    objectTypes.Add((dr[0]).ToString());
+                    objectTypes.Add(int.Parse((dr[0]).ToString()), (dr[1]).ToString());
                 }
             }
             sqlConnection.Close();
@@ -1945,17 +1972,48 @@ namespace RiskManagmentTool.DataLayer
 
         }
 
-        public List<string> GetGebruiksfases()
+        //public Dictionary<int, string> GetGevaartypes()
+        //{
+        //    List<string> objectTypes = new List<string>();
+        //    sqlConnection.Open();
+        //    SqlCommand cmd = new SqlCommand("SELECT GevaarType FROM GevaarTypes", sqlConnection);
+
+        //    using (SqlDataReader dr = cmd.ExecuteReader())
+        //    {
+        //        while (dr.Read())
+        //        {
+        //            objectTypes.Add((dr[0]).ToString());
+        //        }
+        //    }
+        //    sqlConnection.Close();
+        //    return objectTypes;
+        //}
+
+        public Dictionary<int, string> GetGevaarTypes()
         {
-            List<string> objectTypes = new List<string>();
+            Dictionary<int, string> index_gevolg = new Dictionary<int, string>();
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT Gebruiksfase FROM Gebruiksfases", sqlConnection);
+            SqlCommand cmd = new SqlCommand("SELECT GevaarTypeID, GevaarType FROM GevaarTypes", sqlConnection);
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                { index_gevolg.Add(int.Parse((dr[0]).ToString()), (dr[1]).ToString()); }
+            }
+            sqlConnection.Close();
+            return index_gevolg;
+        }
+
+        public Dictionary<int, string> GetGebruiksfases()
+        {
+            Dictionary<int, string> objectTypes = new Dictionary<int, string>();
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT GebruiksfaseID, Gebruiksfase FROM Gebruiksfases", sqlConnection);
 
             using (SqlDataReader dr = cmd.ExecuteReader())
             {
                 while (dr.Read())
                 {
-                    objectTypes.Add((dr[0]).ToString());
+                    objectTypes.Add(int.Parse((dr[0]).ToString()), (dr[1]).ToString());
                 }
             }
             sqlConnection.Close();
@@ -1963,17 +2021,17 @@ namespace RiskManagmentTool.DataLayer
 
         }
 
-        public List<string> GetGebruikers()
+        public Dictionary<int, string> GetGebruikers()
         {
-            List<string> objectTypes = new List<string>();
+            Dictionary<int, string> objectTypes = new Dictionary<int, string>();
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT Gebruiker FROM Gebruikers", sqlConnection);
+            SqlCommand cmd = new SqlCommand("SELECT GebruikerID, Gebruiker FROM Gebruikers", sqlConnection);
 
             using (SqlDataReader dr = cmd.ExecuteReader())
             {
                 while (dr.Read())
                 {
-                    objectTypes.Add((dr[0]).ToString());
+                    objectTypes.Add(int.Parse((dr[0]).ToString()), (dr[1]).ToString());
                 }
             }
             sqlConnection.Close();
@@ -1981,17 +2039,17 @@ namespace RiskManagmentTool.DataLayer
 
         }
 
-        public List<string> GetDisciplines()
+        public Dictionary<int, string> GetDisciplines()
         {
-            List<string> objectTypes = new List<string>();
+            Dictionary<int, string> objectTypes = new Dictionary<int, string>();
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT Discipline FROM Disciplines", sqlConnection);
+            SqlCommand cmd = new SqlCommand("SELECT DisciplineID, Discipline FROM Disciplines", sqlConnection);
 
             using (SqlDataReader dr = cmd.ExecuteReader())
             {
                 while (dr.Read())
                 {
-                    objectTypes.Add((dr[0]).ToString());
+                    objectTypes.Add(int.Parse((dr[0]).ToString()), (dr[1]).ToString());
                 }
             }
             sqlConnection.Close();
@@ -1999,17 +2057,17 @@ namespace RiskManagmentTool.DataLayer
 
         }
 
-        public List<string> GetBedienvormen()
+        public Dictionary<int, string> GetBedienvormen()
         {
-            List<string> objectTypes = new List<string>();
+            Dictionary<int, string> objectTypes = new Dictionary<int, string>();
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT Bedienvorm FROM Bedienvormen", sqlConnection);
+            SqlCommand cmd = new SqlCommand("SELECT BedienvormID, Bedienvorm FROM Bedienvormen", sqlConnection);
 
             using (SqlDataReader dr = cmd.ExecuteReader())
             {
                 while (dr.Read())
                 {
-                    objectTypes.Add((dr[0]).ToString());
+                    objectTypes.Add(int.Parse((dr[0]).ToString()), (dr[1]).ToString());
                 }
             }
             sqlConnection.Close();
@@ -2017,23 +2075,33 @@ namespace RiskManagmentTool.DataLayer
 
         }
 
-        public List<string> GetTaken()
+        public Dictionary<int, string> GetTaken()
         {
-            List<string> objectTypes = new List<string>();
+            Dictionary<int, string> objectTypes = new Dictionary<int, string>();
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT Taak FROM Taken", sqlConnection);
+            SqlCommand cmd = new SqlCommand("SELECT TaakID, Taak FROM Taken", sqlConnection);
 
             using (SqlDataReader dr = cmd.ExecuteReader())
             {
                 while (dr.Read())
                 {
-                    objectTypes.Add((dr[0]).ToString());
+                    objectTypes.Add(int.Parse((dr[0]).ToString()), (dr[1]).ToString());
                 }
             }
             sqlConnection.Close();
             return objectTypes;
 
         }
+
+
+
+        //------------------------
+
+
+
+
+
+
 
         public List<string> GetMaatregelNormen()
         {
@@ -2141,11 +2209,9 @@ namespace RiskManagmentTool.DataLayer
             return objectTypes;
         }
 
+        #endregion getmenus
 
 
-
-        //      END GET FROM MENUS
-        //END REGION MENUS
 
     }
 }

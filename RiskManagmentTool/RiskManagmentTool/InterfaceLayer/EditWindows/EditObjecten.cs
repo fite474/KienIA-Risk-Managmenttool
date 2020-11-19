@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using RiskManagmentTool.LogicLayer;
 using RiskManagmentTool.InterfaceLayer.AddWindows;
 using RiskManagmentTool.InterfaceLayer.DeleteWindows;
+using DataGridViewAutoFilter;
+
 
 namespace RiskManagmentTool.InterfaceLayer.EditWindows
 {
@@ -77,11 +79,17 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
 
 
-
+            
 
             dataGridViewGekoppeldeIssues.DataSource = comunicator.GetObjectIssues(ObjectID);
-            
-            
+
+            foreach (DataGridViewColumn col in dataGridViewGekoppeldeIssues.Columns)
+            {
+
+                col.HeaderCell = new DataGridViewAutoFilterColumnHeaderCell(col.HeaderCell);
+                
+
+            }
 
         }
 
@@ -193,7 +201,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
                                                         rest_Risico, rest_Risico_Beschrijving);
                 issueMaatregelen.ShowDialog();
             }
-            
+            LoadData();
             //Form issueMaatregelen = new IssueMaatregelen();
             //issueMaatregelen.Show();
         }
@@ -227,8 +235,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
                                                          init_Risico, init_Risico_Beschrijving,
                                                          rest_Risico, rest_Risico_Beschrijving);
             issueMaatregelen.ShowDialog();
-            ShowDataWithFiltering();
-            //LoadData();
+            //ShowDataWithFiltering();
+            LoadData();
 
 
         }
@@ -291,6 +299,11 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             }
 
             dataGridViewGekoppeldeIssues.ClearSelection();
+
+
+
+
+
 
             int rowIndex = 0;
             foreach (DataGridViewRow row in dataGridViewGekoppeldeIssues.Rows)

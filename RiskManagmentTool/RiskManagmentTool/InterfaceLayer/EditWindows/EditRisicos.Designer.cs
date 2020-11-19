@@ -61,8 +61,13 @@
             this.buttonGevaarlijkeZone = new System.Windows.Forms.Button();
             this.buttonTaak = new System.Windows.Forms.Button();
             this.buttonGevolg = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.buttonViewGevaarUsage = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -77,7 +82,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(34, 633);
+            this.label2.Location = new System.Drawing.Point(34, 648);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 17);
             this.label2.TabIndex = 1;
@@ -86,7 +91,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(34, 234);
+            this.label3.Location = new System.Drawing.Point(34, 249);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 17);
             this.label3.TabIndex = 2;
@@ -95,7 +100,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(29, 289);
+            this.label4.Location = new System.Drawing.Point(29, 304);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(92, 17);
             this.label4.TabIndex = 3;
@@ -104,7 +109,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(34, 426);
+            this.label5.Location = new System.Drawing.Point(34, 441);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 17);
             this.label5.TabIndex = 4;
@@ -113,7 +118,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(34, 475);
+            this.label6.Location = new System.Drawing.Point(34, 490);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(114, 17);
             this.label6.TabIndex = 5;
@@ -122,7 +127,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(34, 362);
+            this.label7.Location = new System.Drawing.Point(34, 377);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(83, 17);
             this.label7.TabIndex = 6;
@@ -131,7 +136,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(34, 530);
+            this.label8.Location = new System.Drawing.Point(34, 545);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(74, 17);
             this.label8.TabIndex = 7;
@@ -140,7 +145,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(34, 584);
+            this.label9.Location = new System.Drawing.Point(34, 599);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(55, 17);
             this.label9.TabIndex = 8;
@@ -193,63 +198,63 @@
             // 
             // textBoxDiscipline
             // 
-            this.textBoxDiscipline.Location = new System.Drawing.Point(201, 234);
+            this.textBoxDiscipline.Location = new System.Drawing.Point(201, 249);
             this.textBoxDiscipline.Name = "textBoxDiscipline";
             this.textBoxDiscipline.Size = new System.Drawing.Size(509, 22);
             this.textBoxDiscipline.TabIndex = 16;
             // 
             // textBoxGebruiksfase
             // 
-            this.textBoxGebruiksfase.Location = new System.Drawing.Point(201, 289);
+            this.textBoxGebruiksfase.Location = new System.Drawing.Point(201, 304);
             this.textBoxGebruiksfase.Name = "textBoxGebruiksfase";
             this.textBoxGebruiksfase.Size = new System.Drawing.Size(509, 22);
             this.textBoxGebruiksfase.TabIndex = 17;
             // 
             // textBoxBedienvorm
             // 
-            this.textBoxBedienvorm.Location = new System.Drawing.Point(201, 357);
+            this.textBoxBedienvorm.Location = new System.Drawing.Point(201, 372);
             this.textBoxBedienvorm.Name = "textBoxBedienvorm";
             this.textBoxBedienvorm.Size = new System.Drawing.Size(509, 22);
             this.textBoxBedienvorm.TabIndex = 18;
             // 
             // textBoxGebruiker
             // 
-            this.textBoxGebruiker.Location = new System.Drawing.Point(201, 426);
+            this.textBoxGebruiker.Location = new System.Drawing.Point(201, 441);
             this.textBoxGebruiker.Name = "textBoxGebruiker";
             this.textBoxGebruiker.Size = new System.Drawing.Size(509, 22);
             this.textBoxGebruiker.TabIndex = 20;
             // 
             // textBoxGevaarlijkeZone
             // 
-            this.textBoxGevaarlijkeZone.Location = new System.Drawing.Point(201, 475);
+            this.textBoxGevaarlijkeZone.Location = new System.Drawing.Point(201, 490);
             this.textBoxGevaarlijkeZone.Name = "textBoxGevaarlijkeZone";
             this.textBoxGevaarlijkeZone.Size = new System.Drawing.Size(509, 22);
             this.textBoxGevaarlijkeZone.TabIndex = 21;
             // 
             // textBoxTaak
             // 
-            this.textBoxTaak.Location = new System.Drawing.Point(201, 530);
+            this.textBoxTaak.Location = new System.Drawing.Point(201, 545);
             this.textBoxTaak.Name = "textBoxTaak";
             this.textBoxTaak.Size = new System.Drawing.Size(509, 22);
             this.textBoxTaak.TabIndex = 22;
             // 
             // textBoxGevaar
             // 
-            this.textBoxGevaar.Location = new System.Drawing.Point(201, 584);
+            this.textBoxGevaar.Location = new System.Drawing.Point(201, 599);
             this.textBoxGevaar.Name = "textBoxGevaar";
             this.textBoxGevaar.Size = new System.Drawing.Size(509, 22);
             this.textBoxGevaar.TabIndex = 23;
             // 
             // textBoxGevolg
             // 
-            this.textBoxGevolg.Location = new System.Drawing.Point(201, 633);
+            this.textBoxGevolg.Location = new System.Drawing.Point(201, 648);
             this.textBoxGevolg.Name = "textBoxGevolg";
             this.textBoxGevolg.Size = new System.Drawing.Size(509, 22);
             this.textBoxGevolg.TabIndex = 24;
             // 
             // buttonDisciplines
             // 
-            this.buttonDisciplines.Location = new System.Drawing.Point(716, 233);
+            this.buttonDisciplines.Location = new System.Drawing.Point(716, 248);
             this.buttonDisciplines.Name = "buttonDisciplines";
             this.buttonDisciplines.Size = new System.Drawing.Size(85, 23);
             this.buttonDisciplines.TabIndex = 33;
@@ -259,17 +264,18 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.buttonKeuzeOption);
             this.panel2.Controls.Add(this.checkedListBoxOptions);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(828, 0);
+            this.panel2.Location = new System.Drawing.Point(837, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(749, 765);
+            this.panel2.Size = new System.Drawing.Size(740, 765);
             this.panel2.TabIndex = 34;
             // 
             // buttonKeuzeOption
             // 
-            this.buttonKeuzeOption.Location = new System.Drawing.Point(4, 185);
+            this.buttonKeuzeOption.Location = new System.Drawing.Point(3, 197);
             this.buttonKeuzeOption.Name = "buttonKeuzeOption";
             this.buttonKeuzeOption.Size = new System.Drawing.Size(157, 36);
             this.buttonKeuzeOption.TabIndex = 1;
@@ -281,7 +287,7 @@
             // 
             this.checkedListBoxOptions.CheckOnClick = true;
             this.checkedListBoxOptions.FormattingEnabled = true;
-            this.checkedListBoxOptions.Location = new System.Drawing.Point(3, 227);
+            this.checkedListBoxOptions.Location = new System.Drawing.Point(3, 249);
             this.checkedListBoxOptions.Name = "checkedListBoxOptions";
             this.checkedListBoxOptions.Size = new System.Drawing.Size(505, 446);
             this.checkedListBoxOptions.TabIndex = 0;
@@ -289,7 +295,7 @@
             // 
             // buttonBedienvorm
             // 
-            this.buttonBedienvorm.Location = new System.Drawing.Point(716, 359);
+            this.buttonBedienvorm.Location = new System.Drawing.Point(716, 374);
             this.buttonBedienvorm.Name = "buttonBedienvorm";
             this.buttonBedienvorm.Size = new System.Drawing.Size(85, 23);
             this.buttonBedienvorm.TabIndex = 35;
@@ -299,7 +305,7 @@
             // 
             // buttonGebruiksfase
             // 
-            this.buttonGebruiksfase.Location = new System.Drawing.Point(716, 289);
+            this.buttonGebruiksfase.Location = new System.Drawing.Point(716, 304);
             this.buttonGebruiksfase.Name = "buttonGebruiksfase";
             this.buttonGebruiksfase.Size = new System.Drawing.Size(85, 23);
             this.buttonGebruiksfase.TabIndex = 36;
@@ -309,7 +315,7 @@
             // 
             // buttonGevaar
             // 
-            this.buttonGevaar.Location = new System.Drawing.Point(716, 584);
+            this.buttonGevaar.Location = new System.Drawing.Point(716, 599);
             this.buttonGevaar.Name = "buttonGevaar";
             this.buttonGevaar.Size = new System.Drawing.Size(85, 23);
             this.buttonGevaar.TabIndex = 37;
@@ -319,7 +325,7 @@
             // 
             // buttonGebruiker
             // 
-            this.buttonGebruiker.Location = new System.Drawing.Point(716, 426);
+            this.buttonGebruiker.Location = new System.Drawing.Point(716, 441);
             this.buttonGebruiker.Name = "buttonGebruiker";
             this.buttonGebruiker.Size = new System.Drawing.Size(85, 23);
             this.buttonGebruiker.TabIndex = 38;
@@ -329,7 +335,7 @@
             // 
             // buttonGevaarlijkeZone
             // 
-            this.buttonGevaarlijkeZone.Location = new System.Drawing.Point(716, 474);
+            this.buttonGevaarlijkeZone.Location = new System.Drawing.Point(716, 489);
             this.buttonGevaarlijkeZone.Name = "buttonGevaarlijkeZone";
             this.buttonGevaarlijkeZone.Size = new System.Drawing.Size(85, 23);
             this.buttonGevaarlijkeZone.TabIndex = 39;
@@ -339,7 +345,7 @@
             // 
             // buttonTaak
             // 
-            this.buttonTaak.Location = new System.Drawing.Point(716, 529);
+            this.buttonTaak.Location = new System.Drawing.Point(716, 544);
             this.buttonTaak.Name = "buttonTaak";
             this.buttonTaak.Size = new System.Drawing.Size(85, 23);
             this.buttonTaak.TabIndex = 40;
@@ -349,13 +355,50 @@
             // 
             // buttonGevolg
             // 
-            this.buttonGevolg.Location = new System.Drawing.Point(716, 632);
+            this.buttonGevolg.Location = new System.Drawing.Point(716, 647);
             this.buttonGevolg.Name = "buttonGevolg";
             this.buttonGevolg.Size = new System.Drawing.Size(85, 23);
             this.buttonGevolg.TabIndex = 41;
             this.buttonGevolg.Text = "Gevolg";
             this.buttonGevolg.UseVisualStyleBackColor = true;
             this.buttonGevolg.Click += new System.EventHandler(this.buttonGevolg_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.label10);
+            this.panel3.Controls.Add(this.buttonViewGevaarUsage);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(740, 194);
+            this.panel3.TabIndex = 2;
+            // 
+            // buttonViewGevaarUsage
+            // 
+            this.buttonViewGevaarUsage.Location = new System.Drawing.Point(50, 89);
+            this.buttonViewGevaarUsage.Name = "buttonViewGevaarUsage";
+            this.buttonViewGevaarUsage.Size = new System.Drawing.Size(257, 33);
+            this.buttonViewGevaarUsage.TabIndex = 0;
+            this.buttonViewGevaarUsage.Text = "Bekijk gebruik";
+            this.buttonViewGevaarUsage.UseVisualStyleBackColor = true;
+            this.buttonViewGevaarUsage.Click += new System.EventHandler(this.buttonViewGevaarUsage_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(47, 47);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(142, 17);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Issues met dit gevaar";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(207, 47);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.TabIndex = 2;
             // 
             // EditRisicos
             // 
@@ -398,6 +441,8 @@
             this.Load += new System.EventHandler(this.EditRisicos_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -438,5 +483,9 @@
         private System.Windows.Forms.Button buttonTaak;
         private System.Windows.Forms.Button buttonGevolg;
         private System.Windows.Forms.Button buttonKeuzeOption;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button buttonViewGevaarUsage;
     }
 }

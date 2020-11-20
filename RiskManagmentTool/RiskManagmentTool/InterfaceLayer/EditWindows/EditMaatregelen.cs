@@ -37,16 +37,16 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void LoadMenus()
         {
-            List<string> maatregelNormList = keuzeMenus.GetMaatregelNormMenu();
-            foreach (string normString in maatregelNormList)
+            Dictionary<int, string> maatregelNormList = keuzeMenus.GetMaatregelNormMenu();
+            foreach (KeyValuePair<int, string> kvp in maatregelNormList)
             {
-                comboBoxMaatregelNorm.Items.Add(normString);
+                comboBoxMaatregelNorm.Items.Add(kvp.Value);
             }
 
-            List<string> maatregelCategoryList = keuzeMenus.GetMaatregelCategoryMenu();
-            foreach (string categoryString in maatregelCategoryList)
+            Dictionary<int, string> maatregelCategoryList = keuzeMenus.GetMaatregelCategoryMenu();
+            foreach (KeyValuePair<int, string> kvp in maatregelCategoryList)
             {
-                comboBoxMaatregelCategory.Items.Add(categoryString);
+                comboBoxMaatregelCategory.Items.Add(kvp.Value);
             }
         }
 

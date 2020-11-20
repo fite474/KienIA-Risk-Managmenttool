@@ -62,16 +62,16 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void LoadCombobox()
         {
-            List<string> templateTypesList = keuzeMenus.GetTemplateTypesMenu();
-            foreach (string typeString in templateTypesList)
+            Dictionary<int, string> templateTypesList = keuzeMenus.GetTemplateTypesMenu();
+            foreach (KeyValuePair<int, string> kvp in templateTypesList)
             {
-                comboBoxTemplateType.Items.Add(typeString);
+                comboBoxTemplateType.Items.Add(kvp.Value);
             }
 
-            List<string> templateToepassingList = keuzeMenus.GetTemplateToepassingenMenu();
-            foreach (string typeString in templateToepassingList)
+            Dictionary<int, string> templateToepassingList = keuzeMenus.GetTemplateToepassingenMenu();
+            foreach (KeyValuePair<int, string> kvp in templateToepassingList)
             {
-                comboBoxTemplateToepassing.Items.Add(typeString);
+                comboBoxTemplateToepassing.Items.Add(kvp.Value);
             }
 
         }

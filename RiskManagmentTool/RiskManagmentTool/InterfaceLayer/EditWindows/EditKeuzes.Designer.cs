@@ -64,6 +64,7 @@
             this.buttonDeleteOption.TabIndex = 2;
             this.buttonDeleteOption.Text = "Delete";
             this.buttonDeleteOption.UseVisualStyleBackColor = true;
+            this.buttonDeleteOption.Click += new System.EventHandler(this.buttonDeleteOption_Click);
             // 
             // buttonDone
             // 
@@ -83,6 +84,7 @@
             this.buttonEditOption.TabIndex = 4;
             this.buttonEditOption.Text = "Edit text";
             this.buttonEditOption.UseVisualStyleBackColor = true;
+            this.buttonEditOption.Click += new System.EventHandler(this.buttonEditOption_Click);
             // 
             // label1
             // 

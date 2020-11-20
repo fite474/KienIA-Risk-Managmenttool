@@ -49,10 +49,10 @@ namespace RiskManagmentTool.InterfaceLayer.InitWindows
         private void FillCombobox()
         {
             //combobox project lijsten
-            List<string> typeObjectList = keuzeMenus.GetTypeObjectMenu();
-            foreach (string typeString in typeObjectList)
+            Dictionary<int, string> typeObjectList = keuzeMenus.GetTypeObjectMenu();
+            foreach (KeyValuePair<int, string> kvp in typeObjectList)
             {
-                comboBoxObjectType.Items.Add(typeString);
+                comboBoxObjectType.Items.Add(kvp.Value);
             }
 
             //List<string> objectTypes = comunicator.GetObjectTypes();

@@ -13,7 +13,7 @@ namespace RiskManagmentTool.LogicLayer
         private List<CheckedListBox> KeuzeMenuList;
 
 
-        private List<string> TypeObjectComboBox;
+        private Dictionary<int, string> TypeObjectComboBox;
 
         private Dictionary<int, string> GevolgenKeuzes;
         private Dictionary<int, string> GevarenzonesKeuzes;
@@ -27,11 +27,11 @@ namespace RiskManagmentTool.LogicLayer
         private Dictionary<int, string> BedienvormenComboBox;
         private Dictionary<int, string> TakenComboBox;
 
-        private List<string> MaatregelNormComboBox;
-        private List<string> MaatregelCategoryComboBox;
+        private Dictionary<int, string> MaatregelNormComboBox;
+        private Dictionary<int, string> MaatregelCategoryComboBox;
 
-        private List<string> TemplateTypesComboBox;
-        private List<string> TemplateToepassingenComboBox;
+        private Dictionary<int, string> TemplateTypesComboBox;
+        private Dictionary<int, string> TemplateToepassingenComboBox;
 
         private List<string> ObjectNamenComboBox;
         private List<string> TemplateNamenComboBox;
@@ -55,18 +55,18 @@ namespace RiskManagmentTool.LogicLayer
 
         }
 
-        public List<string> GetMaatregelNormMenu()
+        public Dictionary<int, string> GetMaatregelNormMenu()
         {
             return MaatregelNormComboBox;
         }
 
-        public List<string> GetMaatregelCategoryMenu()
+        public Dictionary<int, string> GetMaatregelCategoryMenu()
         {
             return MaatregelCategoryComboBox;
         }
 
 
-        public List<string> GetTypeObjectMenu()
+        public Dictionary<int, string> GetTypeObjectMenu()
         {
             return TypeObjectComboBox;
         }
@@ -114,12 +114,12 @@ namespace RiskManagmentTool.LogicLayer
             return TakenComboBox;
         }
 
-        public List<string> GetTemplateTypesMenu()
+        public Dictionary<int, string> GetTemplateTypesMenu()
         {
             return TemplateTypesComboBox;
         }
 
-        public List<string> GetTemplateToepassingenMenu()
+        public Dictionary<int, string> GetTemplateToepassingenMenu()
         {
             return TemplateToepassingenComboBox;
         }
@@ -146,8 +146,6 @@ namespace RiskManagmentTool.LogicLayer
 
             TypeObjectComboBox = comunicator.GetObjectTypes();
 
-
-
             //-------------
 
             GevolgenKeuzes = comunicator.GetGevolgen();
@@ -162,16 +160,14 @@ namespace RiskManagmentTool.LogicLayer
 
             //-------------
 
-
-
-
-
-
             MaatregelNormComboBox = comunicator.GetMaatregelNorm();
             MaatregelCategoryComboBox = comunicator.GetMaatregelCategory();
 
             TemplateTypesComboBox = comunicator.GetTemplateTypes();
             TemplateToepassingenComboBox = comunicator.GetTemplateToepassingen();
+
+
+
 
             ObjectNamenComboBox = comunicator.GetObjectNamen();
             TemplateNamenComboBox = comunicator.GetTemplateNamen();

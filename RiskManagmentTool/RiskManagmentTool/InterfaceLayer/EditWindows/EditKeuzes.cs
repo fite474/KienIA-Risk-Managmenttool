@@ -14,11 +14,11 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
     public partial class EditKeuzes : Form
     {
         private string MenuName;
-        private List<string> MenuOptions;
+        private Dictionary<int, string> MenuOptions;
         private Datacomunication comunicator;
         KeuzeMenus keuzeMenus;
         private MenuTableName MenuTableName;
-        public EditKeuzes(MenuTableName menuTableName, List<string> options, string menuName)
+        public EditKeuzes(MenuTableName menuTableName, Dictionary<int, string> options, string menuName)
         {
             InitializeComponent();
             keuzeMenus = new KeuzeMenus();
@@ -31,33 +31,33 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void LoadData()
         {
-            //switch (MenuTableName)
-            //{
-            //    case MenuTableName.ObjectTypes:
-            //        MenuOptions = keuzeMenus.GetTypeObjectMenu();
-            //        break;
-            //    case MenuTableName.Gevolgen:
-            //        break;
-            //    case MenuTableName.Gevarenzones:
-            //        break;
-            //    case MenuTableName.GevaarTypes:
-            //        break;
-            //    case MenuTableName.Gebruiksfases:
-            //        break;
-            //    case MenuTableName.Gebruikers:
-            //        break;
-            //    case MenuTableName.Disciplines:
-            //        break;
-            //    case MenuTableName.Bedienvormen:
-            //        break;
-            //    default:
-            //        break;
-            //}
+            switch (MenuTableName)
+            {
+                case MenuTableName.ObjectTypes:
+                    //MenuOptions = keuzeMenus.GetTypeObjectMenu();
+                    break;
+                case MenuTableName.Gevolgen:
+                    break;
+                case MenuTableName.Gevarenzones:
+                    break;
+                case MenuTableName.GevaarTypes:
+                    break;
+                case MenuTableName.Gebruiksfases:
+                    break;
+                case MenuTableName.Gebruikers:
+                    break;
+                case MenuTableName.Disciplines:
+                    break;
+                case MenuTableName.Bedienvormen:
+                    break;
+                default:
+                    break;
+            }
             textBoxMenuName.Text = MenuName;
 
-            foreach (string menuOption in MenuOptions)
+            foreach (KeyValuePair<int, string> kvp in MenuOptions)
             {
-                listBoxMenuOptions.Items.Add(menuOption);
+                listBoxMenuOptions.Items.Add(kvp.Value);
                 //comboBoxObjectType.Items.Add(typeString);
             }
         }
@@ -95,6 +95,29 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             comunicator.AddToMenu(MenuTableName, input);
             keuzeMenus.ReloadAllLists();
            
+        }
+
+        private void buttonDeleteOption_Click(object sender, EventArgs e)
+        {
+            string selectedOption = "";
+            string message = "weet u zeker dat u de optie: " + selectedOption + " wilt verwijderen?.";
+            string title = "Verwijder keuze optie";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons);
+
+            if (result == DialogResult.Yes)
+            {
+                //this.Close();
+            }
+            else
+            {
+                // Do something  
+            }
+        }
+
+        private void buttonEditOption_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

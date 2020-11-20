@@ -14,12 +14,14 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
     public partial class IssueRisicoDetails : Form
     {
         private Datacomunication comunicator;
+        private Risicograaf risicograaf;
         private string IssueID;
         private string test;
         public IssueRisicoDetails(string issueID)
         {
             InitializeComponent();
             comunicator = new Datacomunication();
+            risicograaf = new Risicograaf();
             IssueID = issueID;
             LoadData();
         }
@@ -92,6 +94,26 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         }
 
+        private void CalculateInitRisk(int init_Se, int init_Fr, int init_Pr, int init_Av)
+        {
+            Tuple<int, int> initValues = risicograaf.CalculateSilMode(init_Se, init_Fr, init_Pr, init_Av);
+            int init_Cl = initValues.Item1;
+            int init_Risk = initValues.Item2;
+
+            textBoxInit_Cl.Text = init_Cl.ToString();
+            textBoxInit_Risico.Text = init_Risk.ToString();
+        }
+
+        private void CalculateRestRisk(int rest_Se, int rest_Fr, int rest_Pr, int rest_Av)
+        {
+            Tuple<int, int> restValues = risicograaf.CalculateSilMode(rest_Se, rest_Fr, rest_Pr, rest_Av);
+            int rest_Cl = restValues.Item1;
+            int rest_Risk = restValues.Item2;
+
+            textBoxRest_Cl.Text = rest_Cl.ToString();
+            textBoxRest_Risico.Text = rest_Risk.ToString();
+        }
+
 
         private void buttonConfirm_Click(object sender, EventArgs e)
         {
@@ -146,5 +168,96 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
                 }
             }
         }
+
+        private void checkedListBoxRisicograafMethode_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            for (int ix = 0; ix < checkedListBoxRisicograafMethode.Items.Count; ++ix)
+                if (ix != e.Index) checkedListBoxRisicograafMethode.SetItemChecked(ix, false);
+        }
+
+
+
+        #region init values changed
+
+        private void CheckInitValues()
+        {
+            int.TryParse(textBoxInit_Se.Text, out int seValue);
+            int.TryParse(textBoxInit_Fr.Text, out int frValue);
+            int.TryParse(textBoxInit_Pr.Text, out int prValue);
+            int.TryParse(textBoxInit_Av.Text, out int avValue);
+
+            if (seValue > 0 &&
+                frValue > 0 &&
+                prValue > 0 &&
+                avValue > 0)
+            {
+                CalculateInitRisk(seValue, frValue, prValue, avValue);
+            }
+        }
+
+        private void textBoxInit_Se_TextChanged(object sender, EventArgs e)
+        {
+            CheckInitValues();
+        }
+
+        private void textBoxInit_Fr_TextChanged(object sender, EventArgs e)
+        {
+            CheckInitValues();
+        }
+
+        private void textBoxInit_Pr_TextChanged(object sender, EventArgs e)
+        {
+            CheckInitValues();
+        }
+
+        private void textBoxInit_Av_TextChanged(object sender, EventArgs e)
+        {
+            CheckInitValues();
+        }
+
+        #endregion init values changed
+
+        #region rest values changed
+
+        private void CheckRestValues()
+        {
+            int.TryParse(textBoxRest_Se.Text, out int seValue);
+            int.TryParse(textBoxRest_Fr.Text, out int frValue);
+            int.TryParse(textBoxRest_Pr.Text, out int prValue);
+            int.TryParse(textBoxRest_Av.Text, out int avValue);
+
+            if (seValue > 0 &&
+                frValue > 0 &&
+                prValue > 0 &&
+                avValue > 0)
+            {
+                CalculateRestRisk(seValue, frValue, prValue, avValue);
+            }
+        }
+
+        private void textBoxRest_Se_TextChanged(object sender, EventArgs e)
+        {
+            CheckRestValues();
+        }
+
+        private void textBoxRest_Fr_TextChanged(object sender, EventArgs e)
+        {
+            CheckRestValues();
+        }
+
+        private void textBoxRest_Pr_TextChanged(object sender, EventArgs e)
+        {
+            CheckRestValues();
+        }
+
+        private void textBoxRest_Av_TextChanged(object sender, EventArgs e)
+        {
+            CheckRestValues();
+        }
+
+
+        #endregion rest values changed
+
+
     }
 }

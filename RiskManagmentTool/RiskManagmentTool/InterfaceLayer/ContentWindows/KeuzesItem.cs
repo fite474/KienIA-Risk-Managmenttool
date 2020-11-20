@@ -34,7 +34,7 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
             switch (this.MenuTableName)
             {
                 case MenuTableName.ObjectTypes:
-                    //MenuOptions = keuzeMenus.GetTypeObjectMenu();
+                    MenuOptions = keuzeMenus.GetTypeObjectMenu();
                     menuTitle = "Object types";
                     break;
                 case MenuTableName.Gevolgen:
@@ -70,40 +70,40 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
                     menuTitle = "Taak";
                     break;
                 case MenuTableName.Normen:
-                    //MenuOptions = keuzeMenus.GetMaatregelNormMenu();
+                    MenuOptions = keuzeMenus.GetMaatregelNormMenu();
                     menuTitle = "Maatregel norm";
                     break;
                 case MenuTableName.Categories:
-                    //MenuOptions = keuzeMenus.GetMaatregelCategoryMenu();
+                    MenuOptions = keuzeMenus.GetMaatregelCategoryMenu();
                     menuTitle = "Maatregel categorie";
                     break;
                 case MenuTableName.TemplateTypes:
-                    //MenuOptions = keuzeMenus.GetTemplateTypesMenu();
+                    MenuOptions = keuzeMenus.GetTemplateTypesMenu();
                     menuTitle = "Template types";
                     break;
                 case MenuTableName.TemplateToepassing:
-                    //MenuOptions = keuzeMenus.GetTemplateToepassingenMenu();
+                    MenuOptions = keuzeMenus.GetTemplateToepassingenMenu();
                     menuTitle = "Template toepassing";
                     break;
                 default:
                     break;
             }
             textBoxMenuName.Text = menuTitle;
-            
-            //foreach (string menuOption in MenuOptions)
-            //{
-            //    listBoxMenuOptions.Items.Add(menuOption);
-            //    //comboBoxObjectType.Items.Add(typeString);
-            //}
+
+            foreach (KeyValuePair<int, string> kvp in MenuOptions)
+            {
+                listBoxMenuOptions.Items.Add(kvp.Value);
+                //comboBoxObjectType.Items.Add(typeString);
+            }
         }
 
         private void buttonEditKeuzes_Click(object sender, EventArgs e)
         {
-            //Form editKeuzes = new EditKeuzes(MenuTableName, MenuOptions, menuTitle);
-            //editKeuzes.ShowDialog();
-            //keuzeMenus.ReloadAllLists();
-            //LoadData();
-  
+            Form editKeuzes = new EditKeuzes(MenuTableName, MenuOptions, menuTitle);
+            editKeuzes.ShowDialog();
+            keuzeMenus.ReloadAllLists();
+            LoadData();
+
 
         }
     }

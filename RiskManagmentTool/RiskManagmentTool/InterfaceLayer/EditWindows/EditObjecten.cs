@@ -52,7 +52,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             textBoxObjectNaam.Text = ObjectNaam;
             textBoxOmschrijving.Text = objectOmschrijving;
             comboBoxObjectType.SelectedIndex = comboBoxObjectType.FindStringExact(objectType);
-            
+            LoadDataGridViewCheckBoxes();
             LoadData();
             SetInstellingen();
 
@@ -60,14 +60,14 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void LoadMenus()
         {
-            List<string> typeObjectList = keuzeMenus.GetTypeObjectMenu();
-            foreach (string typeString in typeObjectList)
+            Dictionary<int, string> typeObjectList = keuzeMenus.GetTypeObjectMenu();
+            foreach (KeyValuePair<int, string> kvp in typeObjectList)
             {
-                comboBoxObjectType.Items.Add(typeString);
+                comboBoxObjectType.Items.Add(kvp.Value);
             }
         }
 
-        private void LoadData()
+        private void LoadDataGridViewCheckBoxes()
         {
             IssuesState = comunicator.GetObjectIssuesStates(ObjectID);
             DataGridViewCheckBoxColumn CheckboxColumn = new DataGridViewCheckBoxColumn();
@@ -76,19 +76,15 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             CheckboxColumn.HeaderText = "";
             CheckboxColumn.TrueValue = true;
             dataGridViewGekoppeldeIssues.Columns.Add(CheckboxColumn);
+        }
 
-
-
-            
-
+        private void LoadData()
+        {
             dataGridViewGekoppeldeIssues.DataSource = comunicator.GetObjectIssues(ObjectID);
 
             foreach (DataGridViewColumn col in dataGridViewGekoppeldeIssues.Columns)
             {
-
                 col.HeaderCell = new DataGridViewAutoFilterColumnHeaderCell(col.HeaderCell);
-                
-
             }
 
         }

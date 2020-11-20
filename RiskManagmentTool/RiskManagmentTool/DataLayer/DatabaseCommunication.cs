@@ -18,27 +18,8 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection = databaseConnection.sqlConnection;
             // new SqlConnection(databaseConnection.GetConnectionString());
 
-            //vieuws doe je door: string strquery = "select * from View_App_Academic where recruitment_id = @recruitment_id
-
-            //SELECT StudentID,  
-            //CourseNames = STUFF
-            //(
-            //    (
-            //      SELECT DISTINCT ', ' + CAST(g.CourseName AS VARCHAR(MAX))
-            
-            //      FROM Courses g, StudentCourses e
-            
-            //      WHERE g.CourseID = e.CourseID and e.StudentID = t1.StudentID
-            
-            //      FOR XMl PATH('')
-            //    ),1,1,''
-            //    )  
-            //FROM StudentCourses t1
-            //GROUP BY StudentID
-
 
         }
-
 
         // START REGION INIT ITEMS
 
@@ -1395,27 +1376,6 @@ namespace RiskManagmentTool.DataLayer
             return gevaarGevaarlijkeZone_Index;
         }
 
-
-
-        //#####################################################################################
-
-        //public Dictionary<int, string> GetGevaarTypesD()
-        //{
-        //    Dictionary<int, string> index_gevolg = new Dictionary<int, string>();
-        //    sqlConnection.Open();
-        //    SqlCommand cmd = new SqlCommand("SELECT GevaarTypeID, GevaarType FROM GevaarTypes", sqlConnection);
-        //    using (SqlDataReader dr = cmd.ExecuteReader())
-        //    {
-        //        while (dr.Read())
-        //        { index_gevolg.Add(int.Parse((dr[0]).ToString()), (dr[1]).ToString()); }
-        //    }
-        //    sqlConnection.Close();
-        //    return index_gevolg;
-        //}
-
-
-
-
         public Dictionary<int, int> GetGevaar_GevaarType(string gevaarID)
         {
             int checkBoxIndex = 0;
@@ -1486,21 +1446,6 @@ namespace RiskManagmentTool.DataLayer
 
 
         #endregion get gevaar data
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         //Begin inner region get selected Ids before copying
@@ -1921,17 +1866,17 @@ namespace RiskManagmentTool.DataLayer
 
         #region getmenus
 
-        public List<string> GetObjectTypes()
+        public Dictionary<int, string> GetObjectTypes()
         {
-            List<string> objectTypes = new List<string>();
+            Dictionary<int, string> objectTypes = new Dictionary<int, string>();
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT ObjectType FROM ObjectTypes", sqlConnection);
+            SqlCommand cmd = new SqlCommand("SELECT ObjectTypeID, ObjectType FROM ObjectTypes", sqlConnection);
 
             using (SqlDataReader dr = cmd.ExecuteReader())
             {
                 while (dr.Read())
                 {
-                    objectTypes.Add((dr[0]).ToString());
+                    objectTypes.Add(int.Parse((dr[0]).ToString()), (dr[1]).ToString());
                 }
             }
             sqlConnection.Close();
@@ -2103,17 +2048,17 @@ namespace RiskManagmentTool.DataLayer
 
 
 
-        public List<string> GetMaatregelNormen()
+        public Dictionary<int, string> GetMaatregelNormen()
         {
-            List<string> objectTypes = new List<string>();
+            Dictionary<int, string> objectTypes = new Dictionary<int, string>();
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT Norm FROM Normen", sqlConnection);
+            SqlCommand cmd = new SqlCommand("SELECT NormID, Norm FROM Normen", sqlConnection);
 
             using (SqlDataReader dr = cmd.ExecuteReader())
             {
                 while (dr.Read())
                 {
-                    objectTypes.Add((dr[0]).ToString());
+                    objectTypes.Add(int.Parse((dr[0]).ToString()), (dr[1]).ToString());
                 }
             }
             sqlConnection.Close();
@@ -2121,17 +2066,17 @@ namespace RiskManagmentTool.DataLayer
 
         }
 
-        public List<string> GetMaatregelCategory()
+        public Dictionary<int, string> GetMaatregelCategory()
         {
-            List<string> objectTypes = new List<string>();
+            Dictionary<int, string> objectTypes = new Dictionary<int, string>();
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT Category FROM Categories", sqlConnection);
+            SqlCommand cmd = new SqlCommand("SELECT CategoryID, Category FROM Categories", sqlConnection);
 
             using (SqlDataReader dr = cmd.ExecuteReader())
             {
                 while (dr.Read())
                 {
-                    objectTypes.Add((dr[0]).ToString());
+                    objectTypes.Add(int.Parse((dr[0]).ToString()), (dr[1]).ToString());
                 }
             }
             sqlConnection.Close();
@@ -2139,17 +2084,17 @@ namespace RiskManagmentTool.DataLayer
 
         }
 
-        public List<string> GetTemplateTypes()
+        public Dictionary<int, string> GetTemplateTypes()
         {
-            List<string> objectTypes = new List<string>();
+            Dictionary<int, string> objectTypes = new Dictionary<int, string>();
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT TemplateType FROM TemplateTypes", sqlConnection);
+            SqlCommand cmd = new SqlCommand("SELECT TemplateTypeID, TemplateType FROM TemplateTypes", sqlConnection);
 
             using (SqlDataReader dr = cmd.ExecuteReader())
             {
                 while (dr.Read())
                 {
-                    objectTypes.Add((dr[0]).ToString());
+                    objectTypes.Add(int.Parse((dr[0]).ToString()), (dr[1]).ToString());
                 }
             }
             sqlConnection.Close();
@@ -2157,17 +2102,17 @@ namespace RiskManagmentTool.DataLayer
 
         }
 
-        public List<string> GetTemplateToepassingen()
+        public Dictionary<int, string> GetTemplateToepassingen()
         {
-            List<string> objectTypes = new List<string>();
+            Dictionary<int, string> objectTypes = new Dictionary<int, string>();
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT TemplateToepassing FROM TemplateToepassingen", sqlConnection);
+            SqlCommand cmd = new SqlCommand("SELECT TemplateToepassingID, TemplateToepassing FROM TemplateToepassingen", sqlConnection);
 
             using (SqlDataReader dr = cmd.ExecuteReader())
             {
                 while (dr.Read())
                 {
-                    objectTypes.Add((dr[0]).ToString());
+                    objectTypes.Add(int.Parse((dr[0]).ToString()), (dr[1]).ToString());
                 }
             }
             sqlConnection.Close();

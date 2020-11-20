@@ -52,6 +52,10 @@
             this.textBoxGevolg = new System.Windows.Forms.TextBox();
             this.buttonDisciplines = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.buttonViewGevaarUsage = new System.Windows.Forms.Button();
             this.buttonKeuzeOption = new System.Windows.Forms.Button();
             this.checkedListBoxOptions = new System.Windows.Forms.CheckedListBox();
             this.buttonBedienvorm = new System.Windows.Forms.Button();
@@ -61,10 +65,6 @@
             this.buttonGevaarlijkeZone = new System.Windows.Forms.Button();
             this.buttonTaak = new System.Windows.Forms.Button();
             this.buttonGevolg = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.buttonViewGevaarUsage = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -273,6 +273,43 @@
             this.panel2.Size = new System.Drawing.Size(740, 765);
             this.panel2.TabIndex = 34;
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.label10);
+            this.panel3.Controls.Add(this.buttonViewGevaarUsage);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(740, 194);
+            this.panel3.TabIndex = 2;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(207, 47);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.TabIndex = 2;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(47, 47);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(142, 17);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Issues met dit gevaar";
+            // 
+            // buttonViewGevaarUsage
+            // 
+            this.buttonViewGevaarUsage.Location = new System.Drawing.Point(50, 89);
+            this.buttonViewGevaarUsage.Name = "buttonViewGevaarUsage";
+            this.buttonViewGevaarUsage.Size = new System.Drawing.Size(257, 33);
+            this.buttonViewGevaarUsage.TabIndex = 0;
+            this.buttonViewGevaarUsage.Text = "Bekijk gebruik";
+            this.buttonViewGevaarUsage.UseVisualStyleBackColor = true;
+            this.buttonViewGevaarUsage.Click += new System.EventHandler(this.buttonViewGevaarUsage_Click);
+            // 
             // buttonKeuzeOption
             // 
             this.buttonKeuzeOption.Location = new System.Drawing.Point(3, 197);
@@ -362,43 +399,6 @@
             this.buttonGevolg.Text = "Gevolg";
             this.buttonGevolg.UseVisualStyleBackColor = true;
             this.buttonGevolg.Click += new System.EventHandler(this.buttonGevolg_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.textBox1);
-            this.panel3.Controls.Add(this.label10);
-            this.panel3.Controls.Add(this.buttonViewGevaarUsage);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(740, 194);
-            this.panel3.TabIndex = 2;
-            // 
-            // buttonViewGevaarUsage
-            // 
-            this.buttonViewGevaarUsage.Location = new System.Drawing.Point(50, 89);
-            this.buttonViewGevaarUsage.Name = "buttonViewGevaarUsage";
-            this.buttonViewGevaarUsage.Size = new System.Drawing.Size(257, 33);
-            this.buttonViewGevaarUsage.TabIndex = 0;
-            this.buttonViewGevaarUsage.Text = "Bekijk gebruik";
-            this.buttonViewGevaarUsage.UseVisualStyleBackColor = true;
-            this.buttonViewGevaarUsage.Click += new System.EventHandler(this.buttonViewGevaarUsage_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(47, 47);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(142, 17);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "Issues met dit gevaar";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(207, 47);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 2;
             // 
             // EditRisicos
             // 

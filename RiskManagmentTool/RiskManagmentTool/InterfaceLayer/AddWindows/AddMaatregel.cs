@@ -78,10 +78,10 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
             //    comboBoxGevaar.Items.Add(gevaar);
             //}
 
-            List<string> maatregelCategoryList = keuzeMenus.GetMaatregelCategoryMenu();
-            foreach (string categoryString in maatregelCategoryList)
+            Dictionary<int, string> maatregelCategoryList = keuzeMenus.GetMaatregelCategoryMenu();
+            foreach (KeyValuePair<int, string> kvp in maatregelCategoryList)
             {
-                comboBoxMaatregelCategorie.Items.Add(categoryString);
+                comboBoxMaatregelCategorie.Items.Add(kvp.Value);
             }
 
 

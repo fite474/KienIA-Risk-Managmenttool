@@ -20,16 +20,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private MenuTableName MenuTableName;
         private string menuTitle;
 
-        //private List<string> TypeObjectItems;
-        //private List<string> GevolgenItems;
-        //private List<string> GevarenzonesItems;
-        //private List<string> GevaarTypesItems;
-        //private List<string> GebruiksfaseItems;
-        //private List<string> GebruikersItems;
-        //private List<string> DisciplinesItems;
-        //private List<string> BedienvormenItems;
-        //private List<string> TakenItems;
-
+        #region dictonaries
         private Dictionary<int, string> GevolgenItems_DBIndex;
         private Dictionary<int, string> GevarenzonesItems_DBIndex;
         private Dictionary<int, string> GevaarTypesItems_DBIndex;
@@ -52,11 +43,13 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private Dictionary<int, int> TakenCheckedItems;
 
         private Dictionary<int, int> currentList;
-
+        #endregion dictionaries
 
 
         private TextBox currentTextBox;
-        
+
+        private string situatieInitString;
+        private string gebeurtenisInitString;
 
         private bool isNewGevaar;
 
@@ -66,6 +59,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         {
             InitializeComponent();
             isNewGevaar = true;
+            situatieInitString = "";
+            gebeurtenisInitString = "";
             LoadData();
             LoadEmptyGevaarData();
 
@@ -77,6 +72,9 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             
             InitializeComponent();
             isNewGevaar = false;
+            //situatieInitString = "";
+            //gebeurtenisInitString = "";
+
             editGevaarID = gevaarID;
             LoadData();
             LoadGevaarData(gevaarID);
@@ -100,7 +98,6 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             GevolgenItems_DBIndex = keuzeMenus.GetGevolgenMenu();
             GevarenzonesItems_DBIndex = keuzeMenus.GetGevarenzoneMenu();
 
-            //############################
             GevaarTypesItems_DBIndex = keuzeMenus.GetGevaarTypeMenu();
 
 
@@ -134,7 +131,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private void LoadGevaarData(string gevaarID)
         {
             DataTable risicoBeoordelingData = comunicator.GetGevaar_Situatie_gebeurtenis(gevaarID);
-            //textBoxInit_Se.Text = risicoBeoordelingData.Rows[0].Field<int?>(2).ToString();
+            
             textBoxGevSituatie.Text = risicoBeoordelingData.Rows[0].Field<string>(1).ToString();
             textBoxGevGebeurtenis.Text = risicoBeoordelingData.Rows[0].Field<string>(2).ToString();
 
@@ -148,6 +145,11 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
             BedienvormenCheckedItems = comunicator.GetGevaar_Bedienvorm(gevaarID);
             TakenCheckedItems = comunicator.GetGevaar_Taak(gevaarID);
+
+            situatieInitString = textBoxGevSituatie.Text;
+            gebeurtenisInitString = textBoxGevGebeurtenis.Text;
+
+
         }
 
 
@@ -193,11 +195,11 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
             if (isNewGevaar)
             {
-                //comunicator.InitMakeGevaar2(gevaarlijkeSituatie, gevaarlijkeGebeurtenis,
-                //DisciplinesCheckedItems, GebruiksfaseCheckedItems,
-                //BedienvormenCheckedItems, GebruikersCheckedItems,
-                //GevarenzonesCheckedItems, TakenCheckedItems,
-                //GevaarTypesCheckedItems, GevolgenCheckedItems);
+                comunicator.InitMakeGevaar(gevaarlijkeSituatie, gevaarlijkeGebeurtenis,
+                DisciplinesCheckedItems, GebruiksfaseCheckedItems,
+                BedienvormenCheckedItems, GebruikersCheckedItems,
+                GevarenzonesCheckedItems, TakenCheckedItems,
+                GevaarTypesCheckedItems, GevolgenCheckedItems);
             }
             else if (!isNewGevaar)
             {
@@ -206,6 +208,15 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
                 BedienvormenCheckedItems, GebruikersCheckedItems,
                 GevarenzonesCheckedItems, TakenCheckedItems,
                 GevaarTypesCheckedItems, GevolgenCheckedItems);
+
+                if (textBoxGevSituatie.Text != situatieInitString)
+                {
+                    comunicator.UpdateGevaarSituatie(gevaarIDToUpdate, textBoxGevSituatie.Text);
+                }
+                if (textBoxGevGebeurtenis.Text != gebeurtenisInitString)
+                {
+                    comunicator.UpdateGevaarGebeurtenis(gevaarIDToUpdate, textBoxGevGebeurtenis.Text);
+                }
             }
 
 

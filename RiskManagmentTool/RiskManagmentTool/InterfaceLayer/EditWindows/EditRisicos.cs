@@ -66,8 +66,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
 
         }
-        public EditRisicos(string gevaarID)//string riskBeschrijving,
-                            //string riskGevolg)
+
+        public EditRisicos(string gevaarID)
         {
             
             InitializeComponent();
@@ -91,28 +91,25 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void LoadData()
         {
-            keuzeMenus = new KeuzeMenus();
+            
             comunicator = new Datacomunication();
             CurrentMenuToAddTo = new Dictionary<int, string>();
+            LoadMenus();
 
+
+        }
+
+        private void LoadMenus()
+        {
+            keuzeMenus = new KeuzeMenus();
             GevolgenItems_DBIndex = keuzeMenus.GetGevolgenMenu();
             GevarenzonesItems_DBIndex = keuzeMenus.GetGevarenzoneMenu();
-
             GevaarTypesItems_DBIndex = keuzeMenus.GetGevaarTypeMenu();
-
-
             GebruiksfaseItems_DBIndex = keuzeMenus.GetGebruikersfasesMenu();
             GebruikersItems_DBIndex = keuzeMenus.GetGebruikersMenu();
             DisciplinesItems_DBIndex = keuzeMenus.GetDisciplinesMenu();
             BedienvormenItems_DBIndex = keuzeMenus.GetBedienvormenMenu();
             TakenItems_DBIndex = keuzeMenus.GetTakenMenu();
-
-        }
-
-        private void LoadCheckedListBoxes()
-        {
-
-
         }
 
         private void LoadEmptyGevaarData()
@@ -360,8 +357,12 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void buttonKeuzeOption_Click(object sender, EventArgs e)
         {
-             //EditKeuzes editKeuze = new EditKeuzes(MenuTableName, CurrentMenuToAddTo, menuTitle);
-             //editKeuze.ShowDialog();
+            EditKeuzes editKeuze = new EditKeuzes(MenuTableName, CurrentMenuToAddTo, menuTitle);
+            editKeuze.ShowDialog();
+
+            LoadMenus();
+            UpdateState();
+            ChangeCheckedListBox(CurrentMenuToAddTo, currentList);
         }
 
 
@@ -459,6 +460,23 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
                 showGevaarUsage.ShowDialog();
             }
             
+        }
+
+        private void buttonDeleteGevaar_Click(object sender, EventArgs e)
+        {
+            string message = "Weet u zeker dat u dit gevaar wilt verwijderen?";
+            string title = "Reminder Risico waardes";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons);
+
+            if (result == DialogResult.Yes)
+            {
+                //this.Close();
+            }
+            else
+            {
+                
+            }
         }
     }
 }

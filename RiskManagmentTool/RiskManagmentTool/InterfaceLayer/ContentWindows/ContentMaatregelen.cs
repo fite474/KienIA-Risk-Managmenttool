@@ -17,8 +17,6 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 {
     public partial class ContentMaatregelen : Form
     {
-        //private Form editMaatregelenForm;
-        //private MainWindow mainWindowForm;
         private Datacomunication comunicator;
         public ContentMaatregelen()
         {
@@ -27,31 +25,6 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
             RefreshTable();
         }
 
-
-        private void CreateIssue()
-        {
-
-            
-            Item issue = new Item
-            {
-                ItemType = ItemType.Issue,
-                ItemData = new IssueObject
-                {
-                    IssueId = "",
-                    IssueBeschrijving = "",
-                    IssueGevolg = "",
-                    IssueDiscipline = "",
-                    IssueGebruiksfase = "",
-                    IssueGebruiker = "",
-                    IssueGevarenzone = "",
-                    IssueSeverity = "",
-                    IssueFrequency = "",
-                    IssueProbability = "",
-                    IssueAvoidance = "",
-                    Verificatie = VerificatieStatus.Volledig
-                }
-            };
-        }
         private void RefreshTable()
         {
             dataGridViewMaatregelen.DataSource = comunicator.GetMaatregelTable();
@@ -59,21 +32,20 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 
         private void buttonAddNew_Click(object sender, EventArgs e)
         {
-            Form editMaatregelenForm = new EditMaatregelen();
-            //mainWindowForm.OpenContentWindow(editMaatregelenForm);
-            editMaatregelenForm.Show();
+            Form editMaatregelen = new EditMaatregelen();
+            editMaatregelen.ShowDialog();
+            RefreshTable();
         }
 
         private void dataGridViewMaatregelen_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             string maatregelId = dataGridViewMaatregelen.SelectedRows[0].Cells[0].Value.ToString();
             string maatregelNaam = dataGridViewMaatregelen.SelectedRows[0].Cells[1].Value.ToString();
-            string maatregelCategory = "";//dataGridViewObjecten.SelectedRows[0].Cells[2].Value.ToString();
-            string maatregelNorm = "";//dataGridViewObjecten.SelectedRows[0].Cells[3].Value.ToString();
 
-            Form editMaatregelen = new EditMaatregelen(maatregelId, maatregelNaam, maatregelCategory, maatregelNorm);
+            Form editMaatregelen = new EditMaatregelen(maatregelId, maatregelNaam);//, maatregelCategory, maatregelNorm);
 
-            editMaatregelen.Show();
+            editMaatregelen.ShowDialog();
+            RefreshTable();
         }
 
         private void dataGridViewMaatregelen_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)

@@ -245,6 +245,7 @@
     </Compile>
     <Compile Include="LogicLayer\Datacomunication.cs" />
     <Compile Include="LogicLayer\DataControler.cs" />
+    <Compile Include="LogicLayer\ImageHandler.cs" />
     <Compile Include="LogicLayer\KeuzeMenus.cs" />
     <Compile Include="LogicLayer\MenuTableName.cs" />
     <Compile Include="LogicLayer\Objects\Core\Item.cs" />

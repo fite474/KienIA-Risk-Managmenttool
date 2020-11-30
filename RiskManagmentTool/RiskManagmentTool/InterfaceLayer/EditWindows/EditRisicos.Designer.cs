@@ -53,6 +53,7 @@
             this.buttonDisciplines = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.buttonDeleteGevaar = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.buttonViewGevaarUsage = new System.Windows.Forms.Button();
@@ -275,6 +276,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.buttonDeleteGevaar);
             this.panel3.Controls.Add(this.textBox1);
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.buttonViewGevaarUsage);
@@ -283,6 +285,16 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(740, 194);
             this.panel3.TabIndex = 2;
+            // 
+            // buttonDeleteGevaar
+            // 
+            this.buttonDeleteGevaar.Location = new System.Drawing.Point(374, 40);
+            this.buttonDeleteGevaar.Name = "buttonDeleteGevaar";
+            this.buttonDeleteGevaar.Size = new System.Drawing.Size(97, 82);
+            this.buttonDeleteGevaar.TabIndex = 3;
+            this.buttonDeleteGevaar.Text = "Delete gevaar";
+            this.buttonDeleteGevaar.UseVisualStyleBackColor = true;
+            this.buttonDeleteGevaar.Click += new System.EventHandler(this.buttonDeleteGevaar_Click);
             // 
             // textBox1
             // 
@@ -487,5 +499,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button buttonViewGevaarUsage;
+        private System.Windows.Forms.Button buttonDeleteGevaar;
     }
 }

@@ -20,6 +20,7 @@ namespace RiskManagmentTool.LogicLayer
             databaseCommunication = new DatabaseCommunication();
         }
 
+        #region Init
         public void MakeProject(string projectNaam)
         {
             Item projectItem = new Item
@@ -157,16 +158,6 @@ namespace RiskManagmentTool.LogicLayer
 
         }
 
-        public void UpdateGevaarSituatie(int gevaarID, string text)
-        {
-
-        }
-
-        public void UpdateGevaarGebeurtenis(int gevaarID, string text)
-        {
-
-        }
-
         public void InitMakeGevaar(string gevaarlijkeSituatie, string gevaarlijkeGebeurtenis,
                        Dictionary<int, int> GevaarDisciplines, Dictionary<int, int> GevaarGebruiksfase,
                        Dictionary<int, int> GevaarBedienvorm, Dictionary<int, int> GevaarGebruiker,
@@ -183,8 +174,8 @@ namespace RiskManagmentTool.LogicLayer
                 }
             }
             else
-            {databaseCommunication.MakeGevaar_Disciplines(gevaarID, null);}
-            
+            { databaseCommunication.MakeGevaar_Disciplines(gevaarID, null); }
+
 
             if (GevaarGebruiksfase.Count > 0)
             {
@@ -195,7 +186,7 @@ namespace RiskManagmentTool.LogicLayer
             }
             else
             { databaseCommunication.MakeGevaar_Gebruiksfase(gevaarID, null); }
-            
+
 
             if (GevaarBedienvorm.Count > 0)
             {
@@ -205,8 +196,8 @@ namespace RiskManagmentTool.LogicLayer
                 }
             }
             else
-            {databaseCommunication.MakeGevaar_Bedienvorm(gevaarID, null); }
-            
+            { databaseCommunication.MakeGevaar_Bedienvorm(gevaarID, null); }
+
 
             if (GevaarGebruiker.Count > 0)
             {
@@ -216,8 +207,8 @@ namespace RiskManagmentTool.LogicLayer
                 }
             }
             else
-            { databaseCommunication.MakeGevaar_Gebruiker(gevaarID, null);}
-            
+            { databaseCommunication.MakeGevaar_Gebruiker(gevaarID, null); }
+
 
             if (GevaarGevaarlijkeZone.Count > 0)
             {
@@ -228,7 +219,7 @@ namespace RiskManagmentTool.LogicLayer
             }
             else
             { databaseCommunication.MakeGevaar_GevaarlijkeZone(gevaarID, null); }
-            
+
 
             if (GevaarTaak.Count > 0)
             {
@@ -238,8 +229,8 @@ namespace RiskManagmentTool.LogicLayer
                 }
             }
             else
-            {databaseCommunication.MakeGevaar_Taak(gevaarID, null);}
-            
+            { databaseCommunication.MakeGevaar_Taak(gevaarID, null); }
+
 
             if (GevaarGevaarType.Count > 0)
             {
@@ -249,8 +240,8 @@ namespace RiskManagmentTool.LogicLayer
                 }
             }
             else
-            {databaseCommunication.MakeGevaar_GevaarType(gevaarID, null); }
-            
+            { databaseCommunication.MakeGevaar_GevaarType(gevaarID, null); }
+
 
             if (GevaarGevolg.Count > 0)
             {
@@ -260,38 +251,36 @@ namespace RiskManagmentTool.LogicLayer
                 }
             }
             else
-            {databaseCommunication.MakeGevaar_Gevolg(gevaarID, null); }
+            { databaseCommunication.MakeGevaar_Gevolg(gevaarID, null); }
         }
 
 
+        public void InitMaatregel(string maatregelNaam, Dictionary<int, int> maatregelNorm, Dictionary<int, int> maatregelCategory)
+        {
+            int maatregelID = databaseCommunication.InitMaatregel(maatregelNaam);
+
+            if (maatregelNorm.Count > 0)
+            {
+                foreach (KeyValuePair<int, int> kvp in maatregelNorm)
+                {
+                    databaseCommunication.MakeMaatregel_Norm(maatregelID, kvp.Value);
+                }
+            }
+            else
+            { databaseCommunication.MakeMaatregel_Norm(maatregelID, null); }
 
 
-        //public void MakeGevaar(string gevaarlijkeSituatie, string gevaarlijkeGebeurtenis,
-        //               string discipline, string gebruiksfase,
-        //               string bedienvorm, string gebruiker,
-        //               string gevaarlijkeZone, string taak,
-        //               string gevaar, string gevolg)
-        //{
-        //    Item gevaarItem = new Item
-        //    {
-        //        ItemType = ItemType.Gevaar,
-        //        ItemData = new GevaarObject
-        //        {
-        //            GevaarlijkeSituatie = gevaarlijkeSituatie,
-        //            GevaarlijkeGebeurtenis = gevaarlijkeGebeurtenis,
-        //            Discipline = discipline,
-        //            Gebruiksfase = gebruiksfase,
-        //            Bedienvorm = bedienvorm,
-        //            Gebruiker = gebruiker,
-        //            GevaarlijkeZone = gevaarlijkeZone,
-        //            Taak = taak,
-        //            Gevaar = gevaar,
-        //            Gevolg = gevolg
+            if (maatregelCategory.Count > 0)
+            {
+                foreach (KeyValuePair<int, int> kvp in maatregelCategory)
+                {
+                    databaseCommunication.MakeMaatregel_Categorie(maatregelID, kvp.Value);
+                }
+            }
+            else
+            { databaseCommunication.MakeMaatregel_Categorie(maatregelID, null); }
+        }
 
-        //        }
-        //    };
-        //    SendItemToDB(gevaarItem);
-        //}
 
         public void MakeTemplate(string templateNaam, string templateType, string templateToepassing)
         {
@@ -306,9 +295,105 @@ namespace RiskManagmentTool.LogicLayer
                 }
             };
             SendItemToDB(templateItem);
+        }
+        #endregion Init
+
+
+        #region Update
+
+        public void UpdateGevaarSituatie(int gevaarID, string text)
+        {
 
         }
 
+        public void UpdateGevaarGebeurtenis(int gevaarID, string text)
+        {
+
+        }
+
+
+        public void UpdateMaatregelData(int maatregelID, Dictionary<int, int> maatregelNorm, Dictionary<int, int> maatregelCategory)
+        {
+            //clean
+            databaseCommunication.VerwijderMaatregel_Norm(maatregelID);
+            databaseCommunication.VerwijderMaatregel_Category(maatregelID);
+
+            //insert for all
+            if (maatregelNorm.Count > 0)
+            {
+                foreach (KeyValuePair<int, int> kvp in maatregelNorm)
+                {
+                    databaseCommunication.MakeMaatregel_Norm(maatregelID, kvp.Value);
+                }
+            }
+            else
+            { databaseCommunication.MakeMaatregel_Norm(maatregelID, null); }
+
+            if (maatregelCategory.Count > 0)
+            {
+                foreach (KeyValuePair<int, int> kvp in maatregelCategory)
+                {
+                    databaseCommunication.MakeMaatregel_Categorie(maatregelID, kvp.Value);
+                }
+            }
+            else
+            { databaseCommunication.MakeMaatregel_Categorie(maatregelID, null); }
+
+        }
+
+        public void UpdateRisicoBeoordeling(string issueID, string init_Se, string init_Fr, string init_Pr, string init_Av, string init_Cl, string init_Risico,
+                                            string init_Se_Comment, string init_Fr_Comment, string init_Pr_Comment, string init_Av_Comment, string init_Cl_Comment, string init_Risico_Comment,
+                                            string rest_Se, string rest_Fr, string rest_Pr, string rest_Av, string rest_Cl, string rest_Risico,
+                                            string rest_Se_Comment, string rest_Fr_Comment, string rest_Pr_Comment, string rest_Av_Comment, string rest_Cl_Comment, string rest_Risico_Comment, string rest_Ok)
+        {
+            Item risicoInschattingItem = new Item
+            {
+                ItemType = ItemType.RisicoInschatting,
+                ItemData = new RisicoInschattingObject
+                {
+                    IssueID = issueID,
+                    Init_Se = init_Se,
+                    Init_Fr = init_Fr,
+                    Init_Pr = init_Pr,
+                    Init_Av = init_Av,
+                    Init_Cl = init_Cl,
+                    Init_Risico = init_Risico,
+                    Init_Se_Comment = init_Se_Comment,
+                    Init_Fr_Comment = init_Fr_Comment,
+                    Init_Pr_Comment = init_Pr_Comment,
+                    Init_Av_Comment = init_Av_Comment,
+                    Init_Cl_Comment = init_Cl_Comment,
+                    Init_Risico_Comment = init_Risico_Comment,
+
+                    Rest_Se = rest_Se,
+                    Rest_Fr = rest_Fr,
+                    Rest_Pr = rest_Pr,
+                    Rest_Av = rest_Av,
+                    Rest_Cl = rest_Cl,
+                    Rest_Risico = rest_Risico,
+                    Rest_Se_Comment = rest_Se_Comment,
+                    Rest_Fr_Comment = rest_Fr_Comment,
+                    Rest_Pr_Comment = rest_Pr_Comment,
+                    Rest_Av_Comment = rest_Av_Comment,
+                    Rest_Cl_Comment = rest_Cl_Comment,
+                    Rest_Risico_Comment = rest_Risico_Comment,
+                    Rest_Ok = rest_Ok
+                }
+            };
+            SendItemToDB(risicoInschattingItem);
+
+        }
+
+        public void UpdateIssueState(string issueId, string newState)
+        {
+            databaseCommunication.UpdateIssueState(issueId, newState);
+        }
+
+        #endregion Update
+
+
+
+        #region add to object
         public int AddGevaarToObject(string objectId, string gevaarId)
         {
             return databaseCommunication.AddAndCreateIssueToObject(objectId, gevaarId);
@@ -348,153 +433,21 @@ namespace RiskManagmentTool.LogicLayer
                 int risicoBeoordelingId = databaseCommunication.InitRisicoBeoordeling(newIssueId);
                 databaseCommunication.AddRisicoBeoordelingToIssue(risicoBeoordelingId, newIssueId);
             }
-            
+
         }
 
-
-        //public void AddIssueToObjectWithoutMaatregelen(string objectId, string issueId)
-        //{
-        //    databaseCommunication.AddCoppiedIssueToObject(objectId, issueId);
-        //}
-
-
-
-        //public void AddIssueToObjectWithoutBeoordeling(string objectId, string issueId)
-        //{
-        //    databaseCommunication.AddCoppiedIssueToObject(objectId, issueId);
-        //}
-
-        //templates
-        public void AddGevaarToTemplate(string templateId, string gevaarId)
+        public void AddImageToObject(string objectID, string imageFilePath)
         {
-            databaseCommunication.AddGevaarToTemplate(templateId, gevaarId);
-
-        }
-        public void AddIssueToTemplate(string templateId, string issueId)
-        {
-            databaseCommunication.AddAndCreateIssueToTemplate(templateId, issueId);
+            databaseCommunication.AddImageToObject(objectID, imageFilePath);
 
         }
 
-
-        //templates
-
+        #endregion add to object
 
 
+        #region GET REQUEST FROM DATABASE
 
-
-        public void AddMaatregelToIssue(string issueId, string maatregelId)
-        {
-
-            databaseCommunication.AddMaatregelToIssue(Int32.Parse(issueId), Int32.Parse(maatregelId));
-
-        }
-
-        public void MakeMaatregel(string maatregelNaam, string maatregelNorm, string maatregelCategory)
-        {
-            Item maatregelItem = new Item
-            {
-                ItemType = ItemType.Maatregel,
-                ItemData = new MaatregelObject
-                {
-                    MaatregelNaam = maatregelNaam,
-                    MaatregelNorm = maatregelNorm,
-                    MaatregelCategory = maatregelCategory
-                }
-            };
-            SendItemToDB(maatregelItem);
-
-        }
-
-        //Start update region
-        public void UpdateRisicoBeoordeling(string issueID, string init_Se, string init_Fr, string init_Pr, string init_Av, string init_Cl, string init_Risico,
-                                            string init_Se_Comment, string init_Fr_Comment, string init_Pr_Comment, string init_Av_Comment, string init_Cl_Comment, string init_Risico_Comment,
-                                            string rest_Se, string rest_Fr, string rest_Pr, string rest_Av, string rest_Cl, string rest_Risico,
-                                            string rest_Se_Comment, string rest_Fr_Comment, string rest_Pr_Comment, string rest_Av_Comment, string rest_Cl_Comment, string rest_Risico_Comment, string rest_Ok)
-        {
-            Item risicoInschattingItem = new Item
-            {
-                ItemType = ItemType.RisicoInschatting,
-                ItemData = new RisicoInschattingObject
-                {
-                    IssueID = issueID,
-                    Init_Se = init_Se,
-                    Init_Fr = init_Fr,
-                    Init_Pr = init_Pr,
-                    Init_Av = init_Av,
-                    Init_Cl = init_Cl,
-                    Init_Risico = init_Risico,
-                    Init_Se_Comment = init_Se_Comment,
-                    Init_Fr_Comment = init_Fr_Comment,
-                    Init_Pr_Comment = init_Pr_Comment,
-                    Init_Av_Comment = init_Av_Comment,
-                    Init_Cl_Comment = init_Cl_Comment,
-                    Init_Risico_Comment =init_Risico_Comment,
-
-                    Rest_Se = rest_Se,
-                    Rest_Fr = rest_Fr,
-                    Rest_Pr = rest_Pr, 
-                    Rest_Av = rest_Av,
-                    Rest_Cl = rest_Cl,
-                    Rest_Risico = rest_Risico,
-                    Rest_Se_Comment = rest_Se_Comment,
-                    Rest_Fr_Comment = rest_Fr_Comment,
-                    Rest_Pr_Comment = rest_Pr_Comment,
-                    Rest_Av_Comment = rest_Av_Comment,
-                    Rest_Cl_Comment = rest_Cl_Comment,
-                    Rest_Risico_Comment = rest_Risico_Comment,
-                    Rest_Ok = rest_Ok
-                }
-            };
-            SendItemToDB(risicoInschattingItem);
-
-        }
-
-        public void UpdateIssueState(string issueId, string newState)
-        {
-            databaseCommunication.UpdateIssueState(issueId, newState);
-        }
-
-
-        //public void UpdateGevaar_Disciplines(string gevaarID)
-        //{
-        //    databaseCommunication.RemoveAllGevaar_Disciplines(gevaarID);
-
-
-        //}
-
-        // End update region
-
-        // START Delete region
-
-        public void DeleteIssueFromObject(string objectId, string issueId)
-        {
-            databaseCommunication.VerwijderIssuesVanObject(objectId, issueId);
-            databaseCommunication.VerwijderMaatregelenVanIssue(issueId);
-            databaseCommunication.VerwijderRisicoBeoordelingVanIssue(issueId);
-            databaseCommunication.VerwijderIssue(issueId);
-        }
-
-
-        public void DeleteGevaar(string gevaarID)
-        {
-
-        }
-        // END delete region
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        #region get tables
         public DataTable GetProjectenTable()
         {
             SqlDataAdapter adapter = databaseCommunication.GetProjecten();
@@ -536,9 +489,9 @@ namespace RiskManagmentTool.LogicLayer
         public DataTable GetObjectIssuesByObjectName(string objectNaam)
         {
             string objectId = databaseCommunication.GetObjectIdByName(objectNaam);
-            //SqlDataAdapter adapter = databaseCommunication.GetIssuesWorking(objectId);
+            SqlDataAdapter adapter = databaseCommunication.GetIssuesFromObject(objectId);
             DataTable data = new DataTable();//GetObjectIssues(objectId);//new DataTable();
-            //adapter.Fill(data);
+            adapter.Fill(data);
             return data;
         }
 
@@ -560,41 +513,6 @@ namespace RiskManagmentTool.LogicLayer
             return data;
         }
 
-        public List<string> GetGekoppeldeGevarenFromTemplateAsList(string templateId)
-        {
-            return databaseCommunication.GetGekoppeldeGevarenFromTemplateAsList(templateId);
-        }
-
-        public List<string> GetGekoppeldeIssuesFromTemplateAsList(string templateId)
-        {
-            return databaseCommunication.GetGekoppeldeIssuesFromTemplateAsList(templateId);
-        }
-
-        public List<string> GetGekoppeldeIssuesFromObjectAsList(string objectId)
-        {
-            return databaseCommunication.GetGekoppeldeIssuesFromObjectAsList(objectId);
-        }
-
-        public List<string> GetGekoppeldeGevarenFromObjectAsList(string objectId)
-        {
-            return databaseCommunication.GetGekoppeldeGevarenFromObjectAsList(objectId);
-        }
-
-        public List<string> GetGevarenFromIssuesAsList(List<string> selectedIssuesId)
-        {
-            return databaseCommunication.GetGevarenFromIssuesAsList(selectedIssuesId);
-        }
-
-        public List<string> GetMaatregelenFromIssuesAsList(string issueID)
-        {
-            return databaseCommunication.GetMaatregelenFromIssues(issueID);
-        }
-
-
-
-
-
-        //get selected
         public DataTable GetSelectedObjectIssues(string objectNaam, List<string> selectedIssuesId)
         {
             string objectId = databaseCommunication.GetObjectIdByName(objectNaam);
@@ -630,71 +548,6 @@ namespace RiskManagmentTool.LogicLayer
             adapter.Fill(data);
             return data;
         }
-
-
-
-        //get selected
-
-
-
-        //Begin redirect options
-        public string GetGevaarIdByIssueID(string issueID)
-        {
-            string gevaarId = "";
-            gevaarId = databaseCommunication.FindGevaarID(issueID);
-
-            return gevaarId;
-        }
-
-
-        public string GetObjectIdByIssueNmr(string issueID)
-        {
-            string objectId = "";
-            objectId = databaseCommunication.GetObjectIdByIssue(issueID);
-
-            return objectId;
-        }
-
-        public string GetObjectIdByName(string objectNaam)
-        {
-            return databaseCommunication.GetObjectIdByName(objectNaam);
-            //return objectId;
-        }
-
-
-        public string GetIssueIdByObjectAndGevaarId(string objectId, string gevaarId)
-        {
-            return databaseCommunication.GetIssueIdByObjectAndGevaarId(objectId, gevaarId);
-        }
-
-        public List<string> GetIssueInfo(string issueId)
-        {
-            return databaseCommunication.GetIssuesInfo(issueId);
-        }
-
-        public List<string> GetObjectInfo(string objectId)
-        {
-            return databaseCommunication.GetObjectInfo(objectId);
-        }
-
-        public string GetIssueState(string issueId)
-        {
-            return databaseCommunication.GetIssueState(issueId);
-        }
-
-        public string GetLastTemplateID()
-        {
-            return databaseCommunication.GetLastTemplateID();
-        }
-
-        //End redirect options
-
-
-
-
-
-
-
 
         public DataTable GetAllIssues()
         {
@@ -776,6 +629,168 @@ namespace RiskManagmentTool.LogicLayer
             return data;
         }
 
+        #endregion get tables
+
+        #region get info
+
+        public string GetObjectImage(string objectID)
+        {
+            string filePath = databaseCommunication.GetObjectImage(objectID);
+            return filePath;
+        }
+
+        #endregion get info
+
+        #endregion GET REQUEST FROM DATABASE
+
+        #region delete
+        public void DeleteIssueFromObject(string objectId, string issueId)
+        {
+            databaseCommunication.VerwijderIssuesVanObject(objectId, issueId);
+            databaseCommunication.VerwijderMaatregelenVanIssue(issueId);
+            databaseCommunication.VerwijderRisicoBeoordelingVanIssue(issueId);
+            databaseCommunication.VerwijderIssue(issueId);
+        }
+
+
+        public void DeleteGevaar(string gevaarID)
+        {
+
+        }
+        #endregion delete
+
+
+        public void AddGevaarToTemplate(string templateId, string gevaarId)
+        {
+            databaseCommunication.AddGevaarToTemplate(templateId, gevaarId);
+
+        }
+        public void AddIssueToTemplate(string templateId, string issueId)
+        {
+            databaseCommunication.AddAndCreateIssueToTemplate(templateId, issueId);
+
+        }
+
+
+
+
+
+        public void AddMaatregelToIssue(string issueId, string maatregelId)
+        {
+
+            databaseCommunication.AddMaatregelToIssue(Int32.Parse(issueId), Int32.Parse(maatregelId));
+
+        }
+
+
+
+
+        public List<string> GetGekoppeldeGevarenFromTemplateAsList(string templateId)
+        {
+            return databaseCommunication.GetGekoppeldeGevarenFromTemplateAsList(templateId);
+        }
+
+        public List<string> GetGekoppeldeIssuesFromTemplateAsList(string templateId)
+        {
+            return databaseCommunication.GetGekoppeldeIssuesFromTemplateAsList(templateId);
+        }
+
+        public List<string> GetGekoppeldeIssuesFromObjectAsList(string objectId)
+        {
+            return databaseCommunication.GetGekoppeldeIssuesFromObjectAsList(objectId);
+        }
+
+        public List<string> GetGekoppeldeGevarenFromObjectAsList(string objectId)
+        {
+            return databaseCommunication.GetGekoppeldeGevarenFromObjectAsList(objectId);
+        }
+
+        public List<string> GetGevarenFromIssuesAsList(List<string> selectedIssuesId)
+        {
+            return databaseCommunication.GetGevarenFromIssuesAsList(selectedIssuesId);
+        }
+
+        public List<string> GetMaatregelenFromIssuesAsList(string issueID)
+        {
+            return databaseCommunication.GetMaatregelenFromIssues(issueID);
+        }
+
+
+
+
+
+        //get selected
+        
+
+
+
+        //get selected
+
+
+
+        //Begin redirect options
+        public string GetGevaarIdByIssueID(string issueID)
+        {
+            string gevaarId = "";
+            gevaarId = databaseCommunication.FindGevaarID(issueID);
+
+            return gevaarId;
+        }
+
+
+        public string GetObjectIdByIssueNmr(string issueID)
+        {
+            string objectId = "";
+            objectId = databaseCommunication.GetObjectIdByIssue(issueID);
+
+            return objectId;
+        }
+
+        public string GetObjectIdByName(string objectNaam)
+        {
+            return databaseCommunication.GetObjectIdByName(objectNaam);
+            //return objectId;
+        }
+
+
+        public string GetIssueIdByObjectAndGevaarId(string objectId, string gevaarId)
+        {
+            return databaseCommunication.GetIssueIdByObjectAndGevaarId(objectId, gevaarId);
+        }
+
+        public List<string> GetIssueInfo(string issueId)
+        {
+            return databaseCommunication.GetIssuesInfo(issueId);
+        }
+
+        public List<string> GetObjectInfo(string objectId)
+        {
+            return databaseCommunication.GetObjectInfo(objectId);
+        }
+
+        public string GetIssueState(string issueId)
+        {
+            return databaseCommunication.GetIssueState(issueId);
+        }
+
+        public string GetLastTemplateID()
+        {
+            return databaseCommunication.GetLastTemplateID();
+        }
+
+        //End redirect options
+
+
+
+
+
+
+
+
+        
+
+
+        #region get menus opties
 
         public Dictionary<int, string> GetObjectTypes()
         {
@@ -839,12 +854,12 @@ namespace RiskManagmentTool.LogicLayer
 
         public Dictionary<int, string> GetMaatregelNorm()
         {
-            return databaseCommunication.GetMaatregelNormen();
+            return databaseCommunication.GetNormen();
         }
 
         public Dictionary<int, string> GetMaatregelCategory()
         {
-            return databaseCommunication.GetMaatregelCategory(); 
+            return databaseCommunication.GetCategory(); 
         }
 
         public Dictionary<int, string> GetTemplateTypes()
@@ -867,7 +882,7 @@ namespace RiskManagmentTool.LogicLayer
             return databaseCommunication.GetObjectNamen();
         }
 
-
+        #endregion get menu options
 
         //filter opties begin
         public DataTable GetGevarenTableByDiscipline(string disciplineType)
@@ -885,10 +900,15 @@ namespace RiskManagmentTool.LogicLayer
 
 
         //begin check states 
-        public Dictionary<string, string> GetObjectIssuesStates(string objectID)//List<string> GetObjectIssuesStates(string objectID)
+        public Dictionary<string, string> GetObjectIssuesStates(string objectID)
         {
             return databaseCommunication.GetObjectIssuesState(objectID);
         }
+        public Dictionary<string, string> GetObjectIssuesRiskValue(string objectID)
+        {
+            return databaseCommunication.GetObjectIssuesRiskValue(objectID);
+        }
+
 
         public Dictionary<string, int> GetObjectIssuesMaatregelenCount(string objectID)
         {
@@ -906,12 +926,12 @@ namespace RiskManagmentTool.LogicLayer
         // end check states
 
 
-        // START GEVAREN LISTS
+        
 
 
 
 
-
+        #region gevaren lists
         public DataTable GetGevaar_Situatie_gebeurtenis(string gevaarID)
         {
             SqlDataAdapter adapter = databaseCommunication.GetGevaar_Situatie_gebeurtenis(gevaarID);
@@ -962,9 +982,21 @@ namespace RiskManagmentTool.LogicLayer
         {
             return databaseCommunication.GetGevaar_Taak(gevaarID);
         }
+        #endregion gevaren lists
+
+        #region maatregelen lists
+        public Dictionary<int, int> GetMaatregel_Normen(string maatregelID)
+        {
+            return databaseCommunication.GetMaatregel_Normen(maatregelID);
+        }
+
+        public Dictionary<int, int> GetMaatregel_Categorie(string maatregelID)
+        {
+            return databaseCommunication.GetMaatregel_Categorie(maatregelID);
+        }
 
 
-        // END GEVAREN LISTS
+        #endregion maatregelen lists
 
 
 
@@ -1044,7 +1076,7 @@ namespace RiskManagmentTool.LogicLayer
                     //databaseCommunication.MakeGevaar(item);
                     break;
                 case ItemType.Maatregel:
-                    databaseCommunication.MakeMaatregel(item);
+                    //databaseCommunication.MakeMaatregel(item);
                     break;
                 case ItemType.Issue:
 

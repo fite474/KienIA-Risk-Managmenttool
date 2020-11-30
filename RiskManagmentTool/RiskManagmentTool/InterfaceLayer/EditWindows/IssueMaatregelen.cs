@@ -47,19 +47,25 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             ObjectID = objectId;
             ObjectNaam = objectNaam;
 
-            LoadMenus();
             LoadData();
             //
+            LoadIssueText();
+
+        }
+
+        private void LoadIssueText()
+        {
             textBoxNaamObject.Text = ObjectNaam;//objectNaam;
-            textBoxIssueID.Text = issueId;
-            comboBoxDiscipline.SelectedIndex = comboBoxDiscipline.FindStringExact(Discipline);
-            comboBoxGevaar.SelectedIndex = comboBoxGevaar.FindStringExact(Gevaar);
+            textBoxIssueID.Text = IssueID;
+            textBoxGevaar.Text = Gevaar;
+            textBoxDiscipline.Text = Discipline;
+
             textBoxSituatie.Text = Situatie;
             textBoxGebeurtenis.Text = Gebeurtenis;
-            textBoxInit_Risico.Text = init_Risico;
-            textBoxInit_Risico_Comment.Text = init_Risico_Beschrijving;
-            textBoxRest_Risico.Text = rest_Risico;
-            textBoxRest_Risico_Comment.Text = rest_Risico_Beschrijving;
+            //textBoxInit_Risico.Text = init_Risico;
+            //textBoxInit_Risico_Comment.Text = init_Risico_Beschrijving;
+            //textBoxRest_Risico.Text = rest_Risico;
+            //textBoxRest_Risico_Comment.Text = rest_Risico_Beschrijving;
 
             checkBoxIssueOK.Checked = comunicator.GetIssueState(IssueID) == "1";
 
@@ -73,20 +79,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         }
 
-        private void LoadMenus()
-        {
-            //List<string> disciplineList = keuzeMenus.GetDisciplinesMenu();
-            //foreach (string discipline in disciplineList)
-            //{
-            //    comboBoxDiscipline.Items.Add(discipline);
-            //}
 
-            //List<string> gevarenList = keuzeMenus.GetGevaarTypeMenu();
-            //foreach (string gevaar in gevarenList)
-            //{
-            //    comboBoxGevaar.Items.Add(gevaar);
-            //}
-        }
+
 
         private void LoadData()
         {

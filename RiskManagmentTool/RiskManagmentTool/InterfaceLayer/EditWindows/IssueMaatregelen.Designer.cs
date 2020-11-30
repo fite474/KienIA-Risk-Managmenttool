@@ -32,22 +32,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
             this.textBoxRest_Risico_Comment = new System.Windows.Forms.TextBox();
             this.textBoxInit_Risico_Comment = new System.Windows.Forms.TextBox();
             this.textBoxRest_Risico = new System.Windows.Forms.TextBox();
             this.textBoxInit_Risico = new System.Windows.Forms.TextBox();
             this.textBoxGebeurtenis = new System.Windows.Forms.TextBox();
             this.textBoxSituatie = new System.Windows.Forms.TextBox();
-            this.comboBoxGevaar = new System.Windows.Forms.ComboBox();
-            this.comboBoxDiscipline = new System.Windows.Forms.ComboBox();
             this.textBoxNaamObject = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.textBoxIssueID = new System.Windows.Forms.TextBox();
             this.checkBoxRest_Risico_OK = new System.Windows.Forms.CheckBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.buttonNextIssue = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -68,6 +63,9 @@
             this.buttonAddNewMaatregel = new System.Windows.Forms.Button();
             this.buttonDeleteMaatregelen = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.textBoxDiscipline = new System.Windows.Forms.TextBox();
+            this.textBoxGevaar = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -76,6 +74,7 @@
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel5.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonRisicoDetails
@@ -91,7 +90,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 19);
+            this.label1.Location = new System.Drawing.Point(28, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 17);
             this.label1.TabIndex = 1;
@@ -100,7 +99,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 88);
+            this.label2.Location = new System.Drawing.Point(28, 88);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 17);
             this.label2.TabIndex = 2;
@@ -108,28 +107,25 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.textBoxGevaar);
+            this.panel1.Controls.Add(this.textBoxDiscipline);
             this.panel1.Controls.Add(this.textBoxRest_Risico_Comment);
             this.panel1.Controls.Add(this.textBoxInit_Risico_Comment);
             this.panel1.Controls.Add(this.textBoxRest_Risico);
             this.panel1.Controls.Add(this.textBoxInit_Risico);
             this.panel1.Controls.Add(this.textBoxGebeurtenis);
             this.panel1.Controls.Add(this.textBoxSituatie);
-            this.panel1.Controls.Add(this.comboBoxGevaar);
-            this.panel1.Controls.Add(this.comboBoxDiscipline);
             this.panel1.Controls.Add(this.textBoxNaamObject);
             this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.textBoxIssueID);
             this.panel1.Controls.Add(this.checkBoxRest_Risico_OK);
             this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.buttonNextIssue);
             this.panel1.Controls.Add(this.buttonRisicoDetails);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -137,16 +133,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1507, 370);
             this.panel1.TabIndex = 3;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(1309, 253);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(134, 72);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Accepteer geselecteerde items";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Visible = false;
             // 
             // textBoxRest_Risico_Comment
             // 
@@ -181,7 +167,7 @@
             this.textBoxGebeurtenis.Location = new System.Drawing.Point(135, 200);
             this.textBoxGebeurtenis.Multiline = true;
             this.textBoxGebeurtenis.Name = "textBoxGebeurtenis";
-            this.textBoxGebeurtenis.Size = new System.Drawing.Size(636, 45);
+            this.textBoxGebeurtenis.Size = new System.Drawing.Size(873, 45);
             this.textBoxGebeurtenis.TabIndex = 16;
             // 
             // textBoxSituatie
@@ -189,24 +175,8 @@
             this.textBoxSituatie.Location = new System.Drawing.Point(135, 150);
             this.textBoxSituatie.Multiline = true;
             this.textBoxSituatie.Name = "textBoxSituatie";
-            this.textBoxSituatie.Size = new System.Drawing.Size(636, 44);
+            this.textBoxSituatie.Size = new System.Drawing.Size(873, 44);
             this.textBoxSituatie.TabIndex = 15;
-            // 
-            // comboBoxGevaar
-            // 
-            this.comboBoxGevaar.FormattingEnabled = true;
-            this.comboBoxGevaar.Location = new System.Drawing.Point(135, 119);
-            this.comboBoxGevaar.Name = "comboBoxGevaar";
-            this.comboBoxGevaar.Size = new System.Drawing.Size(496, 24);
-            this.comboBoxGevaar.TabIndex = 14;
-            // 
-            // comboBoxDiscipline
-            // 
-            this.comboBoxDiscipline.FormattingEnabled = true;
-            this.comboBoxDiscipline.Location = new System.Drawing.Point(135, 88);
-            this.comboBoxDiscipline.Name = "comboBoxDiscipline";
-            this.comboBoxDiscipline.Size = new System.Drawing.Size(496, 24);
-            this.comboBoxDiscipline.TabIndex = 13;
             // 
             // textBoxNaamObject
             // 
@@ -224,16 +194,6 @@
             this.label12.Size = new System.Drawing.Size(62, 17);
             this.label12.TabIndex = 11;
             this.label12.Text = "Issue ID:";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(841, 304);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(162, 63);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Later controleren";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
             // 
             // textBoxIssueID
             // 
@@ -261,17 +221,6 @@
             this.label11.Size = new System.Drawing.Size(83, 17);
             this.label11.TabIndex = 7;
             this.label11.Text = "Rest_Risico";
-            // 
-            // buttonNextIssue
-            // 
-            this.buttonNextIssue.Location = new System.Drawing.Point(1065, 304);
-            this.buttonNextIssue.Name = "buttonNextIssue";
-            this.buttonNextIssue.Size = new System.Drawing.Size(131, 63);
-            this.buttonNextIssue.TabIndex = 4;
-            this.buttonNextIssue.Text = "Accepteer";
-            this.buttonNextIssue.UseVisualStyleBackColor = true;
-            this.buttonNextIssue.Visible = false;
-            this.buttonNextIssue.Click += new System.EventHandler(this.buttonNextIssue_Click);
             // 
             // label10
             // 
@@ -317,9 +266,9 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(935, 3);
+            this.panel2.Location = new System.Drawing.Point(20, 66);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(572, 161);
+            this.panel2.Size = new System.Drawing.Size(355, 161);
             this.panel2.TabIndex = 0;
             // 
             // checkBoxIssueOK
@@ -475,6 +424,29 @@
             this.panel5.Size = new System.Drawing.Size(1507, 77);
             this.panel5.TabIndex = 8;
             // 
+            // textBoxDiscipline
+            // 
+            this.textBoxDiscipline.Location = new System.Drawing.Point(135, 88);
+            this.textBoxDiscipline.Name = "textBoxDiscipline";
+            this.textBoxDiscipline.Size = new System.Drawing.Size(636, 22);
+            this.textBoxDiscipline.TabIndex = 21;
+            // 
+            // textBoxGevaar
+            // 
+            this.textBoxGevaar.Location = new System.Drawing.Point(135, 118);
+            this.textBoxGevaar.Name = "textBoxGevaar";
+            this.textBoxGevaar.Size = new System.Drawing.Size(636, 22);
+            this.textBoxGevaar.TabIndex = 22;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.panel2);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(1108, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(399, 370);
+            this.panel3.TabIndex = 23;
+            // 
             // IssueMaatregelen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -497,6 +469,7 @@
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel5.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -518,7 +491,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button buttonNextIssue;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -526,9 +498,7 @@
         private System.Windows.Forms.DataGridView dataGridViewIssueMaatregelen;
         private System.Windows.Forms.Button buttonAddNewMaatregel;
         private System.Windows.Forms.Button buttonDeleteMaatregelen;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox textBoxRest_Risico_Comment;
         private System.Windows.Forms.TextBox textBoxInit_Risico_Comment;
@@ -536,12 +506,13 @@
         private System.Windows.Forms.TextBox textBoxInit_Risico;
         private System.Windows.Forms.TextBox textBoxGebeurtenis;
         private System.Windows.Forms.TextBox textBoxSituatie;
-        private System.Windows.Forms.ComboBox comboBoxGevaar;
-        private System.Windows.Forms.ComboBox comboBoxDiscipline;
         private System.Windows.Forms.TextBox textBoxNaamObject;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.CheckBox checkBoxIssueOK;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.TextBox textBoxGevaar;
+        private System.Windows.Forms.TextBox textBoxDiscipline;
+        private System.Windows.Forms.Panel panel3;
     }
 }

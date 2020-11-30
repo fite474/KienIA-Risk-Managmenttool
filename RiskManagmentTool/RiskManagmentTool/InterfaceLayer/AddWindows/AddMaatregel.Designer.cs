@@ -37,16 +37,11 @@
             this.textBoxIssueID = new System.Windows.Forms.TextBox();
             this.textBoxSituatie = new System.Windows.Forms.TextBox();
             this.textBoxGebeurtenis = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.comboBoxMaatregelCategorie = new System.Windows.Forms.ComboBox();
-            this.comboBoxToepassingsgebied = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
             this.buttonKoppelSelectedMaatregelen = new System.Windows.Forms.Button();
+            this.buttonCreateNewMaatregel = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
@@ -60,14 +55,13 @@
             this.comboBoxObjectenWeergave = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBoxGevaarID = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.buttonCreateNewMaatregel = new System.Windows.Forms.Button();
             this.comboBoxGevaar = new System.Windows.Forms.ComboBox();
             this.comboBoxDiscipline = new System.Windows.Forms.ComboBox();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBoxGevaarID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMaatregelen)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -133,12 +127,13 @@
             this.dataGridViewMaatregelen.AllowUserToDeleteRows = false;
             this.dataGridViewMaatregelen.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewMaatregelen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMaatregelen.Location = new System.Drawing.Point(6, 119);
+            this.dataGridViewMaatregelen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewMaatregelen.Location = new System.Drawing.Point(3, 103);
             this.dataGridViewMaatregelen.Name = "dataGridViewMaatregelen";
             this.dataGridViewMaatregelen.ReadOnly = true;
             this.dataGridViewMaatregelen.RowTemplate.Height = 24;
             this.dataGridViewMaatregelen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewMaatregelen.Size = new System.Drawing.Size(1054, 351);
+            this.dataGridViewMaatregelen.Size = new System.Drawing.Size(1076, 464);
             this.dataGridViewMaatregelen.TabIndex = 5;
             this.dataGridViewMaatregelen.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewMaatregelen_DataBindingComplete);
             this.dataGridViewMaatregelen.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewMaatregelen_MouseDoubleClick);
@@ -167,75 +162,26 @@
             this.textBoxGebeurtenis.Size = new System.Drawing.Size(450, 37);
             this.textBoxGebeurtenis.TabIndex = 10;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(1015, 97);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(134, 17);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Maatregel categorie";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(1015, 130);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(132, 17);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Toepassingsgebied";
-            // 
-            // comboBoxMaatregelCategorie
-            // 
-            this.comboBoxMaatregelCategorie.FormattingEnabled = true;
-            this.comboBoxMaatregelCategorie.Location = new System.Drawing.Point(1202, 97);
-            this.comboBoxMaatregelCategorie.Name = "comboBoxMaatregelCategorie";
-            this.comboBoxMaatregelCategorie.Size = new System.Drawing.Size(101, 24);
-            this.comboBoxMaatregelCategorie.TabIndex = 13;
-            // 
-            // comboBoxToepassingsgebied
-            // 
-            this.comboBoxToepassingsgebied.FormattingEnabled = true;
-            this.comboBoxToepassingsgebied.Location = new System.Drawing.Point(1202, 130);
-            this.comboBoxToepassingsgebied.Name = "comboBoxToepassingsgebied";
-            this.comboBoxToepassingsgebied.Size = new System.Drawing.Size(101, 24);
-            this.comboBoxToepassingsgebied.TabIndex = 14;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(1015, 62);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(118, 17);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "Maatregel bevat: ";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(1202, 62);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(101, 22);
-            this.textBox6.TabIndex = 16;
-            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(12, 6);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1074, 505);
+            this.tabControl1.Size = new System.Drawing.Size(1090, 599);
             this.tabControl1.TabIndex = 18;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.panel5);
             this.tabPage1.Controls.Add(this.dataGridViewMaatregelen);
+            this.tabPage1.Controls.Add(this.panel5);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1066, 476);
+            this.tabPage1.Size = new System.Drawing.Size(1082, 570);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Maatregelen";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -247,7 +193,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(3, 3);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1060, 100);
+            this.panel5.Size = new System.Drawing.Size(1076, 100);
             this.panel5.TabIndex = 22;
             // 
             // buttonKoppelSelectedMaatregelen
@@ -260,6 +206,16 @@
             this.buttonKoppelSelectedMaatregelen.UseVisualStyleBackColor = true;
             this.buttonKoppelSelectedMaatregelen.Click += new System.EventHandler(this.buttonKoppelSelectedMaatregelen_Click);
             // 
+            // buttonCreateNewMaatregel
+            // 
+            this.buttonCreateNewMaatregel.Location = new System.Drawing.Point(17, 17);
+            this.buttonCreateNewMaatregel.Name = "buttonCreateNewMaatregel";
+            this.buttonCreateNewMaatregel.Size = new System.Drawing.Size(159, 65);
+            this.buttonCreateNewMaatregel.TabIndex = 22;
+            this.buttonCreateNewMaatregel.Text = "Maak nieuwe maatregel aan";
+            this.buttonCreateNewMaatregel.UseVisualStyleBackColor = true;
+            this.buttonCreateNewMaatregel.Click += new System.EventHandler(this.buttonCreateNewMaatregel_Click);
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.panel1);
@@ -267,7 +223,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1066, 476);
+            this.tabPage2.Size = new System.Drawing.Size(1082, 570);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Selecteer uit templates";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -280,7 +236,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1060, 70);
+            this.panel1.Size = new System.Drawing.Size(1076, 70);
             this.panel1.TabIndex = 1;
             // 
             // button2
@@ -331,7 +287,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1066, 476);
+            this.tabPage3.Size = new System.Drawing.Size(1082, 570);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Selecteer uit issues van andere objecten";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -359,7 +315,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1060, 70);
+            this.panel4.Size = new System.Drawing.Size(1076, 70);
             this.panel4.TabIndex = 0;
             // 
             // button3
@@ -380,7 +336,6 @@
             this.comboBoxObjectenWeergave.Size = new System.Drawing.Size(121, 24);
             this.comboBoxObjectenWeergave.TabIndex = 1;
             this.comboBoxObjectenWeergave.Visible = false;
-            this.comboBoxObjectenWeergave.SelectedIndexChanged += new System.EventHandler(this.comboBoxObjectenWeergave_SelectedIndexChanged);
             // 
             // label12
             // 
@@ -407,18 +362,28 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.textBoxIssueID);
-            this.panel2.Controls.Add(this.textBox6);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.comboBoxToepassingsgebied);
             this.panel2.Controls.Add(this.textBoxGebeurtenis);
-            this.panel2.Controls.Add(this.comboBoxMaatregelCategorie);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.label7);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1333, 349);
             this.panel2.TabIndex = 23;
+            // 
+            // textBoxGevaarID
+            // 
+            this.textBoxGevaarID.Location = new System.Drawing.Point(172, 56);
+            this.textBoxGevaarID.Name = "textBoxGevaarID";
+            this.textBoxGevaarID.Size = new System.Drawing.Size(190, 22);
+            this.textBoxGevaarID.TabIndex = 25;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(46, 56);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(72, 17);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "GevaarID:";
             // 
             // label11
             // 
@@ -429,16 +394,6 @@
             this.label11.TabIndex = 23;
             this.label11.Text = "MAG WEG!!!!!!";
             this.label11.Visible = false;
-            // 
-            // buttonCreateNewMaatregel
-            // 
-            this.buttonCreateNewMaatregel.Location = new System.Drawing.Point(17, 17);
-            this.buttonCreateNewMaatregel.Name = "buttonCreateNewMaatregel";
-            this.buttonCreateNewMaatregel.Size = new System.Drawing.Size(159, 65);
-            this.buttonCreateNewMaatregel.TabIndex = 22;
-            this.buttonCreateNewMaatregel.Text = "Maak nieuwe maatregel aan";
-            this.buttonCreateNewMaatregel.UseVisualStyleBackColor = true;
-            this.buttonCreateNewMaatregel.Click += new System.EventHandler(this.buttonCreateNewMaatregel_Click);
             // 
             // comboBoxGevaar
             // 
@@ -472,33 +427,17 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.tabControl1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 349);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1333, 514);
+            this.panel3.Size = new System.Drawing.Size(1333, 599);
             this.panel3.TabIndex = 24;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(46, 56);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(72, 17);
-            this.label10.TabIndex = 24;
-            this.label10.Text = "GevaarID:";
-            // 
-            // textBoxGevaarID
-            // 
-            this.textBoxGevaarID.Location = new System.Drawing.Point(172, 56);
-            this.textBoxGevaarID.Name = "textBoxGevaarID";
-            this.textBoxGevaarID.Size = new System.Drawing.Size(190, 22);
-            this.textBoxGevaarID.TabIndex = 25;
             // 
             // AddMaatregel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1333, 875);
+            this.ClientSize = new System.Drawing.Size(1333, 948);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Name = "AddMaatregel";
@@ -534,12 +473,6 @@
         private System.Windows.Forms.TextBox textBoxIssueID;
         private System.Windows.Forms.TextBox textBoxSituatie;
         private System.Windows.Forms.TextBox textBoxGebeurtenis;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBoxMaatregelCategorie;
-        private System.Windows.Forms.ComboBox comboBoxToepassingsgebied;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;

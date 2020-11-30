@@ -78,11 +78,11 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
             //    comboBoxGevaar.Items.Add(gevaar);
             //}
 
-            Dictionary<int, string> maatregelCategoryList = keuzeMenus.GetMaatregelCategoryMenu();
-            foreach (KeyValuePair<int, string> kvp in maatregelCategoryList)
-            {
-                comboBoxMaatregelCategorie.Items.Add(kvp.Value);
-            }
+            //Dictionary<int, string> maatregelCategoryList = keuzeMenus.GetMaatregelCategoryMenu();
+            //foreach (KeyValuePair<int, string> kvp in maatregelCategoryList)
+            //{
+            //    comboBoxMaatregelCategorie.Items.Add(kvp.Value);
+            //}
 
 
 
@@ -177,10 +177,10 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
             dataGridViewTemplateMaatregelen.DataSource = comunicator.GetTemplateIssuesByName(comboBoxWeergaveTemplate.SelectedItem.ToString());
         }
 
-        private void comboBoxObjectenWeergave_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //dataGridViewObjectIssues.DataSource = comunicator.GetObjectIssuesByObjectName(comboBoxObjectenWeergave.SelectedItem.ToString());
-        }
+        //private void comboBoxObjectenWeergave_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    //dataGridViewObjectIssues.DataSource = comunicator.GetObjectIssuesByObjectName(comboBoxObjectenWeergave.SelectedItem.ToString());
+        //}
 
         private void dataGridViewObjectIssues_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {

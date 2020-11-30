@@ -43,7 +43,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBoxIssuesToVerify = new System.Windows.Forms.TextBox();
-            this.buttonAddTemplate = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -66,6 +65,8 @@
             this.buttonDeleteGevaren = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.buttonAddRisico = new System.Windows.Forms.Button();
+            this.comboBoxVisualSettings = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -214,7 +215,6 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.textBoxIssuesToVerify);
-            this.panel2.Controls.Add(this.buttonAddTemplate);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
@@ -231,17 +231,6 @@
             this.textBoxIssuesToVerify.ReadOnly = true;
             this.textBoxIssuesToVerify.Size = new System.Drawing.Size(65, 22);
             this.textBoxIssuesToVerify.TabIndex = 7;
-            // 
-            // buttonAddTemplate
-            // 
-            this.buttonAddTemplate.Location = new System.Drawing.Point(37, 210);
-            this.buttonAddTemplate.Name = "buttonAddTemplate";
-            this.buttonAddTemplate.Size = new System.Drawing.Size(121, 29);
-            this.buttonAddTemplate.TabIndex = 5;
-            this.buttonAddTemplate.Text = "Add template";
-            this.buttonAddTemplate.UseVisualStyleBackColor = true;
-            this.buttonAddTemplate.Visible = false;
-            this.buttonAddTemplate.Click += new System.EventHandler(this.buttonAddTemplate_Click);
             // 
             // label7
             // 
@@ -339,7 +328,6 @@
             this.dataGridViewGekoppeldeIssues.AllowUserToAddRows = false;
             this.dataGridViewGekoppeldeIssues.AllowUserToDeleteRows = false;
             this.dataGridViewGekoppeldeIssues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            //this.dataGridViewGekoppeldeIssues.ColumnHeadersDefaultCellStyle = System.Windows.Forms.DataGridViewAutoFilterColumnHeaderCell;
             this.dataGridViewGekoppeldeIssues.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewGekoppeldeIssues.Location = new System.Drawing.Point(3, 53);
             this.dataGridViewGekoppeldeIssues.Name = "dataGridViewGekoppeldeIssues";
@@ -353,6 +341,8 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.label10);
+            this.panel5.Controls.Add(this.comboBoxVisualSettings);
             this.panel5.Controls.Add(this.label8);
             this.panel5.Controls.Add(this.comboBoxFilterIssues);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
@@ -392,7 +382,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1561, 418);
+            this.tabPage2.Size = new System.Drawing.Size(1561, 415);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Object informatie";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -418,7 +408,7 @@
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1561, 418);
+            this.tabPage3.Size = new System.Drawing.Size(1561, 415);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Instellingen";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -474,6 +464,27 @@
             this.buttonAddRisico.Text = "Voeg gevaar toe";
             this.buttonAddRisico.UseVisualStyleBackColor = true;
             this.buttonAddRisico.Click += new System.EventHandler(this.buttonAddRisico_Click);
+            // 
+            // comboBoxVisualSettings
+            // 
+            this.comboBoxVisualSettings.FormattingEnabled = true;
+            this.comboBoxVisualSettings.Items.AddRange(new object[] {
+            "Nog te reviewen",
+            "Risico waarde"});
+            this.comboBoxVisualSettings.Location = new System.Drawing.Point(522, 6);
+            this.comboBoxVisualSettings.Name = "comboBoxVisualSettings";
+            this.comboBoxVisualSettings.Size = new System.Drawing.Size(175, 24);
+            this.comboBoxVisualSettings.TabIndex = 3;
+            this.comboBoxVisualSettings.SelectedIndexChanged += new System.EventHandler(this.comboBoxVisualSettings_SelectedIndexChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(396, 9);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(119, 17);
+            this.label10.TabIndex = 4;
+            this.label10.Text = "Visuele weergave";
             // 
             // EditObjecten
             // 
@@ -533,7 +544,6 @@
         private System.Windows.Forms.Button buttonAddRisico;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button buttonIssuesOplossen;
-        private System.Windows.Forms.Button buttonAddTemplate;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button buttonDeleteGevaren;
         private System.Windows.Forms.Label label8;
@@ -545,5 +555,7 @@
         private System.Windows.Forms.PictureBox pictureBoxObjectFoto;
         private System.Windows.Forms.TextBox textBoxIssuesToVerify;
         private System.Windows.Forms.Button buttonExportToExcel;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox comboBoxVisualSettings;
     }
 }

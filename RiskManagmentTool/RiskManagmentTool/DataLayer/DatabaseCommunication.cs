@@ -21,7 +21,7 @@ namespace RiskManagmentTool.DataLayer
 
         }
 
-        // START REGION INIT ITEMS
+        #region Init
 
         public void MakeProject(Item item)
         {
@@ -74,6 +74,123 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
             return gevaarID;
         }
+
+
+        public int InitMaatregel(string maatregelNaam)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO TableMaatregelenMulti(MaatregelNaam) VALUES " +
+                                                                       "(@MaatregelNaam)" +
+                                                                       "SELECT CAST(SCOPE_IDENTITY() AS INT)", sqlConnection);
+            cmd.Parameters.AddWithValue("@MaatregelNaam", maatregelNaam);
+
+            Int32 maatregelID = (Int32)cmd.ExecuteScalar();
+
+            sqlConnection.Close();
+            return maatregelID;
+        }
+
+        public void MakeTemplate(Item item)
+        {
+
+            string templateNaam = item.ItemData.TemplateNaam;
+            string templateType = item.ItemData.TemplateType;
+            string templateToepassing = item.ItemData.TemplateToepassing;
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO TableTemplates(TemplateNaam, TemplateType, TemplateToepassing) VALUES " +
+                                                                       "(@TemplateNaam, @TemplateType, @TemplateToepassing)", sqlConnection);
+            cmd.Parameters.AddWithValue("@TemplateNaam", templateNaam);
+            cmd.Parameters.AddWithValue("@TemplateType", templateType);
+            cmd.Parameters.AddWithValue("@TemplateToepassing", templateToepassing);
+
+
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+
+        private int InitIssue(string gevaarId, string issueState)
+        {
+            //string issueStatus = "0";
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO TableIssues(IssueGevaarID, IssueStatus) VALUES " +
+                                                                       "(@IssueGevaarID, @IssueStatus)" +
+                                                                       "SELECT CAST(SCOPE_IDENTITY() AS INT)", sqlConnection);
+            cmd.Parameters.AddWithValue("@IssueGevaarID", gevaarId);
+            cmd.Parameters.AddWithValue("@IssueStatus", issueState);
+
+            Int32 issueID = (Int32)cmd.ExecuteScalar();
+            sqlConnection.Close();
+            return issueID;
+        }
+
+        public int InitRisicoBeoordeling(int issueId)
+        {
+            int emptyIntFields = 0;
+            string emptyStringFields = "";
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO RisicoBeoordeling(IssueID, Init_Se, Init_Fr, Init_Pr, Init_Av, Init_Cl, Init_Risico, Init_Se_Comment, Init_Fr_Comment, Init_Pr_Comment, Init_Av_Comment, Init_Cl_Comment, Init_Risico_Comment, " +
+                                                                          "Rest_Se, Rest_Fr, Rest_Pr, Rest_Av, Rest_Cl, Rest_Risico, Rest_Se_Comment, Rest_Fr_Comment, Rest_Pr_Comment, Rest_Av_Comment, Rest_Cl_Comment, Rest_Risico_Comment, Rest_Risico_Ok) " +
+                                                                          " VALUES " +
+                                                                          "(@IssueID, @Init_Se, @Init_Fr, @Init_Pr, @Init_Av, @Init_Cl, @Init_Risico, @Init_Se_Comment, @Init_Fr_Comment, @Init_Pr_Comment, @Init_Av_Comment, @Init_Cl_Comment, @Init_Risico_Comment, " +
+                                                                          "@Rest_Se, @Rest_Fr, @Rest_Pr, @Rest_Av, @Rest_Cl, @Rest_Risico, @Rest_Se_Comment, @Rest_Fr_Comment, @Rest_Pr_Comment, @Rest_Av_Comment, @Rest_Cl_Comment, @Rest_Risico_Comment, @Rest_Risico_Ok)" +
+                                                                          "SELECT CAST(SCOPE_IDENTITY() AS INT)", sqlConnection);
+
+
+            cmd.Parameters.AddWithValue("@IssueID", issueId);
+            cmd.Parameters.AddWithValue("@Init_Se", emptyIntFields);
+            cmd.Parameters.AddWithValue("@Init_Fr", emptyIntFields);
+            cmd.Parameters.AddWithValue("@Init_Pr", emptyIntFields);
+            cmd.Parameters.AddWithValue("@Init_Av", emptyIntFields);
+            cmd.Parameters.AddWithValue("@Init_Cl", emptyIntFields);
+            cmd.Parameters.AddWithValue("@Init_Risico", emptyIntFields);
+            cmd.Parameters.AddWithValue("@Init_Se_Comment", emptyStringFields);
+            cmd.Parameters.AddWithValue("@Init_Fr_Comment", emptyStringFields);
+            cmd.Parameters.AddWithValue("@Init_Pr_Comment", emptyStringFields);
+            cmd.Parameters.AddWithValue("@Init_Av_Comment", emptyStringFields);
+            cmd.Parameters.AddWithValue("@Init_Cl_Comment", emptyStringFields);
+            cmd.Parameters.AddWithValue("@Init_Risico_Comment", emptyStringFields);
+            cmd.Parameters.AddWithValue("@Rest_Se", emptyIntFields);
+            cmd.Parameters.AddWithValue("@Rest_Fr", emptyIntFields);
+            cmd.Parameters.AddWithValue("@Rest_Pr", emptyIntFields);
+            cmd.Parameters.AddWithValue("@Rest_Av", emptyIntFields);
+            cmd.Parameters.AddWithValue("@Rest_Cl", emptyIntFields);
+            cmd.Parameters.AddWithValue("@Rest_Risico", emptyIntFields);
+            cmd.Parameters.AddWithValue("@Rest_Se_Comment", emptyStringFields);
+            cmd.Parameters.AddWithValue("@Rest_Fr_Comment", emptyStringFields);
+            cmd.Parameters.AddWithValue("@Rest_Pr_Comment", emptyStringFields);
+            cmd.Parameters.AddWithValue("@Rest_Av_Comment", emptyStringFields);
+            cmd.Parameters.AddWithValue("@Rest_Cl_Comment", emptyStringFields);
+            cmd.Parameters.AddWithValue("@Rest_Risico_Comment", emptyStringFields);
+            cmd.Parameters.AddWithValue("@Rest_Risico_Ok", emptyIntFields);
+
+            Int32 risicoBeoordelingID = (Int32)cmd.ExecuteScalar();
+            sqlConnection.Close();
+            return risicoBeoordelingID;
+        }
+
+        public int InitRisicoBeoordelingDuplicate(int issueId, string originalIssueID)
+        {
+
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO RisicoBeoordeling(IssueID, Init_Se, Init_Fr, Init_Pr, Init_Av, Init_Cl, Init_Risico, Init_Se_Comment, Init_Fr_Comment, Init_Pr_Comment, Init_Av_Comment, Init_Cl_Comment, Init_Risico_Comment," +
+                                                                          " Rest_Se, Rest_Fr, Rest_Pr, Rest_Av, Rest_Cl, Rest_Risico, Rest_Se_Comment, Rest_Fr_Comment, Rest_Pr_Comment, Rest_Av_Comment, Rest_Cl_Comment, Rest_Risico_Comment, Rest_Risico_Ok)" +
+                                                                          " SELECT '" + issueId + "', Init_Se, Init_Fr, Init_Pr, Init_Av, Init_Cl, Init_Risico, Init_Se_Comment, Init_Fr_Comment, Init_Pr_Comment, Init_Av_Comment, Init_Cl_Comment, Init_Risico_Comment," +
+                                                                          " Rest_Se, Rest_Fr, Rest_Pr, Rest_Av, Rest_Cl, Rest_Risico, Rest_Se_Comment, Rest_Fr_Comment, Rest_Pr_Comment, Rest_Av_Comment, Rest_Cl_Comment, Rest_Risico_Comment, Rest_Risico_Ok " +
+                                                                          " FROM RisicoBeoordeling " +
+                                                                          " WHERE IssueID = '" + originalIssueID + "'" +
+                                                                          "SELECT CAST(SCOPE_IDENTITY() AS INT)", sqlConnection);
+
+
+            //cmd.Parameters.AddWithValue("@IssueID", issueId);
+
+
+            Int32 risicoBeoordelingID = (Int32)cmd.ExecuteScalar();
+            sqlConnection.Close();
+            return risicoBeoordelingID;
+        }
+
+        #endregion Init
+
 
         #region gevaar details
 
@@ -223,111 +340,48 @@ namespace RiskManagmentTool.DataLayer
 
         #endregion gevaar details
 
-
-
-
-        //public void FindGevaarDisciplinesNull(string gevaarID)
-        //{
-
-
-
-
-        //    //            SELECT id,
-        //    //  first_name,
-        //    //  last_name
-        //    //FROM children
-        //    //WHERE middle_name IS NULL;
-
-        //}
-
-
-
-
-        // END GEVAREN LISTS
-
-
-
-
-
-
-
-
-
-
-
-        public void MakeGevaar(Item item)
+        #region maatregel details
+        public void MakeMaatregel_Norm(int maatregelID, int? normID)
         {
-            //string gevaarlijkeSituatie = item.ItemData.GevaarlijkeSituatie;
-            //string gevaarlijkeGebeurtenis = item.ItemData.GevaarlijkeGebeurtenis;
-            //string discipline = item.ItemData.Discipline;
-            //string gebruiksfase = item.ItemData.Gebruiksfase;
-            //string bedienvorm = item.ItemData.Bedienvorm;
-            //string gebruiker = item.ItemData.Gebruiker;
-            //string gevaarlijkeZone = item.ItemData.GevaarlijkeZone;
-            //string taak = item.ItemData.Taak;
-            //string gevaar = item.ItemData.Gevaar;
-            //string gevolg = item.ItemData.Gevolg;
-            
-
-
-            //sqlConnection.Open();
-            //SqlCommand cmd = new SqlCommand("INSERT INTO TableGevaren(GevaarlijkeSituatie, GevaarlijkeGebeurtenis, Discipline, Gebruiksfase, Bedienvorm, Gebruiker, GevaarlijkeZone, Taak_Actie, Gevaar, Gevolg) VALUES " +
-            //                                                           "(@GevaarlijkeSituatie, @GevaarlijkeGebeurtenis, @Discipline, @Gebruiksfase ,@Bedienvorm, @Gebruiker, @GevaarlijkeZone, @Taak_Actie, @Gevaar, @Gevolg)", sqlConnection);
-            //cmd.Parameters.AddWithValue("@GevaarlijkeSituatie", gevaarlijkeSituatie);
-            //cmd.Parameters.AddWithValue("@GevaarlijkeGebeurtenis", gevaarlijkeGebeurtenis);
-            //cmd.Parameters.AddWithValue("@Discipline", discipline);
-            //cmd.Parameters.AddWithValue("@Gebruiksfase", gebruiksfase);
-            //cmd.Parameters.AddWithValue("@Bedienvorm", bedienvorm);
-            //cmd.Parameters.AddWithValue("@Gebruiker", gebruiker);
-            //cmd.Parameters.AddWithValue("@GevaarlijkeZone", gevaarlijkeZone);
-            //cmd.Parameters.AddWithValue("@Taak_Actie", taak);
-            //cmd.Parameters.AddWithValue("@Gevaar", gevaar);
-            //cmd.Parameters.AddWithValue("@Gevolg", gevolg);
-
-
-            //cmd.ExecuteNonQuery();
-            //sqlConnection.Close();
-        }
-
-        public void MakeMaatregel(Item item)
-        {
-
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO TableMaatregelen(MaatregelNaam, MaatregelNorm, MaatregelCategory) VALUES " +
-                                                                       "(@MaatregelNaam, @MaatregelNorm, @MaatregelCategory)", sqlConnection);
-            cmd.Parameters.AddWithValue("@MaatregelNaam", item.ItemData.MaatregelNaam);
-            cmd.Parameters.AddWithValue("@MaatregelNorm", item.ItemData.MaatregelNorm);
-            cmd.Parameters.AddWithValue("@MaatregelCategory", item.ItemData.MaatregelCategory);
-
-
-
+            SqlCommand cmd = new SqlCommand("INSERT INTO Maatregel_Norm(MaatregelID, NormID) VALUES " +
+                                                                       "(@MaatregelID, @NormID)", sqlConnection);
+            cmd.Parameters.AddWithValue("@MaatregelID", maatregelID);
+            if (normID == null)
+            {
+                cmd.Parameters.AddWithValue("@NormID", DBNull.Value);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@NormID", normID);
+            }
             cmd.ExecuteNonQuery();
             sqlConnection.Close();
         }
 
-        public void MakeTemplate(Item item)
+        public void MakeMaatregel_Categorie(int maatregelID, int? categoryID)
         {
-
-            string templateNaam = item.ItemData.TemplateNaam;
-            string templateType = item.ItemData.TemplateType;
-            string templateToepassing = item.ItemData.TemplateToepassing;
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO TableTemplates(TemplateNaam, TemplateType, TemplateToepassing) VALUES " +
-                                                                       "(@TemplateNaam, @TemplateType, @TemplateToepassing)", sqlConnection);
-            cmd.Parameters.AddWithValue("@TemplateNaam", templateNaam);
-            cmd.Parameters.AddWithValue("@TemplateType", templateType);
-            cmd.Parameters.AddWithValue("@TemplateToepassing", templateToepassing);
-
-
+            SqlCommand cmd = new SqlCommand("INSERT INTO Maatregel_Category(MaatregelID, CategoryID) VALUES " +
+                                                                       "(@MaatregelID, @CategoryID)", sqlConnection);
+            cmd.Parameters.AddWithValue("@MaatregelID", maatregelID);
+            if (categoryID == null)
+            {
+                cmd.Parameters.AddWithValue("@CategoryID", DBNull.Value);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@CategoryID", categoryID);
+            }
             cmd.ExecuteNonQuery();
             sqlConnection.Close();
         }
 
 
-        // END REGION INIT ITEMS
+        #endregion maatregel details
 
+        #region add to object
 
-        // START REGION ADD TO OBJECT
         public int AddAndCreateIssueToObject(string objectId, string gevaarId)
         {
             string issueState = "0";
@@ -366,102 +420,26 @@ namespace RiskManagmentTool.DataLayer
             cmd.Parameters.AddWithValue("@IssueID", duplicateIssueId);
 
             cmd.ExecuteNonQuery();
-            //Int32 issueID = (Int32)cmd.ExecuteScalar();
-
             sqlConnection.Close();
-
-            //int risicoBeoordelingId = InitRisicoBeoordelingDuplicate(duplicateIssueId, issueID);
-           // AddRisicoBeoordelingToIssue(risicoBeoordelingId, duplicateIssueId);
-
             return duplicateIssueId;
-
-            //for (int i = 0; i < gekoppeldeMaatregelenVanIssue.Count; i++)
-            //{
-            //    AddMaatregelToIssue(duplicateIssueId, int.Parse(gekoppeldeMaatregelenVanIssue[i]));
-            //}
         }
 
-
-        private int InitIssue(string gevaarId, string issueState)
+        public void AddImageToObject(string objectID, string imageFilePath)
         {
-            //string issueStatus = "0";
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO TableIssues(IssueGevaarID, IssueStatus) VALUES " +
-                                                                       "(@IssueGevaarID, @IssueStatus)" +
-                                                                       "SELECT CAST(SCOPE_IDENTITY() AS INT)", sqlConnection);
-            cmd.Parameters.AddWithValue("@IssueGevaarID", gevaarId);
-            cmd.Parameters.AddWithValue("@IssueStatus", issueState);
+            SqlCommand cmd = new SqlCommand("INSERT INTO TableObjectImages(ObjectID, ImageFilePath) VALUES " +
+                                                                       "(@ObjectID, @ImageFilePath)", sqlConnection);
+            cmd.Parameters.AddWithValue("@ObjectID", objectID);
+            cmd.Parameters.AddWithValue("@ImageFilePath", imageFilePath);
 
-            Int32 issueID = (Int32)cmd.ExecuteScalar();
+            cmd.ExecuteNonQuery();
             sqlConnection.Close();
-            return issueID;
+
         }
 
-        public int InitRisicoBeoordeling(int issueId)
-        {
-            int emptyIntFields = 0;
-            string emptyStringFields = "";
-            sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO RisicoBeoordeling(IssueID, Init_Se, Init_Fr, Init_Pr, Init_Av, Init_Cl, Init_Risico, Init_Se_Comment, Init_Fr_Comment, Init_Pr_Comment, Init_Av_Comment, Init_Cl_Comment, Init_Risico_Comment, " +
-                                                                          "Rest_Se, Rest_Fr, Rest_Pr, Rest_Av, Rest_Cl, Rest_Risico, Rest_Se_Comment, Rest_Fr_Comment, Rest_Pr_Comment, Rest_Av_Comment, Rest_Cl_Comment, Rest_Risico_Comment, Rest_Risico_Ok) " +
-                                                                          " VALUES " +
-                                                                          "(@IssueID, @Init_Se, @Init_Fr, @Init_Pr, @Init_Av, @Init_Cl, @Init_Risico, @Init_Se_Comment, @Init_Fr_Comment, @Init_Pr_Comment, @Init_Av_Comment, @Init_Cl_Comment, @Init_Risico_Comment, " +
-                                                                          "@Rest_Se, @Rest_Fr, @Rest_Pr, @Rest_Av, @Rest_Cl, @Rest_Risico, @Rest_Se_Comment, @Rest_Fr_Comment, @Rest_Pr_Comment, @Rest_Av_Comment, @Rest_Cl_Comment, @Rest_Risico_Comment, @Rest_Risico_Ok)" +
-                                                                          "SELECT CAST(SCOPE_IDENTITY() AS INT)", sqlConnection);
+        #endregion add to object
 
-
-            cmd.Parameters.AddWithValue("@IssueID", issueId);
-            cmd.Parameters.AddWithValue("@Init_Se", emptyIntFields);
-            cmd.Parameters.AddWithValue("@Init_Fr", emptyIntFields);
-            cmd.Parameters.AddWithValue("@Init_Pr", emptyIntFields);
-            cmd.Parameters.AddWithValue("@Init_Av", emptyIntFields);
-            cmd.Parameters.AddWithValue("@Init_Cl", emptyIntFields);
-            cmd.Parameters.AddWithValue("@Init_Risico", emptyIntFields);
-            cmd.Parameters.AddWithValue("@Init_Se_Comment", emptyStringFields);
-            cmd.Parameters.AddWithValue("@Init_Fr_Comment", emptyStringFields);
-            cmd.Parameters.AddWithValue("@Init_Pr_Comment", emptyStringFields);
-            cmd.Parameters.AddWithValue("@Init_Av_Comment", emptyStringFields);
-            cmd.Parameters.AddWithValue("@Init_Cl_Comment", emptyStringFields);
-            cmd.Parameters.AddWithValue("@Init_Risico_Comment", emptyStringFields);
-            cmd.Parameters.AddWithValue("@Rest_Se", emptyIntFields);
-            cmd.Parameters.AddWithValue("@Rest_Fr", emptyIntFields);
-            cmd.Parameters.AddWithValue("@Rest_Pr", emptyIntFields);
-            cmd.Parameters.AddWithValue("@Rest_Av", emptyIntFields);
-            cmd.Parameters.AddWithValue("@Rest_Cl", emptyIntFields);
-            cmd.Parameters.AddWithValue("@Rest_Risico", emptyIntFields);
-            cmd.Parameters.AddWithValue("@Rest_Se_Comment", emptyStringFields);
-            cmd.Parameters.AddWithValue("@Rest_Fr_Comment", emptyStringFields);
-            cmd.Parameters.AddWithValue("@Rest_Pr_Comment", emptyStringFields);
-            cmd.Parameters.AddWithValue("@Rest_Av_Comment", emptyStringFields);
-            cmd.Parameters.AddWithValue("@Rest_Cl_Comment", emptyStringFields);
-            cmd.Parameters.AddWithValue("@Rest_Risico_Comment", emptyStringFields);
-            cmd.Parameters.AddWithValue("@Rest_Risico_Ok", emptyIntFields);
-
-            Int32 risicoBeoordelingID = (Int32)cmd.ExecuteScalar();
-            sqlConnection.Close();
-            return risicoBeoordelingID;
-        }
-
-        public int InitRisicoBeoordelingDuplicate(int issueId, string originalIssueID)
-        {
-
-            sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO RisicoBeoordeling(IssueID, Init_Se, Init_Fr, Init_Pr, Init_Av, Init_Cl, Init_Risico, Init_Se_Comment, Init_Fr_Comment, Init_Pr_Comment, Init_Av_Comment, Init_Cl_Comment, Init_Risico_Comment," +
-                                                                          " Rest_Se, Rest_Fr, Rest_Pr, Rest_Av, Rest_Cl, Rest_Risico, Rest_Se_Comment, Rest_Fr_Comment, Rest_Pr_Comment, Rest_Av_Comment, Rest_Cl_Comment, Rest_Risico_Comment, Rest_Risico_Ok)" +
-                                                                          " SELECT '"+ issueId + "', Init_Se, Init_Fr, Init_Pr, Init_Av, Init_Cl, Init_Risico, Init_Se_Comment, Init_Fr_Comment, Init_Pr_Comment, Init_Av_Comment, Init_Cl_Comment, Init_Risico_Comment," +
-                                                                          " Rest_Se, Rest_Fr, Rest_Pr, Rest_Av, Rest_Cl, Rest_Risico, Rest_Se_Comment, Rest_Fr_Comment, Rest_Pr_Comment, Rest_Av_Comment, Rest_Cl_Comment, Rest_Risico_Comment, Rest_Risico_Ok " +
-                                                                          " FROM RisicoBeoordeling " +
-                                                                          " WHERE IssueID = '"+ originalIssueID +"'" +
-                                                                          "SELECT CAST(SCOPE_IDENTITY() AS INT)", sqlConnection);
-
-
-            //cmd.Parameters.AddWithValue("@IssueID", issueId);
-            
-
-            Int32 risicoBeoordelingID = (Int32)cmd.ExecuteScalar();
-            sqlConnection.Close();
-            return risicoBeoordelingID;
-        }
+        #region add to issue
 
         public void AddRisicoBeoordelingToIssue(int risicoBeoordelingId, int issueId)
         {
@@ -489,6 +467,10 @@ namespace RiskManagmentTool.DataLayer
 
         }
 
+
+        #endregion add to issue
+
+        #region add to template
         public void AddGevaarToTemplate(string templateId, string gevaarID)
         {
 
@@ -539,31 +521,7 @@ namespace RiskManagmentTool.DataLayer
             //}
 
         }
-
-
-        //dubbel in de code, regel 1222
-        //public List<string> FindGekoppeldeMaatregelenVanIssue(string issueID)
-        //{
-        //    //string gevaarID = "error";
-        //    List<string> maatregelIDs = new List<string>();
-        //    sqlConnection.Open();
-        //    SqlCommand cmd = new SqlCommand("SELECT MaatregelID FROM TableIssueMaatregelen " +
-        //                                    "WHERE IssueID = '"+ issueID +"'", sqlConnection);
-
-        //    using (SqlDataReader dr = cmd.ExecuteReader())
-        //    {
-        //        while (dr.Read())
-        //        {
-        //            maatregelIDs.Add((dr[0]).ToString());
-        //        }
-        //    }
-        //    sqlConnection.Close();
-        //    return maatregelIDs;
-        //}
-
-
-        // END REGION ADD TO OBJECT
-
+        #endregion add to template
 
         #region delete
 
@@ -621,7 +579,7 @@ namespace RiskManagmentTool.DataLayer
 
         }
 
-
+        #region delete gevaar data
         public void VerwijderGevaar_Disciplines(int gevaarID)
         {
             sqlConnection.Open();
@@ -694,11 +652,31 @@ namespace RiskManagmentTool.DataLayer
             cmd.ExecuteNonQuery();
             sqlConnection.Close();
         }
+        #endregion delete gevaar data
+
+        #region delete maatregel data
+        public void VerwijderMaatregel_Norm(int maatregelID)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("DELETE FROM Maatregel_Norm WHERE MaatregelID = @MaatregelID", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@MaatregelID", maatregelID);
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+        public void VerwijderMaatregel_Category(int maatregelID)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("DELETE FROM Maatregel_Category WHERE MaatregelID = @MaatregelID", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@MaatregelID", maatregelID);
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+
+        #endregion delete maatregel data
+
         #endregion delete
-
-
-
-
 
 
         #region UPDATE
@@ -810,6 +788,19 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
         }
 
+        public void UpdateObjectImage(string objectID, string imageFilePath)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("UPDATE TableObjectImages " +
+                                             "SET ImageFilePath = @ImageFilePath" +
+                                            " WHERE ObjectID = '" + objectID + "'", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@ImageFilePath", imageFilePath);
+            cmd.ExecuteNonQuery();
+
+            sqlConnection.Close();
+        }
+
 
 
         #endregion UPDATE
@@ -914,10 +905,12 @@ namespace RiskManagmentTool.DataLayer
         public SqlDataAdapter GetIssueMaatregelen(string issueID)
         {
             sqlConnection.Open();
-            string query = "SELECT TableMaatregelen.* FROM TableIssueMaatregelen " +
-                " JOIN TableMaatregelen " +
-                "ON TableMaatregelen.MaatregelID = TableIssueMaatregelen.MaatregelID " +
-                "WHERE TableIssueMaatregelen.IssueID = '"+ issueID +"'"; //+
+            //string query = "SELECT TableMaatregelen.* FROM TableIssueMaatregelen " +
+            //    " JOIN TableMaatregelen " +
+            //    "ON TableMaatregelen.MaatregelID = TableIssueMaatregelen.MaatregelID " +
+            //    "WHERE TableIssueMaatregelen.IssueID = '"+ issueID +"'"; //+
+            string query = "SELECT * FROM View_MaatregelenCompleet " +
+                            "WHERE View_MaatregelenCompleet.MaatregelID IN (SELECT TableIssueMaatregelen.MaatregelID FROM TableIssueMaatregelen WHERE TableIssueMaatregelen.IssueID = '" + issueID + "') ";
 
             SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
             sqlConnection.Close();
@@ -936,7 +929,8 @@ namespace RiskManagmentTool.DataLayer
         public SqlDataAdapter GetMaatregelen()
         {
             sqlConnection.Open();
-            String query = "SELECT MaatregelID, MaatregelNaam, MaatregelCategory, MaatregelNorm FROM TableMaatregelen";
+             //String query = "SELECT MaatregelID, MaatregelNaam, MaatregelCategory, MaatregelNorm FROM TableMaatregelen";
+            String query = "SELECT * FROM View_MaatregelenCompleet";
             SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
             sqlConnection.Close();
             return adapter;
@@ -1015,11 +1009,27 @@ namespace RiskManagmentTool.DataLayer
         }
 
         #endregion get tables
-        //end inner region filtered get requests
+        
+        public string GetObjectImage(string objectID)
+        {
+            string imageFilePath = "";
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT ImageFilePath FROM TableObjectImages " +
+                                            "WHERE TableObjectImages.ObjectID = '" + objectID + "'", sqlConnection);
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    imageFilePath = (dr[0]).ToString();
+                }
+            }
+            sqlConnection.Close();
 
+            return imageFilePath;
+        }
 
         //Inner region get id
-
+        #region get ID
         public string FindGevaarID(string issueID)
         {
             string gevaarID = "error";
@@ -1108,7 +1118,7 @@ namespace RiskManagmentTool.DataLayer
 
             return issueId;
         }
-
+        #endregion get ID
 
         #region get info
         public List<string> GetIssuesInfo(string issueID)
@@ -1184,6 +1194,26 @@ namespace RiskManagmentTool.DataLayer
 
         #region get states
         //begin get states
+        public Dictionary<string, string> GetObjectIssuesRiskValue(string objectID)
+        {
+            Dictionary<string, string> issueRiskValue = new Dictionary<string, string>();
+
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM View_issueRestRisico WHERE View_issueRestRisico.IssueID" +
+                                            " IN(" +
+                                            " SELECT TableObjectIssues.IssueID FROM TableObjectIssues WHERE TableObjectIssues.ObjectID = '" + objectID + "')", sqlConnection);
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    issueRiskValue.Add((dr[0]).ToString(), (dr[1]).ToString());
+                }
+            }
+            sqlConnection.Close();
+
+            return issueRiskValue;
+        }
+
         public Dictionary<string, string> GetObjectIssuesState(string objectID)
         {
             Dictionary<string, string> issueStates = new Dictionary<string, string>();
@@ -1447,8 +1477,60 @@ namespace RiskManagmentTool.DataLayer
 
         #endregion get gevaar data
 
+        #region get maatregel data
 
-        //Begin inner region get selected Ids before copying
+        public Dictionary<int, int> GetMaatregel_Normen(string maatregelID)
+        {
+            int checkBoxIndex = 0;
+            Dictionary<int, int> maatregelNorm_Index = new Dictionary<int, int>();
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT NormID FROM Maatregel_Norm " +
+                                            "WHERE MaatregelID = '" + maatregelID + "'", sqlConnection);
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    if (!dr.IsDBNull(0))
+                    {
+                        maatregelNorm_Index.Add(checkBoxIndex, int.Parse((dr[0]).ToString()));
+                    }
+                    checkBoxIndex++;
+                }
+            }
+            sqlConnection.Close();
+            return maatregelNorm_Index;
+        }
+
+        public Dictionary<int, int> GetMaatregel_Categorie(string maatregelID)
+        {
+            int checkBoxIndex = 0;
+            Dictionary<int, int> maatregelCategorie_Index = new Dictionary<int, int>();
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT CategoryID FROM Maatregel_Category " +
+                                            "WHERE MaatregelID = '" + maatregelID + "'", sqlConnection);
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    if (!dr.IsDBNull(0))
+                    {
+                        maatregelCategorie_Index.Add(checkBoxIndex, int.Parse((dr[0]).ToString()));
+                    }
+                    checkBoxIndex++;
+                }
+            }
+            sqlConnection.Close();
+            return maatregelCategorie_Index;
+        }
+
+        #endregion get maatregel data
+
+
+
+
+
+
+        #region get selected
         public SqlDataAdapter GetSelectedIssuesFromObject(string objectID, List<string> selectedIssuesId)
         {
             sqlConnection.Open();
@@ -1520,10 +1602,10 @@ namespace RiskManagmentTool.DataLayer
             return adapter;
 
         }
-        //end inner region get selected Ids before copying
+        #endregion get selected
 
 
-
+        #region get gekoppelde as list
         public List<string> GetGekoppeldeIssuesFromObjectAsList(string objectID)
         {
             List<string> gekoppeldeIssues = new List<string>();
@@ -1565,12 +1647,6 @@ namespace RiskManagmentTool.DataLayer
 
             return gekoppeldeGevaren;
         }
-
-
-
-
-
-
 
         public List<string> GetGekoppeldeIssuesFromTemplateAsList(string templateID)
         {
@@ -1658,36 +1734,9 @@ namespace RiskManagmentTool.DataLayer
 
             return maatregelIds;
         }
+        #endregion get gekoppelde as list
 
         #endregion GET REQUESTS FROM DATABASE
-
-        #region Images
-
-        public void AddImageToObject()
-        {
-
-
-        }
-
-        public void GetObjectImage(string objectID)
-        {
-
-        }
-
-
-        #endregion Images
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         #region menus
@@ -2040,15 +2089,8 @@ namespace RiskManagmentTool.DataLayer
 
 
 
-        //------------------------
 
-
-
-
-
-
-
-        public Dictionary<int, string> GetMaatregelNormen()
+        public Dictionary<int, string> GetNormen()
         {
             Dictionary<int, string> objectTypes = new Dictionary<int, string>();
             sqlConnection.Open();
@@ -2066,7 +2108,7 @@ namespace RiskManagmentTool.DataLayer
 
         }
 
-        public Dictionary<int, string> GetMaatregelCategory()
+        public Dictionary<int, string> GetCategory()
         {
             Dictionary<int, string> objectTypes = new Dictionary<int, string>();
             sqlConnection.Open();

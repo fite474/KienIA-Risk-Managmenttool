@@ -392,7 +392,11 @@ namespace RiskManagmentTool.LogicLayer
         #endregion Update
 
 
+        public void AddImageToIssue(string issueID, string imageFilePath)
+        {
+            databaseCommunication.AddImageToIssue(issueID, imageFilePath);
 
+        }
         #region add to object
         public int AddGevaarToObject(string objectId, string gevaarId)
         {
@@ -639,6 +643,12 @@ namespace RiskManagmentTool.LogicLayer
             return filePath;
         }
 
+        public string GetIssueImage(string issueID)
+        {
+            string filePath = databaseCommunication.GetIssueImage(issueID);
+            return filePath;
+        }
+
         #endregion get info
 
         #endregion GET REQUEST FROM DATABASE
@@ -783,11 +793,88 @@ namespace RiskManagmentTool.LogicLayer
 
 
 
+        #region Get usage
+
+        public DataTable GetGevarenUsage(string gevaarID)
+        {
+            SqlDataAdapter adapter = databaseCommunication.GetGevarenUsage(gevaarID);
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            return data;
+
+        }
+
+
+        public DataTable CheckUsageFromMenu(MenuTableName menuTableName, string optionToCheck)
+        {
+            return CheckUsageMenuOptionFromDB(menuTableName, optionToCheck);
+        }
+
+        private DataTable CheckUsageMenuOptionFromDB(MenuTableName menuTableName, string optionToCheck)
+        {
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            switch (menuTableName)
+            {
+                case MenuTableName.ObjectTypes:
+                    adapter = databaseCommunication.GetObjectTypeUsage(optionToCheck);
+                    
+                    break;
+                case MenuTableName.Gevolgen:
+                    adapter = databaseCommunication.GetGevolgenUsage(optionToCheck);
+                    break;
+                case MenuTableName.Gevarenzones:
+                    adapter = databaseCommunication.GetGevarenZoneUsage(optionToCheck);
+                    break;
+                case MenuTableName.GevaarTypes:
+                    adapter = databaseCommunication.GetGevaarTypeUsage(optionToCheck);
+                    break;
+                case MenuTableName.Gebruiksfases:
+                    adapter = databaseCommunication.GetGebruiksfaseUsage(optionToCheck);
+                    break;
+                case MenuTableName.Gebruikers:
+                    adapter = databaseCommunication.GetGebruikerUsage(optionToCheck);
+                    break;
+                case MenuTableName.Disciplines:
+                    adapter = databaseCommunication.GetDisciplineUsage(optionToCheck);
+                    break;
+                case MenuTableName.Bedienvormen:
+                    adapter = databaseCommunication.GetBedienvormUsage(optionToCheck);
+                    break;
+                case MenuTableName.Taken:
+                    adapter = databaseCommunication.GetGevaarTaakUsage(optionToCheck);
+                    break;
+                case MenuTableName.Normen:
+
+                    break;
+                case MenuTableName.Categories:
+
+                    break;
+                case MenuTableName.TemplateTypes:
+
+                    break;
+                case MenuTableName.TemplateToepassing:
+
+                    break;
+                default:
+                    break;
+            }
+
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            return data;
+
+        }
 
 
 
 
-        
+
+
+        #endregion Get usage
+
+
+
+
 
 
         #region get menus opties
@@ -1001,6 +1088,165 @@ namespace RiskManagmentTool.LogicLayer
 
 
 
+        
+
+
+
+
+
+
+
+
+        public void DeleteUsageAndMenuOption(MenuTableName menuTableName, string optionToDelete)
+        {
+            string optionID = GetOptionID(menuTableName, optionToDelete);
+
+            DeleteMenuOptionUsage(menuTableName, optionID);
+            DeleteFromMenu(menuTableName, optionToDelete);
+
+        }
+
+        private string GetOptionID(MenuTableName menuTableName, string optionTextToFind)
+        {
+            string optionID = "";
+            string databaseTableName = "";
+            string databaseIDColumnName = "";
+            string databaseColumnName = "";
+            
+            switch (menuTableName)
+            {
+                case MenuTableName.ObjectTypes:
+                    //databaseCommunication.DeleteFromObjectTypesMenu(optionID);
+                    break;
+                case MenuTableName.Gevolgen:
+                    databaseTableName = "Gevolgen";
+                    databaseIDColumnName = "GevolgID";
+                    databaseColumnName = "Gevolg";
+                    break;
+                case MenuTableName.Gevarenzones:
+                    databaseTableName = "Gevarenzones";
+                    databaseIDColumnName = "GevarenzoneID";
+                    databaseColumnName = "Gevarenzone";
+                    break;
+                case MenuTableName.GevaarTypes:
+                    databaseTableName = "GevaarTypes";
+                    databaseIDColumnName = "GevaarTypeID";
+                    databaseColumnName = "GevaarType";
+                    break;
+                case MenuTableName.Gebruiksfases:
+                    databaseTableName = "Gebruiksfases";
+                    databaseIDColumnName = "GebruiksfaseID";
+                    databaseColumnName = "Gebruiksfase";
+                    break;
+                case MenuTableName.Gebruikers:
+                    databaseTableName = "Gebruikers";
+                    databaseIDColumnName = "GebruikerID";
+                    databaseColumnName = "Gebruiker";
+                    break;
+                case MenuTableName.Disciplines:
+                    databaseTableName = "Disciplines";
+                    databaseIDColumnName = "DisciplineID";
+                    databaseColumnName = "Discipline";
+                    break;
+                case MenuTableName.Bedienvormen:
+                    databaseTableName = "Bedienvormen";
+                    databaseIDColumnName = "BedienvormID";
+                    databaseColumnName = "Bedienvorm";
+                    break;
+                case MenuTableName.Taken:
+                    databaseTableName = "Taken";
+                    databaseIDColumnName = "TaakID";
+                    databaseColumnName = "Taak";
+                    break;
+                case MenuTableName.Normen:
+                    //databaseCommunication.AddToNormenMenu(inputText);
+                    break;
+                case MenuTableName.Categories:
+                    //databaseCommunication.AddToCategoriesMenu(inputText);
+                    break;
+                case MenuTableName.TemplateTypes:
+                    //databaseCommunication.AddToTemplateTypes(inputText);
+                    break;
+                case MenuTableName.TemplateToepassing:
+                    //databaseCommunication.AddToTemplateToepassingen(inputText);
+                    break;
+                default:
+                    break;
+            }
+            optionID = databaseCommunication.GetMenuOptionID(databaseTableName, databaseIDColumnName, databaseColumnName, optionTextToFind);
+
+            return optionID;
+        }
+
+        private void DeleteMenuOptionUsage(MenuTableName menuTableName, string optionID)
+        {
+            string databaseTableName = "";
+            string databaseColumnName = "";
+            switch (menuTableName)
+            {
+                case MenuTableName.ObjectTypes:
+                    //databaseCommunication.DeleteFromObjectTypesMenu(optionID);
+                    break;
+                case MenuTableName.Gevolgen:
+                    databaseTableName = "Gevaar_Gevolg";
+                    databaseColumnName = "GevolgID";
+                   // databaseCommunication.DeleteUsage(databaseTableName, databaseColumnName, optionID);
+                    break;
+                case MenuTableName.Gevarenzones:
+
+                    databaseTableName = "Gevaar_GevaarlijkeZone";
+                    databaseColumnName = "GevaarlijkeZoneID";
+                   // databaseCommunication.DeleteUsage(databaseTableName, databaseColumnName, optionID);
+                    break;
+                case MenuTableName.GevaarTypes:
+                    databaseTableName = "Gevaar_GevaarType";
+                    databaseColumnName = "GevaarTypeID";
+                   // databaseCommunication.DeleteUsage(databaseTableName, databaseColumnName, optionID);
+                    break;
+                case MenuTableName.Gebruiksfases:
+                    databaseTableName = "Gevaar_Gebruiksfase";
+                    databaseColumnName = "GebruiksfaseID";
+                   // databaseCommunication.DeleteUsage(databaseTableName, databaseColumnName, optionID);
+                    break;
+                case MenuTableName.Gebruikers:
+                    databaseTableName = "Gevaar_Gebruiker";
+                    databaseColumnName = "GebruikerID";
+                   // databaseCommunication.DeleteUsage(databaseTableName, databaseColumnName, optionID);
+                    break;
+                case MenuTableName.Disciplines:
+                    databaseTableName = "Gevaar_Discipline";
+                    databaseColumnName = "DisciplineID";
+                   // databaseCommunication.DeleteUsage(databaseTableName, databaseColumnName, optionID);
+                    break;
+                case MenuTableName.Bedienvormen:
+                    databaseTableName = "Gevaar_Bedienvorm";
+                    databaseColumnName = "BedienvormID";
+                    //databaseCommunication.DeleteUsage(databaseTableName, databaseColumnName, optionID);
+                    break;
+                case MenuTableName.Taken:
+                    databaseTableName = "Gevaar_Taak";
+                    databaseColumnName = "TaakID";
+                    //databaseCommunication.DeleteUsage(databaseTableName, databaseColumnName, optionID);
+                    break;
+                case MenuTableName.Normen:
+                    //databaseCommunication.AddToNormenMenu(inputText);
+                    break;
+                case MenuTableName.Categories:
+                    //databaseCommunication.AddToCategoriesMenu(inputText);
+                    break;
+                case MenuTableName.TemplateTypes:
+                    //databaseCommunication.AddToTemplateTypes(inputText);
+                    break;
+                case MenuTableName.TemplateToepassing:
+                    //databaseCommunication.AddToTemplateToepassingen(inputText);
+                    break;
+                default:
+                    break;
+            }
+
+            databaseCommunication.DeleteUsage(databaseTableName, databaseColumnName, optionID);
+
+        }
 
 
 
@@ -1010,11 +1256,83 @@ namespace RiskManagmentTool.LogicLayer
 
 
 
+
+
+
+
+
+
+
+        public void DeleteFromMenu(MenuTableName menuTableName, string optionToDelete)
+        {
+            DeleteMenuOptionFromDB(menuTableName, optionToDelete);
+        }
+
+        private void DeleteMenuOptionFromDB(MenuTableName menuTableName, string inputText)
+        {
+            string databaseTableName = "";
+            string databaseColumnName = "";
+
+            switch (menuTableName)
+            {
+                case MenuTableName.ObjectTypes:
+                    databaseTableName = "ObjectTypes";
+                    databaseColumnName = "ObjectType";
+                    break;
+                case MenuTableName.Gevolgen:
+                    databaseTableName = "Gevolgen";
+                    databaseColumnName = "Gevolg";
+                    break;
+                case MenuTableName.Gevarenzones:
+                    databaseTableName = "Gevarenzones";
+                    databaseColumnName = "Gevarenzone";
+                    break;
+                case MenuTableName.GevaarTypes:
+                    databaseTableName = "GevaarTypes";
+                    databaseColumnName = "GevaarType";
+                    break;
+                case MenuTableName.Gebruiksfases:
+                    databaseTableName = "Gebruiksfases";
+                    databaseColumnName = "Gebruiksfase";
+                    break;
+                case MenuTableName.Gebruikers:
+                    databaseTableName = "Gebruikers";
+                    databaseColumnName = "Gebruiker";
+                    break;
+                case MenuTableName.Disciplines:
+                    databaseTableName = "Disciplines";
+                    databaseColumnName = "Discipline";
+                    break;
+                case MenuTableName.Bedienvormen:
+                    databaseTableName = "Bedienvormen";
+                    databaseColumnName = "Bedienvorm";
+                    break;
+                case MenuTableName.Taken:
+                    databaseTableName = "Taken";
+                    databaseColumnName = "Taak";
+                    break;
+                case MenuTableName.Normen:
+                    //databaseCommunication.AddToNormenMenu(inputText);
+                    break;
+                case MenuTableName.Categories:
+                    //databaseCommunication.AddToCategoriesMenu(inputText);
+                    break;
+                case MenuTableName.TemplateTypes:
+                    //databaseCommunication.AddToTemplateTypes(inputText);
+                    break;
+                case MenuTableName.TemplateToepassing:
+                    //databaseCommunication.AddToTemplateToepassingen(inputText);
+                    break;
+                default:
+                    break;
+            }
+            databaseCommunication.DeleteFromMenu(databaseTableName, databaseColumnName, inputText);
+        }
 
 
         public void AddToMenu(MenuTableName menuTableName, string optionToAdd)
         {
-             SendMenuOptionToDB(menuTableName, optionToAdd);
+            SendMenuOptionToDB(menuTableName, optionToAdd);
         }
 
         private void SendMenuOptionToDB(MenuTableName menuTableName, string inputText)

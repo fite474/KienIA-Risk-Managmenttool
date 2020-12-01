@@ -18,11 +18,14 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private Datacomunication comunicator;
         KeuzeMenus keuzeMenus;
         private MenuTableName MenuTableName;
+        private DeleteControler deleteControler;
+
         public EditKeuzes(MenuTableName menuTableName, Dictionary<int, string> options, string menuName)
         {
             InitializeComponent();
             keuzeMenus = new KeuzeMenus();
             comunicator = new Datacomunication();
+            deleteControler = new DeleteControler();
             MenuTableName = menuTableName;
             MenuName = menuName;
             MenuOptions = options;
@@ -99,20 +102,22 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void buttonDeleteOption_Click(object sender, EventArgs e)
         {
-            string selectedOption = "";
-            string message = "weet u zeker dat u de optie: " + selectedOption + " wilt verwijderen?.";
-            string title = "Verwijder keuze optie";
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            DialogResult result = MessageBox.Show(message, title, buttons);
-
-            if (result == DialogResult.Yes)
+            if (listBoxMenuOptions.SelectedItems.Count == 1)
             {
-                //this.Close();
+                string selectedOption = listBoxMenuOptions.SelectedItem.ToString();
+                if (deleteControler.DeleteKeuzeItemFromDatabase(MenuTableName, selectedOption))
+                {
+                    listBoxMenuOptions.Items.Remove(selectedOption);
+                }
             }
             else
             {
-                // Do something  
+                string message = "selecteer een optie";
+                string title = "Verwijder keuze optie";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result = MessageBox.Show(message, title, buttons);
             }
+            
         }
 
         private void buttonEditOption_Click(object sender, EventArgs e)

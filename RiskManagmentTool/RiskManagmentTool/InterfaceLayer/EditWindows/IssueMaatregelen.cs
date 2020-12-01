@@ -21,6 +21,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private string ObjectID;
         private string ObjectNaam;
         private KeuzeMenus keuzeMenus;
+        private ImageHandler ImageHandler;
 
         private string Discipline;
         private string Gevaar;
@@ -38,6 +39,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             InitializeComponent();
             comunicator = new Datacomunication();
             keuzeMenus = new KeuzeMenus();
+            ImageHandler = new ImageHandler();
             Discipline = discipline;
             Gevaar = gevaar;
             Situatie = situatie;
@@ -50,6 +52,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             LoadData();
             //
             LoadIssueText();
+            SetIssueImage();
 
         }
 
@@ -109,7 +112,22 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         }
 
+        private void SetIssueImage()
+        {
+            //get object image(ObjectID)
+            string filePath = comunicator.GetIssueImage(IssueID);//@"C:\Users\mauri\Documents\1AVANS\Stage\1 Stage Bestanden\Pieter_de_Hooghbrug.jpg";
+            try
+            {
+                pictureBoxIssueImage.Image = new Bitmap(filePath);
+                pictureBoxIssueImage.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+            catch (Exception e)
+            {
 
+                Console.WriteLine($"The file was not found: '{e}'");
+            }
+
+        }
 
 
 
@@ -165,6 +183,26 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         {
             DeleteGekoppeldeMaatregelen deleteGekoppeldeMaatregelen = new DeleteGekoppeldeMaatregelen();
             deleteGekoppeldeMaatregelen.Show();
+        }
+
+        private void pictureBoxIssueImage_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            // image filters  
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+
+                string imageFilePath = ImageHandler.ChangeLocation(open.FileName);
+
+
+                // display image in picture box  
+                pictureBoxIssueImage.Image = new Bitmap(imageFilePath);//open.FileName);
+                pictureBoxIssueImage.SizeMode = PictureBoxSizeMode.StretchImage;
+                // image file path 
+                comunicator.AddImageToIssue(IssueID, imageFilePath);
+
+            }
         }
     }
 }

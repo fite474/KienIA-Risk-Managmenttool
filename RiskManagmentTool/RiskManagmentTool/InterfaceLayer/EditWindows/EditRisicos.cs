@@ -19,6 +19,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private KeuzeMenus keuzeMenus;
         private MenuTableName MenuTableName;
         private string menuTitle;
+        private DeleteControler deleteControler;
 
         #region dictonaries
         private Dictionary<int, string> GevolgenItems_DBIndex;
@@ -61,6 +62,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             isNewGevaar = true;
             situatieInitString = "";
             gebeurtenisInitString = "";
+            editGevaarID = "-1";
             LoadData();
             LoadEmptyGevaarData();
 
@@ -93,6 +95,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         {
             
             comunicator = new Datacomunication();
+            deleteControler = new DeleteControler();
             CurrentMenuToAddTo = new Dictionary<int, string>();
             LoadMenus();
 
@@ -464,19 +467,20 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void buttonDeleteGevaar_Click(object sender, EventArgs e)
         {
-            string message = "Weet u zeker dat u dit gevaar wilt verwijderen?";
-            string title = "Reminder Risico waardes";
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            DialogResult result = MessageBox.Show(message, title, buttons);
+            deleteControler.DeleteGevaarFromDatabase(editGevaarID);
+            //string message = "Weet u zeker dat u dit gevaar wilt verwijderen?";
+            //string title = "Reminder Risico waardes";
+            //MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            //DialogResult result = MessageBox.Show(message, title, buttons);
 
-            if (result == DialogResult.Yes)
-            {
-                //this.Close();
-            }
-            else
-            {
+            //if (result == DialogResult.Yes)
+            //{
+            //    //this.Close();
+            //}
+            //else
+            //{
                 
-            }
+            //}
         }
     }
 }

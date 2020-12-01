@@ -243,8 +243,15 @@
     <Compile Include="InterfaceLayer\WeergeefWindows\ShowGevaarUsage.Designer.cs">
       <DependentUpon>ShowGevaarUsage.cs</DependentUpon>
     </Compile>
+    <Compile Include="InterfaceLayer\WeergeefWindows\ShowMenuItemUsage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\WeergeefWindows\ShowMenuItemUsage.Designer.cs">
+      <DependentUpon>ShowMenuItemUsage.cs</DependentUpon>
+    </Compile>
     <Compile Include="LogicLayer\Datacomunication.cs" />
     <Compile Include="LogicLayer\DataControler.cs" />
+    <Compile Include="LogicLayer\DeleteControler.cs" />
     <Compile Include="LogicLayer\ImageHandler.cs" />
     <Compile Include="LogicLayer\KeuzeMenus.cs" />
     <Compile Include="LogicLayer\MenuTableName.cs" />
@@ -358,6 +365,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InterfaceLayer\WeergeefWindows\ShowGevaarUsage.resx">
       <DependentUpon>ShowGevaarUsage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\WeergeefWindows\ShowMenuItemUsage.resx">
+      <DependentUpon>ShowMenuItemUsage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -466,7 +466,18 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
 
         }
+        public void AddImageToIssue(string issueID, string imageFilePath)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO TableIssueImages(IssueID, ImageFilePath) VALUES " +
+                                                                       "(@IssueID, @ImageFilePath)", sqlConnection);
+            cmd.Parameters.AddWithValue("@IssueID", issueID);
+            cmd.Parameters.AddWithValue("@ImageFilePath", imageFilePath);
 
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+
+        }
 
         #endregion add to issue
 
@@ -844,13 +855,6 @@ namespace RiskManagmentTool.DataLayer
         public SqlDataAdapter GetIssuesFromObject(string objectID)
         {
             sqlConnection.Open();
-            //String query = "SELECT * FROM TableRisksUsedInProject WHERE UsedInProjectName = '" + ProjectName + "'";
-            //string query = "SELECT TableIssues.IssueID, TableGevaren.GevaarID, TableGevaren.GevaarlijkeSituatie, TableGevaren.GevaarlijkeGebeurtenis, TableGevaren.Discipline, TableGevaren.Gebruiksfase, TableGevaren.Bedienvorm," +
-            //                "TableGevaren.Gebruiker, TableGevaren.GevaarlijkeZone, TableGevaren.Taak_Actie, TableGevaren.Gevaar, TableGevaren.Gevolg " +
-            //                " FROM TableIssues INNER JOIN TableGevaren" +
-            //                " ON TableGevaren.GevaarID = TableIssues.IssueGevaarID WHERE TableIssues.IssueID" +
-            //                " IN(" +
-            //                " SELECT TableObjectIssues.IssueID FROM TableObjectIssues WHERE TableObjectIssues.ObjectID = '" + objectID + "')";
             string query = "SELECT * FROM View_ObjectIssues " +
                             "WHERE View_ObjectIssues.IssueID IN (SELECT TableObjectIssues.IssueID FROM TableObjectIssues WHERE TableObjectIssues.ObjectID = '" + objectID + "') ";
 
@@ -887,14 +891,6 @@ namespace RiskManagmentTool.DataLayer
                             "TableObjectIssues ON TableObjecten.ObjectID = TableObjectIssues.ObjectID INNER JOIN " +
                             "View_ObjectIssues ON TableObjectIssues.IssueID = View_ObjectIssues.IssueID " +
                             "WHERE View_ObjectIssues.GevaarID = '" + gevaarID + "' ";
-           
-
-            //string query = "SELECT TableIssues.IssueID, TableGevaren.GevaarlijkeSituatie, TableGevaren.GevaarlijkeGebeurtenis, TableGevaren.Discipline, TableGevaren.Gebruiksfase, TableGevaren.Bedienvorm," +
-            //                "TableGevaren.Gebruiker, TableGevaren.GevaarlijkeZone, TableGevaren.Taak_Actie, TableGevaren.Gevaar, TableGevaren.Gevolg " +
-            //                " FROM TableIssues INNER JOIN TableGevaren" +
-            //                " ON TableGevaren.GevaarID = TableIssues.IssueGevaarID WHERE TableIssues.IssueID" +
-            //                " IN(" +
-            //                " SELECT TableObjectIssues.IssueID FROM TableObjectIssues)";
 
             SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
             sqlConnection.Close();
@@ -905,10 +901,6 @@ namespace RiskManagmentTool.DataLayer
         public SqlDataAdapter GetIssueMaatregelen(string issueID)
         {
             sqlConnection.Open();
-            //string query = "SELECT TableMaatregelen.* FROM TableIssueMaatregelen " +
-            //    " JOIN TableMaatregelen " +
-            //    "ON TableMaatregelen.MaatregelID = TableIssueMaatregelen.MaatregelID " +
-            //    "WHERE TableIssueMaatregelen.IssueID = '"+ issueID +"'"; //+
             string query = "SELECT * FROM View_MaatregelenCompleet " +
                             "WHERE View_MaatregelenCompleet.MaatregelID IN (SELECT TableIssueMaatregelen.MaatregelID FROM TableIssueMaatregelen WHERE TableIssueMaatregelen.IssueID = '" + issueID + "') ";
 
@@ -972,8 +964,6 @@ namespace RiskManagmentTool.DataLayer
                             " IN(" +
                             " SELECT TableTemplateIssues.IssueID FROM TableTemplateIssues WHERE TableTemplateIssues.TemplateID = '" + templateID + "')";
 
-
-            
             SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
             sqlConnection.Close();
             return adapter;
@@ -991,11 +981,6 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
             return adapter;
         }
-
-
-        //begin inner region filtered get requests
-
-
 
 
         public SqlDataAdapter GetGevarenTableByDiscipline(string disciplineType)
@@ -1016,6 +1001,24 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Open();
             SqlCommand cmd = new SqlCommand("SELECT ImageFilePath FROM TableObjectImages " +
                                             "WHERE TableObjectImages.ObjectID = '" + objectID + "'", sqlConnection);
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    imageFilePath = (dr[0]).ToString();
+                }
+            }
+            sqlConnection.Close();
+
+            return imageFilePath;
+        }
+
+        public string GetIssueImage(string issueID)
+        {
+            string imageFilePath = "";
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT ImageFilePath FROM TableIssueImages " +
+                                            "WHERE TableIssueImages.IssueID = '" + issueID + "'", sqlConnection);
             using (SqlDataReader dr = cmd.ExecuteReader())
             {
                 while (dr.Read())
@@ -1118,6 +1121,33 @@ namespace RiskManagmentTool.DataLayer
 
             return issueId;
         }
+
+
+        public string GetMenuOptionID(string databaseTableName, string databaseIDColumnName, string databaseColumnName, string optionText)
+        {
+            string optionID = "null";
+            sqlConnection.Open();
+
+            SqlCommand cmd = new SqlCommand("SELECT " + databaseIDColumnName + "  FROM " + databaseTableName + " WHERE " + databaseColumnName + " = @OptionText ", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@OptionText", optionText);
+
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    optionID = (dr[0]).ToString();
+                }
+            }
+            sqlConnection.Close();
+
+
+            return optionID;
+        }
+
+
+
+
         #endregion get ID
 
         #region get info
@@ -1592,11 +1622,12 @@ namespace RiskManagmentTool.DataLayer
         {
             sqlConnection.Open();
 
-            string query = "SELECT TableGevaren.* FROM TableGevaren " +
-                           "WHERE TableGevaren.GevaarID IN( " +
+            string query = "SELECT * FROM View_GevarenCompleet " +
+                           "WHERE View_GevarenCompleet.GevaarID IN( " +
                            string.Join(",", selectedGevarenId) +
                            " )";
 
+            Console.WriteLine(query);
             SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
             sqlConnection.Close();
             return adapter;
@@ -1736,10 +1767,146 @@ namespace RiskManagmentTool.DataLayer
         }
         #endregion get gekoppelde as list
 
+
+        #region Get usage
+        public SqlDataAdapter GetGevarenUsage(string gevaarID)
+        {
+            //List<string> usage = new List<string>();
+
+            sqlConnection.Open();
+            //SqlCommand cmd = new SqlCommand("SELECT View_ObjectIssues.IssueID, View_ObjectIssues.GevaarID " +
+            //                                "FROM View_ObjectIssues " +
+            //                                "WHERE View_ObjectIssues.GevaarID = '" + gevaarID + "' ", sqlConnection);
+
+            String query = "SELECT View_ObjectIssues.IssueID, View_ObjectIssues.GevaarID " +
+                                            "FROM View_ObjectIssues " +
+                                            "WHERE View_ObjectIssues.GevaarID = '" + gevaarID + "' ";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
+            sqlConnection.Close();
+            return adapter;
+
+        }
+
+
+
+
+        #region get menu usage
+        public SqlDataAdapter GetObjectTypeUsage(string dbItemText)
+        {
+            sqlConnection.Open();
+            String query = "SELECT TableObjecten.ObjectNaam, TableObjecten.ObjectType " +
+                                            "FROM TableObjecten " +
+                                            "WHERE TableObjecten.ObjectType = '" + dbItemText + "' ";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
+            sqlConnection.Close();
+            return adapter;
+        }
+
+        public SqlDataAdapter GetGevolgenUsage(string dbItemText)
+        {
+            sqlConnection.Open();
+            String query = "SELECT Gevaar_Gevolg.GevaarID, Gevaar_Gevolg.GevolgID " +
+                                            "FROM Gevaar_Gevolg " +
+                                            "WHERE Gevaar_Gevolg.GevolgID IN ( " +
+                                            "SELECT GevolgID FROM Gevolgen WHERE Gevolg = '" + dbItemText + "' ) ";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
+            sqlConnection.Close();
+            return adapter;
+        }
+
+        public SqlDataAdapter GetGevarenZoneUsage(string dbItemText)
+        {
+            sqlConnection.Open();
+            String query = "SELECT Gevaar_GevaarlijkeZone.GevaarID, Gevaar_GevaarlijkeZone.GevaarlijkeZoneID " +
+                                            "FROM Gevaar_GevaarlijkeZone " +
+                                            "WHERE Gevaar_GevaarlijkeZone.GevaarlijkeZoneID IN ( " +
+                                            "SELECT GevarenzoneID FROM Gevarenzones WHERE Gevarenzone = '" + dbItemText + "' ) ";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
+            sqlConnection.Close();
+            return adapter;
+        }
+
+        public SqlDataAdapter GetGevaarTypeUsage(string dbItemText)
+        {
+            sqlConnection.Open();
+            String query = "SELECT Gevaar_GevaarType.GevaarID, Gevaar_GevaarType.GevaarTypeID " +
+                                            "FROM Gevaar_GevaarType " +
+                                            "WHERE Gevaar_GevaarType.GevaarTypeID IN ( " +
+                                            "SELECT GevaarTypeID FROM GevaarTypes WHERE GevaarType = '" + dbItemText + "' ) ";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
+            sqlConnection.Close();
+            return adapter;
+        }
+
+        public SqlDataAdapter GetGebruiksfaseUsage(string dbItemText)
+        {
+            sqlConnection.Open();
+            String query = "SELECT Gevaar_Gebruiksfase.GevaarID, Gevaar_Gebruiksfase.GebruiksfaseID " +
+                                            "FROM Gevaar_Gebruiksfase " +
+                                            "WHERE Gevaar_Gebruiksfase.GebruiksfaseID IN ( " +
+                                            "SELECT GebruiksfaseID FROM Gebruiksfases WHERE Gebruiksfase = '" + dbItemText + "' ) ";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
+            sqlConnection.Close();
+            return adapter;
+        }
+
+        public SqlDataAdapter GetGebruikerUsage(string dbItemText)
+        {
+            sqlConnection.Open();
+            String query = "SELECT Gevaar_Gebruiker.GevaarID, Gevaar_Gebruiker.GebruikerID " +
+                                            "FROM Gevaar_Gebruiker " +
+                                            "WHERE Gevaar_Gebruiker.GebruikerID IN ( " +
+                                            "SELECT GebruikerID FROM Gebruikers WHERE Gebruiker = '" + dbItemText + "' ) ";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
+            sqlConnection.Close();
+            return adapter;
+        }
+
+        public SqlDataAdapter GetDisciplineUsage(string dbItemText)
+        {
+            sqlConnection.Open();
+            String query = "SELECT Gevaar_Discipline.GevaarID, Gevaar_Discipline.DisciplineID " +
+                                            "FROM Gevaar_Discipline " +
+                                            "WHERE Gevaar_Discipline.DisciplineID IN ( " +
+                                            "SELECT DisciplineID FROM Disciplines WHERE Discipline = '" + dbItemText + "' ) ";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
+            sqlConnection.Close();
+            return adapter;
+        }
+
+        public SqlDataAdapter GetBedienvormUsage(string dbItemText)
+        {
+            sqlConnection.Open();
+            String query = "SELECT Gevaar_Bedienvorm.GevaarID, Gevaar_Bedienvorm.BedienvormID " +
+                                            "FROM Gevaar_Bedienvorm " +
+                                            "WHERE Gevaar_Bedienvorm.BedienvormID IN ( " +
+                                            "SELECT BedienvormID FROM Bedienvormen WHERE Bedienvorm = '" + dbItemText + "' ) ";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
+            sqlConnection.Close();
+            return adapter;
+        }
+
+        public SqlDataAdapter GetGevaarTaakUsage(string dbItemText)
+        {
+            sqlConnection.Open();
+            String query = "SELECT Gevaar_Taak.GevaarID, Gevaar_Taak.TaakID " +
+                                            "FROM Gevaar_Taak " +
+                                            "WHERE Gevaar_Taak.TaakID IN ( " +
+                                            "SELECT TaakID FROM Taken WHERE Taak = '" + dbItemText + "' ) ";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
+            sqlConnection.Close();
+            return adapter;
+        }
+
+        #endregion get menu usage
+
+        #endregion Get usage
+
+
         #endregion GET REQUESTS FROM DATABASE
 
 
-        #region menus
+        #region add menus
 
 
         public void AddToObjectTypesMenu(string optionToAdd)
@@ -1910,7 +2077,42 @@ namespace RiskManagmentTool.DataLayer
             cmd.ExecuteNonQuery();
             sqlConnection.Close();
         }
-        #endregion menus
+        #endregion add menus
+
+        #region delete menus
+ 
+
+        public void DeleteFromMenu(string databaseTableName, string databaseColumnName, string optionToDelete)
+        {
+            //string databaseTableName = "Gevolgen";
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("DELETE FROM " + databaseTableName + " WHERE " + databaseColumnName + " = @ColumnTitle ", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@ColumnTitle", optionToDelete);
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+
+
+        #endregion delete menus
+
+
+
+
+        #region delete Usage
+        public void DeleteUsage(string databaseTableName, string databaseColumnName, string optionIDToDelete)
+        {
+            //string databaseTableName = "Gevolgen";
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("DELETE FROM " + databaseTableName + " WHERE " + databaseColumnName + " = @IDToDelete ", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@IDToDelete", optionIDToDelete);
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+
+
+        #endregion delete Usage
 
 
         #region getmenus

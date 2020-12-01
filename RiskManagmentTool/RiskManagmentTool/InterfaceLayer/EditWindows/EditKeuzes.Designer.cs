@@ -124,13 +124,12 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox listBoxMenuOptions;
         private System.Windows.Forms.Button buttonAddOption;
         private System.Windows.Forms.Button buttonDeleteOption;
         private System.Windows.Forms.Button buttonDone;
         private System.Windows.Forms.Button buttonEditOption;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxMenuName;
+        private System.Windows.Forms.ListBox listBoxMenuOptions;
     }
 }

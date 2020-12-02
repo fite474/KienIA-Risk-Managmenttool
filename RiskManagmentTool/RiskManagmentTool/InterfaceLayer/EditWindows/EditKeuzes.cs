@@ -61,7 +61,6 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             foreach (KeyValuePair<int, string> kvp in MenuOptions)
             {
                 listBoxMenuOptions.Items.Add(kvp.Value);
-                //comboBoxObjectType.Items.Add(typeString);
             }
         }
 
@@ -79,25 +78,25 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
                 string textResult = editText.textBoxInput.Text;
                 listBoxMenuOptions.Items.Add(textResult);
                 AddInput(textResult);
-                //comunicator.AddToMenu(MenuName, textResult);
-
-                
-                
             }
             else
             {
-                //this.txtResult.Text = "Cancelled";
+                
             }
             editText.Dispose();
-            //editText.ShowDialog();
+            
         }
 
         private void AddInput(string input)
         {
-
             comunicator.AddToMenu(MenuTableName, input);
+            keuzeMenus.ReloadAllLists(); 
+        }
+
+        private void EditInput(int dbIndex, string input)
+        {
+            comunicator.EditToMenu(MenuTableName, dbIndex, input);
             keuzeMenus.ReloadAllLists();
-           
         }
 
         private void buttonDeleteOption_Click(object sender, EventArgs e)
@@ -122,7 +121,31 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void buttonEditOption_Click(object sender, EventArgs e)
         {
+            int itemDB_ID = -1;
+            foreach (KeyValuePair<int, string> kvp in MenuOptions)
+            {
+                if (kvp.Value.Equals(listBoxMenuOptions.SelectedItem.ToString()))
+                {
+                    itemDB_ID = kvp.Key;
+                }
+            }
 
+
+            EditText editText = new EditText();
+            editText.textBoxInput.Text = listBoxMenuOptions.SelectedItem.ToString();
+            if (editText.ShowDialog(this) == DialogResult.OK)
+            {
+                // Read the contents of testDialog's TextBox.
+                string textResult = editText.textBoxInput.Text;
+                listBoxMenuOptions.Items.Add(textResult);
+                EditInput(itemDB_ID, textResult);
+            }
+            else
+            {
+                //this.txtResult.Text = "Cancelled";
+            }
+            editText.Dispose();
+            
         }
     }
 }

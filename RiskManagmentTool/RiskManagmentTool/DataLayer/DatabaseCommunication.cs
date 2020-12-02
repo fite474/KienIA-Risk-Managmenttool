@@ -812,6 +812,33 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
         }
 
+        public void UpdateGevaarGebeurtenis(int gevaarID, string text)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("UPDATE TableGevaarMulti " +
+                                             "SET GevaarlijkeGebeurtenis = @GevaarlijkeGebeurtenis" +
+                                            " WHERE GevaarID = '" + gevaarID + "'", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@GevaarlijkeGebeurtenis", text);
+            cmd.ExecuteNonQuery();
+
+            sqlConnection.Close();
+
+        }
+
+        public void UpdateGevaarSituatie(int gevaarID, string text)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("UPDATE TableGevaarMulti " +
+                                             "SET GevaarlijkeSituatie = @GevaarlijkeSituatie" +
+                                            " WHERE GevaarID = '" + gevaarID + "'", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@GevaarlijkeSituatie", text);
+            cmd.ExecuteNonQuery();
+
+            sqlConnection.Close();
+        }
+
 
 
         #endregion UPDATE
@@ -957,12 +984,16 @@ namespace RiskManagmentTool.DataLayer
         {
 
             sqlConnection.Open();
-            String query = "SELECT TableIssues.IssueID, TableGevaren.GevaarlijkeSituatie, TableGevaren.GevaarlijkeGebeurtenis, TableGevaren.Discipline, TableGevaren.Gebruiksfase, TableGevaren.Bedienvorm," +
-                            "TableGevaren.Gebruiker, TableGevaren.GevaarlijkeZone, TableGevaren.Taak_Actie, TableGevaren.Gevaar, TableGevaren.Gevolg " +
-                            " FROM TableIssues INNER JOIN TableGevaren" +
-                            " ON TableGevaren.GevaarID = TableIssues.IssueGevaarID WHERE TableIssues.IssueID" +
-                            " IN(" +
-                            " SELECT TableTemplateIssues.IssueID FROM TableTemplateIssues WHERE TableTemplateIssues.TemplateID = '" + templateID + "')";
+            //String query = "SELECT TableIssues.IssueID, TableGevaren.GevaarlijkeSituatie, TableGevaren.GevaarlijkeGebeurtenis, TableGevaren.Discipline, TableGevaren.Gebruiksfase, TableGevaren.Bedienvorm," +
+            //                "TableGevaren.Gebruiker, TableGevaren.GevaarlijkeZone, TableGevaren.Taak_Actie, TableGevaren.Gevaar, TableGevaren.Gevolg " +
+            //                " FROM TableIssues INNER JOIN TableGevaren" +
+            //                " ON TableGevaren.GevaarID = TableIssues.IssueGevaarID WHERE TableIssues.IssueID" +
+            //                " IN(" +
+            //                " SELECT TableTemplateIssues.IssueID FROM TableTemplateIssues WHERE TableTemplateIssues.TemplateID = '" + templateID + "')";
+
+            string query = "SELECT * FROM View_ObjectIssues " +
+                            "WHERE View_ObjectIssues.IssueID IN (SELECT TableTemplateIssues.IssueID FROM TableTemplateIssues WHERE TableTemplateIssues.TemplateID = '" + templateID + "') ";
+
 
             SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
             sqlConnection.Close();
@@ -1909,6 +1940,7 @@ namespace RiskManagmentTool.DataLayer
         #region add menus
 
 
+
         public void AddToObjectTypesMenu(string optionToAdd)
         {
             string databaseTableName = "ObjectTypes";
@@ -2096,7 +2128,23 @@ namespace RiskManagmentTool.DataLayer
 
         #endregion delete menus
 
+        #region edit menus
+        public void EditFromMenu(string databaseTableName, string databaseColumnName, string databaseIDColumnName, int optionID, string newText)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("UPDATE " + databaseTableName + " " +
+                                             "SET " + databaseColumnName + " = @NewText" +
+                                            " WHERE "+ databaseIDColumnName + " = '" + optionID + "'", sqlConnection);
 
+            cmd.Parameters.AddWithValue("@NewText", newText);
+
+
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+
+
+        #endregion edit menus
 
 
         #region delete Usage

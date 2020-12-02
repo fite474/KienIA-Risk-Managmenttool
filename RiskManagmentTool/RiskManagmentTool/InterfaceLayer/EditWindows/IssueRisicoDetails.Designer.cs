@@ -33,6 +33,8 @@
             this.buttonConfirm = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.checkedListBoxRisicograafMethode = new System.Windows.Forms.CheckedListBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.textBoxGevaar = new System.Windows.Forms.TextBox();
             this.textBoxGebeurtenis = new System.Windows.Forms.TextBox();
@@ -49,6 +51,18 @@
             this.textBoxInit_Pr_Comment = new System.Windows.Forms.TextBox();
             this.textBoxInit_Av_Comment = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.textBoxInit_Av = new System.Windows.Forms.TextBox();
             this.textBoxInit_Pr = new System.Windows.Forms.TextBox();
             this.textBoxRest_Av = new System.Windows.Forms.TextBox();
@@ -67,20 +81,14 @@
             this.textBoxRest_Fr_Comment = new System.Windows.Forms.TextBox();
             this.textBoxRest_Se_Comment = new System.Windows.Forms.TextBox();
             this.textBoxRest_Se = new System.Windows.Forms.TextBox();
-            this.checkedListBoxRisicograafMethode = new System.Windows.Forms.CheckedListBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.comboBox8 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -95,7 +103,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 753);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(957, 228);
+            this.panel1.Size = new System.Drawing.Size(1294, 228);
             this.panel1.TabIndex = 0;
             // 
             // checkBoxRest_Risico_Ok
@@ -125,7 +133,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(957, 227);
+            this.panel2.Size = new System.Drawing.Size(1294, 227);
             this.panel2.TabIndex = 2;
             // 
             // panel5
@@ -133,10 +141,32 @@
             this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.checkedListBoxRisicograafMethode);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(648, 0);
+            this.panel5.Location = new System.Drawing.Point(985, 0);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(309, 227);
             this.panel5.TabIndex = 6;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(20, 49);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(138, 17);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Risicograaf methode";
+            // 
+            // checkedListBoxRisicograafMethode
+            // 
+            this.checkedListBoxRisicograafMethode.CheckOnClick = true;
+            this.checkedListBoxRisicograafMethode.FormattingEnabled = true;
+            this.checkedListBoxRisicograafMethode.Items.AddRange(new object[] {
+            "SIL",
+            "PL"});
+            this.checkedListBoxRisicograafMethode.Location = new System.Drawing.Point(20, 72);
+            this.checkedListBoxRisicograafMethode.Name = "checkedListBoxRisicograafMethode";
+            this.checkedListBoxRisicograafMethode.Size = new System.Drawing.Size(154, 72);
+            this.checkedListBoxRisicograafMethode.TabIndex = 0;
+            this.checkedListBoxRisicograafMethode.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxRisicograafMethode_ItemCheck);
             // 
             // panel4
             // 
@@ -226,14 +256,14 @@
             // 
             // textBoxInit_Se_Comment
             // 
-            this.textBoxInit_Se_Comment.Location = new System.Drawing.Point(259, 45);
+            this.textBoxInit_Se_Comment.Location = new System.Drawing.Point(567, 44);
             this.textBoxInit_Se_Comment.Name = "textBoxInit_Se_Comment";
             this.textBoxInit_Se_Comment.Size = new System.Drawing.Size(592, 22);
             this.textBoxInit_Se_Comment.TabIndex = 10;
             // 
             // textBoxInit_Se
             // 
-            this.textBoxInit_Se.Location = new System.Drawing.Point(173, 44);
+            this.textBoxInit_Se.Location = new System.Drawing.Point(144, 44);
             this.textBoxInit_Se.Name = "textBoxInit_Se";
             this.textBoxInit_Se.Size = new System.Drawing.Size(59, 22);
             this.textBoxInit_Se.TabIndex = 11;
@@ -241,7 +271,7 @@
             // 
             // textBoxInit_Fr
             // 
-            this.textBoxInit_Fr.Location = new System.Drawing.Point(173, 72);
+            this.textBoxInit_Fr.Location = new System.Drawing.Point(144, 72);
             this.textBoxInit_Fr.Name = "textBoxInit_Fr";
             this.textBoxInit_Fr.Size = new System.Drawing.Size(59, 22);
             this.textBoxInit_Fr.TabIndex = 13;
@@ -249,27 +279,35 @@
             // 
             // textBoxInit_Fr_Comment
             // 
-            this.textBoxInit_Fr_Comment.Location = new System.Drawing.Point(259, 73);
+            this.textBoxInit_Fr_Comment.Location = new System.Drawing.Point(567, 72);
             this.textBoxInit_Fr_Comment.Name = "textBoxInit_Fr_Comment";
             this.textBoxInit_Fr_Comment.Size = new System.Drawing.Size(592, 22);
             this.textBoxInit_Fr_Comment.TabIndex = 12;
             // 
             // textBoxInit_Pr_Comment
             // 
-            this.textBoxInit_Pr_Comment.Location = new System.Drawing.Point(259, 101);
+            this.textBoxInit_Pr_Comment.Location = new System.Drawing.Point(567, 100);
             this.textBoxInit_Pr_Comment.Name = "textBoxInit_Pr_Comment";
             this.textBoxInit_Pr_Comment.Size = new System.Drawing.Size(592, 22);
             this.textBoxInit_Pr_Comment.TabIndex = 16;
             // 
             // textBoxInit_Av_Comment
             // 
-            this.textBoxInit_Av_Comment.Location = new System.Drawing.Point(259, 129);
+            this.textBoxInit_Av_Comment.Location = new System.Drawing.Point(567, 128);
             this.textBoxInit_Av_Comment.Name = "textBoxInit_Av_Comment";
             this.textBoxInit_Av_Comment.Size = new System.Drawing.Size(592, 22);
             this.textBoxInit_Av_Comment.TabIndex = 17;
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.comboBox8);
+            this.panel3.Controls.Add(this.comboBox7);
+            this.panel3.Controls.Add(this.comboBox6);
+            this.panel3.Controls.Add(this.comboBox5);
+            this.panel3.Controls.Add(this.comboBox4);
+            this.panel3.Controls.Add(this.comboBox3);
+            this.panel3.Controls.Add(this.comboBox2);
+            this.panel3.Controls.Add(this.comboBox1);
             this.panel3.Controls.Add(this.label17);
             this.panel3.Controls.Add(this.label16);
             this.panel3.Controls.Add(this.label15);
@@ -309,270 +347,8 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 227);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(957, 526);
+            this.panel3.Size = new System.Drawing.Size(1294, 526);
             this.panel3.TabIndex = 18;
-            // 
-            // textBoxInit_Av
-            // 
-            this.textBoxInit_Av.Location = new System.Drawing.Point(173, 128);
-            this.textBoxInit_Av.Name = "textBoxInit_Av";
-            this.textBoxInit_Av.Size = new System.Drawing.Size(59, 22);
-            this.textBoxInit_Av.TabIndex = 46;
-            this.textBoxInit_Av.TextChanged += new System.EventHandler(this.textBoxInit_Av_TextChanged);
-            // 
-            // textBoxInit_Pr
-            // 
-            this.textBoxInit_Pr.Location = new System.Drawing.Point(173, 100);
-            this.textBoxInit_Pr.Name = "textBoxInit_Pr";
-            this.textBoxInit_Pr.Size = new System.Drawing.Size(59, 22);
-            this.textBoxInit_Pr.TabIndex = 45;
-            this.textBoxInit_Pr.TextChanged += new System.EventHandler(this.textBoxInit_Pr_TextChanged);
-            // 
-            // textBoxRest_Av
-            // 
-            this.textBoxRest_Av.Location = new System.Drawing.Point(173, 384);
-            this.textBoxRest_Av.Name = "textBoxRest_Av";
-            this.textBoxRest_Av.Size = new System.Drawing.Size(59, 22);
-            this.textBoxRest_Av.TabIndex = 44;
-            this.textBoxRest_Av.TextChanged += new System.EventHandler(this.textBoxRest_Av_TextChanged);
-            // 
-            // textBoxRest_Pr
-            // 
-            this.textBoxRest_Pr.Location = new System.Drawing.Point(173, 356);
-            this.textBoxRest_Pr.Name = "textBoxRest_Pr";
-            this.textBoxRest_Pr.Size = new System.Drawing.Size(59, 22);
-            this.textBoxRest_Pr.TabIndex = 43;
-            this.textBoxRest_Pr.TextChanged += new System.EventHandler(this.textBoxRest_Pr_TextChanged);
-            // 
-            // textBoxInit_Risico
-            // 
-            this.textBoxInit_Risico.Location = new System.Drawing.Point(173, 194);
-            this.textBoxInit_Risico.Name = "textBoxInit_Risico";
-            this.textBoxInit_Risico.Size = new System.Drawing.Size(59, 22);
-            this.textBoxInit_Risico.TabIndex = 42;
-            this.textBoxInit_Risico.ReadOnly = true;
-            this.textBoxInit_Risico.BackColor = System.Drawing.SystemColors.Window;
-            // 
-            // textBoxInitRisico_Comment
-            // 
-            this.textBoxInitRisico_Comment.Location = new System.Drawing.Point(259, 195);
-            this.textBoxInitRisico_Comment.Name = "textBoxInitRisico_Comment";
-            this.textBoxInitRisico_Comment.Size = new System.Drawing.Size(592, 22);
-            this.textBoxInitRisico_Comment.TabIndex = 41;
-            // 
-            // textBoxRest_Risico
-            // 
-            this.textBoxRest_Risico.Location = new System.Drawing.Point(173, 440);
-            this.textBoxRest_Risico.Name = "textBoxRest_Risico";
-            this.textBoxRest_Risico.Size = new System.Drawing.Size(59, 22);
-            this.textBoxRest_Risico.TabIndex = 39;
-            this.textBoxRest_Risico.ReadOnly = true;
-            this.textBoxRest_Risico.BackColor = System.Drawing.SystemColors.Window;
-            // 
-            // textBoxRest_Risico_Comment
-            // 
-            this.textBoxRest_Risico_Comment.Location = new System.Drawing.Point(259, 441);
-            this.textBoxRest_Risico_Comment.Name = "textBoxRest_Risico_Comment";
-            this.textBoxRest_Risico_Comment.Size = new System.Drawing.Size(592, 22);
-            this.textBoxRest_Risico_Comment.TabIndex = 38;
-            // 
-            // textBoxRest_Cl
-            // 
-            this.textBoxRest_Cl.Location = new System.Drawing.Point(173, 412);
-            this.textBoxRest_Cl.Name = "textBoxRest_Cl";
-            this.textBoxRest_Cl.Size = new System.Drawing.Size(59, 22);
-            this.textBoxRest_Cl.TabIndex = 36;
-            this.textBoxRest_Cl.ReadOnly = true;
-            this.textBoxRest_Cl.BackColor = System.Drawing.SystemColors.Window;
-
-            // 
-            // textBoxRest_Cl_Comment
-            // 
-            this.textBoxRest_Cl_Comment.Location = new System.Drawing.Point(259, 413);
-            this.textBoxRest_Cl_Comment.Name = "textBoxRest_Cl_Comment";
-            this.textBoxRest_Cl_Comment.Size = new System.Drawing.Size(592, 22);
-            this.textBoxRest_Cl_Comment.TabIndex = 35;
-            // 
-            // textBoxInit_Cl
-            // 
-            this.textBoxInit_Cl.Location = new System.Drawing.Point(173, 156);
-            this.textBoxInit_Cl.Name = "textBoxInit_Cl";
-            this.textBoxInit_Cl.Size = new System.Drawing.Size(59, 22);
-            this.textBoxInit_Cl.TabIndex = 33;
-            this.textBoxInit_Cl.ReadOnly = true;
-            this.textBoxInit_Cl.BackColor = System.Drawing.SystemColors.Window;
-            // 
-            // textBoxInit_Cl_Comment
-            // 
-            this.textBoxInit_Cl_Comment.Location = new System.Drawing.Point(259, 157);
-            this.textBoxInit_Cl_Comment.Name = "textBoxInit_Cl_Comment";
-            this.textBoxInit_Cl_Comment.Size = new System.Drawing.Size(592, 22);
-            this.textBoxInit_Cl_Comment.TabIndex = 32;
-            // 
-            // textBoxRest_Av_Comment
-            // 
-            this.textBoxRest_Av_Comment.Location = new System.Drawing.Point(259, 385);
-            this.textBoxRest_Av_Comment.Name = "textBoxRest_Av_Comment";
-            this.textBoxRest_Av_Comment.Size = new System.Drawing.Size(592, 22);
-            this.textBoxRest_Av_Comment.TabIndex = 30;
-            // 
-            // textBoxRest_Pr_Comment
-            // 
-            this.textBoxRest_Pr_Comment.Location = new System.Drawing.Point(259, 357);
-            this.textBoxRest_Pr_Comment.Name = "textBoxRest_Pr_Comment";
-            this.textBoxRest_Pr_Comment.Size = new System.Drawing.Size(592, 22);
-            this.textBoxRest_Pr_Comment.TabIndex = 29;
-            // 
-            // textBoxRest_Fr
-            // 
-            this.textBoxRest_Fr.Location = new System.Drawing.Point(173, 328);
-            this.textBoxRest_Fr.Name = "textBoxRest_Fr";
-            this.textBoxRest_Fr.Size = new System.Drawing.Size(59, 22);
-            this.textBoxRest_Fr.TabIndex = 26;
-            this.textBoxRest_Fr.TextChanged += new System.EventHandler(this.textBoxRest_Fr_TextChanged);
-            // 
-            // textBoxRest_Fr_Comment
-            // 
-            this.textBoxRest_Fr_Comment.Location = new System.Drawing.Point(259, 329);
-            this.textBoxRest_Fr_Comment.Name = "textBoxRest_Fr_Comment";
-            this.textBoxRest_Fr_Comment.Size = new System.Drawing.Size(592, 22);
-            this.textBoxRest_Fr_Comment.TabIndex = 25;
-            // 
-            // textBoxRest_Se_Comment
-            // 
-            this.textBoxRest_Se_Comment.Location = new System.Drawing.Point(259, 301);
-            this.textBoxRest_Se_Comment.Name = "textBoxRest_Se_Comment";
-            this.textBoxRest_Se_Comment.Size = new System.Drawing.Size(592, 22);
-            this.textBoxRest_Se_Comment.TabIndex = 23;
-            // 
-            // textBoxRest_Se
-            // 
-            this.textBoxRest_Se.Location = new System.Drawing.Point(173, 300);
-            this.textBoxRest_Se.Name = "textBoxRest_Se";
-            this.textBoxRest_Se.Size = new System.Drawing.Size(59, 22);
-            this.textBoxRest_Se.TabIndex = 24;
-            this.textBoxRest_Se.TextChanged += new System.EventHandler(this.textBoxRest_Se_TextChanged);
-            // 
-            // checkedListBoxRisicograafMethode
-            // 
-            this.checkedListBoxRisicograafMethode.CheckOnClick = true;
-            this.checkedListBoxRisicograafMethode.FormattingEnabled = true;
-            this.checkedListBoxRisicograafMethode.Items.AddRange(new object[] {
-            "SIL",
-            "PL"});
-            this.checkedListBoxRisicograafMethode.Location = new System.Drawing.Point(20, 72);
-            this.checkedListBoxRisicograafMethode.Name = "checkedListBoxRisicograafMethode";
-            this.checkedListBoxRisicograafMethode.Size = new System.Drawing.Size(154, 72);
-            this.checkedListBoxRisicograafMethode.TabIndex = 0;
-            this.checkedListBoxRisicograafMethode.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxRisicograafMethode_ItemCheck);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(20, 49);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(138, 17);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Risicograaf methode";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(37, 44);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 17);
-            this.label6.TabIndex = 47;
-            this.label6.Text = "Init_Se";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(37, 72);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(47, 17);
-            this.label7.TabIndex = 48;
-            this.label7.Text = "Init_Fr";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(37, 100);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(48, 17);
-            this.label8.TabIndex = 49;
-            this.label8.Text = "Init_Pr";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(37, 128);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(50, 17);
-            this.label9.TabIndex = 50;
-            this.label9.Text = "Init_Av";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(37, 156);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(46, 17);
-            this.label10.TabIndex = 51;
-            this.label10.Text = "Init_Cl";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(37, 194);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(72, 17);
-            this.label11.TabIndex = 52;
-            this.label11.Text = "Init_Risico";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(37, 300);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(62, 17);
-            this.label12.TabIndex = 53;
-            this.label12.Text = "Rest_Se";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(37, 328);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(58, 17);
-            this.label13.TabIndex = 54;
-            this.label13.Text = "Rest_Fr";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(37, 356);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(59, 17);
-            this.label14.TabIndex = 55;
-            this.label14.Text = "Rest_Pr";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(37, 384);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(61, 17);
-            this.label15.TabIndex = 56;
-            this.label15.Text = "Rest_Av";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(37, 412);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(57, 17);
-            this.label16.TabIndex = 57;
-            this.label16.Text = "Rest_Cl";
             // 
             // label17
             // 
@@ -583,11 +359,348 @@
             this.label17.TabIndex = 58;
             this.label17.Text = "Rest_Risico";
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(37, 412);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(57, 17);
+            this.label16.TabIndex = 57;
+            this.label16.Text = "Rest_Cl";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(37, 384);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(61, 17);
+            this.label15.TabIndex = 56;
+            this.label15.Text = "Rest_Av";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(37, 356);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(59, 17);
+            this.label14.TabIndex = 55;
+            this.label14.Text = "Rest_Pr";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(37, 328);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(58, 17);
+            this.label13.TabIndex = 54;
+            this.label13.Text = "Rest_Fr";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(37, 300);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(62, 17);
+            this.label12.TabIndex = 53;
+            this.label12.Text = "Rest_Se";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(37, 194);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(72, 17);
+            this.label11.TabIndex = 52;
+            this.label11.Text = "Init_Risico";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(37, 156);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(46, 17);
+            this.label10.TabIndex = 51;
+            this.label10.Text = "Init_Cl";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(37, 128);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(50, 17);
+            this.label9.TabIndex = 50;
+            this.label9.Text = "Init_Av";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(37, 100);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(48, 17);
+            this.label8.TabIndex = 49;
+            this.label8.Text = "Init_Pr";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(37, 72);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(47, 17);
+            this.label7.TabIndex = 48;
+            this.label7.Text = "Init_Fr";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(37, 44);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(51, 17);
+            this.label6.TabIndex = 47;
+            this.label6.Text = "Init_Se";
+            // 
+            // textBoxInit_Av
+            // 
+            this.textBoxInit_Av.Location = new System.Drawing.Point(144, 128);
+            this.textBoxInit_Av.Name = "textBoxInit_Av";
+            this.textBoxInit_Av.Size = new System.Drawing.Size(59, 22);
+            this.textBoxInit_Av.TabIndex = 46;
+            this.textBoxInit_Av.TextChanged += new System.EventHandler(this.textBoxInit_Av_TextChanged);
+            // 
+            // textBoxInit_Pr
+            // 
+            this.textBoxInit_Pr.Location = new System.Drawing.Point(144, 100);
+            this.textBoxInit_Pr.Name = "textBoxInit_Pr";
+            this.textBoxInit_Pr.Size = new System.Drawing.Size(59, 22);
+            this.textBoxInit_Pr.TabIndex = 45;
+            this.textBoxInit_Pr.TextChanged += new System.EventHandler(this.textBoxInit_Pr_TextChanged);
+            // 
+            // textBoxRest_Av
+            // 
+            this.textBoxRest_Av.Location = new System.Drawing.Point(144, 384);
+            this.textBoxRest_Av.Name = "textBoxRest_Av";
+            this.textBoxRest_Av.Size = new System.Drawing.Size(59, 22);
+            this.textBoxRest_Av.TabIndex = 44;
+            this.textBoxRest_Av.TextChanged += new System.EventHandler(this.textBoxRest_Av_TextChanged);
+            // 
+            // textBoxRest_Pr
+            // 
+            this.textBoxRest_Pr.Location = new System.Drawing.Point(144, 356);
+            this.textBoxRest_Pr.Name = "textBoxRest_Pr";
+            this.textBoxRest_Pr.Size = new System.Drawing.Size(59, 22);
+            this.textBoxRest_Pr.TabIndex = 43;
+            this.textBoxRest_Pr.TextChanged += new System.EventHandler(this.textBoxRest_Pr_TextChanged);
+            // 
+            // textBoxInit_Risico
+            // 
+            this.textBoxInit_Risico.BackColor = System.Drawing.SystemColors.Window;
+            this.textBoxInit_Risico.Location = new System.Drawing.Point(144, 194);
+            this.textBoxInit_Risico.Name = "textBoxInit_Risico";
+            this.textBoxInit_Risico.ReadOnly = true;
+            this.textBoxInit_Risico.Size = new System.Drawing.Size(59, 22);
+            this.textBoxInit_Risico.TabIndex = 42;
+            // 
+            // textBoxInitRisico_Comment
+            // 
+            this.textBoxInitRisico_Comment.Location = new System.Drawing.Point(567, 194);
+            this.textBoxInitRisico_Comment.Name = "textBoxInitRisico_Comment";
+            this.textBoxInitRisico_Comment.Size = new System.Drawing.Size(592, 22);
+            this.textBoxInitRisico_Comment.TabIndex = 41;
+            // 
+            // textBoxRest_Risico
+            // 
+            this.textBoxRest_Risico.BackColor = System.Drawing.SystemColors.Window;
+            this.textBoxRest_Risico.Location = new System.Drawing.Point(144, 440);
+            this.textBoxRest_Risico.Name = "textBoxRest_Risico";
+            this.textBoxRest_Risico.ReadOnly = true;
+            this.textBoxRest_Risico.Size = new System.Drawing.Size(59, 22);
+            this.textBoxRest_Risico.TabIndex = 39;
+            // 
+            // textBoxRest_Risico_Comment
+            // 
+            this.textBoxRest_Risico_Comment.Location = new System.Drawing.Point(567, 440);
+            this.textBoxRest_Risico_Comment.Name = "textBoxRest_Risico_Comment";
+            this.textBoxRest_Risico_Comment.Size = new System.Drawing.Size(592, 22);
+            this.textBoxRest_Risico_Comment.TabIndex = 38;
+            // 
+            // textBoxRest_Cl
+            // 
+            this.textBoxRest_Cl.BackColor = System.Drawing.SystemColors.Window;
+            this.textBoxRest_Cl.Location = new System.Drawing.Point(144, 412);
+            this.textBoxRest_Cl.Name = "textBoxRest_Cl";
+            this.textBoxRest_Cl.ReadOnly = true;
+            this.textBoxRest_Cl.Size = new System.Drawing.Size(59, 22);
+            this.textBoxRest_Cl.TabIndex = 36;
+            // 
+            // textBoxRest_Cl_Comment
+            // 
+            this.textBoxRest_Cl_Comment.Location = new System.Drawing.Point(567, 412);
+            this.textBoxRest_Cl_Comment.Name = "textBoxRest_Cl_Comment";
+            this.textBoxRest_Cl_Comment.Size = new System.Drawing.Size(592, 22);
+            this.textBoxRest_Cl_Comment.TabIndex = 35;
+            // 
+            // textBoxInit_Cl
+            // 
+            this.textBoxInit_Cl.BackColor = System.Drawing.SystemColors.Window;
+            this.textBoxInit_Cl.Location = new System.Drawing.Point(144, 156);
+            this.textBoxInit_Cl.Name = "textBoxInit_Cl";
+            this.textBoxInit_Cl.ReadOnly = true;
+            this.textBoxInit_Cl.Size = new System.Drawing.Size(59, 22);
+            this.textBoxInit_Cl.TabIndex = 33;
+            // 
+            // textBoxInit_Cl_Comment
+            // 
+            this.textBoxInit_Cl_Comment.Location = new System.Drawing.Point(567, 156);
+            this.textBoxInit_Cl_Comment.Name = "textBoxInit_Cl_Comment";
+            this.textBoxInit_Cl_Comment.Size = new System.Drawing.Size(592, 22);
+            this.textBoxInit_Cl_Comment.TabIndex = 32;
+            // 
+            // textBoxRest_Av_Comment
+            // 
+            this.textBoxRest_Av_Comment.Location = new System.Drawing.Point(567, 384);
+            this.textBoxRest_Av_Comment.Name = "textBoxRest_Av_Comment";
+            this.textBoxRest_Av_Comment.Size = new System.Drawing.Size(592, 22);
+            this.textBoxRest_Av_Comment.TabIndex = 30;
+            // 
+            // textBoxRest_Pr_Comment
+            // 
+            this.textBoxRest_Pr_Comment.Location = new System.Drawing.Point(567, 356);
+            this.textBoxRest_Pr_Comment.Name = "textBoxRest_Pr_Comment";
+            this.textBoxRest_Pr_Comment.Size = new System.Drawing.Size(592, 22);
+            this.textBoxRest_Pr_Comment.TabIndex = 29;
+            // 
+            // textBoxRest_Fr
+            // 
+            this.textBoxRest_Fr.Location = new System.Drawing.Point(144, 328);
+            this.textBoxRest_Fr.Name = "textBoxRest_Fr";
+            this.textBoxRest_Fr.Size = new System.Drawing.Size(59, 22);
+            this.textBoxRest_Fr.TabIndex = 26;
+            this.textBoxRest_Fr.TextChanged += new System.EventHandler(this.textBoxRest_Fr_TextChanged);
+            // 
+            // textBoxRest_Fr_Comment
+            // 
+            this.textBoxRest_Fr_Comment.Location = new System.Drawing.Point(567, 328);
+            this.textBoxRest_Fr_Comment.Name = "textBoxRest_Fr_Comment";
+            this.textBoxRest_Fr_Comment.Size = new System.Drawing.Size(592, 22);
+            this.textBoxRest_Fr_Comment.TabIndex = 25;
+            // 
+            // textBoxRest_Se_Comment
+            // 
+            this.textBoxRest_Se_Comment.Location = new System.Drawing.Point(567, 300);
+            this.textBoxRest_Se_Comment.Name = "textBoxRest_Se_Comment";
+            this.textBoxRest_Se_Comment.Size = new System.Drawing.Size(592, 22);
+            this.textBoxRest_Se_Comment.TabIndex = 23;
+            // 
+            // textBoxRest_Se
+            // 
+            this.textBoxRest_Se.Location = new System.Drawing.Point(144, 300);
+            this.textBoxRest_Se.Name = "textBoxRest_Se";
+            this.textBoxRest_Se.Size = new System.Drawing.Size(59, 22);
+            this.textBoxRest_Se.TabIndex = 24;
+            this.textBoxRest_Se.TextChanged += new System.EventHandler(this.textBoxRest_Se_TextChanged);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownWidth = 400;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "1 scratches, bruises that are cured by first aid or similar;",
+            "2 more severe scratches, bruises, stabbing, which require medical attention from " +
+                "professionals;",
+            "3 normally irreversible injury; it will be slightly difficult to continue work af" +
+                "ter healing;",
+            "4 irreversible injury in such a way that it will be very difficult to continue wo" +
+                "rk after healing, if possible at all."});
+            this.comboBox1.Location = new System.Drawing.Point(209, 44);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(352, 24);
+            this.comboBox1.TabIndex = 59;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownWidth = 400;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "2 interval between exposure is more than a year; ",
+            "3 interval between exposure is more than two weeks but less than or equal to a ye" +
+                "ar; ",
+            "4 interval between exposure is more than a day but less than or equal to two week" +
+                "s;",
+            "5 interval between exposure is more than an hour but less than or equal to a day",
+            "6 interval less than or equal to an hour."});
+            this.comboBox2.Location = new System.Drawing.Point(209, 72);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(352, 24);
+            this.comboBox2.TabIndex = 60;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.DropDownWidth = 400;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "1 Negligible",
+            "2 Rarely:",
+            "3 Possible:",
+            "4 Likely",
+            "5 Very high"});
+            this.comboBox3.Location = new System.Drawing.Point(209, 100);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(352, 24);
+            this.comboBox3.TabIndex = 61;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.DropDownWidth = 400;
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(209, 300);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(352, 24);
+            this.comboBox4.TabIndex = 62;
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.DropDownWidth = 400;
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Items.AddRange(new object[] {
+            "1 Likely",
+            "3 Possible",
+            "5 Impossible"});
+            this.comboBox5.Location = new System.Drawing.Point(209, 128);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(352, 24);
+            this.comboBox5.TabIndex = 63;
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.DropDownWidth = 400;
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Location = new System.Drawing.Point(209, 328);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(352, 24);
+            this.comboBox6.TabIndex = 64;
+            // 
+            // comboBox7
+            // 
+            this.comboBox7.DropDownWidth = 400;
+            this.comboBox7.FormattingEnabled = true;
+            this.comboBox7.Location = new System.Drawing.Point(209, 353);
+            this.comboBox7.Name = "comboBox7";
+            this.comboBox7.Size = new System.Drawing.Size(352, 24);
+            this.comboBox7.TabIndex = 65;
+            // 
+            // comboBox8
+            // 
+            this.comboBox8.DropDownWidth = 400;
+            this.comboBox8.FormattingEnabled = true;
+            this.comboBox8.Location = new System.Drawing.Point(209, 381);
+            this.comboBox8.Name = "comboBox8";
+            this.comboBox8.Size = new System.Drawing.Size(352, 24);
+            this.comboBox8.TabIndex = 66;
+            // 
             // IssueRisicoDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(957, 981);
+            this.ClientSize = new System.Drawing.Size(1294, 981);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -664,5 +777,13 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboBox8;
+        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

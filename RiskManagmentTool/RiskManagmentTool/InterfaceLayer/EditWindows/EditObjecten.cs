@@ -172,7 +172,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
                             Console.WriteLine(issueRiskValue);
                             if (issueRiskValue.Equals("0"))
                             {
-                                dataGridViewGekoppeldeIssues.Rows[rowIndex].DefaultCellStyle.BackColor = Color.Red;
+                                dataGridViewGekoppeldeIssues.Rows[rowIndex].DefaultCellStyle.BackColor = Color.DarkGray;
 
                             }
                             else if (issueRiskValue.Equals("1"))
@@ -185,11 +185,11 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
                             }
                             else if (issueRiskValue.Equals("100"))
                             {
-                                dataGridViewGekoppeldeIssues.Rows[rowIndex].DefaultCellStyle.BackColor = Color.Orange;
+                                dataGridViewGekoppeldeIssues.Rows[rowIndex].DefaultCellStyle.BackColor = Color.Red;//Color.Orange;
                             }
                             else if (issueRiskValue.Equals("1000"))
                             {
-                                dataGridViewGekoppeldeIssues.Rows[rowIndex].DefaultCellStyle.BackColor = Color.Red;
+                                dataGridViewGekoppeldeIssues.Rows[rowIndex].DefaultCellStyle.BackColor = Color.DarkGray;//Color.Red;
                             }
                             else
                             {

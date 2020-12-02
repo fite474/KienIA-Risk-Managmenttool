@@ -123,12 +123,6 @@
     <Compile Include="InterfaceLayer\ContentWindows\ProjectItem.Designer.cs">
       <DependentUpon>ProjectItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="InterfaceLayer\AddWindows\AddTemplate.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InterfaceLayer\AddWindows\AddTemplate.Designer.cs">
-      <DependentUpon>AddTemplate.cs</DependentUpon>
-    </Compile>
     <Compile Include="InterfaceLayer\DeleteWindows\DeleteGekoppeldeMaatregelen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -305,9 +299,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InterfaceLayer\ContentWindows\ProjectItem.resx">
       <DependentUpon>ProjectItem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InterfaceLayer\AddWindows\AddTemplate.resx">
-      <DependentUpon>AddTemplate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterfaceLayer\DeleteWindows\DeleteGekoppeldeMaatregelen.resx">
       <DependentUpon>DeleteGekoppeldeMaatregelen.cs</DependentUpon>

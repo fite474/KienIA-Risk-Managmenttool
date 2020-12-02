@@ -36,7 +36,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.checkedListBoxRisicograafMethode = new System.Windows.Forms.CheckedListBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.textBoxGevaar = new System.Windows.Forms.TextBox();
+            this.textBoxGevaarType = new System.Windows.Forms.TextBox();
             this.textBoxGebeurtenis = new System.Windows.Forms.TextBox();
             this.textBoxSituatie = new System.Windows.Forms.TextBox();
             this.textBoxIssueID = new System.Windows.Forms.TextBox();
@@ -170,7 +170,7 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.textBoxGevaar);
+            this.panel4.Controls.Add(this.textBoxGevaarType);
             this.panel4.Controls.Add(this.textBoxGebeurtenis);
             this.panel4.Controls.Add(this.textBoxSituatie);
             this.panel4.Controls.Add(this.textBoxIssueID);
@@ -181,16 +181,16 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(579, 227);
+            this.panel4.Size = new System.Drawing.Size(909, 227);
             this.panel4.TabIndex = 5;
             // 
-            // textBoxGevaar
+            // textBoxGevaarType
             // 
-            this.textBoxGevaar.Location = new System.Drawing.Point(144, 173);
-            this.textBoxGevaar.Name = "textBoxGevaar";
-            this.textBoxGevaar.ReadOnly = true;
-            this.textBoxGevaar.Size = new System.Drawing.Size(310, 22);
-            this.textBoxGevaar.TabIndex = 8;
+            this.textBoxGevaarType.Location = new System.Drawing.Point(144, 173);
+            this.textBoxGevaarType.Name = "textBoxGevaarType";
+            this.textBoxGevaarType.ReadOnly = true;
+            this.textBoxGevaarType.Size = new System.Drawing.Size(707, 22);
+            this.textBoxGevaarType.TabIndex = 8;
             // 
             // textBoxGebeurtenis
             // 
@@ -198,7 +198,7 @@
             this.textBoxGebeurtenis.Multiline = true;
             this.textBoxGebeurtenis.Name = "textBoxGebeurtenis";
             this.textBoxGebeurtenis.ReadOnly = true;
-            this.textBoxGebeurtenis.Size = new System.Drawing.Size(310, 44);
+            this.textBoxGebeurtenis.Size = new System.Drawing.Size(707, 44);
             this.textBoxGebeurtenis.TabIndex = 7;
             // 
             // textBoxSituatie
@@ -207,7 +207,7 @@
             this.textBoxSituatie.Multiline = true;
             this.textBoxSituatie.Name = "textBoxSituatie";
             this.textBoxSituatie.ReadOnly = true;
-            this.textBoxSituatie.Size = new System.Drawing.Size(310, 36);
+            this.textBoxSituatie.Size = new System.Drawing.Size(707, 36);
             this.textBoxSituatie.TabIndex = 6;
             // 
             // textBoxIssueID
@@ -756,7 +756,7 @@
         private System.Windows.Forms.TextBox textBoxRest_Se_Comment;
         private System.Windows.Forms.TextBox textBoxRest_Se;
         private System.Windows.Forms.TextBox textBoxIssueID;
-        private System.Windows.Forms.TextBox textBoxGevaar;
+        private System.Windows.Forms.TextBox textBoxGevaarType;
         private System.Windows.Forms.TextBox textBoxGebeurtenis;
         private System.Windows.Forms.TextBox textBoxSituatie;
         private System.Windows.Forms.TextBox textBoxInit_Av;

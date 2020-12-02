@@ -29,11 +29,6 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private Dictionary<string, string> IssuesState;
         private Dictionary<string, string> IssuesRiskValue;
 
-        //public EditObjecten()
-        //{
-        //    InitializeComponent();
-        //    SetInstellingen();
-        //}
 
         public EditObjecten(string objectID,
                             string projectNaam,
@@ -48,7 +43,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             viewsColumnNames = new ViewsColumnNames();
             ImageHandler = new ImageHandler();
 
-            //string x = viewsColumnNames.IssueBeschrijving;
+
             LoadMenus();
             this.ObjectNaam = objectNaam;
             this.ObjectID = objectID;

@@ -33,7 +33,12 @@ namespace RiskManagmentTool.InterfaceLayer
 
         private void buttonConfirmExport_Click(object sender, EventArgs e)
         {
-
+            string userInputFileName = textBoxUserInputFileName.Text;
+            if (userInputFileName.Equals(""))
+            {
+                userInputFileName = "No Title";
+            }
+            userInputFileName += ".xls";
             Microsoft.Office.Interop.Excel.Application xlApp;
             Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
             Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
@@ -58,8 +63,8 @@ namespace RiskManagmentTool.InterfaceLayer
                     xlWorkSheet.Cells[i + 2, j + 1] = cell.Value;
                 }
             }
-
-            xlWorkBook.SaveAs("csharp.net-informations.xls", Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+            //"csharp.net-informations.xls"
+            xlWorkBook.SaveAs(userInputFileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
             xlWorkBook.Close(true, misValue, misValue);
             xlApp.Quit();
 
@@ -67,7 +72,7 @@ namespace RiskManagmentTool.InterfaceLayer
             releaseObject(xlWorkBook);
             releaseObject(xlApp);
 
-            MessageBox.Show("Excel file created , you can find the file c:\\csharp.net-informations.xls");
+            MessageBox.Show("Excel file created , you can find the file at c:\\Documents\\" + userInputFileName);
         }
 
         private void releaseObject(object obj)

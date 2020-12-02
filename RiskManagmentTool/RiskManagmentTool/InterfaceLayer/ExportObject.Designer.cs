@@ -39,6 +39,8 @@
             this.buttonConfirmExport = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxUserInputFileName = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCompleteBeoordeling)).BeginInit();
@@ -91,7 +93,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1097, 591);
+            this.tabControl1.Size = new System.Drawing.Size(1452, 731);
             this.tabControl1.TabIndex = 4;
             // 
             // tabPage1
@@ -100,7 +102,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1089, 562);
+            this.tabPage1.Size = new System.Drawing.Size(1444, 702);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Issues weergave";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -115,7 +117,7 @@
             this.dataGridViewCompleteBeoordeling.Name = "dataGridViewCompleteBeoordeling";
             this.dataGridViewCompleteBeoordeling.ReadOnly = true;
             this.dataGridViewCompleteBeoordeling.RowTemplate.Height = 24;
-            this.dataGridViewCompleteBeoordeling.Size = new System.Drawing.Size(1083, 556);
+            this.dataGridViewCompleteBeoordeling.Size = new System.Drawing.Size(1438, 696);
             this.dataGridViewCompleteBeoordeling.TabIndex = 0;
             // 
             // tabPage2
@@ -131,7 +133,7 @@
             // 
             // buttonConfirmExport
             // 
-            this.buttonConfirmExport.Location = new System.Drawing.Point(565, 12);
+            this.buttonConfirmExport.Location = new System.Drawing.Point(1141, 12);
             this.buttonConfirmExport.Name = "buttonConfirmExport";
             this.buttonConfirmExport.Size = new System.Drawing.Size(153, 67);
             this.buttonConfirmExport.TabIndex = 5;
@@ -141,6 +143,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.textBoxUserInputFileName);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.buttonConfirmExport);
             this.panel1.Controls.Add(this.label2);
@@ -148,7 +152,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1097, 102);
+            this.panel1.Size = new System.Drawing.Size(1452, 102);
             this.panel1.TabIndex = 6;
             // 
             // panel2
@@ -157,14 +161,30 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 102);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1097, 591);
+            this.panel2.Size = new System.Drawing.Size(1452, 731);
             this.panel2.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(647, 34);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(91, 17);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Opslaan als: ";
+            // 
+            // textBoxUserInputFileName
+            // 
+            this.textBoxUserInputFileName.Location = new System.Drawing.Point(768, 34);
+            this.textBoxUserInputFileName.Name = "textBoxUserInputFileName";
+            this.textBoxUserInputFileName.Size = new System.Drawing.Size(292, 22);
+            this.textBoxUserInputFileName.TabIndex = 7;
             // 
             // ExportObject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1097, 693);
+            this.ClientSize = new System.Drawing.Size(1452, 833);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "ExportObject";
@@ -193,5 +213,7 @@
         private System.Windows.Forms.DataGridView dataGridViewCompleteBeoordeling;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox textBoxUserInputFileName;
+        private System.Windows.Forms.Label label3;
     }
 }

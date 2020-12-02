@@ -10,8 +10,8 @@ namespace RiskManagmentTool.DataLayer
 {
     class DatabaseConnection
     {
-        //SqlConnection sqlConnection = new SqlConnection(@"Data Source=MSI-MAURICE;Initial Catalog=ProtoTypeProject;User ID=Maurice;Password=6776756");
-        public SqlConnection sqlConnection;// = new SqlConnection(DatabaseComunication.);
+       
+        public SqlConnection sqlConnection;
 
         public DatabaseConnection()
         {

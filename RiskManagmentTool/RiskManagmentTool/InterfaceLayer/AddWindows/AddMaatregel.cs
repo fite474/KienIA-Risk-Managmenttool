@@ -57,7 +57,6 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
         private void LoadData()
         {
-            //dataGridViewTemplates.DataSource = comunicator.GetTemplateTable();
             dataGridViewMaatregelen.DataSource = comunicator.GetMaatregelTable();
             dataGridViewObjectIssues.DataSource = comunicator.GetAllIssuesWithGevaarID(GevaarID);
 

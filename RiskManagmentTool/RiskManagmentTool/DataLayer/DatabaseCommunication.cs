@@ -691,7 +691,6 @@ namespace RiskManagmentTool.DataLayer
 
 
         #region UPDATE
-        //***********************************************************
         public void UpdateRisicoBeoordeling(Item item)
         {
             string issueID = item.ItemData.IssueID;
@@ -948,7 +947,6 @@ namespace RiskManagmentTool.DataLayer
         public SqlDataAdapter GetMaatregelen()
         {
             sqlConnection.Open();
-             //String query = "SELECT MaatregelID, MaatregelNaam, MaatregelCategory, MaatregelNorm FROM TableMaatregelen";
             String query = "SELECT * FROM View_MaatregelenCompleet";
             SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
             sqlConnection.Close();
@@ -958,8 +956,7 @@ namespace RiskManagmentTool.DataLayer
         public SqlDataAdapter GetGevaren()
         {
             sqlConnection.Open();
-            String query = "SELECT * FROM View_GevarenCompleet";//TableGevaren";
-            //String query = "SELECT * FROM TableGevaren";
+            String query = "SELECT * FROM View_GevarenCompleet";
             SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
             sqlConnection.Close();
             return adapter;
@@ -982,15 +979,7 @@ namespace RiskManagmentTool.DataLayer
 
         public SqlDataAdapter GetTemplateIssues(string templateID)
         {
-
             sqlConnection.Open();
-            //String query = "SELECT TableIssues.IssueID, TableGevaren.GevaarlijkeSituatie, TableGevaren.GevaarlijkeGebeurtenis, TableGevaren.Discipline, TableGevaren.Gebruiksfase, TableGevaren.Bedienvorm," +
-            //                "TableGevaren.Gebruiker, TableGevaren.GevaarlijkeZone, TableGevaren.Taak_Actie, TableGevaren.Gevaar, TableGevaren.Gevolg " +
-            //                " FROM TableIssues INNER JOIN TableGevaren" +
-            //                " ON TableGevaren.GevaarID = TableIssues.IssueGevaarID WHERE TableIssues.IssueID" +
-            //                " IN(" +
-            //                " SELECT TableTemplateIssues.IssueID FROM TableTemplateIssues WHERE TableTemplateIssues.TemplateID = '" + templateID + "')";
-
             string query = "SELECT * FROM View_ObjectIssues " +
                             "WHERE View_ObjectIssues.IssueID IN (SELECT TableTemplateIssues.IssueID FROM TableTemplateIssues WHERE TableTemplateIssues.TemplateID = '" + templateID + "') ";
 

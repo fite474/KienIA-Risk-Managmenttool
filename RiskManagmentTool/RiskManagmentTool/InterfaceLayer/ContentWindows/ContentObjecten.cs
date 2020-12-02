@@ -44,18 +44,7 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
                 string objectOmschrijving = objectInfo[4];
                 Form editObject = new EditObjecten(objectId, projectNaam, objectNaam, objectType, objectOmschrijving);
                 editObject.Show();
-                //string temp = "1";
-                //string projectNaam = dataGridViewObjecten.SelectedRows[0].Cells[0].Value.ToString();
-                //string objectNaam = dataGridViewObjecten.SelectedRows[0].Cells[1].Value.ToString();
-                //string objectType = "";//dataGridViewObjecten.SelectedRows[0].Cells[2].Value.ToString();
-                //string objectBeschrijving = "";//dataGridViewObjecten.SelectedRows[0].Cells[3].Value.ToString();
 
-                //Form editObjecten = new EditObjecten(temp, projectNaam,
-                //                                     objectNaam,
-                //                                     objectType,
-                //                                     objectBeschrijving);
-
-                //editObjecten.Show();
 
             }
 

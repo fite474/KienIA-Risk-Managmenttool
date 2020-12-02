@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RiskManagmentTool.LogicLayer.Objects
 {
-    class MaatregelObject
+    class MaatregelObjectOLD
     {
         public string MaatregelNaam { get; set; }
         public string MaatregelNorm { get; set; }

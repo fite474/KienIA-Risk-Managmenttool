@@ -39,11 +39,9 @@
             this.buttonObjecten = new System.Windows.Forms.Button();
             this.buttonProjecten = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.buttonMenu = new System.Windows.Forms.Button();
             this.panelContent = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panelMenu.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -89,7 +87,7 @@
             // 
             this.buttonKeuzes.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonKeuzes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonKeuzes.Location = new System.Drawing.Point(0, 546);
+            this.buttonKeuzes.Location = new System.Drawing.Point(0, 574);
             this.buttonKeuzes.Margin = new System.Windows.Forms.Padding(4);
             this.buttonKeuzes.Name = "buttonKeuzes";
             this.buttonKeuzes.Size = new System.Drawing.Size(200, 78);
@@ -102,7 +100,7 @@
             // 
             this.buttonRedirect.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonRedirect.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRedirect.Location = new System.Drawing.Point(0, 468);
+            this.buttonRedirect.Location = new System.Drawing.Point(0, 496);
             this.buttonRedirect.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRedirect.Name = "buttonRedirect";
             this.buttonRedirect.Size = new System.Drawing.Size(200, 78);
@@ -115,7 +113,7 @@
             // 
             this.buttonMaatregelen.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonMaatregelen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonMaatregelen.Location = new System.Drawing.Point(0, 390);
+            this.buttonMaatregelen.Location = new System.Drawing.Point(0, 418);
             this.buttonMaatregelen.Margin = new System.Windows.Forms.Padding(4);
             this.buttonMaatregelen.Name = "buttonMaatregelen";
             this.buttonMaatregelen.Size = new System.Drawing.Size(200, 78);
@@ -128,7 +126,7 @@
             // 
             this.buttonRisicos.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonRisicos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRisicos.Location = new System.Drawing.Point(0, 312);
+            this.buttonRisicos.Location = new System.Drawing.Point(0, 340);
             this.buttonRisicos.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRisicos.Name = "buttonRisicos";
             this.buttonRisicos.Size = new System.Drawing.Size(200, 78);
@@ -141,7 +139,7 @@
             // 
             this.buttonTemplates.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonTemplates.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTemplates.Location = new System.Drawing.Point(0, 234);
+            this.buttonTemplates.Location = new System.Drawing.Point(0, 262);
             this.buttonTemplates.Margin = new System.Windows.Forms.Padding(4);
             this.buttonTemplates.Name = "buttonTemplates";
             this.buttonTemplates.Size = new System.Drawing.Size(200, 78);
@@ -154,7 +152,7 @@
             // 
             this.buttonObjecten.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonObjecten.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonObjecten.Location = new System.Drawing.Point(0, 156);
+            this.buttonObjecten.Location = new System.Drawing.Point(0, 184);
             this.buttonObjecten.Margin = new System.Windows.Forms.Padding(4);
             this.buttonObjecten.Name = "buttonObjecten";
             this.buttonObjecten.Size = new System.Drawing.Size(200, 78);
@@ -167,7 +165,7 @@
             // 
             this.buttonProjecten.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonProjecten.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonProjecten.Location = new System.Drawing.Point(0, 78);
+            this.buttonProjecten.Location = new System.Drawing.Point(0, 106);
             this.buttonProjecten.Margin = new System.Windows.Forms.Padding(4);
             this.buttonProjecten.Name = "buttonProjecten";
             this.buttonProjecten.Size = new System.Drawing.Size(200, 78);
@@ -178,24 +176,11 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.buttonMenu);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 78);
+            this.panel2.Size = new System.Drawing.Size(200, 106);
             this.panel2.TabIndex = 5;
-            // 
-            // buttonMenu
-            // 
-            this.buttonMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonMenu.Location = new System.Drawing.Point(0, 0);
-            this.buttonMenu.Name = "buttonMenu";
-            this.buttonMenu.Size = new System.Drawing.Size(200, 78);
-            this.buttonMenu.TabIndex = 0;
-            this.buttonMenu.Text = "show / hide menu bar\r\n\r\n";
-            this.buttonMenu.UseVisualStyleBackColor = true;
-            this.buttonMenu.Visible = false;
-            this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
             // 
             // panelContent
             // 
@@ -223,7 +208,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelMenu.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -239,7 +223,6 @@
         private System.Windows.Forms.Button buttonProjecten;
         private System.Windows.Forms.Panel panelContent;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button buttonMenu;
         private System.Windows.Forms.Button buttonRedirect;
         private System.Windows.Forms.Button buttonKeuzes;
         private System.Windows.Forms.Label label1;

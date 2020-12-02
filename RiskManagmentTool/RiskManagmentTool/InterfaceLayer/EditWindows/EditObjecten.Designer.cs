@@ -50,7 +50,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dataGridViewGekoppeldeIssues = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.comboBoxVisualSettings = new System.Windows.Forms.ComboBox();
@@ -64,6 +63,8 @@
             this.buttonIssuesOplossen = new System.Windows.Forms.Button();
             this.buttonDeleteGevaren = new System.Windows.Forms.Button();
             this.buttonAddRisico = new System.Windows.Forms.Button();
+            this.advancedDataGridViewGekoppeldeIssues = new ADGV.AdvancedDataGridView();
+            this.buttonClearDGVFilter = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -73,10 +74,10 @@
             this.panel3.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGekoppeldeIssues)).BeginInit();
             this.panel5.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridViewGekoppeldeIssues)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -290,7 +291,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.dataGridViewGekoppeldeIssues);
+            this.tabPage1.Controls.Add(this.advancedDataGridViewGekoppeldeIssues);
             this.tabPage1.Controls.Add(this.panel5);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
@@ -300,24 +301,9 @@
             this.tabPage1.Text = "Gekoppelde issues";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewGekoppeldeIssues
-            // 
-            this.dataGridViewGekoppeldeIssues.AllowUserToAddRows = false;
-            this.dataGridViewGekoppeldeIssues.AllowUserToDeleteRows = false;
-            this.dataGridViewGekoppeldeIssues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewGekoppeldeIssues.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewGekoppeldeIssues.Location = new System.Drawing.Point(3, 53);
-            this.dataGridViewGekoppeldeIssues.Name = "dataGridViewGekoppeldeIssues";
-            this.dataGridViewGekoppeldeIssues.ReadOnly = true;
-            this.dataGridViewGekoppeldeIssues.RowTemplate.Height = 24;
-            this.dataGridViewGekoppeldeIssues.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewGekoppeldeIssues.Size = new System.Drawing.Size(1555, 359);
-            this.dataGridViewGekoppeldeIssues.TabIndex = 0;
-            this.dataGridViewGekoppeldeIssues.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewGekoppeldeIssues_DataBindingComplete);
-            this.dataGridViewGekoppeldeIssues.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewGekoppeldeIssues_MouseDoubleClick);
-            // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.buttonClearDGVFilter);
             this.panel5.Controls.Add(this.label10);
             this.panel5.Controls.Add(this.comboBoxVisualSettings);
             this.panel5.Controls.Add(this.label8);
@@ -453,6 +439,37 @@
             this.buttonAddRisico.UseVisualStyleBackColor = true;
             this.buttonAddRisico.Click += new System.EventHandler(this.buttonAddRisico_Click);
             // 
+            // advancedDataGridViewGekoppeldeIssues
+            // 
+            this.advancedDataGridViewGekoppeldeIssues.AllowUserToAddRows = false;
+            this.advancedDataGridViewGekoppeldeIssues.AllowUserToDeleteRows = false;
+            this.advancedDataGridViewGekoppeldeIssues.AutoGenerateContextFilters = true;
+            this.advancedDataGridViewGekoppeldeIssues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.advancedDataGridViewGekoppeldeIssues.DateWithTime = false;
+            this.advancedDataGridViewGekoppeldeIssues.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.advancedDataGridViewGekoppeldeIssues.Location = new System.Drawing.Point(3, 53);
+            this.advancedDataGridViewGekoppeldeIssues.Name = "advancedDataGridViewGekoppeldeIssues";
+            this.advancedDataGridViewGekoppeldeIssues.ReadOnly = true;
+            this.advancedDataGridViewGekoppeldeIssues.RowTemplate.Height = 24;
+            this.advancedDataGridViewGekoppeldeIssues.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.advancedDataGridViewGekoppeldeIssues.Size = new System.Drawing.Size(1555, 359);
+            this.advancedDataGridViewGekoppeldeIssues.TabIndex = 2;
+            this.advancedDataGridViewGekoppeldeIssues.TimeFilter = false;
+            this.advancedDataGridViewGekoppeldeIssues.SortStringChanged += new System.EventHandler(this.advancedDataGridViewGekoppeldeIssues_SortStringChanged);
+            this.advancedDataGridViewGekoppeldeIssues.FilterStringChanged += new System.EventHandler(this.advancedDataGridViewGekoppeldeIssues_FilterStringChanged);
+            this.advancedDataGridViewGekoppeldeIssues.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.advancedDataGridViewGekoppeldeIssues_DataBindingComplete);
+            this.advancedDataGridViewGekoppeldeIssues.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.advancedDataGridViewGekoppeldeIssues_MouseDoubleClick);
+            // 
+            // buttonClearDGVFilter
+            // 
+            this.buttonClearDGVFilter.Location = new System.Drawing.Point(860, 9);
+            this.buttonClearDGVFilter.Name = "buttonClearDGVFilter";
+            this.buttonClearDGVFilter.Size = new System.Drawing.Size(133, 35);
+            this.buttonClearDGVFilter.TabIndex = 5;
+            this.buttonClearDGVFilter.Text = "clear all filters";
+            this.buttonClearDGVFilter.UseVisualStyleBackColor = true;
+            this.buttonClearDGVFilter.Click += new System.EventHandler(this.buttonClearDGVFilter_Click);
+            // 
             // EditObjecten
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -463,6 +480,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditObjecten";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.EditObjecten_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -474,12 +492,12 @@
             this.panel3.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGekoppeldeIssues)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridViewGekoppeldeIssues)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -504,7 +522,6 @@
         private System.Windows.Forms.ComboBox comboBoxFilterIssues;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.DataGridView dataGridViewGekoppeldeIssues;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button buttonAddRisico;
@@ -521,5 +538,7 @@
         private System.Windows.Forms.Button buttonExportToExcel;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox comboBoxVisualSettings;
+        private ADGV.AdvancedDataGridView advancedDataGridViewGekoppeldeIssues;
+        private System.Windows.Forms.Button buttonClearDGVFilter;
     }
 }

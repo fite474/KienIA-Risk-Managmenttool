@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RiskManagmentTool.LogicLayer
 {
-    public enum VerificatieStatus
+    public enum VerificatieStatusOLD
     {
         Volledig,
         Half,

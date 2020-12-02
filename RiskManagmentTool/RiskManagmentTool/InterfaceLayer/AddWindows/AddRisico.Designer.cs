@@ -56,6 +56,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.buttonCreateNewGevaar = new System.Windows.Forms.Button();
+            this.advancedDataGridViewLosseItems = new ADGV.AdvancedDataGridView();
+            this.advancedDataGridView1 = new ADGV.AdvancedDataGridView();
+            this.advancedDataGridView2 = new ADGV.AdvancedDataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLosseItems)).BeginInit();
@@ -65,6 +68,9 @@
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewObjectView)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridViewLosseItems)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -80,6 +86,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.advancedDataGridViewLosseItems);
             this.tabPage1.Controls.Add(this.buttonAddSingleItems);
             this.tabPage1.Controls.Add(this.dataGridViewLosseItems);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
@@ -105,18 +112,19 @@
             this.dataGridViewLosseItems.AllowUserToAddRows = false;
             this.dataGridViewLosseItems.AllowUserToDeleteRows = false;
             this.dataGridViewLosseItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewLosseItems.Location = new System.Drawing.Point(3, 78);
+            this.dataGridViewLosseItems.Location = new System.Drawing.Point(3, 473);
             this.dataGridViewLosseItems.Name = "dataGridViewLosseItems";
             this.dataGridViewLosseItems.ReadOnly = true;
             this.dataGridViewLosseItems.RowTemplate.Height = 24;
             this.dataGridViewLosseItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewLosseItems.Size = new System.Drawing.Size(1195, 456);
+            this.dataGridViewLosseItems.Size = new System.Drawing.Size(1195, 61);
             this.dataGridViewLosseItems.TabIndex = 0;
             this.dataGridViewLosseItems.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewLosseItems_DataBindingComplete);
             this.dataGridViewLosseItems.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewRisicos_MouseDoubleClick);
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.advancedDataGridView1);
             this.tabPage2.Controls.Add(this.panel1);
             this.tabPage2.Controls.Add(this.dataGridViewTemplateViewIssues);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
@@ -182,18 +190,19 @@
             this.dataGridViewTemplateViewIssues.AllowUserToAddRows = false;
             this.dataGridViewTemplateViewIssues.AllowUserToDeleteRows = false;
             this.dataGridViewTemplateViewIssues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTemplateViewIssues.Location = new System.Drawing.Point(6, 72);
+            this.dataGridViewTemplateViewIssues.Location = new System.Drawing.Point(6, 482);
             this.dataGridViewTemplateViewIssues.Name = "dataGridViewTemplateViewIssues";
             this.dataGridViewTemplateViewIssues.ReadOnly = true;
             this.dataGridViewTemplateViewIssues.RowTemplate.Height = 24;
             this.dataGridViewTemplateViewIssues.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewTemplateViewIssues.Size = new System.Drawing.Size(1070, 491);
+            this.dataGridViewTemplateViewIssues.Size = new System.Drawing.Size(1070, 81);
             this.dataGridViewTemplateViewIssues.TabIndex = 0;
             this.dataGridViewTemplateViewIssues.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewTemplateViewIssues_DataBindingComplete);
             this.dataGridViewTemplateViewIssues.DoubleClick += new System.EventHandler(this.dataGridViewTemplateViewIssues_DoubleClick);
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.advancedDataGridView2);
             this.tabPage3.Controls.Add(this.dataGridViewObjectView);
             this.tabPage3.Controls.Add(this.panel3);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
@@ -208,12 +217,12 @@
             this.dataGridViewObjectView.AllowUserToAddRows = false;
             this.dataGridViewObjectView.AllowUserToDeleteRows = false;
             this.dataGridViewObjectView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewObjectView.Location = new System.Drawing.Point(3, 81);
+            this.dataGridViewObjectView.Location = new System.Drawing.Point(3, 389);
             this.dataGridViewObjectView.Name = "dataGridViewObjectView";
             this.dataGridViewObjectView.ReadOnly = true;
             this.dataGridViewObjectView.RowTemplate.Height = 24;
             this.dataGridViewObjectView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewObjectView.Size = new System.Drawing.Size(943, 406);
+            this.dataGridViewObjectView.Size = new System.Drawing.Size(943, 98);
             this.dataGridViewObjectView.TabIndex = 1;
             this.dataGridViewObjectView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewObjectView_DataBindingComplete);
             this.dataGridViewObjectView.DoubleClick += new System.EventHandler(this.dataGridViewObjectView_DoubleClick);
@@ -358,6 +367,56 @@
             this.buttonCreateNewGevaar.UseVisualStyleBackColor = true;
             this.buttonCreateNewGevaar.Click += new System.EventHandler(this.buttonCreateNewGevaar_Click);
             // 
+            // advancedDataGridViewLosseItems
+            // 
+            this.advancedDataGridViewLosseItems.AllowUserToAddRows = false;
+            this.advancedDataGridViewLosseItems.AllowUserToDeleteRows = false;
+            this.advancedDataGridViewLosseItems.AutoGenerateContextFilters = true;
+            this.advancedDataGridViewLosseItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.advancedDataGridViewLosseItems.DateWithTime = false;
+            this.advancedDataGridViewLosseItems.Location = new System.Drawing.Point(3, 82);
+            this.advancedDataGridViewLosseItems.Name = "advancedDataGridViewLosseItems";
+            this.advancedDataGridViewLosseItems.ReadOnly = true;
+            this.advancedDataGridViewLosseItems.RowTemplate.Height = 24;
+            this.advancedDataGridViewLosseItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.advancedDataGridViewLosseItems.Size = new System.Drawing.Size(1195, 369);
+            this.advancedDataGridViewLosseItems.TabIndex = 2;
+            this.advancedDataGridViewLosseItems.TimeFilter = false;
+            this.advancedDataGridViewLosseItems.SortStringChanged += new System.EventHandler(this.advancedDataGridViewLosseItems_SortStringChanged);
+            this.advancedDataGridViewLosseItems.FilterStringChanged += new System.EventHandler(this.advancedDataGridViewLosseItems_FilterStringChanged);
+            this.advancedDataGridViewLosseItems.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.advancedDataGridViewLosseItems_DataBindingComplete);
+            this.advancedDataGridViewLosseItems.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.advancedDataGridViewLosseItems_MouseDoubleClick);
+            // 
+            // advancedDataGridView1
+            // 
+            this.advancedDataGridView1.AllowUserToAddRows = false;
+            this.advancedDataGridView1.AllowUserToDeleteRows = false;
+            this.advancedDataGridView1.AutoGenerateContextFilters = true;
+            this.advancedDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.advancedDataGridView1.DateWithTime = false;
+            this.advancedDataGridView1.Location = new System.Drawing.Point(33, 92);
+            this.advancedDataGridView1.Name = "advancedDataGridView1";
+            this.advancedDataGridView1.ReadOnly = true;
+            this.advancedDataGridView1.RowTemplate.Height = 24;
+            this.advancedDataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.advancedDataGridView1.TabIndex = 1;
+            this.advancedDataGridView1.TimeFilter = false;
+            // 
+            // advancedDataGridView2
+            // 
+            this.advancedDataGridView2.AllowUserToAddRows = false;
+            this.advancedDataGridView2.AllowUserToDeleteRows = false;
+            this.advancedDataGridView2.AutoGenerateContextFilters = true;
+            this.advancedDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.advancedDataGridView2.DateWithTime = false;
+            this.advancedDataGridView2.Location = new System.Drawing.Point(23, 93);
+            this.advancedDataGridView2.Name = "advancedDataGridView2";
+            this.advancedDataGridView2.ReadOnly = true;
+            this.advancedDataGridView2.RowTemplate.Height = 24;
+            this.advancedDataGridView2.Size = new System.Drawing.Size(861, 251);
+            this.advancedDataGridView2.TabIndex = 2;
+            this.advancedDataGridView2.TimeFilter = false;
+            // 
             // AddRisico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -379,6 +438,7 @@
             this.Name = "AddRisico";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddRisico";
+            this.Load += new System.EventHandler(this.AddRisico_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLosseItems)).EndInit();
@@ -390,6 +450,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewObjectView)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridViewLosseItems)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -425,5 +488,8 @@
         private System.Windows.Forms.Button buttonAddFromTemplateIssues;
         private System.Windows.Forms.Button buttonAddFromObject;
         private System.Windows.Forms.Button buttonCreateNewTemplate;
+        private ADGV.AdvancedDataGridView advancedDataGridViewLosseItems;
+        private ADGV.AdvancedDataGridView advancedDataGridView1;
+        private ADGV.AdvancedDataGridView advancedDataGridView2;
     }
 }

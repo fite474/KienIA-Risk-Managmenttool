@@ -28,10 +28,11 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
         //private List<string> SelectedTemplateGevaarId;
 
 
-
+        private BindingSource gevarenData;
 
         public AddRisico(string objectNaam, string objectID)
         {
+            Cursor.Current = Cursors.WaitCursor;//Application.UseWaitCursor = true;
             InitializeComponent();
             comunicator = new Datacomunication();
             keuzeMenus = new KeuzeMenus();
@@ -50,7 +51,9 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
         private void LoadData()
         {
-            dataGridViewLosseItems.DataSource = comunicator.GetGevarenTable();
+            //gevarenData = comunicator.GetGevarenTable();
+            //advancedDataGridViewLosseItems.DataSource = gevarenData;
+            //dataGridViewLosseItems.DataSource = comunicator.GetGevarenTable();
             textBoxObjectNaam.Text = ObjectNaam;
             SetAddSettings();
             
@@ -262,18 +265,9 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
 
 
-
-
-
-
-
         private void buttonAddFromTemplateIssues_Click(object sender, EventArgs e)
         {
-            //string selectedTemplateName = comboBoxViewTemplate.SelectedItem.ToString();
-            //if (!comboBoxWeergaveTemplateNaam.Items.Contains(selectedTemplateName))
-            //{
-            //    comboBoxWeergaveTemplateNaam.Items.Add(selectedTemplateName);
-            //}
+
 
             string issueID = "";
             foreach (DataGridViewRow row in dataGridViewTemplateViewIssues.SelectedRows)
@@ -371,6 +365,32 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
             
         }
 
+        private void advancedDataGridViewLosseItems_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
 
+        }
+
+        private void advancedDataGridViewLosseItems_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            advancedDataGridViewLosseItems.ClearSelection();
+            Cursor.Current = Cursors.Default;
+        }
+
+        private void advancedDataGridViewLosseItems_FilterStringChanged(object sender, EventArgs e)
+        {
+            this.gevarenData.Filter = this.advancedDataGridViewLosseItems.FilterString;
+        }
+
+        private void advancedDataGridViewLosseItems_SortStringChanged(object sender, EventArgs e)
+        {
+            this.gevarenData.Sort = this.advancedDataGridViewLosseItems.SortString;
+        }
+
+        private void AddRisico_Load(object sender, EventArgs e)
+        {
+            gevarenData = comunicator.GetGevarenTable();
+            advancedDataGridViewLosseItems.DataSource = gevarenData;
+            
+        }
     }
 }

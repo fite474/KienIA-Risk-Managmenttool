@@ -60,6 +60,7 @@
             this.comboBoxGevaar = new System.Windows.Forms.ComboBox();
             this.comboBoxDiscipline = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.advancedDataGridView1 = new ADGV.AdvancedDataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMaatregelen)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -72,6 +73,7 @@
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -125,13 +127,13 @@
             this.dataGridViewMaatregelen.AllowUserToDeleteRows = false;
             this.dataGridViewMaatregelen.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewMaatregelen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMaatregelen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewMaatregelen.Location = new System.Drawing.Point(3, 103);
+            this.dataGridViewMaatregelen.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridViewMaatregelen.Location = new System.Drawing.Point(3, 447);
             this.dataGridViewMaatregelen.Name = "dataGridViewMaatregelen";
             this.dataGridViewMaatregelen.ReadOnly = true;
             this.dataGridViewMaatregelen.RowTemplate.Height = 24;
             this.dataGridViewMaatregelen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewMaatregelen.Size = new System.Drawing.Size(1076, 464);
+            this.dataGridViewMaatregelen.Size = new System.Drawing.Size(1076, 120);
             this.dataGridViewMaatregelen.TabIndex = 5;
             this.dataGridViewMaatregelen.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewMaatregelen_DataBindingComplete);
             this.dataGridViewMaatregelen.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewMaatregelen_MouseDoubleClick);
@@ -174,6 +176,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.advancedDataGridView1);
             this.tabPage1.Controls.Add(this.dataGridViewMaatregelen);
             this.tabPage1.Controls.Add(this.panel5);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
@@ -406,6 +409,21 @@
             this.panel3.Size = new System.Drawing.Size(1333, 599);
             this.panel3.TabIndex = 24;
             // 
+            // advancedDataGridView1
+            // 
+            this.advancedDataGridView1.AllowUserToAddRows = false;
+            this.advancedDataGridView1.AllowUserToDeleteRows = false;
+            this.advancedDataGridView1.AutoGenerateContextFilters = true;
+            this.advancedDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.advancedDataGridView1.DateWithTime = false;
+            this.advancedDataGridView1.Location = new System.Drawing.Point(8, 109);
+            this.advancedDataGridView1.Name = "advancedDataGridView1";
+            this.advancedDataGridView1.ReadOnly = true;
+            this.advancedDataGridView1.RowTemplate.Height = 24;
+            this.advancedDataGridView1.Size = new System.Drawing.Size(572, 263);
+            this.advancedDataGridView1.TabIndex = 23;
+            this.advancedDataGridView1.TimeFilter = false;
+            // 
             // AddMaatregel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -431,6 +449,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -469,5 +488,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBoxGevaarID;
         private System.Windows.Forms.Label label10;
+        private ADGV.AdvancedDataGridView advancedDataGridView1;
     }
 }

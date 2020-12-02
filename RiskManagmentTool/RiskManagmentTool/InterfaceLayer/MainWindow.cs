@@ -82,6 +82,7 @@ namespace RiskManagmentTool.InterfaceLayer
 
         private void buttonRisicos_Click(object sender, EventArgs e)
         {
+            Application.UseWaitCursor = true;
             OpenContentWindow(new ContentRisicos());
         }
 
@@ -103,27 +104,27 @@ namespace RiskManagmentTool.InterfaceLayer
 
         private void buttonKeuzes_Click(object sender, EventArgs e)
         {
-            OpenContentWindow(new ContentKeuzes());
+           OpenContentWindow(new ContentKeuzes());
         }
 
 
-        private void buttonMenu_Click(object sender, EventArgs e)
-        {
-            Console.WriteLine(panelMenu.Width);
+        //private void buttonMenu_Click(object sender, EventArgs e)
+        //{
+        //    Console.WriteLine(panelMenu.Width);
 
-            if (menuPanelWidth == MAX_MENU_SIZE) {
-                menuPanelWidth = MIN_MENU_SIZE;
-            }
-            else if (menuPanelWidth == MIN_MENU_SIZE) {
-                menuPanelWidth = MAX_MENU_SIZE;
-            }
-            else{
-                Console.WriteLine("Error Menu Width");
-            }
+        //    if (menuPanelWidth == MAX_MENU_SIZE) {
+        //        menuPanelWidth = MIN_MENU_SIZE;
+        //    }
+        //    else if (menuPanelWidth == MIN_MENU_SIZE) {
+        //        menuPanelWidth = MAX_MENU_SIZE;
+        //    }
+        //    else{
+        //        Console.WriteLine("Error Menu Width");
+        //    }
 
-            panelMenu.Width = menuPanelWidth;
+        //    panelMenu.Width = menuPanelWidth;
 
-        }
+        //}
 
 
     }

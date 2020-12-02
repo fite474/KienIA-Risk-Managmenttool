@@ -220,6 +220,7 @@
             this.textBoxGevaar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxGevaar.Location = new System.Drawing.Point(135, 118);
             this.textBoxGevaar.Name = "textBoxGevaar";
+            this.textBoxGevaar.ReadOnly = true;
             this.textBoxGevaar.Size = new System.Drawing.Size(636, 23);
             this.textBoxGevaar.TabIndex = 22;
             // 
@@ -228,6 +229,7 @@
             this.textBoxDiscipline.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxDiscipline.Location = new System.Drawing.Point(135, 88);
             this.textBoxDiscipline.Name = "textBoxDiscipline";
+            this.textBoxDiscipline.ReadOnly = true;
             this.textBoxDiscipline.Size = new System.Drawing.Size(636, 23);
             this.textBoxDiscipline.TabIndex = 21;
             // 
@@ -236,6 +238,7 @@
             this.textBoxRest_Risico_Comment.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxRest_Risico_Comment.Location = new System.Drawing.Point(263, 287);
             this.textBoxRest_Risico_Comment.Name = "textBoxRest_Risico_Comment";
+            this.textBoxRest_Risico_Comment.ReadOnly = true;
             this.textBoxRest_Risico_Comment.Size = new System.Drawing.Size(508, 23);
             this.textBoxRest_Risico_Comment.TabIndex = 20;
             // 
@@ -244,6 +247,7 @@
             this.textBoxInit_Risico_Comment.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxInit_Risico_Comment.Location = new System.Drawing.Point(263, 253);
             this.textBoxInit_Risico_Comment.Name = "textBoxInit_Risico_Comment";
+            this.textBoxInit_Risico_Comment.ReadOnly = true;
             this.textBoxInit_Risico_Comment.Size = new System.Drawing.Size(508, 23);
             this.textBoxInit_Risico_Comment.TabIndex = 19;
             // 
@@ -252,6 +256,7 @@
             this.textBoxRest_Risico.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxRest_Risico.Location = new System.Drawing.Point(135, 287);
             this.textBoxRest_Risico.Name = "textBoxRest_Risico";
+            this.textBoxRest_Risico.ReadOnly = true;
             this.textBoxRest_Risico.Size = new System.Drawing.Size(100, 23);
             this.textBoxRest_Risico.TabIndex = 18;
             // 
@@ -260,6 +265,7 @@
             this.textBoxInit_Risico.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxInit_Risico.Location = new System.Drawing.Point(135, 254);
             this.textBoxInit_Risico.Name = "textBoxInit_Risico";
+            this.textBoxInit_Risico.ReadOnly = true;
             this.textBoxInit_Risico.Size = new System.Drawing.Size(100, 23);
             this.textBoxInit_Risico.TabIndex = 17;
             // 
@@ -271,6 +277,7 @@
             this.textBoxGebeurtenis.Location = new System.Drawing.Point(135, 200);
             this.textBoxGebeurtenis.Multiline = true;
             this.textBoxGebeurtenis.Name = "textBoxGebeurtenis";
+            this.textBoxGebeurtenis.ReadOnly = true;
             this.textBoxGebeurtenis.Size = new System.Drawing.Size(967, 45);
             this.textBoxGebeurtenis.TabIndex = 16;
             // 
@@ -282,6 +289,7 @@
             this.textBoxSituatie.Location = new System.Drawing.Point(135, 150);
             this.textBoxSituatie.Multiline = true;
             this.textBoxSituatie.Name = "textBoxSituatie";
+            this.textBoxSituatie.ReadOnly = true;
             this.textBoxSituatie.Size = new System.Drawing.Size(967, 44);
             this.textBoxSituatie.TabIndex = 15;
             // 
@@ -313,6 +321,7 @@
             // 
             // checkBoxRest_Risico_OK
             // 
+            this.checkBoxRest_Risico_OK.AutoCheck = false;
             this.checkBoxRest_Risico_OK.AutoSize = true;
             this.checkBoxRest_Risico_OK.Location = new System.Drawing.Point(167, 331);
             this.checkBoxRest_Risico_OK.Name = "checkBoxRest_Risico_OK";

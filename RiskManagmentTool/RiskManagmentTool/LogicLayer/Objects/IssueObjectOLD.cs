@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RiskManagmentTool.LogicLayer.Objects
 {
-    class IssueObject
+    class IssueObjectOLD
     {
         public string IssueId { get; set; }
         public string IssueBeschrijving { get; set; }
@@ -19,7 +19,7 @@ namespace RiskManagmentTool.LogicLayer.Objects
         public string IssueFrequency { get; set; }
         public string IssueProbability { get; set; }
         public string IssueAvoidance { get; set; }
-        public VerificatieStatus Verificatie { get; set; }
+        public VerificatieStatusOLD Verificatie { get; set; }
        // public List<int> items to verificate
 
     }

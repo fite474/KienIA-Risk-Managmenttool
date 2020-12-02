@@ -37,8 +37,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewIssueMaatregelen = new System.Windows.Forms.DataGridView();
+            this.advancedDataGridView1 = new ADGV.AdvancedDataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIssueMaatregelen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -119,19 +121,35 @@
             this.dataGridViewIssueMaatregelen.AllowUserToDeleteRows = false;
             this.dataGridViewIssueMaatregelen.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewIssueMaatregelen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewIssueMaatregelen.Location = new System.Drawing.Point(12, 189);
+            this.dataGridViewIssueMaatregelen.Location = new System.Drawing.Point(12, 488);
             this.dataGridViewIssueMaatregelen.Name = "dataGridViewIssueMaatregelen";
             this.dataGridViewIssueMaatregelen.ReadOnly = true;
             this.dataGridViewIssueMaatregelen.RowTemplate.Height = 24;
             this.dataGridViewIssueMaatregelen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewIssueMaatregelen.Size = new System.Drawing.Size(950, 361);
+            this.dataGridViewIssueMaatregelen.Size = new System.Drawing.Size(950, 62);
             this.dataGridViewIssueMaatregelen.TabIndex = 1;
+            // 
+            // advancedDataGridView1
+            // 
+            this.advancedDataGridView1.AllowUserToAddRows = false;
+            this.advancedDataGridView1.AllowUserToDeleteRows = false;
+            this.advancedDataGridView1.AutoGenerateContextFilters = true;
+            this.advancedDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.advancedDataGridView1.DateWithTime = false;
+            this.advancedDataGridView1.Location = new System.Drawing.Point(0, 190);
+            this.advancedDataGridView1.Name = "advancedDataGridView1";
+            this.advancedDataGridView1.ReadOnly = true;
+            this.advancedDataGridView1.RowTemplate.Height = 24;
+            this.advancedDataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.advancedDataGridView1.TabIndex = 2;
+            this.advancedDataGridView1.TimeFilter = false;
             // 
             // AddMaatregelenFromOtherIssue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1039, 593);
+            this.Controls.Add(this.advancedDataGridView1);
             this.Controls.Add(this.dataGridViewIssueMaatregelen);
             this.Controls.Add(this.panel1);
             this.Name = "AddMaatregelenFromOtherIssue";
@@ -140,6 +158,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIssueMaatregelen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -155,5 +174,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private ADGV.AdvancedDataGridView advancedDataGridView1;
     }
 }

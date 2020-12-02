@@ -40,9 +40,18 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 
         private void dataGridViewProjecten_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            string projectId= dataGridViewProjecten.SelectedRows[0].Cells[0].Value.ToString();
-            string projectNaam = dataGridViewProjecten.SelectedRows[0].Cells[1].Value.ToString();
-            ShowEditProject(projectId, projectNaam);
+            try
+            {
+                string projectId = dataGridViewProjecten.SelectedRows[0].Cells[0].Value.ToString();
+                string projectNaam = dataGridViewProjecten.SelectedRows[0].Cells[1].Value.ToString();
+                ShowEditProject(projectId, projectNaam);
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err);
+                //throw err;
+            }
+
             //Form editProjecten = new EditProjecten(projectNaam);//,
 
             //editProjecten.Show();

@@ -20,15 +20,16 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 
         public ContentRisicos()
         {
+            this.UseWaitCursor = true;
             InitializeComponent();
             comunicator = new Datacomunication();
-            LoadData();
+            //LoadData();
 
         }
 
         private void LoadData()
         {
-            dataGridViewRisicos.DataSource = comunicator.GetGevarenTable();
+            //dataGridViewRisicos.DataSource = comunicator.GetGevarenTable();
             gevarenData = comunicator.GetGevarenTable();
 
             advancedDataGridViewGevaren.DataSource = gevarenData;//comunicator.GetGevarenTable();
@@ -41,54 +42,45 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
             editRisicosForm.Show();
         }
 
-        private void dataGridViewRisicos_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            string gevaarId = dataGridViewRisicos.SelectedRows[0].Cells[0].Value.ToString();
-            //string riskBeschrijving = dataGridViewRisicos.SelectedRows[0].Cells[1].Value.ToString();
-            //string riskGevolg = dataGridViewRisicos.SelectedRows[0].Cells[2].Value.ToString();
-            //string riskDiscipline = dataGridViewRisicos.SelectedRows[0].Cells[3].Value.ToString();
-            //string riskGebruiksfase = dataGridViewRisicos.SelectedRows[0].Cells[4].Value.ToString();
-            //string riskGebruiker = dataGridViewRisicos.SelectedRows[0].Cells[5].Value.ToString();
-            //string riskGevarenzone = dataGridViewRisicos.SelectedRows[0].Cells[6].Value.ToString();
-            //string riskSeverity = dataGridViewRisicos.SelectedRows[0].Cells[7].Value.ToString();
-            //string riskFrequency = dataGridViewRisicos.SelectedRows[0].Cells[8].Value.ToString();
-            //string riskProbability = dataGridViewRisicos.SelectedRows[0].Cells[9].Value.ToString();
-            //string riskAvoidance = dataGridViewRisicos.SelectedRows[0].Cells[10].Value.ToString();
-
-            Form editRisicosForm = new EditRisicos(gevaarId);
-            editRisicosForm.ShowDialog();
-            LoadData();
+        //private void dataGridViewRisicos_MouseDoubleClick(object sender, MouseEventArgs e)
+        //{
+        //    string gevaarId = dataGridViewRisicos.SelectedRows[0].Cells[0].Value.ToString();
 
 
-            //Form editRisicosForm = new EditRisicos(riskBeschrijving,
-            //                riskGevolg);//,
-            //                //riskDiscipline,
-            //                //riskGebruiksfase,
-            //                //riskGebruiker,
-            //                //riskGevarenzone);
-            ////                riskSeverity,
-            ////                riskFrequency,
-            ////                riskProbability,
-            ////                riskAvoidance);
-            //editRisicosForm.Show();
-            //RefreshTable();
+        //    Form editRisicosForm = new EditRisicos(gevaarId);
+        //    editRisicosForm.ShowDialog();
+        //    LoadData();
 
 
-        }
+        //    //Form editRisicosForm = new EditRisicos(riskBeschrijving,
+        //    //                riskGevolg);//,
+        //    //                //riskDiscipline,
+        //    //                //riskGebruiksfase,
+        //    //                //riskGebruiker,
+        //    //                //riskGevarenzone);
+        //    ////                riskSeverity,
+        //    ////                riskFrequency,
+        //    ////                riskProbability,
+        //    ////                riskAvoidance);
+        //    //editRisicosForm.Show();
+        //    //RefreshTable();
 
-        private void dataGridViewRisicos_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            for (int i = 0; i < (dataGridViewRisicos.ColumnCount - 1); i++)
-            {
-                dataGridViewRisicos.AutoResizeColumn((i + 1), DataGridViewAutoSizeColumnMode.AllCells );
-                if (dataGridViewRisicos.Columns[i + 1].Width > 400)
-                {
-                    dataGridViewRisicos.Columns[i + 1].Width = 400;
-                }
-            }
 
-            dataGridViewRisicos.ClearSelection();
-        }
+        //}
+
+        //private void dataGridViewRisicos_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        //{
+        //    for (int i = 0; i < (dataGridViewRisicos.ColumnCount - 1); i++)
+        //    {
+        //        dataGridViewRisicos.AutoResizeColumn((i + 1), DataGridViewAutoSizeColumnMode.AllCells );
+        //        if (dataGridViewRisicos.Columns[i + 1].Width > 400)
+        //        {
+        //            dataGridViewRisicos.Columns[i + 1].Width = 400;
+        //        }
+        //    }
+
+        //    dataGridViewRisicos.ClearSelection();
+        //}
 
         private void advancedDataGridViewGevaren_SortStringChanged(object sender, EventArgs e)
         {
@@ -98,6 +90,42 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
         private void advancedDataGridViewGevaren_FilterStringChanged(object sender, EventArgs e)
         {
             this.gevarenData.Filter = this.advancedDataGridViewGevaren.FilterString;
+        }
+
+        private void advancedDataGridViewGevaren_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            for (int i = 0; i < (advancedDataGridViewGevaren.ColumnCount - 1); i++)
+            {
+                advancedDataGridViewGevaren.AutoResizeColumn((i + 1), DataGridViewAutoSizeColumnMode.AllCells);
+                if (advancedDataGridViewGevaren.Columns[i + 1].Width > 400)
+                {
+                    advancedDataGridViewGevaren.Columns[i + 1].Width = 400;
+                }
+            }
+
+            advancedDataGridViewGevaren.ClearSelection();
+        }
+
+        private void advancedDataGridViewGevaren_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            string gevaarId = advancedDataGridViewGevaren.SelectedRows[0].Cells[0].Value.ToString();
+
+
+            Form editRisicosForm = new EditRisicos(gevaarId);
+            editRisicosForm.ShowDialog();
+            LoadData();
+        }
+
+        private void ContentRisicos_Load(object sender, EventArgs e)
+        {
+
+                
+                LoadData();
+
+                Application.UseWaitCursor = false;
+            
+            
+            
         }
     }
 }

@@ -570,28 +570,34 @@ namespace RiskManagmentTool.LogicLayer
             return data;
         }
 
-        public DataTable GetIssueMaatregelen(string issueID)
+        public BindingSource GetIssueMaatregelen(string issueID)
         {
             SqlDataAdapter adapter = databaseCommunication.GetIssueMaatregelen(issueID);
             DataTable data = new DataTable();
             adapter.Fill(data);
-            return data;
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = data;
+            return bindingSource;
         }
 
-        public DataTable GetObjectenTable()
+        public BindingSource GetObjectenTable()
         {
             SqlDataAdapter adapter = databaseCommunication.GetObjecten();
             DataTable data = new DataTable();
             adapter.Fill(data);
-            return data;
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = data;
+            return bindingSource;
         }
 
-        public DataTable GetTemplateTable()
+        public BindingSource GetTemplateTable()
         {
             SqlDataAdapter adapter = databaseCommunication.GetTemplates();
             DataTable data = new DataTable();
             adapter.Fill(data);
-            return data;
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = data;
+            return bindingSource;
         }
 
         public BindingSource GetGevarenTable()//DataTable GetGevarenTable()

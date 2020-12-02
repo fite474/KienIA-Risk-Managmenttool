@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RiskManagmentTool.LogicLayer.Objects
 {
-    class GevaarObject
+    class GevaarObjectOLD
     {
         //public int GevaarID { get; set; }
         public string GevaarlijkeSituatie { get; set; }
@@ -21,7 +21,7 @@ namespace RiskManagmentTool.LogicLayer.Objects
         public string Gevolg { get; set; }
 
 
-        public GevaarObject()
+        public GevaarObjectOLD()
         {
             //RisicoID = 0;
 

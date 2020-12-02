@@ -31,11 +31,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonAddNew = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridViewRisicos = new System.Windows.Forms.DataGridView();
             this.advancedDataGridViewGevaren = new ADGV.AdvancedDataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRisicos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridViewGevaren)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,28 +59,11 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.advancedDataGridViewGevaren);
-            this.panel2.Controls.Add(this.dataGridViewRisicos);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 100);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1575, 712);
             this.panel2.TabIndex = 1;
-            // 
-            // dataGridViewRisicos
-            // 
-            this.dataGridViewRisicos.AllowUserToAddRows = false;
-            this.dataGridViewRisicos.AllowUserToDeleteRows = false;
-            this.dataGridViewRisicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewRisicos.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridViewRisicos.Location = new System.Drawing.Point(0, 526);
-            this.dataGridViewRisicos.Name = "dataGridViewRisicos";
-            this.dataGridViewRisicos.ReadOnly = true;
-            this.dataGridViewRisicos.RowTemplate.Height = 24;
-            this.dataGridViewRisicos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewRisicos.Size = new System.Drawing.Size(1575, 186);
-            this.dataGridViewRisicos.TabIndex = 0;
-            this.dataGridViewRisicos.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewRisicos_DataBindingComplete);
-            this.dataGridViewRisicos.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewRisicos_MouseDoubleClick);
             // 
             // advancedDataGridViewGevaren
             // 
@@ -95,11 +76,14 @@
             this.advancedDataGridViewGevaren.Name = "advancedDataGridViewGevaren";
             this.advancedDataGridViewGevaren.ReadOnly = true;
             this.advancedDataGridViewGevaren.RowTemplate.Height = 24;
-            this.advancedDataGridViewGevaren.Size = new System.Drawing.Size(1117, 397);
+            this.advancedDataGridViewGevaren.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.advancedDataGridViewGevaren.Size = new System.Drawing.Size(1560, 397);
             this.advancedDataGridViewGevaren.TabIndex = 1;
             this.advancedDataGridViewGevaren.TimeFilter = false;
             this.advancedDataGridViewGevaren.SortStringChanged += new System.EventHandler(this.advancedDataGridViewGevaren_SortStringChanged);
             this.advancedDataGridViewGevaren.FilterStringChanged += new System.EventHandler(this.advancedDataGridViewGevaren_FilterStringChanged);
+            this.advancedDataGridViewGevaren.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.advancedDataGridViewGevaren_DataBindingComplete);
+            this.advancedDataGridViewGevaren.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.advancedDataGridViewGevaren_MouseDoubleClick);
             // 
             // ContentRisicos
             // 
@@ -110,9 +94,9 @@
             this.Controls.Add(this.panel1);
             this.Name = "ContentRisicos";
             this.Text = "ContentRisicos";
+            this.Load += new System.EventHandler(this.ContentRisicos_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRisicos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridViewGevaren)).EndInit();
             this.ResumeLayout(false);
 
@@ -122,7 +106,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dataGridViewRisicos;
         private System.Windows.Forms.Button buttonAddNew;
         private ADGV.AdvancedDataGridView advancedDataGridViewGevaren;
     }

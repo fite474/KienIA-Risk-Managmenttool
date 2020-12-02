@@ -1172,14 +1172,14 @@ namespace RiskManagmentTool.DataLayer
 
         #region get info
         public List<string> GetIssuesInfo(string issueID)
-        {
+        {//Error. moet aan gewerkt worden. verkeerde db table gebruikt
             
             List<string> issueInfo = new List<string>();
 
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT TableIssues.IssueID, TableGevaren.GevaarlijkeSituatie, TableGevaren.GevaarlijkeGebeurtenis, TableGevaren.Gevaar " +
-                                            "FROM TableIssues INNER JOIN TableGevaren" +
-                                            " ON TableGevaren.GevaarID = TableIssues.IssueGevaarID WHERE TableIssues.IssueID = '" + issueID + "' ", sqlConnection);
+            SqlCommand cmd = new SqlCommand("SELECT View_ObjectIssues.IssueID, View_ObjectIssues.GevaarlijkeSituatie, View_ObjectIssues.GevaarlijkeGebeurtenis, View_ObjectIssues.Gevaar " +
+                                            "FROM View_ObjectIssues " +
+                                            "WHERE View_ObjectIssues.IssueID = '" + issueID + "' ", sqlConnection);
 
             using (SqlDataReader dr = cmd.ExecuteReader())
             {
@@ -2226,7 +2226,7 @@ namespace RiskManagmentTool.DataLayer
         {
             Dictionary<int, string> index_gevolg = new Dictionary<int, string>();
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT GevaarTypeID, GevaarType FROM GevaarTypes", sqlConnection);
+            SqlCommand cmd = new SqlCommand("SELECT GevaarTypeID, GevaarType FROM GevaarTypes ORDER BY GevaarType", sqlConnection);
             using (SqlDataReader dr = cmd.ExecuteReader())
             {
                 while (dr.Read())
@@ -2240,7 +2240,7 @@ namespace RiskManagmentTool.DataLayer
         {
             Dictionary<int, string> objectTypes = new Dictionary<int, string>();
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT GebruiksfaseID, Gebruiksfase FROM Gebruiksfases", sqlConnection);
+            SqlCommand cmd = new SqlCommand("SELECT GebruiksfaseID, Gebruiksfase FROM Gebruiksfases ORDER BY Gebruiksfase", sqlConnection);
 
             using (SqlDataReader dr = cmd.ExecuteReader())
             {
@@ -2333,7 +2333,7 @@ namespace RiskManagmentTool.DataLayer
         {
             Dictionary<int, string> objectTypes = new Dictionary<int, string>();
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT NormID, Norm FROM Normen", sqlConnection);
+            SqlCommand cmd = new SqlCommand("SELECT NormID, Norm FROM Normen ORDER BY Norm", sqlConnection);
 
             using (SqlDataReader dr = cmd.ExecuteReader())
             {

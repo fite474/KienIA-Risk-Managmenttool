@@ -162,7 +162,7 @@
             // comboBoxViewTemplate
             // 
             this.comboBoxViewTemplate.FormattingEnabled = true;
-            this.comboBoxViewTemplate.Location = new System.Drawing.Point(141, 16);
+            this.comboBoxViewTemplate.Location = new System.Drawing.Point(141, 14);
             this.comboBoxViewTemplate.Name = "comboBoxViewTemplate";
             this.comboBoxViewTemplate.Size = new System.Drawing.Size(185, 24);
             this.comboBoxViewTemplate.TabIndex = 1;
@@ -171,7 +171,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(29, 16);
+            this.label6.Location = new System.Drawing.Point(5, 14);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(106, 17);
             this.label6.TabIndex = 0;
@@ -208,7 +208,7 @@
             this.dataGridViewObjectView.AllowUserToAddRows = false;
             this.dataGridViewObjectView.AllowUserToDeleteRows = false;
             this.dataGridViewObjectView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewObjectView.Location = new System.Drawing.Point(3, 72);
+            this.dataGridViewObjectView.Location = new System.Drawing.Point(3, 81);
             this.dataGridViewObjectView.Name = "dataGridViewObjectView";
             this.dataGridViewObjectView.ReadOnly = true;
             this.dataGridViewObjectView.RowTemplate.Height = 24;
@@ -226,7 +226,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1332, 66);
+            this.panel3.Size = new System.Drawing.Size(1332, 75);
             this.panel3.TabIndex = 0;
             // 
             // buttonAddFromObject
@@ -242,7 +242,7 @@
             // comboBoxViewObjectNaam
             // 
             this.comboBoxViewObjectNaam.FormattingEnabled = true;
-            this.comboBoxViewObjectNaam.Location = new System.Drawing.Point(133, 11);
+            this.comboBoxViewObjectNaam.Location = new System.Drawing.Point(133, 14);
             this.comboBoxViewObjectNaam.Name = "comboBoxViewObjectNaam";
             this.comboBoxViewObjectNaam.Size = new System.Drawing.Size(195, 24);
             this.comboBoxViewObjectNaam.TabIndex = 1;
@@ -251,7 +251,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(27, 14);
+            this.label8.Location = new System.Drawing.Point(5, 14);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(88, 17);
             this.label8.TabIndex = 0;

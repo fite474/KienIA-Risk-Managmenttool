@@ -66,7 +66,6 @@
             this.textBoxRest_Se_Comment = new System.Windows.Forms.TextBox();
             this.textBoxRest_Se = new System.Windows.Forms.TextBox();
             this.textBoxInit_Av_Comment = new System.Windows.Forms.TextBox();
-            this.checkBoxSelectAll = new System.Windows.Forms.CheckBox();
             this.textBoxInit_Pr_Comment = new System.Windows.Forms.TextBox();
             this.checkBoxInit_Se = new System.Windows.Forms.CheckBox();
             this.checkBoxInit_Fr = new System.Windows.Forms.CheckBox();
@@ -108,7 +107,6 @@
             this.textBoxRest_Se_Comment_IssueToAdd = new System.Windows.Forms.TextBox();
             this.textBoxRest_Se_IssueToAdd = new System.Windows.Forms.TextBox();
             this.textBoxInit_Av_Comment_IssueToAdd = new System.Windows.Forms.TextBox();
-            this.checkBox16 = new System.Windows.Forms.CheckBox();
             this.textBoxInit_Pr_Comment_IssueToAdd = new System.Windows.Forms.TextBox();
             this.checkBox17 = new System.Windows.Forms.CheckBox();
             this.checkBox18 = new System.Windows.Forms.CheckBox();
@@ -265,7 +263,6 @@
             this.panel3.Controls.Add(this.textBoxRest_Se_Comment);
             this.panel3.Controls.Add(this.textBoxRest_Se);
             this.panel3.Controls.Add(this.textBoxInit_Av_Comment);
-            this.panel3.Controls.Add(this.checkBoxSelectAll);
             this.panel3.Controls.Add(this.textBoxInit_Pr_Comment);
             this.panel3.Controls.Add(this.checkBoxInit_Se);
             this.panel3.Controls.Add(this.checkBoxInit_Fr);
@@ -494,16 +491,6 @@
             this.textBoxInit_Av_Comment.Size = new System.Drawing.Size(355, 22);
             this.textBoxInit_Av_Comment.TabIndex = 17;
             // 
-            // checkBoxSelectAll
-            // 
-            this.checkBoxSelectAll.AutoSize = true;
-            this.checkBoxSelectAll.Location = new System.Drawing.Point(3, 6);
-            this.checkBoxSelectAll.Name = "checkBoxSelectAll";
-            this.checkBoxSelectAll.Size = new System.Drawing.Size(87, 21);
-            this.checkBoxSelectAll.TabIndex = 5;
-            this.checkBoxSelectAll.Text = "Select all";
-            this.checkBoxSelectAll.UseVisualStyleBackColor = true;
-            // 
             // textBoxInit_Pr_Comment
             // 
             this.textBoxInit_Pr_Comment.Location = new System.Drawing.Point(259, 101);
@@ -644,7 +631,6 @@
             this.panel5.Controls.Add(this.textBoxRest_Se_Comment_IssueToAdd);
             this.panel5.Controls.Add(this.textBoxRest_Se_IssueToAdd);
             this.panel5.Controls.Add(this.textBoxInit_Av_Comment_IssueToAdd);
-            this.panel5.Controls.Add(this.checkBox16);
             this.panel5.Controls.Add(this.textBoxInit_Pr_Comment_IssueToAdd);
             this.panel5.Controls.Add(this.checkBox17);
             this.panel5.Controls.Add(this.checkBox18);
@@ -882,16 +868,6 @@
             this.textBoxInit_Av_Comment_IssueToAdd.Name = "textBoxInit_Av_Comment_IssueToAdd";
             this.textBoxInit_Av_Comment_IssueToAdd.Size = new System.Drawing.Size(355, 22);
             this.textBoxInit_Av_Comment_IssueToAdd.TabIndex = 17;
-            // 
-            // checkBox16
-            // 
-            this.checkBox16.AutoSize = true;
-            this.checkBox16.Location = new System.Drawing.Point(3, 6);
-            this.checkBox16.Name = "checkBox16";
-            this.checkBox16.Size = new System.Drawing.Size(87, 21);
-            this.checkBox16.TabIndex = 5;
-            this.checkBox16.Text = "Select all";
-            this.checkBox16.UseVisualStyleBackColor = true;
             // 
             // textBoxInit_Pr_Comment_IssueToAdd
             // 
@@ -1136,7 +1112,6 @@
         private System.Windows.Forms.TextBox textBoxRest_Se_Comment;
         private System.Windows.Forms.TextBox textBoxRest_Se;
         private System.Windows.Forms.TextBox textBoxInit_Av_Comment;
-        private System.Windows.Forms.CheckBox checkBoxSelectAll;
         private System.Windows.Forms.TextBox textBoxInit_Pr_Comment;
         private System.Windows.Forms.CheckBox checkBoxInit_Se;
         private System.Windows.Forms.CheckBox checkBoxInit_Fr;
@@ -1178,7 +1153,6 @@
         private System.Windows.Forms.TextBox textBoxRest_Se_Comment_IssueToAdd;
         private System.Windows.Forms.TextBox textBoxRest_Se_IssueToAdd;
         private System.Windows.Forms.TextBox textBoxInit_Av_Comment_IssueToAdd;
-        private System.Windows.Forms.CheckBox checkBox16;
         private System.Windows.Forms.TextBox textBoxInit_Pr_Comment_IssueToAdd;
         private System.Windows.Forms.CheckBox checkBox17;
         private System.Windows.Forms.CheckBox checkBox18;

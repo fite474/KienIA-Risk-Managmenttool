@@ -78,9 +78,10 @@
             // 
             // buttonRisicoDetails
             // 
-            this.buttonRisicoDetails.Location = new System.Drawing.Point(25, 331);
+            this.buttonRisicoDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRisicoDetails.Location = new System.Drawing.Point(12, 320);
             this.buttonRisicoDetails.Name = "buttonRisicoDetails";
-            this.buttonRisicoDetails.Size = new System.Drawing.Size(113, 23);
+            this.buttonRisicoDetails.Size = new System.Drawing.Size(121, 39);
             this.buttonRisicoDetails.TabIndex = 0;
             this.buttonRisicoDetails.Text = "Risico details";
             this.buttonRisicoDetails.UseVisualStyleBackColor = true;
@@ -89,6 +90,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(28, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 17);
@@ -98,6 +100,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(28, 88);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 17);
@@ -214,60 +217,72 @@
             // 
             // textBoxGevaar
             // 
+            this.textBoxGevaar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxGevaar.Location = new System.Drawing.Point(135, 118);
             this.textBoxGevaar.Name = "textBoxGevaar";
-            this.textBoxGevaar.Size = new System.Drawing.Size(636, 22);
+            this.textBoxGevaar.Size = new System.Drawing.Size(636, 23);
             this.textBoxGevaar.TabIndex = 22;
             // 
             // textBoxDiscipline
             // 
+            this.textBoxDiscipline.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxDiscipline.Location = new System.Drawing.Point(135, 88);
             this.textBoxDiscipline.Name = "textBoxDiscipline";
-            this.textBoxDiscipline.Size = new System.Drawing.Size(636, 22);
+            this.textBoxDiscipline.Size = new System.Drawing.Size(636, 23);
             this.textBoxDiscipline.TabIndex = 21;
             // 
             // textBoxRest_Risico_Comment
             // 
+            this.textBoxRest_Risico_Comment.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxRest_Risico_Comment.Location = new System.Drawing.Point(263, 287);
             this.textBoxRest_Risico_Comment.Name = "textBoxRest_Risico_Comment";
-            this.textBoxRest_Risico_Comment.Size = new System.Drawing.Size(508, 22);
+            this.textBoxRest_Risico_Comment.Size = new System.Drawing.Size(508, 23);
             this.textBoxRest_Risico_Comment.TabIndex = 20;
             // 
             // textBoxInit_Risico_Comment
             // 
+            this.textBoxInit_Risico_Comment.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxInit_Risico_Comment.Location = new System.Drawing.Point(263, 253);
             this.textBoxInit_Risico_Comment.Name = "textBoxInit_Risico_Comment";
-            this.textBoxInit_Risico_Comment.Size = new System.Drawing.Size(508, 22);
+            this.textBoxInit_Risico_Comment.Size = new System.Drawing.Size(508, 23);
             this.textBoxInit_Risico_Comment.TabIndex = 19;
             // 
             // textBoxRest_Risico
             // 
+            this.textBoxRest_Risico.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxRest_Risico.Location = new System.Drawing.Point(135, 287);
             this.textBoxRest_Risico.Name = "textBoxRest_Risico";
-            this.textBoxRest_Risico.Size = new System.Drawing.Size(100, 22);
+            this.textBoxRest_Risico.Size = new System.Drawing.Size(100, 23);
             this.textBoxRest_Risico.TabIndex = 18;
             // 
             // textBoxInit_Risico
             // 
+            this.textBoxInit_Risico.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxInit_Risico.Location = new System.Drawing.Point(135, 254);
             this.textBoxInit_Risico.Name = "textBoxInit_Risico";
-            this.textBoxInit_Risico.Size = new System.Drawing.Size(100, 22);
+            this.textBoxInit_Risico.Size = new System.Drawing.Size(100, 23);
             this.textBoxInit_Risico.TabIndex = 17;
             // 
             // textBoxGebeurtenis
             // 
+            this.textBoxGebeurtenis.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxGebeurtenis.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxGebeurtenis.Location = new System.Drawing.Point(135, 200);
             this.textBoxGebeurtenis.Multiline = true;
             this.textBoxGebeurtenis.Name = "textBoxGebeurtenis";
-            this.textBoxGebeurtenis.Size = new System.Drawing.Size(873, 45);
+            this.textBoxGebeurtenis.Size = new System.Drawing.Size(967, 45);
             this.textBoxGebeurtenis.TabIndex = 16;
             // 
             // textBoxSituatie
             // 
+            this.textBoxSituatie.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxSituatie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSituatie.Location = new System.Drawing.Point(135, 150);
             this.textBoxSituatie.Multiline = true;
             this.textBoxSituatie.Name = "textBoxSituatie";
-            this.textBoxSituatie.Size = new System.Drawing.Size(873, 44);
+            this.textBoxSituatie.Size = new System.Drawing.Size(967, 44);
             this.textBoxSituatie.TabIndex = 15;
             // 
             // textBoxNaamObject
@@ -281,6 +296,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(28, 53);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(62, 17);
@@ -308,6 +324,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(25, 293);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(83, 17);
@@ -317,6 +334,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(25, 260);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(72, 17);
@@ -326,6 +344,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(28, 191);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(86, 17);
@@ -335,6 +354,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(28, 118);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(55, 17);
@@ -344,6 +364,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(28, 147);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(55, 17);
@@ -352,12 +373,15 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 393);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1177, 452);
+            this.tabControl1.Size = new System.Drawing.Size(1507, 452);
             this.tabControl1.TabIndex = 5;
             // 
             // tabPage1
@@ -366,7 +390,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1169, 423);
+            this.tabPage1.Size = new System.Drawing.Size(1499, 423);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Maatregelen";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -377,12 +401,13 @@
             this.dataGridViewIssueMaatregelen.AllowUserToDeleteRows = false;
             this.dataGridViewIssueMaatregelen.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewIssueMaatregelen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewIssueMaatregelen.Location = new System.Drawing.Point(6, 40);
+            this.dataGridViewIssueMaatregelen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewIssueMaatregelen.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewIssueMaatregelen.Name = "dataGridViewIssueMaatregelen";
             this.dataGridViewIssueMaatregelen.ReadOnly = true;
             this.dataGridViewIssueMaatregelen.RowTemplate.Height = 24;
             this.dataGridViewIssueMaatregelen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewIssueMaatregelen.Size = new System.Drawing.Size(1158, 379);
+            this.dataGridViewIssueMaatregelen.Size = new System.Drawing.Size(1493, 417);
             this.dataGridViewIssueMaatregelen.TabIndex = 0;
             this.dataGridViewIssueMaatregelen.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewIssueMaatregelen_DataBindingComplete);
             // 
@@ -409,9 +434,10 @@
             // 
             // buttonAddNewMaatregel
             // 
+            this.buttonAddNewMaatregel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAddNewMaatregel.Location = new System.Drawing.Point(25, 21);
             this.buttonAddNewMaatregel.Name = "buttonAddNewMaatregel";
-            this.buttonAddNewMaatregel.Size = new System.Drawing.Size(199, 35);
+            this.buttonAddNewMaatregel.Size = new System.Drawing.Size(210, 44);
             this.buttonAddNewMaatregel.TabIndex = 6;
             this.buttonAddNewMaatregel.Text = "koppel meer maatregelen";
             this.buttonAddNewMaatregel.UseVisualStyleBackColor = true;
@@ -419,9 +445,10 @@
             // 
             // buttonDeleteMaatregelen
             // 
+            this.buttonDeleteMaatregelen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDeleteMaatregelen.Location = new System.Drawing.Point(719, 21);
             this.buttonDeleteMaatregelen.Name = "buttonDeleteMaatregelen";
-            this.buttonDeleteMaatregelen.Size = new System.Drawing.Size(166, 35);
+            this.buttonDeleteMaatregelen.Size = new System.Drawing.Size(185, 44);
             this.buttonDeleteMaatregelen.TabIndex = 7;
             this.buttonDeleteMaatregelen.Text = "Verwijder maatregelen";
             this.buttonDeleteMaatregelen.UseVisualStyleBackColor = true;

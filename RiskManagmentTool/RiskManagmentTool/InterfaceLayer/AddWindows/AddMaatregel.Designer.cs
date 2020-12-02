@@ -57,10 +57,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBoxGevaarID = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.comboBoxGevaar = new System.Windows.Forms.ComboBox();
             this.comboBoxDiscipline = new System.Windows.Forms.ComboBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMaatregelen)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -351,10 +349,8 @@
             // 
             this.panel2.Controls.Add(this.textBoxGevaarID);
             this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.comboBoxGevaar);
             this.panel2.Controls.Add(this.comboBoxDiscipline);
-            this.panel2.Controls.Add(this.checkedListBox1);
             this.panel2.Controls.Add(this.textBoxSituatie);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label2);
@@ -385,16 +381,6 @@
             this.label10.TabIndex = 24;
             this.label10.Text = "GevaarID:";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(743, 15);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(94, 17);
-            this.label11.TabIndex = 23;
-            this.label11.Text = "MAG WEG!!!!!!";
-            this.label11.Visible = false;
-            // 
             // comboBoxGevaar
             // 
             this.comboBoxGevaar.FormattingEnabled = true;
@@ -410,19 +396,6 @@
             this.comboBoxDiscipline.Name = "comboBoxDiscipline";
             this.comboBoxDiscipline.Size = new System.Drawing.Size(283, 24);
             this.comboBoxDiscipline.TabIndex = 20;
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "Bijvoegen van alle beschrijvingen",
-            "Bijvoegen van alle risico waardes",
-            "Vereisen van verifiecatie"});
-            this.checkedListBox1.Location = new System.Drawing.Point(743, 47);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(255, 174);
-            this.checkedListBox1.TabIndex = 19;
-            this.checkedListBox1.Visible = false;
             // 
             // panel3
             // 
@@ -483,11 +456,9 @@
         private System.Windows.Forms.Button buttonKoppelSelectedMaatregelen;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.ComboBox comboBoxGevaar;
         private System.Windows.Forms.ComboBox comboBoxDiscipline;
         private System.Windows.Forms.Button buttonCreateNewMaatregel;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.ComboBox comboBoxObjectenWeergave;

@@ -147,7 +147,7 @@ namespace RiskManagmentTool.InterfaceLayer.WarningWindows
 
         private void buttonOnlySelectedMaatregelen_Click(object sender, EventArgs e)
         {
-            checkedListBoxCustomSettings.SetItemChecked(0, true);
+            //checkedListBoxCustomSettings.SetItemChecked(0, true);
 
             List<string> selectedMaatregelen = new List<string>();
             foreach (DataGridViewRow row in dataGridViewMaatregelenNewIssue.SelectedRows)

@@ -48,6 +48,7 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
             };
         }
 
+
         private void InitComboBoxObjects()
         {
             //init list of each combobox

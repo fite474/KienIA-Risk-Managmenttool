@@ -15,6 +15,9 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
     public partial class ContentRisicos : Form
     {
         private Datacomunication comunicator;
+
+        private BindingSource gevarenData;
+
         public ContentRisicos()
         {
             InitializeComponent();
@@ -26,7 +29,9 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
         private void LoadData()
         {
             dataGridViewRisicos.DataSource = comunicator.GetGevarenTable();
+            gevarenData = comunicator.GetGevarenTable();
 
+            advancedDataGridViewGevaren.DataSource = gevarenData;//comunicator.GetGevarenTable();
         }
 
         private void buttonAddNew_Click(object sender, EventArgs e)
@@ -83,6 +88,16 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
             }
 
             dataGridViewRisicos.ClearSelection();
+        }
+
+        private void advancedDataGridViewGevaren_SortStringChanged(object sender, EventArgs e)
+        {
+            this.gevarenData.Sort = this.advancedDataGridViewGevaren.SortString;
+        }
+
+        private void advancedDataGridViewGevaren_FilterStringChanged(object sender, EventArgs e)
+        {
+            this.gevarenData.Filter = this.advancedDataGridViewGevaren.FilterString;
         }
     }
 }

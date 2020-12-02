@@ -32,7 +32,6 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonShow = new System.Windows.Forms.Button();
             this.textBoxProjectNaam = new System.Windows.Forms.TextBox();
             this.comboBoxObjectType = new System.Windows.Forms.ComboBox();
             this.textBoxOmschrijving = new System.Windows.Forms.TextBox();
@@ -45,7 +44,6 @@
             this.textBoxIssuesToVerify = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.buttonExportToExcel = new System.Windows.Forms.Button();
             this.pictureBoxObjectFoto = new System.Windows.Forms.PictureBox();
@@ -54,6 +52,8 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridViewGekoppeldeIssues = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.comboBoxVisualSettings = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.comboBoxFilterIssues = new System.Windows.Forms.ComboBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -63,10 +63,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.buttonIssuesOplossen = new System.Windows.Forms.Button();
             this.buttonDeleteGevaren = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.buttonAddRisico = new System.Windows.Forms.Button();
-            this.comboBoxVisualSettings = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -118,7 +115,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.buttonShow);
             this.panel1.Controls.Add(this.textBoxProjectNaam);
             this.panel1.Controls.Add(this.comboBoxObjectType);
             this.panel1.Controls.Add(this.textBoxOmschrijving);
@@ -132,17 +128,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(701, 265);
             this.panel1.TabIndex = 0;
-            // 
-            // buttonShow
-            // 
-            this.buttonShow.Location = new System.Drawing.Point(381, 215);
-            this.buttonShow.Name = "buttonShow";
-            this.buttonShow.Size = new System.Drawing.Size(133, 23);
-            this.buttonShow.TabIndex = 8;
-            this.buttonShow.Text = "Show Problems";
-            this.buttonShow.UseVisualStyleBackColor = true;
-            this.buttonShow.Visible = false;
-            this.buttonShow.Click += new System.EventHandler(this.buttonShow_Click);
             // 
             // textBoxProjectNaam
             // 
@@ -217,7 +202,6 @@
             this.panel2.Controls.Add(this.textBoxIssuesToVerify);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.label5);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(710, 3);
             this.panel2.Name = "panel2";
@@ -250,15 +234,6 @@
             this.label6.TabIndex = 1;
             this.label6.Text = "Nog te verifiëren issues:";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(34, 18);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(144, 17);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Incomplete issues: 17";
-            // 
             // panel6
             // 
             this.panel6.Controls.Add(this.buttonExportToExcel);
@@ -272,9 +247,9 @@
             // buttonExportToExcel
             // 
             this.buttonExportToExcel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.buttonExportToExcel.Location = new System.Drawing.Point(0, 229);
+            this.buttonExportToExcel.Location = new System.Drawing.Point(0, 215);
             this.buttonExportToExcel.Name = "buttonExportToExcel";
-            this.buttonExportToExcel.Size = new System.Drawing.Size(470, 36);
+            this.buttonExportToExcel.Size = new System.Drawing.Size(470, 50);
             this.buttonExportToExcel.TabIndex = 1;
             this.buttonExportToExcel.Text = "Export naar Excel";
             this.buttonExportToExcel.UseVisualStyleBackColor = true;
@@ -282,10 +257,12 @@
             // 
             // pictureBoxObjectFoto
             // 
+            this.pictureBoxObjectFoto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxObjectFoto.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxObjectFoto.Image")));
             this.pictureBoxObjectFoto.Location = new System.Drawing.Point(3, 6);
             this.pictureBoxObjectFoto.Name = "pictureBoxObjectFoto";
-            this.pictureBoxObjectFoto.Size = new System.Drawing.Size(461, 211);
+            this.pictureBoxObjectFoto.Size = new System.Drawing.Size(461, 203);
             this.pictureBoxObjectFoto.TabIndex = 0;
             this.pictureBoxObjectFoto.TabStop = false;
             this.pictureBoxObjectFoto.Click += new System.EventHandler(this.pictureBoxObjectFoto_Click);
@@ -350,6 +327,28 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1555, 50);
             this.panel5.TabIndex = 1;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(396, 9);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(119, 17);
+            this.label10.TabIndex = 4;
+            this.label10.Text = "Visuele weergave";
+            // 
+            // comboBoxVisualSettings
+            // 
+            this.comboBoxVisualSettings.FormattingEnabled = true;
+            this.comboBoxVisualSettings.Items.AddRange(new object[] {
+            "Nog te reviewen",
+            "Risico waarde",
+            "Clear"});
+            this.comboBoxVisualSettings.Location = new System.Drawing.Point(522, 6);
+            this.comboBoxVisualSettings.Name = "comboBoxVisualSettings";
+            this.comboBoxVisualSettings.Size = new System.Drawing.Size(175, 24);
+            this.comboBoxVisualSettings.TabIndex = 3;
+            this.comboBoxVisualSettings.SelectedIndexChanged += new System.EventHandler(this.comboBoxVisualSettings_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -417,7 +416,6 @@
             // 
             this.panel4.Controls.Add(this.buttonIssuesOplossen);
             this.panel4.Controls.Add(this.buttonDeleteGevaren);
-            this.panel4.Controls.Add(this.button1);
             this.panel4.Controls.Add(this.buttonAddRisico);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(3, 730);
@@ -427,7 +425,7 @@
             // 
             // buttonIssuesOplossen
             // 
-            this.buttonIssuesOplossen.Location = new System.Drawing.Point(1217, 7);
+            this.buttonIssuesOplossen.Location = new System.Drawing.Point(1199, 4);
             this.buttonIssuesOplossen.Name = "buttonIssuesOplossen";
             this.buttonIssuesOplossen.Size = new System.Drawing.Size(166, 71);
             this.buttonIssuesOplossen.TabIndex = 4;
@@ -445,16 +443,6 @@
             this.buttonDeleteGevaren.UseVisualStyleBackColor = true;
             this.buttonDeleteGevaren.Click += new System.EventHandler(this.buttonDeleteGevaren_Click);
             // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.Location = new System.Drawing.Point(1427, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(142, 79);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Done";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // buttonAddRisico
             // 
             this.buttonAddRisico.Location = new System.Drawing.Point(28, 25);
@@ -464,27 +452,6 @@
             this.buttonAddRisico.Text = "Voeg gevaar toe";
             this.buttonAddRisico.UseVisualStyleBackColor = true;
             this.buttonAddRisico.Click += new System.EventHandler(this.buttonAddRisico_Click);
-            // 
-            // comboBoxVisualSettings
-            // 
-            this.comboBoxVisualSettings.FormattingEnabled = true;
-            this.comboBoxVisualSettings.Items.AddRange(new object[] {
-            "Nog te reviewen",
-            "Risico waarde"});
-            this.comboBoxVisualSettings.Location = new System.Drawing.Point(522, 6);
-            this.comboBoxVisualSettings.Name = "comboBoxVisualSettings";
-            this.comboBoxVisualSettings.Size = new System.Drawing.Size(175, 24);
-            this.comboBoxVisualSettings.TabIndex = 3;
-            this.comboBoxVisualSettings.SelectedIndexChanged += new System.EventHandler(this.comboBoxVisualSettings_SelectedIndexChanged);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(396, 9);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(119, 17);
-            this.label10.TabIndex = 4;
-            this.label10.Text = "Visuele weergave";
             // 
             // EditObjecten
             // 
@@ -534,7 +501,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboBoxFilterIssues;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
@@ -542,7 +508,6 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button buttonAddRisico;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button buttonIssuesOplossen;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button buttonDeleteGevaren;
@@ -550,7 +515,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBoxProjectNaam;
-        private System.Windows.Forms.Button buttonShow;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.PictureBox pictureBoxObjectFoto;
         private System.Windows.Forms.TextBox textBoxIssuesToVerify;

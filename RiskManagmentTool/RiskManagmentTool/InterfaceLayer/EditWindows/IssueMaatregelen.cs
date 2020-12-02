@@ -65,6 +65,10 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
             textBoxSituatie.Text = Situatie;
             textBoxGebeurtenis.Text = Gebeurtenis;
+
+
+
+
             //textBoxInit_Risico.Text = init_Risico;
             //textBoxInit_Risico_Comment.Text = init_Risico_Beschrijving;
             //textBoxRest_Risico.Text = rest_Risico;
@@ -181,7 +185,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void buttonDeleteMaatregelen_Click(object sender, EventArgs e)
         {
-            DeleteGekoppeldeMaatregelen deleteGekoppeldeMaatregelen = new DeleteGekoppeldeMaatregelen();
+            DeleteGekoppeldeMaatregelen deleteGekoppeldeMaatregelen = new DeleteGekoppeldeMaatregelen(IssueID);
             deleteGekoppeldeMaatregelen.Show();
         }
 

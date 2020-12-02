@@ -13,6 +13,7 @@ using RiskManagmentTool.InterfaceLayer.DeleteWindows;
 using DataGridViewAutoFilter;
 
 
+
 namespace RiskManagmentTool.InterfaceLayer.EditWindows
 {
     public partial class EditObjecten : Form
@@ -82,9 +83,14 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         {
             dataGridViewGekoppeldeIssues.DataSource = comunicator.GetObjectIssues(ObjectID);
 
+            //dataGridViewGekoppeldeIssues.
+
+
+
             foreach (DataGridViewColumn col in dataGridViewGekoppeldeIssues.Columns)
             {
                 col.HeaderCell = new DataGridViewAutoFilterColumnHeaderCell(col.HeaderCell);
+
             }
             SetVisualInstellingen();
         }
@@ -193,6 +199,16 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
                             rowIndex++;
                         }
+                    }
+                    break;
+                case 2:
+                    {
+                        //foreach (DataGridViewRow row in dataGridViewGekoppeldeIssues.Rows)
+                        //{
+                        //    dataGridViewGekoppeldeIssues.Rows[rowIndex].DefaultCellStyle.BackColor = Color.White;
+                        //    rowIndex++;
+                        //}
+
                     }
                     break;
 
@@ -340,15 +356,6 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         }
 
-        private void buttonShow_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < dataGridViewGekoppeldeIssues.Rows.Count; i++)
-            {
-                dataGridViewGekoppeldeIssues.Rows[i].DefaultCellStyle.BackColor = Color.Red;
-            }
-        }
-
-
 
         private void pictureBoxObjectFoto_Click(object sender, EventArgs e)
         {
@@ -359,7 +366,6 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             {
                 
                 string imageFilePath = ImageHandler.ChangeLocation(open.FileName);
-
 
                 // display image in picture box  
                 pictureBoxObjectFoto.Image = new Bitmap(imageFilePath);//open.FileName);
@@ -385,8 +391,6 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             dataGridViewGekoppeldeIssues.ClearSelection();
 
 
-
-
             IssuesState = comunicator.GetObjectIssuesStates(ObjectID);
 
             int rowIndex = 0;
@@ -396,12 +400,11 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
                 IssuesState.TryGetValue(issueId, out string issueState);
                 if (issueState.Equals("0"))
                 {
-                    //dataGridViewGekoppeldeIssues.Rows[rowIndex].DefaultCellStyle.BackColor = Color.Red;
+                   
                     IssuesToVerify.Add(dataGridViewGekoppeldeIssues.Rows[rowIndex].Cells[viewsColumnNames.IssueIDColumn].Value.ToString());
                 }
                 else if (issueState.Equals("1"))
                 {
-                    //dataGridViewGekoppeldeIssues.Rows[rowIndex].DefaultCellStyle.BackColor = Color.White;
                     row.Cells[0].Value = true;
                 }
 

@@ -56,6 +56,9 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private string editGevaarID;
 
+
+        private bool listboxActive;
+
         public EditRisicos()
         {
             InitializeComponent();
@@ -65,7 +68,9 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             editGevaarID = "-1";
             LoadData();
             LoadEmptyGevaarData();
-
+            buttonDeleteGevaar.Enabled = false;
+            buttonKeuzeOption.Enabled = false;
+            listboxActive = false;
 
         }
 
@@ -80,7 +85,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             editGevaarID = gevaarID;
             LoadData();
             LoadGevaarData(gevaarID);
-
+            buttonKeuzeOption.Enabled = false;
+            listboxActive = false;
             //LoadEmptyGevaarData();
 
             //textBoxGevGebeurtenis.Text = riskBeschrijving;
@@ -94,6 +100,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private void LoadData()
         {
             
+
             comunicator = new Datacomunication();
             deleteControler = new DeleteControler();
             CurrentMenuToAddTo = new Dictionary<int, string>();
@@ -156,6 +163,11 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void UpdateText()
         {
+            if (!listboxActive)
+            {
+                buttonKeuzeOption.Enabled = true;
+                listboxActive = true;
+            }
 
             List<int> itemDBIDList = new List<int>();
             foreach (KeyValuePair<int, string> kvpChecked in CurrentMenuToAddTo)

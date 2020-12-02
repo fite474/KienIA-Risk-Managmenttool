@@ -28,6 +28,14 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void LoadData()
         {
+            List<string> issueInfo = comunicator.GetIssueInfo(IssueID);
+
+            //textBoxObjectIssueId.Text = issueInfo[0];
+            textBoxSituatie.Text = issueInfo[1];
+            textBoxGebeurtenis.Text = issueInfo[2];
+            textBoxGevaarType.Text = issueInfo[3];
+
+
             //textBoxIssueID.Text = IssueID;
             DataTable risicoBeoordelingData = comunicator.GetRisicoBeoordelingFromIssue(IssueID);
 

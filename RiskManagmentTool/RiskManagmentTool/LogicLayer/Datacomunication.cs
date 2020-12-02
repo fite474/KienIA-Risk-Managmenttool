@@ -594,12 +594,18 @@ namespace RiskManagmentTool.LogicLayer
             return data;
         }
 
-        public DataTable GetGevarenTable()
+        public BindingSource GetGevarenTable()//DataTable GetGevarenTable()
         {
             SqlDataAdapter adapter = databaseCommunication.GetGevaren();
             DataTable data = new DataTable();
             adapter.Fill(data);
-            return data;
+
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = data;
+            return bindingSource;
+
+
+            //return data;
         }
 
         public DataTable GetMaatregelTable()

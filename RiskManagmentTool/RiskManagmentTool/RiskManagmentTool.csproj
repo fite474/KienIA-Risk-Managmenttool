@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AdvancedDataGridView, Version=0.1.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ADGV.0.1.0.10\lib\net40\AdvancedDataGridView.dll</HintPath>
+    </Reference>
     <Reference Include="DataGridViewAutoFilter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\DataGridView-AutoFilter.1.1.0\lib\net20\DataGridViewAutoFilter.dll</HintPath>
     </Reference>
@@ -116,12 +119,6 @@
     </Compile>
     <Compile Include="InterfaceLayer\ContentWindows\KeuzesItem.Designer.cs">
       <DependentUpon>KeuzesItem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="InterfaceLayer\ContentWindows\ProjectItem.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="InterfaceLayer\ContentWindows\ProjectItem.Designer.cs">
-      <DependentUpon>ProjectItem.cs</DependentUpon>
     </Compile>
     <Compile Include="InterfaceLayer\DeleteWindows\DeleteGekoppeldeMaatregelen.cs">
       <SubType>Form</SubType>
@@ -296,9 +293,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InterfaceLayer\ContentWindows\KeuzesItem.resx">
       <DependentUpon>KeuzesItem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InterfaceLayer\ContentWindows\ProjectItem.resx">
-      <DependentUpon>ProjectItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterfaceLayer\DeleteWindows\DeleteGekoppeldeMaatregelen.resx">
       <DependentUpon>DeleteGekoppeldeMaatregelen.cs</DependentUpon>

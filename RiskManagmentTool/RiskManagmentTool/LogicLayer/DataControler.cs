@@ -64,9 +64,9 @@ namespace RiskManagmentTool.LogicLayer
                         //string textResult = warningWindow.textBoxInput.Text;
                         addMaatregelen = warningWindow.checkedListBoxWarningSettings.GetItemChecked(0);
                         addBeoordeling = warningWindow.checkedListBoxWarningSettings.GetItemChecked(1);
-                        customAddMaatregelen = warningWindow.checkedListBoxCustomSettings.GetItemChecked(0);
-                        customAddBeoordeling = warningWindow.checkedListBoxCustomSettings.GetItemChecked(1);
-                        HandleAddIssueToObject(gevaarID, addMaatregelen, addBeoordeling, customAddMaatregelen, customAddBeoordeling);
+                        //customAddMaatregelen = warningWindow.checkedListBoxCustomSettings.GetItemChecked(0);
+                        //customAddBeoordeling = warningWindow.checkedListBoxCustomSettings.GetItemChecked(1);
+                        //HandleAddIssueToObject(gevaarID, addMaatregelen, addBeoordeling, customAddMaatregelen, customAddBeoordeling);
                     }
                     else
                     {

@@ -55,7 +55,6 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.textBoxGevaar = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.checkedListBoxCustomSettings = new System.Windows.Forms.CheckedListBox();
             this.checkedListBoxWarningSettings = new System.Windows.Forms.CheckedListBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -312,7 +311,6 @@
             // 
             this.panel5.Controls.Add(this.textBoxGevaar);
             this.panel5.Controls.Add(this.label3);
-            this.panel5.Controls.Add(this.checkedListBoxCustomSettings);
             this.panel5.Controls.Add(this.checkedListBoxWarningSettings);
             this.panel5.Controls.Add(this.textBoxGevaarId);
             this.panel5.Controls.Add(this.label7);
@@ -342,19 +340,6 @@
             this.label3.Size = new System.Drawing.Size(63, 17);
             this.label3.TabIndex = 24;
             this.label3.Text = "Gevaar: ";
-            // 
-            // checkedListBoxCustomSettings
-            // 
-            this.checkedListBoxCustomSettings.FormattingEnabled = true;
-            this.checkedListBoxCustomSettings.Items.AddRange(new object[] {
-            "Aangepaste selectie maatregelen",
-            "Aangepaste risicobeoordeling"});
-            this.checkedListBoxCustomSettings.Location = new System.Drawing.Point(1191, 6);
-            this.checkedListBoxCustomSettings.Name = "checkedListBoxCustomSettings";
-            this.checkedListBoxCustomSettings.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.checkedListBoxCustomSettings.Size = new System.Drawing.Size(244, 106);
-            this.checkedListBoxCustomSettings.TabIndex = 23;
-            this.checkedListBoxCustomSettings.Visible = false;
             // 
             // checkedListBoxWarningSettings
             // 
@@ -422,7 +407,6 @@
         private System.Windows.Forms.Button buttonOnlySelectedMaatregelen;
         private System.Windows.Forms.Button buttonOK;
         public System.Windows.Forms.CheckedListBox checkedListBoxWarningSettings;
-        public System.Windows.Forms.CheckedListBox checkedListBoxCustomSettings;
         private System.Windows.Forms.TextBox textBoxGevaar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxWarningMessage;

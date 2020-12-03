@@ -98,7 +98,7 @@ namespace RiskManagmentTool.LogicLayer
                     string message = "Dit object bevat een issue met hetzelfde gevaar id.\n" +
                         "Het gevaar met id: " + gevaarID + " kan niet worden toegevoegd.";
                     string title = "Reminder Risico waardes";
-                    MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
                     DialogResult result = MessageBox.Show(message, title, buttons);
 
                     if (result == DialogResult.Yes)

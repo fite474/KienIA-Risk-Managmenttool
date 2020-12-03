@@ -121,31 +121,41 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void buttonEditOption_Click(object sender, EventArgs e)
         {
-            int itemDB_ID = -1;
-            foreach (KeyValuePair<int, string> kvp in MenuOptions)
+            if (listBoxMenuOptions.SelectedItems.Count == 1)
             {
-                if (kvp.Value.Equals(listBoxMenuOptions.SelectedItem.ToString()))
+                int itemDB_ID = -1;
+                foreach (KeyValuePair<int, string> kvp in MenuOptions)
                 {
-                    itemDB_ID = kvp.Key;
+                    if (kvp.Value.Equals(listBoxMenuOptions.SelectedItem.ToString()))
+                    {
+                        itemDB_ID = kvp.Key;
+                    }
                 }
-            }
 
 
-            EditText editText = new EditText();
-            editText.textBoxInput.Text = listBoxMenuOptions.SelectedItem.ToString();
-            if (editText.ShowDialog(this) == DialogResult.OK)
-            {
-                // Read the contents of testDialog's TextBox.
-                string textResult = editText.textBoxInput.Text;
-                listBoxMenuOptions.Items.Add(textResult);
-                EditInput(itemDB_ID, textResult);
+                EditText editText = new EditText();
+                editText.textBoxInput.Text = listBoxMenuOptions.SelectedItem.ToString();
+                if (editText.ShowDialog(this) == DialogResult.OK)
+                {
+                    // Read the contents of testDialog's TextBox.
+                    string textResult = editText.textBoxInput.Text;
+                    listBoxMenuOptions.Items.Add(textResult);
+                    EditInput(itemDB_ID, textResult);
+                }
+                else
+                {
+                    //this.txtResult.Text = "Cancelled";
+                }
+                editText.Dispose();
             }
             else
             {
-                //this.txtResult.Text = "Cancelled";
+                string message = "selecteer een optie";
+                string title = "Verwijder keuze optie";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result = MessageBox.Show(message, title, buttons);
             }
-            editText.Dispose();
-            
+
         }
     }
 }

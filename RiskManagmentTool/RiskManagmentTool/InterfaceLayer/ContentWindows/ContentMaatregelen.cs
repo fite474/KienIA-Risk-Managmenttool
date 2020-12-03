@@ -18,6 +18,9 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
     public partial class ContentMaatregelen : Form
     {
         private Datacomunication comunicator;
+
+        private BindingSource maatregelenData;
+
         public ContentMaatregelen()
         {
             InitializeComponent();
@@ -27,7 +30,9 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 
         private void RefreshTable()
         {
-            dataGridViewMaatregelen.DataSource = comunicator.GetMaatregelTable();
+            //dataGridViewMaatregelen.DataSource = comunicator.GetMaatregelTable();
+            maatregelenData = comunicator.GetMaatregelTable();
+            advancedDataGridViewMaatregelen.DataSource = maatregelenData;
         }
 
         private void buttonAddNew_Click(object sender, EventArgs e)
@@ -37,20 +42,46 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
             RefreshTable();
         }
 
-        private void dataGridViewMaatregelen_MouseDoubleClick(object sender, MouseEventArgs e)
+        //private void dataGridViewMaatregelen_MouseDoubleClick(object sender, MouseEventArgs e)
+        //{
+        //    string maatregelId = dataGridViewMaatregelen.SelectedRows[0].Cells[0].Value.ToString();
+        //    string maatregelNaam = dataGridViewMaatregelen.SelectedRows[0].Cells[1].Value.ToString();
+
+        //    Form editMaatregelen = new EditMaatregelen(maatregelId, maatregelNaam);//, maatregelCategory, maatregelNorm);
+
+        //    editMaatregelen.ShowDialog();
+        //    RefreshTable();
+        //}
+
+        //private void dataGridViewMaatregelen_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        //{
+        //    dataGridViewMaatregelen.ClearSelection();
+        //}
+
+        private void advancedDataGridViewMaatregelen_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            string maatregelId = dataGridViewMaatregelen.SelectedRows[0].Cells[0].Value.ToString();
-            string maatregelNaam = dataGridViewMaatregelen.SelectedRows[0].Cells[1].Value.ToString();
+            try
+            {
+                string maatregelId = advancedDataGridViewMaatregelen.SelectedRows[0].Cells[0].Value.ToString();
+                string maatregelNaam = advancedDataGridViewMaatregelen.SelectedRows[0].Cells[1].Value.ToString();
 
-            Form editMaatregelen = new EditMaatregelen(maatregelId, maatregelNaam);//, maatregelCategory, maatregelNorm);
+                Form editMaatregelen = new EditMaatregelen(maatregelId, maatregelNaam);//, maatregelCategory, maatregelNorm);
 
-            editMaatregelen.ShowDialog();
-            RefreshTable();
+                editMaatregelen.ShowDialog();
+                RefreshTable();
+            }
+            catch (Exception err )
+            {
+
+                Console.WriteLine(err);
+            }
+
         }
 
-        private void dataGridViewMaatregelen_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        private void advancedDataGridViewMaatregelen_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            dataGridViewMaatregelen.ClearSelection();
+            advancedDataGridViewMaatregelen.ClearSelection();
+            Cursor.Current = Cursors.Default;
         }
     }
 }

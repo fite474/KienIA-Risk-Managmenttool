@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBoxIssueID = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewIssueMaatregelen = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBoxSelectedItems = new System.Windows.Forms.TextBox();
             this.buttonDeleteSelection = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxIssueID = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIssueMaatregelen)).BeginInit();
             this.panel2.SuspendLayout();
@@ -50,15 +50,33 @@
             this.panel1.Size = new System.Drawing.Size(983, 100);
             this.panel1.TabIndex = 0;
             // 
+            // textBoxIssueID
+            // 
+            this.textBoxIssueID.Location = new System.Drawing.Point(192, 32);
+            this.textBoxIssueID.Name = "textBoxIssueID";
+            this.textBoxIssueID.Size = new System.Drawing.Size(100, 22);
+            this.textBoxIssueID.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(86, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Issue ID: ";
+            // 
             // dataGridViewIssueMaatregelen
             // 
             this.dataGridViewIssueMaatregelen.AllowUserToAddRows = false;
             this.dataGridViewIssueMaatregelen.AllowUserToDeleteRows = false;
+            this.dataGridViewIssueMaatregelen.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewIssueMaatregelen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewIssueMaatregelen.Location = new System.Drawing.Point(12, 106);
             this.dataGridViewIssueMaatregelen.Name = "dataGridViewIssueMaatregelen";
             this.dataGridViewIssueMaatregelen.ReadOnly = true;
             this.dataGridViewIssueMaatregelen.RowTemplate.Height = 24;
+            this.dataGridViewIssueMaatregelen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewIssueMaatregelen.Size = new System.Drawing.Size(959, 365);
             this.dataGridViewIssueMaatregelen.TabIndex = 1;
             // 
@@ -87,22 +105,6 @@
             this.buttonDeleteSelection.TabIndex = 3;
             this.buttonDeleteSelection.Text = "Verwijder selectie";
             this.buttonDeleteSelection.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(86, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Issue ID: ";
-            // 
-            // textBoxIssueID
-            // 
-            this.textBoxIssueID.Location = new System.Drawing.Point(192, 32);
-            this.textBoxIssueID.Name = "textBoxIssueID";
-            this.textBoxIssueID.Size = new System.Drawing.Size(100, 22);
-            this.textBoxIssueID.TabIndex = 1;
             // 
             // DeleteGekoppeldeMaatregelen
             // 

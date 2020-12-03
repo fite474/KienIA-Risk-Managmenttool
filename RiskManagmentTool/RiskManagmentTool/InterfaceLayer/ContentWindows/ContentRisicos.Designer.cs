@@ -52,7 +52,7 @@
             this.buttonAddNew.Name = "buttonAddNew";
             this.buttonAddNew.Size = new System.Drawing.Size(281, 91);
             this.buttonAddNew.TabIndex = 1;
-            this.buttonAddNew.Text = "Add";
+            this.buttonAddNew.Text = "Maak nieuw gevaar aan";
             this.buttonAddNew.UseVisualStyleBackColor = true;
             this.buttonAddNew.Click += new System.EventHandler(this.buttonAddNew_Click);
             // 
@@ -72,12 +72,13 @@
             this.advancedDataGridViewGevaren.AutoGenerateContextFilters = true;
             this.advancedDataGridViewGevaren.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.advancedDataGridViewGevaren.DateWithTime = false;
-            this.advancedDataGridViewGevaren.Location = new System.Drawing.Point(3, 6);
+            this.advancedDataGridViewGevaren.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.advancedDataGridViewGevaren.Location = new System.Drawing.Point(0, 0);
             this.advancedDataGridViewGevaren.Name = "advancedDataGridViewGevaren";
             this.advancedDataGridViewGevaren.ReadOnly = true;
             this.advancedDataGridViewGevaren.RowTemplate.Height = 24;
             this.advancedDataGridViewGevaren.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.advancedDataGridViewGevaren.Size = new System.Drawing.Size(1560, 397);
+            this.advancedDataGridViewGevaren.Size = new System.Drawing.Size(1575, 712);
             this.advancedDataGridViewGevaren.TabIndex = 1;
             this.advancedDataGridViewGevaren.TimeFilter = false;
             this.advancedDataGridViewGevaren.SortStringChanged += new System.EventHandler(this.advancedDataGridViewGevaren_SortStringChanged);

@@ -35,6 +35,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void dataGridViewGekoppeldeObjecten_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             string projectID = dataGridViewGekoppeldeObjecten.SelectedRows[0].Cells[0].Value.ToString();
             string projectNaam = dataGridViewGekoppeldeObjecten.SelectedRows[0].Cells[1].Value.ToString();
             string objectNaam = dataGridViewGekoppeldeObjecten.SelectedRows[0].Cells[2].Value.ToString();

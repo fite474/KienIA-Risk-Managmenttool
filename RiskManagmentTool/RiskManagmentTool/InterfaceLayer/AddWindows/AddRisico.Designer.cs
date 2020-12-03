@@ -30,9 +30,10 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.advancedDataGridViewLosseItems = new ADGV.AdvancedDataGridView();
             this.buttonAddSingleItems = new System.Windows.Forms.Button();
-            this.dataGridViewLosseItems = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.advancedDataGridViewTemplateViewIssues = new ADGV.AdvancedDataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonCreateNewTemplate = new System.Windows.Forms.Button();
             this.buttonAddFromTemplateIssues = new System.Windows.Forms.Button();
@@ -40,6 +41,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridViewTemplateViewIssues = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.advancedDataGridViewObjectView = new ADGV.AdvancedDataGridView();
             this.dataGridViewObjectView = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.buttonAddFromObject = new System.Windows.Forms.Button();
@@ -51,26 +53,21 @@
             this.label4 = new System.Windows.Forms.Label();
             this.comboBoxDiscipline = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.buttonVoegSelectieToe = new System.Windows.Forms.Button();
             this.checkedListBoxAddSettings = new System.Windows.Forms.CheckedListBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.buttonCreateNewGevaar = new System.Windows.Forms.Button();
-            this.advancedDataGridViewLosseItems = new ADGV.AdvancedDataGridView();
-            this.advancedDataGridView1 = new ADGV.AdvancedDataGridView();
-            this.advancedDataGridView2 = new ADGV.AdvancedDataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLosseItems)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridViewLosseItems)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridViewTemplateViewIssues)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTemplateViewIssues)).BeginInit();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridViewObjectView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewObjectView)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridViewLosseItems)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -88,7 +85,6 @@
             // 
             this.tabPage1.Controls.Add(this.advancedDataGridViewLosseItems);
             this.tabPage1.Controls.Add(this.buttonAddSingleItems);
-            this.tabPage1.Controls.Add(this.dataGridViewLosseItems);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -96,6 +92,26 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Alle risico\'s";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // advancedDataGridViewLosseItems
+            // 
+            this.advancedDataGridViewLosseItems.AllowUserToAddRows = false;
+            this.advancedDataGridViewLosseItems.AllowUserToDeleteRows = false;
+            this.advancedDataGridViewLosseItems.AutoGenerateContextFilters = true;
+            this.advancedDataGridViewLosseItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.advancedDataGridViewLosseItems.DateWithTime = false;
+            this.advancedDataGridViewLosseItems.Location = new System.Drawing.Point(3, 82);
+            this.advancedDataGridViewLosseItems.Name = "advancedDataGridViewLosseItems";
+            this.advancedDataGridViewLosseItems.ReadOnly = true;
+            this.advancedDataGridViewLosseItems.RowTemplate.Height = 24;
+            this.advancedDataGridViewLosseItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.advancedDataGridViewLosseItems.Size = new System.Drawing.Size(1195, 369);
+            this.advancedDataGridViewLosseItems.TabIndex = 2;
+            this.advancedDataGridViewLosseItems.TimeFilter = false;
+            this.advancedDataGridViewLosseItems.SortStringChanged += new System.EventHandler(this.advancedDataGridViewLosseItems_SortStringChanged);
+            this.advancedDataGridViewLosseItems.FilterStringChanged += new System.EventHandler(this.advancedDataGridViewLosseItems_FilterStringChanged);
+            this.advancedDataGridViewLosseItems.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.advancedDataGridViewLosseItems_DataBindingComplete);
+            this.advancedDataGridViewLosseItems.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.advancedDataGridViewLosseItems_MouseDoubleClick);
             // 
             // buttonAddSingleItems
             // 
@@ -107,24 +123,9 @@
             this.buttonAddSingleItems.UseVisualStyleBackColor = true;
             this.buttonAddSingleItems.Click += new System.EventHandler(this.buttonAddSingleItems_Click);
             // 
-            // dataGridViewLosseItems
-            // 
-            this.dataGridViewLosseItems.AllowUserToAddRows = false;
-            this.dataGridViewLosseItems.AllowUserToDeleteRows = false;
-            this.dataGridViewLosseItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewLosseItems.Location = new System.Drawing.Point(3, 473);
-            this.dataGridViewLosseItems.Name = "dataGridViewLosseItems";
-            this.dataGridViewLosseItems.ReadOnly = true;
-            this.dataGridViewLosseItems.RowTemplate.Height = 24;
-            this.dataGridViewLosseItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewLosseItems.Size = new System.Drawing.Size(1195, 61);
-            this.dataGridViewLosseItems.TabIndex = 0;
-            this.dataGridViewLosseItems.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewLosseItems_DataBindingComplete);
-            this.dataGridViewLosseItems.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewRisicos_MouseDoubleClick);
-            // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.advancedDataGridView1);
+            this.tabPage2.Controls.Add(this.advancedDataGridViewTemplateViewIssues);
             this.tabPage2.Controls.Add(this.panel1);
             this.tabPage2.Controls.Add(this.dataGridViewTemplateViewIssues);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
@@ -134,6 +135,22 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Items uit templates";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // advancedDataGridViewTemplateViewIssues
+            // 
+            this.advancedDataGridViewTemplateViewIssues.AllowUserToAddRows = false;
+            this.advancedDataGridViewTemplateViewIssues.AllowUserToDeleteRows = false;
+            this.advancedDataGridViewTemplateViewIssues.AutoGenerateContextFilters = true;
+            this.advancedDataGridViewTemplateViewIssues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.advancedDataGridViewTemplateViewIssues.DateWithTime = false;
+            this.advancedDataGridViewTemplateViewIssues.Location = new System.Drawing.Point(33, 92);
+            this.advancedDataGridViewTemplateViewIssues.Name = "advancedDataGridViewTemplateViewIssues";
+            this.advancedDataGridViewTemplateViewIssues.ReadOnly = true;
+            this.advancedDataGridViewTemplateViewIssues.RowTemplate.Height = 24;
+            this.advancedDataGridViewTemplateViewIssues.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.advancedDataGridViewTemplateViewIssues.Size = new System.Drawing.Size(765, 267);
+            this.advancedDataGridViewTemplateViewIssues.TabIndex = 1;
+            this.advancedDataGridViewTemplateViewIssues.TimeFilter = false;
             // 
             // panel1
             // 
@@ -202,7 +219,7 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.advancedDataGridView2);
+            this.tabPage3.Controls.Add(this.advancedDataGridViewObjectView);
             this.tabPage3.Controls.Add(this.dataGridViewObjectView);
             this.tabPage3.Controls.Add(this.panel3);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
@@ -211,6 +228,23 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Uit andere objecten selecteren";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // advancedDataGridViewObjectView
+            // 
+            this.advancedDataGridViewObjectView.AllowUserToAddRows = false;
+            this.advancedDataGridViewObjectView.AllowUserToDeleteRows = false;
+            this.advancedDataGridViewObjectView.AutoGenerateContextFilters = true;
+            this.advancedDataGridViewObjectView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.advancedDataGridViewObjectView.DateWithTime = false;
+            this.advancedDataGridViewObjectView.Location = new System.Drawing.Point(23, 93);
+            this.advancedDataGridViewObjectView.Name = "advancedDataGridViewObjectView";
+            this.advancedDataGridViewObjectView.ReadOnly = true;
+            this.advancedDataGridViewObjectView.RowTemplate.Height = 24;
+            this.advancedDataGridViewObjectView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.advancedDataGridViewObjectView.Size = new System.Drawing.Size(1161, 264);
+            this.advancedDataGridViewObjectView.TabIndex = 2;
+            this.advancedDataGridViewObjectView.TimeFilter = false;
+            this.advancedDataGridViewObjectView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.advancedDataGridViewObjectView_DataBindingComplete);
             // 
             // dataGridViewObjectView
             // 
@@ -318,16 +352,6 @@
             this.comboBox2.Size = new System.Drawing.Size(298, 24);
             this.comboBox2.TabIndex = 9;
             // 
-            // buttonVoegSelectieToe
-            // 
-            this.buttonVoegSelectieToe.Location = new System.Drawing.Point(509, 995);
-            this.buttonVoegSelectieToe.Name = "buttonVoegSelectieToe";
-            this.buttonVoegSelectieToe.Size = new System.Drawing.Size(156, 32);
-            this.buttonVoegSelectieToe.TabIndex = 10;
-            this.buttonVoegSelectieToe.Text = "Voeg selectie toe";
-            this.buttonVoegSelectieToe.UseVisualStyleBackColor = true;
-            this.buttonVoegSelectieToe.Click += new System.EventHandler(this.buttonVoegSelectieToe_Click);
-            // 
             // checkedListBoxAddSettings
             // 
             this.checkedListBoxAddSettings.CheckOnClick = true;
@@ -367,56 +391,6 @@
             this.buttonCreateNewGevaar.UseVisualStyleBackColor = true;
             this.buttonCreateNewGevaar.Click += new System.EventHandler(this.buttonCreateNewGevaar_Click);
             // 
-            // advancedDataGridViewLosseItems
-            // 
-            this.advancedDataGridViewLosseItems.AllowUserToAddRows = false;
-            this.advancedDataGridViewLosseItems.AllowUserToDeleteRows = false;
-            this.advancedDataGridViewLosseItems.AutoGenerateContextFilters = true;
-            this.advancedDataGridViewLosseItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.advancedDataGridViewLosseItems.DateWithTime = false;
-            this.advancedDataGridViewLosseItems.Location = new System.Drawing.Point(3, 82);
-            this.advancedDataGridViewLosseItems.Name = "advancedDataGridViewLosseItems";
-            this.advancedDataGridViewLosseItems.ReadOnly = true;
-            this.advancedDataGridViewLosseItems.RowTemplate.Height = 24;
-            this.advancedDataGridViewLosseItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.advancedDataGridViewLosseItems.Size = new System.Drawing.Size(1195, 369);
-            this.advancedDataGridViewLosseItems.TabIndex = 2;
-            this.advancedDataGridViewLosseItems.TimeFilter = false;
-            this.advancedDataGridViewLosseItems.SortStringChanged += new System.EventHandler(this.advancedDataGridViewLosseItems_SortStringChanged);
-            this.advancedDataGridViewLosseItems.FilterStringChanged += new System.EventHandler(this.advancedDataGridViewLosseItems_FilterStringChanged);
-            this.advancedDataGridViewLosseItems.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.advancedDataGridViewLosseItems_DataBindingComplete);
-            this.advancedDataGridViewLosseItems.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.advancedDataGridViewLosseItems_MouseDoubleClick);
-            // 
-            // advancedDataGridView1
-            // 
-            this.advancedDataGridView1.AllowUserToAddRows = false;
-            this.advancedDataGridView1.AllowUserToDeleteRows = false;
-            this.advancedDataGridView1.AutoGenerateContextFilters = true;
-            this.advancedDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.advancedDataGridView1.DateWithTime = false;
-            this.advancedDataGridView1.Location = new System.Drawing.Point(33, 92);
-            this.advancedDataGridView1.Name = "advancedDataGridView1";
-            this.advancedDataGridView1.ReadOnly = true;
-            this.advancedDataGridView1.RowTemplate.Height = 24;
-            this.advancedDataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.advancedDataGridView1.TabIndex = 1;
-            this.advancedDataGridView1.TimeFilter = false;
-            // 
-            // advancedDataGridView2
-            // 
-            this.advancedDataGridView2.AllowUserToAddRows = false;
-            this.advancedDataGridView2.AllowUserToDeleteRows = false;
-            this.advancedDataGridView2.AutoGenerateContextFilters = true;
-            this.advancedDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.advancedDataGridView2.DateWithTime = false;
-            this.advancedDataGridView2.Location = new System.Drawing.Point(23, 93);
-            this.advancedDataGridView2.Name = "advancedDataGridView2";
-            this.advancedDataGridView2.ReadOnly = true;
-            this.advancedDataGridView2.RowTemplate.Height = 24;
-            this.advancedDataGridView2.Size = new System.Drawing.Size(861, 251);
-            this.advancedDataGridView2.TabIndex = 2;
-            this.advancedDataGridView2.TimeFilter = false;
-            // 
             // AddRisico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -427,7 +401,6 @@
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.checkedListBoxAddSettings);
-            this.Controls.Add(this.buttonVoegSelectieToe);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBoxDiscipline);
             this.Controls.Add(this.label4);
@@ -441,18 +414,17 @@
             this.Load += new System.EventHandler(this.AddRisico_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLosseItems)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridViewLosseItems)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridViewTemplateViewIssues)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTemplateViewIssues)).EndInit();
             this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridViewObjectView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewObjectView)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridViewLosseItems)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -465,12 +437,10 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxObjectNaam;
-        private System.Windows.Forms.DataGridView dataGridViewLosseItems;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBoxDiscipline;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button buttonVoegSelectieToe;
         private System.Windows.Forms.CheckedListBox checkedListBoxAddSettings;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
@@ -489,7 +459,7 @@
         private System.Windows.Forms.Button buttonAddFromObject;
         private System.Windows.Forms.Button buttonCreateNewTemplate;
         private ADGV.AdvancedDataGridView advancedDataGridViewLosseItems;
-        private ADGV.AdvancedDataGridView advancedDataGridView1;
-        private ADGV.AdvancedDataGridView advancedDataGridView2;
+        private ADGV.AdvancedDataGridView advancedDataGridViewTemplateViewIssues;
+        private ADGV.AdvancedDataGridView advancedDataGridViewObjectView;
     }
 }

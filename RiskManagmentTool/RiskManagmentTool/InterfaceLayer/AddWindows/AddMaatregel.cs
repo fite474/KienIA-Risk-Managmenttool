@@ -26,6 +26,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
         private string ObjectID;
         private string GevaarID;
 
+        private BindingSource maatregelenData;
 
         public AddMaatregel(string objectNaam, string objectID, string issueId, string discipline, string gevaar, string situatie, string gebeurtenis)
         {
@@ -57,7 +58,10 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
         private void LoadData()
         {
-            dataGridViewMaatregelen.DataSource = comunicator.GetMaatregelTable();
+            //dataGridViewMaatregelen.DataSource = comunicator.GetMaatregelTable();
+            maatregelenData = comunicator.GetMaatregelTable();
+            advancedDataGridViewMaatregelen.DataSource = maatregelenData;
+
             dataGridViewObjectIssues.DataSource = comunicator.GetAllIssuesWithGevaarID(GevaarID);
 
 
@@ -140,7 +144,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
         private void buttonKoppelSelectedMaatregelen_Click(object sender, EventArgs e)
         {
             string maatregelID = "";
-            foreach (DataGridViewRow row in dataGridViewMaatregelen.SelectedRows)
+            foreach (DataGridViewRow row in advancedDataGridViewMaatregelen.SelectedRows)
             {
                 maatregelID = row.Cells[0].Value.ToString();
 
@@ -154,7 +158,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
                 //    SelectedTemplateIssueId.Add(maatregelID);
                 //}
             }
-            dataGridViewMaatregelen.ClearSelection();
+            advancedDataGridViewMaatregelen.ClearSelection();
             controler.CheckIssueForDubbleMaatregelen(SelectedMaatregelId);
             SelectedMaatregelId.Clear();
 
@@ -166,10 +170,10 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
              
         }
 
-        private void dataGridViewMaatregelen_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            dataGridViewMaatregelen.ClearSelection();
-        }
+        //private void dataGridViewMaatregelen_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        //{
+        //    dataGridViewMaatregelen.ClearSelection();
+        //}
 
         private void comboBoxWeergaveTemplate_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -213,6 +217,11 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
             //                                             init_Risico, init_Risico_Beschrijving,
             //                                             rest_Risico, rest_Risico_Beschrijving);
             //issueMaatregelen.ShowDialog();
+        }
+
+        private void advancedDataGridViewMaatregelen_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+
         }
     }
 }

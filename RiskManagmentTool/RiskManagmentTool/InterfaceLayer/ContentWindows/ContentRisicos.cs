@@ -20,7 +20,6 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 
         public ContentRisicos()
         {
-            this.UseWaitCursor = true;
             InitializeComponent();
             comunicator = new Datacomunication();
             //LoadData();
@@ -104,16 +103,26 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
             }
 
             advancedDataGridViewGevaren.ClearSelection();
+            Cursor.Current = Cursors.Default;
         }
 
         private void advancedDataGridViewGevaren_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            string gevaarId = advancedDataGridViewGevaren.SelectedRows[0].Cells[0].Value.ToString();
+            try
+            {
+                string gevaarId = advancedDataGridViewGevaren.SelectedRows[0].Cells[0].Value.ToString();
 
 
-            Form editRisicosForm = new EditRisicos(gevaarId);
-            editRisicosForm.ShowDialog();
-            LoadData();
+                Form editRisicosForm = new EditRisicos(gevaarId);
+                editRisicosForm.ShowDialog();
+                LoadData();
+            }
+            catch (Exception err)
+            {
+
+                Console.WriteLine(err);
+            }
+
         }
 
         private void ContentRisicos_Load(object sender, EventArgs e)
@@ -122,7 +131,7 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
                 
                 LoadData();
 
-                Application.UseWaitCursor = false;
+            
             
             
             

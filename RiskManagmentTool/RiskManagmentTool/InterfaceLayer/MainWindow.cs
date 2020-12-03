@@ -61,12 +61,13 @@ namespace RiskManagmentTool.InterfaceLayer
 
         private void buttonProjecten_Click(object sender, EventArgs e)
         {
-
+            Cursor.Current = Cursors.WaitCursor;
             OpenContentWindow(new ContentProjecten());
         }
 
         private void buttonObjecten_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             OpenContentWindow(new ContentObjecten());
             //if (contentObjecten == null)
             //{
@@ -77,17 +78,19 @@ namespace RiskManagmentTool.InterfaceLayer
 
         private void buttonTemplates_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             OpenContentWindow(new ContentTemplates());
         }
 
         private void buttonRisicos_Click(object sender, EventArgs e)
         {
-            Application.UseWaitCursor = true;
+            Cursor.Current = Cursors.WaitCursor;
             OpenContentWindow(new ContentRisicos());
         }
 
         private void buttonMaatregelen_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             OpenContentWindow(new ContentMaatregelen());
             //if (contentMaatregelen == null)
             //{
@@ -104,7 +107,8 @@ namespace RiskManagmentTool.InterfaceLayer
 
         private void buttonKeuzes_Click(object sender, EventArgs e)
         {
-           OpenContentWindow(new ContentKeuzes());
+            Cursor.Current = Cursors.WaitCursor;
+            OpenContentWindow(new ContentKeuzes());
         }
 
 

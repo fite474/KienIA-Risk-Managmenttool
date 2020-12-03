@@ -174,6 +174,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void dataGridViewIssueMaatregelen_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
+            Cursor.Current = Cursors.Default;
             dataGridViewIssueMaatregelen.ClearSelection();
         }
 

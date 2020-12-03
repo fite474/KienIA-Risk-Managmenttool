@@ -65,7 +65,7 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
                 tableLayoutPanelKeuzes.Controls.Add(keuzesItem);//, column, row);
                 
             }
-           
+            Cursor.Current = Cursors.Default;
         }
 
     }

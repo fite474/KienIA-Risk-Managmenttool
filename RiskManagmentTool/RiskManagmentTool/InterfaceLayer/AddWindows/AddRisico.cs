@@ -120,54 +120,20 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
         }
         
 
-        private void buttonVoegSelectieToe_Click(object sender, EventArgs e)
-        {
-            //for list selectie id, datacom . add gevaar to object
 
-
-
-            //foreach (string gevaarId in SelectedGevarenId)
-            //{
-            //    comunicator.AddGevaarToObject(ObjectID, gevaarId);
-            //}
-
-            //foreach (string templateGevaarId in SelectedTemplateGevaarId)
-            //{
-            //    comunicator.AddGevaarToObject(ObjectID, templateGevaarId);
-            //}
-
-            //foreach (string templateIssueId in SelectedTemplateIssueId)
-            //{
-            //    comunicator.AddIssueToObject(ObjectID, templateIssueId);
-            //}
-
-            //foreach (string objectIssueId in SelectedObjectIssueId)
-            //{
-             //   comunicator.AddIssueToObject(ObjectID, objectIssueId);
-            //}
-            //this.Close();
-        }
 
         private void buttonCreateNewGevaar_Click(object sender, EventArgs e)
         {
             Form editRisicosForm = new EditRisicos();
             editRisicosForm.ShowDialog();
-            dataGridViewLosseItems.DataSource = comunicator.GetGevarenTable();
+            gevarenData = comunicator.GetGevarenTable();
         }
 
-        private void dataGridViewRisicos_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            //string gevaarID = dataGridViewLosseItems.SelectedRows[0].Cells[0].Value.ToString();
-            //    if (!SelectedGevarenId.Contains(gevaarID))
-            //    {
-            //        SelectedGevarenId.Add(gevaarID);
-            //        textBoxSelectedItems.Text += gevaarID + ", ";
-            //    }
-        }
+
 
         private void comboBoxDiscipline_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dataGridViewLosseItems.DataSource = comunicator.GetGevarenTableByDiscipline(comboBoxDiscipline.SelectedItem.ToString());
+            //dataGridViewLosseItems.DataSource = comunicator.GetGevarenTableByDiscipline(comboBoxDiscipline.SelectedItem.ToString());
         }
 
 
@@ -239,7 +205,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
         private void buttonAddSingleItems_Click(object sender, EventArgs e)
         {
             string gevaarID = "";
-            foreach (DataGridViewRow row in dataGridViewLosseItems.SelectedRows)
+            foreach (DataGridViewRow row in advancedDataGridViewLosseItems.SelectedRows)
             {
                 gevaarID = row.Cells[0].Value.ToString();
                 if (!SelectedGevarenId.Contains(gevaarID))
@@ -248,7 +214,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
                 }
             }
 
-            dataGridViewLosseItems.ClearSelection();
+            advancedDataGridViewLosseItems.ClearSelection();
             List<string> temp = controler.CheckObjectForDubbleGevaren(SelectedGevarenId);
             SelectedGevarenId = temp;
 
@@ -328,10 +294,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
         }
 
-        private void dataGridViewLosseItems_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            dataGridViewLosseItems.ClearSelection();
-        }
+
 
         private void dataGridViewTemplateViewIssues_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
@@ -391,6 +354,11 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
             gevarenData = comunicator.GetGevarenTable();
             advancedDataGridViewLosseItems.DataSource = gevarenData;
             
+        }
+
+        private void advancedDataGridViewObjectView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+
         }
     }
 }

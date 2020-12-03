@@ -17,5 +17,10 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             InitializeComponent();
             this.buttonOK.DialogResult = System.Windows.Forms.DialogResult.OK;
         }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

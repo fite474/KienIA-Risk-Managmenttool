@@ -74,9 +74,9 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 
         private void dataGridViewProjecten_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-
+            Cursor.Current = Cursors.Default;
             dataGridViewProjecten.Columns[0].Width = 65;
-            dataGridViewProjecten.Columns[1].Width = 150;
+            //dataGridViewProjecten.Columns[1].Width = 150;
 
             dataGridViewProjecten.ClearSelection();
         }

@@ -614,12 +614,16 @@ namespace RiskManagmentTool.LogicLayer
             //return data;
         }
 
-        public DataTable GetMaatregelTable()
+        public BindingSource GetMaatregelTable()
         {
             SqlDataAdapter adapter = databaseCommunication.GetMaatregelen();
             DataTable data = new DataTable();
             adapter.Fill(data);
-            return data;
+
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = data;
+            return bindingSource;
+            //return data;
         }
 
         public DataTable GetRisicoBeoordelingFromIssue(string issueID)

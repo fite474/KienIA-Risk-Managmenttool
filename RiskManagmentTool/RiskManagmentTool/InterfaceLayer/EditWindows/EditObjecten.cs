@@ -72,7 +72,6 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void LoadDataGridViewCheckBoxes()
         {
-            //
             DataGridViewCheckBoxColumn CheckboxColumn = new DataGridViewCheckBoxColumn();
             CheckBox chk = new CheckBox();
             CheckboxColumn.Width = 20;
@@ -85,17 +84,9 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void LoadData()
         {
-            //dataGridViewGekoppeldeIssues.DataSource = comunicator.GetObjectIssues(ObjectID);
             objectIssuesDataTable = comunicator.GetObjectIssues(ObjectID);
-            //dataGridViewGekoppeldeIssues.
             advancedDataGridViewGekoppeldeIssues.DataSource = objectIssuesDataTable;
 
-
-            //foreach (DataGridViewColumn col in dataGridViewGekoppeldeIssues.Columns)
-            //{
-            //    col.HeaderCell = new DataGridViewAutoFilterColumnHeaderCell(col.HeaderCell);
-
-            //}
             SetVisualInstellingen();
         }
 
@@ -120,6 +111,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private void SetVisualInstellingen()
         {
             comboBoxVisualSettings.SelectedIndex = 1;
+            comboBoxFilterIssues.SelectedIndex = 0;
             ShowDataWithVisualSettings();
             //List<CheckedListBox> menuBox = keuzeMenus.GetKeuzeMenus();
             //for (int i = 0; i < menuBox.Count; i++)
@@ -429,7 +421,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
                 rowIndex++;
             }
-
+            Cursor.Current = Cursors.Default;
             textBoxIssuesToVerify.Text = IssuesToVerify.Count.ToString();
             SetVisualInstellingen();
             //advancedDataGridViewGekoppeldeIssues.ClearSelection();
@@ -454,6 +446,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         {
             try
             {
+                Cursor.Current = Cursors.WaitCursor;
                 string issueId = advancedDataGridViewGekoppeldeIssues.SelectedRows[0].Cells[viewsColumnNames.IssueIDColumn].Value.ToString();//[0].Value.ToString();
                 string situatie = advancedDataGridViewGekoppeldeIssues.SelectedRows[0].Cells[viewsColumnNames.GevaarlijkeSituatieColumn].Value.ToString();
                 string gebeurtenis = advancedDataGridViewGekoppeldeIssues.SelectedRows[0].Cells[viewsColumnNames.GevaarlijkeGebeurtenisColumn].Value.ToString();
@@ -487,6 +480,12 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private void buttonClearDGVFilter_Click(object sender, EventArgs e)
         {
             this.objectIssuesDataTable.RemoveFilter();
+            this.objectIssuesDataTable.RemoveSort();
+        }
+
+        private void buttonSaveObjectNotes_Click(object sender, EventArgs e)
+        {
+            string objectNotes = textBoxObjectNotes.Text;
         }
     }
 }

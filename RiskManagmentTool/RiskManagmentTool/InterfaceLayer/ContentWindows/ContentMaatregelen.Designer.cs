@@ -31,12 +31,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonAddNew = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridViewMaatregelen = new System.Windows.Forms.DataGridView();
-            this.advancedDataGridView1 = new ADGV.AdvancedDataGridView();
+            this.advancedDataGridViewMaatregelen = new ADGV.AdvancedDataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMaatregelen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridViewMaatregelen)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -54,51 +52,38 @@
             this.buttonAddNew.Name = "buttonAddNew";
             this.buttonAddNew.Size = new System.Drawing.Size(281, 91);
             this.buttonAddNew.TabIndex = 1;
-            this.buttonAddNew.Text = "Add";
+            this.buttonAddNew.Text = "Maak nieuwe maatregel aan";
             this.buttonAddNew.UseVisualStyleBackColor = true;
             this.buttonAddNew.Click += new System.EventHandler(this.buttonAddNew_Click);
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.advancedDataGridView1);
-            this.panel2.Controls.Add(this.dataGridViewMaatregelen);
+            this.panel2.Controls.Add(this.advancedDataGridViewMaatregelen);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 100);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1575, 712);
             this.panel2.TabIndex = 1;
             // 
-            // dataGridViewMaatregelen
+            // advancedDataGridViewMaatregelen
             // 
-            this.dataGridViewMaatregelen.AllowUserToAddRows = false;
-            this.dataGridViewMaatregelen.AllowUserToDeleteRows = false;
-            this.dataGridViewMaatregelen.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewMaatregelen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMaatregelen.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridViewMaatregelen.Location = new System.Drawing.Point(0, 617);
-            this.dataGridViewMaatregelen.Name = "dataGridViewMaatregelen";
-            this.dataGridViewMaatregelen.ReadOnly = true;
-            this.dataGridViewMaatregelen.RowTemplate.Height = 24;
-            this.dataGridViewMaatregelen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewMaatregelen.Size = new System.Drawing.Size(1575, 95);
-            this.dataGridViewMaatregelen.TabIndex = 0;
-            this.dataGridViewMaatregelen.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewMaatregelen_DataBindingComplete);
-            this.dataGridViewMaatregelen.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewMaatregelen_MouseDoubleClick);
-            // 
-            // advancedDataGridView1
-            // 
-            this.advancedDataGridView1.AllowUserToAddRows = false;
-            this.advancedDataGridView1.AllowUserToDeleteRows = false;
-            this.advancedDataGridView1.AutoGenerateContextFilters = true;
-            this.advancedDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.advancedDataGridView1.DateWithTime = false;
-            this.advancedDataGridView1.Location = new System.Drawing.Point(114, 209);
-            this.advancedDataGridView1.Name = "advancedDataGridView1";
-            this.advancedDataGridView1.ReadOnly = true;
-            this.advancedDataGridView1.RowTemplate.Height = 24;
-            this.advancedDataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.advancedDataGridView1.TabIndex = 1;
-            this.advancedDataGridView1.TimeFilter = false;
+            this.advancedDataGridViewMaatregelen.AllowUserToAddRows = false;
+            this.advancedDataGridViewMaatregelen.AllowUserToDeleteRows = false;
+            this.advancedDataGridViewMaatregelen.AutoGenerateContextFilters = true;
+            this.advancedDataGridViewMaatregelen.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.advancedDataGridViewMaatregelen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.advancedDataGridViewMaatregelen.DateWithTime = false;
+            this.advancedDataGridViewMaatregelen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.advancedDataGridViewMaatregelen.Location = new System.Drawing.Point(0, 0);
+            this.advancedDataGridViewMaatregelen.Name = "advancedDataGridViewMaatregelen";
+            this.advancedDataGridViewMaatregelen.ReadOnly = true;
+            this.advancedDataGridViewMaatregelen.RowTemplate.Height = 24;
+            this.advancedDataGridViewMaatregelen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.advancedDataGridViewMaatregelen.Size = new System.Drawing.Size(1575, 712);
+            this.advancedDataGridViewMaatregelen.TabIndex = 1;
+            this.advancedDataGridViewMaatregelen.TimeFilter = false;
+            this.advancedDataGridViewMaatregelen.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.advancedDataGridViewMaatregelen_DataBindingComplete);
+            this.advancedDataGridViewMaatregelen.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.advancedDataGridViewMaatregelen_MouseDoubleClick);
             // 
             // ContentMaatregelen
             // 
@@ -111,8 +96,7 @@
             this.Text = "ContentMaatregelen";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMaatregelen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridViewMaatregelen)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -121,8 +105,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dataGridViewMaatregelen;
         private System.Windows.Forms.Button buttonAddNew;
-        private ADGV.AdvancedDataGridView advancedDataGridView1;
+        private ADGV.AdvancedDataGridView advancedDataGridViewMaatregelen;
     }
 }

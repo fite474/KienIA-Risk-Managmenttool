@@ -163,11 +163,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void UpdateText()
         {
-            if (!listboxActive)
-            {
-                buttonKeuzeOption.Enabled = true;
-                listboxActive = true;
-            }
+           
 
             List<int> itemDBIDList = new List<int>();
             foreach (KeyValuePair<int, string> kvpChecked in CurrentMenuToAddTo)
@@ -383,6 +379,12 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void UpdateState()
         {
+            if (!listboxActive)
+            {
+                buttonKeuzeOption.Enabled = true;
+                listboxActive = true;
+            }
+
             switch (MenuTableName)
             {
                 case MenuTableName.Gevolgen:

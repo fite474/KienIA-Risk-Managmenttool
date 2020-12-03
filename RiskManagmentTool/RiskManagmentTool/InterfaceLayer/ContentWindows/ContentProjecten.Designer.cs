@@ -55,7 +55,7 @@
             this.buttonAddNew.Name = "buttonAddNew";
             this.buttonAddNew.Size = new System.Drawing.Size(281, 91);
             this.buttonAddNew.TabIndex = 1;
-            this.buttonAddNew.Text = "Add";
+            this.buttonAddNew.Text = "Maak nieuw project aan";
             this.buttonAddNew.UseVisualStyleBackColor = true;
             this.buttonAddNew.Click += new System.EventHandler(this.buttonAddNew_Click);
             // 
@@ -92,6 +92,7 @@
             // 
             this.dataGridViewProjecten.AllowUserToAddRows = false;
             this.dataGridViewProjecten.AllowUserToDeleteRows = false;
+            this.dataGridViewProjecten.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewProjecten.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProjecten.Dock = System.Windows.Forms.DockStyle.Left;
             this.dataGridViewProjecten.Location = new System.Drawing.Point(0, 0);

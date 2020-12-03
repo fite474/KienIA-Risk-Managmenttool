@@ -30,7 +30,7 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 
         private void dataGridViewObjecten_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-
+            Cursor.Current = Cursors.WaitCursor;
             string objectId = comunicator.GetObjectIdByName(dataGridViewObjecten.SelectedRows[0].Cells[1].Value.ToString());
 
 
@@ -59,6 +59,7 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 
         private void dataGridViewObjecten_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
+            Cursor.Current = Cursors.Default;
             dataGridViewObjecten.ClearSelection();
         }
     }

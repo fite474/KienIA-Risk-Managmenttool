@@ -50,6 +50,7 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 
         private void dataGridViewTemplates_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
+            Cursor.Current = Cursors.Default;
             dataGridViewTemplates.ClearSelection();
         }
     }

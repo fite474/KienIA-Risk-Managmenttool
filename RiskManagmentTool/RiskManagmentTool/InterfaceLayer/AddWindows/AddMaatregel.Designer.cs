@@ -152,7 +152,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1090, 662);
+            this.tabControl1.Size = new System.Drawing.Size(1090, 451);
             this.tabControl1.TabIndex = 18;
             // 
             // tabPage1
@@ -162,7 +162,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1082, 633);
+            this.tabPage1.Size = new System.Drawing.Size(1082, 422);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Maatregelen";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -181,9 +181,11 @@
             this.advancedDataGridViewMaatregelen.ReadOnly = true;
             this.advancedDataGridViewMaatregelen.RowTemplate.Height = 24;
             this.advancedDataGridViewMaatregelen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.advancedDataGridViewMaatregelen.Size = new System.Drawing.Size(1076, 527);
+            this.advancedDataGridViewMaatregelen.Size = new System.Drawing.Size(1076, 316);
             this.advancedDataGridViewMaatregelen.TabIndex = 23;
             this.advancedDataGridViewMaatregelen.TimeFilter = false;
+            this.advancedDataGridViewMaatregelen.SortStringChanged += new System.EventHandler(this.advancedDataGridViewMaatregelen_SortStringChanged);
+            this.advancedDataGridViewMaatregelen.FilterStringChanged += new System.EventHandler(this.advancedDataGridViewMaatregelen_FilterStringChanged);
             this.advancedDataGridViewMaatregelen.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.advancedDataGridViewMaatregelen_DataBindingComplete);
             // 
             // panel5
@@ -218,12 +220,12 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.panel1);
             this.tabPage2.Controls.Add(this.dataGridViewTemplateMaatregelen);
+            this.tabPage2.Controls.Add(this.panel1);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1082, 570);
+            this.tabPage2.Size = new System.Drawing.Size(1082, 422);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Selecteer uit templates";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -271,12 +273,13 @@
             this.dataGridViewTemplateMaatregelen.AllowUserToAddRows = false;
             this.dataGridViewTemplateMaatregelen.AllowUserToDeleteRows = false;
             this.dataGridViewTemplateMaatregelen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTemplateMaatregelen.Location = new System.Drawing.Point(6, 79);
+            this.dataGridViewTemplateMaatregelen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewTemplateMaatregelen.Location = new System.Drawing.Point(3, 73);
             this.dataGridViewTemplateMaatregelen.Name = "dataGridViewTemplateMaatregelen";
             this.dataGridViewTemplateMaatregelen.ReadOnly = true;
             this.dataGridViewTemplateMaatregelen.RowTemplate.Height = 24;
             this.dataGridViewTemplateMaatregelen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewTemplateMaatregelen.Size = new System.Drawing.Size(832, 282);
+            this.dataGridViewTemplateMaatregelen.Size = new System.Drawing.Size(1076, 346);
             this.dataGridViewTemplateMaatregelen.TabIndex = 0;
             this.dataGridViewTemplateMaatregelen.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewTemplateMaatregelen_MouseDoubleClick);
             // 
@@ -287,7 +290,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1082, 570);
+            this.tabPage3.Size = new System.Drawing.Size(1082, 422);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Selecteer uit issues van andere objecten";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -297,12 +300,13 @@
             this.dataGridViewObjectIssues.AllowUserToAddRows = false;
             this.dataGridViewObjectIssues.AllowUserToDeleteRows = false;
             this.dataGridViewObjectIssues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewObjectIssues.Location = new System.Drawing.Point(4, 79);
+            this.dataGridViewObjectIssues.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewObjectIssues.Location = new System.Drawing.Point(3, 73);
             this.dataGridViewObjectIssues.Name = "dataGridViewObjectIssues";
             this.dataGridViewObjectIssues.ReadOnly = true;
             this.dataGridViewObjectIssues.RowTemplate.Height = 24;
             this.dataGridViewObjectIssues.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewObjectIssues.Size = new System.Drawing.Size(978, 282);
+            this.dataGridViewObjectIssues.Size = new System.Drawing.Size(1076, 346);
             this.dataGridViewObjectIssues.TabIndex = 1;
             this.dataGridViewObjectIssues.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewObjectIssues_DataBindingComplete);
             this.dataGridViewObjectIssues.DoubleClick += new System.EventHandler(this.dataGridViewObjectIssues_DoubleClick);
@@ -405,14 +409,14 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 286);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1333, 662);
+            this.panel3.Size = new System.Drawing.Size(1333, 451);
             this.panel3.TabIndex = 24;
             // 
             // AddMaatregel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1333, 948);
+            this.ClientSize = new System.Drawing.Size(1333, 737);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Name = "AddMaatregel";

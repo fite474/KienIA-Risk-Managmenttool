@@ -73,6 +73,7 @@
             this.label2.Size = new System.Drawing.Size(158, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Project contact persoon";
+            this.label2.Visible = false;
             // 
             // label3
             // 
@@ -82,6 +83,7 @@
             this.label3.Size = new System.Drawing.Size(46, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "label3";
+            this.label3.Visible = false;
             // 
             // label4
             // 
@@ -91,6 +93,7 @@
             this.label4.Size = new System.Drawing.Size(46, 17);
             this.label4.TabIndex = 3;
             this.label4.Text = "label4";
+            this.label4.Visible = false;
             // 
             // label5
             // 
@@ -100,6 +103,7 @@
             this.label5.Size = new System.Drawing.Size(46, 17);
             this.label5.TabIndex = 4;
             this.label5.Text = "label5";
+            this.label5.Visible = false;
             // 
             // panel1
             // 
@@ -163,9 +167,10 @@
             // 
             // buttonMakeNewObject
             // 
-            this.buttonMakeNewObject.Location = new System.Drawing.Point(1174, 30);
+            this.buttonMakeNewObject.Dock = System.Windows.Forms.DockStyle.Left;
+            this.buttonMakeNewObject.Location = new System.Drawing.Point(0, 0);
             this.buttonMakeNewObject.Name = "buttonMakeNewObject";
-            this.buttonMakeNewObject.Size = new System.Drawing.Size(175, 48);
+            this.buttonMakeNewObject.Size = new System.Drawing.Size(266, 100);
             this.buttonMakeNewObject.TabIndex = 3;
             this.buttonMakeNewObject.Text = "Maak nieuw object binnen dit project";
             this.buttonMakeNewObject.UseVisualStyleBackColor = true;
@@ -173,7 +178,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(220, 28);
+            this.button1.Location = new System.Drawing.Point(508, 37);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
@@ -183,7 +188,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(5, 30);
+            this.textBox2.Location = new System.Drawing.Point(293, 39);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(208, 22);
             this.textBox2.TabIndex = 0;
@@ -198,7 +203,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1567, 573);
+            this.tabPage1.Size = new System.Drawing.Size(1567, 614);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Project instellingen";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -258,6 +263,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(186, 22);
             this.textBox3.TabIndex = 7;
+            this.textBox3.Visible = false;
             // 
             // EditProjecten
             // 

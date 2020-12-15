@@ -43,8 +43,10 @@
             this.dataGridViewGevaarUsage.Name = "dataGridViewGevaarUsage";
             this.dataGridViewGevaarUsage.ReadOnly = true;
             this.dataGridViewGevaarUsage.RowTemplate.Height = 24;
+            this.dataGridViewGevaarUsage.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewGevaarUsage.Size = new System.Drawing.Size(1166, 600);
             this.dataGridViewGevaarUsage.TabIndex = 0;
+            this.dataGridViewGevaarUsage.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewGevaarUsage_MouseDoubleClick);
             // 
             // panel1
             // 

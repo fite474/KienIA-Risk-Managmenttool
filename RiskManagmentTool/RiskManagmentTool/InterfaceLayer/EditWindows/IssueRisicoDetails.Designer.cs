@@ -51,6 +51,14 @@
             this.textBoxInit_Pr_Comment = new System.Windows.Forms.TextBox();
             this.textBoxInit_Av_Comment = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.comboBoxRest_Av = new System.Windows.Forms.ComboBox();
+            this.comboBoxRest_Pr = new System.Windows.Forms.ComboBox();
+            this.comboBoxRest_Fr = new System.Windows.Forms.ComboBox();
+            this.comboBoxInit_Av = new System.Windows.Forms.ComboBox();
+            this.comboBoxRest_Se = new System.Windows.Forms.ComboBox();
+            this.comboBoxInit_Pr = new System.Windows.Forms.ComboBox();
+            this.comboBoxInit_Fr = new System.Windows.Forms.ComboBox();
+            this.comboBoxInit_Se = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -81,14 +89,6 @@
             this.textBoxRest_Fr_Comment = new System.Windows.Forms.TextBox();
             this.textBoxRest_Se_Comment = new System.Windows.Forms.TextBox();
             this.textBoxRest_Se = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -101,9 +101,9 @@
             this.panel1.Controls.Add(this.checkBoxRest_Risico_Ok);
             this.panel1.Controls.Add(this.buttonConfirm);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 753);
+            this.panel1.Location = new System.Drawing.Point(0, 709);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1294, 228);
+            this.panel1.Size = new System.Drawing.Size(1294, 144);
             this.panel1.TabIndex = 0;
             // 
             // checkBoxRest_Risico_Ok
@@ -186,7 +186,7 @@
             // 
             // textBoxGevaarType
             // 
-            this.textBoxGevaarType.Location = new System.Drawing.Point(144, 173);
+            this.textBoxGevaarType.Location = new System.Drawing.Point(144, 194);
             this.textBoxGevaarType.Name = "textBoxGevaarType";
             this.textBoxGevaarType.ReadOnly = true;
             this.textBoxGevaarType.Size = new System.Drawing.Size(707, 22);
@@ -194,20 +194,20 @@
             // 
             // textBoxGebeurtenis
             // 
-            this.textBoxGebeurtenis.Location = new System.Drawing.Point(144, 117);
+            this.textBoxGebeurtenis.Location = new System.Drawing.Point(144, 121);
             this.textBoxGebeurtenis.Multiline = true;
             this.textBoxGebeurtenis.Name = "textBoxGebeurtenis";
             this.textBoxGebeurtenis.ReadOnly = true;
-            this.textBoxGebeurtenis.Size = new System.Drawing.Size(707, 44);
+            this.textBoxGebeurtenis.Size = new System.Drawing.Size(707, 67);
             this.textBoxGebeurtenis.TabIndex = 7;
             // 
             // textBoxSituatie
             // 
-            this.textBoxSituatie.Location = new System.Drawing.Point(144, 60);
+            this.textBoxSituatie.Location = new System.Drawing.Point(144, 49);
             this.textBoxSituatie.Multiline = true;
             this.textBoxSituatie.Name = "textBoxSituatie";
             this.textBoxSituatie.ReadOnly = true;
-            this.textBoxSituatie.Size = new System.Drawing.Size(707, 36);
+            this.textBoxSituatie.Size = new System.Drawing.Size(707, 66);
             this.textBoxSituatie.TabIndex = 6;
             // 
             // textBoxIssueID
@@ -221,7 +221,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(39, 173);
+            this.label4.Location = new System.Drawing.Point(39, 199);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 17);
             this.label4.TabIndex = 3;
@@ -239,7 +239,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(39, 60);
+            this.label2.Location = new System.Drawing.Point(33, 52);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 17);
             this.label2.TabIndex = 1;
@@ -248,7 +248,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(37, 123);
+            this.label3.Location = new System.Drawing.Point(33, 121);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 17);
             this.label3.TabIndex = 2;
@@ -256,14 +256,14 @@
             // 
             // textBoxInit_Se_Comment
             // 
-            this.textBoxInit_Se_Comment.Location = new System.Drawing.Point(567, 44);
+            this.textBoxInit_Se_Comment.Location = new System.Drawing.Point(567, 19);
             this.textBoxInit_Se_Comment.Name = "textBoxInit_Se_Comment";
             this.textBoxInit_Se_Comment.Size = new System.Drawing.Size(592, 22);
             this.textBoxInit_Se_Comment.TabIndex = 10;
             // 
             // textBoxInit_Se
             // 
-            this.textBoxInit_Se.Location = new System.Drawing.Point(144, 44);
+            this.textBoxInit_Se.Location = new System.Drawing.Point(144, 19);
             this.textBoxInit_Se.Name = "textBoxInit_Se";
             this.textBoxInit_Se.Size = new System.Drawing.Size(59, 22);
             this.textBoxInit_Se.TabIndex = 11;
@@ -271,7 +271,7 @@
             // 
             // textBoxInit_Fr
             // 
-            this.textBoxInit_Fr.Location = new System.Drawing.Point(144, 72);
+            this.textBoxInit_Fr.Location = new System.Drawing.Point(144, 47);
             this.textBoxInit_Fr.Name = "textBoxInit_Fr";
             this.textBoxInit_Fr.Size = new System.Drawing.Size(59, 22);
             this.textBoxInit_Fr.TabIndex = 13;
@@ -279,35 +279,35 @@
             // 
             // textBoxInit_Fr_Comment
             // 
-            this.textBoxInit_Fr_Comment.Location = new System.Drawing.Point(567, 72);
+            this.textBoxInit_Fr_Comment.Location = new System.Drawing.Point(567, 47);
             this.textBoxInit_Fr_Comment.Name = "textBoxInit_Fr_Comment";
             this.textBoxInit_Fr_Comment.Size = new System.Drawing.Size(592, 22);
             this.textBoxInit_Fr_Comment.TabIndex = 12;
             // 
             // textBoxInit_Pr_Comment
             // 
-            this.textBoxInit_Pr_Comment.Location = new System.Drawing.Point(567, 100);
+            this.textBoxInit_Pr_Comment.Location = new System.Drawing.Point(567, 75);
             this.textBoxInit_Pr_Comment.Name = "textBoxInit_Pr_Comment";
             this.textBoxInit_Pr_Comment.Size = new System.Drawing.Size(592, 22);
             this.textBoxInit_Pr_Comment.TabIndex = 16;
             // 
             // textBoxInit_Av_Comment
             // 
-            this.textBoxInit_Av_Comment.Location = new System.Drawing.Point(567, 128);
+            this.textBoxInit_Av_Comment.Location = new System.Drawing.Point(567, 103);
             this.textBoxInit_Av_Comment.Name = "textBoxInit_Av_Comment";
             this.textBoxInit_Av_Comment.Size = new System.Drawing.Size(592, 22);
             this.textBoxInit_Av_Comment.TabIndex = 17;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.comboBox8);
-            this.panel3.Controls.Add(this.comboBox7);
-            this.panel3.Controls.Add(this.comboBox6);
-            this.panel3.Controls.Add(this.comboBox5);
-            this.panel3.Controls.Add(this.comboBox4);
-            this.panel3.Controls.Add(this.comboBox3);
-            this.panel3.Controls.Add(this.comboBox2);
-            this.panel3.Controls.Add(this.comboBox1);
+            this.panel3.Controls.Add(this.comboBoxRest_Av);
+            this.panel3.Controls.Add(this.comboBoxRest_Pr);
+            this.panel3.Controls.Add(this.comboBoxRest_Fr);
+            this.panel3.Controls.Add(this.comboBoxInit_Av);
+            this.panel3.Controls.Add(this.comboBoxRest_Se);
+            this.panel3.Controls.Add(this.comboBoxInit_Pr);
+            this.panel3.Controls.Add(this.comboBoxInit_Fr);
+            this.panel3.Controls.Add(this.comboBoxInit_Se);
             this.panel3.Controls.Add(this.label17);
             this.panel3.Controls.Add(this.label16);
             this.panel3.Controls.Add(this.label15);
@@ -347,13 +347,93 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 227);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1294, 526);
+            this.panel3.Size = new System.Drawing.Size(1294, 482);
             this.panel3.TabIndex = 18;
+            // 
+            // comboBoxRest_Av
+            // 
+            this.comboBoxRest_Av.DropDownWidth = 352;
+            this.comboBoxRest_Av.FormattingEnabled = true;
+            this.comboBoxRest_Av.Location = new System.Drawing.Point(209, 356);
+            this.comboBoxRest_Av.Name = "comboBoxRest_Av";
+            this.comboBoxRest_Av.Size = new System.Drawing.Size(352, 24);
+            this.comboBoxRest_Av.TabIndex = 66;
+            this.comboBoxRest_Av.SelectedIndexChanged += new System.EventHandler(this.comboBoxRest_Av_SelectedIndexChanged);
+            // 
+            // comboBoxRest_Pr
+            // 
+            this.comboBoxRest_Pr.DropDownWidth = 352;
+            this.comboBoxRest_Pr.FormattingEnabled = true;
+            this.comboBoxRest_Pr.Location = new System.Drawing.Point(209, 328);
+            this.comboBoxRest_Pr.Name = "comboBoxRest_Pr";
+            this.comboBoxRest_Pr.Size = new System.Drawing.Size(352, 24);
+            this.comboBoxRest_Pr.TabIndex = 65;
+            this.comboBoxRest_Pr.SelectedIndexChanged += new System.EventHandler(this.comboBoxRest_Pr_SelectedIndexChanged);
+            // 
+            // comboBoxRest_Fr
+            // 
+            this.comboBoxRest_Fr.DropDownWidth = 352;
+            this.comboBoxRest_Fr.FormattingEnabled = true;
+            this.comboBoxRest_Fr.Location = new System.Drawing.Point(209, 303);
+            this.comboBoxRest_Fr.Name = "comboBoxRest_Fr";
+            this.comboBoxRest_Fr.Size = new System.Drawing.Size(352, 24);
+            this.comboBoxRest_Fr.TabIndex = 64;
+            this.comboBoxRest_Fr.SelectedIndexChanged += new System.EventHandler(this.comboBoxRest_Fr_SelectedIndexChanged);
+            // 
+            // comboBoxInit_Av
+            // 
+            this.comboBoxInit_Av.DropDownWidth = 352;
+            this.comboBoxInit_Av.FormattingEnabled = true;
+            this.comboBoxInit_Av.Location = new System.Drawing.Point(209, 103);
+            this.comboBoxInit_Av.Name = "comboBoxInit_Av";
+            this.comboBoxInit_Av.Size = new System.Drawing.Size(352, 24);
+            this.comboBoxInit_Av.TabIndex = 63;
+            this.comboBoxInit_Av.SelectedIndexChanged += new System.EventHandler(this.comboBoxInit_Av_SelectedIndexChanged);
+            // 
+            // comboBoxRest_Se
+            // 
+            this.comboBoxRest_Se.DropDownWidth = 352;
+            this.comboBoxRest_Se.FormattingEnabled = true;
+            this.comboBoxRest_Se.Location = new System.Drawing.Point(209, 275);
+            this.comboBoxRest_Se.Name = "comboBoxRest_Se";
+            this.comboBoxRest_Se.Size = new System.Drawing.Size(352, 24);
+            this.comboBoxRest_Se.TabIndex = 62;
+            this.comboBoxRest_Se.SelectedIndexChanged += new System.EventHandler(this.comboBoxRest_Se_SelectedIndexChanged);
+            // 
+            // comboBoxInit_Pr
+            // 
+            this.comboBoxInit_Pr.DropDownWidth = 352;
+            this.comboBoxInit_Pr.FormattingEnabled = true;
+            this.comboBoxInit_Pr.Location = new System.Drawing.Point(209, 75);
+            this.comboBoxInit_Pr.Name = "comboBoxInit_Pr";
+            this.comboBoxInit_Pr.Size = new System.Drawing.Size(352, 24);
+            this.comboBoxInit_Pr.TabIndex = 61;
+            this.comboBoxInit_Pr.SelectedIndexChanged += new System.EventHandler(this.comboBoxInit_Pr_SelectedIndexChanged);
+            // 
+            // comboBoxInit_Fr
+            // 
+            this.comboBoxInit_Fr.DropDownWidth = 352;
+            this.comboBoxInit_Fr.FormattingEnabled = true;
+            this.comboBoxInit_Fr.Location = new System.Drawing.Point(209, 47);
+            this.comboBoxInit_Fr.Name = "comboBoxInit_Fr";
+            this.comboBoxInit_Fr.Size = new System.Drawing.Size(352, 24);
+            this.comboBoxInit_Fr.TabIndex = 60;
+            this.comboBoxInit_Fr.SelectedIndexChanged += new System.EventHandler(this.comboBoxInit_Fr_SelectedIndexChanged);
+            // 
+            // comboBoxInit_Se
+            // 
+            this.comboBoxInit_Se.DropDownWidth = 352;
+            this.comboBoxInit_Se.FormattingEnabled = true;
+            this.comboBoxInit_Se.Location = new System.Drawing.Point(209, 19);
+            this.comboBoxInit_Se.Name = "comboBoxInit_Se";
+            this.comboBoxInit_Se.Size = new System.Drawing.Size(352, 24);
+            this.comboBoxInit_Se.TabIndex = 59;
+            this.comboBoxInit_Se.SelectedIndexChanged += new System.EventHandler(this.comboBoxInit_Se_SelectedIndexChanged);
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(37, 440);
+            this.label17.Location = new System.Drawing.Point(37, 415);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(83, 17);
             this.label17.TabIndex = 58;
@@ -362,7 +442,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(37, 412);
+            this.label16.Location = new System.Drawing.Point(37, 387);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(57, 17);
             this.label16.TabIndex = 57;
@@ -371,7 +451,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(37, 384);
+            this.label15.Location = new System.Drawing.Point(37, 359);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(61, 17);
             this.label15.TabIndex = 56;
@@ -380,7 +460,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(37, 356);
+            this.label14.Location = new System.Drawing.Point(37, 331);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(59, 17);
             this.label14.TabIndex = 55;
@@ -389,7 +469,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(37, 328);
+            this.label13.Location = new System.Drawing.Point(37, 303);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(58, 17);
             this.label13.TabIndex = 54;
@@ -398,7 +478,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(37, 300);
+            this.label12.Location = new System.Drawing.Point(37, 275);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(62, 17);
             this.label12.TabIndex = 53;
@@ -407,7 +487,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(37, 194);
+            this.label11.Location = new System.Drawing.Point(37, 169);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(72, 17);
             this.label11.TabIndex = 52;
@@ -416,7 +496,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(37, 156);
+            this.label10.Location = new System.Drawing.Point(37, 131);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(46, 17);
             this.label10.TabIndex = 51;
@@ -425,7 +505,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(37, 128);
+            this.label9.Location = new System.Drawing.Point(37, 103);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(50, 17);
             this.label9.TabIndex = 50;
@@ -434,7 +514,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(37, 100);
+            this.label8.Location = new System.Drawing.Point(37, 75);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(48, 17);
             this.label8.TabIndex = 49;
@@ -443,7 +523,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(37, 72);
+            this.label7.Location = new System.Drawing.Point(37, 47);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(47, 17);
             this.label7.TabIndex = 48;
@@ -452,7 +532,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(37, 44);
+            this.label6.Location = new System.Drawing.Point(37, 19);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(51, 17);
             this.label6.TabIndex = 47;
@@ -460,7 +540,7 @@
             // 
             // textBoxInit_Av
             // 
-            this.textBoxInit_Av.Location = new System.Drawing.Point(144, 128);
+            this.textBoxInit_Av.Location = new System.Drawing.Point(144, 103);
             this.textBoxInit_Av.Name = "textBoxInit_Av";
             this.textBoxInit_Av.Size = new System.Drawing.Size(59, 22);
             this.textBoxInit_Av.TabIndex = 46;
@@ -468,7 +548,7 @@
             // 
             // textBoxInit_Pr
             // 
-            this.textBoxInit_Pr.Location = new System.Drawing.Point(144, 100);
+            this.textBoxInit_Pr.Location = new System.Drawing.Point(144, 75);
             this.textBoxInit_Pr.Name = "textBoxInit_Pr";
             this.textBoxInit_Pr.Size = new System.Drawing.Size(59, 22);
             this.textBoxInit_Pr.TabIndex = 45;
@@ -476,7 +556,7 @@
             // 
             // textBoxRest_Av
             // 
-            this.textBoxRest_Av.Location = new System.Drawing.Point(144, 384);
+            this.textBoxRest_Av.Location = new System.Drawing.Point(144, 359);
             this.textBoxRest_Av.Name = "textBoxRest_Av";
             this.textBoxRest_Av.Size = new System.Drawing.Size(59, 22);
             this.textBoxRest_Av.TabIndex = 44;
@@ -484,7 +564,7 @@
             // 
             // textBoxRest_Pr
             // 
-            this.textBoxRest_Pr.Location = new System.Drawing.Point(144, 356);
+            this.textBoxRest_Pr.Location = new System.Drawing.Point(144, 331);
             this.textBoxRest_Pr.Name = "textBoxRest_Pr";
             this.textBoxRest_Pr.Size = new System.Drawing.Size(59, 22);
             this.textBoxRest_Pr.TabIndex = 43;
@@ -493,7 +573,7 @@
             // textBoxInit_Risico
             // 
             this.textBoxInit_Risico.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxInit_Risico.Location = new System.Drawing.Point(144, 194);
+            this.textBoxInit_Risico.Location = new System.Drawing.Point(144, 169);
             this.textBoxInit_Risico.Name = "textBoxInit_Risico";
             this.textBoxInit_Risico.ReadOnly = true;
             this.textBoxInit_Risico.Size = new System.Drawing.Size(59, 22);
@@ -501,7 +581,7 @@
             // 
             // textBoxInitRisico_Comment
             // 
-            this.textBoxInitRisico_Comment.Location = new System.Drawing.Point(567, 194);
+            this.textBoxInitRisico_Comment.Location = new System.Drawing.Point(567, 169);
             this.textBoxInitRisico_Comment.Name = "textBoxInitRisico_Comment";
             this.textBoxInitRisico_Comment.Size = new System.Drawing.Size(592, 22);
             this.textBoxInitRisico_Comment.TabIndex = 41;
@@ -509,7 +589,7 @@
             // textBoxRest_Risico
             // 
             this.textBoxRest_Risico.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxRest_Risico.Location = new System.Drawing.Point(144, 440);
+            this.textBoxRest_Risico.Location = new System.Drawing.Point(144, 415);
             this.textBoxRest_Risico.Name = "textBoxRest_Risico";
             this.textBoxRest_Risico.ReadOnly = true;
             this.textBoxRest_Risico.Size = new System.Drawing.Size(59, 22);
@@ -517,7 +597,7 @@
             // 
             // textBoxRest_Risico_Comment
             // 
-            this.textBoxRest_Risico_Comment.Location = new System.Drawing.Point(567, 440);
+            this.textBoxRest_Risico_Comment.Location = new System.Drawing.Point(567, 415);
             this.textBoxRest_Risico_Comment.Name = "textBoxRest_Risico_Comment";
             this.textBoxRest_Risico_Comment.Size = new System.Drawing.Size(592, 22);
             this.textBoxRest_Risico_Comment.TabIndex = 38;
@@ -525,7 +605,7 @@
             // textBoxRest_Cl
             // 
             this.textBoxRest_Cl.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxRest_Cl.Location = new System.Drawing.Point(144, 412);
+            this.textBoxRest_Cl.Location = new System.Drawing.Point(144, 387);
             this.textBoxRest_Cl.Name = "textBoxRest_Cl";
             this.textBoxRest_Cl.ReadOnly = true;
             this.textBoxRest_Cl.Size = new System.Drawing.Size(59, 22);
@@ -533,7 +613,7 @@
             // 
             // textBoxRest_Cl_Comment
             // 
-            this.textBoxRest_Cl_Comment.Location = new System.Drawing.Point(567, 412);
+            this.textBoxRest_Cl_Comment.Location = new System.Drawing.Point(567, 387);
             this.textBoxRest_Cl_Comment.Name = "textBoxRest_Cl_Comment";
             this.textBoxRest_Cl_Comment.Size = new System.Drawing.Size(592, 22);
             this.textBoxRest_Cl_Comment.TabIndex = 35;
@@ -541,7 +621,7 @@
             // textBoxInit_Cl
             // 
             this.textBoxInit_Cl.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxInit_Cl.Location = new System.Drawing.Point(144, 156);
+            this.textBoxInit_Cl.Location = new System.Drawing.Point(144, 131);
             this.textBoxInit_Cl.Name = "textBoxInit_Cl";
             this.textBoxInit_Cl.ReadOnly = true;
             this.textBoxInit_Cl.Size = new System.Drawing.Size(59, 22);
@@ -549,28 +629,28 @@
             // 
             // textBoxInit_Cl_Comment
             // 
-            this.textBoxInit_Cl_Comment.Location = new System.Drawing.Point(567, 156);
+            this.textBoxInit_Cl_Comment.Location = new System.Drawing.Point(567, 131);
             this.textBoxInit_Cl_Comment.Name = "textBoxInit_Cl_Comment";
             this.textBoxInit_Cl_Comment.Size = new System.Drawing.Size(592, 22);
             this.textBoxInit_Cl_Comment.TabIndex = 32;
             // 
             // textBoxRest_Av_Comment
             // 
-            this.textBoxRest_Av_Comment.Location = new System.Drawing.Point(567, 384);
+            this.textBoxRest_Av_Comment.Location = new System.Drawing.Point(567, 359);
             this.textBoxRest_Av_Comment.Name = "textBoxRest_Av_Comment";
             this.textBoxRest_Av_Comment.Size = new System.Drawing.Size(592, 22);
             this.textBoxRest_Av_Comment.TabIndex = 30;
             // 
             // textBoxRest_Pr_Comment
             // 
-            this.textBoxRest_Pr_Comment.Location = new System.Drawing.Point(567, 356);
+            this.textBoxRest_Pr_Comment.Location = new System.Drawing.Point(567, 331);
             this.textBoxRest_Pr_Comment.Name = "textBoxRest_Pr_Comment";
             this.textBoxRest_Pr_Comment.Size = new System.Drawing.Size(592, 22);
             this.textBoxRest_Pr_Comment.TabIndex = 29;
             // 
             // textBoxRest_Fr
             // 
-            this.textBoxRest_Fr.Location = new System.Drawing.Point(144, 328);
+            this.textBoxRest_Fr.Location = new System.Drawing.Point(144, 303);
             this.textBoxRest_Fr.Name = "textBoxRest_Fr";
             this.textBoxRest_Fr.Size = new System.Drawing.Size(59, 22);
             this.textBoxRest_Fr.TabIndex = 26;
@@ -578,133 +658,35 @@
             // 
             // textBoxRest_Fr_Comment
             // 
-            this.textBoxRest_Fr_Comment.Location = new System.Drawing.Point(567, 328);
+            this.textBoxRest_Fr_Comment.Location = new System.Drawing.Point(567, 303);
             this.textBoxRest_Fr_Comment.Name = "textBoxRest_Fr_Comment";
             this.textBoxRest_Fr_Comment.Size = new System.Drawing.Size(592, 22);
             this.textBoxRest_Fr_Comment.TabIndex = 25;
             // 
             // textBoxRest_Se_Comment
             // 
-            this.textBoxRest_Se_Comment.Location = new System.Drawing.Point(567, 300);
+            this.textBoxRest_Se_Comment.Location = new System.Drawing.Point(567, 275);
             this.textBoxRest_Se_Comment.Name = "textBoxRest_Se_Comment";
             this.textBoxRest_Se_Comment.Size = new System.Drawing.Size(592, 22);
             this.textBoxRest_Se_Comment.TabIndex = 23;
             // 
             // textBoxRest_Se
             // 
-            this.textBoxRest_Se.Location = new System.Drawing.Point(144, 300);
+            this.textBoxRest_Se.Location = new System.Drawing.Point(144, 275);
             this.textBoxRest_Se.Name = "textBoxRest_Se";
             this.textBoxRest_Se.Size = new System.Drawing.Size(59, 22);
             this.textBoxRest_Se.TabIndex = 24;
             this.textBoxRest_Se.TextChanged += new System.EventHandler(this.textBoxRest_Se_TextChanged);
             // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownWidth = 400;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "1 scratches, bruises that are cured by first aid or similar;",
-            "2 more severe scratches, bruises, stabbing, which require medical attention from " +
-                "professionals;",
-            "3 normally irreversible injury; it will be slightly difficult to continue work af" +
-                "ter healing;",
-            "4 irreversible injury in such a way that it will be very difficult to continue wo" +
-                "rk after healing, if possible at all."});
-            this.comboBox1.Location = new System.Drawing.Point(209, 44);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(352, 24);
-            this.comboBox1.TabIndex = 59;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.DropDownWidth = 400;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "2 interval between exposure is more than a year; ",
-            "3 interval between exposure is more than two weeks but less than or equal to a ye" +
-                "ar; ",
-            "4 interval between exposure is more than a day but less than or equal to two week" +
-                "s;",
-            "5 interval between exposure is more than an hour but less than or equal to a day",
-            "6 interval less than or equal to an hour."});
-            this.comboBox2.Location = new System.Drawing.Point(209, 72);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(352, 24);
-            this.comboBox2.TabIndex = 60;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.DropDownWidth = 400;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "1 Negligible",
-            "2 Rarely:",
-            "3 Possible:",
-            "4 Likely",
-            "5 Very high"});
-            this.comboBox3.Location = new System.Drawing.Point(209, 100);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(352, 24);
-            this.comboBox3.TabIndex = 61;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.DropDownWidth = 400;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(209, 300);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(352, 24);
-            this.comboBox4.TabIndex = 62;
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.DropDownWidth = 400;
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
-            "1 Likely",
-            "3 Possible",
-            "5 Impossible"});
-            this.comboBox5.Location = new System.Drawing.Point(209, 128);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(352, 24);
-            this.comboBox5.TabIndex = 63;
-            // 
-            // comboBox6
-            // 
-            this.comboBox6.DropDownWidth = 400;
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(209, 328);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(352, 24);
-            this.comboBox6.TabIndex = 64;
-            // 
-            // comboBox7
-            // 
-            this.comboBox7.DropDownWidth = 400;
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(209, 353);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(352, 24);
-            this.comboBox7.TabIndex = 65;
-            // 
-            // comboBox8
-            // 
-            this.comboBox8.DropDownWidth = 400;
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(209, 381);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(352, 24);
-            this.comboBox8.TabIndex = 66;
-            // 
             // IssueRisicoDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1294, 981);
+            this.ClientSize = new System.Drawing.Size(1294, 853);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
-            this.MinimumSize = new System.Drawing.Size(970, 1028);
+            this.MinimumSize = new System.Drawing.Size(970, 900);
             this.Name = "IssueRisicoDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditIssue";
@@ -777,13 +759,13 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox8;
-        private System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxRest_Av;
+        private System.Windows.Forms.ComboBox comboBoxRest_Pr;
+        private System.Windows.Forms.ComboBox comboBoxRest_Fr;
+        private System.Windows.Forms.ComboBox comboBoxInit_Av;
+        private System.Windows.Forms.ComboBox comboBoxRest_Se;
+        private System.Windows.Forms.ComboBox comboBoxInit_Pr;
+        private System.Windows.Forms.ComboBox comboBoxInit_Fr;
+        private System.Windows.Forms.ComboBox comboBoxInit_Se;
     }
 }

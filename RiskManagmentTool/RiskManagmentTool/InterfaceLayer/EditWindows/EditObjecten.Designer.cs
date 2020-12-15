@@ -42,7 +42,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBoxIssuesToVerify = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.buttonExportToExcel = new System.Windows.Forms.Button();
@@ -58,14 +57,16 @@
             this.label8 = new System.Windows.Forms.Label();
             this.comboBoxFilterIssues = new System.Windows.Forms.ComboBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.buttonSaveObjectNotes = new System.Windows.Forms.Button();
             this.textBoxObjectNotes = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
+            this.checkedListBoxRisicograaf = new System.Windows.Forms.CheckedListBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.buttonIssuesOplossen = new System.Windows.Forms.Button();
             this.buttonDeleteGevaren = new System.Windows.Forms.Button();
             this.buttonAddRisico = new System.Windows.Forms.Button();
-            this.buttonSaveObjectNotes = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -78,6 +79,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridViewGekoppeldeIssues)).BeginInit();
             this.panel5.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -202,7 +204,6 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.textBoxIssuesToVerify);
-            this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(710, 3);
@@ -217,15 +218,6 @@
             this.textBoxIssuesToVerify.ReadOnly = true;
             this.textBoxIssuesToVerify.Size = new System.Drawing.Size(65, 22);
             this.textBoxIssuesToVerify.TabIndex = 7;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(37, 158);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(46, 17);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "label7";
             // 
             // label6
             // 
@@ -382,9 +374,9 @@
             this.comboBoxFilterIssues.FormattingEnabled = true;
             this.comboBoxFilterIssues.Items.AddRange(new object[] {
             "Alle issues",
-            "Onopgeloste issues",
-            "Nog te verifiëren",
-            "Nog te bespreken met klant",
+            "Issues met een te hoog rest risico",
+            "Nog te verifiëren(werkt niet)",
+            "Nog te bespreken met klant(werkt niet)",
             "Issues zonder maatregelen"});
             this.comboBoxFilterIssues.Location = new System.Drawing.Point(114, 6);
             this.comboBoxFilterIssues.Name = "comboBoxFilterIssues";
@@ -405,6 +397,16 @@
             this.tabPage2.Text = "Object informatie";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // buttonSaveObjectNotes
+            // 
+            this.buttonSaveObjectNotes.Location = new System.Drawing.Point(545, 197);
+            this.buttonSaveObjectNotes.Name = "buttonSaveObjectNotes";
+            this.buttonSaveObjectNotes.Size = new System.Drawing.Size(75, 23);
+            this.buttonSaveObjectNotes.TabIndex = 2;
+            this.buttonSaveObjectNotes.Text = "Save";
+            this.buttonSaveObjectNotes.UseVisualStyleBackColor = true;
+            this.buttonSaveObjectNotes.Click += new System.EventHandler(this.buttonSaveObjectNotes_Click);
+            // 
             // textBoxObjectNotes
             // 
             this.textBoxObjectNotes.Location = new System.Drawing.Point(27, 41);
@@ -424,12 +426,34 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.label5);
+            this.tabPage3.Controls.Add(this.checkedListBoxRisicograaf);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(1561, 415);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Instellingen";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(46, 29);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(79, 17);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Risicograaf";
+            // 
+            // checkedListBoxRisicograaf
+            // 
+            this.checkedListBoxRisicograaf.FormattingEnabled = true;
+            this.checkedListBoxRisicograaf.Items.AddRange(new object[] {
+            "SIL",
+            "PL"});
+            this.checkedListBoxRisicograaf.Location = new System.Drawing.Point(49, 59);
+            this.checkedListBoxRisicograaf.Name = "checkedListBoxRisicograaf";
+            this.checkedListBoxRisicograaf.Size = new System.Drawing.Size(151, 123);
+            this.checkedListBoxRisicograaf.TabIndex = 5;
             // 
             // panel4
             // 
@@ -472,16 +496,6 @@
             this.buttonAddRisico.UseVisualStyleBackColor = true;
             this.buttonAddRisico.Click += new System.EventHandler(this.buttonAddRisico_Click);
             // 
-            // buttonSaveObjectNotes
-            // 
-            this.buttonSaveObjectNotes.Location = new System.Drawing.Point(545, 197);
-            this.buttonSaveObjectNotes.Name = "buttonSaveObjectNotes";
-            this.buttonSaveObjectNotes.Size = new System.Drawing.Size(75, 23);
-            this.buttonSaveObjectNotes.TabIndex = 2;
-            this.buttonSaveObjectNotes.Text = "Save";
-            this.buttonSaveObjectNotes.UseVisualStyleBackColor = true;
-            this.buttonSaveObjectNotes.Click += new System.EventHandler(this.buttonSaveObjectNotes_Click);
-            // 
             // EditObjecten
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -509,6 +523,8 @@
             this.panel5.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -529,7 +545,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBoxFilterIssues;
         private System.Windows.Forms.TabControl tabControl1;
@@ -553,5 +568,7 @@
         private ADGV.AdvancedDataGridView advancedDataGridViewGekoppeldeIssues;
         private System.Windows.Forms.Button buttonClearDGVFilter;
         private System.Windows.Forms.Button buttonSaveObjectNotes;
+        private System.Windows.Forms.CheckedListBox checkedListBoxRisicograaf;
+        private System.Windows.Forms.Label label5;
     }
 }

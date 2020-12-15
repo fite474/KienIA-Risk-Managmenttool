@@ -491,22 +491,29 @@ namespace RiskManagmentTool.LogicLayer
 
 
 
-        public DataTable GetObjectIssuesByObjectName(string objectNaam)
+        public BindingSource GetObjectIssuesByObjectName(string objectNaam)
         {
             string objectId = databaseCommunication.GetObjectIdByName(objectNaam);
             SqlDataAdapter adapter = databaseCommunication.GetIssuesFromObject(objectId);
             DataTable data = new DataTable();//GetObjectIssues(objectId);//new DataTable();
             adapter.Fill(data);
-            return data;
+
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = data;
+            return bindingSource;
+            //return data;
         }
 
-        public DataTable GetTemplateIssuesByName(string templateNaam)
+        public BindingSource GetTemplateIssuesByName(string templateNaam)
         {
             string templateId = databaseCommunication.GetTemplateIdByName(templateNaam);
             SqlDataAdapter adapter = databaseCommunication.GetTemplateIssues(templateId);
             DataTable data = new DataTable();
             adapter.Fill(data);
-            return data;
+
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = data;
+            return bindingSource;
         }
 
         public DataTable GetTemplateGevarenByName(string templateNaam)
@@ -642,17 +649,24 @@ namespace RiskManagmentTool.LogicLayer
             return data;
         }
 
-        public DataTable GetTemplateIssues(string templateID)
+        public BindingSource GetTemplateIssues(string templateID)
         {
             SqlDataAdapter adapter = databaseCommunication.GetTemplateIssues(templateID);
             DataTable data = new DataTable();
             adapter.Fill(data);
-            return data;
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = data;
+            return bindingSource;
         }
 
         #endregion get tables
 
         #region get info
+
+        public List<string> GetObjectSettings(string ObjectID)
+        {
+            return databaseCommunication.GetObjectSettings(ObjectID);
+        }
 
         public string GetObjectImage(string objectID)
         {
@@ -682,6 +696,21 @@ namespace RiskManagmentTool.LogicLayer
 
         public void DeleteGevaar(string gevaarID)
         {
+            int gevaarIDInt = int.Parse(gevaarID);
+            databaseCommunication.VerwijderGevaarMulti(gevaarIDInt);
+            databaseCommunication.VerwijderGevaar_Disciplines(gevaarIDInt);
+            databaseCommunication.VerwijderGevaar_Gebruiksfases(gevaarIDInt);
+            databaseCommunication.VerwijderGevaar_Bedienvorm(gevaarIDInt);
+            databaseCommunication.VerwijderGevaar_Gebruiker(gevaarIDInt);
+            databaseCommunication.VerwijderGevaar_GevaarlijkeZone(gevaarIDInt);
+            databaseCommunication.VerwijderGevaar_Taak(gevaarIDInt);
+            databaseCommunication.VerwijderGevaar_GevaarType(gevaarIDInt);
+            databaseCommunication.VerwijderGevaar_Gevolg(gevaarIDInt);
+        }
+
+        public void DeleteMaatregel(string maatregelID)
+        {
+
 
         }
         #endregion delete
@@ -689,7 +718,7 @@ namespace RiskManagmentTool.LogicLayer
 
         public void AddGevaarToTemplate(string templateId, string gevaarId)
         {
-            databaseCommunication.AddGevaarToTemplate(templateId, gevaarId);
+            //databaseCommunication.AddGevaarToTemplate(templateId, gevaarId);
 
         }
         public void AddIssueToTemplate(string templateId, string issueId)
@@ -820,7 +849,14 @@ namespace RiskManagmentTool.LogicLayer
             return data;
 
         }
+        public DataTable GetMaatregelenUsage(string maatregelID)
+        {
+            SqlDataAdapter adapter = databaseCommunication.GetMaatregelenUsage(maatregelID);
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            return data;
 
+        }
 
         public DataTable CheckUsageFromMenu(MenuTableName menuTableName, string optionToCheck)
         {

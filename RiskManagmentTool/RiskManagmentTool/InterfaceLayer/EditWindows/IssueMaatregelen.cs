@@ -28,6 +28,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private string Situatie;
         private string Gebeurtenis;
 
+        private int RisicograafSetting; //0 = SIL 1 = pl
+
         private bool ReadOnlyMode;
 
 
@@ -68,12 +70,6 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
 
 
-
-            //textBoxInit_Risico.Text = init_Risico;
-            //textBoxInit_Risico_Comment.Text = init_Risico_Beschrijving;
-            //textBoxRest_Risico.Text = rest_Risico;
-            //textBoxRest_Risico_Comment.Text = rest_Risico_Beschrijving;
-
             checkBoxIssueOK.Checked = comunicator.GetIssueState(IssueID) == "1";
 
             DataTable risicoBeoordelingData = comunicator.GetRisicoBeoordelingFromIssue(IssueID);
@@ -93,7 +89,21 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         {
             LoadRisicoBeoordelingDetails();
             dataGridViewIssueMaatregelen.DataSource = comunicator.GetIssueMaatregelen(IssueID);
+
+
+            List<string> objectSettings = comunicator.GetObjectSettings(ObjectID);
+            string risicograaf = objectSettings[0];
+            if (risicograaf.Equals("0"))
+            {
+                RisicograafSetting = 0;
+            }
+            else if (risicograaf.Equals("1"))
+            {
+                RisicograafSetting = 1;
+            }
+
             
+
         }
 
         private void LoadRisicoBeoordelingDetails()
@@ -137,7 +147,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void buttonRisicoDetails_Click(object sender, EventArgs e)
         {
-            IssueRisicoDetails issueRisicoDetails = new IssueRisicoDetails(IssueID);
+            IssueRisicoDetails issueRisicoDetails = new IssueRisicoDetails(IssueID, RisicograafSetting);
             if (ReadOnlyMode)
             {
                 issueRisicoDetails.SetReadOnlyMode();

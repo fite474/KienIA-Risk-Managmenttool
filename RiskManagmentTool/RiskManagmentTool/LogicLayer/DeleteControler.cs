@@ -40,7 +40,7 @@ namespace RiskManagmentTool.LogicLayer
 
                 if (result == DialogResult.Yes)
                 {
-                    //this.Close();
+                    comunicator.DeleteGevaar(gevaarID);
                 }
                 else
                 {
@@ -70,9 +70,52 @@ namespace RiskManagmentTool.LogicLayer
 
         }
 
-        public void DeleteMaatregelFromDatabase()
+        public void DeleteMaatregelFromDatabase(string maatregelID)
         {
+            DataTable maatregelData = comunicator.GetMaatregelenUsage(maatregelID);
+            int indexHelper = 0;
+            foreach (DataRow row in maatregelData.Rows)
+            {
+                string dataIssueID = maatregelData.Rows[indexHelper].Field<int?>(0).ToString();
+                string dataMaatregelID = maatregelData.Rows[indexHelper].Field<int?>(1).ToString();
+                Console.WriteLine("issue: " + dataIssueID);
+                Console.WriteLine("maatregel: " + dataMaatregelID);
+                indexHelper++;
+            }
 
+            if (indexHelper == 0)
+            {
+                string message = "Weet u zeker dat u deze maatregel wilt verwijderen?";
+                string title = "Reminder Risico waardes";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show(message, title, buttons);
+
+                if (result == DialogResult.Yes)
+                {
+                    comunicator.DeleteGevaar(maatregelID);
+                }
+                else
+                {
+
+                }
+                Console.WriteLine("veilig om te verwijderen ");
+            }
+            else
+            {
+                string message = "Dit gevaar is in gebruik bij een issue";
+                string title = "Reminder Risico waardes";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result = MessageBox.Show(message, title, buttons);
+
+                if (result == DialogResult.Yes)
+                {
+                    //this.Close();
+                }
+                else
+                {
+
+                }
+            }
 
         }
 

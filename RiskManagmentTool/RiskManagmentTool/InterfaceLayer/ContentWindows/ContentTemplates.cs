@@ -39,12 +39,21 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 
         private void dataGridViewTemplates_DoubleClick(object sender, EventArgs e)
         {
-            string templateId = dataGridViewTemplates.SelectedRows[0].Cells[0].Value.ToString();
-            //string ObjectType = dataGridViewGekoppeldeIssues.SelectedRows[0].Cells[1].Value.ToString();
-            //string ObjectBeschrijving = dataGridViewGekoppeldeIssues.SelectedRows[0].Cells[2].Value.ToString();
+            try
+            {
+                string templateId = dataGridViewTemplates.SelectedRows[0].Cells[0].Value.ToString();
+                //string ObjectType = dataGridViewGekoppeldeIssues.SelectedRows[0].Cells[1].Value.ToString();
+                //string ObjectBeschrijving = dataGridViewGekoppeldeIssues.SelectedRows[0].Cells[2].Value.ToString();
 
-            Form editTemplates = new EditTemplates(templateId);
-            editTemplates.Show();
+                Form editTemplates = new EditTemplates(templateId);
+                editTemplates.Show();
+            }
+            catch (Exception err)
+            {
+
+                Console.WriteLine(err);
+            }
+
             
         }
 

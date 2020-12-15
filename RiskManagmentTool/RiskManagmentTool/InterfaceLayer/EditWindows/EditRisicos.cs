@@ -85,16 +85,10 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             editGevaarID = gevaarID;
             LoadData();
             LoadGevaarData(gevaarID);
+            LoadTextFirstOpen();
             buttonKeuzeOption.Enabled = false;
             listboxActive = false;
-            //LoadEmptyGevaarData();
-
-            //textBoxGevGebeurtenis.Text = riskBeschrijving;
-            //textBoxGevSituatie.Text = riskGevolg;
-            //textBoxDiscipline.Text = riskDicipline;
-            //textBoxGebruiksfase.Text = riskGebruiksfase;
-            //textBoxBedienvorm.Text = riskGebruiker;
-            //textBoxRiskGevarenzone.Text = riskGevarenzone;
+            
         }
 
         private void LoadData()
@@ -157,6 +151,76 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             gebeurtenisInitString = textBoxGevGebeurtenis.Text;
 
 
+        }
+
+        private void LoadTextFirstOpen()
+        {
+            string textToShow = "";
+            foreach (KeyValuePair<int, int> kvp in GevolgenCheckedItems)
+            {
+                GevolgenItems_DBIndex.TryGetValue(kvp.Value, out string text);
+                textToShow += text + ";  ";
+                    
+            }
+            textBoxGevolg.Text = textToShow;
+            textToShow = "";
+            foreach (KeyValuePair<int, int> kvp in GevarenzonesCheckedItems)
+            {
+                GevarenzonesItems_DBIndex.TryGetValue(kvp.Value, out string text);
+                textToShow += text + ";  ";
+
+            }
+            textBoxGevaarlijkeZone.Text = textToShow;
+            textToShow = "";
+            foreach (KeyValuePair<int, int> kvp in GevaarTypesCheckedItems)
+            {
+                GevaarTypesItems_DBIndex.TryGetValue(kvp.Value, out string text);
+                textToShow += text + ";  ";
+
+            }
+            textBoxGevaar.Text = textToShow;
+            textToShow = "";
+            foreach (KeyValuePair<int, int> kvp in GebruiksfaseCheckedItems)
+            {
+                GebruiksfaseItems_DBIndex.TryGetValue(kvp.Value, out string text);
+                textToShow += text + ";  ";
+
+            }
+            textBoxGebruiksfase.Text = textToShow;
+            textToShow = "";
+            foreach (KeyValuePair<int, int> kvp in GebruikersCheckedItems)
+            {
+                GebruikersItems_DBIndex.TryGetValue(kvp.Value, out string text);
+                textToShow += text + ";  ";
+
+            }
+            textBoxGebruiker.Text = textToShow;
+            textToShow = "";
+            foreach (KeyValuePair<int, int> kvp in DisciplinesCheckedItems)
+            {
+                DisciplinesItems_DBIndex.TryGetValue(kvp.Value, out string text);
+                textToShow += text + ";  ";
+
+            }
+            textBoxDiscipline.Text = textToShow;
+            textToShow = "";
+            foreach (KeyValuePair<int, int> kvp in BedienvormenCheckedItems)
+            {
+                BedienvormenItems_DBIndex.TryGetValue(kvp.Value, out string text);
+                textToShow += text + ";  ";
+
+            }
+            textBoxBedienvorm.Text = textToShow;
+            textToShow = "";
+            foreach (KeyValuePair<int, int> kvp in TakenCheckedItems)
+            {
+                TakenItems_DBIndex.TryGetValue(kvp.Value, out string text);
+                textToShow += text + ";  ";
+
+            }
+            textBoxTaak.Text = textToShow;
+            textToShow = "";
+            Cursor.Current = Cursors.Default;
         }
 
 
@@ -292,7 +356,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         //}
 
-
+        #region button menu
 
         private void buttonDisciplines_Click(object sender, EventArgs e)
         {
@@ -358,6 +422,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             MenuTableName = MenuTableName.Gevolgen;
             UpdateState();
         }
+
+        #endregion button menu
 
         private void checkedListBoxOptions_ItemCheck(object sender, ItemCheckEventArgs e)
         {

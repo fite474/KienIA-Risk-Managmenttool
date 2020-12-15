@@ -31,22 +31,33 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
         private void dataGridViewObjecten_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            string objectId = comunicator.GetObjectIdByName(dataGridViewObjecten.SelectedRows[0].Cells[1].Value.ToString());
 
-
-            if (!objectId.Equals("0"))
+            try
             {
-                List<string> objectInfo = comunicator.GetObjectInfo(objectId);
-                string projectId = objectInfo[0];
-                string projectNaam = objectInfo[1];
-                string objectNaam = objectInfo[2];
-                string objectType = objectInfo[3];
-                string objectOmschrijving = objectInfo[4];
-                Form editObject = new EditObjecten(objectId, projectNaam, objectNaam, objectType, objectOmschrijving);
-                editObject.Show();
+                string objectId = comunicator.GetObjectIdByName(dataGridViewObjecten.SelectedRows[0].Cells[1].Value.ToString());
 
+
+                if (!objectId.Equals("0"))
+                {
+                    List<string> objectInfo = comunicator.GetObjectInfo(objectId);
+                    string projectId = objectInfo[0];
+                    string projectNaam = objectInfo[1];
+                    string objectNaam = objectInfo[2];
+                    string objectType = objectInfo[3];
+                    string objectOmschrijving = objectInfo[4];
+                    Form editObject = new EditObjecten(objectId, projectNaam, objectNaam, objectType, objectOmschrijving);
+                    editObject.Show();
+
+
+                }
+            }
+            catch (Exception err)
+            {
+
+                Console.WriteLine(err);
 
             }
+            
 
         }
 

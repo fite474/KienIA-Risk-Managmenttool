@@ -79,6 +79,8 @@
             this.dataGridViewIssueMaatregelen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewIssueMaatregelen.Size = new System.Drawing.Size(959, 365);
             this.dataGridViewIssueMaatregelen.TabIndex = 1;
+            this.dataGridViewIssueMaatregelen.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewIssueMaatregelen_DataBindingComplete);
+            this.dataGridViewIssueMaatregelen.SelectionChanged += new System.EventHandler(this.dataGridViewIssueMaatregelen_SelectionChanged);
             // 
             // panel2
             // 
@@ -105,6 +107,7 @@
             this.buttonDeleteSelection.TabIndex = 3;
             this.buttonDeleteSelection.Text = "Verwijder selectie";
             this.buttonDeleteSelection.UseVisualStyleBackColor = true;
+            this.buttonDeleteSelection.Click += new System.EventHandler(this.buttonDeleteSelection_Click);
             // 
             // DeleteGekoppeldeMaatregelen
             // 

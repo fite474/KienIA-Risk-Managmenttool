@@ -591,6 +591,17 @@ namespace RiskManagmentTool.DataLayer
         }
 
         #region delete gevaar data
+        public void VerwijderGevaarMulti(int gevaarID)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("DELETE FROM TableGevaarMulti WHERE GevaarID = @GevaarID", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@GevaarID", gevaarID);
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+
+
         public void VerwijderGevaar_Disciplines(int gevaarID)
         {
             sqlConnection.Open();
@@ -1171,6 +1182,30 @@ namespace RiskManagmentTool.DataLayer
         #endregion get ID
 
         #region get info
+        public List<string> GetObjectSettings(string objectID)
+        {
+            List<string> objectSettings = new List<string>();
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT TableObjectSettings.Risicograaf " +
+                                            "FROM TableObjectSettings " +
+                                            "WHERE TableObjectSettings.ObjectID = '" + objectID + "' ", sqlConnection);
+
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    objectSettings.Add((dr[0]).ToString());
+                    //objectSettings.Add((dr[1]).ToString());
+                    //objectSettings.Add((dr[2]).ToString());
+                    //objectSettings.Add((dr[3]).ToString());
+                }
+            }
+            sqlConnection.Close();
+
+
+            return objectSettings;
+        }
+
         public List<string> GetIssuesInfo(string issueID)
         {//Error. moet aan gewerkt worden. verkeerde db table gebruikt
             
@@ -1806,7 +1841,23 @@ namespace RiskManagmentTool.DataLayer
             return adapter;
 
         }
+        public SqlDataAdapter GetMaatregelenUsage(string maatregelID)
+        {
+            //List<string> usage = new List<string>();
 
+            sqlConnection.Open();
+            //SqlCommand cmd = new SqlCommand("SELECT View_ObjectIssues.IssueID, View_ObjectIssues.GevaarID " +
+            //                                "FROM View_ObjectIssues " +
+            //                                "WHERE View_ObjectIssues.GevaarID = '" + gevaarID + "' ", sqlConnection);
+
+            String query = "SELECT TableIssueMaatregelen.IssueID, TableIssueMaatregelen.MaatregelID " +
+                                            "FROM TableIssueMaatregelen " +
+                                            "WHERE TableIssueMaatregelen.MaatregelID = '" + maatregelID + "' ";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
+            sqlConnection.Close();
+            return adapter;
+
+        }
 
 
 

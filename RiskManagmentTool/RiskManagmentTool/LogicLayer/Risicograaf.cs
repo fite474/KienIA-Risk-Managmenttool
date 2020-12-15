@@ -13,7 +13,7 @@ namespace RiskManagmentTool.LogicLayer
 
         }
 
-        private int HazardLevel(int seValue, int clValue)
+        private int HazardLevelSil(int seValue, int clValue)
         {
             int colorValue = 1;//1 = green, 10 = yellow, 100 = red
             int restRiskValue = seValue * clValue;
@@ -144,13 +144,138 @@ namespace RiskManagmentTool.LogicLayer
 
 
             int cl = (fr + pr + av);
-            int risk = HazardLevel(se, cl);
+            int risk = HazardLevelSil(se, cl);
             return new Tuple<int, int>(cl, risk);
         }
 
-        public void CalculatePlMode()
+        private int HazardLevelPl(int seValue, int clValue)
+        {
+            int colorValue = 1;//1 = green, 10 = yellow, 100 = red
+            int restRiskValue = seValue * clValue;
+            switch (seValue)
+            {
+                case 1:
+                    if (3 <= clValue && clValue <= 4)
+                    {
+                        Console.WriteLine(restRiskValue.ToString());
+                    }
+                    else if (5 <= clValue && clValue <= 7)
+                    {
+                        Console.WriteLine(restRiskValue.ToString());
+                    }
+                    else if (8 <= clValue && clValue <= 10)
+                    {
+                        Console.WriteLine(restRiskValue.ToString());
+                    }
+                    else if (11 <= clValue && clValue <= 13)//grijs
+                    {
+                        colorValue = 10;
+                        Console.WriteLine("grijs: " + restRiskValue.ToString());
+
+                    }
+                    else if (14 <= clValue && clValue <= 15)//zwart
+                    {
+                        colorValue = 100;
+                        Console.WriteLine("zwart: " + restRiskValue.ToString());
+                    }
+                    break;
+                case 2:
+                    if (3 <= clValue && clValue <= 4)
+                    {
+                        Console.WriteLine(restRiskValue.ToString());
+                    }
+                    else if (5 <= clValue && clValue <= 7)
+                    {
+                        Console.WriteLine("wit: " + restRiskValue.ToString());
+                    }
+                    else if (8 <= clValue && clValue <= 10)//grijs
+                    {
+                        colorValue = 10;
+                        Console.WriteLine("grijs: " + restRiskValue.ToString());
+                    }
+                    else if (11 <= clValue && clValue <= 13)//zwart
+                    {
+                        colorValue = 100;
+                        Console.WriteLine("zwart: " + restRiskValue.ToString());
+                    }
+                    else if (14 <= clValue && clValue <= 15)//zwart
+                    {
+                        colorValue = 100;
+                        Console.WriteLine("zwart: " + restRiskValue.ToString());
+                    }
+
+                    break;
+                case 3:
+                    if (3 <= clValue && clValue <= 4)
+                    {
+                        Console.WriteLine(restRiskValue.ToString());
+                    }
+                    else if (5 <= clValue && clValue <= 7)//grijs
+                    {
+                        colorValue = 10;
+                        Console.WriteLine("grijs" + restRiskValue.ToString());
+                    }
+                    else if (8 <= clValue && clValue <= 10)//zwart
+                    {
+                        colorValue = 100;
+                        Console.WriteLine("zwart: " + restRiskValue.ToString());
+                    }
+                    else if (11 <= clValue && clValue <= 13)//zwart
+                    {
+                        colorValue = 100;
+                        Console.WriteLine("zwart: " + restRiskValue.ToString());
+                    }
+                    else if (14 <= clValue && clValue <= 15)//zwart
+                    {
+                        colorValue = 100;
+                        Console.WriteLine("zwart: " + restRiskValue.ToString());
+                    }
+
+                    break;
+                case 4:
+                    if (3 <= clValue && clValue <= 4)//grijs
+                    {
+                        colorValue = 10;
+                        Console.WriteLine("grijs: " + restRiskValue.ToString());
+                    }
+                    else if (5 <= clValue && clValue <= 7)//zwart
+                    {
+                        colorValue = 100;
+                        Console.WriteLine("zwart: " + restRiskValue.ToString());
+                    }
+                    else if (8 <= clValue && clValue <= 10)//zwart
+                    {
+                        colorValue = 100;
+                        Console.WriteLine("zwart: " + restRiskValue.ToString());
+                    }
+                    else if (11 <= clValue && clValue <= 13)//zwart
+                    {
+                        colorValue = 100;
+                        Console.WriteLine("zwart: " + restRiskValue.ToString());
+                    }
+                    else if (14 <= clValue && clValue <= 15)//zwart
+                    {
+                        colorValue = 100;
+                        Console.WriteLine("zwart: " + restRiskValue.ToString());
+                    }
+
+                    break;
+                default:
+                    break;
+            }
+            return colorValue;//restRiskValue;
+        }
+
+
+
+
+
+        public Tuple<int, int> CalculatePlMode(int se, int fr, int pr, int av)
         {
             //Risk assessment using risk graph figuur a.3
+
+
+
 
             //start : severity S1 = slightly, S2 = serious
 
@@ -172,6 +297,121 @@ namespace RiskManagmentTool.LogicLayer
             //f2 -> o2 + a1 = 4     o2 + a2 = 5
             //f2 -> o3 + a1 = 5     o3 + a2 = 6
 
+            //1 2 ok
+            //3 4 kinda
+            //5 6 bad
+            int clValue = 1;
+
+            if (se == 1)
+            {
+                if (fr == 1 || fr == 2)
+                {
+                    if (pr == 1 || pr == 2)
+                    {
+                        if (av == 1 || av == 2)
+                        {
+                            clValue = 1;
+                        }
+                    }
+                    else if (pr == 3)
+                    {
+                        if (av == 1 || av == 2)
+                        {
+                            clValue = 2;
+                        }
+                    }
+                }
+            }
+            else if (se == 2)
+            {
+                if (fr == 1)
+                {
+                    if (pr == 1)
+                    {
+                        if (av == 1 || av == 2)
+                        {
+                            clValue = 2;
+                        }
+                    }
+                    else if (pr == 2)
+                    {
+                        if (av == 1)
+                        {
+                            clValue = 2;
+                        }
+                        else if (av == 2)
+                        {
+                            clValue = 3;
+                        }
+                    }
+                    else if (pr == 3)
+                    {
+                        if (av == 1)
+                        {
+                            clValue = 3;
+                        }
+                        else if (av == 2)
+                        {
+                            clValue = 4;
+                        }
+                    }
+
+                }
+                else if (fr == 2)
+                {
+                    if (pr == 1)
+                    {
+                        if (av == 1)
+                        {
+                            clValue = 3;
+                        }
+                        else if (av == 2)
+                        {
+                            clValue = 4;
+                        }
+                    }
+                    else if (pr == 2)
+                    {
+                        if (av == 1)
+                        {
+                            clValue = 4;
+                        }
+                        else if (av == 2)
+                        {
+                            clValue = 5;
+                        }
+                    }
+                    else if (pr == 3)
+                    {
+                        if (av == 1)
+                        {
+                            clValue = 5;
+                        }
+                        else if (av == 2)
+                        {
+                            clValue = 6;
+                        }
+                    }
+
+                }
+            }
+
+            int risk = 0;//HazardLevelPl(se, cl);//(fr + pr + av);
+            if (clValue == 1 || clValue == 2)
+            {
+                risk = 1;
+            }
+            else if (clValue == 3 || clValue == 4)
+            {
+                risk = 10;
+            }
+            else if (clValue == 5 || clValue == 6)
+            {
+                risk = 100;
+            }
+
+
+            return new Tuple<int, int>(clValue, risk);
         }
     }
 }

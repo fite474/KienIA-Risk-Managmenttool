@@ -114,8 +114,8 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
             //string ObjectType = dataGridViewGekoppeldeIssues.SelectedRows[0].Cells[1].Value.ToString();
             //string ObjectBeschrijving = dataGridViewGekoppeldeIssues.SelectedRows[0].Cells[2].Value.ToString();
 
-            Form editTemplates = new EditTemplates(templateId);
-            editTemplates.Show();
+            //Form editTemplates = new EditTemplates(templateId);
+            //editTemplates.Show();
 
             //Form issueMaatregelen = new IssueMaatregelen(issueId);
             //issueMaatregelen.Show();
@@ -161,7 +161,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
             advancedDataGridViewMaatregelen.ClearSelection();
             controler.CheckIssueForDubbleMaatregelen(SelectedMaatregelId);
             SelectedMaatregelId.Clear();
-
+            this.Close();
 
             //foreach (string maatregelId in SelectedMaatregelId)
             //    {
@@ -222,6 +222,16 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
         private void advancedDataGridViewMaatregelen_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
 
+        }
+
+        private void advancedDataGridViewMaatregelen_SortStringChanged(object sender, EventArgs e)
+        {
+            this.maatregelenData.Sort = this.advancedDataGridViewMaatregelen.SortString;
+        }
+
+        private void advancedDataGridViewMaatregelen_FilterStringChanged(object sender, EventArgs e)
+        {
+            this.maatregelenData.Filter = this.advancedDataGridViewMaatregelen.FilterString;
         }
     }
 }

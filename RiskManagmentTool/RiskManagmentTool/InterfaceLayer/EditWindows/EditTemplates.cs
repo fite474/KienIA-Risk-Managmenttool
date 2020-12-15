@@ -25,6 +25,11 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private string TemplateID;
 
+
+        private BindingSource TemplateData;
+        private BindingSource AllGevarenData;
+        private BindingSource ObjectIssuesData;
+
         public EditTemplates(string templateId)
         {
             InitializeComponent();
@@ -53,10 +58,12 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             GekoppeldeGevarenId = comunicator.GetGekoppeldeGevarenFromTemplateAsList(TemplateID);
             GekoppeldeIssuesId = comunicator.GetGekoppeldeIssuesFromTemplateAsList(TemplateID);
 
-            //dataGridViewAddIssue.DataSource = comunicator.GetAllIssues();
-            dataGridViewAddGevaar.DataSource = comunicator.GetGevarenTable();
-            ReloadTemplateData();
-            //dataGridViewAddIssue.ClearSelection();
+
+            AllGevarenData = comunicator.GetGevarenTable();
+            advancedDataGridViewAllGevaren.DataSource = AllGevarenData;
+
+            ReloadTemplateData();// ????????????????????????
+
 
         }
 
@@ -78,44 +85,11 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void ReloadTemplateData()
         {
-            //dataGridViewGekoppeldeGevaren.DataSource = comunicator.GetTemplateGevaren(TemplateID);
-            dataGridViewGekoppeldeIssues.DataSource = comunicator.GetTemplateIssues(TemplateID);
+
+            TemplateData = comunicator.GetTemplateIssues(TemplateID);
+            advancedDataGridViewGekoppeldeIssues.DataSource = TemplateData;
 
         }
-
-
-
-
-
-        private void dataGridViewAddIssue_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-
-            //string issueID = dataGridViewAddIssue.SelectedRows[0].Cells[0].Value.ToString();
-            ////foreach (string selected in SelectedGevarenId)
-            ////{
-            //if (!SelectedIssuesId.Contains(issueID))
-            //{
-            //    SelectedIssuesId.Add(issueID);
-            //    //textBoxSelectedIssues.Text += issueID + ", ";
-            //}
-
-
-        }
-
-        private void dataGridViewAddGevaar_DoubleClick(object sender, EventArgs e)
-        {
-            string gevaarID = dataGridViewAddGevaar.SelectedRows[0].Cells[0].Value.ToString();
-            //foreach (string selected in SelectedGevarenId)
-            //{
-            if (!SelectedGevarenId.Contains(gevaarID))
-            {
-                SelectedGevarenId.Add(gevaarID);
-                textBoxSelectedGevaren.Text += gevaarID + ", ";
-            }
-        }
-
-
-
 
 
         private void buttonConfirmSelection_Click(object sender, EventArgs e)
@@ -131,60 +105,43 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             ReloadTemplateData();
         }
 
-        private void buttonAddSelection_Click(object sender, EventArgs e)
-        {
-            // for (int i = dataGridViewAddIssue.SelectedRows.Count - 1; i >= 0; i--)
-            // {
-            //     textBoxSelectedIssues.Text += dataGridViewAddIssue.SelectedRows[i].Cells[0].Value.ToString();
 
-            //     // ...
-            // }
-            //// = dataGridViewAddIssue.SelectedRows[0].Cells[0].Value.ToString();
-            // dataGridViewAddIssue.ClearSelection();
-        }
 
-        private void buttonVerwijderGevaren_Click(object sender, EventArgs e)
-        {
-            //foreach (DataGridViewRow row in dataGridViewGekoppeldeGevaren.SelectedRows)
-            //{
-            //    gevaarID = row.Cells[0].Value.ToString();
-            //    if (!SelectedGevarenId.Contains(gevaarID))
-            //    {
-            //        SelectedGevarenId.Add(gevaarID);
-            //    }
-            //}
-        }
+
 
         private void buttonVerwijderIssues_Click(object sender, EventArgs e)
         {
-            //foreach (DataGridViewRow row in dataGridViewGekoppeldeIssues.SelectedRows)
-            //{
-            //    gevaarID = row.Cells[0].Value.ToString();
-            //    if (!SelectedGevarenId.Contains(gevaarID))
-            //    {
-            //        SelectedGevarenId.Add(gevaarID);
-            //    }
-            //}
+
         }
 
-        private void dataGridViewAddIssue_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        private void buttonAddFromObjecten_Click(object sender, EventArgs e)
         {
-            dataGridViewAddIssue.ClearSelection();
+            string issueID = "";
+            foreach (DataGridViewRow row in advancedDataGridViewObjectIssues.SelectedRows)
+            {
+                issueID = row.Cells[0].Value.ToString();
+                SelectedIssuesId.Add(issueID);
+
+            }
+            foreach (string issueId in SelectedIssuesId)
+            {
+                comunicator.AddIssueToTemplate(TemplateID, issueId);
+            }
         }
 
-        private void dataGridViewGekoppeldeGevaren_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        private void buttonAddFromGevaren_Click(object sender, EventArgs e)
         {
-            dataGridViewGekoppeldeGevaren.ClearSelection();
-        }
-
-        private void dataGridViewGekoppeldeIssues_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            dataGridViewGekoppeldeIssues.ClearSelection();
-        }
-
-        private void dataGridViewAddGevaar_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            dataGridViewAddGevaar.ClearSelection();
+            string gevaarID = "";
+            foreach (DataGridViewRow row in advancedDataGridViewAllGevaren.SelectedRows)
+            {
+                gevaarID = row.Cells[0].Value.ToString();
+                SelectedGevarenId.Add(gevaarID);
+                
+            }
+            foreach (string gevaarId in SelectedGevarenId)
+            {
+                comunicator.AddGevaarToTemplate(TemplateID, gevaarId);
+            }
         }
     }
 }

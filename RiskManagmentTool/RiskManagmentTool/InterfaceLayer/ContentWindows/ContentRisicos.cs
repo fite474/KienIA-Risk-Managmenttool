@@ -38,7 +38,8 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
         {
             Form editRisicosForm = new EditRisicos();
 
-            editRisicosForm.Show();
+            editRisicosForm.ShowDialog();
+            LoadData();
         }
 
         //private void dataGridViewRisicos_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -110,6 +111,7 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
         {
             try
             {
+                Cursor.Current = Cursors.WaitCursor;
                 string gevaarId = advancedDataGridViewGevaren.SelectedRows[0].Cells[0].Value.ToString();
 
 

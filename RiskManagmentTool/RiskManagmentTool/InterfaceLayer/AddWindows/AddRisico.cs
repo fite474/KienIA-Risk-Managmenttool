@@ -29,6 +29,8 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
 
         private BindingSource gevarenData;
+        private BindingSource objectGevarenData;
+        private BindingSource templateGevarenData;
 
         public AddRisico(string objectNaam, string objectID)
         {
@@ -144,62 +146,83 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
         {
             string selectedTemplateName = comboBoxViewTemplate.SelectedItem.ToString();
 
-            dataGridViewTemplateViewIssues.DataSource = comunicator.GetTemplateIssuesByName(selectedTemplateName);
+            templateGevarenData = comunicator.GetTemplateIssuesByName(selectedTemplateName);
+            advancedDataGridViewTemplateViewIssues.DataSource = templateGevarenData;
+            //dataGridViewTemplateViewIssues.DataSource = comunicator.GetTemplateIssuesByName(selectedTemplateName);
 
             //dataGridViewTemplateViewGevaren.DataSource = comunicator.GetTemplateGevarenByName(selectedTemplateName);
         }
 
         private void comboBoxViewObjectNaam_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dataGridViewObjectView.DataSource = comunicator.GetObjectIssuesByObjectName(comboBoxViewObjectNaam.SelectedItem.ToString());
+            objectGevarenData = comunicator.GetObjectIssuesByObjectName(comboBoxViewObjectNaam.SelectedItem.ToString());
+            advancedDataGridViewObjectView.DataSource = objectGevarenData;
+            //dataGridViewObjectView.DataSource = comunicator.GetObjectIssuesByObjectName(comboBoxViewObjectNaam.SelectedItem.ToString());
             SelectedObjectIssueId.Clear();
         }
 
-
-
-        private void dataGridViewObjectView_DoubleClick(object sender, EventArgs e)
+        private void advancedDataGridViewObjectView_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            string issueId = dataGridViewObjectView.SelectedRows[0].Cells[viewsColumnNames.IssueIDColumn].Value.ToString();//[0].Value.ToString();
-            string situatie = dataGridViewObjectView.SelectedRows[0].Cells[viewsColumnNames.GevaarlijkeSituatieColumn].Value.ToString();
-            string gebeurtenis = dataGridViewObjectView.SelectedRows[0].Cells[viewsColumnNames.GevaarlijkeGebeurtenisColumn].Value.ToString();
+            try
+            {
+                string issueId = advancedDataGridViewObjectView.SelectedRows[0].Cells[viewsColumnNames.IssueIDColumn].Value.ToString();//[0].Value.ToString();
+                string situatie = advancedDataGridViewObjectView.SelectedRows[0].Cells[viewsColumnNames.GevaarlijkeSituatieColumn].Value.ToString();
+                string gebeurtenis = advancedDataGridViewObjectView.SelectedRows[0].Cells[viewsColumnNames.GevaarlijkeGebeurtenisColumn].Value.ToString();
 
-            string discipline = dataGridViewObjectView.SelectedRows[0].Cells[viewsColumnNames.GevaarDisciplineColumn].Value.ToString();
-            string gevaar = dataGridViewObjectView.SelectedRows[0].Cells[viewsColumnNames.GevaarGevaarTypeColumn].Value.ToString();
+                string discipline = advancedDataGridViewObjectView.SelectedRows[0].Cells[viewsColumnNames.GevaarDisciplineColumn].Value.ToString();
+                string gevaar = advancedDataGridViewObjectView.SelectedRows[0].Cells[viewsColumnNames.GevaarGevaarTypeColumn].Value.ToString();
 
-            string init_Risico = "";
-            string init_Risico_Beschrijving = "";
-            string rest_Risico = "";
-            string rest_Risico_Beschrijving = "";
+                string init_Risico = "";
+                string init_Risico_Beschrijving = "";
+                string rest_Risico = "";
+                string rest_Risico_Beschrijving = "";
 
-            IssueMaatregelen issueMaatregelen = new IssueMaatregelen(ObjectNaam, ObjectID, issueId,
-                                                         discipline, gevaar, situatie, gebeurtenis,
-                                                         init_Risico, init_Risico_Beschrijving,
-                                                         rest_Risico, rest_Risico_Beschrijving);
-            issueMaatregelen.SetReadOnlyMode();
-            issueMaatregelen.ShowDialog();
+                IssueMaatregelen issueMaatregelen = new IssueMaatregelen(ObjectNaam, ObjectID, issueId,
+                                                             discipline, gevaar, situatie, gebeurtenis,
+                                                             init_Risico, init_Risico_Beschrijving,
+                                                             rest_Risico, rest_Risico_Beschrijving);
+                issueMaatregelen.SetReadOnlyMode();
+                issueMaatregelen.ShowDialog();
+            }
+            catch (Exception err)
+            {
+
+                Console.WriteLine(err);
+            }
+           
         }
 
-        private void dataGridViewTemplateViewIssues_DoubleClick(object sender, EventArgs e)
+        private void advancedDataGridViewTemplateViewIssues_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            string issueId = dataGridViewTemplateViewIssues.SelectedRows[0].Cells[viewsColumnNames.IssueIDColumn].Value.ToString();//[0].Value.ToString();
-            string situatie = dataGridViewTemplateViewIssues.SelectedRows[0].Cells[viewsColumnNames.GevaarlijkeSituatieColumn].Value.ToString();
-            string gebeurtenis = dataGridViewTemplateViewIssues.SelectedRows[0].Cells[viewsColumnNames.GevaarlijkeGebeurtenisColumn].Value.ToString();
+            try
+            {
+                string issueId = advancedDataGridViewTemplateViewIssues.SelectedRows[0].Cells[viewsColumnNames.IssueIDColumn].Value.ToString();//[0].Value.ToString();
+                string situatie = advancedDataGridViewTemplateViewIssues.SelectedRows[0].Cells[viewsColumnNames.GevaarlijkeSituatieColumn].Value.ToString();
+                string gebeurtenis = advancedDataGridViewTemplateViewIssues.SelectedRows[0].Cells[viewsColumnNames.GevaarlijkeGebeurtenisColumn].Value.ToString();
 
-            string discipline = dataGridViewTemplateViewIssues.SelectedRows[0].Cells[viewsColumnNames.GevaarDisciplineColumn].Value.ToString();
-            string gevaar = dataGridViewTemplateViewIssues.SelectedRows[0].Cells[viewsColumnNames.GevaarGevaarTypeColumn].Value.ToString();
+                string discipline = advancedDataGridViewTemplateViewIssues.SelectedRows[0].Cells[viewsColumnNames.GevaarDisciplineColumn].Value.ToString();
+                string gevaar = advancedDataGridViewTemplateViewIssues.SelectedRows[0].Cells[viewsColumnNames.GevaarGevaarTypeColumn].Value.ToString();
 
-            string init_Risico = "";
-            string init_Risico_Beschrijving = "";
-            string rest_Risico = "";
-            string rest_Risico_Beschrijving = "";
+                string init_Risico = "";
+                string init_Risico_Beschrijving = "";
+                string rest_Risico = "";
+                string rest_Risico_Beschrijving = "";
 
-            IssueMaatregelen issueMaatregelen = new IssueMaatregelen(comboBoxViewTemplate.SelectedItem.ToString(), "", issueId,
-                                                         discipline, gevaar, situatie, gebeurtenis,
-                                                         init_Risico, init_Risico_Beschrijving,
-                                                         rest_Risico, rest_Risico_Beschrijving);
-            issueMaatregelen.SetReadOnlyMode();
-            issueMaatregelen.ShowDialog();
+                IssueMaatregelen issueMaatregelen = new IssueMaatregelen(comboBoxViewTemplate.SelectedItem.ToString(), "", issueId,
+                                                             discipline, gevaar, situatie, gebeurtenis,
+                                                             init_Risico, init_Risico_Beschrijving,
+                                                             rest_Risico, rest_Risico_Beschrijving);
+                issueMaatregelen.SetReadOnlyMode();
+                issueMaatregelen.ShowDialog();
+            }
+            catch (Exception err)
+            {
+
+                Console.WriteLine(err); ;
+            }
+           
         }
+
 
 
         private void buttonAddSingleItems_Click(object sender, EventArgs e)
@@ -236,7 +259,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
 
             string issueID = "";
-            foreach (DataGridViewRow row in dataGridViewTemplateViewIssues.SelectedRows)
+            foreach (DataGridViewRow row in advancedDataGridViewTemplateViewIssues.SelectedRows)
             {
                 issueID = row.Cells[0].Value.ToString();
 
@@ -271,7 +294,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
             //}
 
             string issueID = "";
-            foreach (DataGridViewRow row in dataGridViewObjectView.SelectedRows)
+            foreach (DataGridViewRow row in advancedDataGridViewObjectView.SelectedRows)
             {
                 issueID = row.Cells[0].Value.ToString();
                 if (!SelectedObjectIssueId.Contains(issueID))
@@ -295,16 +318,6 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
         }
 
 
-
-        private void dataGridViewTemplateViewIssues_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            dataGridViewTemplateViewIssues.ClearSelection();
-        }
-
-        private void dataGridViewObjectView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            dataGridViewObjectView.ClearSelection();
-        }
 
         private void buttonCreateNewTemplate_Click(object sender, EventArgs e)
         {
@@ -335,6 +348,15 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
         private void advancedDataGridViewLosseItems_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
+            for (int i = 0; i < (advancedDataGridViewLosseItems.ColumnCount - 1); i++)
+            {
+                advancedDataGridViewLosseItems.AutoResizeColumn((i + 1), DataGridViewAutoSizeColumnMode.AllCells);
+                if (advancedDataGridViewLosseItems.Columns[i + 1].Width > 400)
+                {
+                    advancedDataGridViewLosseItems.Columns[i + 1].Width = 400;
+                }
+            }
+
             advancedDataGridViewLosseItems.ClearSelection();
             Cursor.Current = Cursors.Default;
         }
@@ -349,16 +371,32 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
             this.gevarenData.Sort = this.advancedDataGridViewLosseItems.SortString;
         }
 
+
+
+        private void advancedDataGridViewObjectView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            advancedDataGridViewObjectView.ClearSelection();
+        }
+
+        private void advancedDataGridViewObjectView_FilterStringChanged(object sender, EventArgs e)
+        {
+            this.objectGevarenData.Filter = this.advancedDataGridViewObjectView.FilterString;
+        }
+
+        private void advancedDataGridViewObjectView_SortStringChanged(object sender, EventArgs e)
+        {
+            this.objectGevarenData.Sort = this.advancedDataGridViewObjectView.SortString;
+        }
+
         private void AddRisico_Load(object sender, EventArgs e)
         {
             gevarenData = comunicator.GetGevarenTable();
             advancedDataGridViewLosseItems.DataSource = gevarenData;
-            
-        }
 
-        private void advancedDataGridViewObjectView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
+
 
         }
+
+
     }
 }

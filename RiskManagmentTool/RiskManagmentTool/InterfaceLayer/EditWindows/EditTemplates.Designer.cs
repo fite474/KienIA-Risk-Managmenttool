@@ -34,7 +34,6 @@
             this.comboBoxTemplateToepassing = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBoxTemplateType = new System.Windows.Forms.ComboBox();
-            this.buttonImportFromObject = new System.Windows.Forms.Button();
             this.textBoxTemplateNaam = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,44 +42,45 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.buttonVerwijderGevaren = new System.Windows.Forms.Button();
-            this.dataGridViewGekoppeldeGevaren = new System.Windows.Forms.DataGridView();
             this.buttonVerwijderIssues = new System.Windows.Forms.Button();
-            this.dataGridViewGekoppeldeIssues = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.buttonConfirmSelection = new System.Windows.Forms.Button();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.dataGridViewAddGevaar = new System.Windows.Forms.DataGridView();
-            this.dataGridViewAddIssue = new System.Windows.Forms.DataGridView();
-            this.buttonSaveTemplate = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBoxSelectedGevaren = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.buttonSaveTemplate = new System.Windows.Forms.Button();
+            this.advancedDataGridViewObjectIssues = new ADGV.AdvancedDataGridView();
+            this.advancedDataGridViewAllGevaren = new ADGV.AdvancedDataGridView();
+            this.advancedDataGridViewGekoppeldeIssues = new ADGV.AdvancedDataGridView();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.buttonAddFromGevaren = new System.Windows.Forms.Button();
+            this.buttonAddFromObjecten = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGekoppeldeGevaren)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGekoppeldeIssues)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAddGevaar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAddIssue)).BeginInit();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridViewObjectIssues)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridViewAllGevaren)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridViewGekoppeldeIssues)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.buttonVerwijderGevaren);
             this.panel1.Controls.Add(this.textBoxTemplateID);
-            this.panel1.Controls.Add(this.dataGridViewGekoppeldeGevaren);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.comboBoxTemplateToepassing);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.comboBoxTemplateType);
-            this.panel1.Controls.Add(this.buttonImportFromObject);
             this.panel1.Controls.Add(this.textBoxTemplateNaam);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label2);
@@ -132,15 +132,6 @@
             this.comboBoxTemplateType.Size = new System.Drawing.Size(166, 24);
             this.comboBoxTemplateType.TabIndex = 4;
             // 
-            // buttonImportFromObject
-            // 
-            this.buttonImportFromObject.Location = new System.Drawing.Point(759, 216);
-            this.buttonImportFromObject.Name = "buttonImportFromObject";
-            this.buttonImportFromObject.Size = new System.Drawing.Size(126, 66);
-            this.buttonImportFromObject.TabIndex = 3;
-            this.buttonImportFromObject.Text = "Importeren vanuit andere template of object";
-            this.buttonImportFromObject.UseVisualStyleBackColor = true;
-            // 
             // textBoxTemplateNaam
             // 
             this.textBoxTemplateNaam.Location = new System.Drawing.Point(282, 48);
@@ -166,6 +157,7 @@
             this.label3.Size = new System.Drawing.Size(196, 17);
             this.label3.TabIndex = 1;
             this.label3.Text = "Specificaties voor dit template";
+            this.label3.Visible = false;
             // 
             // checkedListBox1
             // 
@@ -178,6 +170,7 @@
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(285, 225);
             this.checkedListBox1.TabIndex = 0;
+            this.checkedListBox1.Visible = false;
             // 
             // label2
             // 
@@ -201,50 +194,28 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(12, 312);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 306);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1148, 524);
+            this.tabControl1.Size = new System.Drawing.Size(1575, 480);
             this.tabControl1.TabIndex = 2;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.dataGridViewGekoppeldeIssues);
-            this.tabPage1.Controls.Add(this.buttonVerwijderIssues);
+            this.tabPage1.Controls.Add(this.advancedDataGridViewGekoppeldeIssues);
+            this.tabPage1.Controls.Add(this.panel3);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1140, 495);
+            this.tabPage1.Size = new System.Drawing.Size(1567, 451);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Inhoud van de template";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // buttonVerwijderGevaren
-            // 
-            this.buttonVerwijderGevaren.Location = new System.Drawing.Point(782, 109);
-            this.buttonVerwijderGevaren.Name = "buttonVerwijderGevaren";
-            this.buttonVerwijderGevaren.Size = new System.Drawing.Size(100, 46);
-            this.buttonVerwijderGevaren.TabIndex = 1;
-            this.buttonVerwijderGevaren.Text = "Verwijder selectie";
-            this.buttonVerwijderGevaren.UseVisualStyleBackColor = true;
-            this.buttonVerwijderGevaren.Click += new System.EventHandler(this.buttonVerwijderGevaren_Click);
-            // 
-            // dataGridViewGekoppeldeGevaren
-            // 
-            this.dataGridViewGekoppeldeGevaren.AllowUserToAddRows = false;
-            this.dataGridViewGekoppeldeGevaren.AllowUserToDeleteRows = false;
-            this.dataGridViewGekoppeldeGevaren.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewGekoppeldeGevaren.Location = new System.Drawing.Point(572, 3);
-            this.dataGridViewGekoppeldeGevaren.Name = "dataGridViewGekoppeldeGevaren";
-            this.dataGridViewGekoppeldeGevaren.ReadOnly = true;
-            this.dataGridViewGekoppeldeGevaren.RowTemplate.Height = 24;
-            this.dataGridViewGekoppeldeGevaren.Size = new System.Drawing.Size(204, 152);
-            this.dataGridViewGekoppeldeGevaren.TabIndex = 0;
-            this.dataGridViewGekoppeldeGevaren.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewGekoppeldeGevaren_DataBindingComplete);
-            // 
             // buttonVerwijderIssues
             // 
-            this.buttonVerwijderIssues.Location = new System.Drawing.Point(675, 99);
+            this.buttonVerwijderIssues.Location = new System.Drawing.Point(792, 27);
             this.buttonVerwijderIssues.Name = "buttonVerwijderIssues";
             this.buttonVerwijderIssues.Size = new System.Drawing.Size(108, 45);
             this.buttonVerwijderIssues.TabIndex = 1;
@@ -252,139 +223,176 @@
             this.buttonVerwijderIssues.UseVisualStyleBackColor = true;
             this.buttonVerwijderIssues.Click += new System.EventHandler(this.buttonVerwijderIssues_Click);
             // 
-            // dataGridViewGekoppeldeIssues
-            // 
-            this.dataGridViewGekoppeldeIssues.AllowUserToAddRows = false;
-            this.dataGridViewGekoppeldeIssues.AllowUserToDeleteRows = false;
-            this.dataGridViewGekoppeldeIssues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewGekoppeldeIssues.Location = new System.Drawing.Point(6, 41);
-            this.dataGridViewGekoppeldeIssues.Name = "dataGridViewGekoppeldeIssues";
-            this.dataGridViewGekoppeldeIssues.ReadOnly = true;
-            this.dataGridViewGekoppeldeIssues.RowTemplate.Height = 24;
-            this.dataGridViewGekoppeldeIssues.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewGekoppeldeIssues.Size = new System.Drawing.Size(629, 322);
-            this.dataGridViewGekoppeldeIssues.TabIndex = 0;
-            this.dataGridViewGekoppeldeIssues.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewGekoppeldeIssues_DataBindingComplete);
-            // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.textBoxSelectedGevaren);
-            this.tabPage2.Controls.Add(this.buttonConfirmSelection);
             this.tabPage2.Controls.Add(this.tabControl2);
-            this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1140, 495);
+            this.tabPage2.Size = new System.Drawing.Size(1567, 451);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Items toevoegen aan template";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // buttonConfirmSelection
-            // 
-            this.buttonConfirmSelection.Location = new System.Drawing.Point(710, 427);
-            this.buttonConfirmSelection.Name = "buttonConfirmSelection";
-            this.buttonConfirmSelection.Size = new System.Drawing.Size(103, 50);
-            this.buttonConfirmSelection.TabIndex = 1;
-            this.buttonConfirmSelection.Text = "Voeg toe aan template";
-            this.buttonConfirmSelection.UseVisualStyleBackColor = true;
-            this.buttonConfirmSelection.Click += new System.EventHandler(this.buttonConfirmSelection_Click);
             // 
             // tabControl2
             // 
             this.tabControl2.Controls.Add(this.tabPage4);
             this.tabControl2.Controls.Add(this.tabPage3);
-            this.tabControl2.Location = new System.Drawing.Point(6, 20);
+            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl2.Location = new System.Drawing.Point(3, 3);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1131, 401);
+            this.tabControl2.Size = new System.Drawing.Size(1561, 445);
             this.tabControl2.TabIndex = 0;
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.dataGridViewAddGevaar);
+            this.tabPage4.Controls.Add(this.advancedDataGridViewAllGevaren);
+            this.tabPage4.Controls.Add(this.panel4);
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1123, 372);
+            this.tabPage4.Size = new System.Drawing.Size(1553, 416);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Gevaren";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewAddGevaar
+            // tabPage3
             // 
-            this.dataGridViewAddGevaar.AllowUserToAddRows = false;
-            this.dataGridViewAddGevaar.AllowUserToDeleteRows = false;
-            this.dataGridViewAddGevaar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewAddGevaar.Location = new System.Drawing.Point(24, 34);
-            this.dataGridViewAddGevaar.Name = "dataGridViewAddGevaar";
-            this.dataGridViewAddGevaar.ReadOnly = true;
-            this.dataGridViewAddGevaar.RowTemplate.Height = 24;
-            this.dataGridViewAddGevaar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewAddGevaar.Size = new System.Drawing.Size(205, 150);
-            this.dataGridViewAddGevaar.TabIndex = 0;
-            this.dataGridViewAddGevaar.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewAddGevaar_DataBindingComplete);
-            this.dataGridViewAddGevaar.DoubleClick += new System.EventHandler(this.dataGridViewAddGevaar_DoubleClick);
-            // 
-            // dataGridViewAddIssue
-            // 
-            this.dataGridViewAddIssue.AllowUserToAddRows = false;
-            this.dataGridViewAddIssue.AllowUserToDeleteRows = false;
-            this.dataGridViewAddIssue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewAddIssue.Location = new System.Drawing.Point(337, 143);
-            this.dataGridViewAddIssue.Name = "dataGridViewAddIssue";
-            this.dataGridViewAddIssue.ReadOnly = true;
-            this.dataGridViewAddIssue.RowTemplate.Height = 24;
-            this.dataGridViewAddIssue.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewAddIssue.Size = new System.Drawing.Size(184, 94);
-            this.dataGridViewAddIssue.TabIndex = 0;
-            this.dataGridViewAddIssue.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewAddIssue_DataBindingComplete);
-            this.dataGridViewAddIssue.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewAddIssue_MouseDoubleClick);
+            this.tabPage3.Controls.Add(this.advancedDataGridViewObjectIssues);
+            this.tabPage3.Controls.Add(this.panel5);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1553, 416);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Uit objecten";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // buttonSaveTemplate
             // 
-            this.buttonSaveTemplate.Location = new System.Drawing.Point(1235, 724);
+            this.buttonSaveTemplate.Location = new System.Drawing.Point(1249, 27);
             this.buttonSaveTemplate.Name = "buttonSaveTemplate";
             this.buttonSaveTemplate.Size = new System.Drawing.Size(197, 49);
             this.buttonSaveTemplate.TabIndex = 3;
             this.buttonSaveTemplate.Text = "Save template";
             this.buttonSaveTemplate.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // advancedDataGridViewObjectIssues
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 455);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(157, 17);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Geselecteerde gevaren";
+            this.advancedDataGridViewObjectIssues.AllowUserToAddRows = false;
+            this.advancedDataGridViewObjectIssues.AllowUserToDeleteRows = false;
+            this.advancedDataGridViewObjectIssues.AutoGenerateContextFilters = true;
+            this.advancedDataGridViewObjectIssues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.advancedDataGridViewObjectIssues.DateWithTime = false;
+            this.advancedDataGridViewObjectIssues.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.advancedDataGridViewObjectIssues.Location = new System.Drawing.Point(3, 75);
+            this.advancedDataGridViewObjectIssues.Name = "advancedDataGridViewObjectIssues";
+            this.advancedDataGridViewObjectIssues.ReadOnly = true;
+            this.advancedDataGridViewObjectIssues.RowTemplate.Height = 24;
+            this.advancedDataGridViewObjectIssues.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.advancedDataGridViewObjectIssues.Size = new System.Drawing.Size(1547, 338);
+            this.advancedDataGridViewObjectIssues.TabIndex = 0;
+            this.advancedDataGridViewObjectIssues.TimeFilter = false;
             // 
-            // textBoxSelectedGevaren
+            // advancedDataGridViewAllGevaren
             // 
-            this.textBoxSelectedGevaren.Location = new System.Drawing.Point(219, 455);
-            this.textBoxSelectedGevaren.Name = "textBoxSelectedGevaren";
-            this.textBoxSelectedGevaren.Size = new System.Drawing.Size(373, 22);
-            this.textBoxSelectedGevaren.TabIndex = 6;
+            this.advancedDataGridViewAllGevaren.AllowUserToAddRows = false;
+            this.advancedDataGridViewAllGevaren.AllowUserToDeleteRows = false;
+            this.advancedDataGridViewAllGevaren.AutoGenerateContextFilters = true;
+            this.advancedDataGridViewAllGevaren.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.advancedDataGridViewAllGevaren.DateWithTime = false;
+            this.advancedDataGridViewAllGevaren.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.advancedDataGridViewAllGevaren.Location = new System.Drawing.Point(3, 75);
+            this.advancedDataGridViewAllGevaren.Name = "advancedDataGridViewAllGevaren";
+            this.advancedDataGridViewAllGevaren.ReadOnly = true;
+            this.advancedDataGridViewAllGevaren.RowTemplate.Height = 24;
+            this.advancedDataGridViewAllGevaren.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.advancedDataGridViewAllGevaren.Size = new System.Drawing.Size(1547, 338);
+            this.advancedDataGridViewAllGevaren.TabIndex = 0;
+            this.advancedDataGridViewAllGevaren.TimeFilter = false;
             // 
-            // tabPage3
+            // advancedDataGridViewGekoppeldeIssues
             // 
-            this.tabPage3.Controls.Add(this.dataGridViewAddIssue);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1123, 372);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Uit objecten";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.advancedDataGridViewGekoppeldeIssues.AllowUserToAddRows = false;
+            this.advancedDataGridViewGekoppeldeIssues.AllowUserToDeleteRows = false;
+            this.advancedDataGridViewGekoppeldeIssues.AutoGenerateContextFilters = true;
+            this.advancedDataGridViewGekoppeldeIssues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.advancedDataGridViewGekoppeldeIssues.DateWithTime = false;
+            this.advancedDataGridViewGekoppeldeIssues.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.advancedDataGridViewGekoppeldeIssues.Location = new System.Drawing.Point(3, 103);
+            this.advancedDataGridViewGekoppeldeIssues.Name = "advancedDataGridViewGekoppeldeIssues";
+            this.advancedDataGridViewGekoppeldeIssues.ReadOnly = true;
+            this.advancedDataGridViewGekoppeldeIssues.RowTemplate.Height = 24;
+            this.advancedDataGridViewGekoppeldeIssues.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.advancedDataGridViewGekoppeldeIssues.Size = new System.Drawing.Size(1561, 345);
+            this.advancedDataGridViewGekoppeldeIssues.TabIndex = 2;
+            this.advancedDataGridViewGekoppeldeIssues.TimeFilter = false;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.buttonVerwijderIssues);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1561, 100);
+            this.panel3.TabIndex = 3;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.buttonAddFromGevaren);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(3, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1547, 72);
+            this.panel4.TabIndex = 1;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.buttonAddFromObjecten);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(3, 3);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1547, 72);
+            this.panel5.TabIndex = 1;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.buttonSaveTemplate);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel6.Location = new System.Drawing.Point(0, 786);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1575, 101);
+            this.panel6.TabIndex = 4;
+            // 
+            // buttonAddFromGevaren
+            // 
+            this.buttonAddFromGevaren.Location = new System.Drawing.Point(533, 20);
+            this.buttonAddFromGevaren.Name = "buttonAddFromGevaren";
+            this.buttonAddFromGevaren.Size = new System.Drawing.Size(75, 23);
+            this.buttonAddFromGevaren.TabIndex = 0;
+            this.buttonAddFromGevaren.Text = "button1";
+            this.buttonAddFromGevaren.UseVisualStyleBackColor = true;
+            this.buttonAddFromGevaren.Click += new System.EventHandler(this.buttonAddFromGevaren_Click);
+            // 
+            // buttonAddFromObjecten
+            // 
+            this.buttonAddFromObjecten.Location = new System.Drawing.Point(626, 14);
+            this.buttonAddFromObjecten.Name = "buttonAddFromObjecten";
+            this.buttonAddFromObjecten.Size = new System.Drawing.Size(118, 52);
+            this.buttonAddFromObjecten.TabIndex = 0;
+            this.buttonAddFromObjecten.Text = "button1";
+            this.buttonAddFromObjecten.UseVisualStyleBackColor = true;
+            this.buttonAddFromObjecten.Click += new System.EventHandler(this.buttonAddFromObjecten_Click);
             // 
             // EditTemplates
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1575, 848);
-            this.Controls.Add(this.buttonSaveTemplate);
+            this.ClientSize = new System.Drawing.Size(1575, 887);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel6);
             this.Name = "EditTemplates";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditTemplates";
@@ -394,15 +402,17 @@
             this.panel2.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGekoppeldeGevaren)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGekoppeldeIssues)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             this.tabControl2.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAddGevaar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAddIssue)).EndInit();
             this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridViewObjectIssues)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridViewAllGevaren)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridViewGekoppeldeIssues)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -416,27 +426,27 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button buttonImportFromObject;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.DataGridView dataGridViewGekoppeldeIssues;
-        private System.Windows.Forms.Button buttonConfirmSelection;
         private System.Windows.Forms.TabControl tabControl2;
-        private System.Windows.Forms.DataGridView dataGridViewAddIssue;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.DataGridView dataGridViewAddGevaar;
         private System.Windows.Forms.ComboBox comboBoxTemplateType;
         private System.Windows.Forms.TextBox textBoxTemplateNaam;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridView dataGridViewGekoppeldeGevaren;
         private System.Windows.Forms.Button buttonSaveTemplate;
         private System.Windows.Forms.ComboBox comboBoxTemplateToepassing;
         private System.Windows.Forms.TextBox textBoxTemplateID;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button buttonVerwijderIssues;
-        private System.Windows.Forms.Button buttonVerwijderGevaren;
-        private System.Windows.Forms.TextBox textBoxSelectedGevaren;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Label label5;
+        private ADGV.AdvancedDataGridView advancedDataGridViewGekoppeldeIssues;
+        private ADGV.AdvancedDataGridView advancedDataGridViewAllGevaren;
+        private ADGV.AdvancedDataGridView advancedDataGridViewObjectIssues;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Button buttonAddFromGevaren;
+        private System.Windows.Forms.Button buttonAddFromObjecten;
     }
 }

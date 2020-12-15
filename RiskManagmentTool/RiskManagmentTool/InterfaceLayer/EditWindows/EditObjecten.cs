@@ -30,6 +30,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private Dictionary<string, string> IssuesState;
         private Dictionary<string, string> IssuesRiskValue;
 
+        private int RisicograafSetting; //0 = SIL 1 = pl
 
         private BindingSource objectIssuesDataTable;
 
@@ -56,9 +57,9 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             comboBoxObjectType.SelectedIndex = comboBoxObjectType.FindStringExact(objectType);
             LoadDataGridViewCheckBoxes();
             LoadData();
-            //SetInstellingen();
+            SetObjectSettings();
             SetObjectImage();
-
+            comboBoxFilterIssues.SelectedIndex = 0;
         }
 
         private void LoadMenus()
@@ -87,7 +88,26 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             objectIssuesDataTable = comunicator.GetObjectIssues(ObjectID);
             advancedDataGridViewGekoppeldeIssues.DataSource = objectIssuesDataTable;
 
+
+            //comboBoxFilterIssues.SelectedIndex = 0;
             SetVisualInstellingen();
+        }
+
+        private void SetObjectSettings()
+        {
+    
+            List<string> objectSettings = comunicator.GetObjectSettings(ObjectID);
+            string risicograaf = objectSettings[0];
+            if (risicograaf.Equals("0"))
+            {
+                RisicograafSetting = 0;
+            }
+            else if (risicograaf.Equals("1"))
+            {
+                RisicograafSetting = 1;
+            }
+
+            checkedListBoxRisicograaf.SetItemChecked(RisicograafSetting, true);
         }
 
         private void SetObjectImage()
@@ -111,7 +131,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private void SetVisualInstellingen()
         {
             comboBoxVisualSettings.SelectedIndex = 1;
-            comboBoxFilterIssues.SelectedIndex = 0;
+            //comboBoxFilterIssues.SelectedIndex = 0;
             ShowDataWithVisualSettings();
             //List<CheckedListBox> menuBox = keuzeMenus.GetKeuzeMenus();
             //for (int i = 0; i < menuBox.Count; i++)
@@ -216,15 +236,20 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void ShowDataWithFiltering()
         {
+            LoadData();
             switch (comboBoxFilterIssues.SelectedIndex)
             {
                 case 0://0 = alles
                     {
+                        this.objectIssuesDataTable.RemoveFilter();
+                        this.objectIssuesDataTable.RemoveSort();
                         LoadData();
                     }
                     break;
                 case 1:// 1 = onopgelost
                     {
+                        this.objectIssuesDataTable.RemoveFilter();
+                        this.objectIssuesDataTable.RemoveSort();
                         int rowIndex = 0;
                         var toBeDeleted = new List<DataGridViewRow>();
 
@@ -267,6 +292,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
                     break;
                 case 4:// 4 = maatregelen
                     {
+                        this.objectIssuesDataTable.RemoveFilter();
+                        this.objectIssuesDataTable.RemoveSort();
                         int rowIndex = 0;
                         var toBeDeleted = new List<DataGridViewRow>();
 
@@ -345,7 +372,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private void buttonDeleteGevaren_Click(object sender, EventArgs e)
         {
             Form deleteRisico = new DeleteGevaren(ObjectNaam, ObjectID);
-            deleteRisico.Show();
+            deleteRisico.ShowDialog();
+            LoadData();
 
         }
 

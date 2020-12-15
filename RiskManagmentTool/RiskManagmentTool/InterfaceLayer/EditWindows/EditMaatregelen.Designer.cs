@@ -43,6 +43,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.buttonAddMenuOption = new System.Windows.Forms.Button();
             this.checkedListBoxOptions = new System.Windows.Forms.CheckedListBox();
+            this.buttonDeleteMaatregel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -61,7 +62,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 161);
+            this.label2.Location = new System.Drawing.Point(15, 225);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 17);
             this.label2.TabIndex = 2;
@@ -70,7 +71,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 281);
+            this.label3.Location = new System.Drawing.Point(16, 345);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(134, 17);
             this.label3.TabIndex = 3;
@@ -121,7 +122,7 @@
             // 
             // buttonCategorie
             // 
-            this.buttonCategorie.Location = new System.Drawing.Point(589, 275);
+            this.buttonCategorie.Location = new System.Drawing.Point(589, 339);
             this.buttonCategorie.Name = "buttonCategorie";
             this.buttonCategorie.Size = new System.Drawing.Size(88, 34);
             this.buttonCategorie.TabIndex = 9;
@@ -131,7 +132,7 @@
             // 
             // buttonNorm
             // 
-            this.buttonNorm.Location = new System.Drawing.Point(590, 161);
+            this.buttonNorm.Location = new System.Drawing.Point(590, 225);
             this.buttonNorm.Name = "buttonNorm";
             this.buttonNorm.Size = new System.Drawing.Size(88, 34);
             this.buttonNorm.TabIndex = 8;
@@ -141,7 +142,7 @@
             // 
             // textBoxMaatregelCategorie
             // 
-            this.textBoxMaatregelCategorie.Location = new System.Drawing.Point(200, 276);
+            this.textBoxMaatregelCategorie.Location = new System.Drawing.Point(200, 340);
             this.textBoxMaatregelCategorie.Multiline = true;
             this.textBoxMaatregelCategorie.Name = "textBoxMaatregelCategorie";
             this.textBoxMaatregelCategorie.Size = new System.Drawing.Size(356, 47);
@@ -149,13 +150,15 @@
             // 
             // textBoxMaatregelNorm
             // 
-            this.textBoxMaatregelNorm.Location = new System.Drawing.Point(200, 161);
+            this.textBoxMaatregelNorm.Location = new System.Drawing.Point(200, 225);
+            this.textBoxMaatregelNorm.Multiline = true;
             this.textBoxMaatregelNorm.Name = "textBoxMaatregelNorm";
-            this.textBoxMaatregelNorm.Size = new System.Drawing.Size(356, 22);
+            this.textBoxMaatregelNorm.Size = new System.Drawing.Size(356, 58);
             this.textBoxMaatregelNorm.TabIndex = 6;
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.buttonDeleteMaatregel);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(683, 0);
@@ -168,9 +171,9 @@
             this.panel4.Controls.Add(this.buttonAddMenuOption);
             this.panel4.Controls.Add(this.checkedListBoxOptions);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 65);
+            this.panel4.Location = new System.Drawing.Point(0, 138);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(410, 409);
+            this.panel4.Size = new System.Drawing.Size(410, 336);
             this.panel4.TabIndex = 0;
             // 
             // buttonAddMenuOption
@@ -192,6 +195,16 @@
             this.checkedListBoxOptions.Size = new System.Drawing.Size(293, 242);
             this.checkedListBoxOptions.TabIndex = 0;
             this.checkedListBoxOptions.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxOptions_ItemCheck);
+            // 
+            // buttonDeleteMaatregel
+            // 
+            this.buttonDeleteMaatregel.Location = new System.Drawing.Point(159, 32);
+            this.buttonDeleteMaatregel.Name = "buttonDeleteMaatregel";
+            this.buttonDeleteMaatregel.Size = new System.Drawing.Size(136, 50);
+            this.buttonDeleteMaatregel.TabIndex = 1;
+            this.buttonDeleteMaatregel.Text = "Verwijder deze maatregel";
+            this.buttonDeleteMaatregel.UseVisualStyleBackColor = true;
+            this.buttonDeleteMaatregel.Click += new System.EventHandler(this.buttonDeleteMaatregel_Click);
             // 
             // EditMaatregelen
             // 
@@ -229,5 +242,6 @@
         private System.Windows.Forms.CheckedListBox checkedListBoxOptions;
         private System.Windows.Forms.Button buttonCategorie;
         private System.Windows.Forms.Button buttonNorm;
+        private System.Windows.Forms.Button buttonDeleteMaatregel;
     }
 }

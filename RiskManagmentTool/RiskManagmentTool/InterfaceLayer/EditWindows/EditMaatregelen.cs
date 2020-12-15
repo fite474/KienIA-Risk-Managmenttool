@@ -32,6 +32,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private Datacomunication comunicator;
         private KeuzeMenus keuzeMenus;
+        private DeleteControler deleteControler;
 
 
         private bool isNewMaatregel;
@@ -55,7 +56,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             LoadData();
             LoadMaatregelData(maatregelID);
             LoadMenus();
-
+            LoadTextFirstOpen();
 
             textBoxMaatregelNaam.Text = maatregelNaam;
         }
@@ -63,7 +64,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private void LoadData()
         {
             comunicator = new Datacomunication();
-            
+            deleteControler = new DeleteControler();
 
             CurrentMenuToAddTo = new Dictionary<int, string>();
 
@@ -87,24 +88,33 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void LoadMaatregelData(string maatregelID)
         {
-            //DataTable maatregelData = comunicator.GetGevaar_Situatie_gebeurtenis(maatregelID);
-
-            //textBoxGevSituatie.Text = risicoBeoordelingData.Rows[0].Field<string>(1).ToString();
-            //textBoxGevGebeurtenis.Text = risicoBeoordelingData.Rows[0].Field<string>(2).ToString();
-
 
             NormenCheckedItems = comunicator.GetMaatregel_Normen(maatregelID);
             CategorieCheckedItems = comunicator.GetMaatregel_Categorie(maatregelID);
-
-
-            //situatieInitString = textBoxGevSituatie.Text;
-            //gebeurtenisInitString = textBoxGevGebeurtenis.Text;
-
-
+            
         }
 
 
+        private void LoadTextFirstOpen()
+        {
+            string textToShow = "";
+            foreach (KeyValuePair<int, int> kvp in NormenCheckedItems)
+            {
+                NormenItems_DBIndex.TryGetValue(kvp.Value, out string text);
+                textToShow += text + ";  ";
 
+            }
+            textBoxMaatregelNorm.Text = textToShow;
+            textToShow = "";
+            foreach (KeyValuePair<int, int> kvp in CategorieCheckedItems)
+            {
+                CategorieItems_DBIndex.TryGetValue(kvp.Value, out string text);
+                textToShow += text + ";  ";
+
+            }
+            textBoxMaatregelCategorie.Text = textToShow;
+            Cursor.Current = Cursors.Default;
+        }
 
 
 
@@ -139,11 +149,26 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         }
 
+        private bool SavingOK()
+        {
+            if (textBoxMaatregelNaam.Text.Length > 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
             string maatregelNaam = textBoxMaatregelNaam.Text;
-            
+            if (!SavingOK())
+            {
+                return;
+            }
 
             if (isNewMaatregel)
             {
@@ -260,6 +285,11 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             LoadMenus();
             UpdateState();
             ChangeCheckedListBox(CurrentMenuToAddTo, currentList);
+        }
+
+        private void buttonDeleteMaatregel_Click(object sender, EventArgs e)
+        {
+            deleteControler.DeleteMaatregelFromDatabase(editMaatregelID);
         }
     }
 }

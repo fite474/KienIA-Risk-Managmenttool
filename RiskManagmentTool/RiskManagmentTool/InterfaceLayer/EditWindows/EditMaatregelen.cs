@@ -289,7 +289,11 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void buttonDeleteMaatregel_Click(object sender, EventArgs e)
         {
-            deleteControler.DeleteMaatregelFromDatabase(editMaatregelID);
+            if(deleteControler.DeleteMaatregelFromDatabase(editMaatregelID))
+            {
+                this.Close();
+
+            }
         }
     }
 }

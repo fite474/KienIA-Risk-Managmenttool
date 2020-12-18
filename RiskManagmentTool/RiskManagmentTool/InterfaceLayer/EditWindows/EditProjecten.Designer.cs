@@ -48,12 +48,15 @@
             this.checkedListBox3 = new System.Windows.Forms.CheckedListBox();
             this.textBoxProjectNaam = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.buttonEditSettings = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGekoppeldeObjecten)).BeginInit();
             this.panel2.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -196,6 +199,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.panel3);
             this.tabPage1.Controls.Add(this.label9);
             this.tabPage1.Controls.Add(this.checkedListBox4);
             this.tabPage1.Controls.Add(this.label8);
@@ -211,7 +215,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(233, 25);
+            this.label9.Location = new System.Drawing.Point(232, 126);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(160, 17);
             this.label9.TabIndex = 7;
@@ -224,7 +228,7 @@
             "volghorde 1",
             "Layout opmaak 1",
             "Layout opmaak 2"});
-            this.checkedListBox4.Location = new System.Drawing.Point(230, 48);
+            this.checkedListBox4.Location = new System.Drawing.Point(229, 149);
             this.checkedListBox4.Name = "checkedListBox4";
             this.checkedListBox4.Size = new System.Drawing.Size(185, 106);
             this.checkedListBox4.TabIndex = 6;
@@ -232,7 +236,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(13, 25);
+            this.label8.Location = new System.Drawing.Point(12, 126);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(79, 17);
             this.label8.TabIndex = 5;
@@ -244,7 +248,7 @@
             this.checkedListBox3.Items.AddRange(new object[] {
             "SIL",
             "PL"});
-            this.checkedListBox3.Location = new System.Drawing.Point(17, 48);
+            this.checkedListBox3.Location = new System.Drawing.Point(16, 149);
             this.checkedListBox3.Name = "checkedListBox3";
             this.checkedListBox3.Size = new System.Drawing.Size(185, 106);
             this.checkedListBox3.TabIndex = 4;
@@ -264,6 +268,26 @@
             this.textBox3.Size = new System.Drawing.Size(186, 22);
             this.textBox3.TabIndex = 7;
             this.textBox3.Visible = false;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.buttonEditSettings);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1561, 100);
+            this.panel3.TabIndex = 8;
+            // 
+            // buttonEditSettings
+            // 
+            this.buttonEditSettings.Dock = System.Windows.Forms.DockStyle.Left;
+            this.buttonEditSettings.Location = new System.Drawing.Point(0, 0);
+            this.buttonEditSettings.Name = "buttonEditSettings";
+            this.buttonEditSettings.Size = new System.Drawing.Size(198, 100);
+            this.buttonEditSettings.TabIndex = 0;
+            this.buttonEditSettings.Text = "Pas instellingen aan";
+            this.buttonEditSettings.UseVisualStyleBackColor = true;
+            this.buttonEditSettings.Click += new System.EventHandler(this.buttonEditSettings_Click);
             // 
             // EditProjecten
             // 
@@ -288,6 +312,7 @@
             this.panel2.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -315,5 +340,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button buttonEditSettings;
     }
 }

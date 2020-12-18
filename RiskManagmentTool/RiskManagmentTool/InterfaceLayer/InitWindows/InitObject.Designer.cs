@@ -80,14 +80,14 @@
             // 
             this.textBoxProjectNaam.Location = new System.Drawing.Point(181, 43);
             this.textBoxProjectNaam.Name = "textBoxProjectNaam";
-            this.textBoxProjectNaam.Size = new System.Drawing.Size(158, 22);
+            this.textBoxProjectNaam.Size = new System.Drawing.Size(243, 22);
             this.textBoxProjectNaam.TabIndex = 3;
             // 
             // buttonCreateObject
             // 
-            this.buttonCreateObject.Location = new System.Drawing.Point(667, 121);
+            this.buttonCreateObject.Location = new System.Drawing.Point(608, 109);
             this.buttonCreateObject.Name = "buttonCreateObject";
-            this.buttonCreateObject.Size = new System.Drawing.Size(157, 23);
+            this.buttonCreateObject.Size = new System.Drawing.Size(173, 59);
             this.buttonCreateObject.TabIndex = 4;
             this.buttonCreateObject.Text = "Maak object aan";
             this.buttonCreateObject.UseVisualStyleBackColor = true;
@@ -97,7 +97,7 @@
             // 
             this.textBoxObjectNaam.Location = new System.Drawing.Point(181, 86);
             this.textBoxObjectNaam.Name = "textBoxObjectNaam";
-            this.textBoxObjectNaam.Size = new System.Drawing.Size(158, 22);
+            this.textBoxObjectNaam.Size = new System.Drawing.Size(243, 22);
             this.textBoxObjectNaam.TabIndex = 5;
             // 
             // comboBoxObjectType
@@ -105,7 +105,7 @@
             this.comboBoxObjectType.FormattingEnabled = true;
             this.comboBoxObjectType.Location = new System.Drawing.Point(181, 127);
             this.comboBoxObjectType.Name = "comboBoxObjectType";
-            this.comboBoxObjectType.Size = new System.Drawing.Size(158, 24);
+            this.comboBoxObjectType.Size = new System.Drawing.Size(243, 24);
             this.comboBoxObjectType.TabIndex = 6;
             // 
             // checkedListBox1
@@ -214,14 +214,14 @@
             this.textBoxObjectOmschrijving.Location = new System.Drawing.Point(181, 174);
             this.textBoxObjectOmschrijving.Multiline = true;
             this.textBoxObjectOmschrijving.Name = "textBoxObjectOmschrijving";
-            this.textBoxObjectOmschrijving.Size = new System.Drawing.Size(264, 60);
+            this.textBoxObjectOmschrijving.Size = new System.Drawing.Size(376, 68);
             this.textBoxObjectOmschrijving.TabIndex = 11;
             // 
             // InitObject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(929, 797);
+            this.ClientSize = new System.Drawing.Size(929, 723);
             this.Controls.Add(this.textBoxObjectOmschrijving);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label4);

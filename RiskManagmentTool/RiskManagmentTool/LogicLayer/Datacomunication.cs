@@ -50,7 +50,10 @@ namespace RiskManagmentTool.LogicLayer
                 }
             };
             //SendItemToDB(objectItem);
-            return databaseCommunication.MakeObject(objectItem);
+            int objectID = databaseCommunication.MakeObject(objectItem);
+            databaseCommunication.SetObjectSettings(objectID, 0);
+            databaseCommunication.InitObjectNotes(objectID);
+            return objectID;
         }
 
 
@@ -197,6 +200,12 @@ namespace RiskManagmentTool.LogicLayer
 
 
         #region Update
+
+        public void UpdateObjectNotes(string objectID, string text)
+        {
+            databaseCommunication.UpdateObjectNotes(objectID, text);
+
+        }
 
         public void UpdateGevaarSituatie(int gevaarID, string text)
         {
@@ -390,6 +399,10 @@ namespace RiskManagmentTool.LogicLayer
             databaseCommunication.UpdateIssueState(issueId, newState);
         }
 
+        public void UpdateImageToObject(string objectID, string imageFilePath)
+        {
+            databaseCommunication.UpdateImageToObject(objectID, imageFilePath);
+        }
         #endregion Update
 
 
@@ -451,6 +464,11 @@ namespace RiskManagmentTool.LogicLayer
 
 
         #region GET REQUEST FROM DATABASE
+
+        public string GetObjectNotes(string objectID)
+        {
+            return databaseCommunication.GetObjectNotes(objectID);
+        }
 
         #region get tables
         public DataTable GetProjectenTable()
@@ -710,15 +728,17 @@ namespace RiskManagmentTool.LogicLayer
 
         public void DeleteMaatregel(string maatregelID)
         {
-
-
+            int maatregelIDInt = int.Parse(maatregelID);
+            databaseCommunication.VerwijderMaatregelMulti(maatregelIDInt);
+            databaseCommunication.VerwijderMaatregel_Category(maatregelIDInt);
+            databaseCommunication.VerwijderMaatregel_Norm(maatregelIDInt);
         }
         #endregion delete
 
 
         public void AddGevaarToTemplate(string templateId, string gevaarId)
         {
-            //databaseCommunication.AddGevaarToTemplate(templateId, gevaarId);
+            databaseCommunication.AddGevaarToTemplate(templateId, gevaarId);
 
         }
         public void AddIssueToTemplate(string templateId, string issueId)

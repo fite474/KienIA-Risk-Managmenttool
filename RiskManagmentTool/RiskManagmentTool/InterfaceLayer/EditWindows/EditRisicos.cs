@@ -547,7 +547,11 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void buttonDeleteGevaar_Click(object sender, EventArgs e)
         {
-            deleteControler.DeleteGevaarFromDatabase(editGevaarID);
+            if (deleteControler.DeleteGevaarFromDatabase(editGevaarID))
+            {
+                this.Close();
+            }
+            
             //string message = "Weet u zeker dat u dit gevaar wilt verwijderen?";
             //string title = "Reminder Risico waardes";
             //MessageBoxButtons buttons = MessageBoxButtons.YesNo;

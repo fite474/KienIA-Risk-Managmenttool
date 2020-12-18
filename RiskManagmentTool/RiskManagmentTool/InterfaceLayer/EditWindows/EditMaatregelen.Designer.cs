@@ -40,10 +40,10 @@
             this.textBoxMaatregelCategorie = new System.Windows.Forms.TextBox();
             this.textBoxMaatregelNorm = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.buttonDeleteMaatregel = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.buttonAddMenuOption = new System.Windows.Forms.Button();
             this.checkedListBoxOptions = new System.Windows.Forms.CheckedListBox();
-            this.buttonDeleteMaatregel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -145,6 +145,7 @@
             this.textBoxMaatregelCategorie.Location = new System.Drawing.Point(200, 340);
             this.textBoxMaatregelCategorie.Multiline = true;
             this.textBoxMaatregelCategorie.Name = "textBoxMaatregelCategorie";
+            this.textBoxMaatregelCategorie.ReadOnly = true;
             this.textBoxMaatregelCategorie.Size = new System.Drawing.Size(356, 47);
             this.textBoxMaatregelCategorie.TabIndex = 7;
             // 
@@ -153,6 +154,7 @@
             this.textBoxMaatregelNorm.Location = new System.Drawing.Point(200, 225);
             this.textBoxMaatregelNorm.Multiline = true;
             this.textBoxMaatregelNorm.Name = "textBoxMaatregelNorm";
+            this.textBoxMaatregelNorm.ReadOnly = true;
             this.textBoxMaatregelNorm.Size = new System.Drawing.Size(356, 58);
             this.textBoxMaatregelNorm.TabIndex = 6;
             // 
@@ -165,6 +167,16 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(410, 474);
             this.panel3.TabIndex = 13;
+            // 
+            // buttonDeleteMaatregel
+            // 
+            this.buttonDeleteMaatregel.Location = new System.Drawing.Point(159, 32);
+            this.buttonDeleteMaatregel.Name = "buttonDeleteMaatregel";
+            this.buttonDeleteMaatregel.Size = new System.Drawing.Size(136, 50);
+            this.buttonDeleteMaatregel.TabIndex = 1;
+            this.buttonDeleteMaatregel.Text = "Verwijder deze maatregel";
+            this.buttonDeleteMaatregel.UseVisualStyleBackColor = true;
+            this.buttonDeleteMaatregel.Click += new System.EventHandler(this.buttonDeleteMaatregel_Click);
             // 
             // panel4
             // 
@@ -195,16 +207,6 @@
             this.checkedListBoxOptions.Size = new System.Drawing.Size(293, 242);
             this.checkedListBoxOptions.TabIndex = 0;
             this.checkedListBoxOptions.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxOptions_ItemCheck);
-            // 
-            // buttonDeleteMaatregel
-            // 
-            this.buttonDeleteMaatregel.Location = new System.Drawing.Point(159, 32);
-            this.buttonDeleteMaatregel.Name = "buttonDeleteMaatregel";
-            this.buttonDeleteMaatregel.Size = new System.Drawing.Size(136, 50);
-            this.buttonDeleteMaatregel.TabIndex = 1;
-            this.buttonDeleteMaatregel.Text = "Verwijder deze maatregel";
-            this.buttonDeleteMaatregel.UseVisualStyleBackColor = true;
-            this.buttonDeleteMaatregel.Click += new System.EventHandler(this.buttonDeleteMaatregel_Click);
             // 
             // EditMaatregelen
             // 

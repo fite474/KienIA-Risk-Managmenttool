@@ -18,7 +18,7 @@ namespace RiskManagmentTool.LogicLayer
 
         }
 
-        public void DeleteGevaarFromDatabase(string gevaarID)
+        public bool DeleteGevaarFromDatabase(string gevaarID)
         {
             DataTable gevarenData = comunicator.GetGevarenUsage(gevaarID);
             int indexHelper = 0;
@@ -41,6 +41,7 @@ namespace RiskManagmentTool.LogicLayer
                 if (result == DialogResult.Yes)
                 {
                     comunicator.DeleteGevaar(gevaarID);
+                    return true;
                 }
                 else
                 {
@@ -64,13 +65,13 @@ namespace RiskManagmentTool.LogicLayer
 
                 }
             }
-
+            return false;
             //string c = gevarenData.Rows[0].Field<int?>(3).ToString();
             //string d = gevarenData.Rows[0].Field<int?>(4).ToString();
 
         }
 
-        public void DeleteMaatregelFromDatabase(string maatregelID)
+        public bool DeleteMaatregelFromDatabase(string maatregelID)
         {
             DataTable maatregelData = comunicator.GetMaatregelenUsage(maatregelID);
             int indexHelper = 0;
@@ -92,7 +93,8 @@ namespace RiskManagmentTool.LogicLayer
 
                 if (result == DialogResult.Yes)
                 {
-                    comunicator.DeleteGevaar(maatregelID);
+                    comunicator.DeleteMaatregel(maatregelID);
+                    return true;
                 }
                 else
                 {
@@ -102,7 +104,7 @@ namespace RiskManagmentTool.LogicLayer
             }
             else
             {
-                string message = "Dit gevaar is in gebruik bij een issue";
+                string message = "Deze maatregel is in gebruik bij een issue";
                 string title = "Reminder Risico waardes";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result = MessageBox.Show(message, title, buttons);
@@ -116,7 +118,7 @@ namespace RiskManagmentTool.LogicLayer
 
                 }
             }
-
+            return false;
         }
 
         public bool DeleteKeuzeItemFromDatabase(MenuTableName menuTableName, string optionToDelete)

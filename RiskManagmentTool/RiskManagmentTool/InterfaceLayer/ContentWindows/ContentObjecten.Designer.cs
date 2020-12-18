@@ -52,8 +52,9 @@
             this.buttonAddNew.Name = "buttonAddNew";
             this.buttonAddNew.Size = new System.Drawing.Size(281, 91);
             this.buttonAddNew.TabIndex = 1;
-            this.buttonAddNew.Text = "Add";
+            this.buttonAddNew.Text = "Maak nieuw object aan";
             this.buttonAddNew.UseVisualStyleBackColor = true;
+            this.buttonAddNew.Visible = false;
             this.buttonAddNew.Click += new System.EventHandler(this.buttonAddNew_Click);
             // 
             // panel2

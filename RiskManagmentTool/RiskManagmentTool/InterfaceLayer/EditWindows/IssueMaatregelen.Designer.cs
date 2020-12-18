@@ -65,6 +65,7 @@
             this.buttonAddNewMaatregel = new System.Windows.Forms.Button();
             this.buttonDeleteMaatregelen = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -74,6 +75,7 @@
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIssueImage)).BeginInit();
             this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonRisicoDetails
@@ -382,15 +384,14 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(0, 393);
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1507, 452);
+            this.tabControl1.Size = new System.Drawing.Size(1507, 518);
             this.tabControl1.TabIndex = 5;
             // 
             // tabPage1
@@ -399,7 +400,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1499, 423);
+            this.tabPage1.Size = new System.Drawing.Size(1499, 489);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Maatregelen";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -416,7 +417,7 @@
             this.dataGridViewIssueMaatregelen.ReadOnly = true;
             this.dataGridViewIssueMaatregelen.RowTemplate.Height = 24;
             this.dataGridViewIssueMaatregelen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewIssueMaatregelen.Size = new System.Drawing.Size(1493, 417);
+            this.dataGridViewIssueMaatregelen.Size = new System.Drawing.Size(1493, 483);
             this.dataGridViewIssueMaatregelen.TabIndex = 0;
             this.dataGridViewIssueMaatregelen.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewIssueMaatregelen_DataBindingComplete);
             // 
@@ -426,7 +427,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1169, 423);
+            this.tabPage2.Size = new System.Drawing.Size(1499, 423);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Issue Foto";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -444,7 +445,7 @@
             // buttonAddNewMaatregel
             // 
             this.buttonAddNewMaatregel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddNewMaatregel.Location = new System.Drawing.Point(25, 21);
+            this.buttonAddNewMaatregel.Location = new System.Drawing.Point(12, 21);
             this.buttonAddNewMaatregel.Name = "buttonAddNewMaatregel";
             this.buttonAddNewMaatregel.Size = new System.Drawing.Size(210, 44);
             this.buttonAddNewMaatregel.TabIndex = 6;
@@ -473,13 +474,22 @@
             this.panel5.Size = new System.Drawing.Size(1507, 77);
             this.panel5.TabIndex = 8;
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.tabControl1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 370);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1507, 518);
+            this.panel4.TabIndex = 9;
+            // 
             // IssueMaatregelen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1507, 965);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel5);
-            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
             this.MinimumSize = new System.Drawing.Size(1315, 955);
             this.Name = "IssueMaatregelen";
@@ -496,6 +506,7 @@
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIssueImage)).EndInit();
             this.panel5.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -539,5 +550,6 @@
         private System.Windows.Forms.TextBox textBoxGevaar;
         private System.Windows.Forms.TextBox textBoxDiscipline;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
     }
 }

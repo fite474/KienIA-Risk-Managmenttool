@@ -265,6 +265,7 @@
             // 
             this.textBoxInit_Se.Location = new System.Drawing.Point(144, 19);
             this.textBoxInit_Se.Name = "textBoxInit_Se";
+            this.textBoxInit_Se.ReadOnly = true;
             this.textBoxInit_Se.Size = new System.Drawing.Size(59, 22);
             this.textBoxInit_Se.TabIndex = 11;
             this.textBoxInit_Se.TextChanged += new System.EventHandler(this.textBoxInit_Se_TextChanged);
@@ -273,6 +274,7 @@
             // 
             this.textBoxInit_Fr.Location = new System.Drawing.Point(144, 47);
             this.textBoxInit_Fr.Name = "textBoxInit_Fr";
+            this.textBoxInit_Fr.ReadOnly = true;
             this.textBoxInit_Fr.Size = new System.Drawing.Size(59, 22);
             this.textBoxInit_Fr.TabIndex = 13;
             this.textBoxInit_Fr.TextChanged += new System.EventHandler(this.textBoxInit_Fr_TextChanged);
@@ -542,6 +544,7 @@
             // 
             this.textBoxInit_Av.Location = new System.Drawing.Point(144, 103);
             this.textBoxInit_Av.Name = "textBoxInit_Av";
+            this.textBoxInit_Av.ReadOnly = true;
             this.textBoxInit_Av.Size = new System.Drawing.Size(59, 22);
             this.textBoxInit_Av.TabIndex = 46;
             this.textBoxInit_Av.TextChanged += new System.EventHandler(this.textBoxInit_Av_TextChanged);
@@ -550,6 +553,7 @@
             // 
             this.textBoxInit_Pr.Location = new System.Drawing.Point(144, 75);
             this.textBoxInit_Pr.Name = "textBoxInit_Pr";
+            this.textBoxInit_Pr.ReadOnly = true;
             this.textBoxInit_Pr.Size = new System.Drawing.Size(59, 22);
             this.textBoxInit_Pr.TabIndex = 45;
             this.textBoxInit_Pr.TextChanged += new System.EventHandler(this.textBoxInit_Pr_TextChanged);
@@ -558,6 +562,7 @@
             // 
             this.textBoxRest_Av.Location = new System.Drawing.Point(144, 359);
             this.textBoxRest_Av.Name = "textBoxRest_Av";
+            this.textBoxRest_Av.ReadOnly = true;
             this.textBoxRest_Av.Size = new System.Drawing.Size(59, 22);
             this.textBoxRest_Av.TabIndex = 44;
             this.textBoxRest_Av.TextChanged += new System.EventHandler(this.textBoxRest_Av_TextChanged);
@@ -566,6 +571,7 @@
             // 
             this.textBoxRest_Pr.Location = new System.Drawing.Point(144, 331);
             this.textBoxRest_Pr.Name = "textBoxRest_Pr";
+            this.textBoxRest_Pr.ReadOnly = true;
             this.textBoxRest_Pr.Size = new System.Drawing.Size(59, 22);
             this.textBoxRest_Pr.TabIndex = 43;
             this.textBoxRest_Pr.TextChanged += new System.EventHandler(this.textBoxRest_Pr_TextChanged);
@@ -652,6 +658,7 @@
             // 
             this.textBoxRest_Fr.Location = new System.Drawing.Point(144, 303);
             this.textBoxRest_Fr.Name = "textBoxRest_Fr";
+            this.textBoxRest_Fr.ReadOnly = true;
             this.textBoxRest_Fr.Size = new System.Drawing.Size(59, 22);
             this.textBoxRest_Fr.TabIndex = 26;
             this.textBoxRest_Fr.TextChanged += new System.EventHandler(this.textBoxRest_Fr_TextChanged);
@@ -674,6 +681,7 @@
             // 
             this.textBoxRest_Se.Location = new System.Drawing.Point(144, 275);
             this.textBoxRest_Se.Name = "textBoxRest_Se";
+            this.textBoxRest_Se.ReadOnly = true;
             this.textBoxRest_Se.Size = new System.Drawing.Size(59, 22);
             this.textBoxRest_Se.TabIndex = 24;
             this.textBoxRest_Se.TextChanged += new System.EventHandler(this.textBoxRest_Se_TextChanged);

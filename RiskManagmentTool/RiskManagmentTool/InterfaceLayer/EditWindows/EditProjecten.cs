@@ -57,5 +57,12 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         {
             dataGridViewGekoppeldeObjecten.ClearSelection();
         }
+
+        private void buttonEditSettings_Click(object sender, EventArgs e)
+        {
+            EditSettings editSettings = new EditSettings(ProjectId, ProjectNaam);
+            editSettings.ShowDialog();
+ 
+        }
     }
 }

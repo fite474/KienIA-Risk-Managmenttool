@@ -58,6 +58,38 @@ namespace RiskManagmentTool.DataLayer
             return objectID;
         }
 
+        public void InitObjectNotes(int objectID)
+        {
+            string initText = "";
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO TableObjectSettings(ObjectID, Notes) VALUES " +
+                                                                       "(@ObjectID, @Notes)", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@ObjectID", objectID);
+            cmd.Parameters.AddWithValue("@Notes", initText);
+
+
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+
+        }
+
+
+        public void SetObjectSettings(int objectID, int setting)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO TableObjectSettings(ObjectID, Risicograaf) VALUES " +
+                                                                       "(@ObjectID, @Risicograaf)", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@ObjectID", objectID);
+            cmd.Parameters.AddWithValue("@Risicograaf", setting);
+
+
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+
+        }
+
 
         public int InitMakeGevaar(string gevaarlijkeSituatie, string gevaarlijkeGebeurtenis)
         {
@@ -484,22 +516,27 @@ namespace RiskManagmentTool.DataLayer
         #region add to template
         public void AddGevaarToTemplate(string templateId, string gevaarID)
         {
-
+            string issueState = "0";
+            int issueId = InitIssue(gevaarID, issueState);
             //string gevaarID = FindGevaarID(issueId);
             //List<string> gekoppeldeMaatregelenVanIssue = FindGekoppeldeMaatregelenVanIssue(issueId);
 
             //int duplicateIssueId = InitIssue(gevaarID);
 
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO TableTemplateGevaren(TemplateID, GevaarID) VALUES " +
-                                                                       "(@TemplateID, @GevaarID) ", sqlConnection);
+            SqlCommand cmd = new SqlCommand("INSERT INTO TableTemplateIssues(TemplateID, IssueID) VALUES " +
+                                                                       "(@TemplateID, @IssueID) ", sqlConnection);
             cmd.Parameters.AddWithValue("@TemplateID", templateId);
-            cmd.Parameters.AddWithValue("@GevaarID", gevaarID);
+            cmd.Parameters.AddWithValue("@IssueID", issueId);
 
             cmd.ExecuteNonQuery();
             //Int32 issueID = (Int32)cmd.ExecuteScalar();
 
             sqlConnection.Close();
+
+
+            int risicoBeoordelingId = InitRisicoBeoordeling(issueId);
+            AddRisicoBeoordelingToIssue(risicoBeoordelingId, issueId);
 
         }
 
@@ -677,6 +714,17 @@ namespace RiskManagmentTool.DataLayer
         #endregion delete gevaar data
 
         #region delete maatregel data
+        public void VerwijderMaatregelMulti(int maatregelID)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("DELETE FROM TableMaatregelenMulti WHERE MaatregelID = @MaatregelID", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@MaatregelID", maatregelID);
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+
+        }
+
         public void VerwijderMaatregel_Norm(int maatregelID)
         {
             sqlConnection.Open();
@@ -822,6 +870,20 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
         }
 
+        public void UpdateObjectNotes(string objectID, string newText)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("UPDATE TableObjectNotes " +
+                                             "SET Notes = @Notes" +
+                                            " WHERE ObjectID = '" + objectID + "'", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@Notes", newText);
+            cmd.ExecuteNonQuery();
+
+            sqlConnection.Close();
+
+        }
+
         public void UpdateGevaarGebeurtenis(int gevaarID, string text)
         {
             sqlConnection.Open();
@@ -849,13 +911,46 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
         }
 
+        public void UpdateImageToObject(string objectID, string imageFilePath)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("UPDATE TableObjectImages " +
+                                            "SET ImageFilePath = @ImageFilePath " +
+                                            "WHERE ObjectID = @ObjectID", sqlConnection);
+            cmd.Parameters.AddWithValue("@ObjectID", objectID);
+            cmd.Parameters.AddWithValue("@ImageFilePath", imageFilePath);
 
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+
+        }
 
         #endregion UPDATE
 
 
 
         #region GET REQUESTS FROM DATABASE
+
+        public string GetObjectNotes(string objectID)
+        {
+            string text = "";
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT Notes FROM TableObjectNotes " +
+                                            "WHERE TableObjectNotes.ObjectID = '" + objectID + "'", sqlConnection);
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    text = (dr[0]).ToString();
+                }
+            }
+            sqlConnection.Close();
+
+
+
+            return text;
+
+        }
 
         #region get tables
         public SqlDataAdapter GetProjecten()
@@ -1846,10 +1941,6 @@ namespace RiskManagmentTool.DataLayer
             //List<string> usage = new List<string>();
 
             sqlConnection.Open();
-            //SqlCommand cmd = new SqlCommand("SELECT View_ObjectIssues.IssueID, View_ObjectIssues.GevaarID " +
-            //                                "FROM View_ObjectIssues " +
-            //                                "WHERE View_ObjectIssues.GevaarID = '" + gevaarID + "' ", sqlConnection);
-
             String query = "SELECT TableIssueMaatregelen.IssueID, TableIssueMaatregelen.MaatregelID " +
                                             "FROM TableIssueMaatregelen " +
                                             "WHERE TableIssueMaatregelen.MaatregelID = '" + maatregelID + "' ";
@@ -2255,23 +2346,6 @@ namespace RiskManagmentTool.DataLayer
             return objectTypes;
 
         }
-
-        //public Dictionary<int, string> GetGevaartypes()
-        //{
-        //    List<string> objectTypes = new List<string>();
-        //    sqlConnection.Open();
-        //    SqlCommand cmd = new SqlCommand("SELECT GevaarType FROM GevaarTypes", sqlConnection);
-
-        //    using (SqlDataReader dr = cmd.ExecuteReader())
-        //    {
-        //        while (dr.Read())
-        //        {
-        //            objectTypes.Add((dr[0]).ToString());
-        //        }
-        //    }
-        //    sqlConnection.Close();
-        //    return objectTypes;
-        //}
 
         public Dictionary<int, string> GetGevaarTypes()
         {

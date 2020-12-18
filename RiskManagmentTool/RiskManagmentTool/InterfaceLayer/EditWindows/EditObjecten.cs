@@ -31,6 +31,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private Dictionary<string, string> IssuesRiskValue;
 
         private int RisicograafSetting; //0 = SIL 1 = pl
+        private bool HasImage;
 
         private BindingSource objectIssuesDataTable;
 
@@ -59,6 +60,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             LoadData();
             SetObjectSettings();
             SetObjectImage();
+            LoadNotes();
             comboBoxFilterIssues.SelectedIndex = 0;
         }
 
@@ -93,6 +95,13 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             SetVisualInstellingen();
         }
 
+        private void LoadNotes()
+        {
+            string objectNotes = comunicator.GetObjectNotes(ObjectID);
+            textBoxObjectNotes.Text = objectNotes;
+
+        }
+
         private void SetObjectSettings()
         {
     
@@ -112,12 +121,14 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void SetObjectImage()
         {
+            HasImage = false;
             //get object image(ObjectID)
             string filePath = comunicator.GetObjectImage(ObjectID);//@"C:\Users\mauri\Documents\1AVANS\Stage\1 Stage Bestanden\Pieter_de_Hooghbrug.jpg";
             try
             {
                 pictureBoxObjectFoto.Image = new Bitmap(filePath);
                 pictureBoxObjectFoto.SizeMode = PictureBoxSizeMode.StretchImage;
+                HasImage = true;
             }
             catch (Exception e)
             {
@@ -261,7 +272,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
                             //string issueId = row.Cells[viewsColumnNames.IssueIDColumn].Value.ToString();
                             //Dictionary<string, int> IssuesMaatregelen = comunicator.GetObjectIssuesMaatregelenCount(ObjectID);//new Dictionary<string, int>();
                             //IssuesMaatregelen.TryGetValue(issueId, out int maatregelCount);
-                            if (issueRiskValue.Equals("1"))
+                            if (issueRiskValue.Equals("1") || issueRiskValue.Equals("10"))
                             {
                                 toBeDeleted.Add(row);
                             }
@@ -392,7 +403,15 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
                 pictureBoxObjectFoto.Image = new Bitmap(imageFilePath);//open.FileName);
                 pictureBoxObjectFoto.SizeMode = PictureBoxSizeMode.StretchImage;
                 // image file path 
-                comunicator.AddImageToObject(ObjectID, imageFilePath);
+                if (HasImage)
+                {
+                    comunicator.UpdateImageToObject(ObjectID, imageFilePath);
+                }
+                else
+                {
+                    comunicator.AddImageToObject(ObjectID, imageFilePath);
+                }
+                
                 
             }
         }
@@ -514,6 +533,9 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private void buttonSaveObjectNotes_Click(object sender, EventArgs e)
         {
             string objectNotes = textBoxObjectNotes.Text;
+            comunicator.UpdateObjectNotes(ObjectID, objectNotes);
+
+            LoadNotes();
         }
     }
 }

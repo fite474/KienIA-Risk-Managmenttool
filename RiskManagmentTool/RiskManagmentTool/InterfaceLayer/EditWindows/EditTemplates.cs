@@ -62,7 +62,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             AllGevarenData = comunicator.GetGevarenTable();
             advancedDataGridViewAllGevaren.DataSource = AllGevarenData;
 
-            ReloadTemplateData();// ????????????????????????
+            ReloadTemplateData();
 
 
         }
@@ -81,6 +81,13 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
                 comboBoxTemplateToepassing.Items.Add(kvp.Value);
             }
 
+            List<string> objectNamenList = keuzeMenus.GetObjectNamen();
+            foreach (string objectNaam in objectNamenList)
+            {
+                
+                    comboBoxViewObjectNaam.Items.Add(objectNaam);
+                
+            }
         }
 
         private void ReloadTemplateData()
@@ -90,22 +97,6 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             advancedDataGridViewGekoppeldeIssues.DataSource = TemplateData;
 
         }
-
-
-        private void buttonConfirmSelection_Click(object sender, EventArgs e)
-        {
-            foreach (string gevaarId in SelectedGevarenId)
-            {
-                comunicator.AddGevaarToTemplate(TemplateID, gevaarId);
-            }
-            foreach (string issueId in SelectedIssuesId)
-            {
-                comunicator.AddIssueToTemplate(TemplateID, issueId);
-            }
-            ReloadTemplateData();
-        }
-
-
 
 
 
@@ -127,6 +118,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             {
                 comunicator.AddIssueToTemplate(TemplateID, issueId);
             }
+            ReloadTemplateData();
         }
 
         private void buttonAddFromGevaren_Click(object sender, EventArgs e)
@@ -142,6 +134,15 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             {
                 comunicator.AddGevaarToTemplate(TemplateID, gevaarId);
             }
+            ReloadTemplateData();
+        }
+
+        private void comboBoxViewObjectNaam_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ObjectIssuesData = comunicator.GetObjectIssuesByObjectName(comboBoxViewObjectNaam.SelectedItem.ToString());
+            advancedDataGridViewObjectIssues.DataSource = ObjectIssuesData;
+            //dataGridViewObjectView.DataSource = comunicator.GetObjectIssuesByObjectName(comboBoxViewObjectNaam.SelectedItem.ToString());
+            SelectedIssuesId.Clear();
         }
     }
 }

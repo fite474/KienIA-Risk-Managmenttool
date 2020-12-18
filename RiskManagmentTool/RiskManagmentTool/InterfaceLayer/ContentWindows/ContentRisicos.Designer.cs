@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonAddNew = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -72,11 +73,19 @@
             this.advancedDataGridViewGevaren.AutoGenerateContextFilters = true;
             this.advancedDataGridViewGevaren.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.advancedDataGridViewGevaren.DateWithTime = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advancedDataGridViewGevaren.DefaultCellStyle = dataGridViewCellStyle1;
             this.advancedDataGridViewGevaren.Dock = System.Windows.Forms.DockStyle.Fill;
             this.advancedDataGridViewGevaren.Location = new System.Drawing.Point(0, 0);
             this.advancedDataGridViewGevaren.Name = "advancedDataGridViewGevaren";
             this.advancedDataGridViewGevaren.ReadOnly = true;
-            this.advancedDataGridViewGevaren.RowTemplate.Height = 24;
+            this.advancedDataGridViewGevaren.RowTemplate.Height = 40;
             this.advancedDataGridViewGevaren.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.advancedDataGridViewGevaren.Size = new System.Drawing.Size(1575, 712);
             this.advancedDataGridViewGevaren.TabIndex = 1;

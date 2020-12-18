@@ -146,7 +146,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
         {
             string selectedTemplateName = comboBoxViewTemplate.SelectedItem.ToString();
 
-            templateGevarenData = comunicator.GetTemplateIssuesByName(selectedTemplateName);
+            templateGevarenData = comunicator.GetObjectIssuesByObjectName(selectedTemplateName);
             advancedDataGridViewTemplateViewIssues.DataSource = templateGevarenData;
             //dataGridViewTemplateViewIssues.DataSource = comunicator.GetTemplateIssuesByName(selectedTemplateName);
 
@@ -375,7 +375,18 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
         private void advancedDataGridViewObjectView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
+            for (int i = 0; i < (advancedDataGridViewObjectView.ColumnCount - 1); i++)
+            {
+                advancedDataGridViewObjectView.AutoResizeColumn((i + 1), DataGridViewAutoSizeColumnMode.AllCells);
+                if (advancedDataGridViewObjectView.Columns[i + 1].Width > 400)
+                {
+                    advancedDataGridViewObjectView.Columns[i + 1].Width = 400;
+                }
+            }
+
             advancedDataGridViewObjectView.ClearSelection();
+            Cursor.Current = Cursors.Default;
+            
         }
 
         private void advancedDataGridViewObjectView_FilterStringChanged(object sender, EventArgs e)
@@ -397,6 +408,19 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
         }
 
+        private void advancedDataGridViewTemplateViewIssues_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            for (int i = 0; i < (advancedDataGridViewTemplateViewIssues.ColumnCount - 1); i++)
+            {
+                advancedDataGridViewTemplateViewIssues.AutoResizeColumn((i + 1), DataGridViewAutoSizeColumnMode.AllCells);
+                if (advancedDataGridViewTemplateViewIssues.Columns[i + 1].Width > 400)
+                {
+                    advancedDataGridViewTemplateViewIssues.Columns[i + 1].Width = 400;
+                }
+            }
 
+            advancedDataGridViewTemplateViewIssues.ClearSelection();
+            Cursor.Current = Cursors.Default;
+        }
     }
 }

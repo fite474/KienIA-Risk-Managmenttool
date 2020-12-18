@@ -26,8 +26,8 @@ namespace RiskManagmentTool.InterfaceLayer
         private void LoadData()//DataTable data)
         {
             //dataGridViewCompleteBeoordeling.DataSource = data;
-            dataGridViewCompleteBeoordeling.DataSource = comunicator.GetObjectIssues(ObjectID);
-            
+            //dataGridViewCompleteBeoordeling.DataSource = comunicator.GetObjectIssues(ObjectID);
+            dataGridViewCompleteBeoordeling.DataSource = comunicator.GetExportView(ObjectID);
 
         }
 
@@ -47,12 +47,14 @@ namespace RiskManagmentTool.InterfaceLayer
             xlApp = new Microsoft.Office.Interop.Excel.Application();
             xlWorkBook = xlApp.Workbooks.Add(misValue);
             xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+            
             //int i = 0;
             //int j = 0;
 
             for (int i = 1; i < dataGridViewCompleteBeoordeling.Columns.Count + 1; i++)
             {
                 xlWorkSheet.Cells[1, i] = dataGridViewCompleteBeoordeling.Columns[i - 1].HeaderText;
+                
             }
 
             for (int i = 0; i <= dataGridViewCompleteBeoordeling.RowCount - 1; i++)
@@ -60,9 +62,13 @@ namespace RiskManagmentTool.InterfaceLayer
                 for (int j = 0; j <= dataGridViewCompleteBeoordeling.ColumnCount - 1; j++)
                 {
                     DataGridViewCell cell = dataGridViewCompleteBeoordeling[j, i];
-                    xlWorkSheet.Cells[i + 2, j + 1] = cell.Value;
+                    string text = cell.Value.ToString();
+                    string correctText = text.Replace("*ENTER*", "\n\n");
+
+                    xlWorkSheet.Cells[i + 2, j + 1] = correctText;//cell.Value;
                 }
             }
+            //xlWorkSheet.Columns.st = 200;// AllocatedRange.AutoFitRows();
             //"csharp.net-informations.xls"
             xlWorkBook.SaveAs(userInputFileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
             xlWorkBook.Close(true, misValue, misValue);

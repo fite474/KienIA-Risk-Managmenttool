@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -38,9 +39,9 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.buttonConfirmExport = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.textBoxUserInputFileName = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCompleteBeoordeling)).BeginInit();
@@ -112,11 +113,19 @@
             this.dataGridViewCompleteBeoordeling.AllowUserToAddRows = false;
             this.dataGridViewCompleteBeoordeling.AllowUserToDeleteRows = false;
             this.dataGridViewCompleteBeoordeling.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewCompleteBeoordeling.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewCompleteBeoordeling.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewCompleteBeoordeling.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewCompleteBeoordeling.Name = "dataGridViewCompleteBeoordeling";
             this.dataGridViewCompleteBeoordeling.ReadOnly = true;
-            this.dataGridViewCompleteBeoordeling.RowTemplate.Height = 24;
+            this.dataGridViewCompleteBeoordeling.RowTemplate.Height = 70;
             this.dataGridViewCompleteBeoordeling.Size = new System.Drawing.Size(1438, 696);
             this.dataGridViewCompleteBeoordeling.TabIndex = 0;
             // 
@@ -126,7 +135,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1089, 562);
+            this.tabPage2.Size = new System.Drawing.Size(1444, 702);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Export instellingen";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -155,14 +164,12 @@
             this.panel1.Size = new System.Drawing.Size(1452, 102);
             this.panel1.TabIndex = 6;
             // 
-            // panel2
+            // textBoxUserInputFileName
             // 
-            this.panel2.Controls.Add(this.tabControl1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 102);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1452, 731);
-            this.panel2.TabIndex = 7;
+            this.textBoxUserInputFileName.Location = new System.Drawing.Point(768, 34);
+            this.textBoxUserInputFileName.Name = "textBoxUserInputFileName";
+            this.textBoxUserInputFileName.Size = new System.Drawing.Size(292, 22);
+            this.textBoxUserInputFileName.TabIndex = 7;
             // 
             // label3
             // 
@@ -173,12 +180,14 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Opslaan als: ";
             // 
-            // textBoxUserInputFileName
+            // panel2
             // 
-            this.textBoxUserInputFileName.Location = new System.Drawing.Point(768, 34);
-            this.textBoxUserInputFileName.Name = "textBoxUserInputFileName";
-            this.textBoxUserInputFileName.Size = new System.Drawing.Size(292, 22);
-            this.textBoxUserInputFileName.TabIndex = 7;
+            this.panel2.Controls.Add(this.tabControl1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 102);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1452, 731);
+            this.panel2.TabIndex = 7;
             // 
             // ExportObject
             // 

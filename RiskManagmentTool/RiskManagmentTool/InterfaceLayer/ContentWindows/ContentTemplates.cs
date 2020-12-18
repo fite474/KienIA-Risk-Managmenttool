@@ -45,8 +45,8 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
                 //string ObjectType = dataGridViewGekoppeldeIssues.SelectedRows[0].Cells[1].Value.ToString();
                 //string ObjectBeschrijving = dataGridViewGekoppeldeIssues.SelectedRows[0].Cells[2].Value.ToString();
 
-                Form editTemplates = new EditTemplates(templateId);
-                editTemplates.Show();
+                //Form editTemplates = new EditTemplates(templateId);
+                //editTemplates.Show();
             }
             catch (Exception err)
             {

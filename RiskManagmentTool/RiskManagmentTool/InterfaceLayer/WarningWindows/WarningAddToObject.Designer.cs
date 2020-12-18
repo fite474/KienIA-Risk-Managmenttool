@@ -56,6 +56,8 @@
             this.textBoxGevaar = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.checkedListBoxWarningSettings = new System.Windows.Forms.CheckedListBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMaatregelenCurrentIssue)).BeginInit();
@@ -64,12 +66,14 @@
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 8);
+            this.label2.Location = new System.Drawing.Point(3, 18);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(194, 17);
             this.label2.TabIndex = 1;
@@ -78,7 +82,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(0, 47);
+            this.label5.Location = new System.Drawing.Point(3, 54);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(87, 17);
             this.label5.TabIndex = 4;
@@ -134,7 +138,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(2, 6);
+            this.label11.Location = new System.Drawing.Point(19, 19);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(106, 17);
             this.label11.TabIndex = 11;
@@ -160,7 +164,7 @@
             // 
             // textBoxObjectIssueId
             // 
-            this.textBoxObjectIssueId.Location = new System.Drawing.Point(128, 3);
+            this.textBoxObjectIssueId.Location = new System.Drawing.Point(145, 16);
             this.textBoxObjectIssueId.Name = "textBoxObjectIssueId";
             this.textBoxObjectIssueId.Size = new System.Drawing.Size(212, 22);
             this.textBoxObjectIssueId.TabIndex = 14;
@@ -199,12 +203,13 @@
             this.dataGridViewMaatregelenCurrentIssue.AllowUserToAddRows = false;
             this.dataGridViewMaatregelenCurrentIssue.AllowUserToDeleteRows = false;
             this.dataGridViewMaatregelenCurrentIssue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMaatregelenCurrentIssue.Location = new System.Drawing.Point(3, 143);
+            this.dataGridViewMaatregelenCurrentIssue.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewMaatregelenCurrentIssue.Location = new System.Drawing.Point(0, 100);
             this.dataGridViewMaatregelenCurrentIssue.Name = "dataGridViewMaatregelenCurrentIssue";
             this.dataGridViewMaatregelenCurrentIssue.ReadOnly = true;
             this.dataGridViewMaatregelenCurrentIssue.RowTemplate.Height = 24;
             this.dataGridViewMaatregelenCurrentIssue.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewMaatregelenCurrentIssue.Size = new System.Drawing.Size(704, 298);
+            this.dataGridViewMaatregelenCurrentIssue.Size = new System.Drawing.Size(731, 393);
             this.dataGridViewMaatregelenCurrentIssue.TabIndex = 18;
             this.dataGridViewMaatregelenCurrentIssue.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewMaatregelenCurrentIssue_DataBindingComplete);
             // 
@@ -213,12 +218,13 @@
             this.dataGridViewMaatregelenNewIssue.AllowUserToAddRows = false;
             this.dataGridViewMaatregelenNewIssue.AllowUserToDeleteRows = false;
             this.dataGridViewMaatregelenNewIssue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMaatregelenNewIssue.Location = new System.Drawing.Point(3, 143);
+            this.dataGridViewMaatregelenNewIssue.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewMaatregelenNewIssue.Location = new System.Drawing.Point(0, 100);
             this.dataGridViewMaatregelenNewIssue.Name = "dataGridViewMaatregelenNewIssue";
             this.dataGridViewMaatregelenNewIssue.ReadOnly = true;
             this.dataGridViewMaatregelenNewIssue.RowTemplate.Height = 24;
             this.dataGridViewMaatregelenNewIssue.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewMaatregelenNewIssue.Size = new System.Drawing.Size(692, 298);
+            this.dataGridViewMaatregelenNewIssue.Size = new System.Drawing.Size(731, 393);
             this.dataGridViewMaatregelenNewIssue.TabIndex = 19;
             this.dataGridViewMaatregelenNewIssue.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewMaatregelenNewIssue_DataBindingComplete);
             this.dataGridViewMaatregelenNewIssue.SelectionChanged += new System.EventHandler(this.dataGridViewMaatregelenNewIssue_SelectionChanged);
@@ -242,7 +248,7 @@
             // 
             // textBoxIssueToAddID
             // 
-            this.textBoxIssueToAddID.Location = new System.Drawing.Point(233, 3);
+            this.textBoxIssueToAddID.Location = new System.Drawing.Point(233, 13);
             this.textBoxIssueToAddID.Name = "textBoxIssueToAddID";
             this.textBoxIssueToAddID.Size = new System.Drawing.Size(228, 22);
             this.textBoxIssueToAddID.TabIndex = 23;
@@ -264,11 +270,8 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.buttonOnlySelectedMaatregelen);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.textBoxIssueToAddID);
-            this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.dataGridViewMaatregelenNewIssue);
+            this.panel3.Controls.Add(this.panel7);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(740, 3);
             this.panel3.Name = "panel3";
@@ -277,7 +280,7 @@
             // 
             // buttonOnlySelectedMaatregelen
             // 
-            this.buttonOnlySelectedMaatregelen.Location = new System.Drawing.Point(493, 6);
+            this.buttonOnlySelectedMaatregelen.Location = new System.Drawing.Point(493, 16);
             this.buttonOnlySelectedMaatregelen.Name = "buttonOnlySelectedMaatregelen";
             this.buttonOnlySelectedMaatregelen.Size = new System.Drawing.Size(202, 55);
             this.buttonOnlySelectedMaatregelen.TabIndex = 24;
@@ -288,10 +291,8 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.dataGridViewMaatregelenCurrentIssue);
-            this.panel4.Controls.Add(this.textBoxObjectIssueId);
-            this.panel4.Controls.Add(this.label11);
+            this.panel4.Controls.Add(this.panel6);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
@@ -301,7 +302,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 47);
+            this.label1.Location = new System.Drawing.Point(20, 60);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 17);
             this.label1.TabIndex = 19;
@@ -354,6 +355,29 @@
             this.checkedListBoxWarningSettings.TabIndex = 22;
             this.checkedListBoxWarningSettings.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxWarningSettings_ItemCheck);
             // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.label11);
+            this.panel6.Controls.Add(this.label1);
+            this.panel6.Controls.Add(this.textBoxObjectIssueId);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(731, 100);
+            this.panel6.TabIndex = 20;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.textBoxIssueToAddID);
+            this.panel7.Controls.Add(this.buttonOnlySelectedMaatregelen);
+            this.panel7.Controls.Add(this.label2);
+            this.panel7.Controls.Add(this.label5);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(731, 100);
+            this.panel7.TabIndex = 25;
+            // 
             // WarningAddToObject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -372,11 +396,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMaatregelenNewIssue)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -410,5 +436,7 @@
         private System.Windows.Forms.TextBox textBoxGevaar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxWarningMessage;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel6;
     }
 }

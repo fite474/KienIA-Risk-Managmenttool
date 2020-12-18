@@ -35,7 +35,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.checkBoxIssueOK = new System.Windows.Forms.CheckBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -150,7 +149,6 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.checkBoxIssueOK);
-            this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
@@ -166,20 +164,11 @@
             this.checkBoxIssueOK.Location = new System.Drawing.Point(116, 101);
             this.checkBoxIssueOK.Name = "checkBoxIssueOK";
             this.checkBoxIssueOK.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBoxIssueOK.Size = new System.Drawing.Size(117, 21);
+            this.checkBoxIssueOK.Size = new System.Drawing.Size(167, 21);
             this.checkBoxIssueOK.TabIndex = 5;
-            this.checkBoxIssueOK.Text = "Goedgekeurd";
+            this.checkBoxIssueOK.Text = "Beoordeling afgerond";
             this.checkBoxIssueOK.UseVisualStyleBackColor = true;
             this.checkBoxIssueOK.CheckedChanged += new System.EventHandler(this.checkBoxIssueOK_CheckedChanged);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(9, 126);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(210, 23);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Blokker aanpassingen";
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -427,7 +416,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1499, 423);
+            this.tabPage2.Size = new System.Drawing.Size(1499, 489);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Issue Foto";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -536,7 +525,6 @@
         private System.Windows.Forms.Button buttonAddNewMaatregel;
         private System.Windows.Forms.Button buttonDeleteMaatregelen;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox textBoxRest_Risico_Comment;
         private System.Windows.Forms.TextBox textBoxInit_Risico_Comment;
         private System.Windows.Forms.TextBox textBoxRest_Risico;

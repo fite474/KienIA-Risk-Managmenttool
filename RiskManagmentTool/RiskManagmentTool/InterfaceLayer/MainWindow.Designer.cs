@@ -146,6 +146,7 @@
             this.buttonTemplates.TabIndex = 2;
             this.buttonTemplates.Text = "Templates";
             this.buttonTemplates.UseVisualStyleBackColor = true;
+            this.buttonTemplates.Visible = false;
             this.buttonTemplates.Click += new System.EventHandler(this.buttonTemplates_Click);
             // 
             // buttonObjecten

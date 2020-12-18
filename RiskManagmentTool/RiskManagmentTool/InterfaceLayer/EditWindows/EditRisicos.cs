@@ -262,8 +262,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            string gevaarlijkeSituatie = textBoxGevGebeurtenis.Text;
-            string gevaarlijkeGebeurtenis = textBoxGevSituatie.Text;
+            string gevaarlijkeSituatie = textBoxGevSituatie.Text;
+            string gevaarlijkeGebeurtenis = textBoxGevGebeurtenis.Text;
 
             if (isNewGevaar)
             {

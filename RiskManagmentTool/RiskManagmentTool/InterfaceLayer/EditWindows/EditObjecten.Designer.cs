@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditObjecten));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -67,6 +68,9 @@
             this.buttonIssuesOplossen = new System.Windows.Forms.Button();
             this.buttonDeleteGevaren = new System.Windows.Forms.Button();
             this.buttonAddRisico = new System.Windows.Forms.Button();
+            this.buttonShowLegenda = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -81,6 +85,8 @@
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -230,8 +236,8 @@
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.buttonExportToExcel);
-            this.panel6.Controls.Add(this.pictureBoxObjectFoto);
+            this.panel6.Controls.Add(this.panel8);
+            this.panel6.Controls.Add(this.panel7);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(1096, 3);
             this.panel6.Name = "panel6";
@@ -240,10 +246,10 @@
             // 
             // buttonExportToExcel
             // 
-            this.buttonExportToExcel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.buttonExportToExcel.Location = new System.Drawing.Point(0, 215);
+            this.buttonExportToExcel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonExportToExcel.Location = new System.Drawing.Point(0, 0);
             this.buttonExportToExcel.Name = "buttonExportToExcel";
-            this.buttonExportToExcel.Size = new System.Drawing.Size(470, 50);
+            this.buttonExportToExcel.Size = new System.Drawing.Size(470, 54);
             this.buttonExportToExcel.TabIndex = 1;
             this.buttonExportToExcel.Text = "Export naar Excel";
             this.buttonExportToExcel.UseVisualStyleBackColor = true;
@@ -251,12 +257,11 @@
             // 
             // pictureBoxObjectFoto
             // 
-            this.pictureBoxObjectFoto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBoxObjectFoto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBoxObjectFoto.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxObjectFoto.Image")));
-            this.pictureBoxObjectFoto.Location = new System.Drawing.Point(3, 6);
+            this.pictureBoxObjectFoto.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxObjectFoto.Name = "pictureBoxObjectFoto";
-            this.pictureBoxObjectFoto.Size = new System.Drawing.Size(461, 203);
+            this.pictureBoxObjectFoto.Size = new System.Drawing.Size(470, 211);
             this.pictureBoxObjectFoto.TabIndex = 0;
             this.pictureBoxObjectFoto.TabStop = false;
             this.pictureBoxObjectFoto.Click += new System.EventHandler(this.pictureBoxObjectFoto_Click);
@@ -301,11 +306,19 @@
             this.advancedDataGridViewGekoppeldeIssues.AutoGenerateContextFilters = true;
             this.advancedDataGridViewGekoppeldeIssues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.advancedDataGridViewGekoppeldeIssues.DateWithTime = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advancedDataGridViewGekoppeldeIssues.DefaultCellStyle = dataGridViewCellStyle1;
             this.advancedDataGridViewGekoppeldeIssues.Dock = System.Windows.Forms.DockStyle.Fill;
             this.advancedDataGridViewGekoppeldeIssues.Location = new System.Drawing.Point(3, 53);
             this.advancedDataGridViewGekoppeldeIssues.Name = "advancedDataGridViewGekoppeldeIssues";
             this.advancedDataGridViewGekoppeldeIssues.ReadOnly = true;
-            this.advancedDataGridViewGekoppeldeIssues.RowTemplate.Height = 24;
+            this.advancedDataGridViewGekoppeldeIssues.RowTemplate.Height = 40;
             this.advancedDataGridViewGekoppeldeIssues.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.advancedDataGridViewGekoppeldeIssues.Size = new System.Drawing.Size(1555, 359);
             this.advancedDataGridViewGekoppeldeIssues.TabIndex = 2;
@@ -317,6 +330,7 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.buttonShowLegenda);
             this.panel5.Controls.Add(this.buttonClearDGVFilter);
             this.panel5.Controls.Add(this.label10);
             this.panel5.Controls.Add(this.comboBoxVisualSettings);
@@ -496,6 +510,35 @@
             this.buttonAddRisico.UseVisualStyleBackColor = true;
             this.buttonAddRisico.Click += new System.EventHandler(this.buttonAddRisico_Click);
             // 
+            // buttonShowLegenda
+            // 
+            this.buttonShowLegenda.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonShowLegenda.Location = new System.Drawing.Point(1426, 0);
+            this.buttonShowLegenda.Name = "buttonShowLegenda";
+            this.buttonShowLegenda.Size = new System.Drawing.Size(129, 50);
+            this.buttonShowLegenda.TabIndex = 6;
+            this.buttonShowLegenda.Text = "Legenda weergeven";
+            this.buttonShowLegenda.UseVisualStyleBackColor = true;
+            this.buttonShowLegenda.Click += new System.EventHandler(this.buttonShowLegenda_Click);
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.buttonExportToExcel);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel7.Location = new System.Drawing.Point(0, 211);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(470, 54);
+            this.panel7.TabIndex = 2;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.pictureBoxObjectFoto);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(470, 211);
+            this.panel8.TabIndex = 3;
+            // 
             // EditObjecten
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -526,6 +569,8 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.panel4.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -570,5 +615,8 @@
         private System.Windows.Forms.Button buttonSaveObjectNotes;
         private System.Windows.Forms.CheckedListBox checkedListBoxRisicograaf;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button buttonShowLegenda;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel7;
     }
 }

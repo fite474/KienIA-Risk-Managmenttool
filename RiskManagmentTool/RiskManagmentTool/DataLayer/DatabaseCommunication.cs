@@ -62,7 +62,7 @@ namespace RiskManagmentTool.DataLayer
         {
             string initText = "";
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO TableObjectSettings(ObjectID, Notes) VALUES " +
+            SqlCommand cmd = new SqlCommand("INSERT INTO TableObjectNotes(ObjectID, Notes) VALUES " +
                                                                        "(@ObjectID, @Notes)", sqlConnection);
 
             cmd.Parameters.AddWithValue("@ObjectID", objectID);
@@ -996,7 +996,17 @@ namespace RiskManagmentTool.DataLayer
 
         }
 
-        
+        public SqlDataAdapter GetExportView(string objectID)
+        {
+            sqlConnection.Open();
+            string query = "SELECT * FROM View_ExportObject_IssuesMetMaatregelen " +
+                            "WHERE View_ExportObject_IssuesMetMaatregelen.IssueID IN (SELECT TableObjectIssues.IssueID FROM TableObjectIssues WHERE TableObjectIssues.ObjectID = '" + objectID + "') ";
+
+            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
+            sqlConnection.Close();
+            return adapter;
+
+        }
 
 
         public SqlDataAdapter GetAllIssues()
@@ -2528,10 +2538,12 @@ namespace RiskManagmentTool.DataLayer
 
         public List<string> GetTemplateNamen()
         {
+            string templateProjectName = "Templates";
             List<string> objectTypes = new List<string>();
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT TemplateNaam FROM TableTemplates", sqlConnection);
-
+            SqlCommand cmd = new SqlCommand("SELECT ObjectNaam FROM TableObjecten " +
+                                            "WHERE ProjectNaam  = @TemplateProjectName ", sqlConnection);
+            cmd.Parameters.AddWithValue("@TemplateProjectName", templateProjectName);
             using (SqlDataReader dr = cmd.ExecuteReader())
             {
                 while (dr.Read())
@@ -2545,10 +2557,11 @@ namespace RiskManagmentTool.DataLayer
         }
         public List<string> GetObjectNamen()
         {
+            string templateProjectName = "Templates";
             List<string> objectTypes = new List<string>();
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT ObjectNaam FROM TableObjecten", sqlConnection);
-
+            SqlCommand cmd = new SqlCommand("SELECT ObjectNaam FROM TableObjecten WHERE ProjectNaam NOT LIKE @TemplateProjectName", sqlConnection);
+            cmd.Parameters.AddWithValue("@TemplateProjectName", templateProjectName);
             using (SqlDataReader dr = cmd.ExecuteReader())
             {
                 while (dr.Read())

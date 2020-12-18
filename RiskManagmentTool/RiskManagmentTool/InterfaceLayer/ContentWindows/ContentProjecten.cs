@@ -27,7 +27,8 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
         private void buttonAddNew_Click(object sender, EventArgs e)
         {
             Form initProject = new InitProject();
-            initProject.Show();
+            initProject.ShowDialog();
+            LoadProjects();
             //Form editProjecten = new EditProjecten();
             //editProjecten.Show();
         }

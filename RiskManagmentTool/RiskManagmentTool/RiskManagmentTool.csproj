@@ -240,6 +240,12 @@
     <Compile Include="InterfaceLayer\WeergeefWindows\ShowGevaarUsage.Designer.cs">
       <DependentUpon>ShowGevaarUsage.cs</DependentUpon>
     </Compile>
+    <Compile Include="InterfaceLayer\WeergeefWindows\ShowLegendaObjecten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\WeergeefWindows\ShowLegendaObjecten.Designer.cs">
+      <DependentUpon>ShowLegendaObjecten.cs</DependentUpon>
+    </Compile>
     <Compile Include="InterfaceLayer\WeergeefWindows\ShowMenuItemUsage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -359,6 +365,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InterfaceLayer\WeergeefWindows\ShowGevaarUsage.resx">
       <DependentUpon>ShowGevaarUsage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\WeergeefWindows\ShowLegendaObjecten.resx">
+      <DependentUpon>ShowLegendaObjecten.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterfaceLayer\WeergeefWindows\ShowMenuItemUsage.resx">
       <DependentUpon>ShowMenuItemUsage.cs</DependentUpon>

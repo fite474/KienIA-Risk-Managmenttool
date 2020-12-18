@@ -496,6 +496,17 @@ namespace RiskManagmentTool.LogicLayer
         //    return data;
         //}
 
+        public BindingSource GetExportView(string objectID)//DataTable GetObjectIssues(string objectID)
+        {
+            SqlDataAdapter adapter = databaseCommunication.GetExportView(objectID);
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = data;
+            return bindingSource;//data;
+        }
+
         public BindingSource GetObjectIssues(string objectID)//DataTable GetObjectIssues(string objectID)
         {
             SqlDataAdapter adapter = databaseCommunication.GetIssuesFromObject(objectID);
@@ -703,6 +714,11 @@ namespace RiskManagmentTool.LogicLayer
         #endregion GET REQUEST FROM DATABASE
 
         #region delete
+
+        public void DeleteGekoppeldeMaatregelenVanIssue()
+        {
+
+        }
         public void DeleteIssueFromObject(string objectId, string issueId)
         {
             databaseCommunication.VerwijderIssuesVanObject(objectId, issueId);

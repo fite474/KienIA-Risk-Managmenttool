@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using RiskManagmentTool.LogicLayer;
 using RiskManagmentTool.InterfaceLayer.AddWindows;
 using RiskManagmentTool.InterfaceLayer.DeleteWindows;
+using RiskManagmentTool.InterfaceLayer.WeergeefWindows;
 using DataGridViewAutoFilter;
 
 
@@ -175,7 +176,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
                             IssuesState.TryGetValue(issueId, out string issueState);
                             if (issueState.Equals("0"))
                             {
-                                advancedDataGridViewGekoppeldeIssues.Rows[rowIndex].DefaultCellStyle.BackColor = Color.Red;
+                                advancedDataGridViewGekoppeldeIssues.Rows[rowIndex].DefaultCellStyle.BackColor = Color.Purple;
                                 //IssuesToVerify.Add(dataGridViewGekoppeldeIssues.Rows[rowIndex].Cells[viewsColumnNames.IssueIDColumn].Value.ToString());
                             }
                             else if (issueState.Equals("1"))
@@ -536,6 +537,12 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             comunicator.UpdateObjectNotes(ObjectID, objectNotes);
 
             LoadNotes();
+        }
+
+        private void buttonShowLegenda_Click(object sender, EventArgs e)
+        {
+            ShowLegendaObjecten showLegenda = new ShowLegendaObjecten();
+            showLegenda.ShowDialog();
         }
     }
 }

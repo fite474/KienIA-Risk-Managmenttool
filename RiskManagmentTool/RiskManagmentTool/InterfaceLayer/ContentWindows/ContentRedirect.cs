@@ -43,8 +43,19 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
                 string objectNaam = objectInfo[2];
                 string objectType = objectInfo[3];
                 string objectOmschrijving = objectInfo[4];
-                Form editObject = new EditObjecten(objectId, projectNaam, objectNaam, objectType, objectOmschrijving);
+                EditObjecten editObject = new EditObjecten(objectId, projectNaam, objectNaam, objectType, objectOmschrijving);
+                editObject.OpenedFromRedirectionPage = true;
+                editObject.RedirectionPageRequestedIssueID = int.Parse(zoekNummer);
                 editObject.Show();
+
+                //List<string> issueInfo = comunicator.GetIssueInfo(zoekNummer);
+
+                ////textBoxObjectIssueId.Text = issueInfo[0];
+                //string issueSituatie = issueInfo[1];
+                //string issueGebeurtenis = issueInfo[2];
+                //string issueGevaarType = issueInfo[3];
+                //Form issueMaatregelen = new IssueMaatregelen(objectNaam, objectId, zoekNummer, "discipline", issueGevaarType, issueSituatie, issueGebeurtenis);
+                //issueMaatregelen.ShowDialog();
             }
             else
             {

@@ -34,9 +34,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
 
         public IssueMaatregelen(string objectNaam, string objectId, string issueId,
-                                string discipline, string gevaar, string situatie, string gebeurtenis,
-                                string init_Risico, string init_Risico_Beschrijving,
-                                string rest_Risico, string rest_Risico_Beschrijving)
+                                string discipline, string gevaar, string situatie, string gebeurtenis)
         {
             InitializeComponent();
             comunicator = new Datacomunication();
@@ -164,23 +162,23 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             LoadData();
         }
 
-        private void buttonNextIssue_Click(object sender, EventArgs e)
-        {
-            string message = "Weet u zeker dat de risico waardes ook correct zijn?";
-            string title = "Reminder Risico waardes";
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            DialogResult result = MessageBox.Show(message, title, buttons);
-            if (result == DialogResult.Yes)
-            {
-                //this.Close();
-            }
-            else
-            {
-                // Do something  
-            }
-            //issueNmr++;
-            //textBoxIssueID.Text = issueNmr.ToString();
-        }
+        //private void buttonNextIssue_Click(object sender, EventArgs e)
+        //{
+        //    string message = "Weet u zeker dat de risico waardes ook correct zijn?";
+        //    string title = "Reminder Risico waardes";
+        //    MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+        //    DialogResult result = MessageBox.Show(message, title, buttons);
+        //    if (result == DialogResult.Yes)
+        //    {
+        //        //this.Close();
+        //    }
+        //    else
+        //    {
+        //        // Do something  
+        //    }
+        //    //issueNmr++;
+        //    //textBoxIssueID.Text = issueNmr.ToString();
+        //}
 
         private void dataGridViewIssueMaatregelen_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
@@ -197,7 +195,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private void buttonDeleteMaatregelen_Click(object sender, EventArgs e)
         {
             DeleteGekoppeldeMaatregelen deleteGekoppeldeMaatregelen = new DeleteGekoppeldeMaatregelen(IssueID);
-            deleteGekoppeldeMaatregelen.Show();
+            deleteGekoppeldeMaatregelen.ShowDialog();
+            LoadData();
         }
 
         private void pictureBoxIssueImage_Click(object sender, EventArgs e)

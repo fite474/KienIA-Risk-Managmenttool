@@ -35,15 +35,24 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void dataGridViewGekoppeldeObjecten_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-            string projectID = dataGridViewGekoppeldeObjecten.SelectedRows[0].Cells[0].Value.ToString();
-            string projectNaam = dataGridViewGekoppeldeObjecten.SelectedRows[0].Cells[1].Value.ToString();
-            string objectNaam = dataGridViewGekoppeldeObjecten.SelectedRows[0].Cells[2].Value.ToString();
-            string objectType = dataGridViewGekoppeldeObjecten.SelectedRows[0].Cells[3].Value.ToString();
-            string objectOmschrijving = dataGridViewGekoppeldeObjecten.SelectedRows[0].Cells[4].Value.ToString();
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                string projectID = dataGridViewGekoppeldeObjecten.SelectedRows[0].Cells[0].Value.ToString();
+                string projectNaam = dataGridViewGekoppeldeObjecten.SelectedRows[0].Cells[1].Value.ToString();
+                string objectNaam = dataGridViewGekoppeldeObjecten.SelectedRows[0].Cells[2].Value.ToString();
+                string objectType = dataGridViewGekoppeldeObjecten.SelectedRows[0].Cells[3].Value.ToString();
+                string objectOmschrijving = dataGridViewGekoppeldeObjecten.SelectedRows[0].Cells[4].Value.ToString();
 
-            Form editObject = new EditObjecten(projectID, projectNaam, objectNaam, objectType, objectOmschrijving);
-            editObject.Show();
+                Form editObject = new EditObjecten(projectID, projectNaam, objectNaam, objectType, objectOmschrijving);
+                editObject.Show();
+            }
+            catch (Exception err)
+            {
+
+                Console.WriteLine(err);
+            }
+           
 
         }
 

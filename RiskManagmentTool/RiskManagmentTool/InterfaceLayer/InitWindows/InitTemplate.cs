@@ -52,10 +52,10 @@ namespace RiskManagmentTool.InterfaceLayer.InitWindows
         private void buttonCreateTemplate_Click(object sender, EventArgs e)
         {
             
-            string templateNaam = textBoxTemplateNaam.Text;
-            string templateType = comboBoxTemplateType.SelectedItem.ToString();
-            string templateToepassing = comboBoxTemplateToepassing.SelectedItem.ToString();
-            comunicator.MakeTemplate(templateNaam, templateType, templateToepassing);
+            //string templateNaam = textBoxTemplateNaam.Text;
+            //string templateType = comboBoxTemplateType.SelectedItem.ToString();
+            //string templateToepassing = comboBoxTemplateToepassing.SelectedItem.ToString();
+            //comunicator.MakeTemplate(templateNaam, templateType, templateToepassing);
 
             //Form editObject = new EditObjecten(projectId, projectNaam, objectNaam, objectType, objectOmschrijving);
            // editObject.Show();

@@ -42,6 +42,7 @@
             this.textBoxUserInputFileName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCompleteBeoordeling)).BeginInit();
@@ -131,6 +132,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.checkedListBox2);
             this.tabPage2.Controls.Add(this.checkedListBox1);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
@@ -189,6 +191,17 @@
             this.panel2.Size = new System.Drawing.Size(1452, 731);
             this.panel2.TabIndex = 7;
             // 
+            // checkedListBox2
+            // 
+            this.checkedListBox2.FormattingEnabled = true;
+            this.checkedListBox2.Items.AddRange(new object[] {
+            "Geen kleur opmaak",
+            "Met kleur opmaak op basis van rest risico"});
+            this.checkedListBox2.Location = new System.Drawing.Point(321, 37);
+            this.checkedListBox2.Name = "checkedListBox2";
+            this.checkedListBox2.Size = new System.Drawing.Size(300, 140);
+            this.checkedListBox2.TabIndex = 1;
+            // 
             // ExportObject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -224,5 +237,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox textBoxUserInputFileName;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckedListBox checkedListBox2;
     }
 }

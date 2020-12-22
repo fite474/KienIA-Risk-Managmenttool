@@ -226,7 +226,9 @@ namespace RiskManagmentTool.DataLayer
 
         #region gevaar details
 
-        public void MakeGevaar_Disciplines(int gevaarID, int? disciplineID)
+
+        #region add to gevaar
+        public void AddGevaar_Disciplines(int gevaarID, int? disciplineID)
         {
             sqlConnection.Open();
             SqlCommand cmd = new SqlCommand("INSERT INTO Gevaar_Discipline(GevaarID, DisciplineID) VALUES " +
@@ -244,7 +246,7 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
         }
 
-        public void MakeGevaar_Gebruiksfase(int gevaarID, int? gebruiksfaseID)
+        public void AddGevaar_Gebruiksfase(int gevaarID, int? gebruiksfaseID)
         {
             sqlConnection.Open();
             SqlCommand cmd = new SqlCommand("INSERT INTO Gevaar_Gebruiksfase(GevaarID, GebruiksfaseID) VALUES " +
@@ -262,7 +264,7 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
         }
 
-        public void MakeGevaar_Bedienvorm(int gevaarID, int? bedienvormID)
+        public void AddGevaar_Bedienvorm(int gevaarID, int? bedienvormID)
         {
             sqlConnection.Open();
             SqlCommand cmd = new SqlCommand("INSERT INTO Gevaar_Bedienvorm(GevaarID, BedienvormID) VALUES " +
@@ -280,7 +282,7 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
         }
 
-        public void MakeGevaar_Gebruiker(int gevaarID, int? gebruikerID)
+        public void AddGevaar_Gebruiker(int gevaarID, int? gebruikerID)
         {
             sqlConnection.Open();
             SqlCommand cmd = new SqlCommand("INSERT INTO Gevaar_Gebruiker(GevaarID, GebruikerID) VALUES " +
@@ -298,7 +300,7 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
         }
 
-        public void MakeGevaar_GevaarlijkeZone(int gevaarID, int? gevaarlijkeZoneID)
+        public void AddGevaar_GevaarlijkeZone(int gevaarID, int? gevaarlijkeZoneID)
         {
             sqlConnection.Open();
             SqlCommand cmd = new SqlCommand("INSERT INTO Gevaar_GevaarlijkeZone(GevaarID, GevaarlijkeZoneID) VALUES " +
@@ -316,7 +318,7 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
         }
 
-        public void MakeGevaar_Taak(int gevaarID, int? taakID)
+        public void AddGevaar_Taak(int gevaarID, int? taakID)
         {
             sqlConnection.Open();
             SqlCommand cmd = new SqlCommand("INSERT INTO Gevaar_Taak(GevaarID, TaakID) VALUES " +
@@ -334,7 +336,7 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
         }
 
-        public void MakeGevaar_GevaarType(int gevaarID, int? gevaarTypeID)
+        public void AddGevaar_GevaarType(int gevaarID, int? gevaarTypeID)
         {
             sqlConnection.Open();
             SqlCommand cmd = new SqlCommand("INSERT INTO Gevaar_GevaarType(GevaarID, GevaarTypeID) VALUES " +
@@ -352,7 +354,7 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
         }
 
-        public void MakeGevaar_Gevolg(int gevaarID, int? gevolgID)
+        public void AddGevaar_Gevolg(int gevaarID, int? gevolgID)
         {
             sqlConnection.Open();
             SqlCommand cmd = new SqlCommand("INSERT INTO Gevaar_Gevolg(GevaarID, GevolgID) VALUES " +
@@ -369,6 +371,92 @@ namespace RiskManagmentTool.DataLayer
             cmd.ExecuteNonQuery();
             sqlConnection.Close();
         }
+        #endregion add to gevaar
+
+        #region remove from gevaar
+        public void RemoveGevaar_Disciplines(int gevaarID, int disciplineID)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("DELETE FROM Gevaar_Discipline WHERE GevaarID = @GevaarID AND DisciplineID = @DisciplineID", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@GevaarID", gevaarID);
+            cmd.Parameters.AddWithValue("@DisciplineID", disciplineID);
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+        public void RemoveGevaar_Gebruiksfases(int gevaarID, int gebruiksFaseID)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("DELETE FROM Gevaar_Gebruiksfase WHERE GevaarID = @GevaarID AND GebruiksFaseID = @GebruiksFaseID", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@GevaarID", gevaarID);
+            cmd.Parameters.AddWithValue("@GebruiksFaseID", gebruiksFaseID);
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+        public void RemoveGevaar_Bedienvorm(int gevaarID, int bedienvormID)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("DELETE FROM Gevaar_Bedienvorm WHERE GevaarID = @GevaarID AND BedienvormID = @BedienvormID", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@GevaarID", gevaarID);
+            cmd.Parameters.AddWithValue("@BedienvormID", bedienvormID);
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+        public void RemoveGevaar_Gebruiker(int gevaarID, int gebruikerID)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("DELETE FROM Gevaar_Gebruiker WHERE GevaarID = @GevaarID AND GebruikerID = @GebruikerID", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@GevaarID", gevaarID);
+            cmd.Parameters.AddWithValue("@GebruikerID", gebruikerID);
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+        public void RemoveGevaar_GevaarlijkeZone(int gevaarID, int gevaarlijkeZoneID)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("DELETE FROM Gevaar_GevaarlijkeZone WHERE GevaarID = @GevaarID AND GevaarlijkeZoneID = @GevaarlijkeZoneID", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@GevaarID", gevaarID);
+            cmd.Parameters.AddWithValue("@GevaarlijkeZoneID", gevaarlijkeZoneID);
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+        public void RemoveGevaar_Taak(int gevaarID, int taakID)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("DELETE FROM Gevaar_Taak WHERE GevaarID = @GevaarID AND TaakID = @TaakID", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@GevaarID", gevaarID);
+            cmd.Parameters.AddWithValue("@TaakID", taakID);
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+        public void RemoveGevaar_GevaarType(int gevaarID, int gevaarTypeID)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("DELETE FROM Gevaar_GevaarType WHERE GevaarID = @GevaarID AND GevaarTypeID = @GevaarTypeID", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@GevaarID", gevaarID);
+            cmd.Parameters.AddWithValue("@GevaarTypeID", gevaarTypeID);
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+        public void RemoveGevaar_Gevolg(int gevaarID, int gevolgID)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("DELETE FROM Gevaar_Gevolg WHERE GevaarID = @GevaarID AND GevolgID = @GevolgID", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@GevaarID", gevaarID);
+            cmd.Parameters.AddWithValue("@GevolgID", gevolgID);
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+
+        #endregion remove from gevaar
+
 
         #endregion gevaar details
 
@@ -591,6 +679,17 @@ namespace RiskManagmentTool.DataLayer
             SqlCommand cmd = new SqlCommand("DELETE FROM RisicoBeoordeling WHERE IssueID = @IssueID", sqlConnection);
 
             cmd.Parameters.AddWithValue("@IssueID", issueID);
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+
+        public void VerwijderGekoppeldeMaatregelVanIssue(string issueID, string maatregelID)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("DELETE FROM TableIssueMaatregelen WHERE IssueID = @IssueID AND MaatregelID = @MaatregelID", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@IssueID", issueID);
+            cmd.Parameters.AddWithValue("@MaatregelID", maatregelID);
             cmd.ExecuteNonQuery();
             sqlConnection.Close();
         }

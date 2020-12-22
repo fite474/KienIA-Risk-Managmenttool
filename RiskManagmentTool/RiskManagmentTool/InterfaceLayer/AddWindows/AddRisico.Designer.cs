@@ -37,6 +37,7 @@
             this.advancedDataGridViewLosseItems = new ADGV.AdvancedDataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
             this.buttonAddSingleItems = new System.Windows.Forms.Button();
+            this.buttonCreateNewGevaar = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.advancedDataGridViewTemplateViewIssues = new ADGV.AdvancedDataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -52,14 +53,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxObjectNaam = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBoxDiscipline = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.checkedListBoxAddSettings = new System.Windows.Forms.CheckedListBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.buttonCreateNewGevaar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
@@ -86,7 +80,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1782, 784);
+            this.tabControl1.Size = new System.Drawing.Size(1782, 885);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -96,7 +90,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1774, 755);
+            this.tabPage1.Size = new System.Drawing.Size(1774, 856);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Alle risico\'s";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -107,7 +101,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(3, 79);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1768, 673);
+            this.panel6.Size = new System.Drawing.Size(1768, 774);
             this.panel6.TabIndex = 4;
             // 
             // advancedDataGridViewLosseItems
@@ -131,7 +125,7 @@
             this.advancedDataGridViewLosseItems.ReadOnly = true;
             this.advancedDataGridViewLosseItems.RowTemplate.Height = 40;
             this.advancedDataGridViewLosseItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.advancedDataGridViewLosseItems.Size = new System.Drawing.Size(1768, 673);
+            this.advancedDataGridViewLosseItems.Size = new System.Drawing.Size(1768, 774);
             this.advancedDataGridViewLosseItems.TabIndex = 2;
             this.advancedDataGridViewLosseItems.TimeFilter = false;
             this.advancedDataGridViewLosseItems.SortStringChanged += new System.EventHandler(this.advancedDataGridViewLosseItems_SortStringChanged);
@@ -154,11 +148,22 @@
             this.buttonAddSingleItems.Dock = System.Windows.Forms.DockStyle.Left;
             this.buttonAddSingleItems.Location = new System.Drawing.Point(0, 0);
             this.buttonAddSingleItems.Name = "buttonAddSingleItems";
-            this.buttonAddSingleItems.Size = new System.Drawing.Size(255, 76);
+            this.buttonAddSingleItems.Size = new System.Drawing.Size(181, 76);
             this.buttonAddSingleItems.TabIndex = 1;
             this.buttonAddSingleItems.Text = "Koppel geselecteerde gevaren";
             this.buttonAddSingleItems.UseVisualStyleBackColor = true;
             this.buttonAddSingleItems.Click += new System.EventHandler(this.buttonAddSingleItems_Click);
+            // 
+            // buttonCreateNewGevaar
+            // 
+            this.buttonCreateNewGevaar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonCreateNewGevaar.Location = new System.Drawing.Point(1607, 0);
+            this.buttonCreateNewGevaar.Name = "buttonCreateNewGevaar";
+            this.buttonCreateNewGevaar.Size = new System.Drawing.Size(161, 76);
+            this.buttonCreateNewGevaar.TabIndex = 16;
+            this.buttonCreateNewGevaar.Text = "Maak nieuw gevaar aan";
+            this.buttonCreateNewGevaar.UseVisualStyleBackColor = true;
+            this.buttonCreateNewGevaar.Click += new System.EventHandler(this.buttonCreateNewGevaar_Click);
             // 
             // tabPage2
             // 
@@ -167,7 +172,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1774, 755);
+            this.tabPage2.Size = new System.Drawing.Size(1774, 856);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Items uit templates";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -188,12 +193,12 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.advancedDataGridViewTemplateViewIssues.DefaultCellStyle = dataGridViewCellStyle2;
             this.advancedDataGridViewTemplateViewIssues.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.advancedDataGridViewTemplateViewIssues.Location = new System.Drawing.Point(3, 66);
+            this.advancedDataGridViewTemplateViewIssues.Location = new System.Drawing.Point(3, 79);
             this.advancedDataGridViewTemplateViewIssues.Name = "advancedDataGridViewTemplateViewIssues";
             this.advancedDataGridViewTemplateViewIssues.ReadOnly = true;
             this.advancedDataGridViewTemplateViewIssues.RowTemplate.Height = 40;
             this.advancedDataGridViewTemplateViewIssues.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.advancedDataGridViewTemplateViewIssues.Size = new System.Drawing.Size(1768, 686);
+            this.advancedDataGridViewTemplateViewIssues.Size = new System.Drawing.Size(1768, 774);
             this.advancedDataGridViewTemplateViewIssues.TabIndex = 1;
             this.advancedDataGridViewTemplateViewIssues.TimeFilter = false;
             this.advancedDataGridViewTemplateViewIssues.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.advancedDataGridViewTemplateViewIssues_DataBindingComplete);
@@ -208,7 +213,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1768, 63);
+            this.panel1.Size = new System.Drawing.Size(1768, 76);
             this.panel1.TabIndex = 0;
             // 
             // buttonCreateNewTemplate
@@ -226,7 +231,7 @@
             this.buttonAddFromTemplateIssues.Dock = System.Windows.Forms.DockStyle.Left;
             this.buttonAddFromTemplateIssues.Location = new System.Drawing.Point(0, 0);
             this.buttonAddFromTemplateIssues.Name = "buttonAddFromTemplateIssues";
-            this.buttonAddFromTemplateIssues.Size = new System.Drawing.Size(181, 63);
+            this.buttonAddFromTemplateIssues.Size = new System.Drawing.Size(181, 76);
             this.buttonAddFromTemplateIssues.TabIndex = 2;
             this.buttonAddFromTemplateIssues.Text = "Koppel geselecteerde gevaren";
             this.buttonAddFromTemplateIssues.UseVisualStyleBackColor = true;
@@ -256,7 +261,8 @@
             this.tabPage3.Controls.Add(this.panel3);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1774, 755);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1774, 856);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Uit andere objecten selecteren";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -277,12 +283,12 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.advancedDataGridViewObjectView.DefaultCellStyle = dataGridViewCellStyle3;
             this.advancedDataGridViewObjectView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.advancedDataGridViewObjectView.Location = new System.Drawing.Point(0, 75);
+            this.advancedDataGridViewObjectView.Location = new System.Drawing.Point(3, 79);
             this.advancedDataGridViewObjectView.Name = "advancedDataGridViewObjectView";
             this.advancedDataGridViewObjectView.ReadOnly = true;
             this.advancedDataGridViewObjectView.RowTemplate.Height = 40;
             this.advancedDataGridViewObjectView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.advancedDataGridViewObjectView.Size = new System.Drawing.Size(1774, 680);
+            this.advancedDataGridViewObjectView.Size = new System.Drawing.Size(1768, 774);
             this.advancedDataGridViewObjectView.TabIndex = 2;
             this.advancedDataGridViewObjectView.TimeFilter = false;
             this.advancedDataGridViewObjectView.SortStringChanged += new System.EventHandler(this.advancedDataGridViewObjectView_SortStringChanged);
@@ -296,9 +302,9 @@
             this.panel3.Controls.Add(this.comboBoxViewObjectNaam);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1774, 75);
+            this.panel3.Size = new System.Drawing.Size(1768, 76);
             this.panel3.TabIndex = 0;
             // 
             // buttonAddFromObject
@@ -306,7 +312,7 @@
             this.buttonAddFromObject.Dock = System.Windows.Forms.DockStyle.Left;
             this.buttonAddFromObject.Location = new System.Drawing.Point(0, 0);
             this.buttonAddFromObject.Name = "buttonAddFromObject";
-            this.buttonAddFromObject.Size = new System.Drawing.Size(159, 75);
+            this.buttonAddFromObject.Size = new System.Drawing.Size(181, 76);
             this.buttonAddFromObject.TabIndex = 2;
             this.buttonAddFromObject.Text = "Koppel geselecteerde gevaren";
             this.buttonAddFromObject.UseVisualStyleBackColor = true;
@@ -347,111 +353,36 @@
             this.textBoxObjectNaam.Size = new System.Drawing.Size(298, 22);
             this.textBoxObjectNaam.TabIndex = 5;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(74, 134);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 17);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Filter op discipline";
-            this.label2.Visible = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(74, 166);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(146, 17);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Van toepassing voor: ";
-            this.label4.Visible = false;
-            // 
-            // comboBoxDiscipline
-            // 
-            this.comboBoxDiscipline.FormattingEnabled = true;
-            this.comboBoxDiscipline.Location = new System.Drawing.Point(244, 134);
-            this.comboBoxDiscipline.Name = "comboBoxDiscipline";
-            this.comboBoxDiscipline.Size = new System.Drawing.Size(298, 24);
-            this.comboBoxDiscipline.TabIndex = 8;
-            this.comboBoxDiscipline.Visible = false;
-            this.comboBoxDiscipline.SelectedIndexChanged += new System.EventHandler(this.comboBoxDiscipline_SelectedIndexChanged);
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(244, 166);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(298, 24);
-            this.comboBox2.TabIndex = 9;
-            this.comboBox2.Visible = false;
-            // 
             // checkedListBoxAddSettings
             // 
             this.checkedListBoxAddSettings.CheckOnClick = true;
             this.checkedListBoxAddSettings.FormattingEnabled = true;
             this.checkedListBoxAddSettings.Items.AddRange(new object[] {
             "Gekoppelde maatregelen overnemen(waar mogelijk)",
-            "Bijbehorende risicobeoordeling overnemen(waar mogelijk)",
-            "Overgenomen items als \"Nog te verifieren\" overnemen"});
+            "Bijbehorende risicobeoordeling overnemen(waar mogelijk)"});
             this.checkedListBoxAddSettings.Location = new System.Drawing.Point(673, 31);
             this.checkedListBoxAddSettings.Name = "checkedListBoxAddSettings";
-            this.checkedListBoxAddSettings.Size = new System.Drawing.Size(431, 208);
+            this.checkedListBoxAddSettings.Size = new System.Drawing.Size(431, 106);
             this.checkedListBoxAddSettings.TabIndex = 13;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(74, 106);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(133, 17);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "Gebeurtenis bevat: ";
-            this.label5.Visible = false;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(244, 101);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(298, 22);
-            this.textBox3.TabIndex = 15;
-            this.textBox3.Visible = false;
-            // 
-            // buttonCreateNewGevaar
-            // 
-            this.buttonCreateNewGevaar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonCreateNewGevaar.Location = new System.Drawing.Point(1644, 0);
-            this.buttonCreateNewGevaar.Name = "buttonCreateNewGevaar";
-            this.buttonCreateNewGevaar.Size = new System.Drawing.Size(124, 76);
-            this.buttonCreateNewGevaar.TabIndex = 16;
-            this.buttonCreateNewGevaar.Text = "Maak nieuw gevaar aan";
-            this.buttonCreateNewGevaar.UseVisualStyleBackColor = true;
-            this.buttonCreateNewGevaar.Click += new System.EventHandler(this.buttonCreateNewGevaar_Click);
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.textBoxObjectNaam);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.comboBoxDiscipline);
             this.panel2.Controls.Add(this.checkedListBoxAddSettings);
-            this.panel2.Controls.Add(this.comboBox2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1782, 271);
+            this.panel2.Size = new System.Drawing.Size(1782, 170);
             this.panel2.TabIndex = 17;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.tabControl1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 271);
+            this.panel4.Location = new System.Drawing.Point(0, 170);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1782, 784);
+            this.panel4.Size = new System.Drawing.Size(1782, 885);
             this.panel4.TabIndex = 3;
             // 
             // AddRisico
@@ -464,7 +395,7 @@
             this.MinimumSize = new System.Drawing.Size(1000, 1028);
             this.Name = "AddRisico";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddRisico";
+            this.Text = "Gevaar koppelen";
             this.Load += new System.EventHandler(this.AddRisico_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -493,14 +424,8 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxObjectNaam;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBoxDiscipline;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.CheckedListBox checkedListBoxAddSettings;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.ComboBox comboBoxViewTemplate;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button buttonCreateNewGevaar;

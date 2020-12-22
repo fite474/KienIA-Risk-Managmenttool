@@ -16,13 +16,15 @@ namespace RiskManagmentTool.InterfaceLayer.DeleteWindows
         private Datacomunication comunicator;
 
         private string IssueID;
+        private List<string> SelectedMaatregelenId;
+
 
         public DeleteGekoppeldeMaatregelen(string issueID)
         {
             InitializeComponent();
             comunicator = new Datacomunication();
             IssueID = issueID;
-
+            SelectedMaatregelenId = new List<string>();
 
             LoadData();
 
@@ -52,35 +54,37 @@ namespace RiskManagmentTool.InterfaceLayer.DeleteWindows
 
         private void buttonDeleteSelection_Click(object sender, EventArgs e)
         {
-            //string issueID = "";
-            //string messageGevarenId = "";
-            //foreach (DataGridViewRow row in dataGridViewIssueMaatregelen.SelectedRows)
-            //{
-            //    issueID = row.Cells[0].Value.ToString();
-            //    if (!SelectedGevarenId.Contains(issueID))
-            //    {
-            //        SelectedGevarenId.Add(issueID);
-            //        messageGevarenId += issueID + ", ";
-            //    }
-            //}
+            string maatregelIDs = "";
+            string messageGevarenId = "";
+            foreach (DataGridViewRow row in dataGridViewIssueMaatregelen.SelectedRows)
+            {
+                maatregelIDs = row.Cells[0].Value.ToString();
+                if (!SelectedMaatregelenId.Contains(maatregelIDs))
+                {
+                    SelectedMaatregelenId.Add(maatregelIDs);
+                    messageGevarenId += maatregelIDs + ", ";
+                }
+            }
 
-            //string message = "Weet u zeker dat u de gevaren met ID: " + messageGevarenId + " \n " +
-            //                 "wilt verwijderen?";
-            //string title = "Reminder Risico waardes";
-            //MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            //DialogResult result = MessageBox.Show(message, title, buttons);
-            //if (result == DialogResult.Yes)
-            //{
-            //    foreach (string issueId in SelectedGevarenId)
-            //    {
-            //        comunicator.DeleteIssueFromObject(ObjectID, issueId);
-            //    }
-            //    this.Close();
-            //}
-            //else
-            //{
-            //    // Do something  
-            //}
+            string message = "Weet u zeker dat u de maatregelen met ID: " + messageGevarenId + " \n " +
+                             "wilt verwijderen van dit issue?";
+            string title = "Reminder Risico waardes";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons);
+            if (result == DialogResult.Yes)
+            {
+                foreach (string maatregelID in SelectedMaatregelenId)
+                {
+                    comunicator.DeleteGekoppeldeMaatregelenVanIssue(IssueID, maatregelID);
+                }
+                this.Close();
+            }
+            else
+            {
+                SelectedMaatregelenId.Clear();
+                dataGridViewIssueMaatregelen.ClearSelection();
+                // Do something  
+            }
         }
     }
 }

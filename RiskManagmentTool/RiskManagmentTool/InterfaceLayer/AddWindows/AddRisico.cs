@@ -96,7 +96,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
         {
             checkedListBoxAddSettings.SetItemChecked(0, true);
             checkedListBoxAddSettings.SetItemChecked(1, true);
-            checkedListBoxAddSettings.SetItemChecked(2, true);
+            //checkedListBoxAddSettings.SetItemChecked(2, true);
         }
 
         private void HandleAddWithSettings(List<string> GevarenIdToAdd)
@@ -133,17 +133,9 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
 
 
-        private void comboBoxDiscipline_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //dataGridViewLosseItems.DataSource = comunicator.GetGevarenTableByDiscipline(comboBoxDiscipline.SelectedItem.ToString());
-        }
-
-
-
-
-
         private void comboBoxViewTemplate_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             string selectedTemplateName = comboBoxViewTemplate.SelectedItem.ToString();
 
             templateGevarenData = comunicator.GetObjectIssuesByObjectName(selectedTemplateName);
@@ -155,6 +147,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
         private void comboBoxViewObjectNaam_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             objectGevarenData = comunicator.GetObjectIssuesByObjectName(comboBoxViewObjectNaam.SelectedItem.ToString());
             advancedDataGridViewObjectView.DataSource = objectGevarenData;
             //dataGridViewObjectView.DataSource = comunicator.GetObjectIssuesByObjectName(comboBoxViewObjectNaam.SelectedItem.ToString());
@@ -172,15 +165,9 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
                 string discipline = advancedDataGridViewObjectView.SelectedRows[0].Cells[viewsColumnNames.GevaarDisciplineColumn].Value.ToString();
                 string gevaar = advancedDataGridViewObjectView.SelectedRows[0].Cells[viewsColumnNames.GevaarGevaarTypeColumn].Value.ToString();
 
-                string init_Risico = "";
-                string init_Risico_Beschrijving = "";
-                string rest_Risico = "";
-                string rest_Risico_Beschrijving = "";
 
                 IssueMaatregelen issueMaatregelen = new IssueMaatregelen(ObjectNaam, ObjectID, issueId,
-                                                             discipline, gevaar, situatie, gebeurtenis,
-                                                             init_Risico, init_Risico_Beschrijving,
-                                                             rest_Risico, rest_Risico_Beschrijving);
+                                                             discipline, gevaar, situatie, gebeurtenis);
                 issueMaatregelen.SetReadOnlyMode();
                 issueMaatregelen.ShowDialog();
             }
@@ -203,15 +190,9 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
                 string discipline = advancedDataGridViewTemplateViewIssues.SelectedRows[0].Cells[viewsColumnNames.GevaarDisciplineColumn].Value.ToString();
                 string gevaar = advancedDataGridViewTemplateViewIssues.SelectedRows[0].Cells[viewsColumnNames.GevaarGevaarTypeColumn].Value.ToString();
 
-                string init_Risico = "";
-                string init_Risico_Beschrijving = "";
-                string rest_Risico = "";
-                string rest_Risico_Beschrijving = "";
 
                 IssueMaatregelen issueMaatregelen = new IssueMaatregelen(comboBoxViewTemplate.SelectedItem.ToString(), "", issueId,
-                                                             discipline, gevaar, situatie, gebeurtenis,
-                                                             init_Risico, init_Risico_Beschrijving,
-                                                             rest_Risico, rest_Risico_Beschrijving);
+                                                             discipline, gevaar, situatie, gebeurtenis);
                 issueMaatregelen.SetReadOnlyMode();
                 issueMaatregelen.ShowDialog();
             }
@@ -273,10 +254,22 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
 
             SelectedTemplateIssueId = temp;
+
+
+            bool addMaatregelen = checkedListBoxAddSettings.GetItemChecked(0);
+            bool addRisicoBeoordeling = checkedListBoxAddSettings.GetItemChecked(1);
+            //bool issueNeedsToVirify = checkedListBoxAddSettings.GetItemChecked(2);
+
             foreach (string gevaarToAddID in SelectedTemplateIssueId)
             {
-                //comunicator.AddGevaarToObject(ObjectID, gevaarToAddID);
+                comunicator.AddIssueToObject(ObjectID, gevaarToAddID, addMaatregelen, addRisicoBeoordeling);//, issueNeedsToVirify);
             }
+
+
+            //foreach (string gevaarToAddID in SelectedTemplateIssueId)
+            //{
+            //    //comunicator.AddGevaarToObject(ObjectID, gevaarToAddID);
+            //}
 
             //SelectedTemplateIssueId.Clear();
             //CheckForDubble();
@@ -308,11 +301,11 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
             bool addMaatregelen = checkedListBoxAddSettings.GetItemChecked(0);
             bool addRisicoBeoordeling = checkedListBoxAddSettings.GetItemChecked(1);
-            bool issueNeedsToVirify = checkedListBoxAddSettings.GetItemChecked(2);
+            //bool issueNeedsToVirify = checkedListBoxAddSettings.GetItemChecked(2);
 
             foreach (string gevaarToAddID in SelectedObjectIssueId)
             {
-                comunicator.AddIssueToObject(ObjectID, gevaarToAddID, addMaatregelen, addRisicoBeoordeling, issueNeedsToVirify);
+                comunicator.AddIssueToObject(ObjectID, gevaarToAddID, addMaatregelen, addRisicoBeoordeling);//, issueNeedsToVirify);
             }
 
         }

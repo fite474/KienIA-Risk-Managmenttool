@@ -31,6 +31,22 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private Dictionary<int, string> BedienvormenItems_DBIndex;
         private Dictionary<int, string> TakenItems_DBIndex;
 
+
+        // controle dictonaries for checking changes
+        private Dictionary<int, int> GevolgenCheckedItemsAtStart;
+        private Dictionary<int, int> GevarenzonesCheckedItemsAtStart;
+        private Dictionary<int, int> GevaarTypesCheckedItemsAtStart;
+        private Dictionary<int, int> GebruiksfaseCheckedItemsAtStart;
+        private Dictionary<int, int> GebruikersCheckedItemsAtStart;
+        private Dictionary<int, int> DisciplinesCheckedItemsAtStart;
+        private Dictionary<int, int> BedienvormenCheckedItemsAtStart;
+        private Dictionary<int, int> TakenCheckedItemsAtStart;
+
+        //end 
+
+
+
+
         private Dictionary<int, string> CurrentMenuToAddTo;
 
 
@@ -137,15 +153,25 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             textBoxGevGebeurtenis.Text = risicoBeoordelingData.Rows[0].Field<string>(2).ToString();
 
 
-            GevolgenCheckedItems = comunicator.GetGevaar_Gevolg(gevaarID);
-            GevarenzonesCheckedItems = comunicator.GetGevaar_GevaarlijkeZone(gevaarID);
-            GevaarTypesCheckedItems = comunicator.GetGevaar_GevaarType(gevaarID);
-            GebruiksfaseCheckedItems = comunicator.GetGevaar_Gebruiksfase(gevaarID);
-            GebruikersCheckedItems = comunicator.GetGevaar_Gebruiker(gevaarID);
-            DisciplinesCheckedItems = comunicator.GetGevaar_Disciplines(gevaarID);
+            GevolgenCheckedItemsAtStart = comunicator.GetGevaar_Gevolg(gevaarID);
+            GevarenzonesCheckedItemsAtStart = comunicator.GetGevaar_GevaarlijkeZone(gevaarID);
+            GevaarTypesCheckedItemsAtStart = comunicator.GetGevaar_GevaarType(gevaarID);
+            GebruiksfaseCheckedItemsAtStart = comunicator.GetGevaar_Gebruiksfase(gevaarID);
+            GebruikersCheckedItemsAtStart = comunicator.GetGevaar_Gebruiker(gevaarID);
+            DisciplinesCheckedItemsAtStart = comunicator.GetGevaar_Disciplines(gevaarID);
+            BedienvormenCheckedItemsAtStart = comunicator.GetGevaar_Bedienvorm(gevaarID);
+            TakenCheckedItemsAtStart = comunicator.GetGevaar_Taak(gevaarID);
 
-            BedienvormenCheckedItems = comunicator.GetGevaar_Bedienvorm(gevaarID);
-            TakenCheckedItems = comunicator.GetGevaar_Taak(gevaarID);
+            GevolgenCheckedItems = new Dictionary<int, int>(GevolgenCheckedItemsAtStart);
+            GevarenzonesCheckedItems = new Dictionary<int, int>(GevarenzonesCheckedItemsAtStart);
+            GevaarTypesCheckedItems = new Dictionary<int, int>(GevaarTypesCheckedItemsAtStart);
+            GebruiksfaseCheckedItems = new Dictionary<int, int>(GebruiksfaseCheckedItemsAtStart);
+            GebruikersCheckedItems = new Dictionary<int, int>(GebruikersCheckedItemsAtStart);
+            DisciplinesCheckedItems = new Dictionary<int, int>(DisciplinesCheckedItemsAtStart);
+            BedienvormenCheckedItems = new Dictionary<int, int>(BedienvormenCheckedItemsAtStart);
+            TakenCheckedItems = new Dictionary<int, int>(TakenCheckedItemsAtStart);
+
+
 
             situatieInitString = textBoxGevSituatie.Text;
             gebeurtenisInitString = textBoxGevGebeurtenis.Text;
@@ -260,6 +286,86 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
 
 
+
+
+        private void CheckUsersChanges(Dictionary<int, int> checkedItemsAtSave, Dictionary<int, int> checkedItemsAtStart, MenuTableName menuTableName)
+        {
+            int gevaarIDToUpdate = int.Parse(editGevaarID);
+
+
+
+            if (checkedItemsAtSave.Count > 0)
+            {
+                if (checkedItemsAtStart.Count == 0)
+                {
+                    comunicator.UpdateGevaarDataRemoveNull(gevaarIDToUpdate, menuTableName);
+                }
+
+
+                foreach (KeyValuePair<int, int> kvp in checkedItemsAtSave)
+                {
+                    if (!checkedItemsAtStart.ContainsValue(kvp.Value))
+                    {
+                        comunicator.UpdateGevaarDataAdd(gevaarIDToUpdate, menuTableName, kvp.Value);
+                    }
+
+                }
+
+                foreach (KeyValuePair<int, int> kvp in checkedItemsAtStart)
+                {
+                    if (!checkedItemsAtSave.ContainsValue(kvp.Value))
+                    {
+                        comunicator.UpdateGevaarDataDelete(gevaarIDToUpdate, menuTableName, kvp.Value);
+                    }
+
+                }
+            }
+            else if (checkedItemsAtSave.Count == 0 && checkedItemsAtStart.Count != 0)
+            {
+                comunicator.UpdateGevaarDataInsertNull(gevaarIDToUpdate, menuTableName);
+            }
+
+            
+            
+
+
+        }
+
+        private void UpdateGevaarDataWithChecks()
+        {
+            //int gevaarIDToUpdate = int.Parse(editGevaarID);
+
+
+            CheckUsersChanges(DisciplinesCheckedItems, DisciplinesCheckedItemsAtStart, MenuTableName.Disciplines);
+            CheckUsersChanges(GevolgenCheckedItems, GevolgenCheckedItemsAtStart, MenuTableName.Gevolgen);
+            CheckUsersChanges(GevarenzonesCheckedItems, GevarenzonesCheckedItemsAtStart, MenuTableName.Gevarenzones);
+            CheckUsersChanges(GevaarTypesCheckedItems, GevaarTypesCheckedItemsAtStart, MenuTableName.GevaarTypes);
+            CheckUsersChanges(GebruiksfaseCheckedItems, GebruiksfaseCheckedItemsAtStart, MenuTableName.Gebruiksfases);
+            CheckUsersChanges(GebruikersCheckedItems, GebruikersCheckedItemsAtStart, MenuTableName.Gebruikers);
+            CheckUsersChanges(BedienvormenCheckedItems, BedienvormenCheckedItemsAtStart, MenuTableName.Bedienvormen);
+            CheckUsersChanges(TakenCheckedItems, TakenCheckedItemsAtStart, MenuTableName.Taken);
+
+
+
+
+
+            //comunicator.UpdateGevaarDataOLD(gevaarIDToUpdate, DisciplinesCheckedItems, GebruiksfaseCheckedItems,
+            //BedienvormenCheckedItems, GebruikersCheckedItems,
+            //GevarenzonesCheckedItems, TakenCheckedItems,
+            //GevaarTypesCheckedItems, GevolgenCheckedItems);
+            int gevaarIDToUpdate = int.Parse(editGevaarID);
+            if (textBoxGevSituatie.Text != situatieInitString)
+            {
+                comunicator.UpdateGevaarSituatie(gevaarIDToUpdate, textBoxGevSituatie.Text);
+            }
+            if (textBoxGevGebeurtenis.Text != gebeurtenisInitString)
+            {
+                comunicator.UpdateGevaarGebeurtenis(gevaarIDToUpdate, textBoxGevGebeurtenis.Text);
+            }
+
+        }
+
+
         private void buttonSave_Click(object sender, EventArgs e)
         {
             string gevaarlijkeSituatie = textBoxGevSituatie.Text;
@@ -275,38 +381,14 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             }
             else if (!isNewGevaar)
             {
-                int gevaarIDToUpdate = int.Parse(editGevaarID);
-                comunicator.UpdateGevaarData(gevaarIDToUpdate, DisciplinesCheckedItems, GebruiksfaseCheckedItems,
-                BedienvormenCheckedItems, GebruikersCheckedItems,
-                GevarenzonesCheckedItems, TakenCheckedItems,
-                GevaarTypesCheckedItems, GevolgenCheckedItems);
-
-                if (textBoxGevSituatie.Text != situatieInitString)
-                {
-                    comunicator.UpdateGevaarSituatie(gevaarIDToUpdate, textBoxGevSituatie.Text);
-                }
-                if (textBoxGevGebeurtenis.Text != gebeurtenisInitString)
-                {
-                    comunicator.UpdateGevaarGebeurtenis(gevaarIDToUpdate, textBoxGevGebeurtenis.Text);
-                }
+                UpdateGevaarDataWithChecks();
             }
 
 
 
             this.Close();
 
-            //string gevaarlijkeSituatie = textBoxGevGebeurtenis.Text;
-            //string gevaarlijkeGebeurtenis = textBoxGevSituatie.Text;
-            //string discipline = textBoxDiscipline.Text;
-            //string gebruiksfase = textBoxGebruiksfase.Text;
-            //string bedienvorm = textBoxBedienvorm.Text;
-            //string gebruiker = textBoxGebruiker.Text;
-            //string gevaarlijkeZone = textBoxGevaarlijkeZone.Text;
-            //string taak = textBoxTaak.Text;
-            //string gevaar = textBoxGevaar.Text;
-            //string gevolg = textBoxGevolg.Text;
-            //comunicator.MakeGevaar(gevaarlijkeSituatie, gevaarlijkeGebeurtenis, discipline, gebruiksfase, bedienvorm, gebruiker, gevaarlijkeZone, taak, gevaar, gevolg);
-            //this.Close();
+
         }
 
         private void ChangeCheckedListBox(Dictionary<int, string> items, Dictionary<int, int> checkedItems)

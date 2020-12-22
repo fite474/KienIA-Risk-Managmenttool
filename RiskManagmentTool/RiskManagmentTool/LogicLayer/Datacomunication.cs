@@ -32,7 +32,8 @@ namespace RiskManagmentTool.LogicLayer
 
                 }
             };
-            SendItemToDB(projectItem);
+            databaseCommunication.MakeProject(projectItem);
+
         }
 
         public int MakeObject(string projectId, string projectNaam, string objectNaam, string objectType, string objectOmschrijving)
@@ -70,88 +71,88 @@ namespace RiskManagmentTool.LogicLayer
             {
                 foreach (KeyValuePair<int, int> kvp in GevaarDisciplines)
                 {
-                    databaseCommunication.MakeGevaar_Disciplines(gevaarID, kvp.Value);
+                    databaseCommunication.AddGevaar_Disciplines(gevaarID, kvp.Value);
                 }
             }
             else
-            { databaseCommunication.MakeGevaar_Disciplines(gevaarID, null); }
+            { databaseCommunication.AddGevaar_Disciplines(gevaarID, null); }
 
 
             if (GevaarGebruiksfase.Count > 0)
             {
                 foreach (KeyValuePair<int, int> kvp in GevaarGebruiksfase)
                 {
-                    databaseCommunication.MakeGevaar_Gebruiksfase(gevaarID, kvp.Value);
+                    databaseCommunication.AddGevaar_Gebruiksfase(gevaarID, kvp.Value);
                 }
             }
             else
-            { databaseCommunication.MakeGevaar_Gebruiksfase(gevaarID, null); }
+            { databaseCommunication.AddGevaar_Gebruiksfase(gevaarID, null); }
 
 
             if (GevaarBedienvorm.Count > 0)
             {
                 foreach (KeyValuePair<int, int> kvp in GevaarBedienvorm)
                 {
-                    databaseCommunication.MakeGevaar_Bedienvorm(gevaarID, kvp.Value);
+                    databaseCommunication.AddGevaar_Bedienvorm(gevaarID, kvp.Value);
                 }
             }
             else
-            { databaseCommunication.MakeGevaar_Bedienvorm(gevaarID, null); }
+            { databaseCommunication.AddGevaar_Bedienvorm(gevaarID, null); }
 
 
             if (GevaarGebruiker.Count > 0)
             {
                 foreach (KeyValuePair<int, int> kvp in GevaarGebruiker)
                 {
-                    databaseCommunication.MakeGevaar_Gebruiker(gevaarID, kvp.Value);
+                    databaseCommunication.AddGevaar_Gebruiker(gevaarID, kvp.Value);
                 }
             }
             else
-            { databaseCommunication.MakeGevaar_Gebruiker(gevaarID, null); }
+            { databaseCommunication.AddGevaar_Gebruiker(gevaarID, null); }
 
 
             if (GevaarGevaarlijkeZone.Count > 0)
             {
                 foreach (KeyValuePair<int, int> kvp in GevaarGevaarlijkeZone)
                 {
-                    databaseCommunication.MakeGevaar_GevaarlijkeZone(gevaarID, kvp.Value);
+                    databaseCommunication.AddGevaar_GevaarlijkeZone(gevaarID, kvp.Value);
                 }
             }
             else
-            { databaseCommunication.MakeGevaar_GevaarlijkeZone(gevaarID, null); }
+            { databaseCommunication.AddGevaar_GevaarlijkeZone(gevaarID, null); }
 
 
             if (GevaarTaak.Count > 0)
             {
                 foreach (KeyValuePair<int, int> kvp in GevaarTaak)
                 {
-                    databaseCommunication.MakeGevaar_Taak(gevaarID, kvp.Value);
+                    databaseCommunication.AddGevaar_Taak(gevaarID, kvp.Value);
                 }
             }
             else
-            { databaseCommunication.MakeGevaar_Taak(gevaarID, null); }
+            { databaseCommunication.AddGevaar_Taak(gevaarID, null); }
 
 
             if (GevaarGevaarType.Count > 0)
             {
                 foreach (KeyValuePair<int, int> kvp in GevaarGevaarType)
                 {
-                    databaseCommunication.MakeGevaar_GevaarType(gevaarID, kvp.Value);
+                    databaseCommunication.AddGevaar_GevaarType(gevaarID, kvp.Value);
                 }
             }
             else
-            { databaseCommunication.MakeGevaar_GevaarType(gevaarID, null); }
+            { databaseCommunication.AddGevaar_GevaarType(gevaarID, null); }
 
 
             if (GevaarGevolg.Count > 0)
             {
                 foreach (KeyValuePair<int, int> kvp in GevaarGevolg)
                 {
-                    databaseCommunication.MakeGevaar_Gevolg(gevaarID, kvp.Value);
+                    databaseCommunication.AddGevaar_Gevolg(gevaarID, kvp.Value);
                 }
             }
             else
-            { databaseCommunication.MakeGevaar_Gevolg(gevaarID, null); }
+            { databaseCommunication.AddGevaar_Gevolg(gevaarID, null); }
         }
 
 
@@ -182,20 +183,20 @@ namespace RiskManagmentTool.LogicLayer
         }
 
 
-        public void MakeTemplate(string templateNaam, string templateType, string templateToepassing)
-        {
-            Item templateItem = new Item
-            {
-                ItemType = ItemType.Template,
-                ItemData = new TemplateObject
-                {
-                    TemplateNaam = templateNaam,
-                    TemplateType = templateType,
-                    TemplateToepassing = templateToepassing
-                }
-            };
-            SendItemToDB(templateItem);
-        }
+        //public void MakeTemplate(string templateNaam, string templateType, string templateToepassing)
+        //{
+        //    Item templateItem = new Item
+        //    {
+        //        ItemType = ItemType.Template,
+        //        ItemData = new TemplateObject
+        //        {
+        //            TemplateNaam = templateNaam,
+        //            TemplateType = templateType,
+        //            TemplateToepassing = templateToepassing
+        //        }
+        //    };
+        //    SendItemToDB(templateItem);
+        //}
         #endregion Init
 
 
@@ -217,110 +218,250 @@ namespace RiskManagmentTool.LogicLayer
             databaseCommunication.UpdateGevaarGebeurtenis(gevaarID, text);
         }
 
-        public void UpdateGevaarData(int gevaarID,
-              Dictionary<int, int> GevaarDisciplines, Dictionary<int, int> GevaarGebruiksfase,
-              Dictionary<int, int> GevaarBedienvorm, Dictionary<int, int> GevaarGebruiker,
-              Dictionary<int, int> GevaarGevaarlijkeZone, Dictionary<int, int> GevaarTaak,
-              Dictionary<int, int> GevaarGevaarType, Dictionary<int, int> GevaarGevolg)
+        public void UpdateGevaarDataAdd(int gevaarId, MenuTableName menuTableName, int indexToAdd)
         {
-            //clean
-            databaseCommunication.VerwijderGevaar_Disciplines(gevaarID);
-            databaseCommunication.VerwijderGevaar_Gebruiksfases(gevaarID);
-            databaseCommunication.VerwijderGevaar_Bedienvorm(gevaarID);
-            databaseCommunication.VerwijderGevaar_Gebruiker(gevaarID);
-            databaseCommunication.VerwijderGevaar_GevaarlijkeZone(gevaarID);
-            databaseCommunication.VerwijderGevaar_Taak(gevaarID);
-            databaseCommunication.VerwijderGevaar_GevaarType(gevaarID);
-            databaseCommunication.VerwijderGevaar_Gevolg(gevaarID);
-
-            //insert for all
-            if (GevaarDisciplines.Count > 0)
+            switch (menuTableName)
             {
-                foreach (KeyValuePair<int, int> kvp in GevaarDisciplines)
-                {
-                    databaseCommunication.MakeGevaar_Disciplines(gevaarID, kvp.Value);
-                }
+                case MenuTableName.Gevolgen:
+                    databaseCommunication.AddGevaar_Gevolg(gevaarId, indexToAdd); ;
+                    break;
+                case MenuTableName.Gevarenzones:
+                    databaseCommunication.AddGevaar_GevaarlijkeZone(gevaarId, indexToAdd);
+                    break;
+                case MenuTableName.GevaarTypes:
+                    databaseCommunication.AddGevaar_GevaarType(gevaarId, indexToAdd);
+                    break;
+                case MenuTableName.Gebruiksfases:
+                    databaseCommunication.AddGevaar_Gebruiksfase(gevaarId, indexToAdd);
+                    break;
+                case MenuTableName.Gebruikers:
+                    databaseCommunication.AddGevaar_Gebruiker(gevaarId, indexToAdd);
+                    break;
+                case MenuTableName.Disciplines:
+                    databaseCommunication.AddGevaar_Disciplines(gevaarId, indexToAdd);
+                    break;
+                case MenuTableName.Bedienvormen:
+                    databaseCommunication.AddGevaar_Bedienvorm(gevaarId, indexToAdd);
+                    break;
+                case MenuTableName.Taken:
+                    databaseCommunication.AddGevaar_Taak(gevaarId, indexToAdd);
+                    break;
+
             }
-            else
-            { databaseCommunication.MakeGevaar_Disciplines(gevaarID, null); }
-
-            if (GevaarGebruiksfase.Count > 0)
-            {
-                foreach (KeyValuePair<int, int> kvp in GevaarGebruiksfase)
-                {
-                    databaseCommunication.MakeGevaar_Gebruiksfase(gevaarID, kvp.Value);
-                }
-            }
-            else
-            { databaseCommunication.MakeGevaar_Gebruiksfase(gevaarID, null); }
-
-
-            if (GevaarBedienvorm.Count > 0)
-            {
-                foreach (KeyValuePair<int, int> kvp in GevaarBedienvorm)
-                {
-                    databaseCommunication.MakeGevaar_Bedienvorm(gevaarID, kvp.Value);
-                }
-            }
-            else
-            { databaseCommunication.MakeGevaar_Bedienvorm(gevaarID, null); }
-
-
-            if (GevaarGebruiker.Count > 0)
-            {
-                foreach (KeyValuePair<int, int> kvp in GevaarGebruiker)
-                {
-                    databaseCommunication.MakeGevaar_Gebruiker(gevaarID, kvp.Value);
-                }
-            }
-            else
-            { databaseCommunication.MakeGevaar_Gebruiker(gevaarID, null); }
-
-
-            if (GevaarGevaarlijkeZone.Count > 0)
-            {
-                foreach (KeyValuePair<int, int> kvp in GevaarGevaarlijkeZone)
-                {
-                    databaseCommunication.MakeGevaar_GevaarlijkeZone(gevaarID, kvp.Value);
-                }
-            }
-            else
-            { databaseCommunication.MakeGevaar_GevaarlijkeZone(gevaarID, null); }
-
-
-            if (GevaarTaak.Count > 0)
-            {
-                foreach (KeyValuePair<int, int> kvp in GevaarTaak)
-                {
-                    databaseCommunication.MakeGevaar_Taak(gevaarID, kvp.Value);
-                }
-            }
-            else
-            { databaseCommunication.MakeGevaar_Taak(gevaarID, null); }
-
-
-            if (GevaarGevaarType.Count > 0)
-            {
-                foreach (KeyValuePair<int, int> kvp in GevaarGevaarType)
-                {
-                    databaseCommunication.MakeGevaar_GevaarType(gevaarID, kvp.Value);
-                }
-            }
-            else
-            { databaseCommunication.MakeGevaar_GevaarType(gevaarID, null); }
-
-
-            if (GevaarGevolg.Count > 0)
-            {
-                foreach (KeyValuePair<int, int> kvp in GevaarGevolg)
-                {
-                    databaseCommunication.MakeGevaar_Gevolg(gevaarID, kvp.Value);
-                }
-            }
-            else
-            { databaseCommunication.MakeGevaar_Gevolg(gevaarID, null); }
 
         }
+
+        public void UpdateGevaarDataDelete(int gevaarId, MenuTableName menuTableName, int indexToRemove)
+        {
+            switch (menuTableName)
+            {
+                case MenuTableName.Gevolgen:
+                    databaseCommunication.RemoveGevaar_Gevolg(gevaarId, indexToRemove);
+                    break;
+                case MenuTableName.Gevarenzones:
+                    databaseCommunication.RemoveGevaar_GevaarlijkeZone(gevaarId, indexToRemove);
+                    break;
+                case MenuTableName.GevaarTypes:
+                    databaseCommunication.RemoveGevaar_GevaarType(gevaarId, indexToRemove);
+                    break;
+                case MenuTableName.Gebruiksfases:
+                    databaseCommunication.RemoveGevaar_Gebruiksfases(gevaarId, indexToRemove);
+                    break;
+                case MenuTableName.Gebruikers:
+                    databaseCommunication.RemoveGevaar_Gebruiker(gevaarId, indexToRemove);
+                    break;
+                case MenuTableName.Disciplines:
+                    databaseCommunication.RemoveGevaar_Disciplines(gevaarId, indexToRemove);
+                    break;
+                case MenuTableName.Bedienvormen:
+                    databaseCommunication.RemoveGevaar_Bedienvorm(gevaarId, indexToRemove);
+                    break;
+                case MenuTableName.Taken:
+                    databaseCommunication.RemoveGevaar_Taak(gevaarId, indexToRemove);
+                    break;
+
+            }
+
+        }
+
+        public void UpdateGevaarDataInsertNull(int gevaarId, MenuTableName menuTableName)
+        {
+            switch (menuTableName)
+            {
+                case MenuTableName.Gevolgen:
+                    databaseCommunication.VerwijderGevaar_Gevolg(gevaarId);
+                    databaseCommunication.AddGevaar_Gevolg(gevaarId, null); ;
+                    break;
+                case MenuTableName.Gevarenzones:
+                    databaseCommunication.VerwijderGevaar_GevaarlijkeZone(gevaarId);
+                    databaseCommunication.AddGevaar_GevaarlijkeZone(gevaarId, null);
+                    break;
+                case MenuTableName.GevaarTypes:
+                    databaseCommunication.VerwijderGevaar_GevaarType(gevaarId);
+                    databaseCommunication.AddGevaar_GevaarType(gevaarId, null); ;
+                    break;
+                case MenuTableName.Gebruiksfases:
+                    databaseCommunication.VerwijderGevaar_Gebruiksfases(gevaarId);
+                    databaseCommunication.AddGevaar_Gebruiksfase(gevaarId, null);
+                    break;
+                case MenuTableName.Gebruikers:
+                    databaseCommunication.VerwijderGevaar_Gebruiker(gevaarId);
+                    databaseCommunication.AddGevaar_Gebruiker(gevaarId, null);
+                    break;
+                case MenuTableName.Disciplines:
+                    databaseCommunication.VerwijderGevaar_Disciplines(gevaarId);
+                    databaseCommunication.AddGevaar_Disciplines(gevaarId, null);
+                    break;
+                case MenuTableName.Bedienvormen:
+                    databaseCommunication.VerwijderGevaar_Bedienvorm(gevaarId);
+                    databaseCommunication.AddGevaar_Bedienvorm(gevaarId, null);
+                    break;
+                case MenuTableName.Taken:
+                    databaseCommunication.VerwijderGevaar_Taak(gevaarId);
+                    databaseCommunication.AddGevaar_Taak(gevaarId, null);
+                    break;
+
+            }
+        }
+
+        public void UpdateGevaarDataRemoveNull(int gevaarId, MenuTableName menuTableName)
+        {
+            switch (menuTableName)
+            {
+                case MenuTableName.Gevolgen:
+                    databaseCommunication.VerwijderGevaar_Gevolg(gevaarId);
+                    break;
+                case MenuTableName.Gevarenzones:
+                    databaseCommunication.VerwijderGevaar_GevaarlijkeZone(gevaarId);
+                    break;
+                case MenuTableName.GevaarTypes:
+                    databaseCommunication.VerwijderGevaar_GevaarType(gevaarId);
+                    break;
+                case MenuTableName.Gebruiksfases:
+                    databaseCommunication.VerwijderGevaar_Gebruiksfases(gevaarId);
+                    break;
+                case MenuTableName.Gebruikers:
+                    databaseCommunication.VerwijderGevaar_Gebruiker(gevaarId);
+                    break;
+                case MenuTableName.Disciplines:
+                    databaseCommunication.VerwijderGevaar_Disciplines(gevaarId);
+                    break;
+                case MenuTableName.Bedienvormen:
+                    databaseCommunication.VerwijderGevaar_Bedienvorm(gevaarId);
+                    break;
+                case MenuTableName.Taken:
+                    databaseCommunication.VerwijderGevaar_Taak(gevaarId);
+                    break;
+
+            }
+        }
+
+
+
+        //public void UpdateGevaarDataOLD(int gevaarID,
+        //      Dictionary<int, int> GevaarDisciplines, Dictionary<int, int> GevaarGebruiksfase,
+        //      Dictionary<int, int> GevaarBedienvorm, Dictionary<int, int> GevaarGebruiker,
+        //      Dictionary<int, int> GevaarGevaarlijkeZone, Dictionary<int, int> GevaarTaak,
+        //      Dictionary<int, int> GevaarGevaarType, Dictionary<int, int> GevaarGevolg)
+        //{
+        //    //clean
+        //    databaseCommunication.VerwijderGevaar_Disciplines(gevaarID);
+        //    databaseCommunication.VerwijderGevaar_Gebruiksfases(gevaarID);
+        //    databaseCommunication.VerwijderGevaar_Bedienvorm(gevaarID);
+        //    databaseCommunication.VerwijderGevaar_Gebruiker(gevaarID);
+        //    databaseCommunication.VerwijderGevaar_GevaarlijkeZone(gevaarID);
+        //    databaseCommunication.VerwijderGevaar_Taak(gevaarID);
+        //    databaseCommunication.VerwijderGevaar_GevaarType(gevaarID);
+        //    databaseCommunication.VerwijderGevaar_Gevolg(gevaarID);
+
+        //    //insert for all
+        //    if (GevaarDisciplines.Count > 0)
+        //    {
+        //        foreach (KeyValuePair<int, int> kvp in GevaarDisciplines)
+        //        {
+        //            databaseCommunication.AddGevaar_Disciplines(gevaarID, kvp.Value);
+        //        }
+        //    }
+        //    else
+        //    { databaseCommunication.AddGevaar_Disciplines(gevaarID, null); }
+
+        //    if (GevaarGebruiksfase.Count > 0)
+        //    {
+        //        foreach (KeyValuePair<int, int> kvp in GevaarGebruiksfase)
+        //        {
+        //            databaseCommunication.AddGevaar_Gebruiksfase(gevaarID, kvp.Value);
+        //        }
+        //    }
+        //    else
+        //    { databaseCommunication.AddGevaar_Gebruiksfase(gevaarID, null); }
+
+
+        //    if (GevaarBedienvorm.Count > 0)
+        //    {
+        //        foreach (KeyValuePair<int, int> kvp in GevaarBedienvorm)
+        //        {
+        //            databaseCommunication.AddGevaar_Bedienvorm(gevaarID, kvp.Value);
+        //        }
+        //    }
+        //    else
+        //    { databaseCommunication.AddGevaar_Bedienvorm(gevaarID, null); }
+
+
+        //    if (GevaarGebruiker.Count > 0)
+        //    {
+        //        foreach (KeyValuePair<int, int> kvp in GevaarGebruiker)
+        //        {
+        //            databaseCommunication.AddGevaar_Gebruiker(gevaarID, kvp.Value);
+        //        }
+        //    }
+        //    else
+        //    { databaseCommunication.AddGevaar_Gebruiker(gevaarID, null); }
+
+
+        //    if (GevaarGevaarlijkeZone.Count > 0)
+        //    {
+        //        foreach (KeyValuePair<int, int> kvp in GevaarGevaarlijkeZone)
+        //        {
+        //            databaseCommunication.AddGevaar_GevaarlijkeZone(gevaarID, kvp.Value);
+        //        }
+        //    }
+        //    else
+        //    { databaseCommunication.AddGevaar_GevaarlijkeZone(gevaarID, null); }
+
+
+        //    if (GevaarTaak.Count > 0)
+        //    {
+        //        foreach (KeyValuePair<int, int> kvp in GevaarTaak)
+        //        {
+        //            databaseCommunication.AddGevaar_Taak(gevaarID, kvp.Value);
+        //        }
+        //    }
+        //    else
+        //    { databaseCommunication.AddGevaar_Taak(gevaarID, null); }
+
+
+        //    if (GevaarGevaarType.Count > 0)
+        //    {
+        //        foreach (KeyValuePair<int, int> kvp in GevaarGevaarType)
+        //        {
+        //            databaseCommunication.AddGevaar_GevaarType(gevaarID, kvp.Value);
+        //        }
+        //    }
+        //    else
+        //    { databaseCommunication.AddGevaar_GevaarType(gevaarID, null); }
+
+
+        //    if (GevaarGevolg.Count > 0)
+        //    {
+        //        foreach (KeyValuePair<int, int> kvp in GevaarGevolg)
+        //        {
+        //            databaseCommunication.AddGevaar_Gevolg(gevaarID, kvp.Value);
+        //        }
+        //    }
+        //    else
+        //    { databaseCommunication.AddGevaar_Gevolg(gevaarID, null); }
+
+        //}
 
         public void UpdateMaatregelData(int maatregelID, Dictionary<int, int> maatregelNorm, Dictionary<int, int> maatregelCategory)
         {
@@ -390,7 +531,8 @@ namespace RiskManagmentTool.LogicLayer
                     Rest_Ok = rest_Ok
                 }
             };
-            SendItemToDB(risicoInschattingItem);
+            databaseCommunication.UpdateRisicoBeoordeling(risicoInschattingItem);
+
 
         }
 
@@ -417,17 +559,19 @@ namespace RiskManagmentTool.LogicLayer
             return databaseCommunication.AddAndCreateIssueToObject(objectId, gevaarId);
         }
 
-        public void AddIssueToObject(string objectId, string issueId, bool addMaatregelen, bool addBeoordeling, bool issueNeedsToVerify)
+        public void AddIssueToObject(string objectId, string issueId, bool addMaatregelen, bool addBeoordeling)//, bool issueNeedsToVerify)
         {
-            string issueState = "-1";
-            if (issueNeedsToVerify)
-            {
-                issueState = "0";// 0 is nog niet goedgekeurd
-            }
-            else
-            {
-                issueState = "1"; // 1 betekent goedgekeurd
-            }
+            //string issueState = "-1";
+            //if (issueNeedsToVerify)
+            //{
+            //    issueState = "0";// 0 is nog niet goedgekeurd
+            //}
+            //else
+            //{
+            //    issueState = "1"; // 1 betekent goedgekeurd
+            //}
+
+            string issueState = "0";// 0 is nog niet goedgekeurd
 
             int newIssueId = databaseCommunication.AddCoppiedIssueToObject(objectId, issueId, issueState);
 
@@ -533,26 +677,26 @@ namespace RiskManagmentTool.LogicLayer
             //return data;
         }
 
-        public BindingSource GetTemplateIssuesByName(string templateNaam)
-        {
-            string templateId = databaseCommunication.GetTemplateIdByName(templateNaam);
-            SqlDataAdapter adapter = databaseCommunication.GetTemplateIssues(templateId);
-            DataTable data = new DataTable();
-            adapter.Fill(data);
+        //public BindingSource GetTemplateIssuesByName(string templateNaam)
+        //{
+        //    string templateId = databaseCommunication.GetTemplateIdByName(templateNaam);
+        //    SqlDataAdapter adapter = databaseCommunication.GetTemplateIssues(templateId);
+        //    DataTable data = new DataTable();
+        //    adapter.Fill(data);
 
-            BindingSource bindingSource = new BindingSource();
-            bindingSource.DataSource = data;
-            return bindingSource;
-        }
+        //    BindingSource bindingSource = new BindingSource();
+        //    bindingSource.DataSource = data;
+        //    return bindingSource;
+        //}
 
-        public DataTable GetTemplateGevarenByName(string templateNaam)
-        {
-            string templateId = databaseCommunication.GetTemplateIdByName(templateNaam);
-            SqlDataAdapter adapter = databaseCommunication.GetTemplateGevaren(templateId);
-            DataTable data = new DataTable();
-            adapter.Fill(data);
-            return data;
-        }
+        //public DataTable GetTemplateGevarenByName(string templateNaam)
+        //{
+        //    string templateId = databaseCommunication.GetTemplateIdByName(templateNaam);
+        //    SqlDataAdapter adapter = databaseCommunication.GetTemplateGevaren(templateId);
+        //    DataTable data = new DataTable();
+        //    adapter.Fill(data);
+        //    return data;
+        //}
 
         public DataTable GetSelectedObjectIssues(string objectNaam, List<string> selectedIssuesId)
         {
@@ -563,23 +707,23 @@ namespace RiskManagmentTool.LogicLayer
             return data;
         }
 
-        public DataTable GetSelectedTemplateIssues(string templateNaam, List<string> selectedIssuesId)
-        {
-            string templateId = databaseCommunication.GetTemplateIdByName(templateNaam);
-            SqlDataAdapter adapter = databaseCommunication.GetSelectedIssuesFromTemplate(templateId, selectedIssuesId);
-            DataTable data = new DataTable();
-            adapter.Fill(data);
-            return data;
-        }
+        //public DataTable GetSelectedTemplateIssues(string templateNaam, List<string> selectedIssuesId)
+        //{
+        //    string templateId = databaseCommunication.GetTemplateIdByName(templateNaam);
+        //    SqlDataAdapter adapter = databaseCommunication.GetSelectedIssuesFromTemplate(templateId, selectedIssuesId);
+        //    DataTable data = new DataTable();
+        //    adapter.Fill(data);
+        //    return data;
+        //}
 
-        public DataTable GetSelectedTemplateGevaren(string templateNaam, List<string> selectedGevarenId)
-        {
-            string templateId = databaseCommunication.GetTemplateIdByName(templateNaam);
-            SqlDataAdapter adapter = databaseCommunication.GetSelectedGevarenFromTemplate(templateId, selectedGevarenId);
-            DataTable data = new DataTable();
-            adapter.Fill(data);
-            return data;
-        }
+        //public DataTable GetSelectedTemplateGevaren(string templateNaam, List<string> selectedGevarenId)
+        //{
+        //    string templateId = databaseCommunication.GetTemplateIdByName(templateNaam);
+        //    SqlDataAdapter adapter = databaseCommunication.GetSelectedGevarenFromTemplate(templateId, selectedGevarenId);
+        //    DataTable data = new DataTable();
+        //    adapter.Fill(data);
+        //    return data;
+        //}
 
         public DataTable GetSelectedGevaren(List<string> selectedGevarenId)
         {
@@ -626,15 +770,15 @@ namespace RiskManagmentTool.LogicLayer
             return bindingSource;
         }
 
-        public BindingSource GetTemplateTable()
-        {
-            SqlDataAdapter adapter = databaseCommunication.GetTemplates();
-            DataTable data = new DataTable();
-            adapter.Fill(data);
-            BindingSource bindingSource = new BindingSource();
-            bindingSource.DataSource = data;
-            return bindingSource;
-        }
+        //public BindingSource GetTemplateTable()
+        //{
+        //    SqlDataAdapter adapter = databaseCommunication.GetTemplates();
+        //    DataTable data = new DataTable();
+        //    adapter.Fill(data);
+        //    BindingSource bindingSource = new BindingSource();
+        //    bindingSource.DataSource = data;
+        //    return bindingSource;
+        //}
 
         public BindingSource GetGevarenTable()//DataTable GetGevarenTable()
         {
@@ -670,13 +814,13 @@ namespace RiskManagmentTool.LogicLayer
             return data;
         }
 
-        public DataTable GetTemplateGevaren(string templateID)
-        {
-            SqlDataAdapter adapter = databaseCommunication.GetTemplateGevaren(templateID);
-            DataTable data = new DataTable();
-            adapter.Fill(data);
-            return data;
-        }
+        //public DataTable GetTemplateGevaren(string templateID)
+        //{
+        //    SqlDataAdapter adapter = databaseCommunication.GetTemplateGevaren(templateID);
+        //    DataTable data = new DataTable();
+        //    adapter.Fill(data);
+        //    return data;
+        //}
 
         public BindingSource GetTemplateIssues(string templateID)
         {
@@ -715,9 +859,9 @@ namespace RiskManagmentTool.LogicLayer
 
         #region delete
 
-        public void DeleteGekoppeldeMaatregelenVanIssue()
+        public void DeleteGekoppeldeMaatregelenVanIssue(string issueId, string maatregelID)
         {
-
+            databaseCommunication.VerwijderGekoppeldeMaatregelVanIssue(issueId, maatregelID);
         }
         public void DeleteIssueFromObject(string objectId, string issueId)
         {
@@ -1563,38 +1707,6 @@ namespace RiskManagmentTool.LogicLayer
 
 
 
-
-
-        private void SendItemToDB(Item item)
-        {
-            switch (item.ItemType)
-            {
-                case ItemType.Gevaar:
-                    //databaseCommunication.MakeGevaar(item);
-                    break;
-                case ItemType.Maatregel:
-                    //databaseCommunication.MakeMaatregel(item);
-                    break;
-                case ItemType.Issue:
-
-                    break;
-                case ItemType.Template:
-                    databaseCommunication.MakeTemplate(item);
-                    break;
-                case ItemType.Object:
-                    //databaseCommunication.MakeObject(item);
-                    break;
-                case ItemType.Project:
-                    databaseCommunication.MakeProject(item);
-                    break;
-                case ItemType.RisicoInschatting:
-                    databaseCommunication.UpdateRisicoBeoordeling(item);
-                    break;
-                default:
-                    break;
-            }
-
-        }
 
 
     }

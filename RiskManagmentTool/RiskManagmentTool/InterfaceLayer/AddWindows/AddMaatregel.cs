@@ -177,7 +177,9 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
         private void comboBoxWeergaveTemplate_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dataGridViewTemplateMaatregelen.DataSource = comunicator.GetTemplateIssuesByName(comboBoxWeergaveTemplate.SelectedItem.ToString());
+            string selectedTemplateName = comboBoxWeergaveTemplate.SelectedItem.ToString();
+
+            dataGridViewTemplateMaatregelen.DataSource = comunicator.GetObjectIssuesByObjectName(selectedTemplateName);
         }
 
         //private void comboBoxObjectenWeergave_SelectedIndexChanged(object sender, EventArgs e)

@@ -36,14 +36,18 @@
             this.textBoxObjectNaam = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGekoppeldeGevaren)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(81, 68);
+            this.label1.Location = new System.Drawing.Point(118, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 17);
             this.label1.TabIndex = 0;
@@ -52,7 +56,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(81, 107);
+            this.label2.Location = new System.Drawing.Point(118, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 17);
             this.label2.TabIndex = 1;
@@ -63,12 +67,13 @@
             this.dataGridViewGekoppeldeGevaren.AllowUserToAddRows = false;
             this.dataGridViewGekoppeldeGevaren.AllowUserToDeleteRows = false;
             this.dataGridViewGekoppeldeGevaren.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewGekoppeldeGevaren.Location = new System.Drawing.Point(12, 163);
+            this.dataGridViewGekoppeldeGevaren.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewGekoppeldeGevaren.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewGekoppeldeGevaren.Name = "dataGridViewGekoppeldeGevaren";
             this.dataGridViewGekoppeldeGevaren.ReadOnly = true;
             this.dataGridViewGekoppeldeGevaren.RowTemplate.Height = 24;
             this.dataGridViewGekoppeldeGevaren.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewGekoppeldeGevaren.Size = new System.Drawing.Size(910, 418);
+            this.dataGridViewGekoppeldeGevaren.Size = new System.Drawing.Size(1137, 525);
             this.dataGridViewGekoppeldeGevaren.TabIndex = 2;
             this.dataGridViewGekoppeldeGevaren.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewGekoppeldeGevaren_DataBindingComplete);
             this.dataGridViewGekoppeldeGevaren.SelectionChanged += new System.EventHandler(this.dataGridViewGekoppeldeGevaren_SelectionChanged);
@@ -92,7 +97,7 @@
             // 
             // textBoxObjectNaam
             // 
-            this.textBoxObjectNaam.Location = new System.Drawing.Point(246, 62);
+            this.textBoxObjectNaam.Location = new System.Drawing.Point(283, 3);
             this.textBoxObjectNaam.Name = "textBoxObjectNaam";
             this.textBoxObjectNaam.ReadOnly = true;
             this.textBoxObjectNaam.Size = new System.Drawing.Size(192, 22);
@@ -100,7 +105,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(246, 104);
+            this.textBox3.Location = new System.Drawing.Point(283, 45);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 22);
             this.textBox3.TabIndex = 6;
@@ -115,24 +120,44 @@
             this.panel1.Size = new System.Drawing.Size(1137, 217);
             this.panel1.TabIndex = 7;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.textBox3);
+            this.panel2.Controls.Add(this.textBoxObjectNaam);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1137, 79);
+            this.panel2.TabIndex = 8;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.dataGridViewGekoppeldeGevaren);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 79);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1137, 525);
+            this.panel3.TabIndex = 9;
+            // 
             // DeleteGevaren
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1137, 821);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBoxObjectNaam);
-            this.Controls.Add(this.dataGridViewGekoppeldeGevaren);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Name = "DeleteGevaren";
             this.Text = "DeleteGevaren";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGekoppeldeGevaren)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -146,5 +171,7 @@
         private System.Windows.Forms.TextBox textBoxObjectNaam;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
     }
 }

@@ -25,6 +25,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private KeuzeMenus keuzeMenus;
         private ViewsColumnNames viewsColumnNames;
         private ImageHandler ImageHandler;
+        private ShowLegendaObjecten ShowLegenda;
 
         //private List<string> GekoppeldeGevarenId;
         private List<string> IssuesToVerify;
@@ -33,6 +34,10 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private int RisicograafSetting; //0 = SIL 1 = pl
         private bool HasImage;
+
+        public bool LegendaPopupOpen;
+        public bool OpenedFromRedirectionPage;
+        public int RedirectionPageRequestedIssueID { set; get; }
 
         private BindingSource objectIssuesDataTable;
 
@@ -48,31 +53,24 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             keuzeMenus = new KeuzeMenus();
             viewsColumnNames = new ViewsColumnNames();
             ImageHandler = new ImageHandler();
-
-
-            LoadMenus();
+            //ShowLegenda = new ShowLegendaObjecten();
+            RedirectionPageRequestedIssueID = 0;
             this.ObjectNaam = objectNaam;
             this.ObjectID = objectID;
             textBoxProjectNaam.Text = projectNaam;
             textBoxObjectNaam.Text = ObjectNaam;
             textBoxOmschrijving.Text = objectOmschrijving;
-            comboBoxObjectType.SelectedIndex = comboBoxObjectType.FindStringExact(objectType);
+            textBoxObjectType.Text = objectType;
             LoadDataGridViewCheckBoxes();
             LoadData();
             SetObjectSettings();
             SetObjectImage();
             LoadNotes();
             comboBoxFilterIssues.SelectedIndex = 0;
+            LegendaPopupOpen = false;
+            OpenedFromRedirectionPage = false;
         }
 
-        private void LoadMenus()
-        {
-            Dictionary<int, string> typeObjectList = keuzeMenus.GetTypeObjectMenu();
-            foreach (KeyValuePair<int, string> kvp in typeObjectList)
-            {
-                comboBoxObjectType.Items.Add(kvp.Value);
-            }
-        }
 
         private void LoadDataGridViewCheckBoxes()
         {
@@ -152,6 +150,14 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             //    tabPage3.Controls.Add(menuBox[i]);
             //}   
         }
+
+        public void OpenIssueNmr(string issueID)
+        {
+
+
+        }
+
+
 
         private void ShowDataWithVisualSettings()
         {
@@ -353,16 +359,11 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             string discipline = "";//dataGridViewGekoppeldeIssues.SelectedRows[0].Cells[viewsColumnNames.GevaarDisciplineColumn].Value.ToString();
             string gevaar = "";//dataGridViewGekoppeldeIssues.SelectedRows[0].Cells[viewsColumnNames.GevaarGevaarTypeColumn].Value.ToString();
 
-            string init_Risico = "";
-            string init_Risico_Beschrijving = "";
-            string rest_Risico = "";
-            string rest_Risico_Beschrijving = "";
+
             foreach (string issueID in IssuesToVerify)
             {
                 Form issueMaatregelen = new IssueMaatregelen(ObjectNaam, ObjectID, issueID,
-                                                        discipline, gevaar, situatie, gebeurtenis,
-                                                        init_Risico, init_Risico_Beschrijving,
-                                                        rest_Risico, rest_Risico_Beschrijving);
+                                                        discipline, gevaar, situatie, gebeurtenis);
                 issueMaatregelen.ShowDialog();
             }
             LoadData();
@@ -472,6 +473,12 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             Cursor.Current = Cursors.Default;
             textBoxIssuesToVerify.Text = IssuesToVerify.Count.ToString();
             SetVisualInstellingen();
+            if (OpenedFromRedirectionPage)
+            {
+                advancedDataGridViewGekoppeldeIssues.Rows[1].Selected = true;
+                OpenedFromRedirectionPage = false;
+                OpenIssuePage();//advancedDataGridViewGekoppeldeIssues. MouseDoubleClick
+            }
             //advancedDataGridViewGekoppeldeIssues.ClearSelection();
         }
 
@@ -490,7 +497,10 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         }
 
-        private void advancedDataGridViewGekoppeldeIssues_MouseDoubleClick(object sender, MouseEventArgs e)
+
+
+
+        private void OpenIssuePage()
         {
             try
             {
@@ -502,17 +512,10 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
                 string discipline = advancedDataGridViewGekoppeldeIssues.SelectedRows[0].Cells[viewsColumnNames.GevaarDisciplineColumn].Value.ToString();
                 string gevaar = advancedDataGridViewGekoppeldeIssues.SelectedRows[0].Cells[viewsColumnNames.GevaarGevaarTypeColumn].Value.ToString();
 
-                string init_Risico = "";
-                string init_Risico_Beschrijving = "";
-                string rest_Risico = "";
-                string rest_Risico_Beschrijving = "";
-
 
 
                 Form issueMaatregelen = new IssueMaatregelen(ObjectNaam, ObjectID, issueId,
-                                                             discipline, gevaar, situatie, gebeurtenis,
-                                                             init_Risico, init_Risico_Beschrijving,
-                                                             rest_Risico, rest_Risico_Beschrijving);
+                                                             discipline, gevaar, situatie, gebeurtenis);
                 issueMaatregelen.ShowDialog();
                 //ShowDataWithFiltering();
                 LoadData();
@@ -522,6 +525,35 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
                 Console.WriteLine(err);
             }
+
+        }
+
+        private void advancedDataGridViewGekoppeldeIssues_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            OpenIssuePage();
+            //try
+            //{
+            //    Cursor.Current = Cursors.WaitCursor;
+            //    string issueId = advancedDataGridViewGekoppeldeIssues.SelectedRows[0].Cells[viewsColumnNames.IssueIDColumn].Value.ToString();//[0].Value.ToString();
+            //    string situatie = advancedDataGridViewGekoppeldeIssues.SelectedRows[0].Cells[viewsColumnNames.GevaarlijkeSituatieColumn].Value.ToString();
+            //    string gebeurtenis = advancedDataGridViewGekoppeldeIssues.SelectedRows[0].Cells[viewsColumnNames.GevaarlijkeGebeurtenisColumn].Value.ToString();
+
+            //    string discipline = advancedDataGridViewGekoppeldeIssues.SelectedRows[0].Cells[viewsColumnNames.GevaarDisciplineColumn].Value.ToString();
+            //    string gevaar = advancedDataGridViewGekoppeldeIssues.SelectedRows[0].Cells[viewsColumnNames.GevaarGevaarTypeColumn].Value.ToString();
+
+
+
+            //    Form issueMaatregelen = new IssueMaatregelen(ObjectNaam, ObjectID, issueId,
+            //                                                 discipline, gevaar, situatie, gebeurtenis);
+            //    issueMaatregelen.ShowDialog();
+            //    //ShowDataWithFiltering();
+            //    LoadData();
+            //}
+            //catch (Exception err)
+            //{
+
+            //    Console.WriteLine(err);
+            //}
             
         }
 
@@ -541,8 +573,20 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void buttonShowLegenda_Click(object sender, EventArgs e)
         {
-            ShowLegendaObjecten showLegenda = new ShowLegendaObjecten();
-            showLegenda.ShowDialog();
+            //ShowLegenda = new ShowLegendaObjecten();
+            if (!LegendaPopupOpen)
+            {
+                ShowLegenda = new ShowLegendaObjecten();
+                ShowLegenda.Show();
+                LegendaPopupOpen = true;
+            }
+            else
+            {
+                ShowLegenda.Close();
+                LegendaPopupOpen = false;
+            }
+            
         }
+
     }
 }

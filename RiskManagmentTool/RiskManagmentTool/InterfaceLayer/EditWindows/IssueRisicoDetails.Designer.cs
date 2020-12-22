@@ -51,57 +51,57 @@
             this.textBoxInit_Pr_Comment = new System.Windows.Forms.TextBox();
             this.textBoxInit_Av_Comment = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.comboBoxRest_Av = new System.Windows.Forms.ComboBox();
-            this.comboBoxRest_Pr = new System.Windows.Forms.ComboBox();
-            this.comboBoxRest_Fr = new System.Windows.Forms.ComboBox();
-            this.comboBoxInit_Av = new System.Windows.Forms.ComboBox();
-            this.comboBoxRest_Se = new System.Windows.Forms.ComboBox();
-            this.comboBoxInit_Pr = new System.Windows.Forms.ComboBox();
-            this.comboBoxInit_Fr = new System.Windows.Forms.ComboBox();
-            this.comboBoxInit_Se = new System.Windows.Forms.ComboBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBoxInit_Av = new System.Windows.Forms.TextBox();
-            this.textBoxInit_Pr = new System.Windows.Forms.TextBox();
-            this.textBoxRest_Av = new System.Windows.Forms.TextBox();
-            this.textBoxRest_Pr = new System.Windows.Forms.TextBox();
-            this.textBoxInit_Risico = new System.Windows.Forms.TextBox();
-            this.textBoxInitRisico_Comment = new System.Windows.Forms.TextBox();
-            this.textBoxRest_Risico = new System.Windows.Forms.TextBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.textBoxRest_Risico_Comment = new System.Windows.Forms.TextBox();
-            this.textBoxRest_Cl = new System.Windows.Forms.TextBox();
+            this.textBoxInitRisico_Comment = new System.Windows.Forms.TextBox();
             this.textBoxRest_Cl_Comment = new System.Windows.Forms.TextBox();
-            this.textBoxInit_Cl = new System.Windows.Forms.TextBox();
             this.textBoxInit_Cl_Comment = new System.Windows.Forms.TextBox();
             this.textBoxRest_Av_Comment = new System.Windows.Forms.TextBox();
-            this.textBoxRest_Pr_Comment = new System.Windows.Forms.TextBox();
-            this.textBoxRest_Fr = new System.Windows.Forms.TextBox();
-            this.textBoxRest_Fr_Comment = new System.Windows.Forms.TextBox();
             this.textBoxRest_Se_Comment = new System.Windows.Forms.TextBox();
-            this.textBoxRest_Se = new System.Windows.Forms.TextBox();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
+            this.textBoxRest_Pr_Comment = new System.Windows.Forms.TextBox();
+            this.textBoxRest_Fr_Comment = new System.Windows.Forms.TextBox();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.comboBoxInit_Se = new System.Windows.Forms.ComboBox();
+            this.comboBoxRest_Se = new System.Windows.Forms.ComboBox();
+            this.comboBoxInit_Av = new System.Windows.Forms.ComboBox();
+            this.comboBoxRest_Av = new System.Windows.Forms.ComboBox();
+            this.comboBoxInit_Fr = new System.Windows.Forms.ComboBox();
+            this.comboBoxInit_Pr = new System.Windows.Forms.ComboBox();
+            this.comboBoxRest_Fr = new System.Windows.Forms.ComboBox();
+            this.comboBoxRest_Pr = new System.Windows.Forms.ComboBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBoxRest_Se = new System.Windows.Forms.TextBox();
+            this.textBoxRest_Fr = new System.Windows.Forms.TextBox();
+            this.textBoxInit_Cl = new System.Windows.Forms.TextBox();
+            this.textBoxRest_Cl = new System.Windows.Forms.TextBox();
+            this.textBoxRest_Risico = new System.Windows.Forms.TextBox();
+            this.textBoxInit_Risico = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.textBoxRest_Pr = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBoxRest_Av = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBoxInit_Pr = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBoxInit_Av = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -325,256 +325,36 @@
             this.panel3.Size = new System.Drawing.Size(1294, 626);
             this.panel3.TabIndex = 18;
             // 
-            // comboBoxRest_Av
+            // panel6
             // 
-            this.comboBoxRest_Av.DropDownWidth = 352;
-            this.comboBoxRest_Av.FormattingEnabled = true;
-            this.comboBoxRest_Av.Location = new System.Drawing.Point(6, 386);
-            this.comboBoxRest_Av.Name = "comboBoxRest_Av";
-            this.comboBoxRest_Av.Size = new System.Drawing.Size(352, 24);
-            this.comboBoxRest_Av.TabIndex = 66;
-            this.comboBoxRest_Av.SelectedIndexChanged += new System.EventHandler(this.comboBoxRest_Av_SelectedIndexChanged);
+            this.panel6.Controls.Add(this.panel8);
+            this.panel6.Controls.Add(this.panel9);
+            this.panel6.Controls.Add(this.panel7);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1294, 626);
+            this.panel6.TabIndex = 67;
             // 
-            // comboBoxRest_Pr
+            // panel8
             // 
-            this.comboBoxRest_Pr.DropDownWidth = 352;
-            this.comboBoxRest_Pr.FormattingEnabled = true;
-            this.comboBoxRest_Pr.Location = new System.Drawing.Point(6, 358);
-            this.comboBoxRest_Pr.Name = "comboBoxRest_Pr";
-            this.comboBoxRest_Pr.Size = new System.Drawing.Size(352, 24);
-            this.comboBoxRest_Pr.TabIndex = 65;
-            this.comboBoxRest_Pr.SelectedIndexChanged += new System.EventHandler(this.comboBoxRest_Pr_SelectedIndexChanged);
-            // 
-            // comboBoxRest_Fr
-            // 
-            this.comboBoxRest_Fr.DropDownWidth = 352;
-            this.comboBoxRest_Fr.FormattingEnabled = true;
-            this.comboBoxRest_Fr.Location = new System.Drawing.Point(6, 333);
-            this.comboBoxRest_Fr.Name = "comboBoxRest_Fr";
-            this.comboBoxRest_Fr.Size = new System.Drawing.Size(352, 24);
-            this.comboBoxRest_Fr.TabIndex = 64;
-            this.comboBoxRest_Fr.SelectedIndexChanged += new System.EventHandler(this.comboBoxRest_Fr_SelectedIndexChanged);
-            // 
-            // comboBoxInit_Av
-            // 
-            this.comboBoxInit_Av.DropDownWidth = 352;
-            this.comboBoxInit_Av.FormattingEnabled = true;
-            this.comboBoxInit_Av.Location = new System.Drawing.Point(6, 133);
-            this.comboBoxInit_Av.Name = "comboBoxInit_Av";
-            this.comboBoxInit_Av.Size = new System.Drawing.Size(352, 24);
-            this.comboBoxInit_Av.TabIndex = 63;
-            this.comboBoxInit_Av.SelectedIndexChanged += new System.EventHandler(this.comboBoxInit_Av_SelectedIndexChanged);
-            // 
-            // comboBoxRest_Se
-            // 
-            this.comboBoxRest_Se.DropDownWidth = 352;
-            this.comboBoxRest_Se.FormattingEnabled = true;
-            this.comboBoxRest_Se.Location = new System.Drawing.Point(6, 305);
-            this.comboBoxRest_Se.Name = "comboBoxRest_Se";
-            this.comboBoxRest_Se.Size = new System.Drawing.Size(352, 24);
-            this.comboBoxRest_Se.TabIndex = 62;
-            this.comboBoxRest_Se.SelectedIndexChanged += new System.EventHandler(this.comboBoxRest_Se_SelectedIndexChanged);
-            // 
-            // comboBoxInit_Pr
-            // 
-            this.comboBoxInit_Pr.DropDownWidth = 352;
-            this.comboBoxInit_Pr.FormattingEnabled = true;
-            this.comboBoxInit_Pr.Location = new System.Drawing.Point(6, 105);
-            this.comboBoxInit_Pr.Name = "comboBoxInit_Pr";
-            this.comboBoxInit_Pr.Size = new System.Drawing.Size(352, 24);
-            this.comboBoxInit_Pr.TabIndex = 61;
-            this.comboBoxInit_Pr.SelectedIndexChanged += new System.EventHandler(this.comboBoxInit_Pr_SelectedIndexChanged);
-            // 
-            // comboBoxInit_Fr
-            // 
-            this.comboBoxInit_Fr.DropDownWidth = 352;
-            this.comboBoxInit_Fr.FormattingEnabled = true;
-            this.comboBoxInit_Fr.Location = new System.Drawing.Point(6, 77);
-            this.comboBoxInit_Fr.Name = "comboBoxInit_Fr";
-            this.comboBoxInit_Fr.Size = new System.Drawing.Size(352, 24);
-            this.comboBoxInit_Fr.TabIndex = 60;
-            this.comboBoxInit_Fr.SelectedIndexChanged += new System.EventHandler(this.comboBoxInit_Fr_SelectedIndexChanged);
-            // 
-            // comboBoxInit_Se
-            // 
-            this.comboBoxInit_Se.DropDownWidth = 352;
-            this.comboBoxInit_Se.FormattingEnabled = true;
-            this.comboBoxInit_Se.Location = new System.Drawing.Point(6, 49);
-            this.comboBoxInit_Se.Name = "comboBoxInit_Se";
-            this.comboBoxInit_Se.Size = new System.Drawing.Size(352, 24);
-            this.comboBoxInit_Se.TabIndex = 59;
-            this.comboBoxInit_Se.SelectedIndexChanged += new System.EventHandler(this.comboBoxInit_Se_SelectedIndexChanged);
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(4, 443);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(83, 17);
-            this.label17.TabIndex = 58;
-            this.label17.Text = "Rest_Risico";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(4, 415);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(57, 17);
-            this.label16.TabIndex = 57;
-            this.label16.Text = "Rest_Cl";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(4, 387);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(61, 17);
-            this.label15.TabIndex = 56;
-            this.label15.Text = "Rest_Av";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(4, 359);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(59, 17);
-            this.label14.TabIndex = 55;
-            this.label14.Text = "Rest_Pr";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(4, 331);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(58, 17);
-            this.label13.TabIndex = 54;
-            this.label13.Text = "Rest_Fr";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(4, 303);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(62, 17);
-            this.label12.TabIndex = 53;
-            this.label12.Text = "Rest_Se";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(4, 197);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(72, 17);
-            this.label11.TabIndex = 52;
-            this.label11.Text = "Init_Risico";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(4, 159);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(46, 17);
-            this.label10.TabIndex = 51;
-            this.label10.Text = "Init_Cl";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(4, 131);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(50, 17);
-            this.label9.TabIndex = 50;
-            this.label9.Text = "Init_Av";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(4, 103);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(48, 17);
-            this.label8.TabIndex = 49;
-            this.label8.Text = "Init_Pr";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(4, 75);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(47, 17);
-            this.label7.TabIndex = 48;
-            this.label7.Text = "Init_Fr";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(4, 47);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 17);
-            this.label6.TabIndex = 47;
-            this.label6.Text = "Init_Se";
-            // 
-            // textBoxInit_Av
-            // 
-            this.textBoxInit_Av.Location = new System.Drawing.Point(111, 131);
-            this.textBoxInit_Av.Name = "textBoxInit_Av";
-            this.textBoxInit_Av.ReadOnly = true;
-            this.textBoxInit_Av.Size = new System.Drawing.Size(59, 22);
-            this.textBoxInit_Av.TabIndex = 46;
-            this.textBoxInit_Av.TextChanged += new System.EventHandler(this.textBoxInit_Av_TextChanged);
-            // 
-            // textBoxInit_Pr
-            // 
-            this.textBoxInit_Pr.Location = new System.Drawing.Point(111, 103);
-            this.textBoxInit_Pr.Name = "textBoxInit_Pr";
-            this.textBoxInit_Pr.ReadOnly = true;
-            this.textBoxInit_Pr.Size = new System.Drawing.Size(59, 22);
-            this.textBoxInit_Pr.TabIndex = 45;
-            this.textBoxInit_Pr.TextChanged += new System.EventHandler(this.textBoxInit_Pr_TextChanged);
-            // 
-            // textBoxRest_Av
-            // 
-            this.textBoxRest_Av.Location = new System.Drawing.Point(111, 387);
-            this.textBoxRest_Av.Name = "textBoxRest_Av";
-            this.textBoxRest_Av.ReadOnly = true;
-            this.textBoxRest_Av.Size = new System.Drawing.Size(59, 22);
-            this.textBoxRest_Av.TabIndex = 44;
-            this.textBoxRest_Av.TextChanged += new System.EventHandler(this.textBoxRest_Av_TextChanged);
-            // 
-            // textBoxRest_Pr
-            // 
-            this.textBoxRest_Pr.Location = new System.Drawing.Point(111, 359);
-            this.textBoxRest_Pr.Name = "textBoxRest_Pr";
-            this.textBoxRest_Pr.ReadOnly = true;
-            this.textBoxRest_Pr.Size = new System.Drawing.Size(59, 22);
-            this.textBoxRest_Pr.TabIndex = 43;
-            this.textBoxRest_Pr.TextChanged += new System.EventHandler(this.textBoxRest_Pr_TextChanged);
-            // 
-            // textBoxInit_Risico
-            // 
-            this.textBoxInit_Risico.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxInit_Risico.Location = new System.Drawing.Point(111, 197);
-            this.textBoxInit_Risico.Name = "textBoxInit_Risico";
-            this.textBoxInit_Risico.ReadOnly = true;
-            this.textBoxInit_Risico.Size = new System.Drawing.Size(59, 22);
-            this.textBoxInit_Risico.TabIndex = 42;
-            // 
-            // textBoxInitRisico_Comment
-            // 
-            this.textBoxInitRisico_Comment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxInitRisico_Comment.Location = new System.Drawing.Point(13, 199);
-            this.textBoxInitRisico_Comment.Name = "textBoxInitRisico_Comment";
-            this.textBoxInitRisico_Comment.Size = new System.Drawing.Size(614, 22);
-            this.textBoxInitRisico_Comment.TabIndex = 41;
-            // 
-            // textBoxRest_Risico
-            // 
-            this.textBoxRest_Risico.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxRest_Risico.Location = new System.Drawing.Point(111, 443);
-            this.textBoxRest_Risico.Name = "textBoxRest_Risico";
-            this.textBoxRest_Risico.ReadOnly = true;
-            this.textBoxRest_Risico.Size = new System.Drawing.Size(59, 22);
-            this.textBoxRest_Risico.TabIndex = 39;
+            this.panel8.Controls.Add(this.textBoxRest_Risico_Comment);
+            this.panel8.Controls.Add(this.textBoxInitRisico_Comment);
+            this.panel8.Controls.Add(this.textBoxInit_Se_Comment);
+            this.panel8.Controls.Add(this.textBoxInit_Fr_Comment);
+            this.panel8.Controls.Add(this.textBoxRest_Cl_Comment);
+            this.panel8.Controls.Add(this.textBoxInit_Pr_Comment);
+            this.panel8.Controls.Add(this.textBoxInit_Cl_Comment);
+            this.panel8.Controls.Add(this.textBoxInit_Av_Comment);
+            this.panel8.Controls.Add(this.textBoxRest_Av_Comment);
+            this.panel8.Controls.Add(this.textBoxRest_Se_Comment);
+            this.panel8.Controls.Add(this.textBoxRest_Pr_Comment);
+            this.panel8.Controls.Add(this.textBoxRest_Fr_Comment);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel8.Location = new System.Drawing.Point(613, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(681, 626);
+            this.panel8.TabIndex = 67;
             // 
             // textBoxRest_Risico_Comment
             // 
@@ -585,14 +365,14 @@
             this.textBoxRest_Risico_Comment.Size = new System.Drawing.Size(614, 22);
             this.textBoxRest_Risico_Comment.TabIndex = 38;
             // 
-            // textBoxRest_Cl
+            // textBoxInitRisico_Comment
             // 
-            this.textBoxRest_Cl.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxRest_Cl.Location = new System.Drawing.Point(111, 415);
-            this.textBoxRest_Cl.Name = "textBoxRest_Cl";
-            this.textBoxRest_Cl.ReadOnly = true;
-            this.textBoxRest_Cl.Size = new System.Drawing.Size(59, 22);
-            this.textBoxRest_Cl.TabIndex = 36;
+            this.textBoxInitRisico_Comment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxInitRisico_Comment.Location = new System.Drawing.Point(13, 199);
+            this.textBoxInitRisico_Comment.Name = "textBoxInitRisico_Comment";
+            this.textBoxInitRisico_Comment.Size = new System.Drawing.Size(614, 22);
+            this.textBoxInitRisico_Comment.TabIndex = 41;
             // 
             // textBoxRest_Cl_Comment
             // 
@@ -602,15 +382,6 @@
             this.textBoxRest_Cl_Comment.Name = "textBoxRest_Cl_Comment";
             this.textBoxRest_Cl_Comment.Size = new System.Drawing.Size(614, 22);
             this.textBoxRest_Cl_Comment.TabIndex = 35;
-            // 
-            // textBoxInit_Cl
-            // 
-            this.textBoxInit_Cl.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxInit_Cl.Location = new System.Drawing.Point(111, 159);
-            this.textBoxInit_Cl.Name = "textBoxInit_Cl";
-            this.textBoxInit_Cl.ReadOnly = true;
-            this.textBoxInit_Cl.Size = new System.Drawing.Size(59, 22);
-            this.textBoxInit_Cl.TabIndex = 33;
             // 
             // textBoxInit_Cl_Comment
             // 
@@ -630,6 +401,15 @@
             this.textBoxRest_Av_Comment.Size = new System.Drawing.Size(614, 22);
             this.textBoxRest_Av_Comment.TabIndex = 30;
             // 
+            // textBoxRest_Se_Comment
+            // 
+            this.textBoxRest_Se_Comment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxRest_Se_Comment.Location = new System.Drawing.Point(13, 305);
+            this.textBoxRest_Se_Comment.Name = "textBoxRest_Se_Comment";
+            this.textBoxRest_Se_Comment.Size = new System.Drawing.Size(614, 22);
+            this.textBoxRest_Se_Comment.TabIndex = 23;
+            // 
             // textBoxRest_Pr_Comment
             // 
             this.textBoxRest_Pr_Comment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -638,15 +418,6 @@
             this.textBoxRest_Pr_Comment.Name = "textBoxRest_Pr_Comment";
             this.textBoxRest_Pr_Comment.Size = new System.Drawing.Size(614, 22);
             this.textBoxRest_Pr_Comment.TabIndex = 29;
-            // 
-            // textBoxRest_Fr
-            // 
-            this.textBoxRest_Fr.Location = new System.Drawing.Point(111, 331);
-            this.textBoxRest_Fr.Name = "textBoxRest_Fr";
-            this.textBoxRest_Fr.ReadOnly = true;
-            this.textBoxRest_Fr.Size = new System.Drawing.Size(59, 22);
-            this.textBoxRest_Fr.TabIndex = 26;
-            this.textBoxRest_Fr.TextChanged += new System.EventHandler(this.textBoxRest_Fr_TextChanged);
             // 
             // textBoxRest_Fr_Comment
             // 
@@ -657,34 +428,101 @@
             this.textBoxRest_Fr_Comment.Size = new System.Drawing.Size(614, 22);
             this.textBoxRest_Fr_Comment.TabIndex = 25;
             // 
-            // textBoxRest_Se_Comment
+            // panel9
             // 
-            this.textBoxRest_Se_Comment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxRest_Se_Comment.Location = new System.Drawing.Point(13, 305);
-            this.textBoxRest_Se_Comment.Name = "textBoxRest_Se_Comment";
-            this.textBoxRest_Se_Comment.Size = new System.Drawing.Size(614, 22);
-            this.textBoxRest_Se_Comment.TabIndex = 23;
+            this.panel9.Controls.Add(this.comboBoxInit_Se);
+            this.panel9.Controls.Add(this.comboBoxRest_Se);
+            this.panel9.Controls.Add(this.comboBoxInit_Av);
+            this.panel9.Controls.Add(this.comboBoxRest_Av);
+            this.panel9.Controls.Add(this.comboBoxInit_Fr);
+            this.panel9.Controls.Add(this.comboBoxInit_Pr);
+            this.panel9.Controls.Add(this.comboBoxRest_Fr);
+            this.panel9.Controls.Add(this.comboBoxRest_Pr);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel9.Location = new System.Drawing.Point(190, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(423, 626);
+            this.panel9.TabIndex = 68;
             // 
-            // textBoxRest_Se
+            // comboBoxInit_Se
             // 
-            this.textBoxRest_Se.Location = new System.Drawing.Point(111, 303);
-            this.textBoxRest_Se.Name = "textBoxRest_Se";
-            this.textBoxRest_Se.ReadOnly = true;
-            this.textBoxRest_Se.Size = new System.Drawing.Size(59, 22);
-            this.textBoxRest_Se.TabIndex = 24;
-            this.textBoxRest_Se.TextChanged += new System.EventHandler(this.textBoxRest_Se_TextChanged);
+            this.comboBoxInit_Se.DropDownWidth = 352;
+            this.comboBoxInit_Se.FormattingEnabled = true;
+            this.comboBoxInit_Se.Location = new System.Drawing.Point(6, 49);
+            this.comboBoxInit_Se.Name = "comboBoxInit_Se";
+            this.comboBoxInit_Se.Size = new System.Drawing.Size(352, 24);
+            this.comboBoxInit_Se.TabIndex = 59;
+            this.comboBoxInit_Se.SelectedIndexChanged += new System.EventHandler(this.comboBoxInit_Se_SelectedIndexChanged);
             // 
-            // panel6
+            // comboBoxRest_Se
             // 
-            this.panel6.Controls.Add(this.panel8);
-            this.panel6.Controls.Add(this.panel9);
-            this.panel6.Controls.Add(this.panel7);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1294, 626);
-            this.panel6.TabIndex = 67;
+            this.comboBoxRest_Se.DropDownWidth = 352;
+            this.comboBoxRest_Se.FormattingEnabled = true;
+            this.comboBoxRest_Se.Location = new System.Drawing.Point(6, 305);
+            this.comboBoxRest_Se.Name = "comboBoxRest_Se";
+            this.comboBoxRest_Se.Size = new System.Drawing.Size(352, 24);
+            this.comboBoxRest_Se.TabIndex = 62;
+            this.comboBoxRest_Se.SelectedIndexChanged += new System.EventHandler(this.comboBoxRest_Se_SelectedIndexChanged);
+            // 
+            // comboBoxInit_Av
+            // 
+            this.comboBoxInit_Av.DropDownWidth = 352;
+            this.comboBoxInit_Av.FormattingEnabled = true;
+            this.comboBoxInit_Av.Location = new System.Drawing.Point(6, 133);
+            this.comboBoxInit_Av.Name = "comboBoxInit_Av";
+            this.comboBoxInit_Av.Size = new System.Drawing.Size(352, 24);
+            this.comboBoxInit_Av.TabIndex = 63;
+            this.comboBoxInit_Av.SelectedIndexChanged += new System.EventHandler(this.comboBoxInit_Av_SelectedIndexChanged);
+            // 
+            // comboBoxRest_Av
+            // 
+            this.comboBoxRest_Av.DropDownWidth = 352;
+            this.comboBoxRest_Av.FormattingEnabled = true;
+            this.comboBoxRest_Av.Location = new System.Drawing.Point(6, 386);
+            this.comboBoxRest_Av.Name = "comboBoxRest_Av";
+            this.comboBoxRest_Av.Size = new System.Drawing.Size(352, 24);
+            this.comboBoxRest_Av.TabIndex = 66;
+            this.comboBoxRest_Av.SelectedIndexChanged += new System.EventHandler(this.comboBoxRest_Av_SelectedIndexChanged);
+            // 
+            // comboBoxInit_Fr
+            // 
+            this.comboBoxInit_Fr.DropDownWidth = 352;
+            this.comboBoxInit_Fr.FormattingEnabled = true;
+            this.comboBoxInit_Fr.Location = new System.Drawing.Point(6, 77);
+            this.comboBoxInit_Fr.Name = "comboBoxInit_Fr";
+            this.comboBoxInit_Fr.Size = new System.Drawing.Size(352, 24);
+            this.comboBoxInit_Fr.TabIndex = 60;
+            this.comboBoxInit_Fr.SelectedIndexChanged += new System.EventHandler(this.comboBoxInit_Fr_SelectedIndexChanged);
+            // 
+            // comboBoxInit_Pr
+            // 
+            this.comboBoxInit_Pr.DropDownWidth = 352;
+            this.comboBoxInit_Pr.FormattingEnabled = true;
+            this.comboBoxInit_Pr.Location = new System.Drawing.Point(6, 105);
+            this.comboBoxInit_Pr.Name = "comboBoxInit_Pr";
+            this.comboBoxInit_Pr.Size = new System.Drawing.Size(352, 24);
+            this.comboBoxInit_Pr.TabIndex = 61;
+            this.comboBoxInit_Pr.SelectedIndexChanged += new System.EventHandler(this.comboBoxInit_Pr_SelectedIndexChanged);
+            // 
+            // comboBoxRest_Fr
+            // 
+            this.comboBoxRest_Fr.DropDownWidth = 352;
+            this.comboBoxRest_Fr.FormattingEnabled = true;
+            this.comboBoxRest_Fr.Location = new System.Drawing.Point(6, 333);
+            this.comboBoxRest_Fr.Name = "comboBoxRest_Fr";
+            this.comboBoxRest_Fr.Size = new System.Drawing.Size(352, 24);
+            this.comboBoxRest_Fr.TabIndex = 64;
+            this.comboBoxRest_Fr.SelectedIndexChanged += new System.EventHandler(this.comboBoxRest_Fr_SelectedIndexChanged);
+            // 
+            // comboBoxRest_Pr
+            // 
+            this.comboBoxRest_Pr.DropDownWidth = 352;
+            this.comboBoxRest_Pr.FormattingEnabled = true;
+            this.comboBoxRest_Pr.Location = new System.Drawing.Point(6, 358);
+            this.comboBoxRest_Pr.Name = "comboBoxRest_Pr";
+            this.comboBoxRest_Pr.Size = new System.Drawing.Size(352, 24);
+            this.comboBoxRest_Pr.TabIndex = 65;
+            this.comboBoxRest_Pr.SelectedIndexChanged += new System.EventHandler(this.comboBoxRest_Pr_SelectedIndexChanged);
             // 
             // panel7
             // 
@@ -718,41 +556,203 @@
             this.panel7.Size = new System.Drawing.Size(190, 626);
             this.panel7.TabIndex = 0;
             // 
-            // panel8
+            // label6
             // 
-            this.panel8.Controls.Add(this.textBoxRest_Risico_Comment);
-            this.panel8.Controls.Add(this.textBoxInitRisico_Comment);
-            this.panel8.Controls.Add(this.textBoxInit_Se_Comment);
-            this.panel8.Controls.Add(this.textBoxInit_Fr_Comment);
-            this.panel8.Controls.Add(this.textBoxRest_Cl_Comment);
-            this.panel8.Controls.Add(this.textBoxInit_Pr_Comment);
-            this.panel8.Controls.Add(this.textBoxInit_Cl_Comment);
-            this.panel8.Controls.Add(this.textBoxInit_Av_Comment);
-            this.panel8.Controls.Add(this.textBoxRest_Av_Comment);
-            this.panel8.Controls.Add(this.textBoxRest_Se_Comment);
-            this.panel8.Controls.Add(this.textBoxRest_Pr_Comment);
-            this.panel8.Controls.Add(this.textBoxRest_Fr_Comment);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(613, 0);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(681, 626);
-            this.panel8.TabIndex = 67;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(4, 47);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(51, 17);
+            this.label6.TabIndex = 47;
+            this.label6.Text = "Init_Se";
             // 
-            // panel9
+            // textBoxRest_Se
             // 
-            this.panel9.Controls.Add(this.comboBoxInit_Se);
-            this.panel9.Controls.Add(this.comboBoxRest_Se);
-            this.panel9.Controls.Add(this.comboBoxInit_Av);
-            this.panel9.Controls.Add(this.comboBoxRest_Av);
-            this.panel9.Controls.Add(this.comboBoxInit_Fr);
-            this.panel9.Controls.Add(this.comboBoxInit_Pr);
-            this.panel9.Controls.Add(this.comboBoxRest_Fr);
-            this.panel9.Controls.Add(this.comboBoxRest_Pr);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel9.Location = new System.Drawing.Point(190, 0);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(423, 626);
-            this.panel9.TabIndex = 68;
+            this.textBoxRest_Se.Location = new System.Drawing.Point(111, 303);
+            this.textBoxRest_Se.Name = "textBoxRest_Se";
+            this.textBoxRest_Se.ReadOnly = true;
+            this.textBoxRest_Se.Size = new System.Drawing.Size(59, 22);
+            this.textBoxRest_Se.TabIndex = 24;
+            this.textBoxRest_Se.TextChanged += new System.EventHandler(this.textBoxRest_Se_TextChanged);
+            // 
+            // textBoxRest_Fr
+            // 
+            this.textBoxRest_Fr.Location = new System.Drawing.Point(111, 331);
+            this.textBoxRest_Fr.Name = "textBoxRest_Fr";
+            this.textBoxRest_Fr.ReadOnly = true;
+            this.textBoxRest_Fr.Size = new System.Drawing.Size(59, 22);
+            this.textBoxRest_Fr.TabIndex = 26;
+            this.textBoxRest_Fr.TextChanged += new System.EventHandler(this.textBoxRest_Fr_TextChanged);
+            // 
+            // textBoxInit_Cl
+            // 
+            this.textBoxInit_Cl.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxInit_Cl.Location = new System.Drawing.Point(111, 159);
+            this.textBoxInit_Cl.Name = "textBoxInit_Cl";
+            this.textBoxInit_Cl.ReadOnly = true;
+            this.textBoxInit_Cl.Size = new System.Drawing.Size(59, 22);
+            this.textBoxInit_Cl.TabIndex = 33;
+            // 
+            // textBoxRest_Cl
+            // 
+            this.textBoxRest_Cl.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRest_Cl.Location = new System.Drawing.Point(111, 415);
+            this.textBoxRest_Cl.Name = "textBoxRest_Cl";
+            this.textBoxRest_Cl.ReadOnly = true;
+            this.textBoxRest_Cl.Size = new System.Drawing.Size(59, 22);
+            this.textBoxRest_Cl.TabIndex = 36;
+            // 
+            // textBoxRest_Risico
+            // 
+            this.textBoxRest_Risico.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRest_Risico.Location = new System.Drawing.Point(111, 443);
+            this.textBoxRest_Risico.Name = "textBoxRest_Risico";
+            this.textBoxRest_Risico.ReadOnly = true;
+            this.textBoxRest_Risico.Size = new System.Drawing.Size(59, 22);
+            this.textBoxRest_Risico.TabIndex = 39;
+            // 
+            // textBoxInit_Risico
+            // 
+            this.textBoxInit_Risico.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxInit_Risico.Location = new System.Drawing.Point(111, 197);
+            this.textBoxInit_Risico.Name = "textBoxInit_Risico";
+            this.textBoxInit_Risico.ReadOnly = true;
+            this.textBoxInit_Risico.Size = new System.Drawing.Size(59, 22);
+            this.textBoxInit_Risico.TabIndex = 42;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(4, 443);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(83, 17);
+            this.label17.TabIndex = 58;
+            this.label17.Text = "Rest_Risico";
+            // 
+            // textBoxRest_Pr
+            // 
+            this.textBoxRest_Pr.Location = new System.Drawing.Point(111, 359);
+            this.textBoxRest_Pr.Name = "textBoxRest_Pr";
+            this.textBoxRest_Pr.ReadOnly = true;
+            this.textBoxRest_Pr.Size = new System.Drawing.Size(59, 22);
+            this.textBoxRest_Pr.TabIndex = 43;
+            this.textBoxRest_Pr.TextChanged += new System.EventHandler(this.textBoxRest_Pr_TextChanged);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(4, 415);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(57, 17);
+            this.label16.TabIndex = 57;
+            this.label16.Text = "Rest_Cl";
+            // 
+            // textBoxRest_Av
+            // 
+            this.textBoxRest_Av.Location = new System.Drawing.Point(111, 387);
+            this.textBoxRest_Av.Name = "textBoxRest_Av";
+            this.textBoxRest_Av.ReadOnly = true;
+            this.textBoxRest_Av.Size = new System.Drawing.Size(59, 22);
+            this.textBoxRest_Av.TabIndex = 44;
+            this.textBoxRest_Av.TextChanged += new System.EventHandler(this.textBoxRest_Av_TextChanged);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(4, 387);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(61, 17);
+            this.label15.TabIndex = 56;
+            this.label15.Text = "Rest_Av";
+            // 
+            // textBoxInit_Pr
+            // 
+            this.textBoxInit_Pr.Location = new System.Drawing.Point(111, 103);
+            this.textBoxInit_Pr.Name = "textBoxInit_Pr";
+            this.textBoxInit_Pr.ReadOnly = true;
+            this.textBoxInit_Pr.Size = new System.Drawing.Size(59, 22);
+            this.textBoxInit_Pr.TabIndex = 45;
+            this.textBoxInit_Pr.TextChanged += new System.EventHandler(this.textBoxInit_Pr_TextChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(4, 359);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(59, 17);
+            this.label14.TabIndex = 55;
+            this.label14.Text = "Rest_Pr";
+            // 
+            // textBoxInit_Av
+            // 
+            this.textBoxInit_Av.Location = new System.Drawing.Point(111, 131);
+            this.textBoxInit_Av.Name = "textBoxInit_Av";
+            this.textBoxInit_Av.ReadOnly = true;
+            this.textBoxInit_Av.Size = new System.Drawing.Size(59, 22);
+            this.textBoxInit_Av.TabIndex = 46;
+            this.textBoxInit_Av.TextChanged += new System.EventHandler(this.textBoxInit_Av_TextChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(4, 331);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(58, 17);
+            this.label13.TabIndex = 54;
+            this.label13.Text = "Rest_Fr";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(4, 75);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(47, 17);
+            this.label7.TabIndex = 48;
+            this.label7.Text = "Init_Fr";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(4, 303);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(62, 17);
+            this.label12.TabIndex = 53;
+            this.label12.Text = "Rest_Se";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(4, 103);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(48, 17);
+            this.label8.TabIndex = 49;
+            this.label8.Text = "Init_Pr";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(4, 197);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(72, 17);
+            this.label11.TabIndex = 52;
+            this.label11.Text = "Init_Risico";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(4, 131);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(50, 17);
+            this.label9.TabIndex = 50;
+            this.label9.Text = "Init_Av";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(4, 159);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(46, 17);
+            this.label10.TabIndex = 51;
+            this.label10.Text = "Init_Cl";
             // 
             // IssueRisicoDetails
             // 
@@ -776,11 +776,11 @@
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel9.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
 
         }

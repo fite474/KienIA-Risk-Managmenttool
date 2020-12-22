@@ -43,11 +43,11 @@
             this.buttonKoppelSelectedMaatregelen = new System.Windows.Forms.Button();
             this.buttonCreateNewMaatregel = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridViewTemplateMaatregelen = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.comboBoxWeergaveTemplate = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.dataGridViewTemplateMaatregelen = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dataGridViewObjectIssues = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -65,8 +65,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridViewMaatregelen)).BeginInit();
             this.panel5.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTemplateMaatregelen)).BeginInit();
+            this.panel1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewObjectIssues)).BeginInit();
             this.panel4.SuspendLayout();
@@ -176,12 +176,12 @@
             this.advancedDataGridViewMaatregelen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.advancedDataGridViewMaatregelen.DateWithTime = false;
             this.advancedDataGridViewMaatregelen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.advancedDataGridViewMaatregelen.Location = new System.Drawing.Point(3, 103);
+            this.advancedDataGridViewMaatregelen.Location = new System.Drawing.Point(3, 79);
             this.advancedDataGridViewMaatregelen.Name = "advancedDataGridViewMaatregelen";
             this.advancedDataGridViewMaatregelen.ReadOnly = true;
             this.advancedDataGridViewMaatregelen.RowTemplate.Height = 24;
             this.advancedDataGridViewMaatregelen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.advancedDataGridViewMaatregelen.Size = new System.Drawing.Size(1076, 316);
+            this.advancedDataGridViewMaatregelen.Size = new System.Drawing.Size(1076, 340);
             this.advancedDataGridViewMaatregelen.TabIndex = 23;
             this.advancedDataGridViewMaatregelen.TimeFilter = false;
             this.advancedDataGridViewMaatregelen.SortStringChanged += new System.EventHandler(this.advancedDataGridViewMaatregelen_SortStringChanged);
@@ -195,14 +195,15 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(3, 3);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1076, 100);
+            this.panel5.Size = new System.Drawing.Size(1076, 76);
             this.panel5.TabIndex = 22;
             // 
             // buttonKoppelSelectedMaatregelen
             // 
-            this.buttonKoppelSelectedMaatregelen.Location = new System.Drawing.Point(835, 22);
+            this.buttonKoppelSelectedMaatregelen.Dock = System.Windows.Forms.DockStyle.Left;
+            this.buttonKoppelSelectedMaatregelen.Location = new System.Drawing.Point(0, 0);
             this.buttonKoppelSelectedMaatregelen.Name = "buttonKoppelSelectedMaatregelen";
-            this.buttonKoppelSelectedMaatregelen.Size = new System.Drawing.Size(179, 55);
+            this.buttonKoppelSelectedMaatregelen.Size = new System.Drawing.Size(179, 76);
             this.buttonKoppelSelectedMaatregelen.TabIndex = 21;
             this.buttonKoppelSelectedMaatregelen.Text = "Koppel geselecteerde maatregelen";
             this.buttonKoppelSelectedMaatregelen.UseVisualStyleBackColor = true;
@@ -210,9 +211,10 @@
             // 
             // buttonCreateNewMaatregel
             // 
-            this.buttonCreateNewMaatregel.Location = new System.Drawing.Point(17, 17);
+            this.buttonCreateNewMaatregel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonCreateNewMaatregel.Location = new System.Drawing.Point(915, 0);
             this.buttonCreateNewMaatregel.Name = "buttonCreateNewMaatregel";
-            this.buttonCreateNewMaatregel.Size = new System.Drawing.Size(159, 65);
+            this.buttonCreateNewMaatregel.Size = new System.Drawing.Size(161, 76);
             this.buttonCreateNewMaatregel.TabIndex = 22;
             this.buttonCreateNewMaatregel.Text = "Maak nieuwe maatregel aan";
             this.buttonCreateNewMaatregel.UseVisualStyleBackColor = true;
@@ -230,6 +232,21 @@
             this.tabPage2.Text = "Selecteer uit templates";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // dataGridViewTemplateMaatregelen
+            // 
+            this.dataGridViewTemplateMaatregelen.AllowUserToAddRows = false;
+            this.dataGridViewTemplateMaatregelen.AllowUserToDeleteRows = false;
+            this.dataGridViewTemplateMaatregelen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewTemplateMaatregelen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewTemplateMaatregelen.Location = new System.Drawing.Point(3, 79);
+            this.dataGridViewTemplateMaatregelen.Name = "dataGridViewTemplateMaatregelen";
+            this.dataGridViewTemplateMaatregelen.ReadOnly = true;
+            this.dataGridViewTemplateMaatregelen.RowTemplate.Height = 24;
+            this.dataGridViewTemplateMaatregelen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewTemplateMaatregelen.Size = new System.Drawing.Size(1076, 340);
+            this.dataGridViewTemplateMaatregelen.TabIndex = 0;
+            this.dataGridViewTemplateMaatregelen.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewTemplateMaatregelen_MouseDoubleClick);
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.button2);
@@ -238,14 +255,15 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1076, 70);
+            this.panel1.Size = new System.Drawing.Size(1076, 76);
             this.panel1.TabIndex = 1;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(800, 5);
+            this.button2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button2.Location = new System.Drawing.Point(0, 0);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(179, 55);
+            this.button2.Size = new System.Drawing.Size(179, 76);
             this.button2.TabIndex = 22;
             this.button2.Text = "Koppel geselecteerde maatregelen";
             this.button2.UseVisualStyleBackColor = true;
@@ -253,35 +271,20 @@
             // comboBoxWeergaveTemplate
             // 
             this.comboBoxWeergaveTemplate.FormattingEnabled = true;
-            this.comboBoxWeergaveTemplate.Location = new System.Drawing.Point(120, 21);
+            this.comboBoxWeergaveTemplate.Location = new System.Drawing.Point(627, 27);
             this.comboBoxWeergaveTemplate.Name = "comboBoxWeergaveTemplate";
-            this.comboBoxWeergaveTemplate.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxWeergaveTemplate.Size = new System.Drawing.Size(192, 24);
             this.comboBoxWeergaveTemplate.TabIndex = 1;
             this.comboBoxWeergaveTemplate.SelectedIndexChanged += new System.EventHandler(this.comboBoxWeergaveTemplate_SelectedIndexChanged);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(30, 21);
+            this.label9.Location = new System.Drawing.Point(525, 27);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(75, 17);
             this.label9.TabIndex = 0;
             this.label9.Text = "Template: ";
-            // 
-            // dataGridViewTemplateMaatregelen
-            // 
-            this.dataGridViewTemplateMaatregelen.AllowUserToAddRows = false;
-            this.dataGridViewTemplateMaatregelen.AllowUserToDeleteRows = false;
-            this.dataGridViewTemplateMaatregelen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTemplateMaatregelen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewTemplateMaatregelen.Location = new System.Drawing.Point(3, 73);
-            this.dataGridViewTemplateMaatregelen.Name = "dataGridViewTemplateMaatregelen";
-            this.dataGridViewTemplateMaatregelen.ReadOnly = true;
-            this.dataGridViewTemplateMaatregelen.RowTemplate.Height = 24;
-            this.dataGridViewTemplateMaatregelen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewTemplateMaatregelen.Size = new System.Drawing.Size(1076, 346);
-            this.dataGridViewTemplateMaatregelen.TabIndex = 0;
-            this.dataGridViewTemplateMaatregelen.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewTemplateMaatregelen_MouseDoubleClick);
             // 
             // tabPage3
             // 
@@ -301,12 +304,12 @@
             this.dataGridViewObjectIssues.AllowUserToDeleteRows = false;
             this.dataGridViewObjectIssues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewObjectIssues.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewObjectIssues.Location = new System.Drawing.Point(3, 73);
+            this.dataGridViewObjectIssues.Location = new System.Drawing.Point(3, 79);
             this.dataGridViewObjectIssues.Name = "dataGridViewObjectIssues";
             this.dataGridViewObjectIssues.ReadOnly = true;
             this.dataGridViewObjectIssues.RowTemplate.Height = 24;
             this.dataGridViewObjectIssues.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewObjectIssues.Size = new System.Drawing.Size(1076, 346);
+            this.dataGridViewObjectIssues.Size = new System.Drawing.Size(1076, 340);
             this.dataGridViewObjectIssues.TabIndex = 1;
             this.dataGridViewObjectIssues.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewObjectIssues_DataBindingComplete);
             this.dataGridViewObjectIssues.DoubleClick += new System.EventHandler(this.dataGridViewObjectIssues_DoubleClick);
@@ -319,14 +322,15 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1076, 70);
+            this.panel4.Size = new System.Drawing.Size(1076, 76);
             this.panel4.TabIndex = 0;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(822, 4);
+            this.button3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button3.Location = new System.Drawing.Point(0, 0);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(179, 55);
+            this.button3.Size = new System.Drawing.Size(179, 76);
             this.button3.TabIndex = 22;
             this.button3.Text = "Koppel geselecteerde maatregelen";
             this.button3.UseVisualStyleBackColor = true;
@@ -335,16 +339,16 @@
             // comboBoxObjectenWeergave
             // 
             this.comboBoxObjectenWeergave.FormattingEnabled = true;
-            this.comboBoxObjectenWeergave.Location = new System.Drawing.Point(120, 20);
+            this.comboBoxObjectenWeergave.Location = new System.Drawing.Point(627, 27);
             this.comboBoxObjectenWeergave.Name = "comboBoxObjectenWeergave";
-            this.comboBoxObjectenWeergave.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxObjectenWeergave.Size = new System.Drawing.Size(192, 24);
             this.comboBoxObjectenWeergave.TabIndex = 1;
             this.comboBoxObjectenWeergave.Visible = false;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(27, 23);
+            this.label12.Location = new System.Drawing.Point(527, 27);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(57, 17);
             this.label12.TabIndex = 0;
@@ -427,9 +431,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridViewMaatregelen)).EndInit();
             this.panel5.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTemplateMaatregelen)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTemplateMaatregelen)).EndInit();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewObjectIssues)).EndInit();
             this.panel4.ResumeLayout(false);

@@ -35,9 +35,11 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBoxSelectedItems = new System.Windows.Forms.TextBox();
             this.buttonDeleteSelection = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIssueMaatregelen)).BeginInit();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -72,12 +74,13 @@
             this.dataGridViewIssueMaatregelen.AllowUserToDeleteRows = false;
             this.dataGridViewIssueMaatregelen.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewIssueMaatregelen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewIssueMaatregelen.Location = new System.Drawing.Point(12, 106);
+            this.dataGridViewIssueMaatregelen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewIssueMaatregelen.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewIssueMaatregelen.Name = "dataGridViewIssueMaatregelen";
             this.dataGridViewIssueMaatregelen.ReadOnly = true;
             this.dataGridViewIssueMaatregelen.RowTemplate.Height = 24;
             this.dataGridViewIssueMaatregelen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewIssueMaatregelen.Size = new System.Drawing.Size(959, 365);
+            this.dataGridViewIssueMaatregelen.Size = new System.Drawing.Size(983, 377);
             this.dataGridViewIssueMaatregelen.TabIndex = 1;
             this.dataGridViewIssueMaatregelen.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewIssueMaatregelen_DataBindingComplete);
             this.dataGridViewIssueMaatregelen.SelectionChanged += new System.EventHandler(this.dataGridViewIssueMaatregelen_SelectionChanged);
@@ -109,13 +112,22 @@
             this.buttonDeleteSelection.UseVisualStyleBackColor = true;
             this.buttonDeleteSelection.Click += new System.EventHandler(this.buttonDeleteSelection_Click);
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.dataGridViewIssueMaatregelen);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 100);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(983, 377);
+            this.panel3.TabIndex = 9;
+            // 
             // DeleteGekoppeldeMaatregelen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(983, 590);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.dataGridViewIssueMaatregelen);
             this.Controls.Add(this.panel1);
             this.Name = "DeleteGekoppeldeMaatregelen";
             this.Text = "DeleteGekoppeldeMaatregelen";
@@ -124,6 +136,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIssueMaatregelen)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -137,5 +150,6 @@
         private System.Windows.Forms.Button buttonDeleteSelection;
         private System.Windows.Forms.TextBox textBoxIssueID;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel3;
     }
 }

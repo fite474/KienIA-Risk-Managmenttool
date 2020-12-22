@@ -53,6 +53,7 @@
             this.label1.Size = new System.Drawing.Size(121, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Type keuze menu";
+            this.label1.Visible = false;
             // 
             // comboBox1
             // 
@@ -64,6 +65,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 0;
+            this.comboBox1.Visible = false;
             // 
             // tableLayoutPanelKeuzes
             // 

@@ -12,6 +12,7 @@ namespace RiskManagmentTool.InterfaceLayer.WeergeefWindows
 {
     public partial class ShowLegendaObjecten : Form
     {
+        
         public ShowLegendaObjecten()
         {
             InitializeComponent();
@@ -19,6 +20,7 @@ namespace RiskManagmentTool.InterfaceLayer.WeergeefWindows
 
         private void buttonClose_Click(object sender, EventArgs e)
         {
+
             this.Close();
         }
     }

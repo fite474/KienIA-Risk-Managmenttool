@@ -29,12 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditObjecten));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBoxProjectNaam = new System.Windows.Forms.TextBox();
-            this.comboBoxObjectType = new System.Windows.Forms.ComboBox();
             this.textBoxOmschrijving = new System.Windows.Forms.TextBox();
             this.textBoxObjectNaam = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -45,13 +44,16 @@
             this.textBoxIssuesToVerify = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.buttonExportToExcel = new System.Windows.Forms.Button();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.pictureBoxObjectFoto = new System.Windows.Forms.PictureBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.buttonExportToExcel = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.advancedDataGridViewGekoppeldeIssues = new ADGV.AdvancedDataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.buttonShowLegenda = new System.Windows.Forms.Button();
             this.buttonClearDGVFilter = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.comboBoxVisualSettings = new System.Windows.Forms.ComboBox();
@@ -68,15 +70,15 @@
             this.buttonIssuesOplossen = new System.Windows.Forms.Button();
             this.buttonDeleteGevaren = new System.Windows.Forms.Button();
             this.buttonAddRisico = new System.Windows.Forms.Button();
-            this.buttonShowLegenda = new System.Windows.Forms.Button();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
+            this.textBoxObjectType = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxObjectFoto)).BeginInit();
+            this.panel7.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -85,8 +87,6 @@
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -125,8 +125,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.textBoxObjectType);
             this.panel1.Controls.Add(this.textBoxProjectNaam);
-            this.panel1.Controls.Add(this.comboBoxObjectType);
             this.panel1.Controls.Add(this.textBoxOmschrijving);
             this.panel1.Controls.Add(this.textBoxObjectNaam);
             this.panel1.Controls.Add(this.label4);
@@ -147,19 +147,12 @@
             this.textBoxProjectNaam.Size = new System.Drawing.Size(280, 22);
             this.textBoxProjectNaam.TabIndex = 7;
             // 
-            // comboBoxObjectType
-            // 
-            this.comboBoxObjectType.FormattingEnabled = true;
-            this.comboBoxObjectType.Location = new System.Drawing.Point(188, 98);
-            this.comboBoxObjectType.Name = "comboBoxObjectType";
-            this.comboBoxObjectType.Size = new System.Drawing.Size(280, 24);
-            this.comboBoxObjectType.TabIndex = 6;
-            // 
             // textBoxOmschrijving
             // 
             this.textBoxOmschrijving.Location = new System.Drawing.Point(188, 137);
             this.textBoxOmschrijving.Multiline = true;
             this.textBoxOmschrijving.Name = "textBoxOmschrijving";
+            this.textBoxOmschrijving.ReadOnly = true;
             this.textBoxOmschrijving.Size = new System.Drawing.Size(496, 68);
             this.textBoxOmschrijving.TabIndex = 5;
             // 
@@ -244,16 +237,14 @@
             this.panel6.Size = new System.Drawing.Size(470, 265);
             this.panel6.TabIndex = 2;
             // 
-            // buttonExportToExcel
+            // panel8
             // 
-            this.buttonExportToExcel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonExportToExcel.Location = new System.Drawing.Point(0, 0);
-            this.buttonExportToExcel.Name = "buttonExportToExcel";
-            this.buttonExportToExcel.Size = new System.Drawing.Size(470, 54);
-            this.buttonExportToExcel.TabIndex = 1;
-            this.buttonExportToExcel.Text = "Export naar Excel";
-            this.buttonExportToExcel.UseVisualStyleBackColor = true;
-            this.buttonExportToExcel.Click += new System.EventHandler(this.buttonExportToExcel_Click);
+            this.panel8.Controls.Add(this.pictureBoxObjectFoto);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(470, 211);
+            this.panel8.TabIndex = 3;
             // 
             // pictureBoxObjectFoto
             // 
@@ -265,6 +256,26 @@
             this.pictureBoxObjectFoto.TabIndex = 0;
             this.pictureBoxObjectFoto.TabStop = false;
             this.pictureBoxObjectFoto.Click += new System.EventHandler(this.pictureBoxObjectFoto_Click);
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.buttonExportToExcel);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel7.Location = new System.Drawing.Point(0, 211);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(470, 54);
+            this.panel7.TabIndex = 2;
+            // 
+            // buttonExportToExcel
+            // 
+            this.buttonExportToExcel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonExportToExcel.Location = new System.Drawing.Point(0, 0);
+            this.buttonExportToExcel.Name = "buttonExportToExcel";
+            this.buttonExportToExcel.Size = new System.Drawing.Size(470, 54);
+            this.buttonExportToExcel.TabIndex = 1;
+            this.buttonExportToExcel.Text = "Export naar Excel";
+            this.buttonExportToExcel.UseVisualStyleBackColor = true;
+            this.buttonExportToExcel.Click += new System.EventHandler(this.buttonExportToExcel_Click);
             // 
             // panel3
             // 
@@ -306,19 +317,20 @@
             this.advancedDataGridViewGekoppeldeIssues.AutoGenerateContextFilters = true;
             this.advancedDataGridViewGekoppeldeIssues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.advancedDataGridViewGekoppeldeIssues.DateWithTime = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advancedDataGridViewGekoppeldeIssues.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advancedDataGridViewGekoppeldeIssues.DefaultCellStyle = dataGridViewCellStyle2;
             this.advancedDataGridViewGekoppeldeIssues.Dock = System.Windows.Forms.DockStyle.Fill;
             this.advancedDataGridViewGekoppeldeIssues.Location = new System.Drawing.Point(3, 53);
             this.advancedDataGridViewGekoppeldeIssues.Name = "advancedDataGridViewGekoppeldeIssues";
             this.advancedDataGridViewGekoppeldeIssues.ReadOnly = true;
             this.advancedDataGridViewGekoppeldeIssues.RowTemplate.Height = 40;
+            this.advancedDataGridViewGekoppeldeIssues.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.advancedDataGridViewGekoppeldeIssues.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.advancedDataGridViewGekoppeldeIssues.Size = new System.Drawing.Size(1555, 359);
             this.advancedDataGridViewGekoppeldeIssues.TabIndex = 2;
@@ -341,6 +353,17 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1555, 50);
             this.panel5.TabIndex = 1;
+            // 
+            // buttonShowLegenda
+            // 
+            this.buttonShowLegenda.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonShowLegenda.Location = new System.Drawing.Point(1426, 0);
+            this.buttonShowLegenda.Name = "buttonShowLegenda";
+            this.buttonShowLegenda.Size = new System.Drawing.Size(129, 50);
+            this.buttonShowLegenda.TabIndex = 6;
+            this.buttonShowLegenda.Text = "Legenda weergeven";
+            this.buttonShowLegenda.UseVisualStyleBackColor = true;
+            this.buttonShowLegenda.Click += new System.EventHandler(this.buttonShowLegenda_Click);
             // 
             // buttonClearDGVFilter
             // 
@@ -426,6 +449,7 @@
             this.textBoxObjectNotes.Location = new System.Drawing.Point(27, 41);
             this.textBoxObjectNotes.Multiline = true;
             this.textBoxObjectNotes.Name = "textBoxObjectNotes";
+            this.textBoxObjectNotes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxObjectNotes.Size = new System.Drawing.Size(458, 348);
             this.textBoxObjectNotes.TabIndex = 1;
             // 
@@ -510,34 +534,13 @@
             this.buttonAddRisico.UseVisualStyleBackColor = true;
             this.buttonAddRisico.Click += new System.EventHandler(this.buttonAddRisico_Click);
             // 
-            // buttonShowLegenda
+            // textBoxObjectType
             // 
-            this.buttonShowLegenda.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonShowLegenda.Location = new System.Drawing.Point(1426, 0);
-            this.buttonShowLegenda.Name = "buttonShowLegenda";
-            this.buttonShowLegenda.Size = new System.Drawing.Size(129, 50);
-            this.buttonShowLegenda.TabIndex = 6;
-            this.buttonShowLegenda.Text = "Legenda weergeven";
-            this.buttonShowLegenda.UseVisualStyleBackColor = true;
-            this.buttonShowLegenda.Click += new System.EventHandler(this.buttonShowLegenda_Click);
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.buttonExportToExcel);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel7.Location = new System.Drawing.Point(0, 211);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(470, 54);
-            this.panel7.TabIndex = 2;
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.pictureBoxObjectFoto);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(0, 0);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(470, 211);
-            this.panel8.TabIndex = 3;
+            this.textBoxObjectType.Location = new System.Drawing.Point(188, 98);
+            this.textBoxObjectType.Name = "textBoxObjectType";
+            this.textBoxObjectType.ReadOnly = true;
+            this.textBoxObjectType.Size = new System.Drawing.Size(280, 22);
+            this.textBoxObjectType.TabIndex = 8;
             // 
             // EditObjecten
             // 
@@ -557,7 +560,9 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel6.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxObjectFoto)).EndInit();
+            this.panel7.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -569,8 +574,6 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.panel4.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -583,7 +586,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.ComboBox comboBoxObjectType;
         private System.Windows.Forms.TextBox textBoxOmschrijving;
         private System.Windows.Forms.TextBox textBoxObjectNaam;
         private System.Windows.Forms.Label label4;
@@ -618,5 +620,6 @@
         private System.Windows.Forms.Button buttonShowLegenda;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.TextBox textBoxObjectType;
     }
 }

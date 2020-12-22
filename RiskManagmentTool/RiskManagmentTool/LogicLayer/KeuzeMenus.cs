@@ -10,7 +10,7 @@ namespace RiskManagmentTool.LogicLayer
 {
     class KeuzeMenus
     {
-        private List<CheckedListBox> KeuzeMenuList;
+        //private List<CheckedListBox> KeuzeMenuList;
 
 
         private Dictionary<int, string> TypeObjectComboBox;
@@ -48,12 +48,12 @@ namespace RiskManagmentTool.LogicLayer
 
 
 
-        public List<CheckedListBox> GetKeuzeMenus()
-        {
-            //needs to be editted
-            return KeuzeMenuList;
+        //public List<CheckedListBox> GetKeuzeMenus()
+        //{
+        //    //needs to be editted
+        //    return KeuzeMenuList;
 
-        }
+        //}
 
         public Dictionary<int, string> GetMaatregelNormMenu()
         {
@@ -177,25 +177,25 @@ namespace RiskManagmentTool.LogicLayer
 
 
 
-            KeuzeMenuList = new List<CheckedListBox>();
+            //KeuzeMenuList = new List<CheckedListBox>();
 
 
 
-            int placeX = 0;
-            for (int i = 0; i < 5; i++)
-            {
-                CheckedListBox box = new CheckedListBox();
-                for (int j = 0; j < 5; j++)
-                {
-                    string keuzeOptie = "keuze " + j;
-                    bool isKeuzeChecked = false;
-                    box.Items.Add(keuzeOptie, isKeuzeChecked);
-                }
+            //int placeX = 0;
+            //for (int i = 0; i < 5; i++)
+            //{
+            //    CheckedListBox box = new CheckedListBox();
+            //    for (int j = 0; j < 5; j++)
+            //    {
+            //        string keuzeOptie = "keuze " + j;
+            //        bool isKeuzeChecked = false;
+            //        box.Items.Add(keuzeOptie, isKeuzeChecked);
+            //    }
                 
-                box.Location = new System.Drawing.Point(placeX, 0);
-                placeX += 200;
-                KeuzeMenuList.Add(box);
-            }
+            //    box.Location = new System.Drawing.Point(placeX, 0);
+            //    placeX += 200;
+            //    KeuzeMenuList.Add(box);
+            //}
         }
     }
 }

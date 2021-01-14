@@ -25,7 +25,7 @@ namespace RiskManagmentTool.InterfaceLayer.DeleteWindows
             comunicator = new Datacomunication();
             IssueID = issueID;
             SelectedMaatregelenId = new List<string>();
-
+            textBoxIssueID.Text = issueID;
             LoadData();
 
         }

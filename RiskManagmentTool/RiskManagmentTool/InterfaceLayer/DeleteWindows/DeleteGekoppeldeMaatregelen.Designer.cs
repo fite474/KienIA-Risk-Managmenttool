@@ -56,6 +56,7 @@
             // 
             this.textBoxIssueID.Location = new System.Drawing.Point(192, 32);
             this.textBoxIssueID.Name = "textBoxIssueID";
+            this.textBoxIssueID.ReadOnly = true;
             this.textBoxIssueID.Size = new System.Drawing.Size(100, 22);
             this.textBoxIssueID.TabIndex = 1;
             // 

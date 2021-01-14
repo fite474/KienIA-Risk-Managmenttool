@@ -59,10 +59,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
                     SelectedMaatregelId.Add(maatregelID);
                     //textBoxSelectedMaatregelen.Text += maatregelID + ", ";
                 }
-                //    if (!SelectedTemplateIssueId.Contains(maatregelID))
-                //{
-                //    SelectedTemplateIssueId.Add(maatregelID);
-                //}
+
             }
             advancedDataGridViewIssueMaatregelen.ClearSelection();
             controler.CheckIssueForDubbleMaatregelen(SelectedMaatregelId);

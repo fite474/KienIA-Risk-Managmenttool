@@ -23,6 +23,8 @@ namespace RiskManagmentTool.InterfaceLayer.WarningWindows
         private Datacomunication comunicator;
         private string ObjectIssueID;
         private string IssueToAddID;
+        private DataControler controler;
+
 
         public WarningAddToObject()
         {
@@ -30,7 +32,7 @@ namespace RiskManagmentTool.InterfaceLayer.WarningWindows
             InitializeComponent();
             this.buttonOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             comunicator = new Datacomunication();
-
+            
             
             SetSelectionSettings();
         }
@@ -41,7 +43,7 @@ namespace RiskManagmentTool.InterfaceLayer.WarningWindows
             switchToCustomBeoordeling = true;
             checkedListBoxWarningSettings.SetItemChecked(0, true);
             checkedListBoxWarningSettings.SetItemChecked(1, true);
-            checkedListBoxWarningSettings.SetItemChecked(2, true);
+            //checkedListBoxWarningSettings.SetItemChecked(2, true);
         }
 
         public void MakeWarningOnIssue(string objectId, string objectIssueId, string issueToAddId, string gevaarId)
@@ -49,6 +51,8 @@ namespace RiskManagmentTool.InterfaceLayer.WarningWindows
             List<string> issueInfo = comunicator.GetIssueInfo(objectIssueId);
             ObjectIssueID = objectIssueId;
             IssueToAddID = issueToAddId;
+            controler = new DataControler(objectIssueId);
+
             textBoxGevaarId.Text = gevaarId;
             textBoxObjectIssueId.Text = issueInfo[0];
             textBoxSituatie.Text = issueInfo[1];
@@ -64,7 +68,7 @@ namespace RiskManagmentTool.InterfaceLayer.WarningWindows
 
             dataGridViewMaatregelenCurrentIssue.DataSource = comunicator.GetIssueMaatregelen(objectIssueId);
             dataGridViewMaatregelenNewIssue.DataSource = comunicator.GetIssueMaatregelen(issueToAddId);
-
+            
         }
 
         //public void MakeWarningOnMaatregelen()
@@ -161,6 +165,27 @@ namespace RiskManagmentTool.InterfaceLayer.WarningWindows
             //    rowIndex++;
             //}
             
+        }
+
+        private void buttonOK_Click(object sender, EventArgs e)
+        {
+            List<string> SelectedGevarenId = new List<string>();
+            string gevaarID = "";
+            foreach (DataGridViewRow row in dataGridViewMaatregelenNewIssue.SelectedRows)
+            {
+                gevaarID = row.Cells[0].Value.ToString();
+                if (!SelectedGevarenId.Contains(gevaarID))
+                {
+                    SelectedGevarenId.Add(gevaarID);
+                }
+            }
+
+            dataGridViewMaatregelenNewIssue.ClearSelection();
+            controler.CheckIssueForDubbleMaatregelen(SelectedGevarenId);
+
+
+
+            this.Close();
         }
     }
 }

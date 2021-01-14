@@ -29,6 +29,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private string Gebeurtenis;
 
         private int RisicograafSetting; //0 = SIL 1 = pl
+        private int IssueState;
 
         private bool ReadOnlyMode;
 
@@ -68,7 +69,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
 
 
-            checkBoxIssueOK.Checked = comunicator.GetIssueState(IssueID) == "1";
+            //checkBoxIssueOK.Checked = comunicator.GetIssueState(IssueID) == "1";
 
             DataTable risicoBeoordelingData = comunicator.GetRisicoBeoordelingFromIssue(IssueID);
             textBoxInit_Risico.Text = risicoBeoordelingData.Rows[0].Field<int?>(7).ToString();
@@ -112,6 +113,13 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             textBoxRest_Risico.Text = risicoBeoordelingData.Rows[0].Field<int?>(19).ToString();
             textBoxRest_Risico_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(25).ToString();
             checkBoxRest_Risico_OK.Checked = risicoBeoordelingData.Rows[0].Field<string>(26).ToString() == "1";
+
+
+            IssueState = int.Parse(comunicator.GetIssueState(IssueID));//risicoBeoordelingData.Rows[0].Field<int>(27);
+            checkedListBoxIssueCompletionState.SetItemChecked(IssueState, true);
+
+
+            //checkedListBoxIssueCompletionState.Item
         }
 
         public void SetReadOnlyMode()
@@ -188,8 +196,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void checkBoxIssueOK_CheckedChanged(object sender, EventArgs e)
         {
-            string issueState = checkBoxIssueOK.Checked == true ? "1" : "0";
-            comunicator.UpdateIssueState(IssueID, issueState);
+            //string issueState = checkBoxIssueOK.Checked == true ? "1" : "0";
+            //comunicator.UpdateIssueState(IssueID, IssueState);
         }
 
         private void buttonDeleteMaatregelen_Click(object sender, EventArgs e)
@@ -217,6 +225,35 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
                 comunicator.AddImageToIssue(IssueID, imageFilePath);
 
             }
+        }
+
+        private void buttonShowRisk_Click(object sender, EventArgs e)
+        {
+            string gevaarID = comunicator.GetGevaarIdByIssueID(IssueID);
+            EditRisicos editRisicos = new EditRisicos(gevaarID);
+            editRisicos.SetReadOnlyMode();
+            editRisicos.ShowDialog();
+        }
+
+        private void checkedListBoxIssueCompletionState_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            
+            for (int ix = 0; ix < checkedListBoxIssueCompletionState.Items.Count; ++ix)
+                if (ix != e.Index) checkedListBoxIssueCompletionState.SetItemChecked(ix, false);
+                else IssueState = ix;
+            
+            
+        }
+
+        private void checkedListBoxIssueCompletionState_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            for (int ix = 0; ix < checkedListBoxIssueCompletionState.Items.Count; ++ix)
+                if (checkedListBoxIssueCompletionState.GetItemChecked(ix))
+                {
+                    IssueState = ix;
+                    
+                }
+            comunicator.UpdateIssueState(IssueID, IssueState);
         }
     }
 }

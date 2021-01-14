@@ -57,12 +57,12 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
             //object type
             foreach (MenuTableName menuName in menuTableNames)
             {
-                KeuzesItem keuzesItem = new KeuzesItem(menuName)//, objectTypes)
+                KeuzesItem keuzesItem = new KeuzesItem(menuName)
                 {
                     Dock = DockStyle.Fill,
                     MenuTableName = menuName                
                 };
-                tableLayoutPanelKeuzes.Controls.Add(keuzesItem);//, column, row);
+                tableLayoutPanelKeuzes.Controls.Add(keuzesItem);
                 
             }
             Cursor.Current = Cursors.Default;

@@ -250,6 +250,30 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         }
 
 
+        public void SetReadOnlyMode()
+        {
+            //buttonBedienvorm.Enabled = false;
+            //buttonGebruiker.Enabled = false;
+            //buttonDisciplines.Enabled = false;
+            //buttonGebruiksfase.Enabled = false;
+            //buttonGevaar.Enabled = false;
+            //buttonGevaarlijkeZone.Enabled = false;
+            //buttonGevolg.Enabled = false;
+            //
+            
+            //buttonTaak.Enabled = false;
+            //buttonViewGevaarUsage.Enabled = false;
+
+            textBoxGevSituatie.Enabled = false;
+            textBoxGevGebeurtenis.Enabled = false;
+
+            checkedListBoxOptions.Enabled = false;
+
+            buttonKeuzeOption.Enabled = false;
+            buttonSave.Enabled = false;
+            buttonDeleteGevaar.Enabled = false;
+        }
+
 
         private void UpdateText()
         {
@@ -292,8 +316,6 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         {
             int gevaarIDToUpdate = int.Parse(editGevaarID);
 
-
-
             if (checkedItemsAtSave.Count > 0)
             {
                 if (checkedItemsAtStart.Count == 0)
@@ -301,40 +323,32 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
                     comunicator.UpdateGevaarDataRemoveNull(gevaarIDToUpdate, menuTableName);
                 }
 
-
                 foreach (KeyValuePair<int, int> kvp in checkedItemsAtSave)
                 {
                     if (!checkedItemsAtStart.ContainsValue(kvp.Value))
                     {
+                        // add data to gevaar
                         comunicator.UpdateGevaarDataAdd(gevaarIDToUpdate, menuTableName, kvp.Value);
                     }
-
                 }
 
                 foreach (KeyValuePair<int, int> kvp in checkedItemsAtStart)
                 {
                     if (!checkedItemsAtSave.ContainsValue(kvp.Value))
                     {
+                        // remove data from gevaar
                         comunicator.UpdateGevaarDataDelete(gevaarIDToUpdate, menuTableName, kvp.Value);
                     }
-
                 }
             }
             else if (checkedItemsAtSave.Count == 0 && checkedItemsAtStart.Count != 0)
             {
                 comunicator.UpdateGevaarDataInsertNull(gevaarIDToUpdate, menuTableName);
             }
-
-            
-            
-
-
         }
 
         private void UpdateGevaarDataWithChecks()
         {
-            //int gevaarIDToUpdate = int.Parse(editGevaarID);
-
 
             CheckUsersChanges(DisciplinesCheckedItems, DisciplinesCheckedItemsAtStart, MenuTableName.Disciplines);
             CheckUsersChanges(GevolgenCheckedItems, GevolgenCheckedItemsAtStart, MenuTableName.Gevolgen);
@@ -345,14 +359,6 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             CheckUsersChanges(BedienvormenCheckedItems, BedienvormenCheckedItemsAtStart, MenuTableName.Bedienvormen);
             CheckUsersChanges(TakenCheckedItems, TakenCheckedItemsAtStart, MenuTableName.Taken);
 
-
-
-
-
-            //comunicator.UpdateGevaarDataOLD(gevaarIDToUpdate, DisciplinesCheckedItems, GebruiksfaseCheckedItems,
-            //BedienvormenCheckedItems, GebruikersCheckedItems,
-            //GevarenzonesCheckedItems, TakenCheckedItems,
-            //GevaarTypesCheckedItems, GevolgenCheckedItems);
             int gevaarIDToUpdate = int.Parse(editGevaarID);
             if (textBoxGevSituatie.Text != situatieInitString)
             {
@@ -418,25 +424,6 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         }
 
 
-
-
-        //private void ChangeCheckedListBox(List<string> items, List<int> checkedItems)
-        //{
-
-        //    int indexHelper = 0;
-        //    checkedListBoxOptions.Items.Clear();
-        //    foreach (string menuOption in items)
-        //    {
-        //        checkedListBoxOptions.Items.Add(menuOption);
-        //        if (checkedItems.Contains(indexHelper))
-        //        {
-        //            checkedListBoxOptions.SetItemChecked(indexHelper, true);
-        //        }
-
-        //        indexHelper++;
-        //    }
-
-        //}
 
         #region button menu
 
@@ -593,27 +580,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         {
             if (!isNewGevaar)
             {
-                //MenuTableName = MenuTableName.Gevolgen;
-                //UpdateState();
-                //ChangeCheckedListBox(GevolgenItems, GevolgenCheckedItems);
 
-                //MenuTableName = MenuTableName.Disciplines;
-                //UpdateState();
-                //ChangeCheckedListBox(DisciplinesItems, DisciplinesCheckedItems);
-
-                //MenuTableName = MenuTableName.Bedienvormen;
-                //UpdateState();
-                //ChangeCheckedListBox(BedienvormenItems, BedienvormenCheckedItems);
-
-                //buttonDisciplines.PerformClick();
-
-                //buttonBedienvorm.PerformClick();
-                //buttonGebruiker.PerformClick();
-                //buttonGebruiksfase.PerformClick();
-                //buttonGevaar.PerformClick();
-                //buttonGevaarlijkeZone.PerformClick();
-                //buttonGevolg.PerformClick();
-                //buttonTaak.PerformClick();
             }
         }
 
@@ -633,20 +600,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             {
                 this.Close();
             }
-            
-            //string message = "Weet u zeker dat u dit gevaar wilt verwijderen?";
-            //string title = "Reminder Risico waardes";
-            //MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            //DialogResult result = MessageBox.Show(message, title, buttons);
 
-            //if (result == DialogResult.Yes)
-            //{
-            //    //this.Close();
-            //}
-            //else
-            //{
-                
-            //}
         }
     }
 }

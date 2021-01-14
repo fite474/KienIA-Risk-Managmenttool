@@ -42,14 +42,14 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.buttonEditSettings = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.checkedListBox4 = new System.Windows.Forms.CheckedListBox();
             this.label8 = new System.Windows.Forms.Label();
             this.checkedListBox3 = new System.Windows.Forms.CheckedListBox();
             this.textBoxProjectNaam = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.buttonEditSettings = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -112,9 +112,9 @@
             // 
             this.panel1.Controls.Add(this.tabControl1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 169);
+            this.panel1.Location = new System.Drawing.Point(0, 122);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1575, 643);
+            this.panel1.Size = new System.Drawing.Size(1575, 690);
             this.panel1.TabIndex = 5;
             // 
             // tabControl1
@@ -125,7 +125,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1575, 643);
+            this.tabControl1.Size = new System.Drawing.Size(1575, 690);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage2
@@ -135,7 +135,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1567, 614);
+            this.tabPage2.Size = new System.Drawing.Size(1567, 661);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Gekoppelde objecten";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -146,13 +146,13 @@
             this.dataGridViewGekoppeldeObjecten.AllowUserToDeleteRows = false;
             this.dataGridViewGekoppeldeObjecten.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewGekoppeldeObjecten.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewGekoppeldeObjecten.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dataGridViewGekoppeldeObjecten.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewGekoppeldeObjecten.Location = new System.Drawing.Point(3, 103);
             this.dataGridViewGekoppeldeObjecten.Name = "dataGridViewGekoppeldeObjecten";
             this.dataGridViewGekoppeldeObjecten.ReadOnly = true;
             this.dataGridViewGekoppeldeObjecten.RowTemplate.Height = 24;
             this.dataGridViewGekoppeldeObjecten.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewGekoppeldeObjecten.Size = new System.Drawing.Size(1561, 503);
+            this.dataGridViewGekoppeldeObjecten.Size = new System.Drawing.Size(1561, 555);
             this.dataGridViewGekoppeldeObjecten.TabIndex = 0;
             this.dataGridViewGekoppeldeObjecten.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewGekoppeldeObjecten_DataBindingComplete);
             this.dataGridViewGekoppeldeObjecten.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewGekoppeldeObjecten_MouseDoubleClick);
@@ -212,6 +212,26 @@
             this.tabPage1.Text = "Project instellingen";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.buttonEditSettings);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1561, 100);
+            this.panel3.TabIndex = 8;
+            // 
+            // buttonEditSettings
+            // 
+            this.buttonEditSettings.Dock = System.Windows.Forms.DockStyle.Left;
+            this.buttonEditSettings.Location = new System.Drawing.Point(0, 0);
+            this.buttonEditSettings.Name = "buttonEditSettings";
+            this.buttonEditSettings.Size = new System.Drawing.Size(198, 100);
+            this.buttonEditSettings.TabIndex = 0;
+            this.buttonEditSettings.Text = "Pas instellingen aan";
+            this.buttonEditSettings.UseVisualStyleBackColor = true;
+            this.buttonEditSettings.Click += new System.EventHandler(this.buttonEditSettings_Click);
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -268,26 +288,6 @@
             this.textBox3.Size = new System.Drawing.Size(186, 22);
             this.textBox3.TabIndex = 7;
             this.textBox3.Visible = false;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.buttonEditSettings);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(3, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1561, 100);
-            this.panel3.TabIndex = 8;
-            // 
-            // buttonEditSettings
-            // 
-            this.buttonEditSettings.Dock = System.Windows.Forms.DockStyle.Left;
-            this.buttonEditSettings.Location = new System.Drawing.Point(0, 0);
-            this.buttonEditSettings.Name = "buttonEditSettings";
-            this.buttonEditSettings.Size = new System.Drawing.Size(198, 100);
-            this.buttonEditSettings.TabIndex = 0;
-            this.buttonEditSettings.Text = "Pas instellingen aan";
-            this.buttonEditSettings.UseVisualStyleBackColor = true;
-            this.buttonEditSettings.Click += new System.EventHandler(this.buttonEditSettings_Click);
             // 
             // EditProjecten
             // 

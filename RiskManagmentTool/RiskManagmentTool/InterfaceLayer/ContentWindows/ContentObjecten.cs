@@ -47,18 +47,13 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
                     string objectOmschrijving = objectInfo[4];
                     Form editObject = new EditObjecten(objectId, projectNaam, objectNaam, objectType, objectOmschrijving);
                     editObject.Show();
-
-
                 }
             }
             catch (Exception err)
             {
-
                 Console.WriteLine(err);
-
             }
-            
-
+           
         }
 
         private void buttonAddNew_Click(object sender, EventArgs e)

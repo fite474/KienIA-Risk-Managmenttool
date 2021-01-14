@@ -25,7 +25,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
         private List<string> SelectedGevarenId;
         private List<string> SelectedObjectIssueId;
         private List<string> SelectedTemplateIssueId;
-        //private List<string> SelectedTemplateGevaarId;
+
 
 
         private BindingSource gevarenData;
@@ -34,7 +34,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
         public AddRisico(string objectNaam, string objectID)
         {
-            Cursor.Current = Cursors.WaitCursor;//Application.UseWaitCursor = true;
+            Cursor.Current = Cursors.WaitCursor;
             InitializeComponent();
             comunicator = new Datacomunication();
             keuzeMenus = new KeuzeMenus();
@@ -44,7 +44,6 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
             SelectedGevarenId = new List<string>();
             SelectedObjectIssueId = new List<string>();
             SelectedTemplateIssueId = new List<string>();
-            //SelectedTemplateGevaarId = new List<string>();
 
             this.ObjectNaam = objectNaam;
             this.ObjectID = objectID;

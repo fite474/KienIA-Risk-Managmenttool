@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditObjecten));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBoxObjectType = new System.Windows.Forms.TextBox();
             this.textBoxProjectNaam = new System.Windows.Forms.TextBox();
             this.textBoxOmschrijving = new System.Windows.Forms.TextBox();
             this.textBoxObjectNaam = new System.Windows.Forms.TextBox();
@@ -70,7 +71,6 @@
             this.buttonIssuesOplossen = new System.Windows.Forms.Button();
             this.buttonDeleteGevaren = new System.Windows.Forms.Button();
             this.buttonAddRisico = new System.Windows.Forms.Button();
-            this.textBoxObjectType = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -100,8 +100,8 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.1133F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.41872F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 31.15763F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 58.37439F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.34483F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1575, 812);
             this.tableLayoutPanel1.TabIndex = 0;
@@ -120,7 +120,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1569, 271);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1569, 247);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // panel1
@@ -136,8 +136,16 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(701, 265);
+            this.panel1.Size = new System.Drawing.Size(701, 241);
             this.panel1.TabIndex = 0;
+            // 
+            // textBoxObjectType
+            // 
+            this.textBoxObjectType.Location = new System.Drawing.Point(188, 98);
+            this.textBoxObjectType.Name = "textBoxObjectType";
+            this.textBoxObjectType.ReadOnly = true;
+            this.textBoxObjectType.Size = new System.Drawing.Size(280, 22);
+            this.textBoxObjectType.TabIndex = 8;
             // 
             // textBoxProjectNaam
             // 
@@ -207,7 +215,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(710, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(380, 265);
+            this.panel2.Size = new System.Drawing.Size(380, 241);
             this.panel2.TabIndex = 1;
             // 
             // textBoxIssuesToVerify
@@ -234,7 +242,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(1096, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(470, 265);
+            this.panel6.Size = new System.Drawing.Size(470, 241);
             this.panel6.TabIndex = 2;
             // 
             // panel8
@@ -243,7 +251,7 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(470, 211);
+            this.panel8.Size = new System.Drawing.Size(470, 187);
             this.panel8.TabIndex = 3;
             // 
             // pictureBoxObjectFoto
@@ -252,7 +260,7 @@
             this.pictureBoxObjectFoto.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxObjectFoto.Image")));
             this.pictureBoxObjectFoto.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxObjectFoto.Name = "pictureBoxObjectFoto";
-            this.pictureBoxObjectFoto.Size = new System.Drawing.Size(470, 211);
+            this.pictureBoxObjectFoto.Size = new System.Drawing.Size(470, 187);
             this.pictureBoxObjectFoto.TabIndex = 0;
             this.pictureBoxObjectFoto.TabStop = false;
             this.pictureBoxObjectFoto.Click += new System.EventHandler(this.pictureBoxObjectFoto_Click);
@@ -261,7 +269,7 @@
             // 
             this.panel7.Controls.Add(this.buttonExportToExcel);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel7.Location = new System.Drawing.Point(0, 211);
+            this.panel7.Location = new System.Drawing.Point(0, 187);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(470, 54);
             this.panel7.TabIndex = 2;
@@ -281,9 +289,9 @@
             // 
             this.panel3.Controls.Add(this.tabControl1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(3, 280);
+            this.panel3.Location = new System.Drawing.Point(3, 256);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1569, 444);
+            this.panel3.Size = new System.Drawing.Size(1569, 468);
             this.panel3.TabIndex = 2;
             // 
             // tabControl1
@@ -295,7 +303,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1569, 444);
+            this.tabControl1.Size = new System.Drawing.Size(1569, 468);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -305,7 +313,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1561, 415);
+            this.tabPage1.Size = new System.Drawing.Size(1561, 439);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Gekoppelde issues";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -317,14 +325,14 @@
             this.advancedDataGridViewGekoppeldeIssues.AutoGenerateContextFilters = true;
             this.advancedDataGridViewGekoppeldeIssues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.advancedDataGridViewGekoppeldeIssues.DateWithTime = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advancedDataGridViewGekoppeldeIssues.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advancedDataGridViewGekoppeldeIssues.DefaultCellStyle = dataGridViewCellStyle3;
             this.advancedDataGridViewGekoppeldeIssues.Dock = System.Windows.Forms.DockStyle.Fill;
             this.advancedDataGridViewGekoppeldeIssues.Location = new System.Drawing.Point(3, 53);
             this.advancedDataGridViewGekoppeldeIssues.Name = "advancedDataGridViewGekoppeldeIssues";
@@ -332,7 +340,7 @@
             this.advancedDataGridViewGekoppeldeIssues.RowTemplate.Height = 40;
             this.advancedDataGridViewGekoppeldeIssues.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.advancedDataGridViewGekoppeldeIssues.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.advancedDataGridViewGekoppeldeIssues.Size = new System.Drawing.Size(1555, 359);
+            this.advancedDataGridViewGekoppeldeIssues.Size = new System.Drawing.Size(1555, 383);
             this.advancedDataGridViewGekoppeldeIssues.TabIndex = 2;
             this.advancedDataGridViewGekoppeldeIssues.TimeFilter = false;
             this.advancedDataGridViewGekoppeldeIssues.SortStringChanged += new System.EventHandler(this.advancedDataGridViewGekoppeldeIssues_SortStringChanged);
@@ -388,8 +396,8 @@
             // 
             this.comboBoxVisualSettings.FormattingEnabled = true;
             this.comboBoxVisualSettings.Items.AddRange(new object[] {
-            "Nog te reviewen",
-            "Risico waarde",
+            "Status van beoordeling",
+            "Rest risico OK",
             "Clear"});
             this.comboBoxVisualSettings.Location = new System.Drawing.Point(522, 6);
             this.comboBoxVisualSettings.Name = "comboBoxVisualSettings";
@@ -411,9 +419,9 @@
             this.comboBoxFilterIssues.FormattingEnabled = true;
             this.comboBoxFilterIssues.Items.AddRange(new object[] {
             "Alle issues",
-            "Issues met een te hoog rest risico",
-            "Nog te verifiëren(werkt niet)",
-            "Nog te bespreken met klant(werkt niet)",
+            "..",
+            "..",
+            "..",
             "Issues zonder maatregelen"});
             this.comboBoxFilterIssues.Location = new System.Drawing.Point(114, 6);
             this.comboBoxFilterIssues.Name = "comboBoxFilterIssues";
@@ -429,7 +437,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1561, 415);
+            this.tabPage2.Size = new System.Drawing.Size(1561, 439);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Object informatie";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -468,7 +476,7 @@
             this.tabPage3.Controls.Add(this.checkedListBoxRisicograaf);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1561, 415);
+            this.tabPage3.Size = new System.Drawing.Size(1561, 439);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Instellingen";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -516,9 +524,9 @@
             // 
             // buttonDeleteGevaren
             // 
-            this.buttonDeleteGevaren.Location = new System.Drawing.Point(257, 25);
+            this.buttonDeleteGevaren.Location = new System.Drawing.Point(594, 4);
             this.buttonDeleteGevaren.Name = "buttonDeleteGevaren";
-            this.buttonDeleteGevaren.Size = new System.Drawing.Size(214, 35);
+            this.buttonDeleteGevaren.Size = new System.Drawing.Size(214, 75);
             this.buttonDeleteGevaren.TabIndex = 3;
             this.buttonDeleteGevaren.Text = "Verwijder gekoppelde gevaren";
             this.buttonDeleteGevaren.UseVisualStyleBackColor = true;
@@ -526,21 +534,14 @@
             // 
             // buttonAddRisico
             // 
-            this.buttonAddRisico.Location = new System.Drawing.Point(28, 25);
+            this.buttonAddRisico.Dock = System.Windows.Forms.DockStyle.Left;
+            this.buttonAddRisico.Location = new System.Drawing.Point(0, 0);
             this.buttonAddRisico.Name = "buttonAddRisico";
-            this.buttonAddRisico.Size = new System.Drawing.Size(135, 29);
+            this.buttonAddRisico.Size = new System.Drawing.Size(170, 79);
             this.buttonAddRisico.TabIndex = 2;
             this.buttonAddRisico.Text = "Voeg gevaar toe";
             this.buttonAddRisico.UseVisualStyleBackColor = true;
             this.buttonAddRisico.Click += new System.EventHandler(this.buttonAddRisico_Click);
-            // 
-            // textBoxObjectType
-            // 
-            this.textBoxObjectType.Location = new System.Drawing.Point(188, 98);
-            this.textBoxObjectType.Name = "textBoxObjectType";
-            this.textBoxObjectType.ReadOnly = true;
-            this.textBoxObjectType.Size = new System.Drawing.Size(280, 22);
-            this.textBoxObjectType.TabIndex = 8;
             // 
             // EditObjecten
             // 

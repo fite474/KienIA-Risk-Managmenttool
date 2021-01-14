@@ -536,7 +536,7 @@ namespace RiskManagmentTool.LogicLayer
 
         }
 
-        public void UpdateIssueState(string issueId, string newState)
+        public void UpdateIssueState(string issueId, int newState)
         {
             databaseCommunication.UpdateIssueState(issueId, newState);
         }
@@ -1227,6 +1227,10 @@ namespace RiskManagmentTool.LogicLayer
         public Dictionary<string, string> GetObjectIssuesRiskValue(string objectID)
         {
             return databaseCommunication.GetObjectIssuesRiskValue(objectID);
+        }
+        public Dictionary<string, string> GetObjectIssuesRestRiskOK(string objectID)
+        {
+            return databaseCommunication.GetObjectIssuesRestRiskOK(objectID);
         }
 
 

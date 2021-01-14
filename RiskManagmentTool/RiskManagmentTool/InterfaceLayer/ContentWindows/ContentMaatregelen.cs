@@ -30,7 +30,6 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 
         private void RefreshTable()
         {
-            //dataGridViewMaatregelen.DataSource = comunicator.GetMaatregelTable();
             maatregelenData = comunicator.GetMaatregelTable();
             advancedDataGridViewMaatregelen.DataSource = maatregelenData;
         }
@@ -41,22 +40,6 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
             editMaatregelen.ShowDialog();
             RefreshTable();
         }
-
-        //private void dataGridViewMaatregelen_MouseDoubleClick(object sender, MouseEventArgs e)
-        //{
-        //    string maatregelId = dataGridViewMaatregelen.SelectedRows[0].Cells[0].Value.ToString();
-        //    string maatregelNaam = dataGridViewMaatregelen.SelectedRows[0].Cells[1].Value.ToString();
-
-        //    Form editMaatregelen = new EditMaatregelen(maatregelId, maatregelNaam);//, maatregelCategory, maatregelNorm);
-
-        //    editMaatregelen.ShowDialog();
-        //    RefreshTable();
-        //}
-
-        //private void dataGridViewMaatregelen_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        //{
-        //    dataGridViewMaatregelen.ClearSelection();
-        //}
 
         private void advancedDataGridViewMaatregelen_MouseDoubleClick(object sender, MouseEventArgs e)
         {

@@ -50,8 +50,9 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
             textBoxIssueID.Text = IssueID;
             textBoxGevaarID.Text = GevaarID;
-            comboBoxDiscipline.SelectedIndex = comboBoxDiscipline.FindStringExact(discipline);
-            comboBoxGevaar.SelectedIndex = comboBoxGevaar.FindStringExact(gevaar);
+            textBoxDiscipline.Text = discipline;
+            textBoxGevaarType.Text = gevaar;
+
             textBoxSituatie.Text = situatie;
             textBoxGebeurtenis.Text = gebeurtenis;
         }
@@ -189,6 +190,17 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
         private void dataGridViewObjectIssues_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
+
+
+            for (int i = 0; i < (dataGridViewObjectIssues.ColumnCount - 1); i++)
+            {
+                dataGridViewObjectIssues.AutoResizeColumn((i + 1), DataGridViewAutoSizeColumnMode.AllCells);
+                if (dataGridViewObjectIssues.Columns[i + 1].Width > 400)
+                {
+                    dataGridViewObjectIssues.Columns[i + 1].Width = 400;
+                }
+            }
+
             dataGridViewObjectIssues.ClearSelection();
         }
 
@@ -223,7 +235,15 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
         private void advancedDataGridViewMaatregelen_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-
+            for (int i = 0; i < (advancedDataGridViewMaatregelen.ColumnCount - 1); i++)
+            {
+                advancedDataGridViewMaatregelen.AutoResizeColumn((i + 1), DataGridViewAutoSizeColumnMode.AllCells);
+                if (advancedDataGridViewMaatregelen.Columns[i + 1].Width > 400)
+                {
+                    advancedDataGridViewMaatregelen.Columns[i + 1].Width = 400;
+                }
+            }
+            advancedDataGridViewMaatregelen.ClearSelection();
         }
 
         private void advancedDataGridViewMaatregelen_SortStringChanged(object sender, EventArgs e)

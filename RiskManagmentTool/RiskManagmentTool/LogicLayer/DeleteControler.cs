@@ -104,7 +104,7 @@ namespace RiskManagmentTool.LogicLayer
             }
             else
             {
-                string message = "Deze maatregel is in gebruik bij een issue";
+                string message = "Deze maatregel is in gebruik bij een of meerdere issues";
                 string title = "Reminder Risico waardes";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result = MessageBox.Show(message, title, buttons);
@@ -207,7 +207,7 @@ namespace RiskManagmentTool.LogicLayer
             }
             else
             {
-                string message = "Dit item is in gebruik bij een object";
+                string message = "Dit item is in gebruik bij een of meerdere objecten";
                 string title = "Reminder Risico waardes";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result = MessageBox.Show(message, title, buttons);

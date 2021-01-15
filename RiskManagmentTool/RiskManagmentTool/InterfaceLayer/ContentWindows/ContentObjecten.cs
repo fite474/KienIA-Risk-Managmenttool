@@ -34,7 +34,7 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 
             try
             {
-                string objectId = comunicator.GetObjectIdByName(dataGridViewObjecten.SelectedRows[0].Cells[1].Value.ToString());
+                string objectId = comunicator.GetObjectIdByName(dataGridViewObjecten.SelectedRows[0].Cells[0].Value.ToString());
 
 
                 if (!objectId.Equals("0"))

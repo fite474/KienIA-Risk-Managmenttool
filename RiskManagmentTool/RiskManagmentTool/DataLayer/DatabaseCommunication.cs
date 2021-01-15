@@ -1068,7 +1068,7 @@ namespace RiskManagmentTool.DataLayer
         public SqlDataAdapter GetObjecten()
         {
             sqlConnection.Open();
-            String query = "SELECT ProjectNaam,ObjectNaam FROM TableObjecten";
+            String query = "SELECT ObjectNaam, ProjectNaam FROM TableObjecten";
             SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
             sqlConnection.Close();
             return adapter;

@@ -52,22 +52,24 @@
             this.textBoxNaamObject = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.textBoxIssueID = new System.Windows.Forms.TextBox();
-            this.checkBoxRest_Risico_OK = new System.Windows.Forms.CheckBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.checkBoxRest_Risico_OK = new System.Windows.Forms.CheckBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridViewIssueMaatregelen = new System.Windows.Forms.DataGridView();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.pictureBoxIssueImage = new System.Windows.Forms.PictureBox();
-            this.buttonAddNewMaatregel = new System.Windows.Forms.Button();
-            this.buttonDeleteMaatregelen = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.comboBoxInit_Se = new System.Windows.Forms.ComboBox();
+            this.comboBoxRest_Se = new System.Windows.Forms.ComboBox();
+            this.comboBoxInit_Av = new System.Windows.Forms.ComboBox();
+            this.comboBoxRest_Av = new System.Windows.Forms.ComboBox();
+            this.comboBoxInit_Fr = new System.Windows.Forms.ComboBox();
+            this.comboBoxInit_Pr = new System.Windows.Forms.ComboBox();
+            this.comboBoxRest_Fr = new System.Windows.Forms.ComboBox();
+            this.comboBoxRest_Pr = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.textBoxInit_Se = new System.Windows.Forms.TextBox();
             this.textBoxInit_Fr = new System.Windows.Forms.TextBox();
@@ -75,8 +77,6 @@
             this.textBoxRest_Fr = new System.Windows.Forms.TextBox();
             this.textBoxInit_Cl = new System.Windows.Forms.TextBox();
             this.textBoxRest_Cl = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.textBoxRest_Pr = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -92,25 +92,23 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.comboBoxInit_Se = new System.Windows.Forms.ComboBox();
-            this.comboBoxRest_Se = new System.Windows.Forms.ComboBox();
-            this.comboBoxInit_Av = new System.Windows.Forms.ComboBox();
-            this.comboBoxRest_Av = new System.Windows.Forms.ComboBox();
-            this.comboBoxInit_Fr = new System.Windows.Forms.ComboBox();
-            this.comboBoxInit_Pr = new System.Windows.Forms.ComboBox();
-            this.comboBoxRest_Fr = new System.Windows.Forms.ComboBox();
-            this.comboBoxRest_Pr = new System.Windows.Forms.ComboBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.pictureBoxIssueImage = new System.Windows.Forms.PictureBox();
+            this.buttonAddNewMaatregel = new System.Windows.Forms.Button();
+            this.buttonDeleteMaatregelen = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIssueMaatregelen)).BeginInit();
+            this.panel6.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIssueImage)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonRisicoDetails
@@ -152,8 +150,6 @@
             this.panel1.Controls.Add(this.textBoxDiscipline);
             this.panel1.Controls.Add(this.textBoxRest_Risico_Comment);
             this.panel1.Controls.Add(this.textBoxInit_Risico_Comment);
-            this.panel1.Controls.Add(this.textBoxRest_Risico);
-            this.panel1.Controls.Add(this.textBoxInit_Risico);
             this.panel1.Controls.Add(this.textBoxGebeurtenis);
             this.panel1.Controls.Add(this.textBoxSituatie);
             this.panel1.Controls.Add(this.textBoxNaamObject);
@@ -309,19 +305,19 @@
             // textBoxRest_Risico
             // 
             this.textBoxRest_Risico.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRest_Risico.Location = new System.Drawing.Point(135, 287);
+            this.textBoxRest_Risico.Location = new System.Drawing.Point(122, 408);
             this.textBoxRest_Risico.Name = "textBoxRest_Risico";
             this.textBoxRest_Risico.ReadOnly = true;
-            this.textBoxRest_Risico.Size = new System.Drawing.Size(100, 23);
+            this.textBoxRest_Risico.Size = new System.Drawing.Size(59, 23);
             this.textBoxRest_Risico.TabIndex = 18;
             // 
             // textBoxInit_Risico
             // 
             this.textBoxInit_Risico.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxInit_Risico.Location = new System.Drawing.Point(135, 254);
+            this.textBoxInit_Risico.Location = new System.Drawing.Point(122, 162);
             this.textBoxInit_Risico.Name = "textBoxInit_Risico";
             this.textBoxInit_Risico.ReadOnly = true;
-            this.textBoxInit_Risico.Size = new System.Drawing.Size(100, 23);
+            this.textBoxInit_Risico.Size = new System.Drawing.Size(59, 23);
             this.textBoxInit_Risico.TabIndex = 17;
             // 
             // textBoxGebeurtenis
@@ -374,17 +370,6 @@
             this.textBoxIssueID.Size = new System.Drawing.Size(185, 22);
             this.textBoxIssueID.TabIndex = 9;
             // 
-            // checkBoxRest_Risico_OK
-            // 
-            this.checkBoxRest_Risico_OK.AutoCheck = false;
-            this.checkBoxRest_Risico_OK.AutoSize = true;
-            this.checkBoxRest_Risico_OK.Location = new System.Drawing.Point(18, 463);
-            this.checkBoxRest_Risico_OK.Name = "checkBoxRest_Risico_OK";
-            this.checkBoxRest_Risico_OK.Size = new System.Drawing.Size(133, 21);
-            this.checkBoxRest_Risico_OK.TabIndex = 8;
-            this.checkBoxRest_Risico_OK.Text = "Rest_Risico_OK";
-            this.checkBoxRest_Risico_OK.UseVisualStyleBackColor = true;
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -435,6 +420,17 @@
             this.label7.TabIndex = 3;
             this.label7.Text = "Situatie";
             // 
+            // checkBoxRest_Risico_OK
+            // 
+            this.checkBoxRest_Risico_OK.AutoCheck = false;
+            this.checkBoxRest_Risico_OK.AutoSize = true;
+            this.checkBoxRest_Risico_OK.Location = new System.Drawing.Point(18, 463);
+            this.checkBoxRest_Risico_OK.Name = "checkBoxRest_Risico_OK";
+            this.checkBoxRest_Risico_OK.Size = new System.Drawing.Size(133, 21);
+            this.checkBoxRest_Risico_OK.TabIndex = 8;
+            this.checkBoxRest_Risico_OK.Text = "Rest_Risico_OK";
+            this.checkBoxRest_Risico_OK.UseVisualStyleBackColor = true;
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -475,68 +471,6 @@
             this.dataGridViewIssueMaatregelen.TabIndex = 0;
             this.dataGridViewIssueMaatregelen.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewIssueMaatregelen_DataBindingComplete);
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.pictureBoxIssueImage);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1499, 489);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Issue Foto";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // pictureBoxIssueImage
-            // 
-            this.pictureBoxIssueImage.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBoxIssueImage.Location = new System.Drawing.Point(6, 6);
-            this.pictureBoxIssueImage.Name = "pictureBoxIssueImage";
-            this.pictureBoxIssueImage.Size = new System.Drawing.Size(417, 309);
-            this.pictureBoxIssueImage.TabIndex = 23;
-            this.pictureBoxIssueImage.TabStop = false;
-            this.pictureBoxIssueImage.Click += new System.EventHandler(this.pictureBoxIssueImage_Click);
-            // 
-            // buttonAddNewMaatregel
-            // 
-            this.buttonAddNewMaatregel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddNewMaatregel.Location = new System.Drawing.Point(12, 21);
-            this.buttonAddNewMaatregel.Name = "buttonAddNewMaatregel";
-            this.buttonAddNewMaatregel.Size = new System.Drawing.Size(210, 44);
-            this.buttonAddNewMaatregel.TabIndex = 6;
-            this.buttonAddNewMaatregel.Text = "koppel meer maatregelen";
-            this.buttonAddNewMaatregel.UseVisualStyleBackColor = true;
-            this.buttonAddNewMaatregel.Click += new System.EventHandler(this.buttonAddNewMaatregel_Click);
-            // 
-            // buttonDeleteMaatregelen
-            // 
-            this.buttonDeleteMaatregelen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDeleteMaatregelen.Location = new System.Drawing.Point(719, 21);
-            this.buttonDeleteMaatregelen.Name = "buttonDeleteMaatregelen";
-            this.buttonDeleteMaatregelen.Size = new System.Drawing.Size(185, 44);
-            this.buttonDeleteMaatregelen.TabIndex = 7;
-            this.buttonDeleteMaatregelen.Text = "Verwijder maatregelen";
-            this.buttonDeleteMaatregelen.UseVisualStyleBackColor = true;
-            this.buttonDeleteMaatregelen.Click += new System.EventHandler(this.buttonDeleteMaatregelen_Click);
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.buttonAddNewMaatregel);
-            this.panel5.Controls.Add(this.buttonDeleteMaatregelen);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 888);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1629, 77);
-            this.panel5.TabIndex = 8;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.tabControl1);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 348);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1629, 540);
-            this.panel4.TabIndex = 9;
-            // 
             // panel6
             // 
             this.panel6.Controls.Add(this.comboBoxInit_Se);
@@ -545,6 +479,8 @@
             this.panel6.Controls.Add(this.comboBoxRest_Av);
             this.panel6.Controls.Add(this.comboBoxInit_Fr);
             this.panel6.Controls.Add(this.comboBoxInit_Pr);
+            this.panel6.Controls.Add(this.textBoxInit_Risico);
+            this.panel6.Controls.Add(this.textBoxRest_Risico);
             this.panel6.Controls.Add(this.comboBoxRest_Fr);
             this.panel6.Controls.Add(this.comboBoxRest_Pr);
             this.panel6.Controls.Add(this.label13);
@@ -554,8 +490,6 @@
             this.panel6.Controls.Add(this.textBoxRest_Fr);
             this.panel6.Controls.Add(this.textBoxInit_Cl);
             this.panel6.Controls.Add(this.textBoxRest_Cl);
-            this.panel6.Controls.Add(this.textBox1);
-            this.panel6.Controls.Add(this.textBox2);
             this.panel6.Controls.Add(this.label17);
             this.panel6.Controls.Add(this.textBoxRest_Pr);
             this.panel6.Controls.Add(this.label16);
@@ -579,6 +513,86 @@
             this.panel6.Size = new System.Drawing.Size(337, 505);
             this.panel6.TabIndex = 1;
             // 
+            // comboBoxInit_Se
+            // 
+            this.comboBoxInit_Se.DropDownWidth = 352;
+            this.comboBoxInit_Se.FormattingEnabled = true;
+            this.comboBoxInit_Se.Location = new System.Drawing.Point(195, 7);
+            this.comboBoxInit_Se.Name = "comboBoxInit_Se";
+            this.comboBoxInit_Se.Size = new System.Drawing.Size(128, 24);
+            this.comboBoxInit_Se.TabIndex = 83;
+            this.comboBoxInit_Se.SelectedIndexChanged += new System.EventHandler(this.comboBoxInit_Se_SelectedIndexChanged);
+            // 
+            // comboBoxRest_Se
+            // 
+            this.comboBoxRest_Se.DropDownWidth = 352;
+            this.comboBoxRest_Se.FormattingEnabled = true;
+            this.comboBoxRest_Se.Location = new System.Drawing.Point(195, 263);
+            this.comboBoxRest_Se.Name = "comboBoxRest_Se";
+            this.comboBoxRest_Se.Size = new System.Drawing.Size(128, 24);
+            this.comboBoxRest_Se.TabIndex = 86;
+            this.comboBoxRest_Se.SelectedIndexChanged += new System.EventHandler(this.comboBoxRest_Se_SelectedIndexChanged);
+            // 
+            // comboBoxInit_Av
+            // 
+            this.comboBoxInit_Av.DropDownWidth = 352;
+            this.comboBoxInit_Av.FormattingEnabled = true;
+            this.comboBoxInit_Av.Location = new System.Drawing.Point(195, 91);
+            this.comboBoxInit_Av.Name = "comboBoxInit_Av";
+            this.comboBoxInit_Av.Size = new System.Drawing.Size(128, 24);
+            this.comboBoxInit_Av.TabIndex = 87;
+            this.comboBoxInit_Av.SelectedIndexChanged += new System.EventHandler(this.comboBoxInit_Av_SelectedIndexChanged);
+            // 
+            // comboBoxRest_Av
+            // 
+            this.comboBoxRest_Av.DropDownWidth = 352;
+            this.comboBoxRest_Av.FormattingEnabled = true;
+            this.comboBoxRest_Av.Location = new System.Drawing.Point(195, 344);
+            this.comboBoxRest_Av.Name = "comboBoxRest_Av";
+            this.comboBoxRest_Av.Size = new System.Drawing.Size(128, 24);
+            this.comboBoxRest_Av.TabIndex = 90;
+            this.comboBoxRest_Av.SelectedIndexChanged += new System.EventHandler(this.comboBoxRest_Av_SelectedIndexChanged);
+            // 
+            // comboBoxInit_Fr
+            // 
+            this.comboBoxInit_Fr.DropDownWidth = 352;
+            this.comboBoxInit_Fr.FormattingEnabled = true;
+            this.comboBoxInit_Fr.Location = new System.Drawing.Point(195, 35);
+            this.comboBoxInit_Fr.Name = "comboBoxInit_Fr";
+            this.comboBoxInit_Fr.Size = new System.Drawing.Size(128, 24);
+            this.comboBoxInit_Fr.TabIndex = 84;
+            this.comboBoxInit_Fr.SelectedIndexChanged += new System.EventHandler(this.comboBoxInit_Fr_SelectedIndexChanged);
+            // 
+            // comboBoxInit_Pr
+            // 
+            this.comboBoxInit_Pr.DropDownWidth = 352;
+            this.comboBoxInit_Pr.FormattingEnabled = true;
+            this.comboBoxInit_Pr.Location = new System.Drawing.Point(195, 63);
+            this.comboBoxInit_Pr.Name = "comboBoxInit_Pr";
+            this.comboBoxInit_Pr.Size = new System.Drawing.Size(128, 24);
+            this.comboBoxInit_Pr.TabIndex = 85;
+            this.comboBoxInit_Pr.SelectedIndexChanged += new System.EventHandler(this.comboBoxInit_Pr_SelectedIndexChanged);
+            // 
+            // comboBoxRest_Fr
+            // 
+            this.comboBoxRest_Fr.DropDownWidth = 352;
+            this.comboBoxRest_Fr.FormattingEnabled = true;
+            this.comboBoxRest_Fr.Location = new System.Drawing.Point(195, 291);
+            this.comboBoxRest_Fr.Name = "comboBoxRest_Fr";
+            this.comboBoxRest_Fr.Size = new System.Drawing.Size(128, 24);
+            this.comboBoxRest_Fr.TabIndex = 88;
+            this.comboBoxRest_Fr.SelectedIndexChanged += new System.EventHandler(this.comboBoxRest_Fr_SelectedIndexChanged);
+            // 
+            // comboBoxRest_Pr
+            // 
+            this.comboBoxRest_Pr.DropDownWidth = 352;
+            this.comboBoxRest_Pr.FormattingEnabled = true;
+            this.comboBoxRest_Pr.Location = new System.Drawing.Point(195, 316);
+            this.comboBoxRest_Pr.Name = "comboBoxRest_Pr";
+            this.comboBoxRest_Pr.Size = new System.Drawing.Size(128, 24);
+            this.comboBoxRest_Pr.TabIndex = 89;
+            this.comboBoxRest_Pr.SelectedIndexChanged += new System.EventHandler(this.comboBoxRest_Pr_SelectedIndexChanged);
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -595,6 +609,7 @@
             this.textBoxInit_Se.ReadOnly = true;
             this.textBoxInit_Se.Size = new System.Drawing.Size(59, 23);
             this.textBoxInit_Se.TabIndex = 59;
+            this.textBoxInit_Se.TextChanged += new System.EventHandler(this.textBoxInit_Se_TextChanged);
             // 
             // textBoxInit_Fr
             // 
@@ -603,6 +618,7 @@
             this.textBoxInit_Fr.ReadOnly = true;
             this.textBoxInit_Fr.Size = new System.Drawing.Size(59, 23);
             this.textBoxInit_Fr.TabIndex = 60;
+            this.textBoxInit_Fr.TextChanged += new System.EventHandler(this.textBoxInit_Fr_TextChanged);
             // 
             // textBoxRest_Se
             // 
@@ -611,6 +627,7 @@
             this.textBoxRest_Se.ReadOnly = true;
             this.textBoxRest_Se.Size = new System.Drawing.Size(59, 23);
             this.textBoxRest_Se.TabIndex = 61;
+            this.textBoxRest_Se.TextChanged += new System.EventHandler(this.textBoxRest_Se_TextChanged);
             // 
             // textBoxRest_Fr
             // 
@@ -619,6 +636,7 @@
             this.textBoxRest_Fr.ReadOnly = true;
             this.textBoxRest_Fr.Size = new System.Drawing.Size(59, 23);
             this.textBoxRest_Fr.TabIndex = 62;
+            this.textBoxRest_Fr.TextChanged += new System.EventHandler(this.textBoxRest_Fr_TextChanged);
             // 
             // textBoxInit_Cl
             // 
@@ -638,24 +656,6 @@
             this.textBoxRest_Cl.Size = new System.Drawing.Size(59, 23);
             this.textBoxRest_Cl.TabIndex = 64;
             // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.Location = new System.Drawing.Point(122, 408);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(59, 23);
-            this.textBox1.TabIndex = 65;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox2.Location = new System.Drawing.Point(122, 162);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(59, 23);
-            this.textBox2.TabIndex = 66;
-            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -672,6 +672,7 @@
             this.textBoxRest_Pr.ReadOnly = true;
             this.textBoxRest_Pr.Size = new System.Drawing.Size(59, 23);
             this.textBoxRest_Pr.TabIndex = 67;
+            this.textBoxRest_Pr.TextChanged += new System.EventHandler(this.textBoxRest_Pr_TextChanged);
             // 
             // label16
             // 
@@ -689,6 +690,7 @@
             this.textBoxRest_Av.ReadOnly = true;
             this.textBoxRest_Av.Size = new System.Drawing.Size(59, 23);
             this.textBoxRest_Av.TabIndex = 68;
+            this.textBoxRest_Av.TextChanged += new System.EventHandler(this.textBoxRest_Av_TextChanged);
             // 
             // label15
             // 
@@ -706,6 +708,7 @@
             this.textBoxInit_Pr.ReadOnly = true;
             this.textBoxInit_Pr.Size = new System.Drawing.Size(59, 23);
             this.textBoxInit_Pr.TabIndex = 69;
+            this.textBoxInit_Pr.TextChanged += new System.EventHandler(this.textBoxInit_Pr_TextChanged);
             // 
             // label14
             // 
@@ -723,6 +726,7 @@
             this.textBoxInit_Av.ReadOnly = true;
             this.textBoxInit_Av.Size = new System.Drawing.Size(59, 23);
             this.textBoxInit_Av.TabIndex = 70;
+            this.textBoxInit_Av.TextChanged += new System.EventHandler(this.textBoxInit_Av_TextChanged);
             // 
             // label18
             // 
@@ -787,77 +791,67 @@
             this.label24.TabIndex = 75;
             this.label24.Text = "Init_Cl";
             // 
-            // comboBoxInit_Se
+            // tabPage2
             // 
-            this.comboBoxInit_Se.DropDownWidth = 352;
-            this.comboBoxInit_Se.FormattingEnabled = true;
-            this.comboBoxInit_Se.Location = new System.Drawing.Point(195, 7);
-            this.comboBoxInit_Se.Name = "comboBoxInit_Se";
-            this.comboBoxInit_Se.Size = new System.Drawing.Size(128, 24);
-            this.comboBoxInit_Se.TabIndex = 83;
+            this.tabPage2.Controls.Add(this.pictureBoxIssueImage);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1621, 511);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Issue Foto";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // comboBoxRest_Se
+            // pictureBoxIssueImage
             // 
-            this.comboBoxRest_Se.DropDownWidth = 352;
-            this.comboBoxRest_Se.FormattingEnabled = true;
-            this.comboBoxRest_Se.Location = new System.Drawing.Point(195, 263);
-            this.comboBoxRest_Se.Name = "comboBoxRest_Se";
-            this.comboBoxRest_Se.Size = new System.Drawing.Size(128, 24);
-            this.comboBoxRest_Se.TabIndex = 86;
+            this.pictureBoxIssueImage.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pictureBoxIssueImage.Location = new System.Drawing.Point(6, 6);
+            this.pictureBoxIssueImage.Name = "pictureBoxIssueImage";
+            this.pictureBoxIssueImage.Size = new System.Drawing.Size(417, 309);
+            this.pictureBoxIssueImage.TabIndex = 23;
+            this.pictureBoxIssueImage.TabStop = false;
+            this.pictureBoxIssueImage.Click += new System.EventHandler(this.pictureBoxIssueImage_Click);
             // 
-            // comboBoxInit_Av
+            // buttonAddNewMaatregel
             // 
-            this.comboBoxInit_Av.DropDownWidth = 352;
-            this.comboBoxInit_Av.FormattingEnabled = true;
-            this.comboBoxInit_Av.Location = new System.Drawing.Point(195, 91);
-            this.comboBoxInit_Av.Name = "comboBoxInit_Av";
-            this.comboBoxInit_Av.Size = new System.Drawing.Size(128, 24);
-            this.comboBoxInit_Av.TabIndex = 87;
+            this.buttonAddNewMaatregel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddNewMaatregel.Location = new System.Drawing.Point(12, 21);
+            this.buttonAddNewMaatregel.Name = "buttonAddNewMaatregel";
+            this.buttonAddNewMaatregel.Size = new System.Drawing.Size(210, 44);
+            this.buttonAddNewMaatregel.TabIndex = 6;
+            this.buttonAddNewMaatregel.Text = "koppel meer maatregelen";
+            this.buttonAddNewMaatregel.UseVisualStyleBackColor = true;
+            this.buttonAddNewMaatregel.Click += new System.EventHandler(this.buttonAddNewMaatregel_Click);
             // 
-            // comboBoxRest_Av
+            // buttonDeleteMaatregelen
             // 
-            this.comboBoxRest_Av.DropDownWidth = 352;
-            this.comboBoxRest_Av.FormattingEnabled = true;
-            this.comboBoxRest_Av.Location = new System.Drawing.Point(195, 344);
-            this.comboBoxRest_Av.Name = "comboBoxRest_Av";
-            this.comboBoxRest_Av.Size = new System.Drawing.Size(128, 24);
-            this.comboBoxRest_Av.TabIndex = 90;
+            this.buttonDeleteMaatregelen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDeleteMaatregelen.Location = new System.Drawing.Point(719, 21);
+            this.buttonDeleteMaatregelen.Name = "buttonDeleteMaatregelen";
+            this.buttonDeleteMaatregelen.Size = new System.Drawing.Size(185, 44);
+            this.buttonDeleteMaatregelen.TabIndex = 7;
+            this.buttonDeleteMaatregelen.Text = "Verwijder maatregelen";
+            this.buttonDeleteMaatregelen.UseVisualStyleBackColor = true;
+            this.buttonDeleteMaatregelen.Click += new System.EventHandler(this.buttonDeleteMaatregelen_Click);
             // 
-            // comboBoxInit_Fr
+            // panel5
             // 
-            this.comboBoxInit_Fr.DropDownWidth = 352;
-            this.comboBoxInit_Fr.FormattingEnabled = true;
-            this.comboBoxInit_Fr.Location = new System.Drawing.Point(195, 35);
-            this.comboBoxInit_Fr.Name = "comboBoxInit_Fr";
-            this.comboBoxInit_Fr.Size = new System.Drawing.Size(128, 24);
-            this.comboBoxInit_Fr.TabIndex = 84;
+            this.panel5.Controls.Add(this.buttonAddNewMaatregel);
+            this.panel5.Controls.Add(this.buttonDeleteMaatregelen);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel5.Location = new System.Drawing.Point(0, 888);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1629, 77);
+            this.panel5.TabIndex = 8;
             // 
-            // comboBoxInit_Pr
+            // panel4
             // 
-            this.comboBoxInit_Pr.DropDownWidth = 352;
-            this.comboBoxInit_Pr.FormattingEnabled = true;
-            this.comboBoxInit_Pr.Location = new System.Drawing.Point(195, 63);
-            this.comboBoxInit_Pr.Name = "comboBoxInit_Pr";
-            this.comboBoxInit_Pr.Size = new System.Drawing.Size(128, 24);
-            this.comboBoxInit_Pr.TabIndex = 85;
-            // 
-            // comboBoxRest_Fr
-            // 
-            this.comboBoxRest_Fr.DropDownWidth = 352;
-            this.comboBoxRest_Fr.FormattingEnabled = true;
-            this.comboBoxRest_Fr.Location = new System.Drawing.Point(195, 291);
-            this.comboBoxRest_Fr.Name = "comboBoxRest_Fr";
-            this.comboBoxRest_Fr.Size = new System.Drawing.Size(128, 24);
-            this.comboBoxRest_Fr.TabIndex = 88;
-            // 
-            // comboBoxRest_Pr
-            // 
-            this.comboBoxRest_Pr.DropDownWidth = 352;
-            this.comboBoxRest_Pr.FormattingEnabled = true;
-            this.comboBoxRest_Pr.Location = new System.Drawing.Point(195, 316);
-            this.comboBoxRest_Pr.Name = "comboBoxRest_Pr";
-            this.comboBoxRest_Pr.Size = new System.Drawing.Size(128, 24);
-            this.comboBoxRest_Pr.TabIndex = 89;
+            this.panel4.Controls.Add(this.tabControl1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 348);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1629, 540);
+            this.panel4.TabIndex = 9;
             // 
             // IssueMaatregelen
             // 
@@ -880,12 +874,12 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIssueMaatregelen)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIssueImage)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -939,8 +933,6 @@
         private System.Windows.Forms.TextBox textBoxRest_Fr;
         private System.Windows.Forms.TextBox textBoxInit_Cl;
         private System.Windows.Forms.TextBox textBoxRest_Cl;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox textBoxRest_Pr;
         private System.Windows.Forms.Label label16;

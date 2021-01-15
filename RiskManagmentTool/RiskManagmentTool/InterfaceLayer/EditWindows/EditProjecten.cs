@@ -39,6 +39,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             {
                 Cursor.Current = Cursors.WaitCursor;
                 string projectID = dataGridViewGekoppeldeObjecten.SelectedRows[0].Cells[0].Value.ToString();
+
                 string projectNaam = dataGridViewGekoppeldeObjecten.SelectedRows[0].Cells[1].Value.ToString();
                 string objectNaam = dataGridViewGekoppeldeObjecten.SelectedRows[0].Cells[2].Value.ToString();
                 string objectType = dataGridViewGekoppeldeObjecten.SelectedRows[0].Cells[3].Value.ToString();

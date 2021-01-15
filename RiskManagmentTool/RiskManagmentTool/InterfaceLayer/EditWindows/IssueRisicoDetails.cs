@@ -329,17 +329,17 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void IssueRisicoDetails_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (textBoxInit_Se_Comment.Text != test)
-            {
-                // Display a MsgBox asking the user to save changes or abort.
-                if (MessageBox.Show("Do you want to save changes to your text?", "My Application",
-                   MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    // Cancel the Closing event from closing the form.
-                    e.Cancel = true;
-                    // Call method to save file...
-                }
-            }
+            //if (textBoxInit_Se_Comment.Text != test)
+            //{
+            //    // Display a MsgBox asking the user to save changes or abort.
+            //    if (MessageBox.Show("Do you want to save changes to your text?", "My Application",
+            //       MessageBoxButtons.YesNo) == DialogResult.Yes)
+            //    {
+            //        // Cancel the Closing event from closing the form.
+            //        e.Cancel = true;
+            //        // Call method to save file...
+            //    }
+            //}
         }
 
         private void checkedListBoxRisicograafMethode_ItemCheck(object sender, ItemCheckEventArgs e)

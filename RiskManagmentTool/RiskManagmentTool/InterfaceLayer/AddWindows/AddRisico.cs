@@ -226,10 +226,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
             {
                 comunicator.AddGevaarToObject(ObjectID, gevaarToAddID);
             }
-            
-            //controler.CheckObjectForDubbleGevaren(SelectedGevarenId);
-            //SelectedGevarenId.Clear();
-            //dataGridViewWeergaveLosseItems.DataSource = comunicator.GetSelectedGevaren(SelectedGevarenId);
+
         }
 
 
@@ -248,7 +245,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
                     SelectedTemplateIssueId.Add(issueID);
                 }
             }
-            //dataGridViewTemplateViewIssues.ClearSelection();
+
             List<string> temp = controler.CheckObjectForDubbleGevarenUitIssues(SelectedTemplateIssueId);
 
 

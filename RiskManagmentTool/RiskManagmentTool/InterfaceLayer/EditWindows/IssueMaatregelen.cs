@@ -22,6 +22,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private string ObjectNaam;
         private KeuzeMenus keuzeMenus;
         private ImageHandler ImageHandler;
+        private Risicograaf risicograaf;
 
         private string Discipline;
         private string Gevaar;
@@ -41,6 +42,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             comunicator = new Datacomunication();
             keuzeMenus = new KeuzeMenus();
             ImageHandler = new ImageHandler();
+            risicograaf = new Risicograaf();
             Discipline = discipline;
             Gevaar = gevaar;
             Situatie = situatie;
@@ -95,10 +97,12 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             if (risicograaf.Equals("0"))
             {
                 RisicograafSetting = 0;
+                UseSILMode();
             }
             else if (risicograaf.Equals("1"))
             {
                 RisicograafSetting = 1;
+                UsePLMode();
             }
 
             
@@ -254,6 +258,312 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
                     
                 }
             comunicator.UpdateIssueState(IssueID, IssueState);
+        }
+
+
+        private void CalculateInitRisk(int init_Se, int init_Fr, int init_Pr, int init_Av)
+        {
+            if (RisicograafSetting == 0)
+            {
+                Tuple<int, int> initValues = risicograaf.CalculateSilMode(init_Se, init_Fr, init_Pr, init_Av);
+                int init_Cl = initValues.Item1;
+                int init_Risk = initValues.Item2;
+                textBoxInit_Cl.Text = init_Cl.ToString();
+                textBoxInit_Risico.Text = init_Risk.ToString();
+            }
+            else if (RisicograafSetting == 1)
+            {
+                Tuple<int, int> initValues = risicograaf.CalculatePlMode(init_Se, init_Fr, init_Pr, init_Av);
+                int init_Cl = initValues.Item1;
+                int init_Risk = initValues.Item2;
+                textBoxInit_Cl.Text = init_Cl.ToString();
+                textBoxInit_Risico.Text = init_Risk.ToString();
+            }
+            //Tuple<int, int> initValues = risicograaf.CalculateSilMode(init_Se, init_Fr, init_Pr, init_Av);
+
+
+        }
+
+        private void CalculateRestRisk(int rest_Se, int rest_Fr, int rest_Pr, int rest_Av)
+        {
+            if (RisicograafSetting == 0)
+            {
+                Tuple<int, int> restValues = risicograaf.CalculateSilMode(rest_Se, rest_Fr, rest_Pr, rest_Av);
+                int rest_Cl = restValues.Item1;
+                int rest_Risk = restValues.Item2;
+
+                textBoxRest_Cl.Text = rest_Cl.ToString();
+                textBoxRest_Risico.Text = rest_Risk.ToString();
+            }
+            else if (RisicograafSetting == 1)
+            {
+                Tuple<int, int> restValues = risicograaf.CalculatePlMode(rest_Se, rest_Fr, rest_Pr, rest_Av);
+                int rest_Cl = restValues.Item1;
+                int rest_Risk = restValues.Item2;
+                textBoxRest_Cl.Text = rest_Cl.ToString();
+                textBoxRest_Risico.Text = rest_Risk.ToString();
+            }
+        }
+
+
+
+        private void UseSILMode()
+        {
+            //init se
+            comboBoxInit_Se.Items.Add("1 scratches, bruises that are cured by first aid or similar;");
+            comboBoxInit_Se.Items.Add("2 more severe scratches, bruises, stabbing, which require medical attention from professionals;");
+            comboBoxInit_Se.Items.Add("3 normally irreversible injury; it will be slightly difficult to continue work after healing;");
+            comboBoxInit_Se.Items.Add("4 irreversible injury in such a way that it will be very difficult to continue work after healing, if possible at all.");
+            //init fr
+            comboBoxInit_Fr.Items.Add("2 interval between exposure is more than a year; ");
+            comboBoxInit_Fr.Items.Add("3 interval between exposure is more than two weeks but less than or equal to a year;");
+            comboBoxInit_Fr.Items.Add("4 interval between exposure is more than a day but less than or equal to two weeks;");
+            comboBoxInit_Fr.Items.Add("5 interval between exposure is more than an hour but less than or equal to a day");
+            comboBoxInit_Fr.Items.Add("6 interval less than or equal to an hour.");
+            //init pr
+            comboBoxInit_Pr.Items.Add("1 Negligible");
+            comboBoxInit_Pr.Items.Add("2 Rarely:");
+            comboBoxInit_Pr.Items.Add("3 Possible:");
+            comboBoxInit_Pr.Items.Add("4 Likely");
+            comboBoxInit_Pr.Items.Add("5 Very high");
+            //init av
+            comboBoxInit_Av.Items.Add("1 Likely");
+            comboBoxInit_Av.Items.Add("3 Possible");
+            comboBoxInit_Av.Items.Add("5 Impossible");
+
+
+            //rest se
+            comboBoxRest_Se.Items.Add("1 scratches, bruises that are cured by first aid or similar;");
+            comboBoxRest_Se.Items.Add("2 more severe scratches, bruises, stabbing, which require medical attention from professionals;");
+            comboBoxRest_Se.Items.Add("3 normally irreversible injury; it will be slightly difficult to continue work after healing;");
+            comboBoxRest_Se.Items.Add("4 irreversible injury in such a way that it will be very difficult to continue work after healing, if possible at all.");
+            //rest fr
+            comboBoxRest_Fr.Items.Add("2 interval between exposure is more than a year; ");
+            comboBoxRest_Fr.Items.Add("3 interval between exposure is more than two weeks but less than or equal to a year;");
+            comboBoxRest_Fr.Items.Add("4 interval between exposure is more than a day but less than or equal to two weeks;");
+            comboBoxRest_Fr.Items.Add("5 interval between exposure is more than an hour but less than or equal to a day");
+            comboBoxRest_Fr.Items.Add("6 interval less than or equal to an hour.");
+            //rest pr
+            comboBoxRest_Pr.Items.Add("1 Negligible");
+            comboBoxRest_Pr.Items.Add("2 Rarely:");
+            comboBoxRest_Pr.Items.Add("3 Possible:");
+            comboBoxRest_Pr.Items.Add("4 Likely");
+            comboBoxRest_Pr.Items.Add("5 Very high");
+            //rest av
+            comboBoxRest_Av.Items.Add("1 Likely");
+            comboBoxRest_Av.Items.Add("3 Possible");
+            comboBoxRest_Av.Items.Add("5 Impossible");
+
+
+        }
+
+        private void UsePLMode()
+        {
+            //Risk assessment using risk graph figuur a.3
+
+            //start : severity S1 = slightly, S2 = serious
+
+            //S1 -> exposure F1 seldom, F2 frequent geen verschil 
+
+            //s1 -> probability of exposure o1 very low, o2 low -> A1, a2 = 1
+            //s1 -> prob o3 high,  = A1, a2 = 2
+
+
+            //----------------------------------------
+            //s2 -> F1 seldom, f2 frequent
+            //f1 -> o1 -> a1 possible, a2 impossible = 2
+            //f1 -> o2 + a1 = 2.     o2 + a2 = 3
+            //f1 -> o3 + a1 = 3.     o3 + a2 = 4
+            //init se
+            comboBoxInit_Se.Items.Add("1 Slightly");
+            comboBoxInit_Se.Items.Add("2 Serious");
+
+            //init fr
+            comboBoxInit_Fr.Items.Add("1 Seldom");
+            comboBoxInit_Fr.Items.Add("2 Frequent");
+
+            //init pr
+            comboBoxInit_Pr.Items.Add("1 Very low");
+            comboBoxInit_Pr.Items.Add("2 Low");
+            comboBoxInit_Pr.Items.Add("3 High");
+
+            //init av
+            comboBoxInit_Av.Items.Add("1 Possible");
+            comboBoxInit_Av.Items.Add("2 Impossible");
+
+
+
+            //rest se
+            comboBoxRest_Se.Items.Add("1 Slightly");
+            comboBoxRest_Se.Items.Add("2 Serious");
+            //rest fr
+            comboBoxRest_Fr.Items.Add("1 Seldom");
+            comboBoxRest_Fr.Items.Add("2 Frequent");
+
+            //rest pr
+            comboBoxRest_Pr.Items.Add("1 Very low");
+            comboBoxRest_Pr.Items.Add("2 Low");
+            comboBoxRest_Pr.Items.Add("3 High");
+            //rest av
+            comboBoxRest_Av.Items.Add("1 Possible");
+            comboBoxRest_Av.Items.Add("2 Impossible");
+
+        }
+
+
+
+
+
+
+        #region init comboboxes
+        private void comboBoxInit_Se_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBoxInit_Se.Text = (comboBoxInit_Se.SelectedIndex + 1).ToString();
+        }
+        private void comboBoxInit_Fr_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (RisicograafSetting == 0)
+            {
+                textBoxInit_Fr.Text = (comboBoxInit_Fr.SelectedIndex + 2).ToString();
+            }
+            else if (RisicograafSetting == 1)
+            {
+                textBoxInit_Fr.Text = (comboBoxInit_Fr.SelectedIndex + 1).ToString();
+            }
+        }
+
+        private void comboBoxInit_Pr_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBoxInit_Pr.Text = (comboBoxInit_Pr.SelectedIndex + 1).ToString();
+        }
+
+        private void comboBoxInit_Av_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (RisicograafSetting == 0)
+            {
+                textBoxInit_Av.Text = ((comboBoxInit_Av.SelectedIndex * 2) + 1).ToString();
+            }
+            else if (RisicograafSetting == 1)
+            {
+                textBoxInit_Av.Text = (comboBoxInit_Av.SelectedIndex + 1).ToString();
+            }
+        }
+
+
+        #endregion init comboboxes
+
+        #region rest comboboxes
+        private void comboBoxRest_Se_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBoxRest_Se.Text = (comboBoxRest_Se.SelectedIndex + 1).ToString();
+        }
+
+        private void comboBoxRest_Fr_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (RisicograafSetting == 0)
+            {
+                textBoxRest_Fr.Text = (comboBoxRest_Fr.SelectedIndex + 2).ToString();
+            }
+            else if (RisicograafSetting == 1)
+            {
+                textBoxRest_Fr.Text = (comboBoxRest_Fr.SelectedIndex + 1).ToString();
+            }
+        }
+
+        private void comboBoxRest_Pr_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBoxRest_Pr.Text = (comboBoxRest_Pr.SelectedIndex + 1).ToString();
+        }
+
+        private void comboBoxRest_Av_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (RisicograafSetting == 0)
+            {
+                textBoxRest_Av.Text = ((comboBoxRest_Av.SelectedIndex * 2) + 1).ToString();
+            }
+            else if (RisicograafSetting == 1)
+            {
+                textBoxRest_Av.Text = (comboBoxRest_Av.SelectedIndex + 1).ToString();
+            }
+        }
+
+        #endregion rest comboboxes
+
+        private void CheckInitValues()
+        {
+            int.TryParse(textBoxInit_Se.Text, out int seValue);
+            int.TryParse(textBoxInit_Fr.Text, out int frValue);
+            int.TryParse(textBoxInit_Pr.Text, out int prValue);
+            int.TryParse(textBoxInit_Av.Text, out int avValue);
+
+            if (seValue > 0 &&
+                frValue > 0 &&
+                prValue > 0 &&
+                avValue > 0)
+            {
+                CalculateInitRisk(seValue, frValue, prValue, avValue);
+            }
+        }
+
+
+        private void textBoxInit_Se_TextChanged(object sender, EventArgs e)
+        {
+            CheckInitValues();
+        }
+
+        private void textBoxInit_Fr_TextChanged(object sender, EventArgs e)
+        {
+            CheckInitValues();
+        }
+
+        private void textBoxInit_Pr_TextChanged(object sender, EventArgs e)
+        {
+            CheckInitValues();
+        }
+
+        private void textBoxInit_Av_TextChanged(object sender, EventArgs e)
+        {
+            CheckInitValues();
+        }
+
+
+
+
+
+        private void CheckRestValues()
+        {
+            int.TryParse(textBoxRest_Se.Text, out int seValue);
+            int.TryParse(textBoxRest_Fr.Text, out int frValue);
+            int.TryParse(textBoxRest_Pr.Text, out int prValue);
+            int.TryParse(textBoxRest_Av.Text, out int avValue);
+
+            if (seValue > 0 &&
+                frValue > 0 &&
+                prValue > 0 &&
+                avValue > 0)
+            {
+                CalculateRestRisk(seValue, frValue, prValue, avValue);
+            }
+        }
+
+        private void textBoxRest_Se_TextChanged(object sender, EventArgs e)
+        {
+            CheckRestValues();
+        }
+
+        private void textBoxRest_Fr_TextChanged(object sender, EventArgs e)
+        {
+            CheckRestValues();
+        }
+
+        private void textBoxRest_Pr_TextChanged(object sender, EventArgs e)
+        {
+            CheckRestValues();
+        }
+
+        private void textBoxRest_Av_TextChanged(object sender, EventArgs e)
+        {
+            CheckRestValues();
         }
     }
 }

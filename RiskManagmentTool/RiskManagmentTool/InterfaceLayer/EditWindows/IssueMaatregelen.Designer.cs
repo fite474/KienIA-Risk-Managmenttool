@@ -45,8 +45,6 @@
             this.textBoxDiscipline = new System.Windows.Forms.TextBox();
             this.textBoxRest_Risico_Comment = new System.Windows.Forms.TextBox();
             this.textBoxInit_Risico_Comment = new System.Windows.Forms.TextBox();
-            this.textBoxRest_Risico = new System.Windows.Forms.TextBox();
-            this.textBoxInit_Risico = new System.Windows.Forms.TextBox();
             this.textBoxGebeurtenis = new System.Windows.Forms.TextBox();
             this.textBoxSituatie = new System.Windows.Forms.TextBox();
             this.textBoxNaamObject = new System.Windows.Forms.TextBox();
@@ -57,6 +55,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.textBoxRest_Risico = new System.Windows.Forms.TextBox();
+            this.textBoxInit_Risico = new System.Windows.Forms.TextBox();
             this.checkBoxRest_Risico_OK = new System.Windows.Forms.CheckBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -98,6 +98,7 @@
             this.buttonDeleteMaatregelen = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.buttonSaveRiskDetails = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -114,7 +115,7 @@
             // buttonRisicoDetails
             // 
             this.buttonRisicoDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRisicoDetails.Location = new System.Drawing.Point(195, 463);
+            this.buttonRisicoDetails.Location = new System.Drawing.Point(1428, 6);
             this.buttonRisicoDetails.Name = "buttonRisicoDetails";
             this.buttonRisicoDetails.Size = new System.Drawing.Size(121, 39);
             this.buttonRisicoDetails.TabIndex = 0;
@@ -145,6 +146,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.buttonShowRisk);
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.textBoxGevaar);
             this.panel1.Controls.Add(this.textBoxDiscipline);
@@ -170,18 +172,18 @@
             // 
             // buttonShowRisk
             // 
-            this.buttonShowRisk.Location = new System.Drawing.Point(858, 88);
+            this.buttonShowRisk.Location = new System.Drawing.Point(828, 78);
             this.buttonShowRisk.Name = "buttonShowRisk";
             this.buttonShowRisk.Size = new System.Drawing.Size(120, 47);
             this.buttonShowRisk.TabIndex = 24;
-            this.buttonShowRisk.Text = "Gevaar details";
+            this.buttonShowRisk.Text = "Gevaar details bekijken";
             this.buttonShowRisk.UseVisualStyleBackColor = true;
             this.buttonShowRisk.Click += new System.EventHandler(this.buttonShowRisk_Click);
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.checkBoxIssueOK);
             this.panel3.Controls.Add(this.checkedListBoxIssueCompletionState);
-            this.panel3.Controls.Add(this.panel2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel3.Location = new System.Drawing.Point(1230, 0);
             this.panel3.Name = "panel3";
@@ -198,7 +200,7 @@
             "Maatregelen aan het gevaar gekoppeld",
             "Resterende risicowaardes ingevuld",
             "Risicobeoordeling geaccepteerd "});
-            this.checkedListBoxIssueCompletionState.Location = new System.Drawing.Point(25, 191);
+            this.checkedListBoxIssueCompletionState.Location = new System.Drawing.Point(23, 19);
             this.checkedListBoxIssueCompletionState.Name = "checkedListBoxIssueCompletionState";
             this.checkedListBoxIssueCompletionState.Size = new System.Drawing.Size(278, 123);
             this.checkedListBoxIssueCompletionState.TabIndex = 1;
@@ -207,27 +209,26 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.checkBoxIssueOK);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(16, 12);
+            this.panel2.Location = new System.Drawing.Point(984, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(355, 161);
+            this.panel2.Size = new System.Drawing.Size(223, 143);
             this.panel2.TabIndex = 0;
+            this.panel2.Visible = false;
             // 
             // checkBoxIssueOK
             // 
             this.checkBoxIssueOK.AutoSize = true;
-            this.checkBoxIssueOK.Location = new System.Drawing.Point(116, 101);
+            this.checkBoxIssueOK.Location = new System.Drawing.Point(39, 173);
             this.checkBoxIssueOK.Name = "checkBoxIssueOK";
             this.checkBoxIssueOK.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.checkBoxIssueOK.Size = new System.Drawing.Size(167, 21);
             this.checkBoxIssueOK.TabIndex = 5;
             this.checkBoxIssueOK.Text = "Beoordeling afgerond";
             this.checkBoxIssueOK.UseVisualStyleBackColor = true;
-            this.checkBoxIssueOK.Visible = false;
             this.checkBoxIssueOK.CheckedChanged += new System.EventHandler(this.checkBoxIssueOK_CheckedChanged);
             // 
             // label6
@@ -287,7 +288,7 @@
             // textBoxRest_Risico_Comment
             // 
             this.textBoxRest_Risico_Comment.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRest_Risico_Comment.Location = new System.Drawing.Point(263, 287);
+            this.textBoxRest_Risico_Comment.Location = new System.Drawing.Point(135, 288);
             this.textBoxRest_Risico_Comment.Name = "textBoxRest_Risico_Comment";
             this.textBoxRest_Risico_Comment.ReadOnly = true;
             this.textBoxRest_Risico_Comment.Size = new System.Drawing.Size(508, 23);
@@ -296,29 +297,11 @@
             // textBoxInit_Risico_Comment
             // 
             this.textBoxInit_Risico_Comment.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxInit_Risico_Comment.Location = new System.Drawing.Point(263, 253);
+            this.textBoxInit_Risico_Comment.Location = new System.Drawing.Point(135, 254);
             this.textBoxInit_Risico_Comment.Name = "textBoxInit_Risico_Comment";
             this.textBoxInit_Risico_Comment.ReadOnly = true;
             this.textBoxInit_Risico_Comment.Size = new System.Drawing.Size(508, 23);
             this.textBoxInit_Risico_Comment.TabIndex = 19;
-            // 
-            // textBoxRest_Risico
-            // 
-            this.textBoxRest_Risico.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRest_Risico.Location = new System.Drawing.Point(122, 408);
-            this.textBoxRest_Risico.Name = "textBoxRest_Risico";
-            this.textBoxRest_Risico.ReadOnly = true;
-            this.textBoxRest_Risico.Size = new System.Drawing.Size(59, 23);
-            this.textBoxRest_Risico.TabIndex = 18;
-            // 
-            // textBoxInit_Risico
-            // 
-            this.textBoxInit_Risico.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxInit_Risico.Location = new System.Drawing.Point(122, 162);
-            this.textBoxInit_Risico.Name = "textBoxInit_Risico";
-            this.textBoxInit_Risico.ReadOnly = true;
-            this.textBoxInit_Risico.Size = new System.Drawing.Size(59, 23);
-            this.textBoxInit_Risico.TabIndex = 17;
             // 
             // textBoxGebeurtenis
             // 
@@ -420,6 +403,24 @@
             this.label7.TabIndex = 3;
             this.label7.Text = "Situatie";
             // 
+            // textBoxRest_Risico
+            // 
+            this.textBoxRest_Risico.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxRest_Risico.Location = new System.Drawing.Point(122, 408);
+            this.textBoxRest_Risico.Name = "textBoxRest_Risico";
+            this.textBoxRest_Risico.ReadOnly = true;
+            this.textBoxRest_Risico.Size = new System.Drawing.Size(59, 23);
+            this.textBoxRest_Risico.TabIndex = 18;
+            // 
+            // textBoxInit_Risico
+            // 
+            this.textBoxInit_Risico.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxInit_Risico.Location = new System.Drawing.Point(122, 162);
+            this.textBoxInit_Risico.Name = "textBoxInit_Risico";
+            this.textBoxInit_Risico.ReadOnly = true;
+            this.textBoxInit_Risico.Size = new System.Drawing.Size(59, 23);
+            this.textBoxInit_Risico.TabIndex = 17;
+            // 
             // checkBoxRest_Risico_OK
             // 
             this.checkBoxRest_Risico_OK.AutoCheck = false;
@@ -473,6 +474,7 @@
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.buttonSaveRiskDetails);
             this.panel6.Controls.Add(this.comboBoxInit_Se);
             this.panel6.Controls.Add(this.comboBoxRest_Se);
             this.panel6.Controls.Add(this.comboBoxInit_Av);
@@ -505,7 +507,6 @@
             this.panel6.Controls.Add(this.label22);
             this.panel6.Controls.Add(this.label23);
             this.panel6.Controls.Add(this.label24);
-            this.panel6.Controls.Add(this.buttonRisicoDetails);
             this.panel6.Controls.Add(this.checkBoxRest_Risico_OK);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel6.Location = new System.Drawing.Point(1281, 3);
@@ -838,6 +839,7 @@
             // 
             this.panel5.Controls.Add(this.buttonAddNewMaatregel);
             this.panel5.Controls.Add(this.buttonDeleteMaatregelen);
+            this.panel5.Controls.Add(this.buttonRisicoDetails);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel5.Location = new System.Drawing.Point(0, 888);
             this.panel5.Name = "panel5";
@@ -852,6 +854,16 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1629, 540);
             this.panel4.TabIndex = 9;
+            // 
+            // buttonSaveRiskDetails
+            // 
+            this.buttonSaveRiskDetails.Location = new System.Drawing.Point(195, 448);
+            this.buttonSaveRiskDetails.Name = "buttonSaveRiskDetails";
+            this.buttonSaveRiskDetails.Size = new System.Drawing.Size(109, 48);
+            this.buttonSaveRiskDetails.TabIndex = 91;
+            this.buttonSaveRiskDetails.Text = "Save";
+            this.buttonSaveRiskDetails.UseVisualStyleBackColor = true;
+            this.buttonSaveRiskDetails.Click += new System.EventHandler(this.buttonSaveRiskDetails_Click);
             // 
             // IssueMaatregelen
             // 
@@ -869,6 +881,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -956,5 +969,6 @@
         private System.Windows.Forms.ComboBox comboBoxInit_Pr;
         private System.Windows.Forms.ComboBox comboBoxRest_Fr;
         private System.Windows.Forms.ComboBox comboBoxRest_Pr;
+        private System.Windows.Forms.Button buttonSaveRiskDetails;
     }
 }

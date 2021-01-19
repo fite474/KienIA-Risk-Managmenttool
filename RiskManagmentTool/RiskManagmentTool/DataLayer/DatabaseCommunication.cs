@@ -132,12 +132,12 @@ namespace RiskManagmentTool.DataLayer
         private int InitIssue(string gevaarId, string issueState)
         {
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO TableIssues(IssueGevaarID, IssueStatus) VALUES " +
-                                                                       "(@IssueGevaarID, @IssueStatus)" +
+            SqlCommand cmd = new SqlCommand("INSERT INTO TableIssues(IssueGevaarID, IssueStatus, IssueOK) VALUES " +
+                                                                       "(@IssueGevaarID, @IssueStatus, @IssueOK)" +
                                                                        "SELECT CAST(SCOPE_IDENTITY() AS INT)", sqlConnection);
             cmd.Parameters.AddWithValue("@IssueGevaarID", gevaarId);
-            cmd.Parameters.AddWithValue("@IssueStatus", issueState);
-
+            cmd.Parameters.AddWithValue("@IssueStatus", -1);//issueState);
+            cmd.Parameters.AddWithValue("@IssueOK", 0);
             Int32 issueID = (Int32)cmd.ExecuteScalar();
             sqlConnection.Close();
             return issueID;
@@ -852,6 +852,100 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
 
         }
+
+        public void UpdateRisicoBeoordelingWithoutComments(Item item)
+        {
+            string issueID = item.ItemData.IssueID;
+            string init_Se = item.ItemData.Init_Se;
+            string init_Fr = item.ItemData.Init_Fr;
+            string init_Pr = item.ItemData.Init_Pr;
+            string init_Av = item.ItemData.Init_Av;
+            string init_Cl = item.ItemData.Init_Cl;
+            string init_Risico = item.ItemData.Init_Risico;
+            //string init_Se_Comment = item.ItemData.Init_Se_Comment;
+            //string init_Fr_Comment = item.ItemData.Init_Fr_Comment;
+            //string init_Pr_Comment = item.ItemData.Init_Pr_Comment;
+            //string init_Av_Comment = item.ItemData.Init_Av_Comment;
+            //string init_Cl_Comment = item.ItemData.Init_Cl_Comment;
+            //string init_Risico_Comment = item.ItemData.Init_Risico_Comment;
+
+            string rest_Se = item.ItemData.Rest_Se;
+            string rest_Fr = item.ItemData.Rest_Fr;
+            string rest_Pr = item.ItemData.Rest_Pr;
+            string rest_Av = item.ItemData.Rest_Av;
+            string rest_Cl = item.ItemData.Rest_Cl;
+            string rest_Risico = item.ItemData.Rest_Risico;
+            //string rest_Se_Comment = item.ItemData.Rest_Se_Comment;
+            //string rest_Fr_Comment = item.ItemData.Rest_Fr_Comment;
+            //string rest_Pr_Comment = item.ItemData.Rest_Pr_Comment;
+            //string rest_Av_Comment = item.ItemData.Rest_Av_Comment;
+            //string rest_Cl_Comment = item.ItemData.Rest_Cl_Comment;
+            //string rest_Risico_Comment = item.ItemData.Rest_Risico_Comment;
+            string rest_Ok = item.ItemData.Rest_Ok;
+
+
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("UPDATE RisicoBeoordeling " +
+                                 "SET " +
+                                 " Init_Se = @Init_Se," +
+                                 " Init_Fr = @Init_Fr," +
+                                 " Init_Pr = @Init_Pr," +
+                                 " Init_Av = @Init_Av," +
+                                 " Init_Cl = @Init_Cl," +
+                                 " Init_Risico = @Init_Risico," +
+                                 //" Init_Se_Comment = @Init_Se_Comment," +
+                                 //" Init_Fr_Comment = @Init_Fr_Comment," +
+                                 //" Init_Pr_Comment = @Init_Pr_Comment," +
+                                 //" Init_Av_Comment = @Init_Av_Comment," +
+                                 //" Init_Cl_Comment = @Init_Cl_Comment," +
+                                 //" Init_Risico_Comment = @Init_Risico_Comment," +
+                                 " Rest_Se = @Rest_Se," +
+                                 " Rest_Fr = @Rest_Fr," +
+                                 " Rest_Pr = @Rest_Pr," +
+                                 " Rest_Av = @Rest_Av," +
+                                 " Rest_Cl = @Rest_Cl," +
+                                 " Rest_Risico = @Rest_Risico," +
+                                 //" Rest_Se_Comment = @Rest_Se_Comment," +
+                                 //" Rest_Fr_Comment = @Rest_Fr_Comment," +
+                                 //" Rest_Pr_Comment = @Rest_Pr_Comment," +
+                                 //" Rest_Av_Comment = @Rest_Av_Comment," +
+                                 //" Rest_Cl_Comment = @Rest_Cl_Comment," +
+                                 //" Rest_Risico_Comment = @Rest_Risico_Comment," +
+                                 " Rest_Risico_Ok = @Rest_Risico_Ok" +
+                                 " WHERE IssueID = '" + issueID + "'", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@Init_Se", init_Se);
+            cmd.Parameters.AddWithValue("@Init_Fr", init_Fr);
+            cmd.Parameters.AddWithValue("@Init_Pr", init_Pr);
+            cmd.Parameters.AddWithValue("@Init_Av", init_Av);
+            cmd.Parameters.AddWithValue("@Init_Cl", init_Cl);
+            cmd.Parameters.AddWithValue("@Init_Risico", init_Risico);
+            //cmd.Parameters.AddWithValue("@Init_Se_Comment", init_Se_Comment);
+            //cmd.Parameters.AddWithValue("@Init_Fr_Comment", init_Fr_Comment);
+            //cmd.Parameters.AddWithValue("@Init_Pr_Comment", init_Pr_Comment);
+            //cmd.Parameters.AddWithValue("@Init_Av_Comment", init_Av_Comment);
+            //cmd.Parameters.AddWithValue("@Init_Cl_Comment", init_Cl_Comment);
+            //cmd.Parameters.AddWithValue("@Init_Risico_Comment", init_Risico_Comment);
+            cmd.Parameters.AddWithValue("@Rest_Se", rest_Se);
+            cmd.Parameters.AddWithValue("@Rest_Fr", rest_Fr);
+            cmd.Parameters.AddWithValue("@Rest_Pr", rest_Pr);
+            cmd.Parameters.AddWithValue("@Rest_Av", rest_Av);
+            cmd.Parameters.AddWithValue("@Rest_Cl", rest_Cl);
+            cmd.Parameters.AddWithValue("@Rest_Risico", rest_Risico);
+            //cmd.Parameters.AddWithValue("@Rest_Se_Comment", rest_Se_Comment);
+            //cmd.Parameters.AddWithValue("@Rest_Fr_Comment", rest_Fr_Comment);
+            //cmd.Parameters.AddWithValue("@Rest_Pr_Comment", rest_Pr_Comment);
+            //cmd.Parameters.AddWithValue("@Rest_Av_Comment", rest_Av_Comment);
+            //cmd.Parameters.AddWithValue("@Rest_Cl_Comment", rest_Cl_Comment);
+            //cmd.Parameters.AddWithValue("@Rest_Risico_Comment", rest_Risico_Comment);
+            cmd.Parameters.AddWithValue("@Rest_Risico_Ok", rest_Ok);
+
+            cmd.ExecuteNonQuery();
+            //Int32 risicoBeoordelingID = (Int32)cmd.ExecuteScalar();
+            sqlConnection.Close();
+            //return risicoBeoordelingID;
+        }
+
         public void UpdateRisicoBeoordeling(Item item)
         {
             string issueID = item.ItemData.IssueID;
@@ -954,6 +1048,19 @@ namespace RiskManagmentTool.DataLayer
                                             " WHERE IssueID = '" + issueID + "'", sqlConnection);
 
             cmd.Parameters.AddWithValue("@IssueStatus", newState);
+            cmd.ExecuteNonQuery();
+
+            sqlConnection.Close();
+        }
+
+        public void UpdateIssueOk(string issueID, int newState)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("UPDATE TableIssues " +
+                                             "SET IssueOK = @IssueOK" +
+                                            " WHERE IssueID = '" + issueID + "'", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@IssueOK", newState);
             cmd.ExecuteNonQuery();
 
             sqlConnection.Close();
@@ -1591,12 +1698,28 @@ namespace RiskManagmentTool.DataLayer
             return issueState;
         }
 
+        public string GetIssueOK(string issueId)
+        {
+            string issueOK = "-1";
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT TableIssues.IssueOK " +
+                                            "FROM TableIssues WHERE TableIssues.IssueID = '" + issueId + "'", sqlConnection);
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    issueOK = (dr[0]).ToString();
+                }
+            }
+            sqlConnection.Close();
+            return issueOK;
+        }
         #endregion get states
 
 
         #region get gevaar data
 
-       public SqlDataAdapter GetGevaar_Situatie_gebeurtenis(string gevaarID)
+        public SqlDataAdapter GetGevaar_Situatie_gebeurtenis(string gevaarID)
        {
 
             sqlConnection.Open();

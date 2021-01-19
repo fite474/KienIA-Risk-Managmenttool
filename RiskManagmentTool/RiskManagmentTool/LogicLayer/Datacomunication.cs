@@ -492,6 +492,51 @@ namespace RiskManagmentTool.LogicLayer
 
         }
 
+        public void UpdateRisicoBeoordelingWithoutComments(string issueID, string init_Se, string init_Fr, string init_Pr, string init_Av, string init_Cl, string init_Risico,
+                                            //string init_Se_Comment, string init_Fr_Comment, string init_Pr_Comment, string init_Av_Comment, string init_Cl_Comment, string init_Risico_Comment,
+                                            string rest_Se, string rest_Fr, string rest_Pr, string rest_Av, string rest_Cl, string rest_Risico,
+                                            //string rest_Se_Comment, string rest_Fr_Comment, string rest_Pr_Comment, string rest_Av_Comment, string rest_Cl_Comment, string rest_Risico_Comment
+                                            string rest_Ok)
+        {
+            Item risicoInschattingItem = new Item
+            {
+                ItemType = ItemType.RisicoInschatting,
+                ItemData = new RisicoInschattingObject
+                {
+                    IssueID = issueID,
+                    Init_Se = init_Se,
+                    Init_Fr = init_Fr,
+                    Init_Pr = init_Pr,
+                    Init_Av = init_Av,
+                    Init_Cl = init_Cl,
+                    Init_Risico = init_Risico,
+                    //Init_Se_Comment = init_Se_Comment,
+                    //Init_Fr_Comment = init_Fr_Comment,
+                    //Init_Pr_Comment = init_Pr_Comment,
+                    //Init_Av_Comment = init_Av_Comment,
+                    //Init_Cl_Comment = init_Cl_Comment,
+                    //Init_Risico_Comment = init_Risico_Comment,
+
+                    Rest_Se = rest_Se,
+                    Rest_Fr = rest_Fr,
+                    Rest_Pr = rest_Pr,
+                    Rest_Av = rest_Av,
+                    Rest_Cl = rest_Cl,
+                    Rest_Risico = rest_Risico,
+                    //Rest_Se_Comment = rest_Se_Comment,
+                    //Rest_Fr_Comment = rest_Fr_Comment,
+                    //Rest_Pr_Comment = rest_Pr_Comment,
+                    //Rest_Av_Comment = rest_Av_Comment,
+                    //Rest_Cl_Comment = rest_Cl_Comment,
+                    //Rest_Risico_Comment = rest_Risico_Comment,
+                    Rest_Ok = rest_Ok
+                }
+            };
+            databaseCommunication.UpdateRisicoBeoordelingWithoutComments(risicoInschattingItem);
+
+
+        }
+
         public void UpdateRisicoBeoordeling(string issueID, string init_Se, string init_Fr, string init_Pr, string init_Av, string init_Cl, string init_Risico,
                                             string init_Se_Comment, string init_Fr_Comment, string init_Pr_Comment, string init_Av_Comment, string init_Cl_Comment, string init_Risico_Comment,
                                             string rest_Se, string rest_Fr, string rest_Pr, string rest_Av, string rest_Cl, string rest_Risico,
@@ -539,6 +584,11 @@ namespace RiskManagmentTool.LogicLayer
         public void UpdateIssueState(string issueId, int newState)
         {
             databaseCommunication.UpdateIssueState(issueId, newState);
+        }
+
+        public void UpdateIssueOk(string issueId, int newState)
+        {
+            databaseCommunication.UpdateIssueOk(issueId, newState);
         }
 
         public void UpdateImageToObject(string objectID, string imageFilePath)
@@ -1007,6 +1057,11 @@ namespace RiskManagmentTool.LogicLayer
         public string GetIssueState(string issueId)
         {
             return databaseCommunication.GetIssueState(issueId);
+        }
+
+        public string GetIssueOK(string issueId)
+        {
+            return databaseCommunication.GetIssueOK(issueId);
         }
 
         public string GetLastTemplateID()

@@ -144,12 +144,14 @@ namespace RiskManagmentTool.LogicLayer
 
 
             int cl = (fr + pr + av);
+            //int restRisk = se * cl;
             int risk = HazardLevelSil(se, cl);
             return new Tuple<int, int>(cl, risk);
         }
 
         private int HazardLevelPl(int seValue, int clValue)
         {
+            //inactive methode
             int colorValue = 1;//1 = green, 10 = yellow, 100 = red
             int restRiskValue = seValue * clValue;
             switch (seValue)

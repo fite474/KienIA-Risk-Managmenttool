@@ -31,8 +31,11 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private int RisicograafSetting; //0 = SIL 1 = pl
         private int IssueState;
+        //private int IssueOK;
 
         private bool ReadOnlyMode;
+
+        private bool ChangeMade;
 
 
         public IssueMaatregelen(string objectNaam, string objectId, string issueId,
@@ -48,6 +51,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             Situatie = situatie;
             Gebeurtenis = gebeurtenis;
             ReadOnlyMode = false;
+            ChangeMade = false;
             IssueID = issueId;
             ObjectID = objectId;
             ObjectNaam = objectNaam;
@@ -57,6 +61,26 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             LoadIssueText();
             SetIssueImage();
 
+            List<string> objectSettings = comunicator.GetObjectSettings(ObjectID);
+            string risicograafSetting = objectSettings[0];
+            if (risicograafSetting.Equals("0"))
+            {
+                RisicograafSetting = 0;
+                UseSILMode();
+            }
+            else if (risicograafSetting.Equals("1"))
+            {
+                RisicograafSetting = 1;
+                UsePLMode();
+            }
+            //if (RisicograafSetting == 0)
+            //{
+            //    UseSILMode();
+            //}
+            //else if (RisicograafSetting == 1)
+            //{
+            //    UsePLMode();
+            //}
         }
 
         private void LoadIssueText()
@@ -70,8 +94,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             textBoxGebeurtenis.Text = Gebeurtenis;
 
 
-
-            //checkBoxIssueOK.Checked = comunicator.GetIssueState(IssueID) == "1";
+            //---------------------------------------TO DO
+            checkBoxIssueOK.Checked = comunicator.GetIssueOK(IssueID) == "1";
 
             DataTable risicoBeoordelingData = comunicator.GetRisicoBeoordelingFromIssue(IssueID);
             textBoxInit_Risico.Text = risicoBeoordelingData.Rows[0].Field<int?>(7).ToString();
@@ -92,20 +116,14 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             dataGridViewIssueMaatregelen.DataSource = comunicator.GetIssueMaatregelen(IssueID);
 
 
-            List<string> objectSettings = comunicator.GetObjectSettings(ObjectID);
-            string risicograaf = objectSettings[0];
-            if (risicograaf.Equals("0"))
-            {
-                RisicograafSetting = 0;
-                UseSILMode();
-            }
-            else if (risicograaf.Equals("1"))
-            {
-                RisicograafSetting = 1;
-                UsePLMode();
-            }
 
-            
+
+            //if (ChangeMade)
+            //{
+            //    checkBoxIssueOK.Checked = false;
+            //    comunicator.UpdateIssueOk(IssueID, 0);
+            //    ChangeMade = false;
+            //}
 
         }
 
@@ -120,9 +138,64 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
 
             IssueState = int.Parse(comunicator.GetIssueState(IssueID));//risicoBeoordelingData.Rows[0].Field<int>(27);
-            checkedListBoxIssueCompletionState.SetItemChecked(IssueState, true);
+            if (IssueState != -1)
+            {
+                checkedListBoxIssueCompletionState.SetItemChecked(IssueState, true);
+            }
 
 
+            //List<string> issueInfo = comunicator.GetIssueInfo(IssueID);
+
+            ////textBoxObjectIssueId.Text = issueInfo[0];
+            //textBoxSituatie.Text = issueInfo[1];
+            //textBoxGebeurtenis.Text = issueInfo[2];
+            //textBoxGevaarType.Text = issueInfo[3];
+
+
+            //textBoxIssueID.Text = IssueID;
+            //DataTable risicoBeoordelingData = comunicator.GetRisicoBeoordelingFromIssue(IssueID);
+
+            //DataRow row = risicoBeoordelingData.Rows[1];
+
+            textBoxIssueID.Text = IssueID;
+            textBoxInit_Se.Text = risicoBeoordelingData.Rows[0].Field<int?>(2).ToString();
+            textBoxInit_Fr.Text = risicoBeoordelingData.Rows[0].Field<int?>(3).ToString();
+            textBoxInit_Pr.Text = risicoBeoordelingData.Rows[0].Field<int?>(4).ToString();
+            textBoxInit_Av.Text = risicoBeoordelingData.Rows[0].Field<int?>(5).ToString();
+            textBoxInit_Cl.Text = risicoBeoordelingData.Rows[0].Field<int?>(6).ToString();
+            //textBoxInit_Risico.Text = risicoBeoordelingData.Rows[0].Field<int?>(7).ToString();
+            //textBoxInit_Se_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(8).ToString();
+            //textBoxInit_Fr_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(9).ToString();
+            //textBoxInit_Pr_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(10).ToString();
+            //textBoxInit_Av_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(11).ToString();
+            //textBoxInit_Cl_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(12).ToString();
+            //textBoxInitRisico_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(13).ToString();
+            textBoxRest_Se.Text = risicoBeoordelingData.Rows[0].Field<int?>(14).ToString();
+            textBoxRest_Fr.Text = risicoBeoordelingData.Rows[0].Field<int?>(15).ToString();
+            textBoxRest_Pr.Text = risicoBeoordelingData.Rows[0].Field<int?>(16).ToString();
+            textBoxRest_Av.Text = risicoBeoordelingData.Rows[0].Field<int?>(17).ToString();
+            textBoxRest_Cl.Text = risicoBeoordelingData.Rows[0].Field<int?>(18).ToString();
+            //textBoxRest_Risico.Text = risicoBeoordelingData.Rows[0].Field<int?>(19).ToString();
+            //textBoxRest_Se_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(20).ToString();
+            //textBoxRest_Fr_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(21).ToString();
+            //textBoxRest_Pr_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(22).ToString();
+            //textBoxRest_Av_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(23).ToString();
+            //textBoxRest_Cl_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(24).ToString();
+            //textBoxRest_Risico_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(25).ToString();
+            //checkBoxRest_Risico_Ok.Checked = risicoBeoordelingData.Rows[0].Field<string>(26).ToString() == "1";
+
+            //set comboboxes right
+
+            comboBoxInit_Se.SelectedIndex = comboBoxInit_Se.FindString(textBoxInit_Se.Text);
+            comboBoxInit_Fr.SelectedIndex = comboBoxInit_Fr.FindString(textBoxInit_Fr.Text);
+            comboBoxInit_Pr.SelectedIndex = comboBoxInit_Pr.FindString(textBoxInit_Pr.Text);
+            comboBoxInit_Av.SelectedIndex = comboBoxInit_Av.FindString(textBoxInit_Av.Text);
+
+
+            comboBoxRest_Se.SelectedIndex = comboBoxRest_Se.FindString(textBoxRest_Se.Text);
+            comboBoxRest_Fr.SelectedIndex = comboBoxRest_Fr.FindString(textBoxRest_Fr.Text);
+            comboBoxRest_Pr.SelectedIndex = comboBoxRest_Pr.FindString(textBoxRest_Pr.Text);
+            comboBoxRest_Av.SelectedIndex = comboBoxRest_Av.FindString(textBoxRest_Av.Text);
             //checkedListBoxIssueCompletionState.Item
         }
 
@@ -200,8 +273,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void checkBoxIssueOK_CheckedChanged(object sender, EventArgs e)
         {
-            //string issueState = checkBoxIssueOK.Checked == true ? "1" : "0";
-            //comunicator.UpdateIssueState(IssueID, IssueState);
+            string issueOk = checkBoxIssueOK.Checked == true ? "1" : "0";
+            comunicator.UpdateIssueOk(IssueID, int.Parse(issueOk));//tO DO
         }
 
         private void buttonDeleteMaatregelen_Click(object sender, EventArgs e)
@@ -267,7 +340,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             {
                 Tuple<int, int> initValues = risicograaf.CalculateSilMode(init_Se, init_Fr, init_Pr, init_Av);
                 int init_Cl = initValues.Item1;
-                int init_Risk = initValues.Item2;
+                int init_Risk = init_Se * init_Cl;//initValues.Item2;
+                int colorValue = initValues.Item2;
                 textBoxInit_Cl.Text = init_Cl.ToString();
                 textBoxInit_Risico.Text = init_Risk.ToString();
             }
@@ -275,7 +349,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             {
                 Tuple<int, int> initValues = risicograaf.CalculatePlMode(init_Se, init_Fr, init_Pr, init_Av);
                 int init_Cl = initValues.Item1;
-                int init_Risk = initValues.Item2;
+                int init_Risk = init_Se * init_Cl;//initValues.Item2;
+                int colorValue = initValues.Item2;
                 textBoxInit_Cl.Text = init_Cl.ToString();
                 textBoxInit_Risico.Text = init_Risk.ToString();
             }
@@ -290,7 +365,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             {
                 Tuple<int, int> restValues = risicograaf.CalculateSilMode(rest_Se, rest_Fr, rest_Pr, rest_Av);
                 int rest_Cl = restValues.Item1;
-                int rest_Risk = restValues.Item2;
+                int rest_Risk = rest_Se * rest_Cl;//initValues.Item2;
+                int colorValue = restValues.Item2;
 
                 textBoxRest_Cl.Text = rest_Cl.ToString();
                 textBoxRest_Risico.Text = rest_Risk.ToString();
@@ -299,7 +375,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             {
                 Tuple<int, int> restValues = risicograaf.CalculatePlMode(rest_Se, rest_Fr, rest_Pr, rest_Av);
                 int rest_Cl = restValues.Item1;
-                int rest_Risk = restValues.Item2;
+                int rest_Risk = rest_Se * rest_Cl;//initValues.Item2;
+                int colorValue = restValues.Item2;
                 textBoxRest_Cl.Text = rest_Cl.ToString();
                 textBoxRest_Risico.Text = rest_Risk.ToString();
             }
@@ -564,6 +641,44 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private void textBoxRest_Av_TextChanged(object sender, EventArgs e)
         {
             CheckRestValues();
+        }
+
+        private void buttonSaveRiskDetails_Click(object sender, EventArgs e)
+        {
+            string issueID = IssueID;//textBoxIssueID.Text;
+            string init_Se = textBoxInit_Se.Text;
+            string init_Fr = textBoxInit_Fr.Text;
+            string init_Pr = textBoxInit_Pr.Text;
+            string init_Av = textBoxInit_Av.Text;
+            string init_Cl = textBoxInit_Cl.Text;
+            string init_Risico = textBoxInit_Risico.Text;
+            //string init_Se_Comment = textBoxInit_Se_Comment.Text;
+            //string init_Fr_Comment = textBoxInit_Fr_Comment.Text;
+            //string init_Pr_Comment = textBoxInit_Pr_Comment.Text;
+            //string init_Av_Comment = textBoxInit_Av_Comment.Text;
+            //string init_Cl_Comment = textBoxInit_Cl_Comment.Text;
+            //string init_Risico_Comment = textBoxInitRisico_Comment.Text;
+            string rest_Se = textBoxRest_Se.Text;
+            string rest_Fr = textBoxRest_Fr.Text;
+            string rest_Pr = textBoxRest_Pr.Text;
+            string rest_Av = textBoxRest_Av.Text;
+            string rest_Cl = textBoxRest_Cl.Text;
+            string rest_Risico = textBoxRest_Risico.Text;
+            //string rest_Se_Comment = textBoxRest_Se_Comment.Text;
+            //string rest_Fr_Comment = textBoxRest_Fr_Comment.Text;
+            //string rest_Pr_Comment = textBoxRest_Pr_Comment.Text;
+            //string rest_Av_Comment = textBoxRest_Av_Comment.Text;
+            //string rest_Cl_Comment = textBoxRest_Cl_Comment.Text;
+            string rest_Risico_Comment = textBoxRest_Risico_Comment.Text;
+            string rest_Ok = checkBoxRest_Risico_OK.Checked == true ? "1" : "0";//"1";
+            //if (true)
+            //{
+
+            comunicator.UpdateRisicoBeoordelingWithoutComments(issueID, init_Se, init_Fr, init_Pr, init_Av, init_Cl, init_Risico,
+                                            //init_Se_Comment, init_Fr_Comment, init_Pr_Comment, init_Av_Comment, init_Cl_Comment, init_Risico_Comment,
+                                            rest_Se, rest_Fr, rest_Pr, rest_Av, rest_Cl, rest_Risico,
+                                            //rest_Se_Comment, rest_Fr_Comment, rest_Pr_Comment, rest_Av_Comment, rest_Cl_Comment, rest_Risico_Comment, 
+                                            rest_Ok);
         }
     }
 }

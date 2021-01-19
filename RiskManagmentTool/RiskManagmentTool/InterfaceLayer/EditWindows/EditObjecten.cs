@@ -65,7 +65,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             textBoxObjectNaam.Text = ObjectNaam;
             textBoxOmschrijving.Text = objectOmschrijving;
             textBoxObjectType.Text = objectType;
-            LoadDataGridViewCheckBoxes();
+            //LoadDataGridViewCheckBoxes();
             LoadData();
             SetObjectSettings();
             SetObjectImage();
@@ -80,14 +80,14 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void LoadDataGridViewCheckBoxes()
         {
-            DataGridViewCheckBoxColumn CheckboxColumn = new DataGridViewCheckBoxColumn();
-            CheckBox chk = new CheckBox();
-            CheckboxColumn.Width = 20;
-            CheckboxColumn.HeaderText = "";
-            CheckboxColumn.TrueValue = true;
-            CheckboxColumn.FalseValue = false;
-            advancedDataGridViewGekoppeldeIssues.Columns.Add(CheckboxColumn);
-            advancedDataGridViewGekoppeldeIssues.DisableFilter(CheckboxColumn);
+            //DataGridViewCheckBoxColumn CheckboxColumn = new DataGridViewCheckBoxColumn();
+            //CheckBox chk = new CheckBox();
+            //CheckboxColumn.Width = 20;
+            //CheckboxColumn.HeaderText = "";
+            //CheckboxColumn.TrueValue = true;
+            //CheckboxColumn.FalseValue = false;
+            //advancedDataGridViewGekoppeldeIssues.Columns.Add(CheckboxColumn);
+            //advancedDataGridViewGekoppeldeIssues.DisableFilter(CheckboxColumn);
         }
 
         private void LoadData()
@@ -181,7 +181,11 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
                         {
                             string issueId = row.Cells[viewsColumnNames.IssueIDColumn].Value.ToString();
                             IssuesState.TryGetValue(issueId, out string issueState);
-                            if (issueState.Equals("0"))
+                            if (issueState.Equals("-1"))
+                            {
+                                advancedDataGridViewGekoppeldeIssues.Rows[rowIndex].DefaultCellStyle.BackColor = Color.Gray;
+                            }
+                            else if (issueState.Equals("0"))
                             {
                                 advancedDataGridViewGekoppeldeIssues.Rows[rowIndex].DefaultCellStyle.BackColor = Color.Red;
                                 //IssuesToVerify.Add(dataGridViewGekoppeldeIssues.Rows[rowIndex].Cells[viewsColumnNames.IssueIDColumn].Value.ToString());
@@ -222,12 +226,12 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
                             Console.WriteLine(issueRiskValue);
                             if (issueRiskValue.Equals("0"))
                             {
-                                advancedDataGridViewGekoppeldeIssues.Rows[rowIndex].DefaultCellStyle.BackColor = Color.Green;
+                                advancedDataGridViewGekoppeldeIssues.Rows[rowIndex].DefaultCellStyle.BackColor = Color.Red;
 
                             }
                             else if (issueRiskValue.Equals("1"))
                             {
-                                advancedDataGridViewGekoppeldeIssues.Rows[rowIndex].DefaultCellStyle.BackColor = Color.Red;
+                                advancedDataGridViewGekoppeldeIssues.Rows[rowIndex].DefaultCellStyle.BackColor = Color.Green;
                             }
                             //else if (issueRiskValue.Equals("10"))
                             //{
@@ -459,7 +463,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private void advancedDataGridViewGekoppeldeIssues_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             IssuesToVerify = new List<string>();
-            for (int i = 0; i < (advancedDataGridViewGekoppeldeIssues.ColumnCount - 1); i++)
+            for (int i = 0; i < (advancedDataGridViewGekoppeldeIssues.ColumnCount - 2); i++)
             {
                 advancedDataGridViewGekoppeldeIssues.AutoResizeColumn((i + 1), DataGridViewAutoSizeColumnMode.AllCells);
                 if (advancedDataGridViewGekoppeldeIssues.Columns[i + 1].Width > 400)
@@ -471,25 +475,25 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             advancedDataGridViewGekoppeldeIssues.ClearSelection();
 
 
-            IssuesState = comunicator.GetObjectIssuesStates(ObjectID);
+            //IssuesState = comunicator.GetObjectIssuesStates(ObjectID);
 
-            int rowIndex = 0;
-            foreach (DataGridViewRow row in advancedDataGridViewGekoppeldeIssues.Rows)
-            {
-                string issueId = row.Cells[viewsColumnNames.IssueIDColumn].Value.ToString();
-                IssuesState.TryGetValue(issueId, out string issueState);
-                if (issueState.Equals("0"))
-                {
-                    row.Cells[0].Value = false;
-                    IssuesToVerify.Add(advancedDataGridViewGekoppeldeIssues.Rows[rowIndex].Cells[viewsColumnNames.IssueIDColumn].Value.ToString());
-                }
-                else if (issueState.Equals("1"))
-                {
-                    row.Cells[0].Value = true;
-                }
+            //int rowIndex = 0;
+            //foreach (DataGridViewRow row in advancedDataGridViewGekoppeldeIssues.Rows)
+            //{
+            //    string issueId = row.Cells[viewsColumnNames.IssueIDColumn].Value.ToString();
+            //    IssuesState.TryGetValue(issueId, out string issueState);
+            //    if (issueState.Equals("0"))
+            //    {
+            //        row.Cells[0].Value = false;
+            //        IssuesToVerify.Add(advancedDataGridViewGekoppeldeIssues.Rows[rowIndex].Cells[viewsColumnNames.IssueIDColumn].Value.ToString());
+            //    }
+            //    else if (issueState.Equals("1"))
+            //    {
+            //        row.Cells[0].Value = true;
+            //    }
 
-                rowIndex++;
-            }
+            //    rowIndex++;
+            //}
             Cursor.Current = Cursors.Default;
             textBoxIssuesToVerify.Text = IssuesToVerify.Count.ToString();
             SetVisualInstellingen();

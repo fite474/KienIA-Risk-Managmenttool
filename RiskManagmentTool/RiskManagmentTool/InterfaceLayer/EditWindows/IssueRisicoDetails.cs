@@ -246,7 +246,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             {
                 Tuple<int, int> initValues = risicograaf.CalculateSilMode(init_Se, init_Fr, init_Pr, init_Av);
                 int init_Cl = initValues.Item1;
-                int init_Risk = initValues.Item2;
+                int init_Risk = init_Se * init_Cl;//initValues.Item2;
+                int colorValue = initValues.Item2;
                 textBoxInit_Cl.Text = init_Cl.ToString();
                 textBoxInit_Risico.Text = init_Risk.ToString();
             }
@@ -254,7 +255,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             {
                 Tuple<int, int> initValues = risicograaf.CalculatePlMode(init_Se, init_Fr, init_Pr, init_Av);
                 int init_Cl = initValues.Item1;
-                int init_Risk = initValues.Item2;
+                int init_Risk = init_Se * init_Cl;//initValues.Item2;
+                int colorValue = initValues.Item2;
                 textBoxInit_Cl.Text = init_Cl.ToString();
                 textBoxInit_Risico.Text = init_Risk.ToString();
             }
@@ -269,7 +271,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             {
                 Tuple<int, int> restValues = risicograaf.CalculateSilMode(rest_Se, rest_Fr, rest_Pr, rest_Av);
                 int rest_Cl = restValues.Item1;
-                int rest_Risk = restValues.Item2;
+                int rest_Risk = rest_Se * rest_Cl;//initValues.Item2;
+                int colorValue = restValues.Item2;
 
                 textBoxRest_Cl.Text = rest_Cl.ToString();
                 textBoxRest_Risico.Text = rest_Risk.ToString();
@@ -278,7 +281,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             {
                 Tuple<int, int> restValues = risicograaf.CalculatePlMode(rest_Se, rest_Fr, rest_Pr, rest_Av);
                 int rest_Cl = restValues.Item1;
-                int rest_Risk = restValues.Item2;
+                int rest_Risk = rest_Se * rest_Cl;//initValues.Item2;
+                int colorValue = restValues.Item2;
                 textBoxRest_Cl.Text = rest_Cl.ToString();
                 textBoxRest_Risico.Text = rest_Risk.ToString();
             }

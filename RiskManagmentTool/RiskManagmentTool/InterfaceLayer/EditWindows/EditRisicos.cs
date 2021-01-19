@@ -300,7 +300,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             {
                 currentTextBox.Text = checkedItems;
             }
-
+            textBoxCurrentMenu.Text = menuTitle;
             //if (currentList != null)
             //{
             //    currentList.Add(1);

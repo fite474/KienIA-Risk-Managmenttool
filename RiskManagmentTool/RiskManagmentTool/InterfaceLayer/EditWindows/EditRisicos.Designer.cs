@@ -67,16 +67,18 @@
             this.buttonTaak = new System.Windows.Forms.Button();
             this.buttonGevolg = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBoxCurrentMenu = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -301,6 +303,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.textBoxCurrentMenu);
+            this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.buttonKeuzeOption);
             this.panel2.Controls.Add(this.checkedListBoxOptions);
@@ -460,40 +464,6 @@
             this.panel4.Size = new System.Drawing.Size(1058, 765);
             this.panel4.TabIndex = 42;
             // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.label6);
-            this.panel5.Controls.Add(this.label7);
-            this.panel5.Controls.Add(this.label5);
-            this.panel5.Controls.Add(this.label4);
-            this.panel5.Controls.Add(this.label3);
-            this.panel5.Controls.Add(this.label8);
-            this.panel5.Controls.Add(this.labelGevSituatie);
-            this.panel5.Controls.Add(this.label9);
-            this.panel5.Controls.Add(this.label1);
-            this.panel5.Controls.Add(this.label2);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(200, 765);
-            this.panel5.TabIndex = 0;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.buttonTaak);
-            this.panel6.Controls.Add(this.buttonGevolg);
-            this.panel6.Controls.Add(this.buttonDisciplines);
-            this.panel6.Controls.Add(this.buttonBedienvorm);
-            this.panel6.Controls.Add(this.buttonGevaarlijkeZone);
-            this.panel6.Controls.Add(this.buttonGebruiksfase);
-            this.panel6.Controls.Add(this.buttonGebruiker);
-            this.panel6.Controls.Add(this.buttonGevaar);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(936, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(122, 765);
-            this.panel6.TabIndex = 1;
-            // 
             // panel7
             // 
             this.panel7.Controls.Add(this.textBoxGevolg);
@@ -512,6 +482,57 @@
             this.panel7.Size = new System.Drawing.Size(736, 765);
             this.panel7.TabIndex = 2;
             // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.buttonTaak);
+            this.panel6.Controls.Add(this.buttonGevolg);
+            this.panel6.Controls.Add(this.buttonDisciplines);
+            this.panel6.Controls.Add(this.buttonBedienvorm);
+            this.panel6.Controls.Add(this.buttonGevaarlijkeZone);
+            this.panel6.Controls.Add(this.buttonGebruiksfase);
+            this.panel6.Controls.Add(this.buttonGebruiker);
+            this.panel6.Controls.Add(this.buttonGevaar);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel6.Location = new System.Drawing.Point(936, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(122, 765);
+            this.panel6.TabIndex = 1;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.label6);
+            this.panel5.Controls.Add(this.label7);
+            this.panel5.Controls.Add(this.label5);
+            this.panel5.Controls.Add(this.label4);
+            this.panel5.Controls.Add(this.label3);
+            this.panel5.Controls.Add(this.label8);
+            this.panel5.Controls.Add(this.labelGevSituatie);
+            this.panel5.Controls.Add(this.label9);
+            this.panel5.Controls.Add(this.label1);
+            this.panel5.Controls.Add(this.label2);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(200, 765);
+            this.panel5.TabIndex = 0;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(181, 197);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(95, 17);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Huidig menu: ";
+            // 
+            // textBoxCurrentMenu
+            // 
+            this.textBoxCurrentMenu.Location = new System.Drawing.Point(270, 197);
+            this.textBoxCurrentMenu.Name = "textBoxCurrentMenu";
+            this.textBoxCurrentMenu.ReadOnly = true;
+            this.textBoxCurrentMenu.Size = new System.Drawing.Size(193, 22);
+            this.textBoxCurrentMenu.TabIndex = 4;
+            // 
             // EditRisicos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -526,14 +547,15 @@
             this.Load += new System.EventHandler(this.EditRisicos_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -582,5 +604,7 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.TextBox textBoxCurrentMenu;
+        private System.Windows.Forms.Label label11;
     }
 }

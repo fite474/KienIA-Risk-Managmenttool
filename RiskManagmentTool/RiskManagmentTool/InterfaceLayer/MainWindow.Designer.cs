@@ -40,6 +40,7 @@
             this.buttonProjecten = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelContent = new System.Windows.Forms.Panel();
+            this.buttonHelp = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.SuspendLayout();
@@ -68,6 +69,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(33)))), ((int)(((byte)(90)))));
+            this.panelMenu.Controls.Add(this.buttonHelp);
             this.panelMenu.Controls.Add(this.buttonKeuzes);
             this.panelMenu.Controls.Add(this.buttonRedirect);
             this.panelMenu.Controls.Add(this.buttonMaatregelen);
@@ -193,6 +195,19 @@
             this.panelContent.Size = new System.Drawing.Size(1592, 831);
             this.panelContent.TabIndex = 2;
             // 
+            // buttonHelp
+            // 
+            this.buttonHelp.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonHelp.Location = new System.Drawing.Point(0, 652);
+            this.buttonHelp.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonHelp.Name = "buttonHelp";
+            this.buttonHelp.Size = new System.Drawing.Size(200, 78);
+            this.buttonHelp.TabIndex = 8;
+            this.buttonHelp.Text = "Gebruikers handleiding";
+            this.buttonHelp.UseVisualStyleBackColor = true;
+            this.buttonHelp.Click += new System.EventHandler(this.buttonHelp_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -227,5 +242,6 @@
         private System.Windows.Forms.Button buttonRedirect;
         private System.Windows.Forms.Button buttonKeuzes;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonHelp;
     }
 }

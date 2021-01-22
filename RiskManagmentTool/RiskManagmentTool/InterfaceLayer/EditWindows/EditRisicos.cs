@@ -116,7 +116,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             CurrentMenuToAddTo = new Dictionary<int, string>();
             LoadMenus();
 
-
+            textBoxGevaarUsage.Text = comunicator.GetAllIssuesWithGevaarID(editGevaarID).Rows.Count.ToString();
         }
 
         private void LoadMenus()

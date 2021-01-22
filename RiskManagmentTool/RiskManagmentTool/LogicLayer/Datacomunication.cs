@@ -36,7 +36,7 @@ namespace RiskManagmentTool.LogicLayer
 
         }
 
-        public int MakeObject(string projectId, string projectNaam, string objectNaam, string objectType, string objectOmschrijving)
+        public int MakeObject(string projectId, string projectNaam, string objectNaam, string objectType, string objectOmschrijving, int risicograafSetting)
         {
             Item objectItem = new Item
             {
@@ -52,7 +52,7 @@ namespace RiskManagmentTool.LogicLayer
             };
             //SendItemToDB(objectItem);
             int objectID = databaseCommunication.MakeObject(objectItem);
-            databaseCommunication.SetObjectSettings(objectID, 0);
+            databaseCommunication.SetObjectSettings(objectID, risicograafSetting);
             databaseCommunication.InitObjectNotes(objectID);
             return objectID;
         }
@@ -1037,7 +1037,11 @@ namespace RiskManagmentTool.LogicLayer
             return databaseCommunication.GetObjectIdByName(objectNaam);
             //return objectId;
         }
-
+        public string GetObjectNameById(string objectId)
+        {
+            return databaseCommunication.GetObjectNameById(objectId);
+            //return objectId;
+        }
 
         public string GetIssueIdByObjectAndGevaarId(string objectId, string gevaarId)
         {

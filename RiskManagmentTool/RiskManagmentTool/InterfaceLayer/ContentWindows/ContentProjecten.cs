@@ -29,14 +29,11 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
             Form initProject = new InitProject();
             initProject.ShowDialog();
             LoadProjects();
-            //Form editProjecten = new EditProjecten();
-            //editProjecten.Show();
         }
 
         private void LoadProjects()
         {
             dataGridViewProjecten.DataSource = comunicator.GetProjectenTable();
-
         }
 
         private void dataGridViewProjecten_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -52,12 +49,6 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
                 Console.WriteLine(err);
                 //throw err;
             }
-
-            //Form editProjecten = new EditProjecten(projectNaam);//,
-
-            //editProjecten.Show();
-
-
 
         }
 

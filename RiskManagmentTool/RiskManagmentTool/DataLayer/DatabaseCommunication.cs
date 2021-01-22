@@ -16,8 +16,6 @@ namespace RiskManagmentTool.DataLayer
         {
             DatabaseConnection databaseConnection = new DatabaseConnection();
             sqlConnection = databaseConnection.sqlConnection;
-
-
         }
 
         #region Init
@@ -862,12 +860,7 @@ namespace RiskManagmentTool.DataLayer
             string init_Av = item.ItemData.Init_Av;
             string init_Cl = item.ItemData.Init_Cl;
             string init_Risico = item.ItemData.Init_Risico;
-            //string init_Se_Comment = item.ItemData.Init_Se_Comment;
-            //string init_Fr_Comment = item.ItemData.Init_Fr_Comment;
-            //string init_Pr_Comment = item.ItemData.Init_Pr_Comment;
-            //string init_Av_Comment = item.ItemData.Init_Av_Comment;
-            //string init_Cl_Comment = item.ItemData.Init_Cl_Comment;
-            //string init_Risico_Comment = item.ItemData.Init_Risico_Comment;
+
 
             string rest_Se = item.ItemData.Rest_Se;
             string rest_Fr = item.ItemData.Rest_Fr;
@@ -875,12 +868,7 @@ namespace RiskManagmentTool.DataLayer
             string rest_Av = item.ItemData.Rest_Av;
             string rest_Cl = item.ItemData.Rest_Cl;
             string rest_Risico = item.ItemData.Rest_Risico;
-            //string rest_Se_Comment = item.ItemData.Rest_Se_Comment;
-            //string rest_Fr_Comment = item.ItemData.Rest_Fr_Comment;
-            //string rest_Pr_Comment = item.ItemData.Rest_Pr_Comment;
-            //string rest_Av_Comment = item.ItemData.Rest_Av_Comment;
-            //string rest_Cl_Comment = item.ItemData.Rest_Cl_Comment;
-            //string rest_Risico_Comment = item.ItemData.Rest_Risico_Comment;
+
             string rest_Ok = item.ItemData.Rest_Ok;
 
 
@@ -893,24 +881,14 @@ namespace RiskManagmentTool.DataLayer
                                  " Init_Av = @Init_Av," +
                                  " Init_Cl = @Init_Cl," +
                                  " Init_Risico = @Init_Risico," +
-                                 //" Init_Se_Comment = @Init_Se_Comment," +
-                                 //" Init_Fr_Comment = @Init_Fr_Comment," +
-                                 //" Init_Pr_Comment = @Init_Pr_Comment," +
-                                 //" Init_Av_Comment = @Init_Av_Comment," +
-                                 //" Init_Cl_Comment = @Init_Cl_Comment," +
-                                 //" Init_Risico_Comment = @Init_Risico_Comment," +
+
                                  " Rest_Se = @Rest_Se," +
                                  " Rest_Fr = @Rest_Fr," +
                                  " Rest_Pr = @Rest_Pr," +
                                  " Rest_Av = @Rest_Av," +
                                  " Rest_Cl = @Rest_Cl," +
                                  " Rest_Risico = @Rest_Risico," +
-                                 //" Rest_Se_Comment = @Rest_Se_Comment," +
-                                 //" Rest_Fr_Comment = @Rest_Fr_Comment," +
-                                 //" Rest_Pr_Comment = @Rest_Pr_Comment," +
-                                 //" Rest_Av_Comment = @Rest_Av_Comment," +
-                                 //" Rest_Cl_Comment = @Rest_Cl_Comment," +
-                                 //" Rest_Risico_Comment = @Rest_Risico_Comment," +
+
                                  " Rest_Risico_Ok = @Rest_Risico_Ok" +
                                  " WHERE IssueID = '" + issueID + "'", sqlConnection);
 
@@ -1410,6 +1388,22 @@ namespace RiskManagmentTool.DataLayer
             }
             sqlConnection.Close();
             return objectID;
+        }
+        public string GetObjectNameById(string objectId)
+        {
+            string objectNaam = "error";
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT ObjectNaam FROM TableObjecten " +
+                                            "WHERE TableObjecten.ObjectID = '" + objectId + "'", sqlConnection);
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    objectNaam = (dr[0]).ToString();
+                }
+            }
+            sqlConnection.Close();
+            return objectNaam;
         }
 
         public string GetTemplateIdByName(string templateName)

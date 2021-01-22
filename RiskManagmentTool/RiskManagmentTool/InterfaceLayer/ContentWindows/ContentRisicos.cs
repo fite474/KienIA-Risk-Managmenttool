@@ -28,10 +28,9 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 
         private void LoadData()
         {
-            //dataGridViewRisicos.DataSource = comunicator.GetGevarenTable();
             gevarenData = comunicator.GetGevarenTable();
 
-            advancedDataGridViewGevaren.DataSource = gevarenData;//comunicator.GetGevarenTable();
+            advancedDataGridViewGevaren.DataSource = gevarenData;
         }
 
         private void buttonAddNew_Click(object sender, EventArgs e)
@@ -41,46 +40,6 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
             editRisicosForm.ShowDialog();
             LoadData();
         }
-
-        //private void dataGridViewRisicos_MouseDoubleClick(object sender, MouseEventArgs e)
-        //{
-        //    string gevaarId = dataGridViewRisicos.SelectedRows[0].Cells[0].Value.ToString();
-
-
-        //    Form editRisicosForm = new EditRisicos(gevaarId);
-        //    editRisicosForm.ShowDialog();
-        //    LoadData();
-
-
-        //    //Form editRisicosForm = new EditRisicos(riskBeschrijving,
-        //    //                riskGevolg);//,
-        //    //                //riskDiscipline,
-        //    //                //riskGebruiksfase,
-        //    //                //riskGebruiker,
-        //    //                //riskGevarenzone);
-        //    ////                riskSeverity,
-        //    ////                riskFrequency,
-        //    ////                riskProbability,
-        //    ////                riskAvoidance);
-        //    //editRisicosForm.Show();
-        //    //RefreshTable();
-
-
-        //}
-
-        //private void dataGridViewRisicos_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        //{
-        //    for (int i = 0; i < (dataGridViewRisicos.ColumnCount - 1); i++)
-        //    {
-        //        dataGridViewRisicos.AutoResizeColumn((i + 1), DataGridViewAutoSizeColumnMode.AllCells );
-        //        if (dataGridViewRisicos.Columns[i + 1].Width > 400)
-        //        {
-        //            dataGridViewRisicos.Columns[i + 1].Width = 400;
-        //        }
-        //    }
-
-        //    dataGridViewRisicos.ClearSelection();
-        //}
 
         private void advancedDataGridViewGevaren_SortStringChanged(object sender, EventArgs e)
         {
@@ -129,14 +88,7 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 
         private void ContentRisicos_Load(object sender, EventArgs e)
         {
-
-                
                 LoadData();
-
-            
-            
-            
-            
         }
     }
 }

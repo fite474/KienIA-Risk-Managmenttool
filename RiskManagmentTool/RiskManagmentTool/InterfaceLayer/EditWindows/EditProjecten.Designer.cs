@@ -207,7 +207,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1567, 614);
+            this.tabPage1.Size = new System.Drawing.Size(1567, 661);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Project instellingen";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -240,6 +240,7 @@
             this.label9.Size = new System.Drawing.Size(160, 17);
             this.label9.TabIndex = 7;
             this.label9.Text = "Export Excel instellingen";
+            this.label9.Visible = false;
             // 
             // checkedListBox4
             // 
@@ -252,6 +253,7 @@
             this.checkedListBox4.Name = "checkedListBox4";
             this.checkedListBox4.Size = new System.Drawing.Size(185, 106);
             this.checkedListBox4.TabIndex = 6;
+            this.checkedListBox4.Visible = false;
             // 
             // label8
             // 

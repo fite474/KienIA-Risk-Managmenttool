@@ -25,7 +25,6 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
         private void LoadData()
         {
             dataGridViewObjecten.DataSource = comunicator.GetObjectenTable();
-
         }
 
         private void dataGridViewObjecten_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -35,7 +34,6 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
             try
             {
                 string objectId = comunicator.GetObjectIdByName(dataGridViewObjecten.SelectedRows[0].Cells[0].Value.ToString());
-
 
                 if (!objectId.Equals("0"))
                 {

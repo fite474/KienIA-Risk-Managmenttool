@@ -103,6 +103,7 @@ namespace RiskManagmentTool.LogicLayer
             TemplateOmschrijvingColumn = "TemplateOmschrijving";
             //End Templates view
 
+            
             //Start maatregelen view
             MaatregelIDColumn = "MaatregelID";
             MaatregelNaamColumn = "MaatregelNaam";

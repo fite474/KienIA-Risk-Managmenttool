@@ -60,6 +60,7 @@
             this.textBoxGevaarID = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridViewMaatregelen)).BeginInit();
@@ -251,6 +252,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.comboBoxWeergaveTemplate);
             this.panel1.Controls.Add(this.label9);
@@ -419,6 +421,15 @@
             this.panel3.Size = new System.Drawing.Size(1333, 451);
             this.panel3.TabIndex = 24;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(238, 27);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(72, 17);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "Werkt niet";
+            // 
             // AddMaatregel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -482,5 +493,6 @@
         private ADGV.AdvancedDataGridView advancedDataGridViewMaatregelen;
         private System.Windows.Forms.TextBox textBoxGevaarType;
         private System.Windows.Forms.TextBox textBoxDiscipline;
+        private System.Windows.Forms.Label label6;
     }
 }

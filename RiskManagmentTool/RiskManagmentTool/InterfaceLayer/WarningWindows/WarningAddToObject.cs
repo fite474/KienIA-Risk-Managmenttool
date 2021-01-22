@@ -65,6 +65,7 @@ namespace RiskManagmentTool.InterfaceLayer.WarningWindows
                 " komt met het issue dat u probeert toe te voegen. \n" +
                 "Maak een keuze wat u wilt overnemen van het gekozen issue";
 
+            textBoxHelp.Text = "Selecteer de maatregelen die u wilt overnemen en druk vervolgens op 'Save'. ";
 
             dataGridViewMaatregelenCurrentIssue.DataSource = comunicator.GetIssueMaatregelen(objectIssueId);
             dataGridViewMaatregelenNewIssue.DataSource = comunicator.GetIssueMaatregelen(issueToAddId);
@@ -124,16 +125,16 @@ namespace RiskManagmentTool.InterfaceLayer.WarningWindows
         {
             //checkedListBoxCustomSettings.SetItemChecked(0, true);
 
-            List<string> selectedMaatregelen = new List<string>();
-            foreach (DataGridViewRow row in dataGridViewMaatregelenNewIssue.SelectedRows)
-            {
-                string selectedMaatregelID = row.Cells[0].Value.ToString();
-                if (!selectedMaatregelen.Contains(selectedMaatregelID))
-                {
-                    selectedMaatregelen.Add(selectedMaatregelID);
-                }
-            }
-            int x = 0;
+            //List<string> selectedMaatregelen = new List<string>();
+            //foreach (DataGridViewRow row in dataGridViewMaatregelenNewIssue.SelectedRows)
+            //{
+            //    string selectedMaatregelID = row.Cells[0].Value.ToString();
+            //    if (!selectedMaatregelen.Contains(selectedMaatregelID))
+            //    {
+            //        selectedMaatregelen.Add(selectedMaatregelID);
+            //    }
+            //}
+            //int x = 0;
         }
 
         private void dataGridViewMaatregelenCurrentIssue_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)

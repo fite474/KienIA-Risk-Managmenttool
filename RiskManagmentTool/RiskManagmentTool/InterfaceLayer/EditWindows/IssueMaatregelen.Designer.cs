@@ -33,14 +33,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonShowRisk = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.checkedListBoxIssueCompletionState = new System.Windows.Forms.CheckedListBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.checkBoxIssueOK = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.checkBoxIssueOK = new System.Windows.Forms.CheckBox();
+            this.checkedListBoxIssueCompletionState = new System.Windows.Forms.CheckedListBox();
             this.textBoxGevaar = new System.Windows.Forms.TextBox();
             this.textBoxDiscipline = new System.Windows.Forms.TextBox();
             this.textBoxRest_Risico_Comment = new System.Windows.Forms.TextBox();
@@ -62,6 +62,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridViewIssueMaatregelen = new System.Windows.Forms.DataGridView();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.buttonSaveRiskDetails = new System.Windows.Forms.Button();
             this.comboBoxInit_Se = new System.Windows.Forms.ComboBox();
             this.comboBoxRest_Se = new System.Windows.Forms.ComboBox();
             this.comboBoxInit_Av = new System.Windows.Forms.ComboBox();
@@ -98,10 +99,9 @@
             this.buttonDeleteMaatregelen = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.buttonSaveRiskDetails = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIssueMaatregelen)).BeginInit();
@@ -114,10 +114,11 @@
             // 
             // buttonRisicoDetails
             // 
+            this.buttonRisicoDetails.Dock = System.Windows.Forms.DockStyle.Right;
             this.buttonRisicoDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRisicoDetails.Location = new System.Drawing.Point(1428, 6);
+            this.buttonRisicoDetails.Location = new System.Drawing.Point(1285, 0);
             this.buttonRisicoDetails.Name = "buttonRisicoDetails";
-            this.buttonRisicoDetails.Size = new System.Drawing.Size(121, 39);
+            this.buttonRisicoDetails.Size = new System.Drawing.Size(344, 77);
             this.buttonRisicoDetails.TabIndex = 0;
             this.buttonRisicoDetails.Text = "Risico details";
             this.buttonRisicoDetails.UseVisualStyleBackColor = true;
@@ -172,7 +173,7 @@
             // 
             // buttonShowRisk
             // 
-            this.buttonShowRisk.Location = new System.Drawing.Point(828, 78);
+            this.buttonShowRisk.Location = new System.Drawing.Point(1069, 288);
             this.buttonShowRisk.Name = "buttonShowRisk";
             this.buttonShowRisk.Size = new System.Drawing.Size(120, 47);
             this.buttonShowRisk.TabIndex = 24;
@@ -180,56 +181,17 @@
             this.buttonShowRisk.UseVisualStyleBackColor = true;
             this.buttonShowRisk.Click += new System.EventHandler(this.buttonShowRisk_Click);
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.checkBoxIssueOK);
-            this.panel3.Controls.Add(this.checkedListBoxIssueCompletionState);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(1230, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(399, 348);
-            this.panel3.TabIndex = 23;
-            // 
-            // checkedListBoxIssueCompletionState
-            // 
-            this.checkedListBoxIssueCompletionState.CheckOnClick = true;
-            this.checkedListBoxIssueCompletionState.FormattingEnabled = true;
-            this.checkedListBoxIssueCompletionState.Items.AddRange(new object[] {
-            "Controleren gekoppeld gevaar ",
-            "Initiële risicowaardes ingevuld",
-            "Maatregelen aan het gevaar gekoppeld",
-            "Resterende risicowaardes ingevuld",
-            "Risicobeoordeling geaccepteerd "});
-            this.checkedListBoxIssueCompletionState.Location = new System.Drawing.Point(23, 19);
-            this.checkedListBoxIssueCompletionState.Name = "checkedListBoxIssueCompletionState";
-            this.checkedListBoxIssueCompletionState.Size = new System.Drawing.Size(278, 123);
-            this.checkedListBoxIssueCompletionState.TabIndex = 1;
-            this.checkedListBoxIssueCompletionState.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxIssueCompletionState_ItemCheck);
-            this.checkedListBoxIssueCompletionState.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxIssueCompletionState_SelectedIndexChanged);
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(984, 3);
+            this.panel2.Location = new System.Drawing.Point(1149, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(223, 143);
+            this.panel2.Size = new System.Drawing.Size(58, 143);
             this.panel2.TabIndex = 0;
             this.panel2.Visible = false;
-            // 
-            // checkBoxIssueOK
-            // 
-            this.checkBoxIssueOK.AutoSize = true;
-            this.checkBoxIssueOK.Location = new System.Drawing.Point(39, 173);
-            this.checkBoxIssueOK.Name = "checkBoxIssueOK";
-            this.checkBoxIssueOK.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBoxIssueOK.Size = new System.Drawing.Size(167, 21);
-            this.checkBoxIssueOK.TabIndex = 5;
-            this.checkBoxIssueOK.Text = "Beoordeling afgerond";
-            this.checkBoxIssueOK.UseVisualStyleBackColor = true;
-            this.checkBoxIssueOK.CheckedChanged += new System.EventHandler(this.checkBoxIssueOK_CheckedChanged);
             // 
             // label6
             // 
@@ -267,13 +229,52 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Aangemaakt door: ";
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.checkBoxIssueOK);
+            this.panel3.Controls.Add(this.checkedListBoxIssueCompletionState);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(1230, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(399, 348);
+            this.panel3.TabIndex = 23;
+            // 
+            // checkBoxIssueOK
+            // 
+            this.checkBoxIssueOK.AutoSize = true;
+            this.checkBoxIssueOK.Location = new System.Drawing.Point(39, 173);
+            this.checkBoxIssueOK.Name = "checkBoxIssueOK";
+            this.checkBoxIssueOK.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.checkBoxIssueOK.Size = new System.Drawing.Size(167, 21);
+            this.checkBoxIssueOK.TabIndex = 5;
+            this.checkBoxIssueOK.Text = "Beoordeling afgerond";
+            this.checkBoxIssueOK.UseVisualStyleBackColor = true;
+            this.checkBoxIssueOK.CheckedChanged += new System.EventHandler(this.checkBoxIssueOK_CheckedChanged);
+            // 
+            // checkedListBoxIssueCompletionState
+            // 
+            this.checkedListBoxIssueCompletionState.CheckOnClick = true;
+            this.checkedListBoxIssueCompletionState.FormattingEnabled = true;
+            this.checkedListBoxIssueCompletionState.Items.AddRange(new object[] {
+            "Controleren gekoppeld gevaar ",
+            "Initiële risicowaardes ingevuld",
+            "Maatregelen aan het gevaar gekoppeld",
+            "Resterende risicowaardes ingevuld",
+            "Risicobeoordeling geaccepteerd "});
+            this.checkedListBoxIssueCompletionState.Location = new System.Drawing.Point(23, 19);
+            this.checkedListBoxIssueCompletionState.Name = "checkedListBoxIssueCompletionState";
+            this.checkedListBoxIssueCompletionState.Size = new System.Drawing.Size(278, 123);
+            this.checkedListBoxIssueCompletionState.TabIndex = 1;
+            this.checkedListBoxIssueCompletionState.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxIssueCompletionState_ItemCheck);
+            this.checkedListBoxIssueCompletionState.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxIssueCompletionState_SelectedIndexChanged);
+            // 
             // textBoxGevaar
             // 
             this.textBoxGevaar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxGevaar.Location = new System.Drawing.Point(135, 118);
             this.textBoxGevaar.Name = "textBoxGevaar";
             this.textBoxGevaar.ReadOnly = true;
-            this.textBoxGevaar.Size = new System.Drawing.Size(636, 23);
+            this.textBoxGevaar.Size = new System.Drawing.Size(922, 23);
             this.textBoxGevaar.TabIndex = 22;
             // 
             // textBoxDiscipline
@@ -282,7 +283,7 @@
             this.textBoxDiscipline.Location = new System.Drawing.Point(135, 88);
             this.textBoxDiscipline.Name = "textBoxDiscipline";
             this.textBoxDiscipline.ReadOnly = true;
-            this.textBoxDiscipline.Size = new System.Drawing.Size(636, 23);
+            this.textBoxDiscipline.Size = new System.Drawing.Size(922, 23);
             this.textBoxDiscipline.TabIndex = 21;
             // 
             // textBoxRest_Risico_Comment
@@ -291,7 +292,7 @@
             this.textBoxRest_Risico_Comment.Location = new System.Drawing.Point(135, 288);
             this.textBoxRest_Risico_Comment.Name = "textBoxRest_Risico_Comment";
             this.textBoxRest_Risico_Comment.ReadOnly = true;
-            this.textBoxRest_Risico_Comment.Size = new System.Drawing.Size(508, 23);
+            this.textBoxRest_Risico_Comment.Size = new System.Drawing.Size(878, 23);
             this.textBoxRest_Risico_Comment.TabIndex = 20;
             // 
             // textBoxInit_Risico_Comment
@@ -300,7 +301,7 @@
             this.textBoxInit_Risico_Comment.Location = new System.Drawing.Point(135, 254);
             this.textBoxInit_Risico_Comment.Name = "textBoxInit_Risico_Comment";
             this.textBoxInit_Risico_Comment.ReadOnly = true;
-            this.textBoxInit_Risico_Comment.Size = new System.Drawing.Size(508, 23);
+            this.textBoxInit_Risico_Comment.Size = new System.Drawing.Size(878, 23);
             this.textBoxInit_Risico_Comment.TabIndex = 19;
             // 
             // textBoxGebeurtenis
@@ -332,7 +333,7 @@
             this.textBoxNaamObject.Location = new System.Drawing.Point(135, 21);
             this.textBoxNaamObject.Name = "textBoxNaamObject";
             this.textBoxNaamObject.ReadOnly = true;
-            this.textBoxNaamObject.Size = new System.Drawing.Size(185, 22);
+            this.textBoxNaamObject.Size = new System.Drawing.Size(265, 22);
             this.textBoxNaamObject.TabIndex = 12;
             // 
             // label12
@@ -350,7 +351,7 @@
             this.textBoxIssueID.Location = new System.Drawing.Point(135, 49);
             this.textBoxIssueID.Name = "textBoxIssueID";
             this.textBoxIssueID.ReadOnly = true;
-            this.textBoxIssueID.Size = new System.Drawing.Size(185, 22);
+            this.textBoxIssueID.Size = new System.Drawing.Size(265, 22);
             this.textBoxIssueID.TabIndex = 9;
             // 
             // label11
@@ -423,7 +424,6 @@
             // 
             // checkBoxRest_Risico_OK
             // 
-            this.checkBoxRest_Risico_OK.AutoCheck = false;
             this.checkBoxRest_Risico_OK.AutoSize = true;
             this.checkBoxRest_Risico_OK.Location = new System.Drawing.Point(18, 463);
             this.checkBoxRest_Risico_OK.Name = "checkBoxRest_Risico_OK";
@@ -513,6 +513,16 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(337, 505);
             this.panel6.TabIndex = 1;
+            // 
+            // buttonSaveRiskDetails
+            // 
+            this.buttonSaveRiskDetails.Location = new System.Drawing.Point(195, 448);
+            this.buttonSaveRiskDetails.Name = "buttonSaveRiskDetails";
+            this.buttonSaveRiskDetails.Size = new System.Drawing.Size(109, 48);
+            this.buttonSaveRiskDetails.TabIndex = 91;
+            this.buttonSaveRiskDetails.Text = "Save";
+            this.buttonSaveRiskDetails.UseVisualStyleBackColor = true;
+            this.buttonSaveRiskDetails.Click += new System.EventHandler(this.buttonSaveRiskDetails_Click);
             // 
             // comboBoxInit_Se
             // 
@@ -815,10 +825,11 @@
             // 
             // buttonAddNewMaatregel
             // 
+            this.buttonAddNewMaatregel.Dock = System.Windows.Forms.DockStyle.Left;
             this.buttonAddNewMaatregel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddNewMaatregel.Location = new System.Drawing.Point(12, 21);
+            this.buttonAddNewMaatregel.Location = new System.Drawing.Point(0, 0);
             this.buttonAddNewMaatregel.Name = "buttonAddNewMaatregel";
-            this.buttonAddNewMaatregel.Size = new System.Drawing.Size(210, 44);
+            this.buttonAddNewMaatregel.Size = new System.Drawing.Size(210, 77);
             this.buttonAddNewMaatregel.TabIndex = 6;
             this.buttonAddNewMaatregel.Text = "koppel meer maatregelen";
             this.buttonAddNewMaatregel.UseVisualStyleBackColor = true;
@@ -827,9 +838,9 @@
             // buttonDeleteMaatregelen
             // 
             this.buttonDeleteMaatregelen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDeleteMaatregelen.Location = new System.Drawing.Point(719, 21);
+            this.buttonDeleteMaatregelen.Location = new System.Drawing.Point(721, 8);
             this.buttonDeleteMaatregelen.Name = "buttonDeleteMaatregelen";
-            this.buttonDeleteMaatregelen.Size = new System.Drawing.Size(185, 44);
+            this.buttonDeleteMaatregelen.Size = new System.Drawing.Size(185, 66);
             this.buttonDeleteMaatregelen.TabIndex = 7;
             this.buttonDeleteMaatregelen.Text = "Verwijder maatregelen";
             this.buttonDeleteMaatregelen.UseVisualStyleBackColor = true;
@@ -855,16 +866,6 @@
             this.panel4.Size = new System.Drawing.Size(1629, 540);
             this.panel4.TabIndex = 9;
             // 
-            // buttonSaveRiskDetails
-            // 
-            this.buttonSaveRiskDetails.Location = new System.Drawing.Point(195, 448);
-            this.buttonSaveRiskDetails.Name = "buttonSaveRiskDetails";
-            this.buttonSaveRiskDetails.Size = new System.Drawing.Size(109, 48);
-            this.buttonSaveRiskDetails.TabIndex = 91;
-            this.buttonSaveRiskDetails.Text = "Save";
-            this.buttonSaveRiskDetails.UseVisualStyleBackColor = true;
-            this.buttonSaveRiskDetails.Click += new System.EventHandler(this.buttonSaveRiskDetails_Click);
-            // 
             // IssueMaatregelen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -880,10 +881,10 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIssueMaatregelen)).EndInit();

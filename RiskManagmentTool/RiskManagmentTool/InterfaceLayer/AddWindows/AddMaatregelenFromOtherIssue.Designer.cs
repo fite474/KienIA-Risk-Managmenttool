@@ -77,21 +77,21 @@
             // 
             // textBoxIssueID
             // 
-            this.textBoxIssueID.Location = new System.Drawing.Point(152, 130);
+            this.textBoxIssueID.Location = new System.Drawing.Point(155, 130);
             this.textBoxIssueID.Name = "textBoxIssueID";
             this.textBoxIssueID.Size = new System.Drawing.Size(100, 22);
             this.textBoxIssueID.TabIndex = 4;
             // 
             // textBoxObjectNaam
             // 
-            this.textBoxObjectNaam.Location = new System.Drawing.Point(152, 91);
+            this.textBoxObjectNaam.Location = new System.Drawing.Point(155, 30);
             this.textBoxObjectNaam.Name = "textBoxObjectNaam";
-            this.textBoxObjectNaam.Size = new System.Drawing.Size(100, 22);
+            this.textBoxObjectNaam.Size = new System.Drawing.Size(207, 22);
             this.textBoxObjectNaam.TabIndex = 3;
             // 
             // textBoxGevaarID
             // 
-            this.textBoxGevaarID.Location = new System.Drawing.Point(152, 34);
+            this.textBoxGevaarID.Location = new System.Drawing.Point(155, 82);
             this.textBoxGevaarID.Name = "textBoxGevaarID";
             this.textBoxGevaarID.Size = new System.Drawing.Size(100, 22);
             this.textBoxGevaarID.TabIndex = 2;
@@ -99,7 +99,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(58, 94);
+            this.label2.Location = new System.Drawing.Point(58, 33);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 17);
             this.label2.TabIndex = 1;
@@ -108,7 +108,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(55, 34);
+            this.label1.Location = new System.Drawing.Point(58, 82);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 17);
             this.label1.TabIndex = 0;

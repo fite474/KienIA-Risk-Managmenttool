@@ -18,6 +18,7 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
         private Datacomunication comunicator;
         public ContentTemplates()
         {
+            // OLD 
             InitializeComponent();
             comunicator = new Datacomunication();
             //LoadData();

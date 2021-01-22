@@ -202,12 +202,12 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
                             }
                             else if (issueState.Equals("3"))
                             {
-                                advancedDataGridViewGekoppeldeIssues.Rows[rowIndex].DefaultCellStyle.BackColor = Color.Green;
+                                advancedDataGridViewGekoppeldeIssues.Rows[rowIndex].DefaultCellStyle.BackColor = Color.SkyBlue;
                                 //row.Cells[0].Value = true;
                             }
                             else if (issueState.Equals("4"))
                             {
-                                advancedDataGridViewGekoppeldeIssues.Rows[rowIndex].DefaultCellStyle.BackColor = Color.Blue;
+                                advancedDataGridViewGekoppeldeIssues.Rows[rowIndex].DefaultCellStyle.BackColor = Color.Green;
                                 //row.Cells[0].Value = true;
                             }
                             rowIndex++;
@@ -372,6 +372,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void buttonIssuesOplossen_Click(object sender, EventArgs e)
         {
+
+            //OLD MAG WEG
             string situatie = "";//dataGridViewGekoppeldeIssues.SelectedRows[0].Cells[viewsColumnNames.GevaarlijkeSituatieColumn].Value.ToString();
             string gebeurtenis = "";//dataGridViewGekoppeldeIssues.SelectedRows[0].Cells[viewsColumnNames.GevaarlijkeGebeurtenisColumn].Value.ToString();
 

@@ -52,9 +52,11 @@
             this.textBoxGevolg = new System.Windows.Forms.TextBox();
             this.buttonDisciplines = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBoxCurrentMenu = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.buttonDeleteGevaar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxGevaarUsage = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.buttonViewGevaarUsage = new System.Windows.Forms.Button();
             this.buttonKeuzeOption = new System.Windows.Forms.Button();
@@ -70,8 +72,6 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBoxCurrentMenu = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -314,10 +314,27 @@
             this.panel2.Size = new System.Drawing.Size(519, 765);
             this.panel2.TabIndex = 34;
             // 
+            // textBoxCurrentMenu
+            // 
+            this.textBoxCurrentMenu.Location = new System.Drawing.Point(270, 197);
+            this.textBoxCurrentMenu.Name = "textBoxCurrentMenu";
+            this.textBoxCurrentMenu.ReadOnly = true;
+            this.textBoxCurrentMenu.Size = new System.Drawing.Size(193, 22);
+            this.textBoxCurrentMenu.TabIndex = 4;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(181, 197);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(95, 17);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Huidig menu: ";
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.buttonDeleteGevaar);
-            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.textBoxGevaarUsage);
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.buttonViewGevaarUsage);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -336,13 +353,13 @@
             this.buttonDeleteGevaar.UseVisualStyleBackColor = true;
             this.buttonDeleteGevaar.Click += new System.EventHandler(this.buttonDeleteGevaar_Click);
             // 
-            // textBox1
+            // textBoxGevaarUsage
             // 
-            this.textBox1.Location = new System.Drawing.Point(207, 47);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 2;
+            this.textBoxGevaarUsage.Location = new System.Drawing.Point(207, 47);
+            this.textBoxGevaarUsage.Name = "textBoxGevaarUsage";
+            this.textBoxGevaarUsage.ReadOnly = true;
+            this.textBoxGevaarUsage.Size = new System.Drawing.Size(100, 22);
+            this.textBoxGevaarUsage.TabIndex = 2;
             // 
             // label10
             // 
@@ -516,23 +533,6 @@
             this.panel5.Size = new System.Drawing.Size(200, 765);
             this.panel5.TabIndex = 0;
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(181, 197);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(95, 17);
-            this.label11.TabIndex = 3;
-            this.label11.Text = "Huidig menu: ";
-            // 
-            // textBoxCurrentMenu
-            // 
-            this.textBoxCurrentMenu.Location = new System.Drawing.Point(270, 197);
-            this.textBoxCurrentMenu.Name = "textBoxCurrentMenu";
-            this.textBoxCurrentMenu.ReadOnly = true;
-            this.textBoxCurrentMenu.Size = new System.Drawing.Size(193, 22);
-            this.textBoxCurrentMenu.TabIndex = 4;
-            // 
             // EditRisicos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -596,7 +596,7 @@
         private System.Windows.Forms.Button buttonGevolg;
         private System.Windows.Forms.Button buttonKeuzeOption;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxGevaarUsage;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button buttonViewGevaarUsage;
         private System.Windows.Forms.Button buttonDeleteGevaar;

@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxObjectName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridViewCompleteBeoordeling = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
             this.buttonConfirmExport = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBoxUserInputFileName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCompleteBeoordeling)).BeginInit();
@@ -71,12 +71,13 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Object naam";
             // 
-            // textBox1
+            // textBoxObjectName
             // 
-            this.textBox1.Location = new System.Drawing.Point(173, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 2;
+            this.textBoxObjectName.Location = new System.Drawing.Point(173, 30);
+            this.textBoxObjectName.Name = "textBoxObjectName";
+            this.textBoxObjectName.ReadOnly = true;
+            this.textBoxObjectName.Size = new System.Drawing.Size(241, 22);
+            this.textBoxObjectName.TabIndex = 2;
             // 
             // label2
             // 
@@ -114,14 +115,14 @@
             this.dataGridViewCompleteBeoordeling.AllowUserToAddRows = false;
             this.dataGridViewCompleteBeoordeling.AllowUserToDeleteRows = false;
             this.dataGridViewCompleteBeoordeling.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCompleteBeoordeling.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewCompleteBeoordeling.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewCompleteBeoordeling.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewCompleteBeoordeling.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewCompleteBeoordeling.Name = "dataGridViewCompleteBeoordeling";
@@ -142,6 +143,17 @@
             this.tabPage2.Text = "Export instellingen";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // checkedListBox2
+            // 
+            this.checkedListBox2.FormattingEnabled = true;
+            this.checkedListBox2.Items.AddRange(new object[] {
+            "Geen kleur opmaak",
+            "Met kleur opmaak op basis van rest risico"});
+            this.checkedListBox2.Location = new System.Drawing.Point(321, 37);
+            this.checkedListBox2.Name = "checkedListBox2";
+            this.checkedListBox2.Size = new System.Drawing.Size(300, 140);
+            this.checkedListBox2.TabIndex = 1;
+            // 
             // buttonConfirmExport
             // 
             this.buttonConfirmExport.Location = new System.Drawing.Point(1141, 12);
@@ -159,7 +171,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.buttonConfirmExport);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.textBoxObjectName);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -176,11 +188,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(647, 34);
+            this.label3.Location = new System.Drawing.Point(602, 37);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 17);
+            this.label3.Size = new System.Drawing.Size(144, 17);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Opslaan als: ";
+            this.label3.Text = "Bestand opslaan als: ";
             // 
             // panel2
             // 
@@ -190,17 +202,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1452, 731);
             this.panel2.TabIndex = 7;
-            // 
-            // checkedListBox2
-            // 
-            this.checkedListBox2.FormattingEnabled = true;
-            this.checkedListBox2.Items.AddRange(new object[] {
-            "Geen kleur opmaak",
-            "Met kleur opmaak op basis van rest risico"});
-            this.checkedListBox2.Location = new System.Drawing.Point(321, 37);
-            this.checkedListBox2.Name = "checkedListBox2";
-            this.checkedListBox2.Size = new System.Drawing.Size(300, 140);
-            this.checkedListBox2.TabIndex = 1;
             // 
             // ExportObject
             // 
@@ -226,7 +227,7 @@
 
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxObjectName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;

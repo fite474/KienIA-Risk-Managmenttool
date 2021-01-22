@@ -72,6 +72,12 @@
     <Compile Include="InterfaceLayer\AddWindows\AddRisico.Designer.cs">
       <DependentUpon>AddRisico.cs</DependentUpon>
     </Compile>
+    <Compile Include="InterfaceLayer\ContentWindows\ContentHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceLayer\ContentWindows\ContentHelp.Designer.cs">
+      <DependentUpon>ContentHelp.cs</DependentUpon>
+    </Compile>
     <Compile Include="InterfaceLayer\ContentWindows\ContentKeuzes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -282,6 +288,9 @@
     <EmbeddedResource Include="InterfaceLayer\AddWindows\AddRisico.resx">
       <DependentUpon>AddRisico.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceLayer\ContentWindows\ContentHelp.resx">
+      <DependentUpon>ContentHelp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InterfaceLayer\ContentWindows\ContentKeuzes.resx">
       <DependentUpon>ContentKeuzes.cs</DependentUpon>
     </EmbeddedResource>
@@ -381,6 +390,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

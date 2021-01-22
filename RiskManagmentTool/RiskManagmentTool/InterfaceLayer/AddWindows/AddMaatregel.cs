@@ -139,7 +139,8 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
         private void buttonCreateNewMaatregel_Click(object sender, EventArgs e)
         {
             Form editMaatregelen = new EditMaatregelen();
-            editMaatregelen.Show();
+            editMaatregelen.ShowDialog();
+            LoadData();
         }
 
         private void buttonKoppelSelectedMaatregelen_Click(object sender, EventArgs e)
@@ -237,9 +238,11 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
         {
             for (int i = 0; i < (advancedDataGridViewMaatregelen.ColumnCount - 1); i++)
             {
+                //column in breedte uitrekken aan de hand van text size
                 advancedDataGridViewMaatregelen.AutoResizeColumn((i + 1), DataGridViewAutoSizeColumnMode.AllCells);
                 if (advancedDataGridViewMaatregelen.Columns[i + 1].Width > 400)
                 {
+                    //max column breedte is 400 px
                     advancedDataGridViewMaatregelen.Columns[i + 1].Width = 400;
                 }
             }

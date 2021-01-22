@@ -358,11 +358,11 @@
             this.checkedListBoxAddSettings.CheckOnClick = true;
             this.checkedListBoxAddSettings.FormattingEnabled = true;
             this.checkedListBoxAddSettings.Items.AddRange(new object[] {
-            "Gekoppelde maatregelen overnemen(waar mogelijk)",
-            "Bijbehorende risicobeoordeling overnemen(waar mogelijk)"});
+            "Gekoppelde maatregelen overnemen(van templates/object issues)",
+            "Bijbehorende risicobeoordeling overnemen(van templates/object issues)"});
             this.checkedListBoxAddSettings.Location = new System.Drawing.Point(673, 31);
             this.checkedListBoxAddSettings.Name = "checkedListBoxAddSettings";
-            this.checkedListBoxAddSettings.Size = new System.Drawing.Size(431, 106);
+            this.checkedListBoxAddSettings.Size = new System.Drawing.Size(496, 72);
             this.checkedListBoxAddSettings.TabIndex = 13;
             // 
             // panel2

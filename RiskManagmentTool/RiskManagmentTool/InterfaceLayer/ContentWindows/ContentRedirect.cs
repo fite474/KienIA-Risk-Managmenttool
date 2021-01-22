@@ -15,9 +15,6 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
     public partial class ContentRedirect : Form
     {
         private Datacomunication comunicator;
-        //private string ObjectNaam;
-        //private string ObjectID;
-        //private KeuzeMenus keuzeMenus;
         public ContentRedirect()
         {
             InitializeComponent();
@@ -28,11 +25,6 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
         {
             string zoekNummer = textBoxZoekIssueNummer.Text;
             string objectId = comunicator.GetObjectIdByIssueNmr(zoekNummer);
-
-
-
-
-
 
 
             if (!objectId.Equals("0"))
@@ -48,14 +40,6 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
                 editObject.RedirectionPageRequestedIssueID = int.Parse(zoekNummer);
                 editObject.Show();
 
-                //List<string> issueInfo = comunicator.GetIssueInfo(zoekNummer);
-
-                ////textBoxObjectIssueId.Text = issueInfo[0];
-                //string issueSituatie = issueInfo[1];
-                //string issueGebeurtenis = issueInfo[2];
-                //string issueGevaarType = issueInfo[3];
-                //Form issueMaatregelen = new IssueMaatregelen(objectNaam, objectId, zoekNummer, "discipline", issueGevaarType, issueSituatie, issueGebeurtenis);
-                //issueMaatregelen.ShowDialog();
             }
             else
             {
@@ -73,9 +57,7 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
                     // Do something  
                 }
             }
-            
-            //Form issueMaatregelNmr = new IssueMaatregelen();
-            //issueMaatregelNmr.Show();
+
         }
     }
 }

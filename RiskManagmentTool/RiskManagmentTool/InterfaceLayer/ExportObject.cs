@@ -28,6 +28,7 @@ namespace RiskManagmentTool.InterfaceLayer
             //dataGridViewCompleteBeoordeling.DataSource = data;
             //dataGridViewCompleteBeoordeling.DataSource = comunicator.GetObjectIssues(ObjectID);
             dataGridViewCompleteBeoordeling.DataSource = comunicator.GetExportView(ObjectID);
+            textBoxObjectName.Text = comunicator.GetObjectNameById(ObjectID);
 
         }
 
@@ -47,16 +48,32 @@ namespace RiskManagmentTool.InterfaceLayer
             xlApp = new Microsoft.Office.Interop.Excel.Application();
             xlWorkBook = xlApp.Workbooks.Add(misValue);
             xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+
+            //uitlijnen text center
+            Microsoft.Office.Interop.Excel.Range last = xlWorkSheet.Cells.SpecialCells(Microsoft.Office.Interop.Excel.XlCellType.xlCellTypeLastCell, Type.Missing);
+            Microsoft.Office.Interop.Excel.Range range = xlWorkSheet.get_Range("A1", last);
+            range.Style.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignLeft;
             
+            //uitlijnen text boven
+            range.Style.VerticalAlignment = Microsoft.Office.Interop.Excel.XlVAlign.xlVAlignTop;
+
+
             //int i = 0;
             //int j = 0;
 
+
+            //maak alle column headers aan in excel sheet
             for (int i = 1; i < dataGridViewCompleteBeoordeling.Columns.Count + 1; i++)
             {
                 xlWorkSheet.Cells[1, i] = dataGridViewCompleteBeoordeling.Columns[i - 1].HeaderText;
+                //xlWorkSheet.Cells.ColumnWidth = 50;
                 
             }
 
+
+            int imageColumn = dataGridViewCompleteBeoordeling.ColumnCount - 1;
+
+            //schrijf all data per rij in excel sheet
             for (int i = 0; i <= dataGridViewCompleteBeoordeling.RowCount - 1; i++)
             {
                 for (int j = 0; j <= dataGridViewCompleteBeoordeling.ColumnCount - 1; j++)
@@ -64,8 +81,31 @@ namespace RiskManagmentTool.InterfaceLayer
                     DataGridViewCell cell = dataGridViewCompleteBeoordeling[j, i];
                     string text = cell.Value.ToString();
                     string correctText = text.Replace("*ENTER*", "\n\n");
+                    if (j == imageColumn)
+                    {
+                        try
+                        {
+                            Microsoft.Office.Interop.Excel.Range oRange = (Microsoft.Office.Interop.Excel.Range)xlWorkSheet.Cells[i + 2, j + 1];
+                            float Left = (float)((double)oRange.Left);
+                            float Top = (float)((double)oRange.Top);
+                            const float ImageSize = 128;
+                            xlWorkSheet.Shapes.AddPicture(text, Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoCTrue, Left, Top, ImageSize, ImageSize);
+                            //xlWorkSheet.Shapes.AddPicture(text, Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoCTrue, 50, 50, 300, 45);
+                            // xlWorkSheet.Cells[i + 2, j + 1] =
+                            Console.WriteLine("row = " + i);
+                        }
+                        catch (Exception err)
+                        {
+                            xlWorkSheet.Cells[i + 2, j + 1] = correctText;
+                            Console.WriteLine(err);
+                        }
+                    }
+                    else
+                    {
+                        xlWorkSheet.Cells[i + 2, j + 1] = correctText;//cell.Value;
+                    }
+                    
 
-                    xlWorkSheet.Cells[i + 2, j + 1] = correctText;//cell.Value;
                 }
             }
             //xlWorkSheet.Columns.st = 200;// AllocatedRange.AutoFitRows();

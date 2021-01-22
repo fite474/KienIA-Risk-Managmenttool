@@ -14,17 +14,15 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 {
     public partial class KeuzesItem : UserControl
     {
-        //private string MenuName;
         public MenuTableName MenuTableName;
         private Dictionary<int, string> MenuOptions;
         private KeuzeMenus keuzeMenus;
         private string menuTitle;
-        public KeuzesItem(MenuTableName menuName)//, List<string> options)
+        public KeuzesItem(MenuTableName menuName)
         {
             InitializeComponent();
-            keuzeMenus = new KeuzeMenus();//KeuzeMenus.GetInstance();
+            keuzeMenus = new KeuzeMenus();
             MenuTableName = menuName;
-            //MenuOptions = options;
             LoadData();
         }
 
@@ -93,7 +91,6 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
             foreach (KeyValuePair<int, string> kvp in MenuOptions)
             {
                 listBoxMenuOptions.Items.Add(kvp.Value);
-                //comboBoxObjectType.Items.Add(typeString);
             }
         }
 
@@ -103,8 +100,6 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
             editKeuzes.ShowDialog();
             keuzeMenus.ReloadAllLists();
             LoadData();
-
-
         }
     }
 }

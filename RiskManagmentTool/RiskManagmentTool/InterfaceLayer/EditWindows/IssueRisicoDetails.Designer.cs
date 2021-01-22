@@ -172,6 +172,7 @@
             "PL"});
             this.checkedListBoxRisicograafMethode.Location = new System.Drawing.Point(20, 72);
             this.checkedListBoxRisicograafMethode.Name = "checkedListBoxRisicograafMethode";
+            this.checkedListBoxRisicograafMethode.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.checkedListBoxRisicograafMethode.Size = new System.Drawing.Size(154, 72);
             this.checkedListBoxRisicograafMethode.TabIndex = 0;
             this.checkedListBoxRisicograafMethode.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxRisicograafMethode_ItemCheck);

@@ -47,19 +47,25 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
             this.ObjectNaam = objectNaam;
             this.ObjectID = objectID;
+
             LoadData();
+            textBoxObjectNaam.Text = ObjectNaam;
+            SetAddSettings();
+            LoadComboboxes();
         }
 
         private void LoadData()
         {
+            gevarenData = comunicator.GetGevarenTable();
+            advancedDataGridViewLosseItems.DataSource = gevarenData;
             //gevarenData = comunicator.GetGevarenTable();
             //advancedDataGridViewLosseItems.DataSource = gevarenData;
             //dataGridViewLosseItems.DataSource = comunicator.GetGevarenTable();
-            textBoxObjectNaam.Text = ObjectNaam;
-            SetAddSettings();
+            //textBoxObjectNaam.Text = ObjectNaam;
+            //SetAddSettings();
             
 
-            LoadComboboxes();
+            //LoadComboboxes();
         }
 
 
@@ -127,7 +133,8 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
         {
             Form editRisicosForm = new EditRisicos();
             editRisicosForm.ShowDialog();
-            gevarenData = comunicator.GetGevarenTable();
+            LoadData();
+            //gevarenData = comunicator.GetGevarenTable();
         }
 
 
@@ -226,7 +233,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
             {
                 comunicator.AddGevaarToObject(ObjectID, gevaarToAddID);
             }
-
+            this.Close();
         }
 
 
@@ -246,6 +253,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
                 }
             }
 
+            
             List<string> temp = controler.CheckObjectForDubbleGevarenUitIssues(SelectedTemplateIssueId);
 
 
@@ -261,7 +269,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
                 comunicator.AddIssueToObject(ObjectID, gevaarToAddID, addMaatregelen, addRisicoBeoordeling);//, issueNeedsToVirify);
             }
 
-
+            this.Close();
             //foreach (string gevaarToAddID in SelectedTemplateIssueId)
             //{
             //    //comunicator.AddGevaarToObject(ObjectID, gevaarToAddID);
@@ -303,7 +311,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
             {
                 comunicator.AddIssueToObject(ObjectID, gevaarToAddID, addMaatregelen, addRisicoBeoordeling);//, issueNeedsToVirify);
             }
-
+            this.Close();
         }
 
 
@@ -390,8 +398,8 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
         private void AddRisico_Load(object sender, EventArgs e)
         {
-            gevarenData = comunicator.GetGevarenTable();
-            advancedDataGridViewLosseItems.DataSource = gevarenData;
+            //gevarenData = comunicator.GetGevarenTable();
+            //advancedDataGridViewLosseItems.DataSource = gevarenData;
 
 
 

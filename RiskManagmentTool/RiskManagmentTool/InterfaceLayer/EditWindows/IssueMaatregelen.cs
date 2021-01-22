@@ -56,11 +56,20 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             ObjectID = objectId;
             ObjectNaam = objectNaam;
 
+
+            SetRisicograafSettings();
+
             LoadData();
             //
             LoadIssueText();
             SetIssueImage();
 
+
+
+        }
+
+        private void SetRisicograafSettings()
+        {
             List<string> objectSettings = comunicator.GetObjectSettings(ObjectID);
             string risicograafSetting = objectSettings[0];
             if (risicograafSetting.Equals("0"))
@@ -73,14 +82,6 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
                 RisicograafSetting = 1;
                 UsePLMode();
             }
-            //if (RisicograafSetting == 0)
-            //{
-            //    UseSILMode();
-            //}
-            //else if (RisicograafSetting == 1)
-            //{
-            //    UsePLMode();
-            //}
         }
 
         private void LoadIssueText()
@@ -94,7 +95,6 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             textBoxGebeurtenis.Text = Gebeurtenis;
 
 
-            //---------------------------------------TO DO
             checkBoxIssueOK.Checked = comunicator.GetIssueOK(IssueID) == "1";
 
             DataTable risicoBeoordelingData = comunicator.GetRisicoBeoordelingFromIssue(IssueID);
@@ -163,26 +163,12 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             textBoxInit_Pr.Text = risicoBeoordelingData.Rows[0].Field<int?>(4).ToString();
             textBoxInit_Av.Text = risicoBeoordelingData.Rows[0].Field<int?>(5).ToString();
             textBoxInit_Cl.Text = risicoBeoordelingData.Rows[0].Field<int?>(6).ToString();
-            //textBoxInit_Risico.Text = risicoBeoordelingData.Rows[0].Field<int?>(7).ToString();
-            //textBoxInit_Se_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(8).ToString();
-            //textBoxInit_Fr_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(9).ToString();
-            //textBoxInit_Pr_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(10).ToString();
-            //textBoxInit_Av_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(11).ToString();
-            //textBoxInit_Cl_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(12).ToString();
-            //textBoxInitRisico_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(13).ToString();
+
             textBoxRest_Se.Text = risicoBeoordelingData.Rows[0].Field<int?>(14).ToString();
             textBoxRest_Fr.Text = risicoBeoordelingData.Rows[0].Field<int?>(15).ToString();
             textBoxRest_Pr.Text = risicoBeoordelingData.Rows[0].Field<int?>(16).ToString();
             textBoxRest_Av.Text = risicoBeoordelingData.Rows[0].Field<int?>(17).ToString();
             textBoxRest_Cl.Text = risicoBeoordelingData.Rows[0].Field<int?>(18).ToString();
-            //textBoxRest_Risico.Text = risicoBeoordelingData.Rows[0].Field<int?>(19).ToString();
-            //textBoxRest_Se_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(20).ToString();
-            //textBoxRest_Fr_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(21).ToString();
-            //textBoxRest_Pr_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(22).ToString();
-            //textBoxRest_Av_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(23).ToString();
-            //textBoxRest_Cl_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(24).ToString();
-            //textBoxRest_Risico_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(25).ToString();
-            //checkBoxRest_Risico_Ok.Checked = risicoBeoordelingData.Rows[0].Field<string>(26).ToString() == "1";
 
             //set comboboxes right
 
@@ -201,12 +187,10 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         public void SetReadOnlyMode()
         {
-
             checkBoxIssueOK.Enabled = false;
             buttonAddNewMaatregel.Enabled = false;
             buttonDeleteMaatregelen.Enabled = false;
             ReadOnlyMode = true;
-
         }
 
         private void SetIssueImage()
@@ -220,13 +204,9 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             }
             catch (Exception e)
             {
-
                 Console.WriteLine($"The file was not found: '{e}'");
             }
-
         }
-
-
 
         private void buttonRisicoDetails_Click(object sender, EventArgs e)
         {
@@ -291,16 +271,13 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
             if (open.ShowDialog() == DialogResult.OK)
             {
-
                 string imageFilePath = ImageHandler.ChangeLocation(open.FileName);
-
 
                 // display image in picture box  
                 pictureBoxIssueImage.Image = new Bitmap(imageFilePath);//open.FileName);
                 pictureBoxIssueImage.SizeMode = PictureBoxSizeMode.StretchImage;
                 // image file path 
                 comunicator.AddImageToIssue(IssueID, imageFilePath);
-
             }
         }
 
@@ -313,13 +290,10 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         }
 
         private void checkedListBoxIssueCompletionState_ItemCheck(object sender, ItemCheckEventArgs e)
-        {
-            
+        {            
             for (int ix = 0; ix < checkedListBoxIssueCompletionState.Items.Count; ++ix)
                 if (ix != e.Index) checkedListBoxIssueCompletionState.SetItemChecked(ix, false);
-                else IssueState = ix;
-            
-            
+                else IssueState = ix;       
         }
 
         private void checkedListBoxIssueCompletionState_SelectedIndexChanged(object sender, EventArgs e)
@@ -327,8 +301,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             for (int ix = 0; ix < checkedListBoxIssueCompletionState.Items.Count; ++ix)
                 if (checkedListBoxIssueCompletionState.GetItemChecked(ix))
                 {
-                    IssueState = ix;
-                    
+                    IssueState = ix;    
                 }
             comunicator.UpdateIssueState(IssueID, IssueState);
         }
@@ -387,26 +360,26 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private void UseSILMode()
         {
             //init se
-            comboBoxInit_Se.Items.Add("1 scratches, bruises that are cured by first aid or similar;");
-            comboBoxInit_Se.Items.Add("2 more severe scratches, bruises, stabbing, which require medical attention from professionals;");
-            comboBoxInit_Se.Items.Add("3 normally irreversible injury; it will be slightly difficult to continue work after healing;");
-            comboBoxInit_Se.Items.Add("4 irreversible injury in such a way that it will be very difficult to continue work after healing, if possible at all.");
+            comboBoxInit_Se.Items.Add("1 ");//scratches, bruises that are cured by first aid or similar;");
+            comboBoxInit_Se.Items.Add("2 ");//more severe scratches, bruises, stabbing, which require medical attention from professionals;");
+            comboBoxInit_Se.Items.Add("3 ");//normally irreversible injury; it will be slightly difficult to continue work after healing;");
+            comboBoxInit_Se.Items.Add("4 ");//irreversible injury in such a way that it will be very difficult to continue work after healing, if possible at all.");
             //init fr
-            comboBoxInit_Fr.Items.Add("2 interval between exposure is more than a year; ");
-            comboBoxInit_Fr.Items.Add("3 interval between exposure is more than two weeks but less than or equal to a year;");
-            comboBoxInit_Fr.Items.Add("4 interval between exposure is more than a day but less than or equal to two weeks;");
-            comboBoxInit_Fr.Items.Add("5 interval between exposure is more than an hour but less than or equal to a day");
-            comboBoxInit_Fr.Items.Add("6 interval less than or equal to an hour.");
+            comboBoxInit_Fr.Items.Add("2 ");//interval between exposure is more than a year; ");
+            comboBoxInit_Fr.Items.Add("3 ");//interval between exposure is more than two weeks but less than or equal to a year;");
+            comboBoxInit_Fr.Items.Add("4 ");//interval between exposure is more than a day but less than or equal to two weeks;");
+            comboBoxInit_Fr.Items.Add("5 ");//interval between exposure is more than an hour but less than or equal to a day");
+            comboBoxInit_Fr.Items.Add("6 ");//interval less than or equal to an hour.");
             //init pr
-            comboBoxInit_Pr.Items.Add("1 Negligible");
-            comboBoxInit_Pr.Items.Add("2 Rarely:");
-            comboBoxInit_Pr.Items.Add("3 Possible:");
-            comboBoxInit_Pr.Items.Add("4 Likely");
-            comboBoxInit_Pr.Items.Add("5 Very high");
+            comboBoxInit_Pr.Items.Add("1 ");//Negligible");
+            comboBoxInit_Pr.Items.Add("2 ");//Rarely:");
+            comboBoxInit_Pr.Items.Add("3 ");//Possible:");
+            comboBoxInit_Pr.Items.Add("4 ");//Likely");
+            comboBoxInit_Pr.Items.Add("5 ");//Very high");
             //init av
-            comboBoxInit_Av.Items.Add("1 Likely");
-            comboBoxInit_Av.Items.Add("3 Possible");
-            comboBoxInit_Av.Items.Add("5 Impossible");
+            comboBoxInit_Av.Items.Add("1 ");//Likely");
+            comboBoxInit_Av.Items.Add("3 ");//Possible");
+            comboBoxInit_Av.Items.Add("5 ");//Impossible");
 
 
             //rest se
@@ -603,10 +576,6 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             CheckInitValues();
         }
 
-
-
-
-
         private void CheckRestValues()
         {
             int.TryParse(textBoxRest_Se.Text, out int seValue);
@@ -652,23 +621,14 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             string init_Av = textBoxInit_Av.Text;
             string init_Cl = textBoxInit_Cl.Text;
             string init_Risico = textBoxInit_Risico.Text;
-            //string init_Se_Comment = textBoxInit_Se_Comment.Text;
-            //string init_Fr_Comment = textBoxInit_Fr_Comment.Text;
-            //string init_Pr_Comment = textBoxInit_Pr_Comment.Text;
-            //string init_Av_Comment = textBoxInit_Av_Comment.Text;
-            //string init_Cl_Comment = textBoxInit_Cl_Comment.Text;
-            //string init_Risico_Comment = textBoxInitRisico_Comment.Text;
+
             string rest_Se = textBoxRest_Se.Text;
             string rest_Fr = textBoxRest_Fr.Text;
             string rest_Pr = textBoxRest_Pr.Text;
             string rest_Av = textBoxRest_Av.Text;
             string rest_Cl = textBoxRest_Cl.Text;
             string rest_Risico = textBoxRest_Risico.Text;
-            //string rest_Se_Comment = textBoxRest_Se_Comment.Text;
-            //string rest_Fr_Comment = textBoxRest_Fr_Comment.Text;
-            //string rest_Pr_Comment = textBoxRest_Pr_Comment.Text;
-            //string rest_Av_Comment = textBoxRest_Av_Comment.Text;
-            //string rest_Cl_Comment = textBoxRest_Cl_Comment.Text;
+
             string rest_Risico_Comment = textBoxRest_Risico_Comment.Text;
             string rest_Ok = checkBoxRest_Risico_OK.Checked == true ? "1" : "0";//"1";
             //if (true)

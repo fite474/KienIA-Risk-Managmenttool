@@ -58,6 +58,7 @@
             this.textBoxGevaar = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.checkedListBoxWarningSettings = new System.Windows.Forms.CheckedListBox();
+            this.textBoxHelp = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMaatregelenCurrentIssue)).BeginInit();
@@ -84,9 +85,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(3, 54);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(87, 17);
+            this.label5.Size = new System.Drawing.Size(344, 17);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Maatregelen";
+            this.label5.Text = "Maatregelen die bij het te kopieren issue gebruikt zijn";
             // 
             // panel1
             // 
@@ -298,7 +299,7 @@
             // 
             this.buttonOnlySelectedMaatregelen.Location = new System.Drawing.Point(493, 16);
             this.buttonOnlySelectedMaatregelen.Name = "buttonOnlySelectedMaatregelen";
-            this.buttonOnlySelectedMaatregelen.Size = new System.Drawing.Size(202, 55);
+            this.buttonOnlySelectedMaatregelen.Size = new System.Drawing.Size(202, 22);
             this.buttonOnlySelectedMaatregelen.TabIndex = 24;
             this.buttonOnlySelectedMaatregelen.Text = "Geselecteerde maatregelen overnemen";
             this.buttonOnlySelectedMaatregelen.UseVisualStyleBackColor = true;
@@ -331,12 +332,13 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(20, 60);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 17);
+            this.label1.Size = new System.Drawing.Size(220, 17);
             this.label1.TabIndex = 19;
-            this.label1.Text = "Maatregelen";
+            this.label1.Text = "Maatregelen die al gekoppeld zijn";
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.textBoxHelp);
             this.panel5.Controls.Add(this.textBoxGevaar);
             this.panel5.Controls.Add(this.label3);
             this.panel5.Controls.Add(this.checkedListBoxWarningSettings);
@@ -378,9 +380,19 @@
             "Vereisen van verificatie"});
             this.checkedListBoxWarningSettings.Location = new System.Drawing.Point(811, 6);
             this.checkedListBoxWarningSettings.Name = "checkedListBoxWarningSettings";
-            this.checkedListBoxWarningSettings.Size = new System.Drawing.Size(335, 157);
+            this.checkedListBoxWarningSettings.Size = new System.Drawing.Size(335, 72);
             this.checkedListBoxWarningSettings.TabIndex = 22;
+            this.checkedListBoxWarningSettings.Visible = false;
             this.checkedListBoxWarningSettings.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxWarningSettings_ItemCheck);
+            // 
+            // textBoxHelp
+            // 
+            this.textBoxHelp.Location = new System.Drawing.Point(848, 183);
+            this.textBoxHelp.Multiline = true;
+            this.textBoxHelp.Name = "textBoxHelp";
+            this.textBoxHelp.ReadOnly = true;
+            this.textBoxHelp.Size = new System.Drawing.Size(587, 71);
+            this.textBoxHelp.TabIndex = 26;
             // 
             // WarningAddToObject
             // 
@@ -442,5 +454,6 @@
         private System.Windows.Forms.TextBox textBoxWarningMessage;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.TextBox textBoxHelp;
     }
 }

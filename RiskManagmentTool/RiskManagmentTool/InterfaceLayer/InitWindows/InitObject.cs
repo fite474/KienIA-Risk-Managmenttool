@@ -34,16 +34,44 @@ namespace RiskManagmentTool.InterfaceLayer.InitWindows
 
         private void buttonCreateObject_Click(object sender, EventArgs e)
         {
-            string projectId = ProjectId;
-            string projectNaam = textBoxProjectNaam.Text;
-            string objectNaam = textBoxObjectNaam.Text;
-            string objectType = comboBoxObjectType.SelectedItem.ToString();
-            string objectOmschrijving = textBoxObjectOmschrijving.Text;
-            int objectID = comunicator.MakeObject(projectId, projectNaam, objectNaam, objectType, objectOmschrijving);
-            
-            Form editObject = new EditObjecten(objectID.ToString(), projectNaam, objectNaam, objectType, objectOmschrijving);
-            editObject.Show();
-            this.Close();
+            int risicograafSetting = -1;
+            for (int ix = 0; ix < checkedListBoxRisicograaf.Items.Count; ++ix)
+                if (checkedListBoxRisicograaf.GetItemChecked(ix))
+                {
+                    risicograafSetting = ix;
+
+                }
+            if (checkedListBoxRisicograaf.CheckedItems.Count == 1)
+            {
+                string projectId = ProjectId;
+                string projectNaam = textBoxProjectNaam.Text;
+                string objectNaam = textBoxObjectNaam.Text;
+                string objectType = comboBoxObjectType.SelectedItem.ToString();
+                string objectOmschrijving = textBoxObjectOmschrijving.Text;
+                int objectID = comunicator.MakeObject(projectId, projectNaam, objectNaam, objectType, objectOmschrijving, risicograafSetting);
+
+                Form editObject = new EditObjecten(objectID.ToString(), projectNaam, objectNaam, objectType, objectOmschrijving);
+                editObject.Show();
+                this.Close();
+            }
+            else
+            {
+                string message = "Selecteer de risicograaf die gebruikt wordt bij dit object.";
+
+                string title = "Risicograaf vergeten";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result = MessageBox.Show(message, title, buttons);
+
+                if (result == DialogResult.OK)
+                {
+                    //this.Close();
+                }
+                else
+                {
+                    // Do something  
+                }
+            }
+
         }
 
         private void FillCombobox()
@@ -60,6 +88,12 @@ namespace RiskManagmentTool.InterfaceLayer.InitWindows
             //{
             //    comboBoxObjectType.Items.Add(typeString);
             //}
+        }
+
+        private void checkedListBoxRisicograaf_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            for (int ix = 0; ix < checkedListBoxRisicograaf.Items.Count; ++ix)
+                if (ix != e.Index) checkedListBoxRisicograaf.SetItemChecked(ix, false);
         }
     }
 }

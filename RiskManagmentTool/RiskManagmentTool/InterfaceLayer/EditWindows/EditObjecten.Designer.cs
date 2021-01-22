@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditObjecten));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -48,7 +48,6 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.pictureBoxObjectFoto = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.buttonExportToExcel = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -68,6 +67,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.checkedListBoxRisicograaf = new System.Windows.Forms.CheckedListBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.buttonExportToExcel = new System.Windows.Forms.Button();
             this.buttonIssuesOplossen = new System.Windows.Forms.Button();
             this.buttonDeleteGevaren = new System.Windows.Forms.Button();
             this.buttonAddRisico = new System.Windows.Forms.Button();
@@ -99,8 +99,8 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 31.15763F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 58.37439F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.32512F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 61.2069F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.34483F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1575, 812);
             this.tableLayoutPanel1.TabIndex = 0;
@@ -108,8 +108,8 @@
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.06055F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.60166F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.28681F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.3754F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.27406F));
             this.tableLayoutPanel2.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.panel2, 1, 0);
@@ -119,7 +119,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1569, 247);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1569, 224);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // panel1
@@ -135,7 +135,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(701, 241);
+            this.panel1.Size = new System.Drawing.Size(783, 218);
             this.panel1.TabIndex = 0;
             // 
             // textBoxObjectType
@@ -160,7 +160,7 @@
             this.textBoxOmschrijving.Multiline = true;
             this.textBoxOmschrijving.Name = "textBoxOmschrijving";
             this.textBoxOmschrijving.ReadOnly = true;
-            this.textBoxOmschrijving.Size = new System.Drawing.Size(496, 68);
+            this.textBoxOmschrijving.Size = new System.Drawing.Size(556, 68);
             this.textBoxOmschrijving.TabIndex = 5;
             // 
             // textBoxObjectNaam
@@ -212,9 +212,9 @@
             this.panel2.Controls.Add(this.textBoxIssuesToVerify);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(710, 3);
+            this.panel2.Location = new System.Drawing.Point(792, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(380, 241);
+            this.panel2.Size = new System.Drawing.Size(298, 218);
             this.panel2.TabIndex = 1;
             // 
             // textBoxIssuesToVerify
@@ -243,7 +243,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(1096, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(470, 241);
+            this.panel6.Size = new System.Drawing.Size(470, 218);
             this.panel6.TabIndex = 2;
             // 
             // panel8
@@ -252,7 +252,7 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(470, 221);
+            this.panel8.Size = new System.Drawing.Size(470, 204);
             this.panel8.TabIndex = 3;
             // 
             // pictureBoxObjectFoto
@@ -261,7 +261,7 @@
             this.pictureBoxObjectFoto.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxObjectFoto.Image")));
             this.pictureBoxObjectFoto.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxObjectFoto.Name = "pictureBoxObjectFoto";
-            this.pictureBoxObjectFoto.Size = new System.Drawing.Size(470, 221);
+            this.pictureBoxObjectFoto.Size = new System.Drawing.Size(470, 204);
             this.pictureBoxObjectFoto.TabIndex = 0;
             this.pictureBoxObjectFoto.TabStop = false;
             this.pictureBoxObjectFoto.Click += new System.EventHandler(this.pictureBoxObjectFoto_Click);
@@ -269,28 +269,18 @@
             // panel7
             // 
             this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel7.Location = new System.Drawing.Point(0, 221);
+            this.panel7.Location = new System.Drawing.Point(0, 204);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(470, 20);
+            this.panel7.Size = new System.Drawing.Size(470, 14);
             this.panel7.TabIndex = 2;
-            // 
-            // buttonExportToExcel
-            // 
-            this.buttonExportToExcel.Location = new System.Drawing.Point(1219, 3);
-            this.buttonExportToExcel.Name = "buttonExportToExcel";
-            this.buttonExportToExcel.Size = new System.Drawing.Size(341, 54);
-            this.buttonExportToExcel.TabIndex = 1;
-            this.buttonExportToExcel.Text = "Export naar Excel";
-            this.buttonExportToExcel.UseVisualStyleBackColor = true;
-            this.buttonExportToExcel.Click += new System.EventHandler(this.buttonExportToExcel_Click);
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.tabControl1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(3, 256);
+            this.panel3.Location = new System.Drawing.Point(3, 233);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1569, 468);
+            this.panel3.Size = new System.Drawing.Size(1569, 491);
             this.panel3.TabIndex = 2;
             // 
             // tabControl1
@@ -302,7 +292,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1569, 468);
+            this.tabControl1.Size = new System.Drawing.Size(1569, 491);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -312,7 +302,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1561, 439);
+            this.tabPage1.Size = new System.Drawing.Size(1561, 462);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Gekoppelde issues";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -324,14 +314,14 @@
             this.advancedDataGridViewGekoppeldeIssues.AutoGenerateContextFilters = true;
             this.advancedDataGridViewGekoppeldeIssues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.advancedDataGridViewGekoppeldeIssues.DateWithTime = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advancedDataGridViewGekoppeldeIssues.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advancedDataGridViewGekoppeldeIssues.DefaultCellStyle = dataGridViewCellStyle2;
             this.advancedDataGridViewGekoppeldeIssues.Dock = System.Windows.Forms.DockStyle.Fill;
             this.advancedDataGridViewGekoppeldeIssues.Location = new System.Drawing.Point(3, 53);
             this.advancedDataGridViewGekoppeldeIssues.Name = "advancedDataGridViewGekoppeldeIssues";
@@ -339,7 +329,7 @@
             this.advancedDataGridViewGekoppeldeIssues.RowTemplate.Height = 40;
             this.advancedDataGridViewGekoppeldeIssues.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.advancedDataGridViewGekoppeldeIssues.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.advancedDataGridViewGekoppeldeIssues.Size = new System.Drawing.Size(1555, 383);
+            this.advancedDataGridViewGekoppeldeIssues.Size = new System.Drawing.Size(1555, 406);
             this.advancedDataGridViewGekoppeldeIssues.TabIndex = 2;
             this.advancedDataGridViewGekoppeldeIssues.TimeFilter = false;
             this.advancedDataGridViewGekoppeldeIssues.SortStringChanged += new System.EventHandler(this.advancedDataGridViewGekoppeldeIssues_SortStringChanged);
@@ -378,7 +368,7 @@
             this.buttonClearDGVFilter.Name = "buttonClearDGVFilter";
             this.buttonClearDGVFilter.Size = new System.Drawing.Size(133, 35);
             this.buttonClearDGVFilter.TabIndex = 5;
-            this.buttonClearDGVFilter.Text = "clear all filters";
+            this.buttonClearDGVFilter.Text = "Clear Excel filters";
             this.buttonClearDGVFilter.UseVisualStyleBackColor = true;
             this.buttonClearDGVFilter.Click += new System.EventHandler(this.buttonClearDGVFilter_Click);
             // 
@@ -475,7 +465,7 @@
             this.tabPage3.Controls.Add(this.checkedListBoxRisicograaf);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1561, 439);
+            this.tabPage3.Size = new System.Drawing.Size(1561, 462);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Instellingen";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -497,6 +487,7 @@
             "PL"});
             this.checkedListBoxRisicograaf.Location = new System.Drawing.Point(49, 59);
             this.checkedListBoxRisicograaf.Name = "checkedListBoxRisicograaf";
+            this.checkedListBoxRisicograaf.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.checkedListBoxRisicograaf.Size = new System.Drawing.Size(151, 123);
             this.checkedListBoxRisicograaf.TabIndex = 5;
             // 
@@ -511,6 +502,17 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1569, 79);
             this.panel4.TabIndex = 3;
+            // 
+            // buttonExportToExcel
+            // 
+            this.buttonExportToExcel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonExportToExcel.Location = new System.Drawing.Point(1228, 0);
+            this.buttonExportToExcel.Name = "buttonExportToExcel";
+            this.buttonExportToExcel.Size = new System.Drawing.Size(341, 79);
+            this.buttonExportToExcel.TabIndex = 1;
+            this.buttonExportToExcel.Text = "Export naar Excel";
+            this.buttonExportToExcel.UseVisualStyleBackColor = true;
+            this.buttonExportToExcel.Click += new System.EventHandler(this.buttonExportToExcel_Click);
             // 
             // buttonIssuesOplossen
             // 

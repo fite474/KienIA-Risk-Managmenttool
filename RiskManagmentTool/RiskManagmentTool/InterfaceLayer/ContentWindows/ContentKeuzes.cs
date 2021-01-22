@@ -13,19 +13,12 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 {
     public partial class ContentKeuzes : Form
     {
-        //private List<string> MenuNames;
         private List<MenuTableName> menuTableNames;
-        //private KeuzeMenus keuzeMenus;
-       //private Datacomunication comunicator;
         public ContentKeuzes()
         {
             InitializeComponent();
 
-            //keuzeMenus = KeuzeMenus.GetInstance();
-
-            //comunicator = new Datacomunication();
             InitComboBoxObjects();
-            //LoadComboBoxKeuzes();
         }
 
         private void InitComboBoxNames()
@@ -51,10 +44,7 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 
         private void InitComboBoxObjects()
         {
-            //init list of each combobox
             InitComboBoxNames();
-            //List<string> objectTypes = comunicator.GetObjectTypes();
-            //object type
             foreach (MenuTableName menuName in menuTableNames)
             {
                 KeuzesItem keuzesItem = new KeuzesItem(menuName)

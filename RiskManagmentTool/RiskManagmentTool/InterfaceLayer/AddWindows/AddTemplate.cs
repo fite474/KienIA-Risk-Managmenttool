@@ -24,7 +24,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
         private void LoadData()
         {
-            dataGridViewTemplates.DataSource = comunicator.getTemplateTable();
+            dataGridViewTemplates.DataSource = comunicator.GetTemplateTable();
             for (int i = 0; i < checkedListBoxSelectOptions.Items.Count; i++)
             {
                 checkedListBoxSelectOptions.SetItemCheckState(i, CheckState.Checked);
@@ -38,7 +38,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
             {
                 checkedListBoxObjectEigenschappen.SetItemCheckState(i, CheckState.Checked);
             }
-            dataGridViewSelectedTemplates.DataSource = comunicator.getTemplateTable();
+            dataGridViewSelectedTemplates.DataSource = comunicator.GetTemplateTable();
             dataGridViewTemplates.DataSource = null;
         }
 
@@ -49,8 +49,8 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
         private void buttonVerifieerKoppeling_Click(object sender, EventArgs e)
         {
-            Form issueMaatregelen = new IssueMaatregelen();
-            issueMaatregelen.Show();
+            //Form issueMaatregelen = new IssueMaatregelen();
+            //issueMaatregelen.Show();
         }
     }
 }

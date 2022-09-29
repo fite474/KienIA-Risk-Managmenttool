@@ -30,19 +30,19 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonAddNew = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridViewProjecten = new System.Windows.Forms.DataGridView();
             this.panelEditProject = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dataGridViewProjecten = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panelEditProject.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProjecten)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.buttonAddNew);
-            this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -51,21 +51,13 @@
             // 
             // buttonAddNew
             // 
-            this.buttonAddNew.Location = new System.Drawing.Point(367, 37);
+            this.buttonAddNew.Location = new System.Drawing.Point(3, 3);
             this.buttonAddNew.Name = "buttonAddNew";
-            this.buttonAddNew.Size = new System.Drawing.Size(75, 23);
+            this.buttonAddNew.Size = new System.Drawing.Size(281, 91);
             this.buttonAddNew.TabIndex = 1;
-            this.buttonAddNew.Text = "Add";
+            this.buttonAddNew.Text = "Maak nieuw project aan";
             this.buttonAddNew.UseVisualStyleBackColor = true;
             this.buttonAddNew.Click += new System.EventHandler(this.buttonAddNew_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(188, 37);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 0;
             // 
             // panel2
             // 
@@ -77,10 +69,30 @@
             this.panel2.Size = new System.Drawing.Size(1575, 712);
             this.panel2.TabIndex = 1;
             // 
+            // panelEditProject
+            // 
+            this.panelEditProject.Controls.Add(this.label1);
+            this.panelEditProject.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelEditProject.Location = new System.Drawing.Point(284, 0);
+            this.panelEditProject.Name = "panelEditProject";
+            this.panelEditProject.Size = new System.Drawing.Size(1291, 712);
+            this.panelEditProject.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(17, 139);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(298, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Klik op een project om de objecten te bekijken";
+            this.label1.Visible = false;
+            // 
             // dataGridViewProjecten
             // 
             this.dataGridViewProjecten.AllowUserToAddRows = false;
             this.dataGridViewProjecten.AllowUserToDeleteRows = false;
+            this.dataGridViewProjecten.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewProjecten.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProjecten.Dock = System.Windows.Forms.DockStyle.Left;
             this.dataGridViewProjecten.Location = new System.Drawing.Point(0, 0);
@@ -88,17 +100,10 @@
             this.dataGridViewProjecten.ReadOnly = true;
             this.dataGridViewProjecten.RowTemplate.Height = 24;
             this.dataGridViewProjecten.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewProjecten.Size = new System.Drawing.Size(164, 712);
+            this.dataGridViewProjecten.Size = new System.Drawing.Size(284, 712);
             this.dataGridViewProjecten.TabIndex = 0;
+            this.dataGridViewProjecten.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewProjecten_DataBindingComplete);
             this.dataGridViewProjecten.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewProjecten_MouseDoubleClick);
-            // 
-            // panelEditProject
-            // 
-            this.panelEditProject.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelEditProject.Location = new System.Drawing.Point(164, 0);
-            this.panelEditProject.Name = "panelEditProject";
-            this.panelEditProject.Size = new System.Drawing.Size(1411, 712);
-            this.panelEditProject.TabIndex = 2;
             // 
             // ContentProjecten
             // 
@@ -111,6 +116,8 @@
             this.Text = "ContentProjecten";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panelEditProject.ResumeLayout(false);
+            this.panelEditProject.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProjecten)).EndInit();
             this.ResumeLayout(false);
 
@@ -119,10 +126,10 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button buttonAddNew;
         private System.Windows.Forms.DataGridView dataGridViewProjecten;
         private System.Windows.Forms.Panel panelEditProject;
+        private System.Windows.Forms.Label label1;
     }
 }

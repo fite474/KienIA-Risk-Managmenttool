@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanelKeuzes = new System.Windows.Forms.TableLayoutPanel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanelKeuzes = new System.Windows.Forms.TableLayoutPanel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,22 +45,15 @@
             this.panel1.Size = new System.Drawing.Size(1575, 81);
             this.panel1.TabIndex = 0;
             // 
-            // tableLayoutPanelKeuzes
+            // label1
             // 
-            this.tableLayoutPanelKeuzes.AutoScroll = true;
-            this.tableLayoutPanelKeuzes.ColumnCount = 3;
-            this.tableLayoutPanelKeuzes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanelKeuzes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanelKeuzes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanelKeuzes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelKeuzes.Location = new System.Drawing.Point(0, 81);
-            this.tableLayoutPanelKeuzes.Name = "tableLayoutPanelKeuzes";
-            this.tableLayoutPanelKeuzes.RowCount = 2;
-            this.tableLayoutPanelKeuzes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.00001F));
-            this.tableLayoutPanelKeuzes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelKeuzes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelKeuzes.Size = new System.Drawing.Size(1575, 731);
-            this.tableLayoutPanelKeuzes.TabIndex = 1;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(121, 17);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Type keuze menu";
+            this.label1.Visible = false;
             // 
             // comboBox1
             // 
@@ -72,15 +65,26 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 0;
+            this.comboBox1.Visible = false;
             // 
-            // label1
+            // tableLayoutPanelKeuzes
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 17);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Type keuze menu";
+            this.tableLayoutPanelKeuzes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanelKeuzes.AutoScroll = true;
+            this.tableLayoutPanelKeuzes.ColumnCount = 4;
+            this.tableLayoutPanelKeuzes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.00062F));
+            this.tableLayoutPanelKeuzes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.00063F));
+            this.tableLayoutPanelKeuzes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.00063F));
+            this.tableLayoutPanelKeuzes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.99812F));
+            this.tableLayoutPanelKeuzes.Location = new System.Drawing.Point(0, 81);
+            this.tableLayoutPanelKeuzes.Name = "tableLayoutPanelKeuzes";
+            this.tableLayoutPanelKeuzes.RowCount = 2;
+            this.tableLayoutPanelKeuzes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelKeuzes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.99999F));
+            this.tableLayoutPanelKeuzes.Size = new System.Drawing.Size(1575, 731);
+            this.tableLayoutPanelKeuzes.TabIndex = 1;
             // 
             // ContentKeuzes
             // 

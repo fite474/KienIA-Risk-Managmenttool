@@ -24,33 +24,47 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 
         private void LoadData()
         {
-            dataGridViewObjecten.DataSource = comunicator.getObjectenTable();
-
+            dataGridViewObjecten.DataSource = comunicator.GetObjectenTable();
         }
 
         private void dataGridViewObjecten_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            string projectNaam = dataGridViewObjecten.SelectedRows[0].Cells[0].Value.ToString();
-            string objectNaam = dataGridViewObjecten.SelectedRows[0].Cells[1].Value.ToString();
-            string objectType = dataGridViewObjecten.SelectedRows[0].Cells[2].Value.ToString();
-            string objectBeschrijving = dataGridViewObjecten.SelectedRows[0].Cells[3].Value.ToString();
+            Cursor.Current = Cursors.WaitCursor;
 
-            Form editObjecten = new EditObjecten(projectNaam,
-                                                 objectNaam,
-                                                 objectType,
-                                                 objectBeschrijving);
+            try
+            {
+                string objectId = comunicator.GetObjectIdByName(dataGridViewObjecten.SelectedRows[0].Cells[0].Value.ToString());
 
-            editObjecten.Show();
-
-
-
+                if (!objectId.Equals("0"))
+                {
+                    List<string> objectInfo = comunicator.GetObjectInfo(objectId);
+                    string projectId = objectInfo[0];
+                    string projectNaam = objectInfo[1];
+                    string objectNaam = objectInfo[2];
+                    string objectType = objectInfo[3];
+                    string objectOmschrijving = objectInfo[4];
+                    Form editObject = new EditObjecten(objectId, projectNaam, objectNaam, objectType, objectOmschrijving);
+                    editObject.Show();
+                }
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err);
+            }
+           
         }
 
         private void buttonAddNew_Click(object sender, EventArgs e)
         {
 
-            Form editObject = new EditObjecten();
-            editObject.Show();
+            //Form editObject = new EditObjecten();
+            //editObject.Show();
+        }
+
+        private void dataGridViewObjecten_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            Cursor.Current = Cursors.Default;
+            dataGridViewObjecten.ClearSelection();
         }
     }
 }

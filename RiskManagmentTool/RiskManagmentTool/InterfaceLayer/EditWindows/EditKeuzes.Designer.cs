@@ -64,6 +64,7 @@
             this.buttonDeleteOption.TabIndex = 2;
             this.buttonDeleteOption.Text = "Delete";
             this.buttonDeleteOption.UseVisualStyleBackColor = true;
+            this.buttonDeleteOption.Click += new System.EventHandler(this.buttonDeleteOption_Click);
             // 
             // buttonDone
             // 
@@ -83,6 +84,7 @@
             this.buttonEditOption.TabIndex = 4;
             this.buttonEditOption.Text = "Edit text";
             this.buttonEditOption.UseVisualStyleBackColor = true;
+            this.buttonEditOption.Click += new System.EventHandler(this.buttonEditOption_Click);
             // 
             // label1
             // 
@@ -97,6 +99,7 @@
             // 
             this.textBoxMenuName.Location = new System.Drawing.Point(111, 34);
             this.textBoxMenuName.Name = "textBoxMenuName";
+            this.textBoxMenuName.ReadOnly = true;
             this.textBoxMenuName.Size = new System.Drawing.Size(207, 22);
             this.textBoxMenuName.TabIndex = 6;
             // 
@@ -113,6 +116,7 @@
             this.Controls.Add(this.buttonAddOption);
             this.Controls.Add(this.listBoxMenuOptions);
             this.Name = "EditKeuzes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditKeuzes";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -120,13 +124,12 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox listBoxMenuOptions;
         private System.Windows.Forms.Button buttonAddOption;
         private System.Windows.Forms.Button buttonDeleteOption;
         private System.Windows.Forms.Button buttonDone;
         private System.Windows.Forms.Button buttonEditOption;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxMenuName;
+        private System.Windows.Forms.ListBox listBoxMenuOptions;
     }
 }

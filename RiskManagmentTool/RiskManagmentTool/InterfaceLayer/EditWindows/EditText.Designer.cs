@@ -57,6 +57,7 @@
             this.buttonCancel.TabIndex = 2;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // EditText
             // 
@@ -69,6 +70,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "EditText";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditText";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -13,42 +13,50 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 {
     public partial class ContentKeuzes : Form
     {
-
-        private int column = 0;
-        private int row = 0;
-        private List<string> MenuNames;
-        private Datacomunication comunicator;
+        private List<MenuTableName> menuTableNames;
         public ContentKeuzes()
         {
             InitializeComponent();
-            comunicator = new Datacomunication();
+
             InitComboBoxObjects();
-            //LoadComboBoxKeuzes();
         }
 
-        
+        private void InitComboBoxNames()
+        {
+            menuTableNames = new List<MenuTableName>
+            {
+                MenuTableName.ObjectTypes,
+                MenuTableName.Gevolgen,
+                MenuTableName.Gevarenzones,
+                MenuTableName.GevaarTypes,
+                MenuTableName.Gebruiksfases,
+                MenuTableName.Gebruikers,
+                MenuTableName.Disciplines,
+                MenuTableName.Bedienvormen,
+                MenuTableName.Taken,
+                MenuTableName.Normen,
+                MenuTableName.Categories//,
+                //MenuTableName.TemplateTypes,
+                //MenuTableName.TemplateToepassing
+            };
+        }
+
 
         private void InitComboBoxObjects()
         {
-            //init list of each combobox
-            MenuNames = new List<string>();
-            MenuNames.Add("Object type");
-            List<string> objectTypes = comunicator.GetObjectTypes();
-            //object type
-            foreach (string menuName in MenuNames)
+            InitComboBoxNames();
+            foreach (MenuTableName menuName in menuTableNames)
             {
-                KeuzesItem keuzesItem = new KeuzesItem(menuName, objectTypes)
+                KeuzesItem keuzesItem = new KeuzesItem(menuName)
                 {
-                    Dock = DockStyle.Fill//,
-                                         //Margin.;
-
+                    Dock = DockStyle.Fill,
+                    MenuTableName = menuName                
                 };
-
-                tableLayoutPanelKeuzes.Controls.Add(keuzesItem, column, row);
+                tableLayoutPanelKeuzes.Controls.Add(keuzesItem);
+                
             }
-           
+            Cursor.Current = Cursors.Default;
         }
 
-        
     }
 }

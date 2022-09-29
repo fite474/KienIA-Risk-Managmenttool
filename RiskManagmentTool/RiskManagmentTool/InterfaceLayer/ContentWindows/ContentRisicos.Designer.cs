@@ -28,20 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonAddNew = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridViewRisicos = new System.Windows.Forms.DataGridView();
+            this.advancedDataGridViewGevaren = new ADGV.AdvancedDataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRisicos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridViewGevaren)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.buttonAddNew);
-            this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -50,46 +49,51 @@
             // 
             // buttonAddNew
             // 
-            this.buttonAddNew.Location = new System.Drawing.Point(353, 26);
+            this.buttonAddNew.Location = new System.Drawing.Point(3, 3);
             this.buttonAddNew.Name = "buttonAddNew";
-            this.buttonAddNew.Size = new System.Drawing.Size(75, 23);
+            this.buttonAddNew.Size = new System.Drawing.Size(281, 91);
             this.buttonAddNew.TabIndex = 1;
-            this.buttonAddNew.Text = "Add";
+            this.buttonAddNew.Text = "Maak nieuw gevaar aan";
             this.buttonAddNew.UseVisualStyleBackColor = true;
             this.buttonAddNew.Click += new System.EventHandler(this.buttonAddNew_Click);
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(83, 26);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 0;
-            // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dataGridViewRisicos);
+            this.panel2.Controls.Add(this.advancedDataGridViewGevaren);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 100);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1575, 712);
             this.panel2.TabIndex = 1;
             // 
-            // dataGridViewRisicos
+            // advancedDataGridViewGevaren
             // 
-            this.dataGridViewRisicos.AllowUserToAddRows = false;
-            this.dataGridViewRisicos.AllowUserToDeleteRows = false;
-            this.dataGridViewRisicos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewRisicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewRisicos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewRisicos.Location = new System.Drawing.Point(0, 0);
-            this.dataGridViewRisicos.Name = "dataGridViewRisicos";
-            this.dataGridViewRisicos.ReadOnly = true;
-            this.dataGridViewRisicos.RowTemplate.Height = 24;
-            this.dataGridViewRisicos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewRisicos.Size = new System.Drawing.Size(1575, 712);
-            this.dataGridViewRisicos.TabIndex = 0;
-            this.dataGridViewRisicos.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewRisicos_MouseDoubleClick);
+            this.advancedDataGridViewGevaren.AllowUserToAddRows = false;
+            this.advancedDataGridViewGevaren.AllowUserToDeleteRows = false;
+            this.advancedDataGridViewGevaren.AutoGenerateContextFilters = true;
+            this.advancedDataGridViewGevaren.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.advancedDataGridViewGevaren.DateWithTime = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advancedDataGridViewGevaren.DefaultCellStyle = dataGridViewCellStyle1;
+            this.advancedDataGridViewGevaren.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.advancedDataGridViewGevaren.Location = new System.Drawing.Point(0, 0);
+            this.advancedDataGridViewGevaren.Name = "advancedDataGridViewGevaren";
+            this.advancedDataGridViewGevaren.ReadOnly = true;
+            this.advancedDataGridViewGevaren.RowTemplate.Height = 40;
+            this.advancedDataGridViewGevaren.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.advancedDataGridViewGevaren.Size = new System.Drawing.Size(1575, 712);
+            this.advancedDataGridViewGevaren.TabIndex = 1;
+            this.advancedDataGridViewGevaren.TimeFilter = false;
+            this.advancedDataGridViewGevaren.SortStringChanged += new System.EventHandler(this.advancedDataGridViewGevaren_SortStringChanged);
+            this.advancedDataGridViewGevaren.FilterStringChanged += new System.EventHandler(this.advancedDataGridViewGevaren_FilterStringChanged);
+            this.advancedDataGridViewGevaren.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.advancedDataGridViewGevaren_DataBindingComplete);
+            this.advancedDataGridViewGevaren.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.advancedDataGridViewGevaren_MouseDoubleClick);
             // 
             // ContentRisicos
             // 
@@ -100,9 +104,10 @@
             this.Controls.Add(this.panel1);
             this.Name = "ContentRisicos";
             this.Text = "ContentRisicos";
+            this.Load += new System.EventHandler(this.ContentRisicos_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRisicos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridViewGevaren)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -110,9 +115,8 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dataGridViewRisicos;
         private System.Windows.Forms.Button buttonAddNew;
+        private ADGV.AdvancedDataGridView advancedDataGridViewGevaren;
     }
 }

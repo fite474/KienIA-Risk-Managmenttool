@@ -14,15 +14,15 @@ namespace RiskManagmentTool.InterfaceLayer.InitWindows
 {
     public partial class InitObject : Form
     {
-        //private string ProjectNaam;
+        private string ProjectId;
         private Datacomunication comunicator;
         private KeuzeMenus keuzeMenus;
-        public InitObject(string projectNaam)
+        public InitObject(string projectId, string projectNaam)
         {
             InitializeComponent();
             comunicator = new Datacomunication();
             keuzeMenus = new KeuzeMenus();
-            //this.ProjectNaam = projectNaam;
+            this.ProjectId = projectId;
             LoadData(projectNaam);
         }
 
@@ -34,24 +34,53 @@ namespace RiskManagmentTool.InterfaceLayer.InitWindows
 
         private void buttonCreateObject_Click(object sender, EventArgs e)
         {
-            string projectNaam = textBoxProjectNaam.Text;
-            string objectNaam = textBoxObjectNaam.Text;
-            string objectType = comboBoxObjectType.SelectedItem.ToString();
-            string objectOmschrijving = textBoxObjectOmschrijving.Text;
-            comunicator.MakeObject(projectNaam, objectNaam, objectType, objectOmschrijving);
+            int risicograafSetting = -1;
+            for (int ix = 0; ix < checkedListBoxRisicograaf.Items.Count; ++ix)
+                if (checkedListBoxRisicograaf.GetItemChecked(ix))
+                {
+                    risicograafSetting = ix;
 
-            Form editObject = new EditObjecten(projectNaam, objectNaam, objectType, objectOmschrijving);
-            editObject.Show();
-            this.Close();
+                }
+            if (checkedListBoxRisicograaf.CheckedItems.Count == 1)
+            {
+                string projectId = ProjectId;
+                string projectNaam = textBoxProjectNaam.Text;
+                string objectNaam = textBoxObjectNaam.Text;
+                string objectType = comboBoxObjectType.SelectedItem.ToString();
+                string objectOmschrijving = textBoxObjectOmschrijving.Text;
+                int objectID = comunicator.MakeObject(projectId, projectNaam, objectNaam, objectType, objectOmschrijving, risicograafSetting);
+
+                Form editObject = new EditObjecten(objectID.ToString(), projectNaam, objectNaam, objectType, objectOmschrijving);
+                editObject.Show();
+                this.Close();
+            }
+            else
+            {
+                string message = "Selecteer de risicograaf die gebruikt wordt bij dit object.";
+
+                string title = "Risicograaf vergeten";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result = MessageBox.Show(message, title, buttons);
+
+                if (result == DialogResult.OK)
+                {
+                    //this.Close();
+                }
+                else
+                {
+                    // Do something  
+                }
+            }
+
         }
 
         private void FillCombobox()
         {
             //combobox project lijsten
-            List<string> typeObjectList = keuzeMenus.GetTypeObjectMenu();
-            foreach (string typeString in typeObjectList)
+            Dictionary<int, string> typeObjectList = keuzeMenus.GetTypeObjectMenu();
+            foreach (KeyValuePair<int, string> kvp in typeObjectList)
             {
-                comboBoxObjectType.Items.Add(typeString);
+                comboBoxObjectType.Items.Add(kvp.Value);
             }
 
             //List<string> objectTypes = comunicator.GetObjectTypes();
@@ -59,6 +88,12 @@ namespace RiskManagmentTool.InterfaceLayer.InitWindows
             //{
             //    comboBoxObjectType.Items.Add(typeString);
             //}
+        }
+
+        private void checkedListBoxRisicograaf_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            for (int ix = 0; ix < checkedListBoxRisicograaf.Items.Count; ++ix)
+                if (ix != e.Index) checkedListBoxRisicograaf.SetItemChecked(ix, false);
         }
     }
 }

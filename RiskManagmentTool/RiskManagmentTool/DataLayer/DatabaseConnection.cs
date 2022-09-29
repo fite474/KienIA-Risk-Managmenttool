@@ -10,21 +10,23 @@ namespace RiskManagmentTool.DataLayer
 {
     class DatabaseConnection
     {
-        //SqlConnection sqlConnection = new SqlConnection(@"Data Source=MSI-MAURICE;Initial Catalog=ProtoTypeProject;User ID=Maurice;Password=6776756");
-        public SqlConnection sqlConnection;// = new SqlConnection(DatabaseComunication.);
+       
+        public SqlConnection sqlConnection;
 
         public DatabaseConnection()
         {
             //maak check op het verlopen van een wachtwoord
-            sqlConnection = new SqlConnection(@"Data Source=MSI-MAURICE;Initial Catalog=KRMTVersionOne;User ID=Maurice;Password=6776756mb");
+            //sqlConnection = new SqlConnection(@"Data Source=MSI-MAURICE;Initial Catalog=KRMTVersionOne;User ID=Maurice;Password=6776756mb");
+            sqlConnection = new SqlConnection(@"Data Source=Kienia.database.windows.net;Initial Catalog=KRMTVersionOne;User ID=TestRobert;Password=Robert-1234");
 
 
         }
 
         public string GetConnectionString()
         {
-            string x = @"Data Source=MSI-MAURICE;Initial Catalog=KRMTVersionOne;User ID=Maurice;Password=6776756mb";
-            return x;
+            //not in use!
+            string connectionString = @"Data Source=MSI-MAURICE;Initial Catalog=KRMTVersionOne;User ID=Maurice;Password=6776756mb";
+            return connectionString;
         }
 
 

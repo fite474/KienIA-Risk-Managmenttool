@@ -27,33 +27,34 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
         private void buttonAddNew_Click(object sender, EventArgs e)
         {
             Form initProject = new InitProject();
-            initProject.Show();
-            //Form editProjecten = new EditProjecten();
-            //editProjecten.Show();
+            initProject.ShowDialog();
+            LoadProjects();
         }
 
         private void LoadProjects()
         {
             dataGridViewProjecten.DataSource = comunicator.GetProjectenTable();
-
         }
 
         private void dataGridViewProjecten_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-
-            string projectNaam = dataGridViewProjecten.SelectedRows[0].Cells[0].Value.ToString();
-            ShowEditProject(projectNaam);
-            //Form editProjecten = new EditProjecten(projectNaam);//,
-
-            //editProjecten.Show();
-
-
+            try
+            {
+                string projectId = dataGridViewProjecten.SelectedRows[0].Cells[0].Value.ToString();
+                string projectNaam = dataGridViewProjecten.SelectedRows[0].Cells[1].Value.ToString();
+                ShowEditProject(projectId, projectNaam);
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err);
+                //throw err;
+            }
 
         }
 
-        private void ShowEditProject(string projectNaam)
+        private void ShowEditProject(string projectId, string projectNaam)
         {
-            Form editProjecten = new EditProjecten(projectNaam);//activeForm = contentForm;
+            Form editProjecten = new EditProjecten(projectId, projectNaam);//activeForm = contentForm;
             editProjecten.TopLevel = false;
             editProjecten.FormBorderStyle = FormBorderStyle.None;
             editProjecten.Dock = DockStyle.Fill;
@@ -61,6 +62,15 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
             this.panelEditProject.Tag = editProjecten;
             editProjecten.BringToFront();
             editProjecten.Show();
+        }
+
+        private void dataGridViewProjecten_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            Cursor.Current = Cursors.Default;
+            dataGridViewProjecten.Columns[0].Width = 65;
+            //dataGridViewProjecten.Columns[1].Width = 150;
+
+            dataGridViewProjecten.ClearSelection();
         }
     }
 }

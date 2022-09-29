@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxObjectName = new System.Windows.Forms.TextBox();
@@ -61,6 +61,7 @@
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(187, 140);
             this.checkedListBox1.TabIndex = 0;
+            this.checkedListBox1.Visible = false;
             // 
             // label1
             // 
@@ -87,6 +88,7 @@
             this.label2.Size = new System.Drawing.Size(192, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "Controleer export instellingen";
+            this.label2.Visible = false;
             // 
             // tabControl1
             // 
@@ -115,14 +117,14 @@
             this.dataGridViewCompleteBeoordeling.AllowUserToAddRows = false;
             this.dataGridViewCompleteBeoordeling.AllowUserToDeleteRows = false;
             this.dataGridViewCompleteBeoordeling.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCompleteBeoordeling.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewCompleteBeoordeling.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewCompleteBeoordeling.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewCompleteBeoordeling.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewCompleteBeoordeling.Name = "dataGridViewCompleteBeoordeling";
@@ -153,6 +155,7 @@
             this.checkedListBox2.Name = "checkedListBox2";
             this.checkedListBox2.Size = new System.Drawing.Size(300, 140);
             this.checkedListBox2.TabIndex = 1;
+            this.checkedListBox2.Visible = false;
             // 
             // buttonConfirmExport
             // 

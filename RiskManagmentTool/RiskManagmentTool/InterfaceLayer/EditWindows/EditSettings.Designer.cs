@@ -36,11 +36,13 @@
             this.checkedListBoxRisicograaf = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxProjectNaam = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.buttonSave);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 350);
@@ -67,6 +69,7 @@
             this.label9.Size = new System.Drawing.Size(160, 17);
             this.label9.TabIndex = 11;
             this.label9.Text = "Export Excel instellingen";
+            this.label9.Visible = false;
             // 
             // checkedListBoxExcelSettings
             // 
@@ -80,6 +83,7 @@
             this.checkedListBoxExcelSettings.Name = "checkedListBoxExcelSettings";
             this.checkedListBoxExcelSettings.Size = new System.Drawing.Size(185, 106);
             this.checkedListBoxExcelSettings.TabIndex = 10;
+            this.checkedListBoxExcelSettings.Visible = false;
             this.checkedListBoxExcelSettings.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxExcelSettings_ItemCheck);
             // 
             // label8
@@ -120,6 +124,15 @@
             this.textBoxProjectNaam.Size = new System.Drawing.Size(190, 22);
             this.textBoxProjectNaam.TabIndex = 14;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(539, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 17);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Inactive ";
+            // 
             // EditSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -135,6 +148,7 @@
             this.Name = "EditSettings";
             this.Text = "EditSettings";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,5 +164,6 @@
         private System.Windows.Forms.CheckedListBox checkedListBoxRisicograaf;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxProjectNaam;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -245,7 +245,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
             string issueID = "";
             foreach (DataGridViewRow row in advancedDataGridViewTemplateViewIssues.SelectedRows)
             {
-                issueID = row.Cells[0].Value.ToString();
+                issueID = row.Cells[1].Value.ToString();
 
                 if (!SelectedTemplateIssueId.Contains(issueID))
                 {
@@ -293,7 +293,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
             string issueID = "";
             foreach (DataGridViewRow row in advancedDataGridViewObjectView.SelectedRows)
             {
-                issueID = row.Cells[0].Value.ToString();
+                issueID = row.Cells[1].Value.ToString();
                 if (!SelectedObjectIssueId.Contains(issueID))
                 {
                     SelectedObjectIssueId.Add(issueID);

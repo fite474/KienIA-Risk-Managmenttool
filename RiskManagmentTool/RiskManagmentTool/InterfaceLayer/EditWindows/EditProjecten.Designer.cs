@@ -224,6 +224,7 @@
             // buttonEditSettings
             // 
             this.buttonEditSettings.Dock = System.Windows.Forms.DockStyle.Left;
+            this.buttonEditSettings.Enabled = false;
             this.buttonEditSettings.Location = new System.Drawing.Point(0, 0);
             this.buttonEditSettings.Name = "buttonEditSettings";
             this.buttonEditSettings.Size = new System.Drawing.Size(198, 100);

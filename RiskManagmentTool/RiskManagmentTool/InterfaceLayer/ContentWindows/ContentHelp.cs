@@ -20,7 +20,12 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 
         private void LoadData()
         {
-            textBoxGuide.Text = "Welkom bij de KienIA Risk Management Tool";
+            textBoxGuide.Text = "Welkom bij de KienIA Risk Management Tool\r\n" +
+                "Deze tool is bedoeld ter ondersteuning bij het maken van risicobeoordelingen machineveiligheid.\r\n" +
+                "Om te beginnen maakt u een project aan, hierin kunt u objecten toevoegen.\r\n" +
+                "\r\n" +
+                "\r\n" +
+                "----------------------\r\n";
 
         }
     }

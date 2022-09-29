@@ -18,7 +18,7 @@ namespace RiskManagmentTool.LogicLayer
         public string ChangeLocation(string filePath)
         {
             //string sourcePath = @"C:\Users\Public\TestFolder";
-            string targetPath = @"C:\Users\mauri\Documents\1AVANS\Stage\KienIA Risk Managmenttool\Documents\ProjectImages";
+            string targetPath = @"C:\Users\mauri\Documents\1AVANS\Stage\KienIA Risk Managmenttool\Documents\ProjectImages";// @"C:\Users\mauri\Documents\1AVANS\Stage\KienIA Risk Managmenttool\Documents\ProjectImages";
             string filename = Path.GetFileName(filePath);
             // Use Path class to manipulate file and directory paths.
             //string sourceFile = System.IO.Path.Combine(sourcePath, fileName);

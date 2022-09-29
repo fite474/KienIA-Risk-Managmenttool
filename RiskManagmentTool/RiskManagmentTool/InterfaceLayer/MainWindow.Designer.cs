@@ -31,6 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.buttonHelp = new System.Windows.Forms.Button();
             this.buttonKeuzes = new System.Windows.Forms.Button();
             this.buttonRedirect = new System.Windows.Forms.Button();
             this.buttonMaatregelen = new System.Windows.Forms.Button();
@@ -40,7 +41,6 @@
             this.buttonProjecten = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelContent = new System.Windows.Forms.Panel();
-            this.buttonHelp = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.SuspendLayout();
@@ -84,6 +84,19 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(200, 937);
             this.panelMenu.TabIndex = 1;
+            // 
+            // buttonHelp
+            // 
+            this.buttonHelp.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonHelp.Location = new System.Drawing.Point(0, 652);
+            this.buttonHelp.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonHelp.Name = "buttonHelp";
+            this.buttonHelp.Size = new System.Drawing.Size(200, 78);
+            this.buttonHelp.TabIndex = 8;
+            this.buttonHelp.Text = "Gebruikers handleiding";
+            this.buttonHelp.UseVisualStyleBackColor = true;
+            this.buttonHelp.Click += new System.EventHandler(this.buttonHelp_Click);
             // 
             // buttonKeuzes
             // 
@@ -195,19 +208,6 @@
             this.panelContent.Size = new System.Drawing.Size(1592, 831);
             this.panelContent.TabIndex = 2;
             // 
-            // buttonHelp
-            // 
-            this.buttonHelp.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonHelp.Location = new System.Drawing.Point(0, 652);
-            this.buttonHelp.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonHelp.Name = "buttonHelp";
-            this.buttonHelp.Size = new System.Drawing.Size(200, 78);
-            this.buttonHelp.TabIndex = 8;
-            this.buttonHelp.Text = "Gebruikers handleiding";
-            this.buttonHelp.UseVisualStyleBackColor = true;
-            this.buttonHelp.Click += new System.EventHandler(this.buttonHelp_Click);
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -219,7 +219,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MinimumSize = new System.Drawing.Size(500, 300);
             this.Name = "MainWindow";
-            this.Text = "MainWindow";
+            this.Text = "KienIA Risk Managment Tool";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

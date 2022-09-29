@@ -46,6 +46,7 @@
             this.textBoxGuide.Location = new System.Drawing.Point(98, 180);
             this.textBoxGuide.Multiline = true;
             this.textBoxGuide.Name = "textBoxGuide";
+            this.textBoxGuide.ReadOnly = true;
             this.textBoxGuide.Size = new System.Drawing.Size(725, 266);
             this.textBoxGuide.TabIndex = 1;
             // 

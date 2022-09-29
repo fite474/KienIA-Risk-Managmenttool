@@ -21,6 +21,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         public EditSettings(string projectID, string projectNaam)
         {
+            //doet niks
             InitializeComponent();
             ProjectID = projectID;
             ProjectNaam = projectNaam;

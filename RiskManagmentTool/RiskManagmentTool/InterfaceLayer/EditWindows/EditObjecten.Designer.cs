@@ -408,9 +408,6 @@
             this.comboBoxFilterIssues.FormattingEnabled = true;
             this.comboBoxFilterIssues.Items.AddRange(new object[] {
             "Alle issues",
-            "..",
-            "..",
-            "..",
             "Issues zonder maatregelen"});
             this.comboBoxFilterIssues.Location = new System.Drawing.Point(114, 6);
             this.comboBoxFilterIssues.Name = "comboBoxFilterIssues";
@@ -426,7 +423,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1561, 439);
+            this.tabPage2.Size = new System.Drawing.Size(1561, 462);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Object informatie";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -554,7 +551,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "EditObjecten";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EditObjecten";
+            this.Text = "Object Pagina";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.EditObjecten_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

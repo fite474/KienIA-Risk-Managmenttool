@@ -38,6 +38,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private bool isNewMaatregel;
         private string editMaatregelID;
 
+        private bool listboxActive;
+
         public EditMaatregelen()
         {
             InitializeComponent();
@@ -45,6 +47,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             LoadData();
             LoadEmptyMaatregelData();
             LoadMenus();
+            buttonAddMenuOption.Enabled = false;
+            listboxActive = false;
         }
 
         public EditMaatregelen(string maatregelID, string maatregelNaam)
@@ -57,6 +61,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             LoadMaatregelData(maatregelID);
             LoadMenus();
             LoadTextFirstOpen();
+            buttonAddMenuOption.Enabled = false;
+            listboxActive = false;
 
             textBoxMaatregelNaam.Text = maatregelNaam;
         }
@@ -173,26 +179,13 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             if (isNewMaatregel)
             {
                 comunicator.InitMaatregel(maatregelNaam, NormenCheckedItems, CategorieCheckedItems);
-                //comunicator.InitMakeGevaar(gevaarlijkeSituatie, gevaarlijkeGebeurtenis,
-                //DisciplinesCheckedItems, GebruiksfaseCheckedItems,
-                //BedienvormenCheckedItems, GebruikersCheckedItems,
-                //GevarenzonesCheckedItems, TakenCheckedItems,
-                //GevaarTypesCheckedItems, GevolgenCheckedItems);
+
             }
             else if (!isNewMaatregel)
             {
                 int maatregelIDToUpdate = int.Parse(editMaatregelID);
                 comunicator.UpdateMaatregelData(maatregelIDToUpdate, NormenCheckedItems, CategorieCheckedItems);
 
-                //comunicator.UpdateGevaarData(maatregelIDToUpdate, DisciplinesCheckedItems, GebruiksfaseCheckedItems,
-                //BedienvormenCheckedItems, GebruikersCheckedItems,
-                //GevarenzonesCheckedItems, TakenCheckedItems,
-                //GevaarTypesCheckedItems, GevolgenCheckedItems);
-
-                //if (textBoxMaatregelNaam.Text != situatieInitString)
-                //{
-                //    comunicator.UpdateGevaarSituatie(gevaarIDToUpdate, textBoxGevSituatie.Text);
-                //}
 
             }
 
@@ -201,13 +194,6 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             this.Close();
 
 
-
-
-            //string maatregelNaam = textBoxMaatregelNaam.Text;
-            //string maatregelNorm = comboBoxMaatregelNorm.SelectedItem.ToString();
-            //string maatregelCategory = comboBoxMaatregelCategory.SelectedItem.ToString();
-            //comunicator.MakeMaatregel(maatregelNaam, maatregelNorm, maatregelCategory);
-            //this.Close();
         }
 
         private void buttonNorm_Click(object sender, EventArgs e)
@@ -228,6 +214,11 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void UpdateState()
         {
+            if (!listboxActive)
+            {
+                buttonAddMenuOption.Enabled = true;
+                listboxActive = true;
+            }
             switch (MenuTableName)
             {
                 case MenuTableName.Normen:

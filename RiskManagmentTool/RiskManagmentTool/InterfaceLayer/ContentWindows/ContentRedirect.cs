@@ -45,17 +45,17 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
             {
                 string message = "Geen zoekresultaten";
                 string title = "Reminder Risico waardes";
-                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result = MessageBox.Show(message, title, buttons);
 
-                if (result == DialogResult.Yes)
-                {
-                    //this.Close();
-                }
-                else
-                {
-                    // Do something  
-                }
+                //if (result == DialogResult.Yes)
+                //{
+                //    //this.Close();
+                //}
+                //else
+                //{
+                //    // Do something  
+                //}
             }
 
         }

@@ -29,12 +29,10 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.dataGridViewGekoppeldeGevaren = new System.Windows.Forms.DataGridView();
             this.buttonDeleteSelection = new System.Windows.Forms.Button();
             this.textBoxSelectedItems = new System.Windows.Forms.TextBox();
             this.textBoxObjectNaam = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -52,15 +50,6 @@
             this.label1.Size = new System.Drawing.Size(88, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Object naam";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(118, 48);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "label2";
             // 
             // dataGridViewGekoppeldeGevaren
             // 
@@ -103,13 +92,6 @@
             this.textBoxObjectNaam.Size = new System.Drawing.Size(192, 22);
             this.textBoxObjectNaam.TabIndex = 5;
             // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(283, 45);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 6;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.textBoxSelectedItems);
@@ -123,8 +105,6 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.textBox3);
             this.panel2.Controls.Add(this.textBoxObjectNaam);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -164,12 +144,10 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridViewGekoppeldeGevaren;
         private System.Windows.Forms.Button buttonDeleteSelection;
         private System.Windows.Forms.TextBox textBoxSelectedItems;
         private System.Windows.Forms.TextBox textBoxObjectNaam;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;

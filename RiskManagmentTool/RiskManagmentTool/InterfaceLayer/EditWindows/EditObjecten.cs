@@ -27,7 +27,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private ImageHandler ImageHandler;
         private ShowLegendaObjecten ShowLegenda;
 
-        //private List<string> GekoppeldeGevarenId;
+
         private List<string> IssuesToVerify;
         private Dictionary<string, string> IssuesState;
         private Dictionary<string, string> IssuesRiskValue;
@@ -78,18 +78,6 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         }
 
 
-        private void LoadDataGridViewCheckBoxes()
-        {
-            //DataGridViewCheckBoxColumn CheckboxColumn = new DataGridViewCheckBoxColumn();
-            //CheckBox chk = new CheckBox();
-            //CheckboxColumn.Width = 20;
-            //CheckboxColumn.HeaderText = "";
-            //CheckboxColumn.TrueValue = true;
-            //CheckboxColumn.FalseValue = false;
-            //advancedDataGridViewGekoppeldeIssues.Columns.Add(CheckboxColumn);
-            //advancedDataGridViewGekoppeldeIssues.DisableFilter(CheckboxColumn);
-        }
-
         private void LoadData()
         {
             objectIssuesDataTable = comunicator.GetObjectIssues(ObjectID);
@@ -128,7 +116,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         {
             HasImage = false;
             //get object image(ObjectID)
-            string filePath = comunicator.GetObjectImage(ObjectID);//@"C:\Users\mauri\Documents\1AVANS\Stage\1 Stage Bestanden\Pieter_de_Hooghbrug.jpg";
+            string filePath = comunicator.GetObjectImage(ObjectID);
             try
             {
                 pictureBoxObjectFoto.Image = new Bitmap(filePath);
@@ -152,11 +140,6 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         }
 
-        public void OpenIssueNmr(string issueID)
-        {
-
-
-        }
 
 
 
@@ -256,6 +239,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
                     break;
                 case 2:
                     {
+                        //actie wordt uitgevoerd bovenaan deze methode
                         //foreach (DataGridViewRow row in dataGridViewGekoppeldeIssues.Rows)
                         //{
                         //    dataGridViewGekoppeldeIssues.Rows[rowIndex].DefaultCellStyle.BackColor = Color.White;
@@ -283,51 +267,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
                         LoadData();
                     }
                     break;
-                case 1:// 1 = onopgelost
-                    {
-                        //this.objectIssuesDataTable.RemoveFilter();
-                        //this.objectIssuesDataTable.RemoveSort();
-                        //int rowIndex = 0;
-                        //var toBeDeleted = new List<DataGridViewRow>();
-
-                        //foreach (DataGridViewRow row in advancedDataGridViewGekoppeldeIssues.Rows)
-                        //{
-                        //    string issueId = row.Cells[viewsColumnNames.IssueIDColumn].Value.ToString();
-                        //    IssuesRiskValue.TryGetValue(issueId, out string issueRiskValue);
-                        //    Console.WriteLine(issueRiskValue);
-                        //    //string issueId = row.Cells[viewsColumnNames.IssueIDColumn].Value.ToString();
-                        //    //Dictionary<string, int> IssuesMaatregelen = comunicator.GetObjectIssuesMaatregelenCount(ObjectID);//new Dictionary<string, int>();
-                        //    //IssuesMaatregelen.TryGetValue(issueId, out int maatregelCount);
-                        //    if (issueRiskValue.Equals("1") || issueRiskValue.Equals("10"))
-                        //    {
-                        //        toBeDeleted.Add(row);
-                        //    }
-                        //    //else
-                        //    //{
-
-                        //    //}
-                        //    //else if (issueState.Equals("1"))
-                        //    //{
-                        //    //    dataGridViewGekoppeldeIssues.Rows[rowIndex].DefaultCellStyle.BackColor = Color.White;
-                        //    //    row.Cells[0].Value = true;
-                        //    //}
-
-                        //    rowIndex++;
-                        //}
-                        //toBeDeleted.ForEach(d => advancedDataGridViewGekoppeldeIssues.Rows.Remove(d));
-                    }
-                    break;
-                case 2:// 2 = opgelost
-                    {
-
-                    }
-                    break;
-                case 3:// 2 = opgelost
-                    {
-
-                    }
-                    break;
-                case 4:// 4 = maatregelen
+                case 1:// 
                     {
                         this.objectIssuesDataTable.RemoveFilter();
                         this.objectIssuesDataTable.RemoveSort();

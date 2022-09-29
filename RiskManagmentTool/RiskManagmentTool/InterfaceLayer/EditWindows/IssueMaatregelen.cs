@@ -227,24 +227,6 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             LoadData();
         }
 
-        //private void buttonNextIssue_Click(object sender, EventArgs e)
-        //{
-        //    string message = "Weet u zeker dat de risico waardes ook correct zijn?";
-        //    string title = "Reminder Risico waardes";
-        //    MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-        //    DialogResult result = MessageBox.Show(message, title, buttons);
-        //    if (result == DialogResult.Yes)
-        //    {
-        //        //this.Close();
-        //    }
-        //    else
-        //    {
-        //        // Do something  
-        //    }
-        //    //issueNmr++;
-        //    //textBoxIssueID.Text = issueNmr.ToString();
-        //}
-
         private void dataGridViewIssueMaatregelen_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             Cursor.Current = Cursors.Default;
@@ -254,7 +236,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private void checkBoxIssueOK_CheckedChanged(object sender, EventArgs e)
         {
             string issueOk = checkBoxIssueOK.Checked == true ? "1" : "0";
-            comunicator.UpdateIssueOk(IssueID, int.Parse(issueOk));//tO DO
+            comunicator.UpdateIssueOk(IssueID, int.Parse(issueOk));
         }
 
         private void buttonDeleteMaatregelen_Click(object sender, EventArgs e)
@@ -383,26 +365,26 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
 
             //rest se
-            comboBoxRest_Se.Items.Add("1 scratches, bruises that are cured by first aid or similar;");
-            comboBoxRest_Se.Items.Add("2 more severe scratches, bruises, stabbing, which require medical attention from professionals;");
-            comboBoxRest_Se.Items.Add("3 normally irreversible injury; it will be slightly difficult to continue work after healing;");
-            comboBoxRest_Se.Items.Add("4 irreversible injury in such a way that it will be very difficult to continue work after healing, if possible at all.");
+            comboBoxRest_Se.Items.Add("1 ");//scratches, bruises that are cured by first aid or similar;");
+            comboBoxRest_Se.Items.Add("2 ");//more severe scratches, bruises, stabbing, which require medical attention from professionals;");
+            comboBoxRest_Se.Items.Add("3 ");//normally irreversible injury; it will be slightly difficult to continue work after healing;");
+            comboBoxRest_Se.Items.Add("4 ");//irreversible injury in such a way that it will be very difficult to continue work after healing, if possible at all.");
             //rest fr
-            comboBoxRest_Fr.Items.Add("2 interval between exposure is more than a year; ");
-            comboBoxRest_Fr.Items.Add("3 interval between exposure is more than two weeks but less than or equal to a year;");
-            comboBoxRest_Fr.Items.Add("4 interval between exposure is more than a day but less than or equal to two weeks;");
-            comboBoxRest_Fr.Items.Add("5 interval between exposure is more than an hour but less than or equal to a day");
-            comboBoxRest_Fr.Items.Add("6 interval less than or equal to an hour.");
+            comboBoxRest_Fr.Items.Add("2 ");//interval between exposure is more than a year; ");
+            comboBoxRest_Fr.Items.Add("3 ");//interval between exposure is more than two weeks but less than or equal to a year;");
+            comboBoxRest_Fr.Items.Add("4 ");//interval between exposure is more than a day but less than or equal to two weeks;");
+            comboBoxRest_Fr.Items.Add("5 ");//interval between exposure is more than an hour but less than or equal to a day");
+            comboBoxRest_Fr.Items.Add("6 ");//interval less than or equal to an hour.");
             //rest pr
-            comboBoxRest_Pr.Items.Add("1 Negligible");
-            comboBoxRest_Pr.Items.Add("2 Rarely:");
-            comboBoxRest_Pr.Items.Add("3 Possible:");
-            comboBoxRest_Pr.Items.Add("4 Likely");
-            comboBoxRest_Pr.Items.Add("5 Very high");
+            comboBoxRest_Pr.Items.Add("1 ");//Negligible");
+            comboBoxRest_Pr.Items.Add("2 ");//Rarely:");
+            comboBoxRest_Pr.Items.Add("3 ");//Possible:");
+            comboBoxRest_Pr.Items.Add("4 ");//Likely");
+            comboBoxRest_Pr.Items.Add("5 ");//Very high");
             //rest av
-            comboBoxRest_Av.Items.Add("1 Likely");
-            comboBoxRest_Av.Items.Add("3 Possible");
-            comboBoxRest_Av.Items.Add("5 Impossible");
+            comboBoxRest_Av.Items.Add("1 ");//Likely");
+            comboBoxRest_Av.Items.Add("3 ");//Possible");
+            comboBoxRest_Av.Items.Add("5 ");//Impossible");
 
 
         }

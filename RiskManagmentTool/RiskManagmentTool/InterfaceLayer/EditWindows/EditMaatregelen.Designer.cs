@@ -218,7 +218,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "EditMaatregelen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EditMaatregelen";
+            this.Text = "Maatregelen ";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

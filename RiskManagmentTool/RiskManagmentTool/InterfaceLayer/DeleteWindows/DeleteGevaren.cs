@@ -44,7 +44,7 @@ namespace RiskManagmentTool.InterfaceLayer.DeleteWindows
             string messageGevarenId = "";
             foreach (DataGridViewRow row in dataGridViewGekoppeldeGevaren.SelectedRows)
             {
-                issueID = row.Cells[0].Value.ToString();
+                issueID = row.Cells[1].Value.ToString();
                 if (!SelectedGevarenId.Contains(issueID))
                 {
                     SelectedGevarenId.Add(issueID);
@@ -80,7 +80,7 @@ namespace RiskManagmentTool.InterfaceLayer.DeleteWindows
             string issueID = "";
             foreach (DataGridViewRow row in dataGridViewGekoppeldeGevaren.SelectedRows)
             {
-                issueID = row.Cells[0].Value.ToString();
+                issueID = row.Cells[1].Value.ToString();
                 textBoxSelectedItems.Text += issueID + ", ";
             }
 

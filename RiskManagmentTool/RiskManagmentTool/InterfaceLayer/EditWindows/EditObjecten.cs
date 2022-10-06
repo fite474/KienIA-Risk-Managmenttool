@@ -362,7 +362,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
             if (open.ShowDialog() == DialogResult.OK)
             {
-                
+                //TODO change to uploading a byte map of the image to the database
                 string imageFilePath = ImageHandler.ChangeLocation(open.FileName);
 
                 // display image in picture box  

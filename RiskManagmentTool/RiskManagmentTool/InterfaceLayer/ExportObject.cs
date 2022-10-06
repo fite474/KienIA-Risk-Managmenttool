@@ -110,6 +110,8 @@ namespace RiskManagmentTool.InterfaceLayer
             }
             //xlWorkSheet.Columns.st = 200;// AllocatedRange.AutoFitRows();
             //"csharp.net-informations.xls"
+
+            //TODO fix saving location on any pc
             xlWorkBook.SaveAs(userInputFileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
             xlWorkBook.Close(true, misValue, misValue);
             xlApp.Quit();
@@ -118,7 +120,7 @@ namespace RiskManagmentTool.InterfaceLayer
             releaseObject(xlWorkBook);
             releaseObject(xlApp);
 
-            MessageBox.Show("Excel file created , you can find the file at c:\\Documents\\" + userInputFileName);
+            MessageBox.Show("Excel file created , you can find the file at 'this pc/documents/'" + userInputFileName);
         }
 
         private void releaseObject(object obj)

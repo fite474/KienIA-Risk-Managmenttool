@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using RiskManagmentTool.LogicLayer;
 using RiskManagmentTool.InterfaceLayer.EditWindows;
@@ -58,26 +52,12 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
         {
             gevarenData = comunicator.GetGevarenTable();
             advancedDataGridViewLosseItems.DataSource = gevarenData;
-            //gevarenData = comunicator.GetGevarenTable();
-            //advancedDataGridViewLosseItems.DataSource = gevarenData;
-            //dataGridViewLosseItems.DataSource = comunicator.GetGevarenTable();
-            //textBoxObjectNaam.Text = ObjectNaam;
-            //SetAddSettings();
-            
-
-            //LoadComboboxes();
         }
 
 
 
         private void LoadComboboxes()
         {
-
-            //List<string> disciplinesList = keuzeMenus.GetDisciplinesMenu();
-            //foreach (string typeString in disciplinesList)
-            //{
-            //    comboBoxDiscipline.Items.Add(typeString);
-            //}
 
             List<string> objectNamenList = keuzeMenus.GetObjectNamen();
             foreach (string objectNaam in objectNamenList)
@@ -101,43 +81,14 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
         {
             checkedListBoxAddSettings.SetItemChecked(0, true);
             checkedListBoxAddSettings.SetItemChecked(1, true);
-            //checkedListBoxAddSettings.SetItemChecked(2, true);
         }
-
-        private void HandleAddWithSettings(List<string> GevarenIdToAdd)
-        {
-            //foreach (string gevaarToAddID in GevarenIdToAdd)
-            //{
-            //    int addedIssueID = comunicator.AddGevaarToObject(ObjectID, gevaarToAddID);
-            //    if (checkedListBoxAddSettings.GetItemChecked(0))// 0 is maatregelen
-            //    {
-            //        comunicator.AddMaatregelToIssue();
-            //    }
-            //    if (checkedListBoxAddSettings.GetItemChecked(1))//1 is risico beoordeling
-            //    {
-
-            //    }
-            //    if (checkedListBoxAddSettings.GetItemChecked(2))// 2 is verifieren
-            //    {
-
-            //    }
-            //}
-            
-           // comunicator.AddGevaarToObject(ObjectID, );
-        }
-        
-
-
 
         private void buttonCreateNewGevaar_Click(object sender, EventArgs e)
         {
             Form editRisicosForm = new EditRisicos();
             editRisicosForm.ShowDialog();
             LoadData();
-            //gevarenData = comunicator.GetGevarenTable();
         }
-
-
 
         private void comboBoxViewTemplate_SelectedIndexChanged(object sender, EventArgs e)
         {

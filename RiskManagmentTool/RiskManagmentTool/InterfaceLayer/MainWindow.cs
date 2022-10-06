@@ -35,7 +35,7 @@ namespace RiskManagmentTool.InterfaceLayer
         }
 
 
-        public void OpenContentWindow(Form contentForm)//, object btnSender)
+        public void OpenContentWindow(Form contentForm)
         {
             if (activeForm != null)
             {

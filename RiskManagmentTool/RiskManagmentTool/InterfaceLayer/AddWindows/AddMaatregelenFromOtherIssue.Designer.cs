@@ -71,7 +71,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(58, 130);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 21);
+            this.label3.Size = new System.Drawing.Size(63, 17);
             this.label3.TabIndex = 5;
             this.label3.Text = "Risico ID";
             // 
@@ -79,6 +79,7 @@
             // 
             this.textBoxIssueID.Location = new System.Drawing.Point(155, 130);
             this.textBoxIssueID.Name = "textBoxIssueID";
+            this.textBoxIssueID.ReadOnly = true;
             this.textBoxIssueID.Size = new System.Drawing.Size(100, 22);
             this.textBoxIssueID.TabIndex = 4;
             // 
@@ -86,15 +87,18 @@
             // 
             this.textBoxObjectNaam.Location = new System.Drawing.Point(155, 30);
             this.textBoxObjectNaam.Name = "textBoxObjectNaam";
+            this.textBoxObjectNaam.ReadOnly = true;
             this.textBoxObjectNaam.Size = new System.Drawing.Size(207, 22);
             this.textBoxObjectNaam.TabIndex = 3;
             // 
             // textBoxGevaarID
             // 
-            this.textBoxGevaarID.Location = new System.Drawing.Point(155, 82);
+            this.textBoxGevaarID.Location = new System.Drawing.Point(905, 82);
             this.textBoxGevaarID.Name = "textBoxGevaarID";
+            this.textBoxGevaarID.ReadOnly = true;
             this.textBoxGevaarID.Size = new System.Drawing.Size(100, 22);
             this.textBoxGevaarID.TabIndex = 2;
+            this.textBoxGevaarID.Visible = false;
             // 
             // label2
             // 
@@ -108,11 +112,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(58, 82);
+            this.label1.Location = new System.Drawing.Point(808, 82);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 21);
+            this.label1.Size = new System.Drawing.Size(72, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Gevaar ID";
+            this.label1.Visible = false;
             // 
             // advancedDataGridViewIssueMaatregelen
             // 

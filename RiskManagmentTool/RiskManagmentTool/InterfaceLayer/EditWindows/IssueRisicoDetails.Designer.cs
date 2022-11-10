@@ -241,9 +241,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(37, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 17);
+            this.label1.Size = new System.Drawing.Size(79, 21);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Issue ID";
+            this.label1.Text = "Risico ID";
             // 
             // label2
             // 
@@ -766,7 +766,7 @@
             this.MinimumSize = new System.Drawing.Size(970, 900);
             this.Name = "IssueRisicoDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EditIssue";
+            this.Text = "EditRisico";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.IssueRisicoDetails_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

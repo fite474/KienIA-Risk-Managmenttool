@@ -29,9 +29,6 @@ namespace RiskManagmentTool.InterfaceLayer.WeergeefWindows
         private void LoadData()
         {
             dataGridViewGevaarUsage.DataSource = comunicator.GetAllIssuesWithGevaarID(GevaarID);
-            
-            
-
 
 
         }

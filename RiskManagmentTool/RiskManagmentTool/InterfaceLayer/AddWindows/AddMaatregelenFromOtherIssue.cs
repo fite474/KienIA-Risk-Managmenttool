@@ -32,6 +32,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
             CurrentIssueID = currentIssueID;
             controler = new DataControler(CurrentIssueID);
             textBoxIssueID.Text = otherIssueID;
+            //textBoxGevaarID.Text
             textBoxObjectNaam.Text = objectNaam;
 
             LoadData();

@@ -196,10 +196,10 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private void SetIssueImage()
         {
             //get object image(ObjectID)
-            string filePath = comunicator.GetIssueImage(IssueID);//@"C:\Users\mauri\Documents\1AVANS\Stage\1 Stage Bestanden\Pieter_de_Hooghbrug.jpg";
+            Image image = comunicator.GetIssueImage(IssueID);//@"C:\Users\mauri\Documents\1AVANS\Stage\1 Stage Bestanden\Pieter_de_Hooghbrug.jpg";
             try
             {
-                pictureBoxIssueImage.Image = new Bitmap(filePath);
+                pictureBoxIssueImage.Image = image;//new Bitmap(filePath);
                 pictureBoxIssueImage.SizeMode = PictureBoxSizeMode.StretchImage;
             }
             catch (Exception e)

@@ -12,8 +12,7 @@ using RiskManagmentTool.InterfaceLayer.AddWindows;
 using RiskManagmentTool.InterfaceLayer.DeleteWindows;
 using RiskManagmentTool.InterfaceLayer.WeergeefWindows;
 using DataGridViewAutoFilter;
-
-
+using System.IO;
 
 namespace RiskManagmentTool.InterfaceLayer.EditWindows
 {
@@ -116,12 +115,17 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         {
             HasImage = false;
             //get object image(ObjectID)
-            string filePath = comunicator.GetObjectImage(ObjectID);
+            Image image = comunicator.GetObjectImage(ObjectID);
             try
             {
-                pictureBoxObjectFoto.Image = new Bitmap(filePath);
-                pictureBoxObjectFoto.SizeMode = PictureBoxSizeMode.StretchImage;
-                HasImage = true;
+                
+                if (image != null)
+                {
+                    pictureBoxObjectFoto.Image = image;//new Bitmap(filePath);
+                    pictureBoxObjectFoto.SizeMode = PictureBoxSizeMode.StretchImage;
+                    HasImage = true;
+
+                }
             }
             catch (Exception e)
             {
@@ -309,7 +313,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
 
 
-
+        //old, mag weg
         private void buttonIssuesOplossen_Click(object sender, EventArgs e)
         {
 
@@ -362,8 +366,9 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
             if (open.ShowDialog() == DialogResult.OK)
             {
+                
                 //TODO change to uploading a byte map of the image to the database
-                string imageFilePath = ImageHandler.ChangeLocation(open.FileName);
+                string imageFilePath = Path.GetFullPath(open.FileName);//ImageHandler.ChangeLocation(open.FileName);
 
                 // display image in picture box  
                 pictureBoxObjectFoto.Image = new Bitmap(imageFilePath);//open.FileName);

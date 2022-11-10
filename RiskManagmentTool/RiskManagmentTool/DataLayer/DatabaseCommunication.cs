@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 using RiskManagmentTool.LogicLayer.Objects.Core;
+using RiskManagmentTool.LogicLayer;
+using System.Drawing;
 
 namespace RiskManagmentTool.DataLayer
 {
@@ -533,11 +535,13 @@ namespace RiskManagmentTool.DataLayer
 
         public void AddImageToObject(string objectID, string imageFilePath)
         {
+            ImageHandler imageHandler = new ImageHandler();
+            byte[] image = imageHandler.imageToByteArray(Image.FromFile(imageFilePath));
             sqlConnection.Open();
             SqlCommand cmd = new SqlCommand("INSERT INTO TableObjectImages(ObjectID, ImageFilePath) VALUES " +
                                                                        "(@ObjectID, @ImageFilePath)", sqlConnection);
             cmd.Parameters.AddWithValue("@ObjectID", objectID);
-            cmd.Parameters.AddWithValue("@ImageFilePath", imageFilePath);
+            cmd.Parameters.AddWithValue("@ImageFilePath", image);
 
             cmd.ExecuteNonQuery();
             sqlConnection.Close();
@@ -575,11 +579,13 @@ namespace RiskManagmentTool.DataLayer
         }
         public void AddImageToIssue(string issueID, string imageFilePath)
         {
+            ImageHandler imageHandler = new ImageHandler();
+            byte[] image = imageHandler.imageToByteArray(Image.FromFile(imageFilePath));
             sqlConnection.Open();
             SqlCommand cmd = new SqlCommand("INSERT INTO TableIssueImages(IssueID, ImageFilePath) VALUES " +
                                                                        "(@IssueID, @ImageFilePath)", sqlConnection);
             cmd.Parameters.AddWithValue("@IssueID", issueID);
-            cmd.Parameters.AddWithValue("@ImageFilePath", imageFilePath);
+            cmd.Parameters.AddWithValue("@ImageFilePath", image);
 
             cmd.ExecuteNonQuery();
             sqlConnection.Close();
@@ -1046,12 +1052,14 @@ namespace RiskManagmentTool.DataLayer
 
         public void UpdateObjectImage(string objectID, string imageFilePath)
         {
+            ImageHandler imageHandler = new ImageHandler();
+            byte[] image = imageHandler.imageToByteArray(Image.FromFile(imageFilePath));
             sqlConnection.Open();
             SqlCommand cmd = new SqlCommand("UPDATE TableObjectImages " +
                                              "SET ImageFilePath = @ImageFilePath" +
                                             " WHERE ObjectID = '" + objectID + "'", sqlConnection);
 
-            cmd.Parameters.AddWithValue("@ImageFilePath", imageFilePath);
+            cmd.Parameters.AddWithValue("@ImageFilePath", image);
             cmd.ExecuteNonQuery();
 
             sqlConnection.Close();
@@ -1100,12 +1108,17 @@ namespace RiskManagmentTool.DataLayer
 
         public void UpdateImageToObject(string objectID, string imageFilePath)
         {
+
+            ImageHandler imageHandler = new ImageHandler();
+
+            byte[] image = imageHandler.imageToByteArray(Image.FromFile( imageFilePath));
+
             sqlConnection.Open();
             SqlCommand cmd = new SqlCommand("UPDATE TableObjectImages " +
                                             "SET ImageFilePath = @ImageFilePath " +
                                             "WHERE ObjectID = @ObjectID", sqlConnection);
             cmd.Parameters.AddWithValue("@ObjectID", objectID);
-            cmd.Parameters.AddWithValue("@ImageFilePath", imageFilePath);
+            cmd.Parameters.AddWithValue("@ImageFilePath", image);
 
             cmd.ExecuteNonQuery();
             sqlConnection.Close();
@@ -1175,7 +1188,7 @@ namespace RiskManagmentTool.DataLayer
         {
             sqlConnection.Open();
             string query = "SELECT * FROM View_ObjectIssues " +
-                            "WHERE View_ObjectIssues.IssueID IN (SELECT TableObjectIssues.IssueID FROM TableObjectIssues WHERE TableObjectIssues.ObjectID = '" + objectID + "') ";
+                            "WHERE View_ObjectIssues.RisicoID IN (SELECT TableObjectIssues.IssueID FROM TableObjectIssues WHERE TableObjectIssues.ObjectID = '" + objectID + "') ";
 
             SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
             sqlConnection.Close();
@@ -1218,7 +1231,7 @@ namespace RiskManagmentTool.DataLayer
             string query = "SELECT TableObjecten.ObjectNaam, View_ObjectIssues.* " +
                             "FROM TableObjecten INNER JOIN " +
                             "TableObjectIssues ON TableObjecten.ObjectID = TableObjectIssues.ObjectID INNER JOIN " +
-                            "View_ObjectIssues ON TableObjectIssues.IssueID = View_ObjectIssues.IssueID " +
+                            "View_ObjectIssues ON TableObjectIssues.IssueID = View_ObjectIssues.RisicoID " +
                             "WHERE View_ObjectIssues.GevaarID = '" + gevaarID + "' ";
 
             SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
@@ -1284,7 +1297,7 @@ namespace RiskManagmentTool.DataLayer
         {
             sqlConnection.Open();
             string query = "SELECT * FROM View_ObjectIssues " +
-                            "WHERE View_ObjectIssues.IssueID IN (SELECT TableTemplateIssues.IssueID FROM TableTemplateIssues WHERE TableTemplateIssues.TemplateID = '" + templateID + "') ";
+                            "WHERE View_ObjectIssues.RisicoID IN (SELECT TableTemplateIssues.IssueID FROM TableTemplateIssues WHERE TableTemplateIssues.TemplateID = '" + templateID + "') ";
 
 
             SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
@@ -1318,9 +1331,12 @@ namespace RiskManagmentTool.DataLayer
 
         #endregion get tables
         
-        public string GetObjectImage(string objectID)
+        public Image GetObjectImage(string objectID)
         {
-            string imageFilePath = "";
+            Image  i = null;
+            ImageHandler imageHandler = new ImageHandler();
+
+
             sqlConnection.Open();
             SqlCommand cmd = new SqlCommand("SELECT ImageFilePath FROM TableObjectImages " +
                                             "WHERE TableObjectImages.ObjectID = '" + objectID + "'", sqlConnection);
@@ -1328,17 +1344,20 @@ namespace RiskManagmentTool.DataLayer
             {
                 while (dr.Read())
                 {
-                    imageFilePath = (dr[0]).ToString();
+                    var m = (byte[])dr[0];
+                     i = imageHandler.byteArrayToImage(m);
                 }
             }
             sqlConnection.Close();
 
-            return imageFilePath;
+            return i;
         }
 
-        public string GetIssueImage(string issueID)
+        public Image GetIssueImage(string issueID)
         {
-            string imageFilePath = "";
+            Image i = null;
+            ImageHandler imageHandler = new ImageHandler();
+
             sqlConnection.Open();
             SqlCommand cmd = new SqlCommand("SELECT ImageFilePath FROM TableIssueImages " +
                                             "WHERE TableIssueImages.IssueID = '" + issueID + "'", sqlConnection);
@@ -1346,12 +1365,13 @@ namespace RiskManagmentTool.DataLayer
             {
                 while (dr.Read())
                 {
-                    imageFilePath = (dr[0]).ToString();
+                    var m = (byte[])dr[0];
+                    i = imageHandler.byteArrayToImage(m);
                 }
             }
             sqlConnection.Close();
 
-            return imageFilePath;
+            return i;
         }
 
         //Inner region get id
@@ -1520,9 +1540,9 @@ namespace RiskManagmentTool.DataLayer
             List<string> issueInfo = new List<string>();
 
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT View_ObjectIssues.IssueID, View_ObjectIssues.GevaarlijkeSituatie, View_ObjectIssues.GevaarlijkeGebeurtenis, View_ObjectIssues.Gevaar " +
+            SqlCommand cmd = new SqlCommand("SELECT View_ObjectIssues.RisicoID, View_ObjectIssues.GevaarlijkeSituatie, View_ObjectIssues.GevaarlijkeGebeurtenis, View_ObjectIssues.Gevaar " +
                                             "FROM View_ObjectIssues " +
-                                            "WHERE View_ObjectIssues.IssueID = '" + issueID + "' ", sqlConnection);
+                                            "WHERE View_ObjectIssues.RisicoID = '" + issueID + "' ", sqlConnection);
 
             using (SqlDataReader dr = cmd.ExecuteReader())
             {
@@ -2176,7 +2196,7 @@ namespace RiskManagmentTool.DataLayer
             //                                "FROM View_ObjectIssues " +
             //                                "WHERE View_ObjectIssues.GevaarID = '" + gevaarID + "' ", sqlConnection);
 
-            String query = "SELECT View_ObjectIssues.IssueID, View_ObjectIssues.GevaarID " +
+            String query = "SELECT View_ObjectIssues.RisicoID, View_ObjectIssues.GevaarID " +
                                             "FROM View_ObjectIssues " +
                                             "WHERE View_ObjectIssues.GevaarID = '" + gevaarID + "' ";
             SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);

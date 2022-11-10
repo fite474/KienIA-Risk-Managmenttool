@@ -342,9 +342,9 @@
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(28, 53);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(62, 17);
+            this.label12.Size = new System.Drawing.Size(67, 17);
             this.label12.TabIndex = 11;
-            this.label12.Text = "Issue ID:";
+            this.label12.Text = "Risico ID:";
             // 
             // textBoxIssueID
             // 
@@ -811,7 +811,7 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1621, 511);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Issue Foto";
+            this.tabPage2.Text = "Risico Foto";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // pictureBoxIssueImage
@@ -878,7 +878,7 @@
             this.MinimumSize = new System.Drawing.Size(1315, 955);
             this.Name = "IssueMaatregelen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "IssueMaatregelen";
+            this.Text = "RisicoMaatregelen";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -64,8 +64,8 @@ namespace RiskManagmentTool.LogicLayer
         private void LoadData()
         {
             //Start issues View
-            IssueIDColumn = "IssueID";
-
+            //IssueIDColumn = "IssueID";
+            IssueIDColumn = "RisicoID";
             //End issues View
 
 

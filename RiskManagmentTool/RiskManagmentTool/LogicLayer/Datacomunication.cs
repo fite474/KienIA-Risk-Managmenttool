@@ -9,6 +9,7 @@ using RiskManagmentTool.DataLayer;
 using RiskManagmentTool.LogicLayer.Objects;
 using RiskManagmentTool.LogicLayer.Objects.Core;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace RiskManagmentTool.LogicLayer
 {
@@ -891,16 +892,16 @@ namespace RiskManagmentTool.LogicLayer
             return databaseCommunication.GetObjectSettings(ObjectID);
         }
 
-        public string GetObjectImage(string objectID)
+        public Image GetObjectImage(string objectID)
         {
-            string filePath = databaseCommunication.GetObjectImage(objectID);
-            return filePath;
+            Image image = databaseCommunication.GetObjectImage(objectID);
+            return image;
         }
 
-        public string GetIssueImage(string issueID)
+        public Image GetIssueImage(string issueID)
         {
-            string filePath = databaseCommunication.GetIssueImage(issueID);
-            return filePath;
+            Image image = databaseCommunication.GetIssueImage(issueID);
+            return image;
         }
 
         #endregion get info

@@ -691,7 +691,7 @@ namespace RiskManagmentTool.LogicLayer
         //    return data;
         //}
 
-        public BindingSource GetExportView(string objectID)//DataTable GetObjectIssues(string objectID)
+        public BindingSource GetExportView(string objectID)
         {
             SqlDataAdapter adapter = databaseCommunication.GetExportView(objectID);
             DataTable data = new DataTable();
@@ -699,10 +699,10 @@ namespace RiskManagmentTool.LogicLayer
 
             BindingSource bindingSource = new BindingSource();
             bindingSource.DataSource = data;
-            return bindingSource;//data;
+            return bindingSource;
         }
 
-        public BindingSource GetObjectIssues(string objectID)//DataTable GetObjectIssues(string objectID)
+        public BindingSource GetObjectIssues(string objectID)
         {
             SqlDataAdapter adapter = databaseCommunication.GetIssuesFromObject(objectID);
             DataTable data = new DataTable();
@@ -710,7 +710,7 @@ namespace RiskManagmentTool.LogicLayer
 
             BindingSource bindingSource = new BindingSource();
             bindingSource.DataSource = data;
-            return bindingSource;//data;
+            return bindingSource;
         }
 
 

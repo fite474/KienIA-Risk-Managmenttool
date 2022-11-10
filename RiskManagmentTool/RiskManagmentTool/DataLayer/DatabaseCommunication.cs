@@ -1200,7 +1200,7 @@ namespace RiskManagmentTool.DataLayer
         {
             sqlConnection.Open();
             string query = "SELECT * FROM View_ExportObject_IssuesMetMaatregelen " +
-                            "WHERE View_ExportObject_IssuesMetMaatregelen.IssueID IN (SELECT TableObjectIssues.IssueID FROM TableObjectIssues WHERE TableObjectIssues.ObjectID = '" + objectID + "') ";
+                            "WHERE View_ExportObject_IssuesMetMaatregelen.RisicoID IN (SELECT TableObjectIssues.IssueID FROM TableObjectIssues WHERE TableObjectIssues.ObjectID = '" + objectID + "') ";
 
             SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
             sqlConnection.Close();

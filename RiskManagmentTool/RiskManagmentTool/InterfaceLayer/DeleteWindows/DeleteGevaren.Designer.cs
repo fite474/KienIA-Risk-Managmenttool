@@ -45,7 +45,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(118, 9);
+            this.label1.Location = new System.Drawing.Point(118, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 17);
             this.label1.TabIndex = 0;
@@ -60,6 +60,7 @@
             this.dataGridViewGekoppeldeGevaren.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewGekoppeldeGevaren.Name = "dataGridViewGekoppeldeGevaren";
             this.dataGridViewGekoppeldeGevaren.ReadOnly = true;
+            this.dataGridViewGekoppeldeGevaren.RowHeadersWidth = 51;
             this.dataGridViewGekoppeldeGevaren.RowTemplate.Height = 24;
             this.dataGridViewGekoppeldeGevaren.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewGekoppeldeGevaren.Size = new System.Drawing.Size(1137, 525);
@@ -86,7 +87,7 @@
             // 
             // textBoxObjectNaam
             // 
-            this.textBoxObjectNaam.Location = new System.Drawing.Point(283, 3);
+            this.textBoxObjectNaam.Location = new System.Drawing.Point(280, 12);
             this.textBoxObjectNaam.Name = "textBoxObjectNaam";
             this.textBoxObjectNaam.ReadOnly = true;
             this.textBoxObjectNaam.Size = new System.Drawing.Size(192, 22);

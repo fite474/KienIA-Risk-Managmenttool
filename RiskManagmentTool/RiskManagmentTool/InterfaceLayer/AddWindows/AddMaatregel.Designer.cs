@@ -45,6 +45,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridViewTemplateMaatregelen = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.comboBoxWeergaveTemplate = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -60,7 +61,6 @@
             this.textBoxGevaarID = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridViewMaatregelen)).BeginInit();
@@ -80,9 +80,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(46, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 17);
+            this.label1.Size = new System.Drawing.Size(76, 21);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Issue Id";
+            this.label1.Text = "Risico Id";
             // 
             // label2
             // 
@@ -182,6 +182,7 @@
             this.advancedDataGridViewMaatregelen.Location = new System.Drawing.Point(3, 79);
             this.advancedDataGridViewMaatregelen.Name = "advancedDataGridViewMaatregelen";
             this.advancedDataGridViewMaatregelen.ReadOnly = true;
+            this.advancedDataGridViewMaatregelen.RowHeadersWidth = 51;
             this.advancedDataGridViewMaatregelen.RowTemplate.Height = 24;
             this.advancedDataGridViewMaatregelen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.advancedDataGridViewMaatregelen.Size = new System.Drawing.Size(1319, 340);
@@ -244,6 +245,7 @@
             this.dataGridViewTemplateMaatregelen.Location = new System.Drawing.Point(3, 79);
             this.dataGridViewTemplateMaatregelen.Name = "dataGridViewTemplateMaatregelen";
             this.dataGridViewTemplateMaatregelen.ReadOnly = true;
+            this.dataGridViewTemplateMaatregelen.RowHeadersWidth = 51;
             this.dataGridViewTemplateMaatregelen.RowTemplate.Height = 24;
             this.dataGridViewTemplateMaatregelen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewTemplateMaatregelen.Size = new System.Drawing.Size(1319, 340);
@@ -261,6 +263,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1319, 76);
             this.panel1.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(238, 27);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(72, 17);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "Werkt niet";
             // 
             // button2
             // 
@@ -299,7 +310,7 @@
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(1325, 422);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Selecteer uit issues van andere objecten";
+            this.tabPage3.Text = "Selecteer uit risico\'s van andere objecten";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // dataGridViewObjectIssues
@@ -311,6 +322,7 @@
             this.dataGridViewObjectIssues.Location = new System.Drawing.Point(3, 79);
             this.dataGridViewObjectIssues.Name = "dataGridViewObjectIssues";
             this.dataGridViewObjectIssues.ReadOnly = true;
+            this.dataGridViewObjectIssues.RowHeadersWidth = 51;
             this.dataGridViewObjectIssues.RowTemplate.Height = 24;
             this.dataGridViewObjectIssues.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewObjectIssues.Size = new System.Drawing.Size(1319, 340);
@@ -420,15 +432,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1333, 451);
             this.panel3.TabIndex = 24;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(238, 27);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 17);
-            this.label6.TabIndex = 23;
-            this.label6.Text = "Werkt niet";
             // 
             // AddMaatregel
             // 

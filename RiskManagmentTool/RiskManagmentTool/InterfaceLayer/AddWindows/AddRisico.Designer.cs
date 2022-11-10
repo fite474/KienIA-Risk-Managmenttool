@@ -123,6 +123,7 @@
             this.advancedDataGridViewLosseItems.Location = new System.Drawing.Point(0, 0);
             this.advancedDataGridViewLosseItems.Name = "advancedDataGridViewLosseItems";
             this.advancedDataGridViewLosseItems.ReadOnly = true;
+            this.advancedDataGridViewLosseItems.RowHeadersWidth = 51;
             this.advancedDataGridViewLosseItems.RowTemplate.Height = 40;
             this.advancedDataGridViewLosseItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.advancedDataGridViewLosseItems.Size = new System.Drawing.Size(1768, 774);
@@ -196,6 +197,7 @@
             this.advancedDataGridViewTemplateViewIssues.Location = new System.Drawing.Point(3, 79);
             this.advancedDataGridViewTemplateViewIssues.Name = "advancedDataGridViewTemplateViewIssues";
             this.advancedDataGridViewTemplateViewIssues.ReadOnly = true;
+            this.advancedDataGridViewTemplateViewIssues.RowHeadersWidth = 51;
             this.advancedDataGridViewTemplateViewIssues.RowTemplate.Height = 40;
             this.advancedDataGridViewTemplateViewIssues.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.advancedDataGridViewTemplateViewIssues.Size = new System.Drawing.Size(1768, 774);
@@ -286,6 +288,7 @@
             this.advancedDataGridViewObjectView.Location = new System.Drawing.Point(3, 79);
             this.advancedDataGridViewObjectView.Name = "advancedDataGridViewObjectView";
             this.advancedDataGridViewObjectView.ReadOnly = true;
+            this.advancedDataGridViewObjectView.RowHeadersWidth = 51;
             this.advancedDataGridViewObjectView.RowTemplate.Height = 40;
             this.advancedDataGridViewObjectView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.advancedDataGridViewObjectView.Size = new System.Drawing.Size(1768, 774);
@@ -358,8 +361,8 @@
             this.checkedListBoxAddSettings.CheckOnClick = true;
             this.checkedListBoxAddSettings.FormattingEnabled = true;
             this.checkedListBoxAddSettings.Items.AddRange(new object[] {
-            "Gekoppelde maatregelen overnemen(van templates/object issues)",
-            "Bijbehorende risicobeoordeling overnemen(van templates/object issues)"});
+            "Gekoppelde maatregelen overnemen(van templates/object risico\'s)",
+            "Bijbehorende risicobeoordeling overnemen(van templates/object risico\'s)"});
             this.checkedListBoxAddSettings.Location = new System.Drawing.Point(673, 31);
             this.checkedListBoxAddSettings.Name = "checkedListBoxAddSettings";
             this.checkedListBoxAddSettings.Size = new System.Drawing.Size(496, 72);

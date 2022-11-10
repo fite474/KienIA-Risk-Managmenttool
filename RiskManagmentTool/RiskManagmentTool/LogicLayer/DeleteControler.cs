@@ -79,8 +79,8 @@ namespace RiskManagmentTool.LogicLayer
             {
                 string dataIssueID = maatregelData.Rows[indexHelper].Field<int?>(0).ToString();
                 string dataMaatregelID = maatregelData.Rows[indexHelper].Field<int?>(1).ToString();
-                Console.WriteLine("issue: " + dataIssueID);
-                Console.WriteLine("maatregel: " + dataMaatregelID);
+                //Console.WriteLine("issue: " + dataIssueID);
+                //Console.WriteLine("maatregel: " + dataMaatregelID);
                 indexHelper++;
             }
 
@@ -100,23 +100,23 @@ namespace RiskManagmentTool.LogicLayer
                 {
 
                 }
-                Console.WriteLine("veilig om te verwijderen ");
+                //Console.WriteLine("veilig om te verwijderen ");
             }
             else
             {
-                string message = "Deze maatregel is in gebruik bij een of meerdere issues";
+                string message = "Deze maatregel is in gebruik bij een of meerdere risico's";
                 string title = "Reminder Risico waardes";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result = MessageBox.Show(message, title, buttons);
 
-                if (result == DialogResult.Yes)
-                {
-                    //this.Close();
-                }
-                else
-                {
+                //if (result == DialogResult.Yes)
+                //{
+                //    //this.Close();
+                //}
+                //else
+                //{
 
-                }
+                //}
             }
             return false;
         }

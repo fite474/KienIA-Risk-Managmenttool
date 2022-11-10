@@ -112,15 +112,24 @@ namespace RiskManagmentTool.InterfaceLayer
             //"csharp.net-informations.xls"
 
             //TODO fix saving location on any pc
-            xlWorkBook.SaveAs(userInputFileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
-            xlWorkBook.Close(true, misValue, misValue);
-            xlApp.Quit();
+            try
+            {
+                xlWorkBook.SaveAs(userInputFileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+                xlWorkBook.Close(true, misValue, misValue);
+                xlApp.Quit();
 
-            releaseObject(xlWorkSheet);
-            releaseObject(xlWorkBook);
-            releaseObject(xlApp);
+                releaseObject(xlWorkSheet);
+                releaseObject(xlWorkBook);
+                releaseObject(xlApp);
 
-            MessageBox.Show("Excel file created , you can find the file at 'this pc/documents/'" + userInputFileName);
+                MessageBox.Show("Excel file created , you can find the file at 'this pc/documents/'" + userInputFileName);
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.ToString() + "\n\n error code: export 129");
+
+            }
+
         }
 
         private void releaseObject(object obj)

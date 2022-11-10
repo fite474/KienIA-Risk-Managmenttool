@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditObjecten));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -231,9 +231,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(37, 87);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(161, 17);
+            this.label6.Size = new System.Drawing.Size(205, 21);
             this.label6.TabIndex = 1;
-            this.label6.Text = "Nog te verifiëren issues:";
+            this.label6.Text = "Nog te verifiëren risico\'s:";
             this.label6.Visible = false;
             // 
             // panel6
@@ -304,7 +304,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1561, 462);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Gekoppelde issues";
+            this.tabPage1.Text = "Gekoppelde risico\'s";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // advancedDataGridViewGekoppeldeIssues
@@ -314,18 +314,19 @@
             this.advancedDataGridViewGekoppeldeIssues.AutoGenerateContextFilters = true;
             this.advancedDataGridViewGekoppeldeIssues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.advancedDataGridViewGekoppeldeIssues.DateWithTime = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advancedDataGridViewGekoppeldeIssues.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advancedDataGridViewGekoppeldeIssues.DefaultCellStyle = dataGridViewCellStyle1;
             this.advancedDataGridViewGekoppeldeIssues.Dock = System.Windows.Forms.DockStyle.Fill;
             this.advancedDataGridViewGekoppeldeIssues.Location = new System.Drawing.Point(3, 53);
             this.advancedDataGridViewGekoppeldeIssues.Name = "advancedDataGridViewGekoppeldeIssues";
             this.advancedDataGridViewGekoppeldeIssues.ReadOnly = true;
+            this.advancedDataGridViewGekoppeldeIssues.RowHeadersWidth = 51;
             this.advancedDataGridViewGekoppeldeIssues.RowTemplate.Height = 40;
             this.advancedDataGridViewGekoppeldeIssues.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.advancedDataGridViewGekoppeldeIssues.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -407,8 +408,8 @@
             // 
             this.comboBoxFilterIssues.FormattingEnabled = true;
             this.comboBoxFilterIssues.Items.AddRange(new object[] {
-            "Alle issues",
-            "Issues zonder maatregelen"});
+            "Alle risico\'s",
+            "Risico\'s zonder maatregelen"});
             this.comboBoxFilterIssues.Location = new System.Drawing.Point(114, 6);
             this.comboBoxFilterIssues.Name = "comboBoxFilterIssues";
             this.comboBoxFilterIssues.Size = new System.Drawing.Size(184, 24);

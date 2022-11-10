@@ -71,9 +71,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(58, 130);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 17);
+            this.label3.Size = new System.Drawing.Size(79, 21);
             this.label3.TabIndex = 5;
-            this.label3.Text = "IssueID";
+            this.label3.Text = "Risico ID";
             // 
             // textBoxIssueID
             // 
@@ -110,9 +110,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(58, 82);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 17);
+            this.label1.Size = new System.Drawing.Size(90, 21);
             this.label1.TabIndex = 0;
-            this.label1.Text = "GevaarID";
+            this.label1.Text = "Gevaar ID";
             // 
             // advancedDataGridViewIssueMaatregelen
             // 
@@ -126,6 +126,7 @@
             this.advancedDataGridViewIssueMaatregelen.Location = new System.Drawing.Point(0, 183);
             this.advancedDataGridViewIssueMaatregelen.Name = "advancedDataGridViewIssueMaatregelen";
             this.advancedDataGridViewIssueMaatregelen.ReadOnly = true;
+            this.advancedDataGridViewIssueMaatregelen.RowHeadersWidth = 51;
             this.advancedDataGridViewIssueMaatregelen.RowTemplate.Height = 24;
             this.advancedDataGridViewIssueMaatregelen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.advancedDataGridViewIssueMaatregelen.Size = new System.Drawing.Size(1039, 410);
@@ -143,7 +144,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "AddMaatregelenFromOtherIssue";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddMaatregelenFromOtherIssue";
+            this.Text = "AddMaatregelenFromOtherRisk";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridViewIssueMaatregelen)).EndInit();

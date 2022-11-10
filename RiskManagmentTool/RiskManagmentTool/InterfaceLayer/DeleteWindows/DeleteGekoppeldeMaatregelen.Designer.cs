@@ -65,9 +65,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(86, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 17);
+            this.label1.Size = new System.Drawing.Size(89, 21);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Issue ID: ";
+            this.label1.Text = "Risico ID: ";
             // 
             // dataGridViewIssueMaatregelen
             // 
@@ -79,6 +79,7 @@
             this.dataGridViewIssueMaatregelen.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewIssueMaatregelen.Name = "dataGridViewIssueMaatregelen";
             this.dataGridViewIssueMaatregelen.ReadOnly = true;
+            this.dataGridViewIssueMaatregelen.RowHeadersWidth = 51;
             this.dataGridViewIssueMaatregelen.RowTemplate.Height = 24;
             this.dataGridViewIssueMaatregelen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewIssueMaatregelen.Size = new System.Drawing.Size(983, 377);

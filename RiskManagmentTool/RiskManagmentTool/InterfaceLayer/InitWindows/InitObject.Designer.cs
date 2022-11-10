@@ -87,7 +87,7 @@
             // 
             // buttonCreateObject
             // 
-            this.buttonCreateObject.Location = new System.Drawing.Point(608, 109);
+            this.buttonCreateObject.Location = new System.Drawing.Point(484, 334);
             this.buttonCreateObject.Name = "buttonCreateObject";
             this.buttonCreateObject.Size = new System.Drawing.Size(173, 59);
             this.buttonCreateObject.TabIndex = 4;
@@ -127,10 +127,10 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(64, 600);
+            this.tabControl1.Location = new System.Drawing.Point(63, 554);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(582, 58);
+            this.tabControl1.Size = new System.Drawing.Size(570, 62);
             this.tabControl1.TabIndex = 8;
             this.tabControl1.Visible = false;
             // 
@@ -143,7 +143,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(574, 29);
+            this.tabPage1.Size = new System.Drawing.Size(562, 33);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -187,7 +187,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(574, 324);
+            this.tabPage2.Size = new System.Drawing.Size(574, 29);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -245,7 +245,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(929, 723);
+            this.ClientSize = new System.Drawing.Size(698, 439);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.checkedListBoxRisicograaf);
             this.Controls.Add(this.textBoxObjectOmschrijving);

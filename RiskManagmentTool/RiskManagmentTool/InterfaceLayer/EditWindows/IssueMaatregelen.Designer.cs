@@ -187,9 +187,9 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(1149, 3);
+            this.panel2.Location = new System.Drawing.Point(1069, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(58, 143);
+            this.panel2.Size = new System.Drawing.Size(138, 143);
             this.panel2.TabIndex = 0;
             this.panel2.Visible = false;
             // 
@@ -466,6 +466,7 @@
             this.dataGridViewIssueMaatregelen.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewIssueMaatregelen.Name = "dataGridViewIssueMaatregelen";
             this.dataGridViewIssueMaatregelen.ReadOnly = true;
+            this.dataGridViewIssueMaatregelen.RowHeadersWidth = 51;
             this.dataGridViewIssueMaatregelen.RowTemplate.Height = 24;
             this.dataGridViewIssueMaatregelen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewIssueMaatregelen.Size = new System.Drawing.Size(1278, 505);

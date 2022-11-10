@@ -17,6 +17,7 @@ namespace RiskManagmentTool.LogicLayer
 
         public string ChangeLocation(string filePath)
         {
+            //TODO Fix target path
             //string sourcePath = @"C:\Users\Public\TestFolder";
             string targetPath = @"C:\Users\mauri\Documents\1AVANS\Stage\KienIA Risk Managmenttool\Documents\ProjectImages";// @"C:\Users\mauri\Documents\1AVANS\Stage\KienIA Risk Managmenttool\Documents\ProjectImages";
             string filename = Path.GetFileName(filePath);

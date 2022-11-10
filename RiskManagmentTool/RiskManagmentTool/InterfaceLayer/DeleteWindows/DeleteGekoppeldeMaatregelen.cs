@@ -67,7 +67,7 @@ namespace RiskManagmentTool.InterfaceLayer.DeleteWindows
             }
 
             string message = "Weet u zeker dat u de maatregelen met ID: " + messageGevarenId + " \n " +
-                             "wilt verwijderen van dit issue?";
+                             "wilt verwijderen van dit risico?";
             string title = "Reminder Risico waardes";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result = MessageBox.Show(message, title, buttons);

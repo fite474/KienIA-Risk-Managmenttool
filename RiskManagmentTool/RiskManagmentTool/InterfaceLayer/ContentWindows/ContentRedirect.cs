@@ -59,5 +59,15 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
             }
 
         }
+
+        private void textBoxZoekIssueNummer_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(textBoxZoekIssueNummer.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Please enter only numbers.");
+                textBoxZoekIssueNummer.Text = textBoxZoekIssueNummer.Text.Remove(textBoxZoekIssueNummer.Text.Length - 1);
+            }
+
+        }
     }
 }

@@ -80,7 +80,7 @@
             this.label1.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.label1.Size = new System.Drawing.Size(201, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Zoeken naar Issue nummer";
+            this.label1.Text = "Zoeken naar risico nummer";
             // 
             // textBoxZoekIssueNummer
             // 
@@ -89,6 +89,7 @@
             this.textBoxZoekIssueNummer.Name = "textBoxZoekIssueNummer";
             this.textBoxZoekIssueNummer.Size = new System.Drawing.Size(383, 22);
             this.textBoxZoekIssueNummer.TabIndex = 1;
+            this.textBoxZoekIssueNummer.TextChanged += new System.EventHandler(this.textBoxZoekIssueNummer_TextChanged);
             // 
             // textBox2
             // 

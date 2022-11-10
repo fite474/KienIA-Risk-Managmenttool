@@ -366,9 +366,9 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(47, 47);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(142, 17);
+            this.label10.Size = new System.Drawing.Size(188, 21);
             this.label10.TabIndex = 1;
-            this.label10.Text = "Issues met dit gevaar";
+            this.label10.Text = "Risico\'s met dit gevaar";
             // 
             // buttonViewGevaarUsage
             // 

@@ -1032,6 +1032,7 @@ namespace RiskManagmentTool.LogicLayer
             return objectId;
         }
 
+
         public string GetObjectIdByName(string objectNaam)
         {
             return databaseCommunication.GetObjectIdByName(objectNaam);

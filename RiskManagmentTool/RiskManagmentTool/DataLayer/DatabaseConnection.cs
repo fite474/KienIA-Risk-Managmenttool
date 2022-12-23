@@ -17,8 +17,7 @@ namespace RiskManagmentTool.DataLayer
         {
             //maak check op het verlopen van een wachtwoord
             //sqlConnection = new SqlConnection(@"Data Source=MSI-MAURICE;Initial Catalog=KRMTVersionOne;User ID=Maurice;Password=
-            sqlConnection = new SqlConnection(@"Data Source=Kienia.database.windows.net;Initial Catalog=KRMTVersionOne;User ID=TestRobert;Password=Robert-1234");
-
+            sqlConnection = new SqlConnection(@"Data Source=Kienia.database.windows.net;Initial Catalog=KRMTVersionTwo;User ID=TestRobert;Password=Robert-1234");
 
         }
 

@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using RiskManagmentTool.LogicLayer;
+using Syncfusion.XlsIO;
+using System.IO;
+using System.Reflection;
+using System.Drawing;
 
 namespace RiskManagmentTool.InterfaceLayer
 {
@@ -15,25 +13,213 @@ namespace RiskManagmentTool.InterfaceLayer
     {
         private Datacomunication comunicator;
         private string ObjectID;
-        public ExportObject(string objectID)//DataTable data)
+
+        private BindingSource completeExportData;
+        public ExportObject(string objectID)
         {
             InitializeComponent();
             comunicator = new Datacomunication();
             ObjectID = objectID;
-            LoadData();//;data);
+            LoadData();
+            checkedListBoxTemplate.SetItemChecked(1, true);
         }
 
-        private void LoadData()//DataTable data)
+        private void LoadData()
         {
-            //dataGridViewCompleteBeoordeling.DataSource = data;
-            //dataGridViewCompleteBeoordeling.DataSource = comunicator.GetObjectIssues(ObjectID);
-            dataGridViewCompleteBeoordeling.DataSource = comunicator.GetExportView(ObjectID);
-            textBoxObjectName.Text = comunicator.GetObjectNameById(ObjectID);
 
+            //completeExportData = comunicator.GetExportView(ObjectID); ;
+            completeExportData = comunicator.GetExportViewRWSTemplate(ObjectID); ;
+
+            advancedDataGridViewCompleteBeoordeling.DataSource = completeExportData;
+
+
+            //dataGridViewCompleteBeoordeling.DataSource = comunicator.GetExportView(ObjectID);
+            textBoxObjectName.Text = comunicator.GetObjectNameById(ObjectID);
         }
+
+
+        //https://www.syncfusion.com/blogs/post/export-data-to-a-predefined-excel-template-in-c.aspx
+        private void ExportToExcel()
+        {
+
+
+
+
+
+
+            //////Code to read XML data to create a DataTable
+            //Assembly assembly = typeof(Program).GetTypeInfo().Assembly;
+            //Stream dataStream = assembly.GetManifestResourceStream("template 20141210 V1_1 RWS.xlsm");
+            //DataSet customersDataSet = new DataSet();
+            //customersDataSet.ReadXml(dataStream, XmlReadMode.ReadSchema);
+            //DataTable northwindDt = comunicator.GetExportViewTest(ObjectID);//customersDataSet.Tables[0];
+
+            //using (ExcelEngine excelEngine = new ExcelEngine())
+            //{
+            //    IApplication application = excelEngine.Excel;
+            //    application.DefaultVersion = ExcelVersion.Excel2016;
+
+            //    //Open an existing spreadsheet, which will be used as a template for generating the new spreadsheet.
+            //    //After opening, the workbook object represents the complete in-memory object model of the template spreadsheet.
+            //    IWorkbook workbook;
+
+            //    //Open existing Excel template
+            //    Stream cfFileStream = assembly.GetManifestResourceStream("template 20141210 V1_1 RWS.xlsm");
+            //    workbook = excelEngine.Excel.Workbooks.Open(cfFileStream);
+
+            //    //The first worksheet in the workbook is accessed.
+            //    IWorksheet worksheet = workbook.Worksheets[0];
+
+            //    //Create Template Marker processor.
+            //    //Apply the marker to export data from datatable to worksheet.
+            //    ITemplateMarkersProcessor marker = workbook.CreateTemplateMarkersProcessor();
+            //    marker.AddVariable("SalesList", northwindDt);
+            //    marker.ApplyMarkers();
+
+            //    //Saving and closing the workbook
+            //    workbook.SaveAs("TemplateMarkerOutput.xlsx");
+
+            //    //Close the workbook
+            //    workbook.Close();
+            //}
+        }
+
+
+
+
+
+        //backup
+        // private void buttonConfirmExport_Click(object sender, EventArgs e)
+        //{
+           
+        //    string userInputFileName = textBoxUserInputFileName.Text;
+        //    if (userInputFileName.Equals(""))
+        //    {
+        //        userInputFileName = "No Title";
+        //    }
+        //    userInputFileName += ".xls";
+        //    Microsoft.Office.Interop.Excel.Application xlApp;
+        //    Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
+        //    Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
+        //    object misValue = System.Reflection.Missing.Value;
+
+        //    xlApp = new Microsoft.Office.Interop.Excel.Application();
+        //    xlWorkBook = xlApp.Workbooks.Add(misValue);
+
+        //    xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+
+        //    //uitlijnen text center
+        //    Microsoft.Office.Interop.Excel.Range last = xlWorkSheet.Cells.SpecialCells(Microsoft.Office.Interop.Excel.XlCellType.xlCellTypeLastCell, Type.Missing);
+        //    Microsoft.Office.Interop.Excel.Range range = xlWorkSheet.get_Range("A1", last);
+        //    range.Style.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignLeft;
+
+        //    //uitlijnen text boven
+        //    range.Style.VerticalAlignment = Microsoft.Office.Interop.Excel.XlVAlign.xlVAlignTop;
+
+
+
+        //    //maak alle column headers aan in excel sheet
+        //    for (int i = 1; i < advancedDataGridViewCompleteBeoordeling.Columns.Count + 1; i++)
+        //    {
+        //        xlWorkSheet.Cells[1, i] = advancedDataGridViewCompleteBeoordeling.Columns[i - 1].HeaderText;
+        //        //xlWorkSheet.Cells.ColumnWidth = 50;
+
+        //    }
+
+
+        //    int imageColumn = advancedDataGridViewCompleteBeoordeling.ColumnCount - 1;
+
+        //    //schrijf all data per rij in excel sheet
+        //    for (int i = 0; i <= advancedDataGridViewCompleteBeoordeling.RowCount - 1; i++)
+        //    {
+        //        for (int j = 0; j <= advancedDataGridViewCompleteBeoordeling.ColumnCount - 1; j++)
+        //        {
+        //            DataGridViewCell cell = advancedDataGridViewCompleteBeoordeling[j, i];
+        //            string text = (cell.Value != null)? cell.Value.ToString() : "";
+        //            string correctText = text.Replace("*ENTER*", "\n\n");
+        //            if (j == imageColumn)
+        //            {
+        //                try//TODO fix image column
+        //                {
+        //                    Microsoft.Office.Interop.Excel.Range oRange = (Microsoft.Office.Interop.Excel.Range)xlWorkSheet.Cells[i + 2, j + 1];
+        //                    float Left = (float)((double)oRange.Left);
+        //                    float Top = (float)((double)oRange.Top);
+        //                    const float ImageSize = 128;
+
+        //                    //TODO change add picture to byte[]
+        //                    xlWorkSheet.Shapes.AddPicture(text, Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoCTrue, Left, Top, ImageSize, ImageSize);
+        //                    //xlWorkSheet.Shapes.AddPicture(text, Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoCTrue, 50, 50, 300, 45);
+        //                    // xlWorkSheet.Cells[i + 2, j + 1] =
+        //                    Console.WriteLine("row = " + i);
+        //                }
+        //                catch (Exception err)
+        //                {
+        //                    xlWorkSheet.Cells[i + 2, j + 1] = correctText;
+        //                    Console.WriteLine(err);
+        //                }
+        //            }
+        //            else
+        //            {
+        //                xlWorkSheet.Cells[i + 2, j + 1] = correctText;//cell.Value;
+        //            }
+
+
+        //        }
+        //    }
+        //    //xlWorkSheet.Columns.st = 200;// AllocatedRange.AutoFitRows();
+        //    //"csharp.net-informations.xls"
+
+        //    //TODO fix saving location on any pc
+        //    try
+        //    {
+        //        xlWorkBook.SaveAs(userInputFileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+        //        xlWorkBook.Close(true, misValue, misValue);
+        //        xlApp.Quit();
+
+        //        releaseObject(xlWorkSheet);
+        //        releaseObject(xlWorkBook);
+        //        releaseObject(xlApp);
+
+        //        MessageBox.Show("Excel file created , you can find the file at 'this pc/documents/'" + userInputFileName);
+        //    }
+        //    catch (Exception error)
+        //    {
+        //        MessageBox.Show(error.ToString() + "\n\n error code: export 129");
+
+        //    }
+
+        //}
+
+
+        private Microsoft.Office.Interop.Excel.Workbook GetTemplate(Microsoft.Office.Interop.Excel.Application xlApp)
+        {
+            Microsoft.Office.Interop.Excel.Workbook template;
+            switch (this.checkedListBoxTemplate.CheckedIndices[0])
+            {
+                case 0://KienIA template, start without template
+                    template = xlApp.Workbooks.Add(System.Reflection.Missing.Value);
+                    break;
+                case 1://RWS tempalte
+                    string executableLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+                    string xslLocation = Path.Combine(executableLocation, "excelTemplates\\template 20141210 V1_1 RWS.xlsm");
+                    template = xlApp.Workbooks.Add(xslLocation);
+                    break;
+                default:
+                    template = null;
+                    MessageBox.Show("Error selecting workbook ,130");
+                    break;
+            }
+
+            return template;
+        }
+
+
+
 
         private void buttonConfirmExport_Click(object sender, EventArgs e)
         {
+           // this.ExportToExcel();
+           
             string userInputFileName = textBoxUserInputFileName.Text;
             if (userInputFileName.Equals(""))
             {
@@ -46,49 +232,46 @@ namespace RiskManagmentTool.InterfaceLayer
             object misValue = System.Reflection.Missing.Value;
 
             xlApp = new Microsoft.Office.Interop.Excel.Application();
-            xlWorkBook = xlApp.Workbooks.Add(misValue);
+            //  xlWorkBook = xlApp.Workbooks.Add(misValue);
+
+            xlWorkBook = GetTemplate(xlApp);//xlApp.Workbooks.Add("template 20141210 V1_1 RWS.xlsm");
+
+            //bepalen op welke pagina geexporteerd zal worden
             xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
 
             //uitlijnen text center
             Microsoft.Office.Interop.Excel.Range last = xlWorkSheet.Cells.SpecialCells(Microsoft.Office.Interop.Excel.XlCellType.xlCellTypeLastCell, Type.Missing);
             Microsoft.Office.Interop.Excel.Range range = xlWorkSheet.get_Range("A1", last);
-            range.Style.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignLeft;
-            
-            //uitlijnen text boven
-            range.Style.VerticalAlignment = Microsoft.Office.Interop.Excel.XlVAlign.xlVAlignTop;
 
-
-            //int i = 0;
-            //int j = 0;
 
 
             //maak alle column headers aan in excel sheet
-            for (int i = 1; i < dataGridViewCompleteBeoordeling.Columns.Count + 1; i++)
+            for (int i = 1; i < advancedDataGridViewCompleteBeoordeling.Columns.Count + 1; i++)
             {
-                xlWorkSheet.Cells[1, i] = dataGridViewCompleteBeoordeling.Columns[i - 1].HeaderText;
-                //xlWorkSheet.Cells.ColumnWidth = 50;
-                
+                xlWorkSheet.Cells[1, i] = advancedDataGridViewCompleteBeoordeling.Columns[i - 1].HeaderText;
             }
 
 
-            int imageColumn = dataGridViewCompleteBeoordeling.ColumnCount - 1;
+            int imageColumn = advancedDataGridViewCompleteBeoordeling.ColumnCount - 1;
 
             //schrijf all data per rij in excel sheet
-            for (int i = 0; i <= dataGridViewCompleteBeoordeling.RowCount - 1; i++)
+            for (int i = 0; i <= advancedDataGridViewCompleteBeoordeling.RowCount - 1; i++)
             {
-                for (int j = 0; j <= dataGridViewCompleteBeoordeling.ColumnCount - 1; j++)
+                for (int j = 0; j <= advancedDataGridViewCompleteBeoordeling.ColumnCount - 1; j++)
                 {
-                    DataGridViewCell cell = dataGridViewCompleteBeoordeling[j, i];
-                    string text = cell.Value.ToString();
+                    DataGridViewCell cell = advancedDataGridViewCompleteBeoordeling[j, i];
+                    string text = (cell.Value != null)? cell.Value.ToString() : "";
                     string correctText = text.Replace("*ENTER*", "\n\n");
                     if (j == imageColumn)
                     {
-                        try
+                        try//TODO fix image column
                         {
                             Microsoft.Office.Interop.Excel.Range oRange = (Microsoft.Office.Interop.Excel.Range)xlWorkSheet.Cells[i + 2, j + 1];
                             float Left = (float)((double)oRange.Left);
                             float Top = (float)((double)oRange.Top);
                             const float ImageSize = 128;
+
+                            //TODO change add picture to byte[]
                             xlWorkSheet.Shapes.AddPicture(text, Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoCTrue, Left, Top, ImageSize, ImageSize);
                             //xlWorkSheet.Shapes.AddPicture(text, Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoCTrue, 50, 50, 300, 45);
                             // xlWorkSheet.Cells[i + 2, j + 1] =
@@ -102,9 +285,11 @@ namespace RiskManagmentTool.InterfaceLayer
                     }
                     else
                     {
-                        xlWorkSheet.Cells[i + 2, j + 1] = correctText;//cell.Value;
+                        //xlWorkSheet.Cells[i + 2, j + 1] = correctText;
+                        xlWorkSheet.Cells[i + 2, j + 1] = correctText;
+
                     }
-                    
+
 
                 }
             }
@@ -149,37 +334,56 @@ namespace RiskManagmentTool.InterfaceLayer
                 GC.Collect();
             }
         }
-        //Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
-        //// creating new WorkBook within Excel application  
-        //Microsoft.Office.Interop.Excel._Workbook workbook = excel.Workbooks.Add(Type.Missing);
-        //// creating new Excelsheet in workbook  
-        //Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
-        //// see the excel sheet behind the program  
-        //excel.Visible = true;
-        //// get the reference of first sheet. By default its name is Sheet1.  
-        //// store its reference to worksheet  
-        //worksheet = workbook.Sheets[0];
-        //worksheet = workbook.ActiveSheet;
-        //// changing the name of active sheet  
-        //worksheet.Name = "Exported from gridview";
-        //// storing header part in Excel  
-        //for (int i = 1; i < dataGridViewCompleteBeoordeling.Columns.Count + 1; i++)
-        //{
-        //    worksheet.Cells[1, i] = dataGridViewCompleteBeoordeling.Columns[i - 1].HeaderText;
-        //}
-        //// storing Each row and column value to excel sheet  
-        //for (int i = 0; i < dataGridViewCompleteBeoordeling.Rows.Count - 1; i++)
-        //{
-        //    for (int j = 0; j < dataGridViewCompleteBeoordeling.Columns.Count; j++)
-        //    {
-        //        worksheet.Cells[i + 2, j + 1] = dataGridViewCompleteBeoordeling.Rows[i].Cells[j].Value.ToString();
-        //    }
-        //}
-        //// save the application  
-        //workbook.SaveAs("c:\\output.xls", Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
-        //// Exit from the application  
-        //excel.Quit();
-    //}
-    
+
+        private void advancedDataGridViewIssueMaatregelen_FilterStringChanged(object sender, EventArgs e)
+        {
+            this.completeExportData.Filter = this.advancedDataGridViewCompleteBeoordeling.FilterString;
+        }
+
+        private void advancedDataGridViewIssueMaatregelen_SortStringChanged(object sender, EventArgs e)
+        {
+            this.completeExportData.Sort = this.advancedDataGridViewCompleteBeoordeling.SortString;
+        }
+
+        private void advancedDataGridViewCompleteBeoordeling_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            for (int i = 0; i < (advancedDataGridViewCompleteBeoordeling.ColumnCount - 2); i++)
+            {
+                advancedDataGridViewCompleteBeoordeling.AutoResizeColumn((i + 1), DataGridViewAutoSizeColumnMode.AllCells);
+                if (advancedDataGridViewCompleteBeoordeling.Columns[i + 1].Width > 400)
+                {
+                    advancedDataGridViewCompleteBeoordeling.Columns[i + 1].Width = 400;
+                }
+            }
+
+            advancedDataGridViewCompleteBeoordeling.ClearSelection();
+        }
+
+        private void checkedListBoxTemplate_SelectedValueChanged(object sender, EventArgs e)
+        {
+            this.BeginInvoke((MethodInvoker)(
+            () => updateDatagrid()));
+           
+            
+        }
+
+        private void updateDatagrid()
+        {
+            switch (this.checkedListBoxTemplate.CheckedIndices[0])
+            {
+                case 0://KienIA template
+                    completeExportData = comunicator.GetExportView(ObjectID); ;
+                    advancedDataGridViewCompleteBeoordeling.DataSource = completeExportData;
+                    break;
+                case 1://RWS tempalte
+                    completeExportData = comunicator.GetExportViewRWSTemplate(ObjectID); ;
+                    advancedDataGridViewCompleteBeoordeling.DataSource = completeExportData;
+                    break;
+                default:
+
+                    MessageBox.Show("Error switiching templates data ,131");
+                    break;
+            }
+        }
     }
 }

@@ -231,7 +231,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(37, 87);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(205, 21);
+            this.label6.Size = new System.Drawing.Size(164, 17);
             this.label6.TabIndex = 1;
             this.label6.Text = "Nog te verifiëren risico\'s:";
             this.label6.Visible = false;
@@ -314,7 +314,7 @@
             this.advancedDataGridViewGekoppeldeIssues.AutoGenerateContextFilters = true;
             this.advancedDataGridViewGekoppeldeIssues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.advancedDataGridViewGekoppeldeIssues.DateWithTime = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -327,7 +327,7 @@
             this.advancedDataGridViewGekoppeldeIssues.Name = "advancedDataGridViewGekoppeldeIssues";
             this.advancedDataGridViewGekoppeldeIssues.ReadOnly = true;
             this.advancedDataGridViewGekoppeldeIssues.RowHeadersWidth = 51;
-            this.advancedDataGridViewGekoppeldeIssues.RowTemplate.Height = 40;
+            this.advancedDataGridViewGekoppeldeIssues.RowTemplate.Height = 45;
             this.advancedDataGridViewGekoppeldeIssues.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.advancedDataGridViewGekoppeldeIssues.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.advancedDataGridViewGekoppeldeIssues.Size = new System.Drawing.Size(1555, 406);

@@ -35,6 +35,7 @@
             this.textBoxTemplateNaam = new System.Windows.Forms.TextBox();
             this.comboBoxTemplateType = new System.Windows.Forms.ComboBox();
             this.comboBoxTemplateToepassing = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonCreateTemplate
@@ -97,11 +98,21 @@
             this.comboBoxTemplateToepassing.Size = new System.Drawing.Size(234, 24);
             this.comboBoxTemplateToepassing.TabIndex = 6;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(467, 324);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(321, 17);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "WERKT NIET. Templates is geen onderdeel meer";
+            // 
             // InitTemplate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.comboBoxTemplateToepassing);
             this.Controls.Add(this.comboBoxTemplateType);
             this.Controls.Add(this.textBoxTemplateNaam);
@@ -125,5 +136,6 @@
         private System.Windows.Forms.TextBox textBoxTemplateNaam;
         private System.Windows.Forms.ComboBox comboBoxTemplateType;
         private System.Windows.Forms.ComboBox comboBoxTemplateToepassing;
+        private System.Windows.Forms.Label label4;
     }
 }

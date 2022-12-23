@@ -20,6 +20,8 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection = databaseConnection.sqlConnection;
         }
 
+        #region version1
+
         #region Init
 
         public void MakeProject(Item item)
@@ -503,7 +505,7 @@ namespace RiskManagmentTool.DataLayer
             cmd.Parameters.AddWithValue("@ObjectID", objectId);
             cmd.Parameters.AddWithValue("@IssueID", issueId);
 
-            //mag weg******************************************************
+            //mag weg*
             Int32 issueIDNotUsedInCode = (Int32)cmd.ExecuteScalar();
 
             sqlConnection.Close();
@@ -1079,6 +1081,7 @@ namespace RiskManagmentTool.DataLayer
 
         }
 
+        //TODO for version2
         public void UpdateGevaarGebeurtenis(int gevaarID, string text)
         {
             sqlConnection.Open();
@@ -1092,7 +1095,7 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
 
         }
-
+        //TODO for version2
         public void UpdateGevaarSituatie(int gevaarID, string text)
         {
             sqlConnection.Open();
@@ -1201,6 +1204,18 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Open();
             string query = "SELECT * FROM View_ExportObject_IssuesMetMaatregelen " +
                             "WHERE View_ExportObject_IssuesMetMaatregelen.RisicoID IN (SELECT TableObjectIssues.IssueID FROM TableObjectIssues WHERE TableObjectIssues.ObjectID = '" + objectID + "') ";
+
+            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
+            sqlConnection.Close();
+            return adapter;
+
+        }
+
+        public SqlDataAdapter GetExportViewRWSTemplate(string objectID)
+        {
+            sqlConnection.Open();
+            string query = "SELECT * FROM View_Export_Object_RWS_Template " +
+                            "WHERE View_Export_Object_RWS_Template.RisicoID IN (SELECT TableObjectIssues.IssueID FROM TableObjectIssues WHERE TableObjectIssues.ObjectID = '" + objectID + "') ";
 
             SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
             sqlConnection.Close();
@@ -2832,6 +2847,25 @@ namespace RiskManagmentTool.DataLayer
         }
 
         #endregion getmenus
+
+        #endregion version1
+
+
+
+        #region version2
+
+        //#region get
+
+
+
+
+
+
+        #endregion version2
+
+
+
+
 
 
 

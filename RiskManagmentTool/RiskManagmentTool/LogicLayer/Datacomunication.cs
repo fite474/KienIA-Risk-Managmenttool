@@ -21,6 +21,10 @@ namespace RiskManagmentTool.LogicLayer
             databaseCommunication = new DatabaseCommunication();
         }
 
+
+        #region version1
+
+
         #region Init
         public void MakeProject(string projectNaam)
         {
@@ -701,6 +705,28 @@ namespace RiskManagmentTool.LogicLayer
             bindingSource.DataSource = data;
             return bindingSource;
         }
+
+        public BindingSource GetExportViewRWSTemplate(string objectID)
+        {
+            SqlDataAdapter adapter = databaseCommunication.GetExportViewRWSTemplate(objectID);
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = data;
+            return bindingSource;
+        }
+
+        //public DataTable GetExportViewTest(string objectID)
+        //{
+        //    SqlDataAdapter adapter = databaseCommunication.GetExportView(objectID);
+        //    DataTable data = new DataTable();
+        //    adapter.Fill(data);
+
+        //    //BindingSource bindingSource = new BindingSource();
+        //    //bindingSource.DataSource = data;
+        //    return data;
+        //}
 
         public BindingSource GetObjectIssues(string objectID)
         {
@@ -1771,7 +1797,7 @@ namespace RiskManagmentTool.LogicLayer
         }
 
 
-
+        #endregion version1
 
 
     }

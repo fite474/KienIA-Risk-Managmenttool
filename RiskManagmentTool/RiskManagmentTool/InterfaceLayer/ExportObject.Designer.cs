@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxObjectName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dataGridViewCompleteBeoordeling = new System.Windows.Forms.DataGridView();
+            this.advancedDataGridViewCompleteBeoordeling = new ADGV.AdvancedDataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
+            this.checkedListBoxTemplate = new System.Windows.Forms.CheckedListBox();
             this.buttonConfirmExport = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBoxUserInputFileName = new System.Windows.Forms.TextBox();
@@ -45,7 +45,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCompleteBeoordeling)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridViewCompleteBeoordeling)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -103,7 +103,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.dataGridViewCompleteBeoordeling);
+            this.tabPage1.Controls.Add(this.advancedDataGridViewCompleteBeoordeling);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -112,30 +112,31 @@
             this.tabPage1.Text = "Issues weergave";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewCompleteBeoordeling
+            // advancedDataGridViewCompleteBeoordeling
             // 
-            this.dataGridViewCompleteBeoordeling.AllowUserToAddRows = false;
-            this.dataGridViewCompleteBeoordeling.AllowUserToDeleteRows = false;
-            this.dataGridViewCompleteBeoordeling.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCompleteBeoordeling.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewCompleteBeoordeling.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewCompleteBeoordeling.Location = new System.Drawing.Point(3, 3);
-            this.dataGridViewCompleteBeoordeling.Name = "dataGridViewCompleteBeoordeling";
-            this.dataGridViewCompleteBeoordeling.ReadOnly = true;
-            this.dataGridViewCompleteBeoordeling.RowTemplate.Height = 70;
-            this.dataGridViewCompleteBeoordeling.Size = new System.Drawing.Size(1438, 696);
-            this.dataGridViewCompleteBeoordeling.TabIndex = 0;
+            this.advancedDataGridViewCompleteBeoordeling.AutoGenerateContextFilters = true;
+            this.advancedDataGridViewCompleteBeoordeling.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.advancedDataGridViewCompleteBeoordeling.DateWithTime = false;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advancedDataGridViewCompleteBeoordeling.DefaultCellStyle = dataGridViewCellStyle4;
+            this.advancedDataGridViewCompleteBeoordeling.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.advancedDataGridViewCompleteBeoordeling.Location = new System.Drawing.Point(3, 3);
+            this.advancedDataGridViewCompleteBeoordeling.Name = "advancedDataGridViewCompleteBeoordeling";
+            this.advancedDataGridViewCompleteBeoordeling.RowHeadersWidth = 51;
+            this.advancedDataGridViewCompleteBeoordeling.RowTemplate.Height = 45;
+            this.advancedDataGridViewCompleteBeoordeling.Size = new System.Drawing.Size(1438, 696);
+            this.advancedDataGridViewCompleteBeoordeling.TabIndex = 1;
+            this.advancedDataGridViewCompleteBeoordeling.TimeFilter = false;
+            this.advancedDataGridViewCompleteBeoordeling.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.advancedDataGridViewCompleteBeoordeling_DataBindingComplete);
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.checkedListBox2);
             this.tabPage2.Controls.Add(this.checkedListBox1);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
@@ -145,17 +146,18 @@
             this.tabPage2.Text = "Export instellingen";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // checkedListBox2
+            // checkedListBoxTemplate
             // 
-            this.checkedListBox2.FormattingEnabled = true;
-            this.checkedListBox2.Items.AddRange(new object[] {
-            "Geen kleur opmaak",
-            "Met kleur opmaak op basis van rest risico"});
-            this.checkedListBox2.Location = new System.Drawing.Point(321, 37);
-            this.checkedListBox2.Name = "checkedListBox2";
-            this.checkedListBox2.Size = new System.Drawing.Size(300, 140);
-            this.checkedListBox2.TabIndex = 1;
-            this.checkedListBox2.Visible = false;
+            this.checkedListBoxTemplate.Enabled = false;
+            this.checkedListBoxTemplate.FormattingEnabled = true;
+            this.checkedListBoxTemplate.Items.AddRange(new object[] {
+            "KienIA template",
+            "RWS template"});
+            this.checkedListBoxTemplate.Location = new System.Drawing.Point(430, 19);
+            this.checkedListBoxTemplate.Name = "checkedListBoxTemplate";
+            this.checkedListBoxTemplate.Size = new System.Drawing.Size(176, 72);
+            this.checkedListBoxTemplate.TabIndex = 1;
+            this.checkedListBoxTemplate.SelectedValueChanged += new System.EventHandler(this.checkedListBoxTemplate_SelectedValueChanged);
             // 
             // buttonConfirmExport
             // 
@@ -169,6 +171,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.checkedListBoxTemplate);
             this.panel1.Controls.Add(this.textBoxUserInputFileName);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
@@ -217,7 +220,7 @@
             this.Text = "ExportObject";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCompleteBeoordeling)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridViewCompleteBeoordeling)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -236,11 +239,11 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button buttonConfirmExport;
-        private System.Windows.Forms.DataGridView dataGridViewCompleteBeoordeling;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox textBoxUserInputFileName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.CheckedListBox checkedListBox2;
+        private System.Windows.Forms.CheckedListBox checkedListBoxTemplate;
+        private ADGV.AdvancedDataGridView advancedDataGridViewCompleteBeoordeling;
     }
 }

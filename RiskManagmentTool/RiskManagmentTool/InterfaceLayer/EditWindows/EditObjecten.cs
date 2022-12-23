@@ -468,9 +468,6 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         }
 
-
-
-
         private void OpenIssuePage()
         {
             try

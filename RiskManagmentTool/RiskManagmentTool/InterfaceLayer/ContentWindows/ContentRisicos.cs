@@ -18,6 +18,8 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 
         private BindingSource gevarenData;
 
+        private string objectId = "-1";
+
         public ContentRisicos()
         {
             InitializeComponent();
@@ -35,7 +37,7 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 
         private void buttonAddNew_Click(object sender, EventArgs e)
         {
-            Form editRisicosForm = new EditRisicos();
+            Form editRisicosForm = new EditRisicos(objectId);
 
             editRisicosForm.ShowDialog();
             LoadData();

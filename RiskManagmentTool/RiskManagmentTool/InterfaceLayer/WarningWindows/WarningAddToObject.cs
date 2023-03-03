@@ -89,8 +89,6 @@ namespace RiskManagmentTool.InterfaceLayer.WarningWindows
             if (compareIssueRisicoBeoordeling.ShowDialog() == DialogResult.OK)
             {
 
-                int x = 0;
-
             }
             else
             {

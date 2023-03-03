@@ -19,8 +19,9 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         KeuzeMenus keuzeMenus;
         private MenuTableName MenuTableName;
         private DeleteControler deleteControler;
+        private string objectId = "-1";
 
-        public EditKeuzes(MenuTableName menuTableName, Dictionary<int, string> options, string menuName)
+        public EditKeuzes(MenuTableName menuTableName, Dictionary<int, string> options, string menuName, string objectId)
         {
             InitializeComponent();
             keuzeMenus = new KeuzeMenus();
@@ -29,6 +30,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             MenuTableName = menuTableName;
             MenuName = menuName;
             MenuOptions = options;
+            this.objectId = objectId;
             LoadData();
         }
 
@@ -89,7 +91,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void AddInput(string input)
         {
-            comunicator.AddToMenu(MenuTableName, input);
+            comunicator.AddToMenu(MenuTableName, input, objectId);
             keuzeMenus.ReloadAllLists(); 
         }
 

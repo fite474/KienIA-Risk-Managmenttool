@@ -39,6 +39,7 @@ namespace RiskManagmentTool.LogicLayer
         private Datacomunication comunicator;
 
         
+        //TODO remove unused moments when app gets keuzemenus
         public KeuzeMenus()
         {
             

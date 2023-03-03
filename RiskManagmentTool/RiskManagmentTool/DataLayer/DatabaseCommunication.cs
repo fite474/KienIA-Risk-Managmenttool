@@ -1266,15 +1266,6 @@ namespace RiskManagmentTool.DataLayer
             return adapter;
         }
 
-        public SqlDataAdapter GetTemplates()
-        {
-            sqlConnection.Open();
-            String query = "SELECT * FROM TableTemplates";
-            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
-            sqlConnection.Close();
-            return adapter;
-        }
-
         public SqlDataAdapter GetMaatregelen()
         {
             sqlConnection.Open();
@@ -1293,10 +1284,6 @@ namespace RiskManagmentTool.DataLayer
             return adapter;
         }
 
-
-
-
-
         public SqlDataAdapter GetRisicoBeoordelingFromIssue(string issueID)
         {
             
@@ -1307,7 +1294,6 @@ namespace RiskManagmentTool.DataLayer
             return adapter;
         }
 
-
         public SqlDataAdapter GetTemplateIssues(string templateID)
         {
             sqlConnection.Open();
@@ -1315,19 +1301,6 @@ namespace RiskManagmentTool.DataLayer
                             "WHERE View_ObjectIssues.RisicoID IN (SELECT TableTemplateIssues.IssueID FROM TableTemplateIssues WHERE TableTemplateIssues.TemplateID = '" + templateID + "') ";
 
 
-            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
-            sqlConnection.Close();
-            return adapter;
-        }
-
-        public SqlDataAdapter GetTemplateGevaren(string templateID)
-        {
-
-            sqlConnection.Open();
-            String query = "SELECT TableGevaren.* FROM TableTemplateGevaren " +
-                " JOIN TableGevaren " +
-                "ON TableGevaren.GevaarID = TableTemplateGevaren.GevaarID WHERE TableTemplateGevaren.TemplateID = '" + templateID + "'";
-                
             SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
             sqlConnection.Close();
             return adapter;
@@ -2350,7 +2323,7 @@ namespace RiskManagmentTool.DataLayer
 
         #endregion GET REQUESTS FROM DATABASE
 
-
+        //updated in early 2023 for object specific edits
         #region add menus
 
 
@@ -2368,105 +2341,113 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
         }
 
-        public void AddToGevolgenMenu(string optionToAdd)
+        public void AddToGevolgenMenu(string optionToAdd, string objectId)
         {
             string databaseTableName = "Gevolgen";
 
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO " + databaseTableName + "(Gevolg) VALUES " +
-                                                                       "(@Gevolg)", sqlConnection);
+            SqlCommand cmd = new SqlCommand("INSERT INTO " + databaseTableName + "(Gevolg, ObjectID) VALUES " +
+                                                                       "(@Gevolg, @ObjectID)", sqlConnection);
             cmd.Parameters.AddWithValue("@Gevolg", optionToAdd);
+            cmd.Parameters.AddWithValue("@ObjectID", objectId);
 
             cmd.ExecuteNonQuery();
             sqlConnection.Close();
         }
 
-        public void AddToGevarenzonesMenu(string optionToAdd)
+        public void AddToGevarenzonesMenu(string optionToAdd, string objectId)
         {
             string databaseTableName = "Gevarenzones";
 
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO " + databaseTableName + "(Gevarenzone) VALUES " +
-                                                                       "(@Gevarenzone)", sqlConnection);
+            SqlCommand cmd = new SqlCommand("INSERT INTO " + databaseTableName + "(Gevarenzone, ObjectID) VALUES " +
+                                                                       "(@Gevarenzone, @ObjectID)", sqlConnection);
             cmd.Parameters.AddWithValue("@Gevarenzone", optionToAdd);
+            cmd.Parameters.AddWithValue("@ObjectID", objectId);
 
             cmd.ExecuteNonQuery();
             sqlConnection.Close();
         }
 
-        public void AddToGevaarTypesMenu(string optionToAdd)
+        public void AddToGevaarTypesMenu(string optionToAdd, string objectId)
         {
             string databaseTableName = "GevaarTypes";
 
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO " + databaseTableName + "(GevaarType) VALUES " +
-                                                                       "(@GevaarType)", sqlConnection);
+            SqlCommand cmd = new SqlCommand("INSERT INTO " + databaseTableName + "(GevaarType, ObjectID) VALUES " +
+                                                                       "(@GevaarType, @ObjectID)", sqlConnection);
             cmd.Parameters.AddWithValue("@GevaarType", optionToAdd);
+            cmd.Parameters.AddWithValue("@ObjectID", objectId);
 
             cmd.ExecuteNonQuery();
             sqlConnection.Close();
         }
 
-        public void AddToGebruiksfasesMenu(string optionToAdd)
+        public void AddToGebruiksfasesMenu(string optionToAdd, string objectId)
         {
             string databaseTableName = "Gebruiksfases";
 
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO " + databaseTableName + "(Gebruiksfase) VALUES " +
-                                                                       "(@Gebruiksfase)", sqlConnection);
+            SqlCommand cmd = new SqlCommand("INSERT INTO " + databaseTableName + "(Gebruiksfase, ObjectID) VALUES " +
+                                                                       "(@Gebruiksfase, @ObjectID)", sqlConnection);
             cmd.Parameters.AddWithValue("@Gebruiksfase", optionToAdd);
+            cmd.Parameters.AddWithValue("@ObjectID", objectId);
 
             cmd.ExecuteNonQuery();
             sqlConnection.Close();
         }
 
-        public void AddToGebruikersMenu(string optionToAdd)
+        public void AddToGebruikersMenu(string optionToAdd, string objectId)
         {
             string databaseTableName = "Gebruikers";
 
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO " + databaseTableName + "(Gebruiker) VALUES " +
-                                                                       "(@Gebruiker)", sqlConnection);
+            SqlCommand cmd = new SqlCommand("INSERT INTO " + databaseTableName + "(Gebruiker, ObjectID) VALUES " +
+                                                                       "(@Gebruiker, @ObjectID)", sqlConnection);
             cmd.Parameters.AddWithValue("@Gebruiker", optionToAdd);
+            cmd.Parameters.AddWithValue("@ObjectID", objectId);
 
             cmd.ExecuteNonQuery();
             sqlConnection.Close();
         }
 
-        public void AddToDisciplinesMenu(string optionToAdd)
+        public void AddToDisciplinesMenu(string optionToAdd, string objectId)
         {
             string databaseTableName = "Disciplines";
 
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO " + databaseTableName + "(Discipline) VALUES " +
-                                                                       "(@Discipline)", sqlConnection);
+            SqlCommand cmd = new SqlCommand("INSERT INTO " + databaseTableName + "(Discipline, ObjectID) VALUES " +
+                                                                       "(@Discipline, @ObjectID)", sqlConnection);
             cmd.Parameters.AddWithValue("@Discipline", optionToAdd);
+            cmd.Parameters.AddWithValue("@ObjectID", objectId);
 
             cmd.ExecuteNonQuery();
             sqlConnection.Close();
         }
 
-        public void AddToBedienvormenMenu(string optionToAdd)
+        public void AddToBedienvormenMenu(string optionToAdd, string objectId)
         {
             string databaseTableName = "Bedienvormen";
 
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO " + databaseTableName + "(Bedienvorm) VALUES " +
-                                                                       "(@Bedienvorm)", sqlConnection);
+            SqlCommand cmd = new SqlCommand("INSERT INTO " + databaseTableName + "(Bedienvorm, ObjectID) VALUES " +
+                                                                       "(@Bedienvorm, @ObjectID)", sqlConnection);
             cmd.Parameters.AddWithValue("@Bedienvorm", optionToAdd);
+            cmd.Parameters.AddWithValue("@ObjectID", objectId);
 
             cmd.ExecuteNonQuery();
             sqlConnection.Close();
         }
 
-        public void AddToTakenMenu(string optionToAdd)
+        public void AddToTakenMenu(string optionToAdd, string objectId)
         {
             string databaseTableName = "Taken";
 
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO " + databaseTableName + "(Taak) VALUES " +
-                                                                       "(@Taak)", sqlConnection);
+            SqlCommand cmd = new SqlCommand("INSERT INTO " + databaseTableName + "(Taak, ObjectID) VALUES " +
+                                                                       "(@Taak, @ObjectID)", sqlConnection);
             cmd.Parameters.AddWithValue("@Taak", optionToAdd);
+            cmd.Parameters.AddWithValue("@ObjectID", objectId);
 
             cmd.ExecuteNonQuery();
             sqlConnection.Close();

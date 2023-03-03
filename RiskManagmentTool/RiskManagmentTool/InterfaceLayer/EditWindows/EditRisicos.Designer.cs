@@ -340,7 +340,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(519, 194);
+            this.panel3.Size = new System.Drawing.Size(519, 175);
             this.panel3.TabIndex = 2;
             // 
             // buttonDeleteGevaar
@@ -366,7 +366,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(47, 47);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(188, 21);
+            this.label10.Size = new System.Drawing.Size(150, 17);
             this.label10.TabIndex = 1;
             this.label10.Text = "Risico\'s met dit gevaar";
             // 
@@ -382,9 +382,9 @@
             // 
             // buttonKeuzeOption
             // 
-            this.buttonKeuzeOption.Location = new System.Drawing.Point(3, 197);
+            this.buttonKeuzeOption.Location = new System.Drawing.Point(3, 181);
             this.buttonKeuzeOption.Name = "buttonKeuzeOption";
-            this.buttonKeuzeOption.Size = new System.Drawing.Size(157, 36);
+            this.buttonKeuzeOption.Size = new System.Drawing.Size(157, 52);
             this.buttonKeuzeOption.TabIndex = 1;
             this.buttonKeuzeOption.Text = "Voeg keuze optie toe";
             this.buttonKeuzeOption.UseVisualStyleBackColor = true;

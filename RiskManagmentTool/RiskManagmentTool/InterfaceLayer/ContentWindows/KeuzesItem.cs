@@ -18,7 +18,9 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
         private Dictionary<int, string> MenuOptions;
         private KeuzeMenus keuzeMenus;
         private string menuTitle;
-        public KeuzesItem(MenuTableName menuName)
+
+        private string objectId = "-1";
+        public KeuzesItem(MenuTableName menuName, string objectId)
         {
             InitializeComponent();
             keuzeMenus = new KeuzeMenus();
@@ -96,7 +98,7 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 
         private void buttonEditKeuzes_Click(object sender, EventArgs e)
         {
-            Form editKeuzes = new EditKeuzes(MenuTableName, MenuOptions, menuTitle);
+            Form editKeuzes = new EditKeuzes(MenuTableName, MenuOptions, menuTitle, objectId);
             editKeuzes.ShowDialog();
             keuzeMenus.ReloadAllLists();
             LoadData();

@@ -48,21 +48,22 @@
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(318, 360);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(317, 359);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // buttonEditKeuzes
             // 
             this.buttonEditKeuzes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonEditKeuzes.Location = new System.Drawing.Point(30, 297);
-            this.buttonEditKeuzes.Margin = new System.Windows.Forms.Padding(30, 3, 30, 3);
+            this.buttonEditKeuzes.Location = new System.Drawing.Point(29, 296);
+            this.buttonEditKeuzes.Margin = new System.Windows.Forms.Padding(29, 2, 29, 2);
             this.buttonEditKeuzes.Name = "buttonEditKeuzes";
-            this.buttonEditKeuzes.Size = new System.Drawing.Size(258, 53);
+            this.buttonEditKeuzes.Size = new System.Drawing.Size(259, 53);
             this.buttonEditKeuzes.TabIndex = 1;
             this.buttonEditKeuzes.Text = "Edit keuze opties";
             this.buttonEditKeuzes.UseVisualStyleBackColor = true;
@@ -75,10 +76,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listBoxMenuOptions.FormattingEnabled = true;
             this.listBoxMenuOptions.ItemHeight = 16;
-            this.listBoxMenuOptions.Location = new System.Drawing.Point(30, 75);
-            this.listBoxMenuOptions.Margin = new System.Windows.Forms.Padding(30, 3, 30, 3);
+            this.listBoxMenuOptions.Location = new System.Drawing.Point(29, 73);
+            this.listBoxMenuOptions.Margin = new System.Windows.Forms.Padding(29, 2, 29, 2);
             this.listBoxMenuOptions.Name = "listBoxMenuOptions";
-            this.listBoxMenuOptions.Size = new System.Drawing.Size(258, 196);
+            this.listBoxMenuOptions.Size = new System.Drawing.Size(259, 196);
             this.listBoxMenuOptions.TabIndex = 2;
             // 
             // panel1
@@ -86,23 +87,25 @@
             this.panel1.Controls.Add(this.textBoxMenuName);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Location = new System.Drawing.Point(3, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(312, 66);
+            this.panel1.Size = new System.Drawing.Size(311, 67);
             this.panel1.TabIndex = 3;
             // 
             // textBoxMenuName
             // 
-            this.textBoxMenuName.Location = new System.Drawing.Point(95, 24);
+            this.textBoxMenuName.Location = new System.Drawing.Point(95, 25);
+            this.textBoxMenuName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxMenuName.Name = "textBoxMenuName";
             this.textBoxMenuName.ReadOnly = true;
-            this.textBoxMenuName.Size = new System.Drawing.Size(190, 22);
+            this.textBoxMenuName.Size = new System.Drawing.Size(191, 22);
             this.textBoxMenuName.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 24);
+            this.label1.Location = new System.Drawing.Point(24, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 17);
             this.label1.TabIndex = 0;
@@ -113,8 +116,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "KeuzesItem";
-            this.Size = new System.Drawing.Size(318, 360);
+            this.Size = new System.Drawing.Size(317, 359);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

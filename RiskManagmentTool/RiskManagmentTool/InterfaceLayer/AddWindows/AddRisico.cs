@@ -85,7 +85,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
         private void buttonCreateNewGevaar_Click(object sender, EventArgs e)
         {
-            Form editRisicosForm = new EditRisicos();
+            Form editRisicosForm = new EditRisicos(ObjectID);
             editRisicosForm.ShowDialog();
             LoadData();
         }

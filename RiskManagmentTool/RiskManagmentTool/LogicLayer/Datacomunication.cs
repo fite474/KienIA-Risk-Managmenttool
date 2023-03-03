@@ -1514,43 +1514,35 @@ namespace RiskManagmentTool.LogicLayer
                 case MenuTableName.Gevolgen:
                     databaseTableName = "Gevaar_Gevolg";
                     databaseColumnName = "GevolgID";
-                   // databaseCommunication.DeleteUsage(databaseTableName, databaseColumnName, optionID);
                     break;
                 case MenuTableName.Gevarenzones:
 
                     databaseTableName = "Gevaar_GevaarlijkeZone";
                     databaseColumnName = "GevaarlijkeZoneID";
-                   // databaseCommunication.DeleteUsage(databaseTableName, databaseColumnName, optionID);
                     break;
                 case MenuTableName.GevaarTypes:
                     databaseTableName = "Gevaar_GevaarType";
                     databaseColumnName = "GevaarTypeID";
-                   // databaseCommunication.DeleteUsage(databaseTableName, databaseColumnName, optionID);
                     break;
                 case MenuTableName.Gebruiksfases:
                     databaseTableName = "Gevaar_Gebruiksfase";
                     databaseColumnName = "GebruiksfaseID";
-                   // databaseCommunication.DeleteUsage(databaseTableName, databaseColumnName, optionID);
                     break;
                 case MenuTableName.Gebruikers:
                     databaseTableName = "Gevaar_Gebruiker";
                     databaseColumnName = "GebruikerID";
-                   // databaseCommunication.DeleteUsage(databaseTableName, databaseColumnName, optionID);
                     break;
                 case MenuTableName.Disciplines:
                     databaseTableName = "Gevaar_Discipline";
                     databaseColumnName = "DisciplineID";
-                   // databaseCommunication.DeleteUsage(databaseTableName, databaseColumnName, optionID);
                     break;
                 case MenuTableName.Bedienvormen:
                     databaseTableName = "Gevaar_Bedienvorm";
                     databaseColumnName = "BedienvormID";
-                    //databaseCommunication.DeleteUsage(databaseTableName, databaseColumnName, optionID);
                     break;
                 case MenuTableName.Taken:
                     databaseTableName = "Gevaar_Taak";
                     databaseColumnName = "TaakID";
-                    //databaseCommunication.DeleteUsage(databaseTableName, databaseColumnName, optionID);
                     break;
                 case MenuTableName.Normen:
                     //databaseCommunication.AddToNormenMenu(inputText);
@@ -1654,12 +1646,14 @@ namespace RiskManagmentTool.LogicLayer
         }
 
 
-        public void AddToMenu(MenuTableName menuTableName, string optionToAdd)
+        public void AddToMenu(MenuTableName menuTableName, string optionToAdd, string objectId)
         {
-            SendMenuOptionToDB(menuTableName, optionToAdd);
+            SendMenuOptionToDB(menuTableName, optionToAdd, objectId);
         }
 
-        private void SendMenuOptionToDB(MenuTableName menuTableName, string inputText)
+
+        //re-writen for object specifics. update early 2023
+        private void SendMenuOptionToDB(MenuTableName menuTableName, string inputText, string objectId)
         {
             switch (menuTableName)
             {
@@ -1667,28 +1661,28 @@ namespace RiskManagmentTool.LogicLayer
                     databaseCommunication.AddToObjectTypesMenu(inputText);
                     break;
                 case MenuTableName.Gevolgen:
-                    databaseCommunication.AddToGevolgenMenu(inputText);
+                    databaseCommunication.AddToGevolgenMenu(inputText, objectId);
                     break;
                 case MenuTableName.Gevarenzones:
-                    databaseCommunication.AddToGevarenzonesMenu(inputText);
+                    databaseCommunication.AddToGevarenzonesMenu(inputText, objectId);
                     break;
                 case MenuTableName.GevaarTypes:
-                    databaseCommunication.AddToGevaarTypesMenu(inputText);
+                    databaseCommunication.AddToGevaarTypesMenu(inputText, objectId);
                     break;
                 case MenuTableName.Gebruiksfases:
-                    databaseCommunication.AddToGebruiksfasesMenu(inputText);
+                    databaseCommunication.AddToGebruiksfasesMenu(inputText, objectId);
                     break;
                 case MenuTableName.Gebruikers:
-                    databaseCommunication.AddToGebruikersMenu(inputText);
+                    databaseCommunication.AddToGebruikersMenu(inputText, objectId);
                     break;
                 case MenuTableName.Disciplines:
-                    databaseCommunication.AddToDisciplinesMenu(inputText);
+                    databaseCommunication.AddToDisciplinesMenu(inputText, objectId);
                     break;
                 case MenuTableName.Bedienvormen:
-                    databaseCommunication.AddToBedienvormenMenu(inputText);
+                    databaseCommunication.AddToBedienvormenMenu(inputText, objectId);
                     break;
                 case MenuTableName.Taken:
-                    databaseCommunication.AddToTakenMenu(inputText);
+                    databaseCommunication.AddToTakenMenu(inputText, objectId);
                     break;
                 case MenuTableName.Normen:
                     databaseCommunication.AddToNormenMenu(inputText);

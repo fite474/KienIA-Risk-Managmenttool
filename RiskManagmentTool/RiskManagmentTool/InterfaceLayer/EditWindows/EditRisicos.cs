@@ -75,22 +75,26 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private bool listboxActive;
 
-        public EditRisicos()
+        private string objectId;
+
+        public EditRisicos(string objectId)
         {
             InitializeComponent();
             isNewGevaar = true;
             situatieInitString = "";
             gebeurtenisInitString = "";
             editGevaarID = "-1";
+            this.objectId = objectId;
             LoadData();
             LoadEmptyGevaarData();
             buttonDeleteGevaar.Enabled = false;
             buttonKeuzeOption.Enabled = false;
             listboxActive = false;
+            LoadSettings();
 
         }
 
-        public EditRisicos(string gevaarID)
+        public EditRisicos(string gevaarID, string objectId)
         {
             
             InitializeComponent();
@@ -98,6 +102,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             //situatieInitString = "";
             //gebeurtenisInitString = "";
 
+            this.objectId = objectId;
             editGevaarID = gevaarID;
             LoadData();
             LoadGevaarData(gevaarID);
@@ -176,6 +181,20 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             situatieInitString = textBoxGevSituatie.Text;
             gebeurtenisInitString = textBoxGevGebeurtenis.Text;
 
+
+        }
+
+        private void LoadSettings()
+        {
+            if (!objectId.Equals("-1"))
+            {
+                this.buttonKeuzeOption.Text = "Voeg toe Object specifiek";
+            }
+            else
+            {
+                //niet nodig om aan te passen
+                //this.buttonAddOption.Text = "Project specifiek";
+            }
 
         }
 
@@ -300,7 +319,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             {
                 currentTextBox.Text = checkedItems;
             }
-            textBoxCurrentMenu.Text = menuTitle;
+            
             //if (currentList != null)
             //{
             //    currentList.Add(1);
@@ -503,7 +522,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void buttonKeuzeOption_Click(object sender, EventArgs e)
         {
-            EditKeuzes editKeuze = new EditKeuzes(MenuTableName, CurrentMenuToAddTo, menuTitle);
+            EditKeuzes editKeuze = new EditKeuzes(MenuTableName, CurrentMenuToAddTo, menuTitle, objectId);
             editKeuze.ShowDialog();
 
             LoadMenus();
@@ -573,6 +592,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
                 default:
                     break;
             }
+
+            textBoxCurrentMenu.Text = menuTitle;
 
         }
 

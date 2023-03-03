@@ -14,6 +14,8 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
     public partial class ContentKeuzes : Form
     {
         private List<MenuTableName> menuTableNames;
+
+        private string objectId = "-1";
         public ContentKeuzes()
         {
             InitializeComponent();
@@ -47,7 +49,7 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
             InitComboBoxNames();
             foreach (MenuTableName menuName in menuTableNames)
             {
-                KeuzesItem keuzesItem = new KeuzesItem(menuName)
+                KeuzesItem keuzesItem = new KeuzesItem(menuName, objectId)
                 {
                     Dock = DockStyle.Fill,
                     MenuTableName = menuName                

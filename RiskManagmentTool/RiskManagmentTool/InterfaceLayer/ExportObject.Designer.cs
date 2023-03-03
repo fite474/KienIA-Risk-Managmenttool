@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxObjectName = new System.Windows.Forms.TextBox();
@@ -114,20 +114,23 @@
             // 
             // advancedDataGridViewCompleteBeoordeling
             // 
+            this.advancedDataGridViewCompleteBeoordeling.AllowUserToAddRows = false;
+            this.advancedDataGridViewCompleteBeoordeling.AllowUserToDeleteRows = false;
             this.advancedDataGridViewCompleteBeoordeling.AutoGenerateContextFilters = true;
             this.advancedDataGridViewCompleteBeoordeling.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.advancedDataGridViewCompleteBeoordeling.DateWithTime = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advancedDataGridViewCompleteBeoordeling.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advancedDataGridViewCompleteBeoordeling.DefaultCellStyle = dataGridViewCellStyle1;
             this.advancedDataGridViewCompleteBeoordeling.Dock = System.Windows.Forms.DockStyle.Fill;
             this.advancedDataGridViewCompleteBeoordeling.Location = new System.Drawing.Point(3, 3);
             this.advancedDataGridViewCompleteBeoordeling.Name = "advancedDataGridViewCompleteBeoordeling";
+            this.advancedDataGridViewCompleteBeoordeling.ReadOnly = true;
             this.advancedDataGridViewCompleteBeoordeling.RowHeadersWidth = 51;
             this.advancedDataGridViewCompleteBeoordeling.RowTemplate.Height = 45;
             this.advancedDataGridViewCompleteBeoordeling.Size = new System.Drawing.Size(1438, 696);

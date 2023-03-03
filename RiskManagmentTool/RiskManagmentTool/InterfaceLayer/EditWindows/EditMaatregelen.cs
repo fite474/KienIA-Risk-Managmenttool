@@ -40,6 +40,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private bool listboxActive;
 
+        private string objectId = "-1"; //TODO make changeable for object specifics
+
         public EditMaatregelen()
         {
             InitializeComponent();
@@ -271,7 +273,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void buttonAddMenuOption_Click(object sender, EventArgs e)
         {
-            EditKeuzes editKeuze = new EditKeuzes(MenuTableName, CurrentMenuToAddTo, menuTitle);
+            EditKeuzes editKeuze = new EditKeuzes(MenuTableName, CurrentMenuToAddTo, menuTitle, objectId);
             editKeuze.ShowDialog();
             LoadMenus();
             UpdateState();

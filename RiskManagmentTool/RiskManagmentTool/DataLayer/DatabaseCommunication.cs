@@ -89,11 +89,12 @@ namespace RiskManagmentTool.DataLayer
         public int InitMakeGevaar(string gevaarlijkeSituatie, string gevaarlijkeGebeurtenis)
         {
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO TableGevaarMulti(GevaarlijkeSituatie, GevaarlijkeGebeurtenis) VALUES " +
-                                                                       "(@GevaarlijkeSituatie, @GevaarlijkeGebeurtenis)" +
+            SqlCommand cmd = new SqlCommand("INSERT INTO TableGevaarMulti(GevaarlijkeSituatie, GevaarlijkeGebeurtenis, GevaarOriginID) VALUES " +
+                                                                       "(@GevaarlijkeSituatie, @GevaarlijkeGebeurtenis, @GevaarOriginID)" +
                                                                        "SELECT CAST(SCOPE_IDENTITY() AS INT)", sqlConnection);
             cmd.Parameters.AddWithValue("@GevaarlijkeSituatie", gevaarlijkeSituatie);
             cmd.Parameters.AddWithValue("@GevaarlijkeGebeurtenis", gevaarlijkeGebeurtenis);
+            cmd.Parameters.AddWithValue("@GevaarOriginID", -1);
 
             Int32 gevaarID = (Int32)cmd.ExecuteScalar();
             sqlConnection.Close();
@@ -131,13 +132,393 @@ namespace RiskManagmentTool.DataLayer
         //    sqlConnection.Close();
         //}
 
+
+
+
+
+
+        #region duplicateGevaar
+        //when adding a risk to an obj. copy the line and make a duplicated one. but referencing to the origin id
+        private int DuplicateGevaarFromOrigin(string mainGevaarId)
+        {
+            //step1: get the origin id. if the line is an origin, copy its main id
+
+            string originId = "";
+
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT GevaarOriginID FROM TableGevaarMulti " +
+                                            "WHERE TableGevaarMulti.GevaarID = '" + mainGevaarId + "'", sqlConnection);
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    originId = (dr[0]).ToString();
+                }
+            }
+            sqlConnection.Close();
+
+
+
+
+
+            //als het gevaar niet afgeleid is van een ander gevaar dan is dit het origin gevaar. 
+            if (originId.Equals("-1"))
+            {
+                originId = mainGevaarId;
+            }
+
+
+
+            //hier de duplicate into talegevaar multi query
+
+            sqlConnection.Open();
+            cmd = new SqlCommand(" INSERT INTO TableGevaarMulti(GevaarlijkeSituatie, GevaarlijkeGebeurtenis, GevaarOriginID)"+
+                                 " SELECT GevaarlijkeSituatie, GevaarlijkeGebeurtenis, '" + originId + "'" + 
+                                 " FROM TableGevaarMulti"+
+                                 " WHERE GevaarID = '" + mainGevaarId + "'" +
+                                 " SELECT CAST(SCOPE_IDENTITY() AS INT)", sqlConnection);
+            Int32 finalId = (Int32)cmd.ExecuteScalar();
+            //using (SqlDataReader dr = cmd.ExecuteReader())
+            //{
+            //    while (dr.Read())
+            //    {
+            //        originId = (dr[0]).ToString();
+            //    }
+            //}
+            sqlConnection.Close();
+
+
+
+
+            //step 2: copy the line and all its info (maatregel, ribo, koppeltabel menus)
+
+
+
+
+
+            //hier alle koppeltabellen kopieren
+
+
+
+            //SqlCommand cmd = new SqlCommand("SELECT GevaarOriginID FROM TableGevaarMulti " +
+            //                              "WHERE TableGevaarMulti.GevaarID = '" + mainGevaarId + "'", sqlConnection);
+
+
+            List<int> GevaarDisciplines = this.GetGevaar_DisciplinesList(mainGevaarId);
+            List<int> GevaarGebruiksfase = this.GetGevaar_GebruiksfaseList(mainGevaarId);
+            List<int> GevaarBedienvorm = this.GetGevaar_BedienvormList(mainGevaarId);
+            List<int> GevaarGebruiker = this.GetGevaar_GebruikerList(mainGevaarId);
+            List<int> GevaarGevaarlijkeZone = this.GetGevaar_GevaarlijkeZoneList(mainGevaarId);
+            List<int> GevaarTaak = this.GetGevaar_TaakList(mainGevaarId);
+            List<int> GevaarGevaarType = this.GetGevaar_GevaarTypeList(mainGevaarId);
+            List<int> GevaarGevolg = this.GetGevaar_GevolgList(mainGevaarId);
+
+
+
+
+
+
+
+
+
+            int mainGevaarIDAsInt = int.Parse(mainGevaarId);
+
+
+            //todo, je moet hier nog de main table (gevaar multi met de 2x teksttoevoegen)
+
+            //hieronder staat de foreach voor elke koppeltabel te inserten.
+            #region koppeltabel duplicatie
+
+            if (GevaarDisciplines.Count > 0)
+            {
+                foreach (int id in GevaarDisciplines)
+                {
+                    this.AddGevaar_Disciplines(mainGevaarIDAsInt, id);
+                }
+            }
+            else
+            { this.AddGevaar_Disciplines(mainGevaarIDAsInt, null); }
+
+
+
+            if (GevaarGebruiksfase.Count > 0)
+            {
+                foreach (int id in GevaarGebruiksfase)
+                {
+                    this.AddGevaar_Gebruiksfase(mainGevaarIDAsInt, id);
+                }
+            }
+            else
+            { this.AddGevaar_Gebruiksfase(mainGevaarIDAsInt, null); }
+
+
+            if (GevaarBedienvorm.Count > 0)
+            {
+                foreach (int id in GevaarBedienvorm)
+                {
+                    this.AddGevaar_Bedienvorm(mainGevaarIDAsInt, id);
+                }
+            }
+            else
+            { this.AddGevaar_Bedienvorm(mainGevaarIDAsInt, null); }
+
+
+            if (GevaarGebruiker.Count > 0)
+            {
+                foreach (int id in GevaarGebruiker)
+                {
+                    this.AddGevaar_Gebruiker(mainGevaarIDAsInt, id);
+                }
+            }
+            else
+            { this.AddGevaar_Gebruiker(mainGevaarIDAsInt, null); }
+
+
+            if (GevaarGevaarlijkeZone.Count > 0)
+            {
+                foreach (int id in GevaarGevaarlijkeZone)
+                {
+                    this.AddGevaar_GevaarlijkeZone(mainGevaarIDAsInt, id);
+                }
+            }
+            else
+            { this.AddGevaar_GevaarlijkeZone(mainGevaarIDAsInt, null); }
+
+
+            if (GevaarTaak.Count > 0)
+            {
+                foreach (int id in GevaarTaak)
+                {
+                    this.AddGevaar_Taak(mainGevaarIDAsInt, id);
+                }
+            }
+            else
+            { this.AddGevaar_Taak(mainGevaarIDAsInt, null); }
+
+
+            if (GevaarGevaarType.Count > 0)
+            {
+                foreach (int id in GevaarGevaarType)
+                {
+                    this.AddGevaar_GevaarType(mainGevaarIDAsInt, id);
+                }
+            }
+            else
+            { this.AddGevaar_GevaarType(mainGevaarIDAsInt, null); }
+
+
+            if (GevaarGevolg.Count > 0)
+            {
+                foreach (int id in GevaarGevolg)
+                {
+                    this.AddGevaar_Gevolg(mainGevaarIDAsInt, id);
+                }
+            }
+            else
+            { this.AddGevaar_Gevolg(mainGevaarIDAsInt, null); }
+
+
+            #endregion koppeltabel duplicatie
+
+            return finalId;
+        }
+
+
+
+
+
+
+        //wordt gebruikt voor alle ID's van elk menu van een gevaar te getten
+        #region get gevaar menus as list
+
+        private List<int> GetGevaar_DisciplinesList(string gevaarID)
+        {
+            List<int> gevaarDisciplines = new List<int>();
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT DisciplineID FROM Gevaar_Discipline " +
+                                            "WHERE GevaarID = '" + gevaarID + "'", sqlConnection);
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    if (!dr.IsDBNull(0))
+                    {
+                        gevaarDisciplines.Add(int.Parse((dr[0]).ToString()));
+                    }
+                }
+            }
+            sqlConnection.Close();
+            return gevaarDisciplines;
+        }
+
+        private List<int> GetGevaar_BedienvormList(string gevaarID)
+        {
+            List<int> gevaarBedienvorm = new List<int>();
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT BedienvormID FROM Gevaar_Bedienvorm " +
+                                            "WHERE GevaarID = '" + gevaarID + "'", sqlConnection);
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    if (!dr.IsDBNull(0))
+                    {
+                        gevaarBedienvorm.Add(int.Parse((dr[0]).ToString()));
+                    }
+                }
+            }
+            sqlConnection.Close();
+            return gevaarBedienvorm;
+        }
+
+        private List<int> GetGevaar_GebruikerList(string gevaarID)
+        {
+            List<int> gevaarGebruiker = new List<int>();
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT GebruikerID FROM Gevaar_Gebruiker " +
+                                            "WHERE GevaarID = '" + gevaarID + "'", sqlConnection);
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    if (!dr.IsDBNull(0))
+                    {
+                        gevaarGebruiker.Add(int.Parse((dr[0]).ToString()));
+                    }
+                }
+            }
+            sqlConnection.Close();
+            return gevaarGebruiker;
+        }
+
+        private List<int> GetGevaar_GebruiksfaseList(string gevaarID)
+        {
+            List<int> gevaarGebruiksfase = new List<int>();
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT GebruiksfaseID FROM Gevaar_Gebruiksfase " +
+                                            "WHERE GevaarID = '" + gevaarID + "'", sqlConnection);
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    if (!dr.IsDBNull(0))
+                    {
+                        gevaarGebruiksfase.Add(int.Parse((dr[0]).ToString()));
+                    }
+                }
+            }
+            sqlConnection.Close();
+            return gevaarGebruiksfase;
+        }
+
+        private List<int> GetGevaar_GevaarlijkeZoneList(string gevaarID)
+        {
+            List<int> gevaarGevaarlijkeZone = new List<int>();
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT GevaarlijkeZoneID FROM Gevaar_GevaarlijkeZone " +
+                                            "WHERE GevaarID = '" + gevaarID + "'", sqlConnection);
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    if (!dr.IsDBNull(0))
+                    {
+                        gevaarGevaarlijkeZone.Add(int.Parse((dr[0]).ToString()));
+                    }
+                }
+            }
+            sqlConnection.Close();
+            return gevaarGevaarlijkeZone;
+        }
+
+        private List<int> GetGevaar_GevaarTypeList(string gevaarID)
+        {
+            List<int> gevaarType = new List<int>();
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT GevaarTypeID FROM Gevaar_GevaarType " +
+                                            "WHERE GevaarID = '" + gevaarID + "'", sqlConnection);
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    if (!dr.IsDBNull(0))
+                    {
+                        gevaarType.Add(int.Parse((dr[0]).ToString()));
+                    }
+                }
+            }
+            sqlConnection.Close();
+            return gevaarType;
+        }
+
+
+        private List<int> GetGevaar_GevolgList(string gevaarID)
+        {
+            List<int> gevaarGevolg = new List<int>();
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT GevolgID FROM Gevaar_Gevolg " +
+                                            "WHERE GevaarID = '" + gevaarID + "'", sqlConnection);
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    if (!dr.IsDBNull(0))
+                    {
+                        gevaarGevolg.Add(int.Parse((dr[0]).ToString()));
+                    }
+                }
+            }
+            sqlConnection.Close();
+            return gevaarGevolg;
+        }
+
+        private List<int> GetGevaar_TaakList(string gevaarID)
+        {
+            List<int> gevaarTaak = new List<int>();
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT TaakID FROM Gevaar_Taak " +
+                                            "WHERE GevaarID = '" + gevaarID + "'", sqlConnection);
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    if (!dr.IsDBNull(0))
+                    {
+                        gevaarTaak.Add(int.Parse((dr[0]).ToString()));
+                    }
+                }
+            }
+            sqlConnection.Close();
+            return gevaarTaak;
+        }
+
+
+
+        #endregion get gevaar menus as list
+
+
+
+
+        #endregion duplicateGevaar
+
+
+
         private int InitIssue(string gevaarId, string issueState)
         {
+
+
+            int newGevaarIdAfterDuplication = this.DuplicateGevaarFromOrigin(gevaarId);
+
+
+
+
+
+
             sqlConnection.Open();
             SqlCommand cmd = new SqlCommand("INSERT INTO TableIssues(IssueGevaarID, IssueStatus, IssueOK) VALUES " +
                                                                        "(@IssueGevaarID, @IssueStatus, @IssueOK)" +
                                                                        "SELECT CAST(SCOPE_IDENTITY() AS INT)", sqlConnection);
-            cmd.Parameters.AddWithValue("@IssueGevaarID", gevaarId);
+            cmd.Parameters.AddWithValue("@IssueGevaarID", newGevaarIdAfterDuplication);
             cmd.Parameters.AddWithValue("@IssueStatus", -1);//issueState);
             cmd.Parameters.AddWithValue("@IssueOK", 0);
             Int32 issueID = (Int32)cmd.ExecuteScalar();
@@ -504,10 +885,7 @@ namespace RiskManagmentTool.DataLayer
                                                                        "SELECT CAST(SCOPE_IDENTITY() AS INT)", sqlConnection);
             cmd.Parameters.AddWithValue("@ObjectID", objectId);
             cmd.Parameters.AddWithValue("@IssueID", issueId);
-
-            //mag weg*
-            Int32 issueIDNotUsedInCode = (Int32)cmd.ExecuteScalar();
-
+            cmd.ExecuteNonQuery();
             sqlConnection.Close();
 
             int risicoBeoordelingId = InitRisicoBeoordeling(issueId);
@@ -1722,14 +2100,14 @@ namespace RiskManagmentTool.DataLayer
         #region get gevaar data
 
         public SqlDataAdapter GetGevaar_Situatie_gebeurtenis(string gevaarID)
-       {
+        {
 
             sqlConnection.Open();
             String query = "SELECT * FROM TableGevaarMulti WHERE GevaarID = '" + gevaarID + "'";
             SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
             sqlConnection.Close();
             return adapter;
-       }
+        }
 
 
         public Dictionary<int, int> GetGevaar_Disciplines(string gevaarID)

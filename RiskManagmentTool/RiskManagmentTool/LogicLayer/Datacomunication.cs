@@ -188,20 +188,6 @@ namespace RiskManagmentTool.LogicLayer
         }
 
 
-        //public void MakeTemplate(string templateNaam, string templateType, string templateToepassing)
-        //{
-        //    Item templateItem = new Item
-        //    {
-        //        ItemType = ItemType.Template,
-        //        ItemData = new TemplateObject
-        //        {
-        //            TemplateNaam = templateNaam,
-        //            TemplateType = templateType,
-        //            TemplateToepassing = templateToepassing
-        //        }
-        //    };
-        //    SendItemToDB(templateItem);
-        //}
         #endregion Init
 
 
@@ -363,111 +349,7 @@ namespace RiskManagmentTool.LogicLayer
 
 
 
-        //public void UpdateGevaarDataOLD(int gevaarID,
-        //      Dictionary<int, int> GevaarDisciplines, Dictionary<int, int> GevaarGebruiksfase,
-        //      Dictionary<int, int> GevaarBedienvorm, Dictionary<int, int> GevaarGebruiker,
-        //      Dictionary<int, int> GevaarGevaarlijkeZone, Dictionary<int, int> GevaarTaak,
-        //      Dictionary<int, int> GevaarGevaarType, Dictionary<int, int> GevaarGevolg)
-        //{
-        //    //clean
-        //    databaseCommunication.VerwijderGevaar_Disciplines(gevaarID);
-        //    databaseCommunication.VerwijderGevaar_Gebruiksfases(gevaarID);
-        //    databaseCommunication.VerwijderGevaar_Bedienvorm(gevaarID);
-        //    databaseCommunication.VerwijderGevaar_Gebruiker(gevaarID);
-        //    databaseCommunication.VerwijderGevaar_GevaarlijkeZone(gevaarID);
-        //    databaseCommunication.VerwijderGevaar_Taak(gevaarID);
-        //    databaseCommunication.VerwijderGevaar_GevaarType(gevaarID);
-        //    databaseCommunication.VerwijderGevaar_Gevolg(gevaarID);
-
-        //    //insert for all
-        //    if (GevaarDisciplines.Count > 0)
-        //    {
-        //        foreach (KeyValuePair<int, int> kvp in GevaarDisciplines)
-        //        {
-        //            databaseCommunication.AddGevaar_Disciplines(gevaarID, kvp.Value);
-        //        }
-        //    }
-        //    else
-        //    { databaseCommunication.AddGevaar_Disciplines(gevaarID, null); }
-
-        //    if (GevaarGebruiksfase.Count > 0)
-        //    {
-        //        foreach (KeyValuePair<int, int> kvp in GevaarGebruiksfase)
-        //        {
-        //            databaseCommunication.AddGevaar_Gebruiksfase(gevaarID, kvp.Value);
-        //        }
-        //    }
-        //    else
-        //    { databaseCommunication.AddGevaar_Gebruiksfase(gevaarID, null); }
-
-
-        //    if (GevaarBedienvorm.Count > 0)
-        //    {
-        //        foreach (KeyValuePair<int, int> kvp in GevaarBedienvorm)
-        //        {
-        //            databaseCommunication.AddGevaar_Bedienvorm(gevaarID, kvp.Value);
-        //        }
-        //    }
-        //    else
-        //    { databaseCommunication.AddGevaar_Bedienvorm(gevaarID, null); }
-
-
-        //    if (GevaarGebruiker.Count > 0)
-        //    {
-        //        foreach (KeyValuePair<int, int> kvp in GevaarGebruiker)
-        //        {
-        //            databaseCommunication.AddGevaar_Gebruiker(gevaarID, kvp.Value);
-        //        }
-        //    }
-        //    else
-        //    { databaseCommunication.AddGevaar_Gebruiker(gevaarID, null); }
-
-
-        //    if (GevaarGevaarlijkeZone.Count > 0)
-        //    {
-        //        foreach (KeyValuePair<int, int> kvp in GevaarGevaarlijkeZone)
-        //        {
-        //            databaseCommunication.AddGevaar_GevaarlijkeZone(gevaarID, kvp.Value);
-        //        }
-        //    }
-        //    else
-        //    { databaseCommunication.AddGevaar_GevaarlijkeZone(gevaarID, null); }
-
-
-        //    if (GevaarTaak.Count > 0)
-        //    {
-        //        foreach (KeyValuePair<int, int> kvp in GevaarTaak)
-        //        {
-        //            databaseCommunication.AddGevaar_Taak(gevaarID, kvp.Value);
-        //        }
-        //    }
-        //    else
-        //    { databaseCommunication.AddGevaar_Taak(gevaarID, null); }
-
-
-        //    if (GevaarGevaarType.Count > 0)
-        //    {
-        //        foreach (KeyValuePair<int, int> kvp in GevaarGevaarType)
-        //        {
-        //            databaseCommunication.AddGevaar_GevaarType(gevaarID, kvp.Value);
-        //        }
-        //    }
-        //    else
-        //    { databaseCommunication.AddGevaar_GevaarType(gevaarID, null); }
-
-
-        //    if (GevaarGevolg.Count > 0)
-        //    {
-        //        foreach (KeyValuePair<int, int> kvp in GevaarGevolg)
-        //        {
-        //            databaseCommunication.AddGevaar_Gevolg(gevaarID, kvp.Value);
-        //        }
-        //    }
-        //    else
-        //    { databaseCommunication.AddGevaar_Gevolg(gevaarID, null); }
-
-        //}
-
+    
         public void UpdateMaatregelData(int maatregelID, Dictionary<int, int> maatregelNorm, Dictionary<int, int> maatregelCategory)
         {
             //clean
@@ -608,12 +490,18 @@ namespace RiskManagmentTool.LogicLayer
             databaseCommunication.AddImageToIssue(issueID, imageFilePath);
 
         }
+
+
         #region add to object
+
+
         public int AddGevaarToObject(string objectId, string gevaarId)
         {
             return databaseCommunication.AddAndCreateIssueToObject(objectId, gevaarId);
         }
+        
 
+        //TODO: deze methode moet omgeshreven worden naar het over kopieren van het issue die de gebruiker heeft geselecteerd
         public void AddIssueToObject(string objectId, string issueId, bool addMaatregelen, bool addBeoordeling)//, bool issueNeedsToVerify)
         {
             //string issueState = "-1";
@@ -687,14 +575,6 @@ namespace RiskManagmentTool.LogicLayer
         }
 
 
-        //public DataTable GetObjectIssues(string objectID)
-        //{
-        //    SqlDataAdapter adapter = databaseCommunication.GetIssues(objectID);
-        //    DataTable data = new DataTable();
-        //    adapter.Fill(data);
-        //    return data;
-        //}
-
         public BindingSource GetExportView(string objectID)
         {
             SqlDataAdapter adapter = databaseCommunication.GetExportView(objectID);
@@ -716,17 +596,6 @@ namespace RiskManagmentTool.LogicLayer
             bindingSource.DataSource = data;
             return bindingSource;
         }
-
-        //public DataTable GetExportViewTest(string objectID)
-        //{
-        //    SqlDataAdapter adapter = databaseCommunication.GetExportView(objectID);
-        //    DataTable data = new DataTable();
-        //    adapter.Fill(data);
-
-        //    //BindingSource bindingSource = new BindingSource();
-        //    //bindingSource.DataSource = data;
-        //    return data;
-        //}
 
         public BindingSource GetObjectIssues(string objectID)
         {
@@ -754,26 +623,6 @@ namespace RiskManagmentTool.LogicLayer
             //return data;
         }
 
-        //public BindingSource GetTemplateIssuesByName(string templateNaam)
-        //{
-        //    string templateId = databaseCommunication.GetTemplateIdByName(templateNaam);
-        //    SqlDataAdapter adapter = databaseCommunication.GetTemplateIssues(templateId);
-        //    DataTable data = new DataTable();
-        //    adapter.Fill(data);
-
-        //    BindingSource bindingSource = new BindingSource();
-        //    bindingSource.DataSource = data;
-        //    return bindingSource;
-        //}
-
-        //public DataTable GetTemplateGevarenByName(string templateNaam)
-        //{
-        //    string templateId = databaseCommunication.GetTemplateIdByName(templateNaam);
-        //    SqlDataAdapter adapter = databaseCommunication.GetTemplateGevaren(templateId);
-        //    DataTable data = new DataTable();
-        //    adapter.Fill(data);
-        //    return data;
-        //}
 
         public DataTable GetSelectedObjectIssues(string objectNaam, List<string> selectedIssuesId)
         {
@@ -784,23 +633,7 @@ namespace RiskManagmentTool.LogicLayer
             return data;
         }
 
-        //public DataTable GetSelectedTemplateIssues(string templateNaam, List<string> selectedIssuesId)
-        //{
-        //    string templateId = databaseCommunication.GetTemplateIdByName(templateNaam);
-        //    SqlDataAdapter adapter = databaseCommunication.GetSelectedIssuesFromTemplate(templateId, selectedIssuesId);
-        //    DataTable data = new DataTable();
-        //    adapter.Fill(data);
-        //    return data;
-        //}
 
-        //public DataTable GetSelectedTemplateGevaren(string templateNaam, List<string> selectedGevarenId)
-        //{
-        //    string templateId = databaseCommunication.GetTemplateIdByName(templateNaam);
-        //    SqlDataAdapter adapter = databaseCommunication.GetSelectedGevarenFromTemplate(templateId, selectedGevarenId);
-        //    DataTable data = new DataTable();
-        //    adapter.Fill(data);
-        //    return data;
-        //}
 
         public DataTable GetSelectedGevaren(List<string> selectedGevarenId)
         {
@@ -1033,15 +866,15 @@ namespace RiskManagmentTool.LogicLayer
 
 
         //get selected
-        
+
 
 
 
         //get selected
 
 
+        #region redirect options
 
-        //Begin redirect options
         public string GetGevaarIdByIssueID(string issueID)
         {
             string gevaarId = "";
@@ -1063,12 +896,10 @@ namespace RiskManagmentTool.LogicLayer
         public string GetObjectIdByName(string objectNaam)
         {
             return databaseCommunication.GetObjectIdByName(objectNaam);
-            //return objectId;
         }
         public string GetObjectNameById(string objectId)
         {
             return databaseCommunication.GetObjectNameById(objectId);
-            //return objectId;
         }
 
         public string GetIssueIdByObjectAndGevaarId(string objectId, string gevaarId)
@@ -1101,7 +932,7 @@ namespace RiskManagmentTool.LogicLayer
             return databaseCommunication.GetLastTemplateID();
         }
 
-        //End redirect options
+        #endregion redirect options
 
 
 
@@ -1208,7 +1039,6 @@ namespace RiskManagmentTool.LogicLayer
 
 
         #region get gevaar menus
-        //-----------------
 
         public Dictionary<int, string> GetGevolgen(string objectId)
         {
@@ -1254,9 +1084,6 @@ namespace RiskManagmentTool.LogicLayer
 
         #endregion get gevaar menus
 
-
-
-        //-----------------------
 
 
         public Dictionary<int, string> GetMaatregelNorm()

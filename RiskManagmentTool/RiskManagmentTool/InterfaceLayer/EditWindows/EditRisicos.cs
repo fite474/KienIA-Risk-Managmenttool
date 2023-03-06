@@ -127,7 +127,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         }
 
 
-        //todo: alle opties die horen bij het object id
+       
         private void LoadMenus()
         {
             keuzeMenus = new KeuzeMenus(objectId);

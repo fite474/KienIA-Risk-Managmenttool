@@ -206,28 +206,28 @@ namespace RiskManagmentTool.LogicLayer
 
 
 
-        private void AddGevaarToObjectWithSettings(string gevaarID)
-        {
+        //private void AddGevaarToObjectWithSettings(string gevaarID)
+        //{
 
-            if (addBeoordeling && addMaatregelen)
-            {
-                //comunicator.AddFullIssueToObject(CurrentID, gevaarID);
-            }
-            else if (addBeoordeling && !addMaatregelen)
-            {
+        //    if (addBeoordeling && addMaatregelen)
+        //    {
+        //        //comunicator.AddFullIssueToObject(CurrentID, gevaarID);
+        //    }
+        //    else if (addBeoordeling && !addMaatregelen)
+        //    {
 
-            }
-            else if(!addBeoordeling && addMaatregelen)
-            {
-                int issueID = comunicator.AddGevaarToObject(CurrentID, gevaarID);
-                string issueIDString = issueID.ToString();
-                comunicator.AddMaatregelToIssue(issueIDString, "");
-            }
-            else
-            {
-                comunicator.AddGevaarToObject(CurrentID, gevaarID);
-            }
-        }
+        //    }
+        //    else if(!addBeoordeling && addMaatregelen)
+        //    {
+        //        int issueID = comunicator.AddGevaarToObject(CurrentID, gevaarID);
+        //        string issueIDString = issueID.ToString();
+        //        comunicator.AddMaatregelToIssue(issueIDString, "");
+        //    }
+        //    else
+        //    {
+        //        comunicator.AddGevaarToObject(CurrentID, gevaarID);
+        //    }
+        //}
 
 
 

@@ -1207,52 +1207,52 @@ namespace RiskManagmentTool.LogicLayer
 
 
 
-
+        #region get gevaar menus
         //-----------------
 
-        public Dictionary<int, string> GetGevolgen()
+        public Dictionary<int, string> GetGevolgen(string objectId)
         {
-            return databaseCommunication.GetGevolgen();
+            return databaseCommunication.GetGevolgen(objectId);
         }
 
 
-        public Dictionary<int, string> GetGevarenzones()
+        public Dictionary<int, string> GetGevarenzones(string objectId)
         {
-            return databaseCommunication.GetGevarenzones();
+            return databaseCommunication.GetGevarenzones(objectId);
         }
 
-        public Dictionary<int, string> GetGevaarTypes()
+        public Dictionary<int, string> GetGevaarTypes(string objectId)
         {
-            return databaseCommunication.GetGevaarTypes();
+            return databaseCommunication.GetGevaarTypes(objectId);
         }
 
-        public Dictionary<int, string> GetGebruiksfases()
+        public Dictionary<int, string> GetGebruiksfases(string objectId)
         {
-            return databaseCommunication.GetGebruiksfases();
+            return databaseCommunication.GetGebruiksfases(objectId);
         }
 
-        public Dictionary<int, string> GetGebruikers()
+        public Dictionary<int, string> GetGebruikers(string objectId)
         {
-            return databaseCommunication.GetGebruikers();
+            return databaseCommunication.GetGebruikers(objectId);
         }
 
-        public Dictionary<int, string> GetDisciplines()
+        public Dictionary<int, string> GetDisciplines(string objectId)
         {
-            return databaseCommunication.GetDisciplines();
+            return databaseCommunication.GetDisciplines(objectId);
         }
 
-        public Dictionary<int, string> GetBedienvormen()
+        public Dictionary<int, string> GetBedienvormen(string objectId)
         {
-            return databaseCommunication.GetBedienvormen();
+            return databaseCommunication.GetBedienvormen(objectId);
         }
 
-        public Dictionary<int, string> GetTaken()
+        public Dictionary<int, string> GetTaken(string objectId)
         {
-            return databaseCommunication.GetTaken();
+            return databaseCommunication.GetTaken(objectId);
         }
 
 
-
+        #endregion get gevaar menus
 
 
 

@@ -1620,7 +1620,7 @@ namespace RiskManagmentTool.DataLayer
             Dictionary<string, string> issueRiskValue = new Dictionary<string, string>();
 
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM View_issueRestRisicoOK WHERE View_issueRestRisicoOK.IssueID" +
+            SqlCommand cmd = new SqlCommand("SELECT * FROM View_issueRestRisicoOK WHERE View_issueRestRisicoOK.RisicoID" +
                                             " IN(" +
                                             " SELECT TableObjectIssues.IssueID FROM TableObjectIssues WHERE TableObjectIssues.ObjectID = '" + objectID + "')", sqlConnection);
             using (SqlDataReader dr = cmd.ExecuteReader())
@@ -2566,6 +2566,7 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Open();
             SqlCommand cmd = new SqlCommand("SELECT ObjectTypeID, ObjectType FROM ObjectTypes", sqlConnection);
 
+
             using (SqlDataReader dr = cmd.ExecuteReader())
             {
                 while (dr.Read())
@@ -2578,26 +2579,34 @@ namespace RiskManagmentTool.DataLayer
         }
 
 
-        public Dictionary<int, string> GetGevolgen()
+        public Dictionary<int, string> GetGevolgen(string objectId)
         {
             Dictionary<int, string> index_gevolg = new Dictionary<int, string>();
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT GevolgID, Gevolg FROM Gevolgen", sqlConnection);
+            SqlCommand cmd = new SqlCommand("SELECT GevolgID, Gevolg FROM Gevolgen WHERE ObjectID = -1 OR ObjectID = @ObjectID", sqlConnection);
+
+
+            cmd.Parameters.AddWithValue("@ObjectID", objectId);
+
             using (SqlDataReader dr = cmd.ExecuteReader())
             {
                 while (dr.Read())
-                {index_gevolg.Add(int.Parse((dr[0]).ToString()), (dr[1]).ToString());}
+                {
+                    index_gevolg.Add(int.Parse((dr[0]).ToString()), (dr[1]).ToString());
+                }
             }
             sqlConnection.Close();
             return index_gevolg;
         }
 
 
-        public Dictionary<int, string> GetGevarenzones()
+        public Dictionary<int, string> GetGevarenzones(string objectId)
         {
             Dictionary<int, string> objectTypes = new Dictionary<int, string>();
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT GevarenzoneID, Gevarenzone FROM Gevarenzones", sqlConnection);
+            SqlCommand cmd = new SqlCommand("SELECT GevarenzoneID, Gevarenzone FROM Gevarenzones WHERE ObjectID = -1 OR ObjectID = @ObjectID", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@ObjectID", objectId);
 
             using (SqlDataReader dr = cmd.ExecuteReader())
             {
@@ -2611,11 +2620,14 @@ namespace RiskManagmentTool.DataLayer
 
         }
 
-        public Dictionary<int, string> GetGevaarTypes()
+        public Dictionary<int, string> GetGevaarTypes(string objectId)
         {
             Dictionary<int, string> index_gevolg = new Dictionary<int, string>();
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT GevaarTypeID, GevaarType FROM GevaarTypes ORDER BY GevaarType", sqlConnection);
+            SqlCommand cmd = new SqlCommand("SELECT GevaarTypeID, GevaarType FROM GevaarTypes WHERE ObjectID = -1 OR ObjectID = @ObjectID ORDER BY GevaarType ", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@ObjectID", objectId);
+
             using (SqlDataReader dr = cmd.ExecuteReader())
             {
                 while (dr.Read())
@@ -2625,11 +2637,13 @@ namespace RiskManagmentTool.DataLayer
             return index_gevolg;
         }
 
-        public Dictionary<int, string> GetGebruiksfases()
+        public Dictionary<int, string> GetGebruiksfases(string objectId)
         {
             Dictionary<int, string> objectTypes = new Dictionary<int, string>();
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT GebruiksfaseID, Gebruiksfase FROM Gebruiksfases ORDER BY Gebruiksfase", sqlConnection);
+            SqlCommand cmd = new SqlCommand("SELECT GebruiksfaseID, Gebruiksfase FROM Gebruiksfases WHERE ObjectID = -1 OR ObjectID = @ObjectID ORDER BY Gebruiksfase ", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@ObjectID", objectId);
 
             using (SqlDataReader dr = cmd.ExecuteReader())
             {
@@ -2643,11 +2657,13 @@ namespace RiskManagmentTool.DataLayer
 
         }
 
-        public Dictionary<int, string> GetGebruikers()
+        public Dictionary<int, string> GetGebruikers(string objectId)
         {
             Dictionary<int, string> objectTypes = new Dictionary<int, string>();
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT GebruikerID, Gebruiker FROM Gebruikers", sqlConnection);
+            SqlCommand cmd = new SqlCommand("SELECT GebruikerID, Gebruiker FROM Gebruikers WHERE ObjectID = -1 OR ObjectID = @ObjectID", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@ObjectID", objectId);
 
             using (SqlDataReader dr = cmd.ExecuteReader())
             {
@@ -2661,11 +2677,13 @@ namespace RiskManagmentTool.DataLayer
 
         }
 
-        public Dictionary<int, string> GetDisciplines()
+        public Dictionary<int, string> GetDisciplines(string objectId)
         {
             Dictionary<int, string> objectTypes = new Dictionary<int, string>();
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT DisciplineID, Discipline FROM Disciplines", sqlConnection);
+            SqlCommand cmd = new SqlCommand("SELECT DisciplineID, Discipline FROM Disciplines WHERE ObjectID = -1 OR ObjectID = @ObjectID", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@ObjectID", objectId);
 
             using (SqlDataReader dr = cmd.ExecuteReader())
             {
@@ -2679,11 +2697,13 @@ namespace RiskManagmentTool.DataLayer
 
         }
 
-        public Dictionary<int, string> GetBedienvormen()
+        public Dictionary<int, string> GetBedienvormen(string objectId)
         {
             Dictionary<int, string> objectTypes = new Dictionary<int, string>();
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT BedienvormID, Bedienvorm FROM Bedienvormen", sqlConnection);
+            SqlCommand cmd = new SqlCommand("SELECT BedienvormID, Bedienvorm FROM Bedienvormen WHERE ObjectID = -1 OR ObjectID = @ObjectID", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@ObjectID", objectId);
 
             using (SqlDataReader dr = cmd.ExecuteReader())
             {
@@ -2697,11 +2717,13 @@ namespace RiskManagmentTool.DataLayer
 
         }
 
-        public Dictionary<int, string> GetTaken()
+        public Dictionary<int, string> GetTaken(string objectId)
         {
             Dictionary<int, string> objectTypes = new Dictionary<int, string>();
             sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT TaakID, Taak FROM Taken", sqlConnection);
+            SqlCommand cmd = new SqlCommand("SELECT TaakID, Taak FROM Taken WHERE ObjectID = -1 OR ObjectID = @ObjectID", sqlConnection);
+
+            cmd.Parameters.AddWithValue("@ObjectID", objectId);
 
             using (SqlDataReader dr = cmd.ExecuteReader())
             {

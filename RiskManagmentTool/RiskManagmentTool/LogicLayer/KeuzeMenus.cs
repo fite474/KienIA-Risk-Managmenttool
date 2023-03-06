@@ -38,16 +38,23 @@ namespace RiskManagmentTool.LogicLayer
 
         private Datacomunication comunicator;
 
-        
+        private string objectId; //used for getting global/object specific menus
         //TODO remove unused moments when app gets keuzemenus
-        public KeuzeMenus()
+        public KeuzeMenus()//used when no need for object specific
         {
             
             comunicator = new Datacomunication();
+            this.objectId = "-1";
             MakeMenu();
         }
 
+        public KeuzeMenus(string objectId)//used when getting object specific + global options
+        {
 
+            comunicator = new Datacomunication();
+            this.objectId = objectId;
+            MakeMenu();
+        }
 
         //public List<CheckedListBox> GetKeuzeMenus()
         //{
@@ -149,14 +156,14 @@ namespace RiskManagmentTool.LogicLayer
 
             //-------------
 
-            GevolgenKeuzes = comunicator.GetGevolgen();
-            GevarenzonesKeuzes = comunicator.GetGevarenzones();
-            GevaarTypesKeuzes = comunicator.GetGevaarTypes();
-            GebruiksfaseKeuzes = comunicator.GetGebruiksfases();
-            GebruikersComboBox = comunicator.GetGebruikers();
-            DisciplinesComboBox = comunicator.GetDisciplines();
-            BedienvormenComboBox = comunicator.GetBedienvormen();
-            TakenComboBox = comunicator.GetTaken();
+            GevolgenKeuzes = comunicator.GetGevolgen(objectId);
+            GevarenzonesKeuzes = comunicator.GetGevarenzones(objectId);
+            GevaarTypesKeuzes = comunicator.GetGevaarTypes(objectId);
+            GebruiksfaseKeuzes = comunicator.GetGebruiksfases(objectId);
+            GebruikersComboBox = comunicator.GetGebruikers(objectId);
+            DisciplinesComboBox = comunicator.GetDisciplines(objectId);
+            BedienvormenComboBox = comunicator.GetBedienvormen(objectId);
+            TakenComboBox = comunicator.GetTaken(objectId);
 
 
             //-------------

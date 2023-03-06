@@ -266,7 +266,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private void buttonShowRisk_Click(object sender, EventArgs e)
         {
             string gevaarID = comunicator.GetGevaarIdByIssueID(IssueID);
-            EditRisicos editRisicos = new EditRisicos(gevaarID);
+            EditRisicos editRisicos = new EditRisicos(gevaarID, ObjectID);
             editRisicos.SetReadOnlyMode();
             editRisicos.ShowDialog();
         }

@@ -77,6 +77,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private string objectId;
 
+
         public EditRisicos(string objectId)
         {
             InitializeComponent();
@@ -96,6 +97,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         public EditRisicos(string gevaarID, string objectId)
         {
+            //currently set to always have object id -1. need to find the fix still TODO
             
             InitializeComponent();
             isNewGevaar = false;
@@ -124,9 +126,11 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             textBoxGevaarUsage.Text = comunicator.GetAllIssuesWithGevaarID(editGevaarID).Rows.Count.ToString();
         }
 
+
+        //todo: alle opties die horen bij het object id
         private void LoadMenus()
         {
-            keuzeMenus = new KeuzeMenus();
+            keuzeMenus = new KeuzeMenus(objectId);
             GevolgenItems_DBIndex = keuzeMenus.GetGevolgenMenu();
             GevarenzonesItems_DBIndex = keuzeMenus.GetGevarenzoneMenu();
             GevaarTypesItems_DBIndex = keuzeMenus.GetGevaarTypeMenu();

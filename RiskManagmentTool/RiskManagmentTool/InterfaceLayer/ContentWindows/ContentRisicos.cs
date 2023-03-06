@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using RiskManagmentTool.InterfaceLayer.EditWindows;
 using RiskManagmentTool.LogicLayer;
@@ -24,14 +17,11 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
         {
             InitializeComponent();
             comunicator = new Datacomunication();
-            //LoadData();
-
         }
 
         private void LoadData()
         {
             gevarenData = comunicator.GetGevarenTable();
-
             advancedDataGridViewGevaren.DataSource = gevarenData;
         }
 
@@ -76,7 +66,7 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
                 string gevaarId = advancedDataGridViewGevaren.SelectedRows[0].Cells[0].Value.ToString();
 
 
-                Form editRisicosForm = new EditRisicos(gevaarId);
+                Form editRisicosForm = new EditRisicos(gevaarId, "-1");
                 editRisicosForm.ShowDialog();
                 LoadData();
             }

@@ -19,10 +19,11 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
         private KeuzeMenus keuzeMenus;
         private string menuTitle;
 
-        private string objectId = "-1";
+        private string objectId;// = "-1";
         public KeuzesItem(MenuTableName menuName, string objectId)
         {
             InitializeComponent();
+            this.objectId = objectId;
             keuzeMenus = new KeuzeMenus();
             MenuTableName = menuName;
             LoadData();

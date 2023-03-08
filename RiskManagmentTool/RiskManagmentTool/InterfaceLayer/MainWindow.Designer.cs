@@ -65,11 +65,12 @@
             this.labelAppTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.labelAppTitle.AutoSize = true;
             this.labelAppTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAppTitle.Location = new System.Drawing.Point(705, 45);
+            this.labelAppTitle.Location = new System.Drawing.Point(466, 31);
             this.labelAppTitle.Name = "labelAppTitle";
-            this.labelAppTitle.Size = new System.Drawing.Size(654, 49);
+            this.labelAppTitle.Size = new System.Drawing.Size(478, 39);
             this.labelAppTitle.TabIndex = 0;
-            this.labelAppTitle.Text = "KienIA Risk Management Tool     ";
+            this.labelAppTitle.Text = "KienIA Risk Management Tool";
+            this.labelAppTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 

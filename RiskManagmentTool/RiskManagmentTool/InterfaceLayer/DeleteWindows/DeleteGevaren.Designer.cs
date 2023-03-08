@@ -55,6 +55,7 @@
             // 
             this.dataGridViewGekoppeldeGevaren.AllowUserToAddRows = false;
             this.dataGridViewGekoppeldeGevaren.AllowUserToDeleteRows = false;
+            this.dataGridViewGekoppeldeGevaren.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridViewGekoppeldeGevaren.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewGekoppeldeGevaren.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewGekoppeldeGevaren.Location = new System.Drawing.Point(0, 0);

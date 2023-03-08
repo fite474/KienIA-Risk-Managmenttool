@@ -80,7 +80,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(46, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 21);
+            this.label1.Size = new System.Drawing.Size(61, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Risico Id";
             // 
@@ -176,6 +176,7 @@
             this.advancedDataGridViewMaatregelen.AllowUserToDeleteRows = false;
             this.advancedDataGridViewMaatregelen.AutoGenerateContextFilters = true;
             this.advancedDataGridViewMaatregelen.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.advancedDataGridViewMaatregelen.BackgroundColor = System.Drawing.SystemColors.Window;
             this.advancedDataGridViewMaatregelen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.advancedDataGridViewMaatregelen.DateWithTime = false;
             this.advancedDataGridViewMaatregelen.Dock = System.Windows.Forms.DockStyle.Fill;

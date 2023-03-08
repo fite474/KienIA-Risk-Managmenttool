@@ -71,6 +71,7 @@
             this.advancedDataGridViewGevaren.AllowUserToAddRows = false;
             this.advancedDataGridViewGevaren.AllowUserToDeleteRows = false;
             this.advancedDataGridViewGevaren.AutoGenerateContextFilters = true;
+            this.advancedDataGridViewGevaren.BackgroundColor = System.Drawing.SystemColors.Window;
             this.advancedDataGridViewGevaren.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.advancedDataGridViewGevaren.DateWithTime = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -85,6 +86,7 @@
             this.advancedDataGridViewGevaren.Location = new System.Drawing.Point(0, 0);
             this.advancedDataGridViewGevaren.Name = "advancedDataGridViewGevaren";
             this.advancedDataGridViewGevaren.ReadOnly = true;
+            this.advancedDataGridViewGevaren.RowHeadersWidth = 51;
             this.advancedDataGridViewGevaren.RowTemplate.Height = 40;
             this.advancedDataGridViewGevaren.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.advancedDataGridViewGevaren.Size = new System.Drawing.Size(1575, 712);

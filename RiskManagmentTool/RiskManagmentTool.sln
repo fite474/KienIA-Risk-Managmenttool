@@ -10,6 +10,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		RiskManagmentTool\Files\ExcelTemplates\template 20141210 V1_1 RWS.xlsm = RiskManagmentTool\Files\ExcelTemplates\template 20141210 V1_1 RWS.xlsm
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Files", "Files", "{72622F79-3056-44B5-8404-F777B878A656}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{DBCE8974-F5EC-4DB1-84EA-45F0CB6860BE}"
+	ProjectSection(SolutionItems) = preProject
+		RiskManagmentTool\Files\Images\KienIA Icon.ico = RiskManagmentTool\Files\Images\KienIA Icon.ico
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +30,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{72622F79-3056-44B5-8404-F777B878A656} = {583A1E16-4A11-4DAE-98D4-7270B1CF9AA1}
+		{DBCE8974-F5EC-4DB1-84EA-45F0CB6860BE} = {72622F79-3056-44B5-8404-F777B878A656}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A35E6236-B57A-4135-8BC1-7DF508A016F0}

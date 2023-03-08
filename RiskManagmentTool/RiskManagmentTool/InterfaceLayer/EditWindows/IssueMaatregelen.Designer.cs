@@ -461,6 +461,7 @@
             this.dataGridViewIssueMaatregelen.AllowUserToAddRows = false;
             this.dataGridViewIssueMaatregelen.AllowUserToDeleteRows = false;
             this.dataGridViewIssueMaatregelen.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewIssueMaatregelen.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridViewIssueMaatregelen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewIssueMaatregelen.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewIssueMaatregelen.Location = new System.Drawing.Point(3, 3);

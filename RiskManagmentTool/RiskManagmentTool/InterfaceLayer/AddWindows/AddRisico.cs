@@ -50,7 +50,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
         private void LoadData()
         {
-            gevarenData = comunicator.GetGevarenTable();
+            gevarenData = comunicator.GetGlobalGevarenTable();
             advancedDataGridViewLosseItems.DataSource = gevarenData;
         }
 

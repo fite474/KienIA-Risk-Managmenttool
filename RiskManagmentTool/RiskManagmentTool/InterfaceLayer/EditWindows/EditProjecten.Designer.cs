@@ -30,9 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -50,6 +47,7 @@
             this.checkedListBox3 = new System.Windows.Forms.CheckedListBox();
             this.textBoxProjectNaam = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -57,12 +55,13 @@
             this.panel2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(47, 25);
+            this.label1.Location = new System.Drawing.Point(56, 46);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 17);
             this.label1.TabIndex = 0;
@@ -71,50 +70,23 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(47, 90);
+            this.label2.Location = new System.Drawing.Point(56, 111);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(158, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Project contact persoon";
             this.label2.Visible = false;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(888, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "label3";
-            this.label3.Visible = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(891, 67);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 17);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "label4";
-            this.label4.Visible = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(891, 102);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 17);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "label5";
-            this.label5.Visible = false;
-            // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.tabControl1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 122);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.textBoxProjectNaam);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1575, 690);
+            this.panel1.Size = new System.Drawing.Size(1575, 197);
             this.panel1.TabIndex = 5;
             // 
             // tabControl1
@@ -125,7 +97,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1575, 690);
+            this.tabControl1.Size = new System.Drawing.Size(2461, 961);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage2
@@ -135,7 +107,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1567, 661);
+            this.tabPage2.Size = new System.Drawing.Size(2453, 932);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Gekoppelde objecten";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -145,14 +117,16 @@
             this.dataGridViewGekoppeldeObjecten.AllowUserToAddRows = false;
             this.dataGridViewGekoppeldeObjecten.AllowUserToDeleteRows = false;
             this.dataGridViewGekoppeldeObjecten.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewGekoppeldeObjecten.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridViewGekoppeldeObjecten.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewGekoppeldeObjecten.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewGekoppeldeObjecten.Location = new System.Drawing.Point(3, 103);
             this.dataGridViewGekoppeldeObjecten.Name = "dataGridViewGekoppeldeObjecten";
             this.dataGridViewGekoppeldeObjecten.ReadOnly = true;
+            this.dataGridViewGekoppeldeObjecten.RowHeadersWidth = 51;
             this.dataGridViewGekoppeldeObjecten.RowTemplate.Height = 24;
             this.dataGridViewGekoppeldeObjecten.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewGekoppeldeObjecten.Size = new System.Drawing.Size(1561, 555);
+            this.dataGridViewGekoppeldeObjecten.Size = new System.Drawing.Size(2447, 826);
             this.dataGridViewGekoppeldeObjecten.TabIndex = 0;
             this.dataGridViewGekoppeldeObjecten.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewGekoppeldeObjecten_DataBindingComplete);
             this.dataGridViewGekoppeldeObjecten.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewGekoppeldeObjecten_MouseDoubleClick);
@@ -165,7 +139,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1561, 100);
+            this.panel2.Size = new System.Drawing.Size(2447, 100);
             this.panel2.TabIndex = 1;
             // 
             // buttonMakeNewObject
@@ -278,7 +252,7 @@
             // 
             // textBoxProjectNaam
             // 
-            this.textBoxProjectNaam.Location = new System.Drawing.Point(227, 20);
+            this.textBoxProjectNaam.Location = new System.Drawing.Point(236, 41);
             this.textBoxProjectNaam.Name = "textBoxProjectNaam";
             this.textBoxProjectNaam.ReadOnly = true;
             this.textBoxProjectNaam.Size = new System.Drawing.Size(186, 22);
@@ -286,28 +260,32 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(227, 85);
+            this.textBox3.Location = new System.Drawing.Point(236, 106);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(186, 22);
             this.textBox3.TabIndex = 7;
             this.textBox3.Visible = false;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.tabControl1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 246);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1969, 769);
+            this.panel4.TabIndex = 6;
             // 
             // EditProjecten
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1575, 812);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBoxProjectNaam);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Name = "EditProjecten";
             this.Text = "EditProjecten";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGekoppeldeObjecten)).EndInit();
@@ -316,8 +294,8 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -325,9 +303,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
@@ -345,5 +320,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button buttonEditSettings;
+        private System.Windows.Forms.Panel panel4;
     }
 }

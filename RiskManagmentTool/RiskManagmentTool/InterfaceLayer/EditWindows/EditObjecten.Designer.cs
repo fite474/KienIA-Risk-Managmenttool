@@ -312,6 +312,7 @@
             this.advancedDataGridViewGekoppeldeIssues.AllowUserToAddRows = false;
             this.advancedDataGridViewGekoppeldeIssues.AllowUserToDeleteRows = false;
             this.advancedDataGridViewGekoppeldeIssues.AutoGenerateContextFilters = true;
+            this.advancedDataGridViewGekoppeldeIssues.BackgroundColor = System.Drawing.SystemColors.Window;
             this.advancedDataGridViewGekoppeldeIssues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.advancedDataGridViewGekoppeldeIssues.DateWithTime = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
@@ -550,6 +551,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1575, 812);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditObjecten";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Object Pagina";

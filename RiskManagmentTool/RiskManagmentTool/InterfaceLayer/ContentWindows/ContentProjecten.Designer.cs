@@ -93,11 +93,13 @@
             this.dataGridViewProjecten.AllowUserToAddRows = false;
             this.dataGridViewProjecten.AllowUserToDeleteRows = false;
             this.dataGridViewProjecten.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewProjecten.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridViewProjecten.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProjecten.Dock = System.Windows.Forms.DockStyle.Left;
             this.dataGridViewProjecten.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewProjecten.Name = "dataGridViewProjecten";
             this.dataGridViewProjecten.ReadOnly = true;
+            this.dataGridViewProjecten.RowHeadersWidth = 51;
             this.dataGridViewProjecten.RowTemplate.Height = 24;
             this.dataGridViewProjecten.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewProjecten.Size = new System.Drawing.Size(284, 712);

@@ -34,9 +34,9 @@
             this.buttonCancel = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.textBoxSelectedOption = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItemUsage)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -56,10 +56,12 @@
             // 
             this.dataGridViewItemUsage.AllowUserToAddRows = false;
             this.dataGridViewItemUsage.AllowUserToDeleteRows = false;
+            this.dataGridViewItemUsage.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridViewItemUsage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewItemUsage.Location = new System.Drawing.Point(3, 6);
             this.dataGridViewItemUsage.Name = "dataGridViewItemUsage";
             this.dataGridViewItemUsage.ReadOnly = true;
+            this.dataGridViewItemUsage.RowHeadersWidth = 51;
             this.dataGridViewItemUsage.RowTemplate.Height = 24;
             this.dataGridViewItemUsage.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewItemUsage.Size = new System.Drawing.Size(1220, 403);
@@ -107,14 +109,12 @@
             this.panel2.Size = new System.Drawing.Size(1235, 317);
             this.panel2.TabIndex = 5;
             // 
-            // panel3
+            // textBoxSelectedOption
             // 
-            this.panel3.Controls.Add(this.dataGridViewItemUsage);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 317);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1235, 424);
-            this.panel3.TabIndex = 6;
+            this.textBoxSelectedOption.Location = new System.Drawing.Point(237, 171);
+            this.textBoxSelectedOption.Name = "textBoxSelectedOption";
+            this.textBoxSelectedOption.Size = new System.Drawing.Size(261, 22);
+            this.textBoxSelectedOption.TabIndex = 2;
             // 
             // label2
             // 
@@ -125,12 +125,14 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Optie die u wilt verwijderen: ";
             // 
-            // textBoxSelectedOption
+            // panel3
             // 
-            this.textBoxSelectedOption.Location = new System.Drawing.Point(237, 171);
-            this.textBoxSelectedOption.Name = "textBoxSelectedOption";
-            this.textBoxSelectedOption.Size = new System.Drawing.Size(261, 22);
-            this.textBoxSelectedOption.TabIndex = 2;
+            this.panel3.Controls.Add(this.dataGridViewItemUsage);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 317);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1235, 424);
+            this.panel3.TabIndex = 6;
             // 
             // ShowMenuItemUsage
             // 

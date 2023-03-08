@@ -109,6 +109,7 @@
             this.advancedDataGridViewLosseItems.AllowUserToAddRows = false;
             this.advancedDataGridViewLosseItems.AllowUserToDeleteRows = false;
             this.advancedDataGridViewLosseItems.AutoGenerateContextFilters = true;
+            this.advancedDataGridViewLosseItems.BackgroundColor = System.Drawing.SystemColors.Window;
             this.advancedDataGridViewLosseItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.advancedDataGridViewLosseItems.DateWithTime = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -395,7 +396,7 @@
             this.ClientSize = new System.Drawing.Size(1782, 1055);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
-            this.MinimumSize = new System.Drawing.Size(1000, 1028);
+            this.MinimumSize = new System.Drawing.Size(1000, 1018);
             this.Name = "AddRisico";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gevaar koppelen";

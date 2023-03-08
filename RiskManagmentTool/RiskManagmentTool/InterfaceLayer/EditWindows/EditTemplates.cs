@@ -59,7 +59,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             GekoppeldeIssuesId = comunicator.GetGekoppeldeIssuesFromTemplateAsList(TemplateID);
 
 
-            AllGevarenData = comunicator.GetGevarenTable();
+            AllGevarenData = comunicator.GetGlobalGevarenTable();
             advancedDataGridViewAllGevaren.DataSource = AllGevarenData;
 
             ReloadTemplateData();

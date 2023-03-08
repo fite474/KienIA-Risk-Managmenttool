@@ -117,6 +117,7 @@
             this.advancedDataGridViewCompleteBeoordeling.AllowUserToAddRows = false;
             this.advancedDataGridViewCompleteBeoordeling.AllowUserToDeleteRows = false;
             this.advancedDataGridViewCompleteBeoordeling.AutoGenerateContextFilters = true;
+            this.advancedDataGridViewCompleteBeoordeling.BackgroundColor = System.Drawing.SystemColors.Window;
             this.advancedDataGridViewCompleteBeoordeling.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.advancedDataGridViewCompleteBeoordeling.DateWithTime = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;

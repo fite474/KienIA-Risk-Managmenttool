@@ -71,12 +71,14 @@
             this.advancedDataGridViewMaatregelen.AllowUserToDeleteRows = false;
             this.advancedDataGridViewMaatregelen.AutoGenerateContextFilters = true;
             this.advancedDataGridViewMaatregelen.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.advancedDataGridViewMaatregelen.BackgroundColor = System.Drawing.SystemColors.Window;
             this.advancedDataGridViewMaatregelen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.advancedDataGridViewMaatregelen.DateWithTime = false;
             this.advancedDataGridViewMaatregelen.Dock = System.Windows.Forms.DockStyle.Fill;
             this.advancedDataGridViewMaatregelen.Location = new System.Drawing.Point(0, 0);
             this.advancedDataGridViewMaatregelen.Name = "advancedDataGridViewMaatregelen";
             this.advancedDataGridViewMaatregelen.ReadOnly = true;
+            this.advancedDataGridViewMaatregelen.RowHeadersWidth = 51;
             this.advancedDataGridViewMaatregelen.RowTemplate.Height = 24;
             this.advancedDataGridViewMaatregelen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.advancedDataGridViewMaatregelen.Size = new System.Drawing.Size(1575, 712);

@@ -22,17 +22,27 @@ namespace RiskManagmentTool.InterfaceLayer
 
 
 
-
+        private Color inActiveButtonColor = System.Drawing.ColorTranslator.FromHtml("#FFFFFF");
+        private Color activeButtonColor = System.Drawing.ColorTranslator.FromHtml("#DD9719");
 
         public MainWindow()
         {
-            //mainWindow = this;
             InitializeComponent();
             panelMenu.Width = MAX_MENU_SIZE;
             menuPanelWidth = panelMenu.Width;
+            this.SetStyle();
             OpenContentWindow(new ContentProjecten());
 
         }
+
+
+        private void SetStyle()
+        {
+            this.labelAppTitle.Parent = pictureBox1;
+            labelAppTitle.BackColor = Color.Transparent;
+        }
+
+
 
 
         public void OpenContentWindow(Form contentForm)
@@ -56,6 +66,21 @@ namespace RiskManagmentTool.InterfaceLayer
 
         }
 
+        private void HighlightActiveButton(Button currentButton)
+        {
+            //reset all buttons
+            buttonProjecten.BackColor = inActiveButtonColor;
+            buttonObjecten.BackColor = inActiveButtonColor;
+            buttonRisicos.BackColor = inActiveButtonColor;
+            buttonMaatregelen.BackColor = inActiveButtonColor;
+            buttonRedirect.BackColor = inActiveButtonColor;
+            buttonKeuzes.BackColor = inActiveButtonColor;
+            buttonHelp.BackColor = inActiveButtonColor;
+
+
+
+            currentButton.BackColor = activeButtonColor;
+        }
 
         
 
@@ -63,12 +88,14 @@ namespace RiskManagmentTool.InterfaceLayer
         {
             Cursor.Current = Cursors.WaitCursor;
             OpenContentWindow(new ContentProjecten());
+            HighlightActiveButton(this.buttonProjecten);
         }
 
         private void buttonObjecten_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
             OpenContentWindow(new ContentObjecten());
+            HighlightActiveButton(this.buttonObjecten);
 
         }
 
@@ -82,18 +109,21 @@ namespace RiskManagmentTool.InterfaceLayer
         {
             Cursor.Current = Cursors.WaitCursor;
             OpenContentWindow(new ContentRisicos());
+            HighlightActiveButton(this.buttonRisicos);
         }
 
         private void buttonMaatregelen_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
             OpenContentWindow(new ContentMaatregelen());
+            HighlightActiveButton(this.buttonMaatregelen);
 
         }
 
         private void buttonRedirect_Click(object sender, EventArgs e)
         {
             OpenContentWindow(new ContentRedirect());
+            HighlightActiveButton(this.buttonRedirect);
 
         }
 
@@ -101,11 +131,13 @@ namespace RiskManagmentTool.InterfaceLayer
         {
             Cursor.Current = Cursors.WaitCursor;
             OpenContentWindow(new ContentKeuzes());
+            HighlightActiveButton(this.buttonKeuzes);
         }
 
         private void buttonHelp_Click(object sender, EventArgs e)
         {
             OpenContentWindow(new ContentHelp());
+            HighlightActiveButton(this.buttonHelp);
         }
 
 

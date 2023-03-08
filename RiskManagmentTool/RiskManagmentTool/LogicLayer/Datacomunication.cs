@@ -501,7 +501,6 @@ namespace RiskManagmentTool.LogicLayer
         }
         
 
-        //TODO: deze methode moet omgeshreven worden naar het over kopieren van het issue die de gebruiker heeft geselecteerd
         public void AddIssueToObject(string objectId, string issueId, bool addMaatregelen, bool addBeoordeling)//, bool issueNeedsToVerify)
         {
             //string issueState = "-1";
@@ -680,29 +679,17 @@ namespace RiskManagmentTool.LogicLayer
             return bindingSource;
         }
 
-        //public BindingSource GetTemplateTable()
-        //{
-        //    SqlDataAdapter adapter = databaseCommunication.GetTemplates();
-        //    DataTable data = new DataTable();
-        //    adapter.Fill(data);
-        //    BindingSource bindingSource = new BindingSource();
-        //    bindingSource.DataSource = data;
-        //    return bindingSource;
-        //}
-
-        public BindingSource GetGevarenTable()//DataTable GetGevarenTable()
+        public BindingSource GetGlobalGevarenTable()
         {
-            SqlDataAdapter adapter = databaseCommunication.GetGevaren();
+            SqlDataAdapter adapter = databaseCommunication.GetGlobalGevaren();
             DataTable data = new DataTable();
             adapter.Fill(data);
 
             BindingSource bindingSource = new BindingSource();
             bindingSource.DataSource = data;
             return bindingSource;
-
-
-            //return data;
         }
+
 
         public BindingSource GetMaatregelTable()
         {

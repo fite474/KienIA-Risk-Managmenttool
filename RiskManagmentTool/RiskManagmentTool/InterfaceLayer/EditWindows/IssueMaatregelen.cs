@@ -35,7 +35,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private bool ReadOnlyMode;
 
-        private bool ChangeMade;
+        private bool ChangeMade;//TODO
 
 
         public IssueMaatregelen(string objectNaam, string objectId, string issueId,
@@ -98,6 +98,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             checkBoxIssueOK.Checked = comunicator.GetIssueOK(IssueID) == "1";
 
             DataTable risicoBeoordelingData = comunicator.GetRisicoBeoordelingFromIssue(IssueID);
+
             textBoxInit_Risico.Text = risicoBeoordelingData.Rows[0].Field<int?>(7).ToString();
             textBoxInit_Risico_Comment.Text = risicoBeoordelingData.Rows[0].Field<string>(13).ToString();
             textBoxRest_Risico.Text = risicoBeoordelingData.Rows[0].Field<int?>(19).ToString();
@@ -267,7 +268,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         {
             string gevaarID = comunicator.GetGevaarIdByIssueID(IssueID);
             EditRisicos editRisicos = new EditRisicos(gevaarID, ObjectID);
-            editRisicos.SetReadOnlyMode();
+            //editRisicos.SetReadOnlyMode();
             editRisicos.ShowDialog();
         }
 

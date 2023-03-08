@@ -60,7 +60,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.dataGridViewObjecten);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 100);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1575, 712);
@@ -71,11 +71,13 @@
             this.dataGridViewObjecten.AllowUserToAddRows = false;
             this.dataGridViewObjecten.AllowUserToDeleteRows = false;
             this.dataGridViewObjecten.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewObjecten.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridViewObjecten.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewObjecten.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewObjecten.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewObjecten.Name = "dataGridViewObjecten";
             this.dataGridViewObjecten.ReadOnly = true;
+            this.dataGridViewObjecten.RowHeadersWidth = 51;
             this.dataGridViewObjecten.RowTemplate.Height = 24;
             this.dataGridViewObjecten.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewObjecten.Size = new System.Drawing.Size(1575, 712);

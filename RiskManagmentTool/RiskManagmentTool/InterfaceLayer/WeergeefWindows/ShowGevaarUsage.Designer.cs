@@ -37,11 +37,13 @@
             // 
             this.dataGridViewGevaarUsage.AllowUserToAddRows = false;
             this.dataGridViewGevaarUsage.AllowUserToDeleteRows = false;
+            this.dataGridViewGevaarUsage.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridViewGevaarUsage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewGevaarUsage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewGevaarUsage.Location = new System.Drawing.Point(0, 100);
             this.dataGridViewGevaarUsage.Name = "dataGridViewGevaarUsage";
             this.dataGridViewGevaarUsage.ReadOnly = true;
+            this.dataGridViewGevaarUsage.RowHeadersWidth = 51;
             this.dataGridViewGevaarUsage.RowTemplate.Height = 24;
             this.dataGridViewGevaarUsage.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewGevaarUsage.Size = new System.Drawing.Size(1166, 600);

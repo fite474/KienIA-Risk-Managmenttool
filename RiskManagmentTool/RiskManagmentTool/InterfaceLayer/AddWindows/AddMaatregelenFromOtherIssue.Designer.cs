@@ -125,6 +125,7 @@
             this.advancedDataGridViewIssueMaatregelen.AllowUserToDeleteRows = false;
             this.advancedDataGridViewIssueMaatregelen.AutoGenerateContextFilters = true;
             this.advancedDataGridViewIssueMaatregelen.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.advancedDataGridViewIssueMaatregelen.BackgroundColor = System.Drawing.SystemColors.Window;
             this.advancedDataGridViewIssueMaatregelen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.advancedDataGridViewIssueMaatregelen.DateWithTime = false;
             this.advancedDataGridViewIssueMaatregelen.Dock = System.Windows.Forms.DockStyle.Fill;

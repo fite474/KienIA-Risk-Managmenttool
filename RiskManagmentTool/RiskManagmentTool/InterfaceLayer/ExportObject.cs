@@ -15,6 +15,20 @@ namespace RiskManagmentTool.InterfaceLayer
         private string ObjectID;
 
         private BindingSource completeExportData;
+
+        private enum ExportMode
+        {
+            emptyExcel,
+            KienIA_Template,
+            RWS_Template
+        }
+
+
+
+
+
+
+
         public ExportObject(string objectID)
         {
             InitializeComponent();
@@ -175,7 +189,7 @@ namespace RiskManagmentTool.InterfaceLayer
         private void buttonConfirmExport_Click(object sender, EventArgs e)
         {
            // this.ExportToExcel();
-           
+
             string userInputFileName = textBoxUserInputFileName.Text;
             if (userInputFileName.Equals(""))
             {

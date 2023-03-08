@@ -96,9 +96,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         }
 
         public EditRisicos(string gevaarID, string objectId)
-        {
-            //currently set to always have object id -1. need to find the fix still TODO
-            
+        {            
             InitializeComponent();
             isNewGevaar = false;
             //situatieInitString = "";
@@ -111,6 +109,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             LoadTextFirstOpen();
             buttonKeuzeOption.Enabled = false;
             listboxActive = false;
+            LoadSettings();
             
         }
 
@@ -190,11 +189,11 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void LoadSettings()
         {
-            if (!objectId.Equals("-1"))
+            if (!objectId.Equals("-1"))//je zit dus in een object te werken. daarom alleen toevoegen aan object
             {
                 this.buttonKeuzeOption.Text = "Voeg toe Object specifiek";
             }
-            else
+            else//anders globaal aan het werk
             {
                 //niet nodig om aan te passen
                 //this.buttonAddOption.Text = "Project specifiek";

@@ -21,7 +21,7 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
 
         private void LoadData()
         {
-            gevarenData = comunicator.GetGevarenTable();
+            gevarenData = comunicator.GetGlobalGevarenTable();
             advancedDataGridViewGevaren.DataSource = gevarenData;
         }
 

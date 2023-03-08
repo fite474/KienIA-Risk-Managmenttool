@@ -54,11 +54,11 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.advancedDataGridViewObjectIssues = new ADGV.AdvancedDataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBoxViewObjectNaam = new System.Windows.Forms.ComboBox();
             this.buttonAddFromObjecten = new System.Windows.Forms.Button();
             this.buttonSaveTemplate = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.comboBoxViewObjectNaam = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -220,12 +220,14 @@
             this.advancedDataGridViewGekoppeldeIssues.AllowUserToAddRows = false;
             this.advancedDataGridViewGekoppeldeIssues.AllowUserToDeleteRows = false;
             this.advancedDataGridViewGekoppeldeIssues.AutoGenerateContextFilters = true;
+            this.advancedDataGridViewGekoppeldeIssues.BackgroundColor = System.Drawing.SystemColors.Window;
             this.advancedDataGridViewGekoppeldeIssues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.advancedDataGridViewGekoppeldeIssues.DateWithTime = false;
             this.advancedDataGridViewGekoppeldeIssues.Dock = System.Windows.Forms.DockStyle.Fill;
             this.advancedDataGridViewGekoppeldeIssues.Location = new System.Drawing.Point(3, 103);
             this.advancedDataGridViewGekoppeldeIssues.Name = "advancedDataGridViewGekoppeldeIssues";
             this.advancedDataGridViewGekoppeldeIssues.ReadOnly = true;
+            this.advancedDataGridViewGekoppeldeIssues.RowHeadersWidth = 51;
             this.advancedDataGridViewGekoppeldeIssues.RowTemplate.Height = 24;
             this.advancedDataGridViewGekoppeldeIssues.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.advancedDataGridViewGekoppeldeIssues.Size = new System.Drawing.Size(1561, 345);
@@ -290,12 +292,14 @@
             this.advancedDataGridViewAllGevaren.AllowUserToAddRows = false;
             this.advancedDataGridViewAllGevaren.AllowUserToDeleteRows = false;
             this.advancedDataGridViewAllGevaren.AutoGenerateContextFilters = true;
+            this.advancedDataGridViewAllGevaren.BackgroundColor = System.Drawing.SystemColors.Window;
             this.advancedDataGridViewAllGevaren.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.advancedDataGridViewAllGevaren.DateWithTime = false;
             this.advancedDataGridViewAllGevaren.Dock = System.Windows.Forms.DockStyle.Fill;
             this.advancedDataGridViewAllGevaren.Location = new System.Drawing.Point(3, 75);
             this.advancedDataGridViewAllGevaren.Name = "advancedDataGridViewAllGevaren";
             this.advancedDataGridViewAllGevaren.ReadOnly = true;
+            this.advancedDataGridViewAllGevaren.RowHeadersWidth = 51;
             this.advancedDataGridViewAllGevaren.RowTemplate.Height = 24;
             this.advancedDataGridViewAllGevaren.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.advancedDataGridViewAllGevaren.Size = new System.Drawing.Size(1547, 338);
@@ -344,6 +348,7 @@
             this.advancedDataGridViewObjectIssues.Location = new System.Drawing.Point(3, 75);
             this.advancedDataGridViewObjectIssues.Name = "advancedDataGridViewObjectIssues";
             this.advancedDataGridViewObjectIssues.ReadOnly = true;
+            this.advancedDataGridViewObjectIssues.RowHeadersWidth = 51;
             this.advancedDataGridViewObjectIssues.RowTemplate.Height = 24;
             this.advancedDataGridViewObjectIssues.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.advancedDataGridViewObjectIssues.Size = new System.Drawing.Size(1547, 338);
@@ -360,6 +365,24 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1547, 72);
             this.panel5.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(169, 26);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(88, 17);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Object naam";
+            // 
+            // comboBoxViewObjectNaam
+            // 
+            this.comboBoxViewObjectNaam.FormattingEnabled = true;
+            this.comboBoxViewObjectNaam.Location = new System.Drawing.Point(268, 23);
+            this.comboBoxViewObjectNaam.Name = "comboBoxViewObjectNaam";
+            this.comboBoxViewObjectNaam.Size = new System.Drawing.Size(189, 24);
+            this.comboBoxViewObjectNaam.TabIndex = 1;
+            this.comboBoxViewObjectNaam.SelectedIndexChanged += new System.EventHandler(this.comboBoxViewObjectNaam_SelectedIndexChanged);
             // 
             // buttonAddFromObjecten
             // 
@@ -388,24 +411,6 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1575, 101);
             this.panel6.TabIndex = 4;
-            // 
-            // comboBoxViewObjectNaam
-            // 
-            this.comboBoxViewObjectNaam.FormattingEnabled = true;
-            this.comboBoxViewObjectNaam.Location = new System.Drawing.Point(268, 23);
-            this.comboBoxViewObjectNaam.Name = "comboBoxViewObjectNaam";
-            this.comboBoxViewObjectNaam.Size = new System.Drawing.Size(189, 24);
-            this.comboBoxViewObjectNaam.TabIndex = 1;
-            this.comboBoxViewObjectNaam.SelectedIndexChanged += new System.EventHandler(this.comboBoxViewObjectNaam_SelectedIndexChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(169, 26);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 17);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Object naam";
             // 
             // EditTemplates
             // 

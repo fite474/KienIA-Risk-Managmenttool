@@ -213,19 +213,6 @@ namespace RiskManagmentTool.DataLayer
             List<int> GevaarGevaarType = this.GetGevaar_GevaarTypeList(mainGevaarId);
             List<int> GevaarGevolg = this.GetGevaar_GevolgList(mainGevaarId);
 
-
-
-
-
-
-
-
-
-            int mainGevaarIDAsInt = int.Parse(mainGevaarId);
-
-
-            //todo, je moet hier nog de main table (gevaar multi met de 2x teksttoevoegen)
-
             //hieronder staat de foreach voor elke koppeltabel te inserten.
             #region koppeltabel duplicatie
 
@@ -233,11 +220,11 @@ namespace RiskManagmentTool.DataLayer
             {
                 foreach (int id in GevaarDisciplines)
                 {
-                    this.AddGevaar_Disciplines(mainGevaarIDAsInt, id);
+                    this.AddGevaar_Disciplines(finalId, id);
                 }
             }
             else
-            { this.AddGevaar_Disciplines(mainGevaarIDAsInt, null); }
+            { this.AddGevaar_Disciplines(finalId, null); }
 
 
 
@@ -245,77 +232,77 @@ namespace RiskManagmentTool.DataLayer
             {
                 foreach (int id in GevaarGebruiksfase)
                 {
-                    this.AddGevaar_Gebruiksfase(mainGevaarIDAsInt, id);
+                    this.AddGevaar_Gebruiksfase(finalId, id);
                 }
             }
             else
-            { this.AddGevaar_Gebruiksfase(mainGevaarIDAsInt, null); }
+            { this.AddGevaar_Gebruiksfase(finalId, null); }
 
 
             if (GevaarBedienvorm.Count > 0)
             {
                 foreach (int id in GevaarBedienvorm)
                 {
-                    this.AddGevaar_Bedienvorm(mainGevaarIDAsInt, id);
+                    this.AddGevaar_Bedienvorm(finalId, id);
                 }
             }
             else
-            { this.AddGevaar_Bedienvorm(mainGevaarIDAsInt, null); }
+            { this.AddGevaar_Bedienvorm(finalId, null); }
 
 
             if (GevaarGebruiker.Count > 0)
             {
                 foreach (int id in GevaarGebruiker)
                 {
-                    this.AddGevaar_Gebruiker(mainGevaarIDAsInt, id);
+                    this.AddGevaar_Gebruiker(finalId, id);
                 }
             }
             else
-            { this.AddGevaar_Gebruiker(mainGevaarIDAsInt, null); }
+            { this.AddGevaar_Gebruiker(finalId, null); }
 
 
             if (GevaarGevaarlijkeZone.Count > 0)
             {
                 foreach (int id in GevaarGevaarlijkeZone)
                 {
-                    this.AddGevaar_GevaarlijkeZone(mainGevaarIDAsInt, id);
+                    this.AddGevaar_GevaarlijkeZone(finalId, id);
                 }
             }
             else
-            { this.AddGevaar_GevaarlijkeZone(mainGevaarIDAsInt, null); }
+            { this.AddGevaar_GevaarlijkeZone(finalId, null); }
 
 
             if (GevaarTaak.Count > 0)
             {
                 foreach (int id in GevaarTaak)
                 {
-                    this.AddGevaar_Taak(mainGevaarIDAsInt, id);
+                    this.AddGevaar_Taak(finalId, id);
                 }
             }
             else
-            { this.AddGevaar_Taak(mainGevaarIDAsInt, null); }
+            { this.AddGevaar_Taak(finalId, null); }
 
 
             if (GevaarGevaarType.Count > 0)
             {
                 foreach (int id in GevaarGevaarType)
                 {
-                    this.AddGevaar_GevaarType(mainGevaarIDAsInt, id);
+                    this.AddGevaar_GevaarType(finalId, id);
                 }
             }
             else
-            { this.AddGevaar_GevaarType(mainGevaarIDAsInt, null); }
+            { this.AddGevaar_GevaarType(finalId, null); }
 
 
             if (GevaarGevolg.Count > 0)
             {
                 foreach (int id in GevaarGevolg)
                 {
-                    this.AddGevaar_Gevolg(mainGevaarIDAsInt, id);
+                    this.AddGevaar_Gevolg(finalId, id);
                 }
             }
             else
-            { this.AddGevaar_Gevolg(mainGevaarIDAsInt, null); }
+            { this.AddGevaar_Gevolg(finalId, null); }
 
 
             #endregion koppeltabel duplicatie
@@ -506,7 +493,7 @@ namespace RiskManagmentTool.DataLayer
         private int InitIssue(string gevaarId, string issueState)
         {
 
-
+            //deze functie maakt een nieuw gevaar aan met dezelfde data, met als origin de orginele gevaar.
             int newGevaarIdAfterDuplication = this.DuplicateGevaarFromOrigin(gevaarId);
 
 
@@ -1459,7 +1446,6 @@ namespace RiskManagmentTool.DataLayer
 
         }
 
-        //TODO for version2
         public void UpdateGevaarGebeurtenis(int gevaarID, string text)
         {
             sqlConnection.Open();
@@ -1473,7 +1459,7 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
 
         }
-        //TODO for version2
+
         public void UpdateGevaarSituatie(int gevaarID, string text)
         {
             sqlConnection.Open();
@@ -1653,10 +1639,11 @@ namespace RiskManagmentTool.DataLayer
             return adapter;
         }
 
-        public SqlDataAdapter GetGevaren()
+
+        public SqlDataAdapter GetGlobalGevaren()
         {
             sqlConnection.Open();
-            String query = "SELECT * FROM View_GevarenCompleet";
+            String query = "  SELECT * FROM View_GevarenCompleet WHERE View_GevarenCompleet.GevaarID in (SELECT GevaarID FROM  TableGevaarMulti WHERE GevaarOriginID = -1)";
             SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
             sqlConnection.Close();
             return adapter;

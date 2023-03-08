@@ -55,10 +55,10 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.textBoxHelp = new System.Windows.Forms.TextBox();
             this.textBoxGevaar = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.checkedListBoxWarningSettings = new System.Windows.Forms.CheckedListBox();
-            this.textBoxHelp = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMaatregelenCurrentIssue)).BeginInit();
@@ -206,11 +206,13 @@
             this.dataGridViewMaatregelenCurrentIssue.AllowUserToAddRows = false;
             this.dataGridViewMaatregelenCurrentIssue.AllowUserToDeleteRows = false;
             this.dataGridViewMaatregelenCurrentIssue.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewMaatregelenCurrentIssue.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridViewMaatregelenCurrentIssue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewMaatregelenCurrentIssue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewMaatregelenCurrentIssue.Location = new System.Drawing.Point(0, 100);
             this.dataGridViewMaatregelenCurrentIssue.Name = "dataGridViewMaatregelenCurrentIssue";
             this.dataGridViewMaatregelenCurrentIssue.ReadOnly = true;
+            this.dataGridViewMaatregelenCurrentIssue.RowHeadersWidth = 51;
             this.dataGridViewMaatregelenCurrentIssue.RowTemplate.Height = 24;
             this.dataGridViewMaatregelenCurrentIssue.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewMaatregelenCurrentIssue.Size = new System.Drawing.Size(731, 429);
@@ -222,11 +224,13 @@
             this.dataGridViewMaatregelenNewIssue.AllowUserToAddRows = false;
             this.dataGridViewMaatregelenNewIssue.AllowUserToDeleteRows = false;
             this.dataGridViewMaatregelenNewIssue.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewMaatregelenNewIssue.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridViewMaatregelenNewIssue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewMaatregelenNewIssue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewMaatregelenNewIssue.Location = new System.Drawing.Point(0, 100);
             this.dataGridViewMaatregelenNewIssue.Name = "dataGridViewMaatregelenNewIssue";
             this.dataGridViewMaatregelenNewIssue.ReadOnly = true;
+            this.dataGridViewMaatregelenNewIssue.RowHeadersWidth = 51;
             this.dataGridViewMaatregelenNewIssue.RowTemplate.Height = 24;
             this.dataGridViewMaatregelenNewIssue.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewMaatregelenNewIssue.Size = new System.Drawing.Size(731, 429);
@@ -354,6 +358,15 @@
             this.panel5.Size = new System.Drawing.Size(1474, 260);
             this.panel5.TabIndex = 25;
             // 
+            // textBoxHelp
+            // 
+            this.textBoxHelp.Location = new System.Drawing.Point(848, 183);
+            this.textBoxHelp.Multiline = true;
+            this.textBoxHelp.Name = "textBoxHelp";
+            this.textBoxHelp.ReadOnly = true;
+            this.textBoxHelp.Size = new System.Drawing.Size(587, 71);
+            this.textBoxHelp.TabIndex = 26;
+            // 
             // textBoxGevaar
             // 
             this.textBoxGevaar.Location = new System.Drawing.Point(168, 209);
@@ -384,15 +397,6 @@
             this.checkedListBoxWarningSettings.TabIndex = 22;
             this.checkedListBoxWarningSettings.Visible = false;
             this.checkedListBoxWarningSettings.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxWarningSettings_ItemCheck);
-            // 
-            // textBoxHelp
-            // 
-            this.textBoxHelp.Location = new System.Drawing.Point(848, 183);
-            this.textBoxHelp.Multiline = true;
-            this.textBoxHelp.Name = "textBoxHelp";
-            this.textBoxHelp.ReadOnly = true;
-            this.textBoxHelp.Size = new System.Drawing.Size(587, 71);
-            this.textBoxHelp.TabIndex = 26;
             // 
             // WarningAddToObject
             // 

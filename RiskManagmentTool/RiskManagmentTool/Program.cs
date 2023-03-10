@@ -20,7 +20,18 @@ namespace RiskManagmentTool
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainWindow());
+
+            try
+            {
+                Application.Run(new MainWindow());
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("Fatal error, contact support if the crash presists: \n" + err.ToString());
+                //throw;
+            }
+
+
         }
     }
 }

@@ -127,7 +127,15 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
 
 
+        public void SetReadOnlyMode()
+        {
+            textBoxMaatregelNaam.Enabled = false;
+ 
+            checkedListBoxOptions.Enabled = false;
+            buttonDeleteMaatregel.Enabled = false;
 
+            buttonSave.Enabled = false;
+        }
 
 
 

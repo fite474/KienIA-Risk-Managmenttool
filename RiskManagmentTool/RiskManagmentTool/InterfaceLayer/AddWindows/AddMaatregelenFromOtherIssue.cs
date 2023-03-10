@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using RiskManagmentTool.LogicLayer;
 
@@ -36,9 +30,6 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
             textBoxObjectNaam.Text = objectNaam;
 
             LoadData();
-
-            
-
         }
 
         private void LoadData()
@@ -78,7 +69,5 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
         {
             this.issueMaatregelenData.Sort = this.advancedDataGridViewIssueMaatregelen.SortString;
         }
-
-
     }
 }

@@ -129,7 +129,6 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             }
             catch (Exception e)
             {
-
                 Console.WriteLine($"The file was not found: '{e}'");
             }
 
@@ -491,7 +490,6 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             }
             catch (Exception err)
             {
-
                 Console.WriteLine(err);
             }
 

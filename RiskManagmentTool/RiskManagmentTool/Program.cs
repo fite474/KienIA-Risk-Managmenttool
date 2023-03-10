@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using RiskManagmentTool.InterfaceLayer;
 
@@ -27,7 +24,9 @@ namespace RiskManagmentTool
             }
             catch (Exception err)
             {
-                MessageBox.Show("Fatal error, contact support if the crash presists: \n" + err.ToString());
+                MessageBox.Show("Fatal error! Your last action could NOT be completed :( , contact support if the crash presists: \n\n" +
+                    "The following error occured:"+ err.ToString() +
+                    "\n\n Error code: main program has crashed");
                 //throw;
             }
 

@@ -50,7 +50,6 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             }
             catch (Exception err)
             {
-
                 Console.WriteLine(err);
             }
            

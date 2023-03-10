@@ -53,7 +53,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1039, 183);
+            this.panel1.Size = new System.Drawing.Size(1118, 183);
             this.panel1.TabIndex = 0;
             // 
             // buttonAddSelection
@@ -71,7 +71,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(58, 130);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 17);
+            this.label3.Size = new System.Drawing.Size(61, 16);
             this.label3.TabIndex = 5;
             this.label3.Text = "Risico ID";
             // 
@@ -105,7 +105,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(58, 33);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 17);
+            this.label2.Size = new System.Drawing.Size(83, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Object naam";
             // 
@@ -114,7 +114,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(808, 82);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 17);
+            this.label1.Size = new System.Drawing.Size(68, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Gevaar ID";
             this.label1.Visible = false;
@@ -135,7 +135,7 @@
             this.advancedDataGridViewIssueMaatregelen.RowHeadersWidth = 51;
             this.advancedDataGridViewIssueMaatregelen.RowTemplate.Height = 24;
             this.advancedDataGridViewIssueMaatregelen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.advancedDataGridViewIssueMaatregelen.Size = new System.Drawing.Size(1039, 410);
+            this.advancedDataGridViewIssueMaatregelen.Size = new System.Drawing.Size(1118, 425);
             this.advancedDataGridViewIssueMaatregelen.TabIndex = 2;
             this.advancedDataGridViewIssueMaatregelen.TimeFilter = false;
             this.advancedDataGridViewIssueMaatregelen.SortStringChanged += new System.EventHandler(this.advancedDataGridViewIssueMaatregelen_SortStringChanged);
@@ -145,7 +145,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1039, 593);
+            this.ClientSize = new System.Drawing.Size(1118, 608);
             this.Controls.Add(this.advancedDataGridViewIssueMaatregelen);
             this.Controls.Add(this.panel1);
             this.Name = "AddMaatregelenFromOtherIssue";

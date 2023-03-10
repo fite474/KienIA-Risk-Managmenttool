@@ -130,7 +130,6 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
             }
             catch (Exception err)
             {
-
                 Console.WriteLine(err);
             }
            
@@ -155,7 +154,6 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
             }
             catch (Exception err)
             {
-
                 Console.WriteLine(err); ;
             }
            

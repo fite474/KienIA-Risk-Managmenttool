@@ -72,7 +72,6 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
             }
             catch (Exception err)
             {
-
                 Console.WriteLine(err);
             }
 

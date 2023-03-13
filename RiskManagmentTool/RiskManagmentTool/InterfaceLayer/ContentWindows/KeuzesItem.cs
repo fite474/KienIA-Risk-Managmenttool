@@ -24,7 +24,7 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
         {
             InitializeComponent();
             this.objectId = objectId;
-            keuzeMenus = new KeuzeMenus();
+            keuzeMenus = new KeuzeMenus(objectId);
             MenuTableName = menuName;
             LoadData();
         }

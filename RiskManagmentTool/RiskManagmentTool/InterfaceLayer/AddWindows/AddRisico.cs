@@ -31,7 +31,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
             Cursor.Current = Cursors.WaitCursor;
             InitializeComponent();
             comunicator = new Datacomunication();
-            keuzeMenus = new KeuzeMenus();
+            keuzeMenus = new KeuzeMenus(objectID);
             controler = new DataControler(objectID);
             viewsColumnNames = new ViewsColumnNames();
 

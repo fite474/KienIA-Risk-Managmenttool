@@ -53,7 +53,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
             InitializeComponent();
             comunicator = new Datacomunication();
-            keuzeMenus = new KeuzeMenus();
+            keuzeMenus = new KeuzeMenus(objectID);
             viewsColumnNames = new ViewsColumnNames();
             ImageHandler = new ImageHandler();
             //ShowLegenda = new ShowLegendaObjecten();

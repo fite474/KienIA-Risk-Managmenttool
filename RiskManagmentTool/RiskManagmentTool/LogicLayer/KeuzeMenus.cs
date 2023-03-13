@@ -149,6 +149,9 @@ namespace RiskManagmentTool.LogicLayer
             MakeMenu();
         }
 
+
+        //todo make this methode optimized so it doesnt get all unused lists.
+        //currently this methode gets all list while the rest of the application crreates a new object/instance of this class for each menu option resulting in n * n lists instead of n lists
         private void MakeMenu()
         {
 

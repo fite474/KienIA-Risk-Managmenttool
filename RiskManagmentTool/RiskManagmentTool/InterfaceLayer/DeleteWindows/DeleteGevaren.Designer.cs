@@ -81,6 +81,7 @@
             // 
             // textBoxSelectedItems
             // 
+            this.textBoxSelectedItems.Enabled = false;
             this.textBoxSelectedItems.Location = new System.Drawing.Point(121, 115);
             this.textBoxSelectedItems.Name = "textBoxSelectedItems";
             this.textBoxSelectedItems.Size = new System.Drawing.Size(417, 22);

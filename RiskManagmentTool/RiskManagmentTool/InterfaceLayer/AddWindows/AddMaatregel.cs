@@ -34,7 +34,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
             IssueID = issueId;
             
             comunicator = new Datacomunication();
-            keuzeMenus = new KeuzeMenus();
+            keuzeMenus = new KeuzeMenus(objectID);
             controler = new DataControler(IssueID);
             viewsColumnNames = new ViewsColumnNames();
             SelectedMaatregelId = new List<string>();

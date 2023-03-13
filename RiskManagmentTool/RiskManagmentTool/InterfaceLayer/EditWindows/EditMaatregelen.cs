@@ -82,7 +82,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void LoadMenus()
         {
-            keuzeMenus = new KeuzeMenus();
+            keuzeMenus = new KeuzeMenus(objectId);
             NormenItems_DBIndex = keuzeMenus.GetMaatregelNormMenu();
             CategorieItems_DBIndex = keuzeMenus.GetMaatregelCategoryMenu();
 

@@ -43,7 +43,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         {
             InitializeComponent();
             comunicator = new Datacomunication();
-            keuzeMenus = new KeuzeMenus();
+            keuzeMenus = new KeuzeMenus(objectId);
             ImageHandler = new ImageHandler();
             risicograaf = new Risicograaf();
             Discipline = discipline;

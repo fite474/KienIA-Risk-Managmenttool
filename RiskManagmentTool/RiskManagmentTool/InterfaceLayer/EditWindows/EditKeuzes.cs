@@ -24,7 +24,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         public EditKeuzes(MenuTableName menuTableName, Dictionary<int, string> options, string menuName, string objectId)
         {
             InitializeComponent();
-            keuzeMenus = new KeuzeMenus();
+            keuzeMenus = new KeuzeMenus(objectId);
             comunicator = new Datacomunication();
             deleteControler = new DeleteControler();
             MenuTableName = menuTableName;

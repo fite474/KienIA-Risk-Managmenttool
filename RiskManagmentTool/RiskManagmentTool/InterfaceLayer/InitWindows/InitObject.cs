@@ -34,12 +34,9 @@ namespace RiskManagmentTool.InterfaceLayer.InitWindows
             int risicograafSetting = -1;
             for (int ix = 0; ix < checkedListBoxRisicograaf.Items.Count; ++ix)
             {
-
-            
                 if (checkedListBoxRisicograaf.GetItemChecked(ix))
                 {
                     risicograafSetting = ix;
-
                 }
             }
 
@@ -52,8 +49,21 @@ namespace RiskManagmentTool.InterfaceLayer.InitWindows
                 string objectType = comboBoxObjectType.SelectedItem.ToString();
                 string objectOmschrijving = textBoxObjectOmschrijving.Text;
                 int objectID = comunicator.MakeObject(projectId, projectNaam, objectNaam, objectType, objectOmschrijving, risicograafSetting);
+                string objectIDString = objectID.ToString();
 
-                Form editObject = new EditObjecten(objectID.ToString(), projectNaam, objectNaam, objectType, objectOmschrijving);
+                //allow user to create object specific menu items
+
+                Form addMenuItemsToObject = new ContentWindows.ContentKeuzes(objectIDString, objectNaam);
+                addMenuItemsToObject.ShowDialog();
+
+
+
+
+
+
+
+
+                Form editObject = new EditObjecten(objectIDString, projectNaam, objectNaam, objectType, objectOmschrijving);
                 editObject.Show();
                 this.Close();
             }

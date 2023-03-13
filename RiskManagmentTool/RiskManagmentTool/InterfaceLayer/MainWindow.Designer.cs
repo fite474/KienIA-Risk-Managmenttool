@@ -139,6 +139,7 @@
             this.buttonRedirect.TabIndex = 6;
             this.buttonRedirect.Text = "Zoeken";
             this.buttonRedirect.UseVisualStyleBackColor = true;
+            this.buttonRedirect.Visible = false;
             this.buttonRedirect.Click += new System.EventHandler(this.buttonRedirect_Click);
             // 
             // buttonMaatregelen

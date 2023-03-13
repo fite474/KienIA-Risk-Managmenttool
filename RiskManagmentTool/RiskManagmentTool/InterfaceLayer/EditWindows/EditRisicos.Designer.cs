@@ -73,6 +73,7 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.buttonAddLocal = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -176,9 +177,9 @@
             // 
             this.panel1.Controls.Add(this.buttonSave);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 747);
+            this.panel1.Location = new System.Drawing.Point(0, 833);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1577, 91);
+            this.panel1.Size = new System.Drawing.Size(1592, 91);
             this.panel1.TabIndex = 11;
             // 
             // buttonSave
@@ -186,7 +187,7 @@
             this.buttonSave.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonSave.Location = new System.Drawing.Point(0, 0);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(1577, 91);
+            this.buttonSave.Size = new System.Drawing.Size(1592, 91);
             this.buttonSave.TabIndex = 0;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
@@ -199,7 +200,7 @@
             this.textBoxGevSituatie.Location = new System.Drawing.Point(45, 20);
             this.textBoxGevSituatie.Multiline = true;
             this.textBoxGevSituatie.Name = "textBoxGevSituatie";
-            this.textBoxGevSituatie.Size = new System.Drawing.Size(477, 73);
+            this.textBoxGevSituatie.Size = new System.Drawing.Size(492, 73);
             this.textBoxGevSituatie.TabIndex = 10;
             // 
             // textBoxGevGebeurtenis
@@ -209,7 +210,7 @@
             this.textBoxGevGebeurtenis.Location = new System.Drawing.Point(45, 111);
             this.textBoxGevGebeurtenis.Multiline = true;
             this.textBoxGevGebeurtenis.Name = "textBoxGevGebeurtenis";
-            this.textBoxGevGebeurtenis.Size = new System.Drawing.Size(477, 79);
+            this.textBoxGevGebeurtenis.Size = new System.Drawing.Size(492, 79);
             this.textBoxGevGebeurtenis.TabIndex = 11;
             // 
             // textBoxDiscipline
@@ -219,7 +220,7 @@
             this.textBoxDiscipline.Location = new System.Drawing.Point(45, 230);
             this.textBoxDiscipline.Name = "textBoxDiscipline";
             this.textBoxDiscipline.ReadOnly = true;
-            this.textBoxDiscipline.Size = new System.Drawing.Size(500, 22);
+            this.textBoxDiscipline.Size = new System.Drawing.Size(515, 22);
             this.textBoxDiscipline.TabIndex = 16;
             // 
             // textBoxGebruiksfase
@@ -229,7 +230,7 @@
             this.textBoxGebruiksfase.Location = new System.Drawing.Point(45, 285);
             this.textBoxGebruiksfase.Name = "textBoxGebruiksfase";
             this.textBoxGebruiksfase.ReadOnly = true;
-            this.textBoxGebruiksfase.Size = new System.Drawing.Size(500, 22);
+            this.textBoxGebruiksfase.Size = new System.Drawing.Size(515, 22);
             this.textBoxGebruiksfase.TabIndex = 17;
             // 
             // textBoxBedienvorm
@@ -239,7 +240,7 @@
             this.textBoxBedienvorm.Location = new System.Drawing.Point(45, 353);
             this.textBoxBedienvorm.Name = "textBoxBedienvorm";
             this.textBoxBedienvorm.ReadOnly = true;
-            this.textBoxBedienvorm.Size = new System.Drawing.Size(500, 22);
+            this.textBoxBedienvorm.Size = new System.Drawing.Size(515, 22);
             this.textBoxBedienvorm.TabIndex = 18;
             // 
             // textBoxGebruiker
@@ -249,7 +250,7 @@
             this.textBoxGebruiker.Location = new System.Drawing.Point(45, 422);
             this.textBoxGebruiker.Name = "textBoxGebruiker";
             this.textBoxGebruiker.ReadOnly = true;
-            this.textBoxGebruiker.Size = new System.Drawing.Size(500, 22);
+            this.textBoxGebruiker.Size = new System.Drawing.Size(515, 22);
             this.textBoxGebruiker.TabIndex = 20;
             // 
             // textBoxGevaarlijkeZone
@@ -259,7 +260,7 @@
             this.textBoxGevaarlijkeZone.Location = new System.Drawing.Point(45, 471);
             this.textBoxGevaarlijkeZone.Name = "textBoxGevaarlijkeZone";
             this.textBoxGevaarlijkeZone.ReadOnly = true;
-            this.textBoxGevaarlijkeZone.Size = new System.Drawing.Size(500, 22);
+            this.textBoxGevaarlijkeZone.Size = new System.Drawing.Size(515, 22);
             this.textBoxGevaarlijkeZone.TabIndex = 21;
             // 
             // textBoxTaak
@@ -269,7 +270,7 @@
             this.textBoxTaak.Location = new System.Drawing.Point(45, 526);
             this.textBoxTaak.Name = "textBoxTaak";
             this.textBoxTaak.ReadOnly = true;
-            this.textBoxTaak.Size = new System.Drawing.Size(500, 22);
+            this.textBoxTaak.Size = new System.Drawing.Size(515, 22);
             this.textBoxTaak.TabIndex = 22;
             // 
             // textBoxGevaar
@@ -279,7 +280,7 @@
             this.textBoxGevaar.Location = new System.Drawing.Point(45, 580);
             this.textBoxGevaar.Name = "textBoxGevaar";
             this.textBoxGevaar.ReadOnly = true;
-            this.textBoxGevaar.Size = new System.Drawing.Size(500, 22);
+            this.textBoxGevaar.Size = new System.Drawing.Size(515, 22);
             this.textBoxGevaar.TabIndex = 23;
             // 
             // textBoxGevolg
@@ -289,7 +290,7 @@
             this.textBoxGevolg.Location = new System.Drawing.Point(45, 629);
             this.textBoxGevolg.Name = "textBoxGevolg";
             this.textBoxGevolg.ReadOnly = true;
-            this.textBoxGevolg.Size = new System.Drawing.Size(500, 22);
+            this.textBoxGevolg.Size = new System.Drawing.Size(515, 22);
             this.textBoxGevolg.TabIndex = 24;
             // 
             // buttonDisciplines
@@ -304,20 +305,21 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.buttonAddLocal);
             this.panel2.Controls.Add(this.textBoxCurrentMenu);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.buttonKeuzeOption);
             this.panel2.Controls.Add(this.checkedListBoxOptions);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(982, 0);
+            this.panel2.Location = new System.Drawing.Point(997, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(595, 747);
+            this.panel2.Size = new System.Drawing.Size(595, 833);
             this.panel2.TabIndex = 34;
             // 
             // textBoxCurrentMenu
             // 
-            this.textBoxCurrentMenu.Location = new System.Drawing.Point(270, 197);
+            this.textBoxCurrentMenu.Location = new System.Drawing.Point(95, 201);
             this.textBoxCurrentMenu.Name = "textBoxCurrentMenu";
             this.textBoxCurrentMenu.ReadOnly = true;
             this.textBoxCurrentMenu.Size = new System.Drawing.Size(193, 22);
@@ -326,7 +328,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(181, 197);
+            this.label11.Location = new System.Drawing.Point(6, 201);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(95, 17);
             this.label11.TabIndex = 3;
@@ -383,7 +385,7 @@
             // 
             // buttonKeuzeOption
             // 
-            this.buttonKeuzeOption.Location = new System.Drawing.Point(3, 181);
+            this.buttonKeuzeOption.Location = new System.Drawing.Point(6, 691);
             this.buttonKeuzeOption.Name = "buttonKeuzeOption";
             this.buttonKeuzeOption.Size = new System.Drawing.Size(157, 52);
             this.buttonKeuzeOption.TabIndex = 1;
@@ -393,12 +395,15 @@
             // 
             // checkedListBoxOptions
             // 
+            this.checkedListBoxOptions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.checkedListBoxOptions.CheckOnClick = true;
             this.checkedListBoxOptions.FormattingEnabled = true;
             this.checkedListBoxOptions.Location = new System.Drawing.Point(6, 239);
             this.checkedListBoxOptions.Name = "checkedListBoxOptions";
-            this.checkedListBoxOptions.Size = new System.Drawing.Size(457, 446);
+            this.checkedListBoxOptions.Size = new System.Drawing.Size(564, 446);
             this.checkedListBoxOptions.TabIndex = 0;
+            this.checkedListBoxOptions.ThreeDCheckBoxes = true;
             this.checkedListBoxOptions.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxOptions_ItemCheck);
             // 
             // buttonBedienvorm
@@ -479,7 +484,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(982, 747);
+            this.panel4.Size = new System.Drawing.Size(997, 833);
             this.panel4.TabIndex = 42;
             // 
             // panel7
@@ -497,7 +502,7 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(227, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(592, 747);
+            this.panel7.Size = new System.Drawing.Size(607, 833);
             this.panel7.TabIndex = 2;
             // 
             // panel6
@@ -511,9 +516,9 @@
             this.panel6.Controls.Add(this.buttonGebruiker);
             this.panel6.Controls.Add(this.buttonGevaar);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(819, 0);
+            this.panel6.Location = new System.Drawing.Point(834, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(163, 747);
+            this.panel6.Size = new System.Drawing.Size(163, 833);
             this.panel6.TabIndex = 1;
             // 
             // panel5
@@ -531,14 +536,23 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(227, 747);
+            this.panel5.Size = new System.Drawing.Size(227, 833);
             this.panel5.TabIndex = 0;
+            // 
+            // buttonAddLocal
+            // 
+            this.buttonAddLocal.Location = new System.Drawing.Point(335, 698);
+            this.buttonAddLocal.Name = "buttonAddLocal";
+            this.buttonAddLocal.Size = new System.Drawing.Size(135, 44);
+            this.buttonAddLocal.TabIndex = 5;
+            this.buttonAddLocal.Text = "button1 (add local TODO)";
+            this.buttonAddLocal.UseVisualStyleBackColor = true;
             // 
             // EditRisicos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1577, 838);
+            this.ClientSize = new System.Drawing.Size(1592, 924);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -608,5 +622,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox textBoxCurrentMenu;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button buttonAddLocal;
     }
 }

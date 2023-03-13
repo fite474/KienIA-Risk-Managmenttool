@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using RiskManagmentTool.LogicLayer;
-using RiskManagmentTool.LogicLayer.Objects;
 using RiskManagmentTool.InterfaceLayer.ContentWindows;
 
 namespace RiskManagmentTool.InterfaceLayer
@@ -23,7 +15,9 @@ namespace RiskManagmentTool.InterfaceLayer
 
 
         private Color inActiveButtonColor = System.Drawing.ColorTranslator.FromHtml("#FFFFFF");
-        private Color activeButtonColor = System.Drawing.ColorTranslator.FromHtml("#DD9719");
+        //private Color activeButtonColor = System.Drawing.ColorTranslator.FromHtml("#DD9719");//kienia oranje
+        private Color activeButtonColor = System.Drawing.ColorTranslator.FromHtml("#FFA2A4A5");
+
 
         public MainWindow()
         {
@@ -32,6 +26,7 @@ namespace RiskManagmentTool.InterfaceLayer
             menuPanelWidth = panelMenu.Width;
             this.SetStyle();
             OpenContentWindow(new ContentProjecten());
+            this.HighlightActiveButton(buttonProjecten);
 
         }
 

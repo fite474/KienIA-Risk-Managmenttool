@@ -432,9 +432,9 @@
             // 
             // buttonSaveObjectNotes
             // 
-            this.buttonSaveObjectNotes.Location = new System.Drawing.Point(545, 197);
+            this.buttonSaveObjectNotes.Location = new System.Drawing.Point(724, 298);
             this.buttonSaveObjectNotes.Name = "buttonSaveObjectNotes";
-            this.buttonSaveObjectNotes.Size = new System.Drawing.Size(75, 23);
+            this.buttonSaveObjectNotes.Size = new System.Drawing.Size(178, 91);
             this.buttonSaveObjectNotes.TabIndex = 2;
             this.buttonSaveObjectNotes.Text = "Save";
             this.buttonSaveObjectNotes.UseVisualStyleBackColor = true;
@@ -446,7 +446,7 @@
             this.textBoxObjectNotes.Multiline = true;
             this.textBoxObjectNotes.Name = "textBoxObjectNotes";
             this.textBoxObjectNotes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxObjectNotes.Size = new System.Drawing.Size(458, 348);
+            this.textBoxObjectNotes.Size = new System.Drawing.Size(691, 348);
             this.textBoxObjectNotes.TabIndex = 1;
             // 
             // label9

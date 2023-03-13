@@ -71,6 +71,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private string objectId;
 
+        private bool usingSaveButtonToExit;
+
 
         public EditRisicos(string objectId)
         {
@@ -86,6 +88,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             buttonKeuzeOption.Enabled = false;
             listboxActive = false;
             LoadSettings();
+            this.FormClosing += CheckForEditsBeforeClosing;
+            this.usingSaveButtonToExit = false;
 
         }
 
@@ -104,13 +108,12 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             buttonKeuzeOption.Enabled = false;
             listboxActive = false;
             LoadSettings();
-            
+            this.FormClosing += CheckForEditsBeforeClosing;
+            this.usingSaveButtonToExit = false;
         }
 
         private void LoadData()
         {
-            
-
             comunicator = new Datacomunication();
             deleteControler = new DeleteControler();
             CurrentMenuToAddTo = new Dictionary<int, string>();
@@ -173,12 +176,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             BedienvormenCheckedItems = new Dictionary<int, int>(BedienvormenCheckedItemsAtStart);
             TakenCheckedItems = new Dictionary<int, int>(TakenCheckedItemsAtStart);
 
-
-
             situatieInitString = textBoxGevSituatie.Text;
             gebeurtenisInitString = textBoxGevGebeurtenis.Text;
-
-
         }
 
         private void LoadSettings()
@@ -328,7 +327,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
 
 
-        private void CheckUsersChanges(Dictionary<int, int> checkedItemsAtSave, Dictionary<int, int> checkedItemsAtStart, MenuTableName menuTableName)
+        private void CheckUsersChangesAndUpdateDatabase(Dictionary<int, int> checkedItemsAtSave, Dictionary<int, int> checkedItemsAtStart, MenuTableName menuTableName)
         {
             int gevaarIDToUpdate = int.Parse(editGevaarID);
 
@@ -366,14 +365,14 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private void UpdateGevaarDataWithChecks()
         {
 
-            CheckUsersChanges(DisciplinesCheckedItems, DisciplinesCheckedItemsAtStart, MenuTableName.Disciplines);
-            CheckUsersChanges(GevolgenCheckedItems, GevolgenCheckedItemsAtStart, MenuTableName.Gevolgen);
-            CheckUsersChanges(GevarenzonesCheckedItems, GevarenzonesCheckedItemsAtStart, MenuTableName.Gevarenzones);
-            CheckUsersChanges(GevaarTypesCheckedItems, GevaarTypesCheckedItemsAtStart, MenuTableName.GevaarTypes);
-            CheckUsersChanges(GebruiksfaseCheckedItems, GebruiksfaseCheckedItemsAtStart, MenuTableName.Gebruiksfases);
-            CheckUsersChanges(GebruikersCheckedItems, GebruikersCheckedItemsAtStart, MenuTableName.Gebruikers);
-            CheckUsersChanges(BedienvormenCheckedItems, BedienvormenCheckedItemsAtStart, MenuTableName.Bedienvormen);
-            CheckUsersChanges(TakenCheckedItems, TakenCheckedItemsAtStart, MenuTableName.Taken);
+            CheckUsersChangesAndUpdateDatabase(DisciplinesCheckedItems, DisciplinesCheckedItemsAtStart, MenuTableName.Disciplines);
+            CheckUsersChangesAndUpdateDatabase(GevolgenCheckedItems, GevolgenCheckedItemsAtStart, MenuTableName.Gevolgen);
+            CheckUsersChangesAndUpdateDatabase(GevarenzonesCheckedItems, GevarenzonesCheckedItemsAtStart, MenuTableName.Gevarenzones);
+            CheckUsersChangesAndUpdateDatabase(GevaarTypesCheckedItems, GevaarTypesCheckedItemsAtStart, MenuTableName.GevaarTypes);
+            CheckUsersChangesAndUpdateDatabase(GebruiksfaseCheckedItems, GebruiksfaseCheckedItemsAtStart, MenuTableName.Gebruiksfases);
+            CheckUsersChangesAndUpdateDatabase(GebruikersCheckedItems, GebruikersCheckedItemsAtStart, MenuTableName.Gebruikers);
+            CheckUsersChangesAndUpdateDatabase(BedienvormenCheckedItems, BedienvormenCheckedItemsAtStart, MenuTableName.Bedienvormen);
+            CheckUsersChangesAndUpdateDatabase(TakenCheckedItems, TakenCheckedItemsAtStart, MenuTableName.Taken);
 
             int gevaarIDToUpdate = int.Parse(editGevaarID);
             if (textBoxGevSituatie.Text != situatieInitString)
@@ -407,7 +406,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             }
 
 
-
+            this.usingSaveButtonToExit = true;
             this.Close();
 
 
@@ -619,6 +618,76 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
                 this.Close();
             }
 
+        }
+
+
+
+
+        private bool CheckForUserChangesWithoutUpdating()
+        {
+            return CompareListForChanges(DisciplinesCheckedItems, DisciplinesCheckedItemsAtStart, MenuTableName.Disciplines) ||
+            CompareListForChanges(GevolgenCheckedItems, GevolgenCheckedItemsAtStart, MenuTableName.Gevolgen) ||
+            CompareListForChanges(GevarenzonesCheckedItems, GevarenzonesCheckedItemsAtStart, MenuTableName.Gevarenzones) ||
+            CompareListForChanges(GevaarTypesCheckedItems, GevaarTypesCheckedItemsAtStart, MenuTableName.GevaarTypes) ||
+            CompareListForChanges(GebruiksfaseCheckedItems, GebruiksfaseCheckedItemsAtStart, MenuTableName.Gebruiksfases) ||
+            CompareListForChanges(GebruikersCheckedItems, GebruikersCheckedItemsAtStart, MenuTableName.Gebruikers) ||
+            CompareListForChanges(BedienvormenCheckedItems, BedienvormenCheckedItemsAtStart, MenuTableName.Bedienvormen) ||
+            CompareListForChanges(TakenCheckedItems, TakenCheckedItemsAtStart, MenuTableName.Taken) ||
+            (textBoxGevSituatie.Text != situatieInitString) ||
+            (textBoxGevGebeurtenis.Text != gebeurtenisInitString);
+        }
+
+
+
+        private bool CompareListForChanges(Dictionary<int, int> checkedItemsAtClosing, Dictionary<int, int> checkedItemsAtStart, MenuTableName menuTableName)
+        {
+            int gevaarIDToUpdate = int.Parse(editGevaarID);
+
+            if (checkedItemsAtClosing.Count > 0)
+            {
+                if (checkedItemsAtStart.Count == 0)
+                {
+                    return true;
+                }
+
+                foreach (KeyValuePair<int, int> kvp in checkedItemsAtClosing)
+                {
+                    if (!checkedItemsAtStart.ContainsValue(kvp.Value))
+                    {
+                        return true;
+                    }
+                }
+
+                foreach (KeyValuePair<int, int> kvp in checkedItemsAtStart)
+                {
+                    if (!checkedItemsAtClosing.ContainsValue(kvp.Value))
+                    {
+                        return true;
+                    }
+                }
+            }
+            else if (checkedItemsAtClosing.Count == 0 && checkedItemsAtStart.Count != 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
+
+
+
+
+
+
+
+
+        private void CheckForEditsBeforeClosing(object sender, FormClosingEventArgs e)
+        {
+            if (CheckForUserChangesWithoutUpdating() && !usingSaveButtonToExit)//check if any changes have been made
+            {
+                if (MessageBox.Show("Are you sure you want to exit without saving?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+                    e.Cancel = true;
+            }
         }
     }
 }

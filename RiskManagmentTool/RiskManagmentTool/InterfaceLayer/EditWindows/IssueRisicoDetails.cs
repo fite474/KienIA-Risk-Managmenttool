@@ -14,6 +14,9 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private string test;
         private int RisicograafSetting;
 
+        private List<string> textAtStart;
+        private bool usingSaveButtonToExit = false;
+
         public IssueRisicoDetails(string issueID, int risicograafSetting)
         {
             InitializeComponent();
@@ -23,6 +26,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             RisicograafSetting = risicograafSetting;
             SetMode(RisicograafSetting);
             LoadData();
+            this.FormClosing += CheckForEditsBeforeClosing;
         }
 
         private void SetMode(int risicograafSetting)
@@ -94,6 +98,42 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             comboBoxRest_Fr.SelectedIndex = comboBoxRest_Fr.FindString(textBoxRest_Fr.Text);
             comboBoxRest_Pr.SelectedIndex = comboBoxRest_Pr.FindString(textBoxRest_Pr.Text);
             comboBoxRest_Av.SelectedIndex = comboBoxRest_Av.FindString(textBoxRest_Av.Text);
+
+
+            textAtStart = new List<string>();
+
+            #region Check for user changes save at start
+
+
+            textAtStart.Add(textBoxInit_Se.Text);
+            textAtStart.Add(textBoxInit_Fr.Text);
+            textAtStart.Add(textBoxInit_Pr.Text);
+            textAtStart.Add(textBoxInit_Av.Text);
+            textAtStart.Add(textBoxInit_Cl.Text);
+            textAtStart.Add(textBoxInit_Risico.Text);
+            textAtStart.Add(textBoxInit_Se_Comment.Text);
+            textAtStart.Add(textBoxInit_Fr_Comment.Text);
+            textAtStart.Add(textBoxInit_Pr_Comment.Text);
+            textAtStart.Add(textBoxInit_Av_Comment.Text);
+            textAtStart.Add(textBoxInit_Cl_Comment.Text);
+            textAtStart.Add(textBoxInitRisico_Comment.Text);
+            textAtStart.Add(textBoxRest_Se.Text);
+            textAtStart.Add(textBoxRest_Fr.Text);
+            textAtStart.Add(textBoxRest_Pr.Text);
+            textAtStart.Add(textBoxRest_Av.Text);
+            textAtStart.Add(textBoxRest_Cl.Text);
+            textAtStart.Add(textBoxRest_Risico.Text);
+            textAtStart.Add(textBoxRest_Se_Comment.Text);
+
+            textAtStart.Add(textBoxRest_Fr_Comment.Text);
+            textAtStart.Add(textBoxRest_Pr_Comment.Text);
+            textAtStart.Add(textBoxRest_Av_Comment.Text);
+            textAtStart.Add(textBoxRest_Cl_Comment.Text);
+            textAtStart.Add(textBoxRest_Risico_Comment.Text);
+            textAtStart.Add(checkBoxRest_Risico_Ok.Checked.ToString());
+
+            #endregion Check for user changes save at start
+
 
 
 
@@ -323,6 +363,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
                                             rest_Se, rest_Fr, rest_Pr, rest_Av, rest_Cl, rest_Risico,
                                             rest_Se_Comment, rest_Fr_Comment, rest_Pr_Comment, rest_Av_Comment, rest_Cl_Comment, rest_Risico_Comment, rest_Ok);
             //}
+
+            usingSaveButtonToExit = true;
             this.Close();
         }
 
@@ -505,5 +547,63 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             
         }
         #endregion rest comboboxes
+
+        private void CheckForEditsBeforeClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!usingSaveButtonToExit && CheckForUserChangesWithoutUpdating())//check if any changes have been made
+            {
+                if (MessageBox.Show("Are you sure you want to exit without saving?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+                    e.Cancel = true;
+            }
+        }
+
+        private bool CheckForUserChangesWithoutUpdating()
+        {
+            List<string> textAtClosing = new List<string>();
+
+
+            #region Add to list at closing
+
+            textAtClosing.Add(textBoxInit_Se.Text);
+            textAtClosing.Add(textBoxInit_Fr.Text);
+            textAtClosing.Add(textBoxInit_Pr.Text);
+            textAtClosing.Add(textBoxInit_Av.Text);
+            textAtClosing.Add(textBoxInit_Cl.Text);
+            textAtClosing.Add(textBoxInit_Risico.Text);
+            textAtClosing.Add(textBoxInit_Se_Comment.Text);
+            textAtClosing.Add(textBoxInit_Fr_Comment.Text);
+            textAtClosing.Add(textBoxInit_Pr_Comment.Text);
+            textAtClosing.Add(textBoxInit_Av_Comment.Text);
+            textAtClosing.Add(textBoxInit_Cl_Comment.Text);
+            textAtClosing.Add(textBoxInitRisico_Comment.Text);
+            textAtClosing.Add(textBoxRest_Se.Text);
+            textAtClosing.Add(textBoxRest_Fr.Text);
+            textAtClosing.Add(textBoxRest_Pr.Text);
+            textAtClosing.Add(textBoxRest_Av.Text);
+            textAtClosing.Add(textBoxRest_Cl.Text);
+            textAtClosing.Add(textBoxRest_Risico.Text);
+            textAtClosing.Add(textBoxRest_Se_Comment.Text);
+
+            textAtClosing.Add(textBoxRest_Fr_Comment.Text);
+            textAtClosing.Add(textBoxRest_Pr_Comment.Text);
+            textAtClosing.Add(textBoxRest_Av_Comment.Text);
+            textAtClosing.Add(textBoxRest_Cl_Comment.Text);
+            textAtClosing.Add(textBoxRest_Risico_Comment.Text);
+            textAtClosing.Add(checkBoxRest_Risico_Ok.Checked.ToString());
+
+
+
+            #endregion Add to list at closing
+
+            for (int i = 0; i < textAtStart.Count; i++)
+            {
+                if (!textAtStart[i].Equals( textAtClosing[i]))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
     }
 }

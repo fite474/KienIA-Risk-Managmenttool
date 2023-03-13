@@ -130,7 +130,7 @@
             this.buttonConfirm.Name = "buttonConfirm";
             this.buttonConfirm.Size = new System.Drawing.Size(140, 59);
             this.buttonConfirm.TabIndex = 18;
-            this.buttonConfirm.Text = "Confirm";
+            this.buttonConfirm.Text = "Save";
             this.buttonConfirm.UseVisualStyleBackColor = true;
             this.buttonConfirm.Click += new System.EventHandler(this.buttonConfirm_Click);
             // 

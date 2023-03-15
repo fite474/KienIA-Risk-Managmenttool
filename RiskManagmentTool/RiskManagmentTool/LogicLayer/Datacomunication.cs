@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using RiskManagmentTool.DataLayer;
@@ -833,11 +830,28 @@ namespace RiskManagmentTool.LogicLayer
             return databaseCommunication.GetGekoppeldeIssuesFromObjectAsList(objectId);
         }
 
+
+        public List<string> GetGekoppeldeGevarenOriginFromObjectAsList(string objectId)
+        {
+            return databaseCommunication.GetGekoppeldeGevarenOriginFromObjectAsList(objectId);
+        }
+
+
+        //old
         public List<string> GetGekoppeldeGevarenFromObjectAsList(string objectId)
         {
             return databaseCommunication.GetGekoppeldeGevarenFromObjectAsList(objectId);
         }
 
+        
+
+        public List<string> GetGevarenOriginFromIssuesAsList(List<string> selectedIssuesId)
+        {
+            return databaseCommunication.GetGevarenOriginFromIssuesAsList(selectedIssuesId);
+        }
+
+
+        //old
         public List<string> GetGevarenFromIssuesAsList(List<string> selectedIssuesId)
         {
             return databaseCommunication.GetGevarenFromIssuesAsList(selectedIssuesId);
@@ -849,15 +863,6 @@ namespace RiskManagmentTool.LogicLayer
         }
 
 
-
-
-
-        //get selected
-
-
-
-
-        //get selected
 
 
         #region redirect options
@@ -887,6 +892,12 @@ namespace RiskManagmentTool.LogicLayer
         public string GetObjectNameById(string objectId)
         {
             return databaseCommunication.GetObjectNameById(objectId);
+        }
+
+
+        public string GetIssueIdByObjectAndGevaarOriginId(string objectId, string gevaarId)
+        {
+            return databaseCommunication.GetIssueIdByObjectAndGevaarOriginId(objectId, gevaarId);
         }
 
         public string GetIssueIdByObjectAndGevaarId(string objectId, string gevaarId)
@@ -1165,9 +1176,6 @@ namespace RiskManagmentTool.LogicLayer
             return data;
         }
 
-
-
-
         public Dictionary<int, int> GetGevaar_Disciplines(string gevaarID)
         {
             return databaseCommunication.GetGevaar_Disciplines(gevaarID);
@@ -1222,17 +1230,6 @@ namespace RiskManagmentTool.LogicLayer
 
 
         #endregion maatregelen lists
-
-
-
-
-        
-
-
-
-
-
-
 
 
         public void DeleteUsageAndMenuOption(MenuTableName menuTableName, string optionToDelete)
@@ -1377,19 +1374,6 @@ namespace RiskManagmentTool.LogicLayer
             databaseCommunication.DeleteUsage(databaseTableName, databaseColumnName, optionID);
 
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

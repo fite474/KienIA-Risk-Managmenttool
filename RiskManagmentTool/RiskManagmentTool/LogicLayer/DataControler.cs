@@ -29,24 +29,73 @@ namespace RiskManagmentTool.LogicLayer
             addBeoordeling = true;
         }
 
-        private void HandleAddIssueToObject(string gevaarID, bool maatregelen, bool beoordeling, bool customMaatregelen, bool customBeoordeling)
+
+
+        //this methode works only when adding origin gevaren with the reference -1 as origin
+        public List<string> CheckObjectForDubbleGevaren(List<string> itemsToAdd)
         {
-            //bool addMaatregelen = checkedListBoxAddSettings.GetItemChecked(0);
-            //bool addRisicoBeoordeling = checkedListBoxAddSettings.GetItemChecked(1);
-            //bool issueNeedsToVirify = checkedListBoxAddSettings.GetItemChecked(2);
+            List<string> GekoppeldeGevarenOriginId = comunicator.GetGekoppeldeGevarenOriginFromObjectAsList(CurrentID);
 
-            //foreach (string gevaarToAddID in SelectedObjectIssueId)
-            //{
-                //comunicator.AddIssueToObject(CurrentID, gevaarID, maatregelen, beoordeling, issueNeedsToVirify);
-            //}
+            List<string> resultList = new List<string>();
 
+            foreach (string gevaarID in itemsToAdd)
+            {
+                if (GekoppeldeGevarenOriginId.Contains(gevaarID))
+                {
+                    //string currentObjectIssue = comunicator.GetIssueIdByObjectAndGevaarId(CurrentID, gevaarID);
+
+                    string message = "Dit object bevat een issue met hetzelfde gevaar id.\n" +
+                        "Het gevaar met id: " + gevaarID + " kan niet worden toegevoegd.";
+                    string title = "Reminder Risico waardes";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    DialogResult result = MessageBox.Show(message, title, buttons);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        //this.Close();
+                    }
+                    else
+                    {
+                        // Do something  
+                    }
+                }
+                else
+                {
+                    resultList.Add(gevaarID);
+                }
+
+            }
+            return resultList;
         }
 
 
+
+
+
+        #region old version
+
         public List<string> CheckObjectForDubbleGevarenUitIssues(List<string> itemsToAdd)
         {
-            List<string> GekoppeldeGevarenId = comunicator.GetGekoppeldeGevarenFromObjectAsList(CurrentID);
-            List<string> gevarenFromSelectedIssues = comunicator.GetGevarenFromIssuesAsList(itemsToAdd);
+
+            //items to add zijn de issue id's van t object die je selecteerd
+
+            //pak van deze issues de lijst van origin gevaren
+
+
+            // uit de lijst van gekoppelde origin gevaren pak je de lijs
+
+
+
+
+
+            List<string> GekoppeldeGevarenId = comunicator.GetGekoppeldeGevarenOriginFromObjectAsList(CurrentID);
+
+
+            //deze methode moet anders
+           //List<string> gevarenFromSelectedIssues = comunicator.GetGevarenFromIssuesAsList(itemsToAdd);
+
+
+            List<string> gevarenFromSelectedIssues = comunicator.GetGevarenOriginFromIssuesAsList(itemsToAdd);
 
             List<string> resultList = new List<string>();
             int currentIndex = 0;
@@ -54,7 +103,17 @@ namespace RiskManagmentTool.LogicLayer
             {
                 if (GekoppeldeGevarenId.Contains(gevaarID))
                 {
-                    string currentObjectIssue = comunicator.GetIssueIdByObjectAndGevaarId(CurrentID, gevaarID);
+                    string currentObjectIssue = comunicator.GetIssueIdByObjectAndGevaarOriginId(CurrentID, gevaarID);
+
+                    //old
+                    //string currentObjectIssue = comunicator.GetIssueIdByObjectAndGevaarId(CurrentID, gevaarID);
+
+
+
+
+
+
+
                     string issueToAdd = itemsToAdd[currentIndex];
                     WarningAddToObject warningWindow = new WarningAddToObject();
                     warningWindow.MakeWarningOnIssue(CurrentID, currentObjectIssue, issueToAdd, gevaarID);
@@ -84,40 +143,10 @@ namespace RiskManagmentTool.LogicLayer
             return resultList;
         }
 
-        public List<string> CheckObjectForDubbleGevaren(List<string> itemsToAdd)
-        {
-            List<string> GekoppeldeGevarenId = comunicator.GetGekoppeldeGevarenFromObjectAsList(CurrentID);
-            List<string> resultList = new List<string>();
-            //int currentIndex = 0;
-            foreach (string gevaarID in itemsToAdd)
-            {
-                if (GekoppeldeGevarenId.Contains(gevaarID))
-                {
-                    string currentObjectIssue = comunicator.GetIssueIdByObjectAndGevaarId(CurrentID, gevaarID);
 
-                    string message = "Dit object bevat een issue met hetzelfde gevaar id.\n" +
-                        "Het gevaar met id: " + gevaarID + " kan niet worden toegevoegd.";
-                    string title = "Reminder Risico waardes";
-                    MessageBoxButtons buttons = MessageBoxButtons.OK;
-                    DialogResult result = MessageBox.Show(message, title, buttons);
 
-                    if (result == DialogResult.Yes)
-                    {
-                        //this.Close();
-                    }
-                    else
-                    {
-                        // Do something  
-                    }
-                }
-                else
-                {
-                    resultList.Add(gevaarID);
-                }
 
-            }
-            return resultList;
-        }
+        #endregion old version
 
         public void CheckIssueForDubbleMaatregelen(List<string> itemsToAdd)
         {
@@ -151,6 +180,20 @@ namespace RiskManagmentTool.LogicLayer
             }
         }
 
+
+
+        private void HandleAddIssueToObject(string gevaarID, bool maatregelen, bool beoordeling, bool customMaatregelen, bool customBeoordeling)
+        {
+            //bool addMaatregelen = checkedListBoxAddSettings.GetItemChecked(0);
+            //bool addRisicoBeoordeling = checkedListBoxAddSettings.GetItemChecked(1);
+            //bool issueNeedsToVirify = checkedListBoxAddSettings.GetItemChecked(2);
+
+            //foreach (string gevaarToAddID in SelectedObjectIssueId)
+            //{
+            //comunicator.AddIssueToObject(CurrentID, gevaarID, maatregelen, beoordeling, issueNeedsToVirify);
+            //}
+
+        }
 
         public void CheckTemplateForDubbleIssues(List<string> itemsToAdd)
         {

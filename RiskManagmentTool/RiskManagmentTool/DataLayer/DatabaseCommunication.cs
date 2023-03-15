@@ -1813,6 +1813,35 @@ namespace RiskManagmentTool.DataLayer
             return objectID;
         }
 
+
+        public string GetIssueIdByObjectAndGevaarOriginId(string objectId, string gevaarId)
+        {
+            string issueId = "null";
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("											 SELECT IssueID  FROM TableObjectIssues" +
+                                            " WHERE TableObjectIssues.ObjectID = '" + objectId + "' " +
+                                            " AND TableObjectIssues.IssueID IN( " + 
+                                            " SELECT IssueID FROM TableIssues WHERE IssueGevaarID IN("+ 
+                                            " SELECT GevaarID FROM TableGevaarMulti"+
+                                            " WHERE GevaarOriginID = '" + gevaarId + "' ) ) ", sqlConnection);
+
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    issueId = (dr[0]).ToString();
+                }
+            }
+            sqlConnection.Close();
+
+
+            return issueId;
+        }
+        
+
+
+
+        //old
         public string GetIssueIdByObjectAndGevaarId(string objectId, string gevaarId)
         {
             string issueId = "null";
@@ -2428,6 +2457,34 @@ namespace RiskManagmentTool.DataLayer
             return gekoppeldeIssues;
         }
 
+
+        //used in the new version of the tool. V2.2
+        public List<string> GetGekoppeldeGevarenOriginFromObjectAsList(string objectID)
+        {
+            List<string> gekoppeldeGevaren = new List<string>();
+
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand(" SELECT GevaarOriginID FROM TableGevaarMulti "+
+                                            " WHERE GevaarID IN ( "+
+                                            " SELECT  IssueGevaarID FROM TableIssues "+
+                                            " WHERE TableIssues.IssueID IN ( "+
+                                            " SELECT IssueID FROM TableObjectIssues "+
+                                            " WHERE ObjectID = '" + objectID + "' ) ) ", sqlConnection);
+
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    gekoppeldeGevaren.Add((dr[0]).ToString());
+                }
+            }
+            sqlConnection.Close();
+
+            return gekoppeldeGevaren;
+        }
+
+
+        //old version of methode
         public List<string> GetGekoppeldeGevarenFromObjectAsList(string objectID)
         {
             List<string> gekoppeldeGevaren = new List<string>();
@@ -2492,8 +2549,36 @@ namespace RiskManagmentTool.DataLayer
 
 
 
+        
+
+        public List<string> GetGevarenOriginFromIssuesAsList(List<string> selectedIssuesId)
+        {
+            List<string> gevarenIDs = new List<string>();
+
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand(" SELECT GevaarOriginID FROM TableGevaarMulti " +
+                                            " WHERE GevaarID IN( " +
+                                            " SELECT IssueGevaarID FROM TableIssues WHERE TableIssues.IssueID IN( " +
+                                            string.Join(",", selectedIssuesId) +
+                                            " ) )" , sqlConnection);
+
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    gevarenIDs.Add((dr[0]).ToString());
+                }
+            }
+            sqlConnection.Close();
+
+            return gevarenIDs;
+        }
 
 
+
+
+
+        //old
         public List<string> GetGevarenFromIssuesAsList(List<string> selectedIssuesId)
         {
             List<string> gevarenIDs = new List<string>();

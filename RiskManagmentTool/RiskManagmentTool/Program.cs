@@ -18,19 +18,25 @@ namespace RiskManagmentTool
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            try
-            {
-                Application.Run(new MainWindow());
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show("Fatal error! Your last action could NOT be completed :( , contact support if the crash presists: \n\n" +
-                    "The following error occured:"+ err.ToString() +
-                    "\n\n Error code: main program has crashed");
-                //throw;
-            }
+
+            //for release
+            //try
+            //{
+            //    Application.Run(new MainWindow());
+            //}
+            //catch (Exception err)
+            //{
+            //    MessageBox.Show("Fatal error! Your last action could NOT be completed :( , contact support if the crash presists: \n\n" +
+            //        "The following error occured:"+ err.ToString() +
+            //        "\n\n Error code: main program has crashed");
+            //    //throw;
+            //}
 
 
+
+
+            //for debug coding
+            Application.Run(new MainWindow());
         }
     }
 }

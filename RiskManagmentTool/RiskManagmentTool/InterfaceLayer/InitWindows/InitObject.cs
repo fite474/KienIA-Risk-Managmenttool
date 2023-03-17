@@ -71,7 +71,7 @@ namespace RiskManagmentTool.InterfaceLayer.InitWindows
             {
                 string message = this.errorMessage;
 
-                string title = "field is empty";
+                string title = "Field is empty";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result = MessageBox.Show(message, title, buttons);
 

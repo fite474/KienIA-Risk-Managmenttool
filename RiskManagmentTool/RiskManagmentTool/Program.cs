@@ -28,7 +28,7 @@ namespace RiskManagmentTool
             //{
             //    MessageBox.Show("Fatal error! Your last action could NOT be completed :( , contact support if the crash presists: \n\n" +
             //        "The following error occured:"+ err.ToString() +
-            //        "\n\n Error code: main program has crashed");
+            //        "\n\n Error code: main program has crashed", Fatal error in main system);
             //    //throw;
             //}
 

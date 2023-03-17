@@ -106,10 +106,10 @@
             // 
             this.buttonHelp.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonHelp.Location = new System.Drawing.Point(0, 652);
+            this.buttonHelp.Location = new System.Drawing.Point(0, 827);
             this.buttonHelp.Margin = new System.Windows.Forms.Padding(4);
             this.buttonHelp.Name = "buttonHelp";
-            this.buttonHelp.Size = new System.Drawing.Size(200, 78);
+            this.buttonHelp.Size = new System.Drawing.Size(200, 103);
             this.buttonHelp.TabIndex = 8;
             this.buttonHelp.Text = "Gebruikers handleiding";
             this.buttonHelp.UseVisualStyleBackColor = true;
@@ -119,10 +119,10 @@
             // 
             this.buttonKeuzes.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonKeuzes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonKeuzes.Location = new System.Drawing.Point(0, 574);
+            this.buttonKeuzes.Location = new System.Drawing.Point(0, 724);
             this.buttonKeuzes.Margin = new System.Windows.Forms.Padding(4);
             this.buttonKeuzes.Name = "buttonKeuzes";
-            this.buttonKeuzes.Size = new System.Drawing.Size(200, 78);
+            this.buttonKeuzes.Size = new System.Drawing.Size(200, 103);
             this.buttonKeuzes.TabIndex = 7;
             this.buttonKeuzes.Text = "Keuze Opties";
             this.buttonKeuzes.UseVisualStyleBackColor = true;
@@ -132,10 +132,10 @@
             // 
             this.buttonRedirect.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonRedirect.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRedirect.Location = new System.Drawing.Point(0, 496);
+            this.buttonRedirect.Location = new System.Drawing.Point(0, 621);
             this.buttonRedirect.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRedirect.Name = "buttonRedirect";
-            this.buttonRedirect.Size = new System.Drawing.Size(200, 78);
+            this.buttonRedirect.Size = new System.Drawing.Size(200, 103);
             this.buttonRedirect.TabIndex = 6;
             this.buttonRedirect.Text = "Zoeken";
             this.buttonRedirect.UseVisualStyleBackColor = true;
@@ -146,10 +146,10 @@
             // 
             this.buttonMaatregelen.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonMaatregelen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonMaatregelen.Location = new System.Drawing.Point(0, 418);
+            this.buttonMaatregelen.Location = new System.Drawing.Point(0, 518);
             this.buttonMaatregelen.Margin = new System.Windows.Forms.Padding(4);
             this.buttonMaatregelen.Name = "buttonMaatregelen";
-            this.buttonMaatregelen.Size = new System.Drawing.Size(200, 78);
+            this.buttonMaatregelen.Size = new System.Drawing.Size(200, 103);
             this.buttonMaatregelen.TabIndex = 4;
             this.buttonMaatregelen.Text = "Maatregelen lijst";
             this.buttonMaatregelen.UseVisualStyleBackColor = true;
@@ -159,10 +159,10 @@
             // 
             this.buttonRisicos.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonRisicos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRisicos.Location = new System.Drawing.Point(0, 340);
+            this.buttonRisicos.Location = new System.Drawing.Point(0, 415);
             this.buttonRisicos.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRisicos.Name = "buttonRisicos";
-            this.buttonRisicos.Size = new System.Drawing.Size(200, 78);
+            this.buttonRisicos.Size = new System.Drawing.Size(200, 103);
             this.buttonRisicos.TabIndex = 3;
             this.buttonRisicos.Text = "Gevaren lijst";
             this.buttonRisicos.UseVisualStyleBackColor = true;
@@ -172,10 +172,10 @@
             // 
             this.buttonTemplates.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonTemplates.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTemplates.Location = new System.Drawing.Point(0, 262);
+            this.buttonTemplates.Location = new System.Drawing.Point(0, 312);
             this.buttonTemplates.Margin = new System.Windows.Forms.Padding(4);
             this.buttonTemplates.Name = "buttonTemplates";
-            this.buttonTemplates.Size = new System.Drawing.Size(200, 78);
+            this.buttonTemplates.Size = new System.Drawing.Size(200, 103);
             this.buttonTemplates.TabIndex = 2;
             this.buttonTemplates.Text = "Templates";
             this.buttonTemplates.UseVisualStyleBackColor = true;
@@ -186,10 +186,10 @@
             // 
             this.buttonObjecten.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonObjecten.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonObjecten.Location = new System.Drawing.Point(0, 184);
+            this.buttonObjecten.Location = new System.Drawing.Point(0, 209);
             this.buttonObjecten.Margin = new System.Windows.Forms.Padding(4);
             this.buttonObjecten.Name = "buttonObjecten";
-            this.buttonObjecten.Size = new System.Drawing.Size(200, 78);
+            this.buttonObjecten.Size = new System.Drawing.Size(200, 103);
             this.buttonObjecten.TabIndex = 1;
             this.buttonObjecten.Text = "Objecten";
             this.buttonObjecten.UseVisualStyleBackColor = true;
@@ -202,7 +202,7 @@
             this.buttonProjecten.Location = new System.Drawing.Point(0, 106);
             this.buttonProjecten.Margin = new System.Windows.Forms.Padding(4);
             this.buttonProjecten.Name = "buttonProjecten";
-            this.buttonProjecten.Size = new System.Drawing.Size(200, 78);
+            this.buttonProjecten.Size = new System.Drawing.Size(200, 103);
             this.buttonProjecten.TabIndex = 0;
             this.buttonProjecten.Text = "Projecten";
             this.buttonProjecten.UseVisualStyleBackColor = true;

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxObjectName = new System.Windows.Forms.TextBox();
@@ -37,20 +37,20 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.advancedDataGridViewCompleteBeoordeling = new ADGV.AdvancedDataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.checkedListBoxTemplate = new System.Windows.Forms.CheckedListBox();
             this.buttonConfirmExport = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBoxUserInputFileName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridViewCompleteBeoordeling)).BeginInit();
             this.tabPage2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // checkedListBox1
@@ -70,7 +70,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(48, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 16);
+            this.label1.Size = new System.Drawing.Size(88, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Object naam";
             // 
@@ -87,7 +87,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(38, 74);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(179, 16);
+            this.label2.Size = new System.Drawing.Size(192, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "Controleer export instellingen";
             this.label2.Visible = false;
@@ -122,14 +122,14 @@
             this.advancedDataGridViewCompleteBeoordeling.BackgroundColor = System.Drawing.SystemColors.Window;
             this.advancedDataGridViewCompleteBeoordeling.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.advancedDataGridViewCompleteBeoordeling.DateWithTime = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advancedDataGridViewCompleteBeoordeling.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advancedDataGridViewCompleteBeoordeling.DefaultCellStyle = dataGridViewCellStyle4;
             this.advancedDataGridViewCompleteBeoordeling.Dock = System.Windows.Forms.DockStyle.Fill;
             this.advancedDataGridViewCompleteBeoordeling.Location = new System.Drawing.Point(3, 3);
             this.advancedDataGridViewCompleteBeoordeling.Name = "advancedDataGridViewCompleteBeoordeling";
@@ -152,17 +152,28 @@
             this.tabPage2.Text = "Export instellingen";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.checkedListBox1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1438, 696);
+            this.panel3.TabIndex = 1;
+            // 
             // checkedListBoxTemplate
             // 
-            this.checkedListBoxTemplate.Enabled = false;
+            this.checkedListBoxTemplate.CheckOnClick = true;
             this.checkedListBoxTemplate.FormattingEnabled = true;
             this.checkedListBoxTemplate.Items.AddRange(new object[] {
             "KienIA template",
-            "RWS template"});
+            "RWS template",
+            "NON-Excisting (crashing)"});
             this.checkedListBoxTemplate.Location = new System.Drawing.Point(420, 10);
             this.checkedListBoxTemplate.Name = "checkedListBoxTemplate";
             this.checkedListBoxTemplate.Size = new System.Drawing.Size(187, 89);
             this.checkedListBoxTemplate.TabIndex = 1;
+            this.checkedListBoxTemplate.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxTemplate_ItemCheck);
             this.checkedListBoxTemplate.SelectedValueChanged += new System.EventHandler(this.checkedListBoxTemplate_SelectedValueChanged);
             // 
             // buttonConfirmExport
@@ -202,7 +213,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(602, 37);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(136, 16);
+            this.label3.Size = new System.Drawing.Size(144, 17);
             this.label3.TabIndex = 6;
             this.label3.Text = "Bestand opslaan als: ";
             // 
@@ -214,15 +225,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1452, 731);
             this.panel2.TabIndex = 7;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.checkedListBox1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(4, 4);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1798, 870);
-            this.panel3.TabIndex = 1;
             // 
             // ExportObject
             // 
@@ -237,10 +239,10 @@
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridViewCompleteBeoordeling)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

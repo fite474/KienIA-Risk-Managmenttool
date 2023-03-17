@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Data;
 using System.Windows.Forms;
 using RiskManagmentTool.LogicLayer;
-using Syncfusion.XlsIO;
 using System.IO;
 using System.Reflection;
-using Microsoft.Office.Interop.Excel;
 using Application = Microsoft.Office.Interop.Excel.Application;
 
 namespace RiskManagmentTool.InterfaceLayer
@@ -164,25 +161,36 @@ namespace RiskManagmentTool.InterfaceLayer
 
         private Microsoft.Office.Interop.Excel.Workbook GetTemplate(Application xlApp)
         {
-            Microsoft.Office.Interop.Excel.Workbook template;
-            switch (this.checkedListBoxTemplate.CheckedIndices[0])
+            try
             {
-                case 0://KienIA template, start without template
-                    template = xlApp.Workbooks.Add(System.Reflection.Missing.Value);
-                    break;
-                case 1://RWS tempalte
-                    string executableLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-                    string xslLocation = Path.Combine(executableLocation, "excelTemplates\\template 20141210 V1_1 RWS.xlsm");
-                    template = xlApp.Workbooks.Add(xslLocation);
-                    break;
-                default:
-                    template = null;
-                    MessageBox.Show("Error selecting workbook ,130");
-                    break;
+                Microsoft.Office.Interop.Excel.Workbook template;
+                switch (this.checkedListBoxTemplate.CheckedIndices[0])
+                {
+                    case 0://KienIA template, start without template
+                        template = xlApp.Workbooks.Add(Missing.Value);
+                        break;
+                    case 1://RWS tempalte
+                        string executableLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+                        string xslLocation = Path.Combine(executableLocation, "excelTemplates\\template 20141210 V1_1 RWS.xlsm");
+                        template = xlApp.Workbooks.Add(xslLocation);
+                        break;
+                    default:
+                        template = null;
+                        MessageBox.Show("Error selecting workbook ,130", "Error");
+                        break;
+                }
+
+                return template;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("It looks like there is something wrong with your version of Microsoft Excel. File could not be exported. \n Please contact support", "Export error");
+                throw;
             }
 
-            return template;
-        }
+
+            
+        } 
 
 
 
@@ -278,11 +286,11 @@ namespace RiskManagmentTool.InterfaceLayer
                 releaseObject(xlWorkBook);
                 releaseObject(xlApp);
 
-                MessageBox.Show("Excel file created , you can find the file at 'this pc/documents/'" + userInputFileName);
+                MessageBox.Show("Excel file created , you can find the file at 'this pc/documents/'" + userInputFileName, "Save succesful");
             }
             catch (Exception error)
             {
-                MessageBox.Show(error.ToString() + "\n\n error code: export 129");
+                MessageBox.Show(error.ToString() + "\n\n error code: export 129", "Error");
 
             }
 
@@ -298,7 +306,7 @@ namespace RiskManagmentTool.InterfaceLayer
             catch (Exception ex)
             {
                 obj = null;
-                MessageBox.Show("Exception Occured while releasing object " + ex.ToString());
+                MessageBox.Show("Exception Occured while releasing object " + ex.ToString(), "Error");
             }
             finally
             {
@@ -340,21 +348,30 @@ namespace RiskManagmentTool.InterfaceLayer
 
         private void updateDatagrid()
         {
+            //code below needs to be ON!
             switch (this.checkedListBoxTemplate.CheckedIndices[0])
             {
                 case 0://KienIA template
-                    completeExportData = comunicator.GetExportView(ObjectID); ;
-                    advancedDataGridViewCompleteBeoordeling.DataSource = completeExportData;
+                    //completeExportData = comunicator.GetExportView(ObjectID); keep this comment
+                    completeExportData = comunicator.GetExportViewRWSTemplate(ObjectID);
                     break;
                 case 1://RWS tempalte
-                    completeExportData = comunicator.GetExportViewRWSTemplate(ObjectID); ;
-                    advancedDataGridViewCompleteBeoordeling.DataSource = completeExportData;
+                    completeExportData = comunicator.GetExportViewRWSTemplate(ObjectID);
+
                     break;
                 default:
 
-                    MessageBox.Show("Error switiching templates data ,131");
+                    MessageBox.Show("Error switiching templates data ,131", "Error");
                     break;
             }
+
+            advancedDataGridViewCompleteBeoordeling.DataSource = completeExportData;
+        }
+
+        private void checkedListBoxTemplate_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            for (int ix = 0; ix < checkedListBoxTemplate.Items.Count; ++ix)
+                if (ix != e.Index) checkedListBoxTemplate.SetItemChecked(ix, false);
         }
     }
 }

@@ -65,61 +65,72 @@ namespace RiskManagmentTool.LogicLayer
 
         public Dictionary<int, string> GetMaatregelNormMenu()
         {
-            return MaatregelNormComboBox;
+            return comunicator.GetMaatregelNorm();
+            //return MaatregelNormComboBox;
         }
 
         public Dictionary<int, string> GetMaatregelCategoryMenu()
         {
-            return MaatregelCategoryComboBox;
+            return comunicator.GetMaatregelCategory();
+//            return MaatregelCategoryComboBox;
         }
 
 
         public Dictionary<int, string> GetTypeObjectMenu()
         {
-            return TypeObjectComboBox;
+//         return TypeObjectComboBox;
+           return comunicator.GetObjectTypes();
         }
 
         public Dictionary<int, string> GetGevolgenMenu()
         {
-            return GevolgenKeuzes;
+            return comunicator.GetGevolgen(objectId);
+//            return GevolgenKeuzes;
         }
 
         public Dictionary<int, string> GetGevarenzoneMenu()
         {
-            return GevarenzonesKeuzes;
+            return comunicator.GetGevarenzones(objectId);
+//            return GevarenzonesKeuzes;
         }
 
 
 
         public Dictionary<int, string> GetGevaarTypeMenu()
         {
-            return GevaarTypesKeuzes;
+            return comunicator.GetGevaarTypes(objectId);
+//            return GevaarTypesKeuzes;
         }
 
 
         public Dictionary<int, string> GetGebruikersfasesMenu()
         {
-            return GebruiksfaseKeuzes;
+            return comunicator.GetGebruiksfases(objectId);
+//            return GebruiksfaseKeuzes;
         }
 
         public Dictionary<int, string> GetGebruikersMenu()
         {
-            return GebruikersComboBox;
+            return comunicator.GetGebruikers(objectId);
+//            return GebruikersComboBox;
         }
 
         public Dictionary<int, string> GetDisciplinesMenu()
         {
-            return DisciplinesComboBox;
+            return comunicator.GetDisciplines(objectId);
+//            return DisciplinesComboBox;
         }
 
         public Dictionary<int, string> GetBedienvormenMenu()
         {
-            return BedienvormenComboBox;
+            return comunicator.GetBedienvormen(objectId);
+//            return BedienvormenComboBox;
         }
 
         public Dictionary<int, string> GetTakenMenu()
         {
-            return TakenComboBox;
+            return comunicator.GetTaken(objectId);
+//            return TakenComboBox;
         }
 
         public Dictionary<int, string> GetTemplateTypesMenu()
@@ -135,11 +146,13 @@ namespace RiskManagmentTool.LogicLayer
 
         public List<string> GetTemplateNamen()
         {
-            return TemplateNamenComboBox;
+            return comunicator.GetTemplateNamen();
+//            return TemplateNamenComboBox;
         }
         public List<string> GetObjectNamen()
         {
-            return ObjectNamenComboBox;
+            return comunicator.GetObjectNamen();
+//            return ObjectNamenComboBox;
         }
 
 
@@ -155,33 +168,33 @@ namespace RiskManagmentTool.LogicLayer
         private void MakeMenu()
         {
 
-            TypeObjectComboBox = comunicator.GetObjectTypes();
+            //TypeObjectComboBox = comunicator.GetObjectTypes();
 
-            //-------------
+            ////-------------
 
-            GevolgenKeuzes = comunicator.GetGevolgen(objectId);
-            GevarenzonesKeuzes = comunicator.GetGevarenzones(objectId);
-            GevaarTypesKeuzes = comunicator.GetGevaarTypes(objectId);
-            GebruiksfaseKeuzes = comunicator.GetGebruiksfases(objectId);
-            GebruikersComboBox = comunicator.GetGebruikers(objectId);
-            DisciplinesComboBox = comunicator.GetDisciplines(objectId);
-            BedienvormenComboBox = comunicator.GetBedienvormen(objectId);
-            TakenComboBox = comunicator.GetTaken(objectId);
-
-
-            //-------------
-
-            MaatregelNormComboBox = comunicator.GetMaatregelNorm();
-            MaatregelCategoryComboBox = comunicator.GetMaatregelCategory();
-
-            TemplateTypesComboBox = comunicator.GetTemplateTypes();
-            TemplateToepassingenComboBox = comunicator.GetTemplateToepassingen();
+            //GevolgenKeuzes = comunicator.GetGevolgen(objectId);
+            //GevarenzonesKeuzes = comunicator.GetGevarenzones(objectId);
+            //GevaarTypesKeuzes = comunicator.GetGevaarTypes(objectId);
+            //GebruiksfaseKeuzes = comunicator.GetGebruiksfases(objectId);
+            //GebruikersComboBox = comunicator.GetGebruikers(objectId);
+            //DisciplinesComboBox = comunicator.GetDisciplines(objectId);
+            //BedienvormenComboBox = comunicator.GetBedienvormen(objectId);
+            //TakenComboBox = comunicator.GetTaken(objectId);
 
 
+            ////-------------
+
+            //MaatregelNormComboBox = comunicator.GetMaatregelNorm();
+            //MaatregelCategoryComboBox = comunicator.GetMaatregelCategory();
+
+            //TemplateTypesComboBox = comunicator.GetTemplateTypes();
+            //TemplateToepassingenComboBox = comunicator.GetTemplateToepassingen();
 
 
-            ObjectNamenComboBox = comunicator.GetObjectNamen();
-            TemplateNamenComboBox = comunicator.GetTemplateNamen();
+
+
+            //ObjectNamenComboBox = comunicator.GetObjectNamen();
+            //TemplateNamenComboBox = comunicator.GetTemplateNamen();
 
 
 

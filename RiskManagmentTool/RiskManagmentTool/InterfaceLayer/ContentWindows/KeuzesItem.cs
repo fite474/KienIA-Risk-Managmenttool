@@ -91,6 +91,8 @@ namespace RiskManagmentTool.InterfaceLayer.ContentWindows
             }
             textBoxMenuName.Text = menuTitle;
 
+
+
             foreach (KeyValuePair<int, string> kvp in MenuOptions)
             {
                 listBoxMenuOptions.Items.Add(kvp.Value);

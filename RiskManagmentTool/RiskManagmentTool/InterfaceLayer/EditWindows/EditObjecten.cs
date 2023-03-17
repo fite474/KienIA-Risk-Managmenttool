@@ -301,12 +301,6 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         }
 
-
-
-
-
-
-        //old, mag weg
         private void buttonIssuesOplossen_Click(object sender, EventArgs e)
         {
 
@@ -414,26 +408,6 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
             advancedDataGridViewGekoppeldeIssues.ClearSelection();
 
-
-            //IssuesState = comunicator.GetObjectIssuesStates(ObjectID);
-
-            //int rowIndex = 0;
-            //foreach (DataGridViewRow row in advancedDataGridViewGekoppeldeIssues.Rows)
-            //{
-            //    string issueId = row.Cells[viewsColumnNames.IssueIDColumn].Value.ToString();
-            //    IssuesState.TryGetValue(issueId, out string issueState);
-            //    if (issueState.Equals("0"))
-            //    {
-            //        row.Cells[0].Value = false;
-            //        IssuesToVerify.Add(advancedDataGridViewGekoppeldeIssues.Rows[rowIndex].Cells[viewsColumnNames.IssueIDColumn].Value.ToString());
-            //    }
-            //    else if (issueState.Equals("1"))
-            //    {
-            //        row.Cells[0].Value = true;
-            //    }
-
-            //    rowIndex++;
-            //}
             Cursor.Current = Cursors.Default;
             textBoxIssuesToVerify.Text = IssuesToVerify.Count.ToString();
             SetVisualInstellingen();
@@ -441,9 +415,9 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             {
                 advancedDataGridViewGekoppeldeIssues.Rows[1].Selected = true;
                 OpenedFromRedirectionPage = false;
-                OpenIssuePage();//advancedDataGridViewGekoppeldeIssues. MouseDoubleClick
+                OpenIssuePage();
             }
-            //advancedDataGridViewGekoppeldeIssues.ClearSelection();
+
         }
 
         private void advancedDataGridViewGekoppeldeIssues_FilterStringChanged(object sender, EventArgs e)
@@ -456,10 +430,10 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             this.objectIssuesDataTable.Sort = this.advancedDataGridViewGekoppeldeIssues.SortString;
         }
 
-        private void EditObjecten_Load(object sender, EventArgs e)
-        {
+        //private void EditObjecten_Load(object sender, EventArgs e)
+        //{
 
-        }
+        //}
 
         private void OpenIssuePage()
         {
@@ -491,31 +465,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void advancedDataGridViewGekoppeldeIssues_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            OpenIssuePage();
-            //try
-            //{
-            //    Cursor.Current = Cursors.WaitCursor;
-            //    string issueId = advancedDataGridViewGekoppeldeIssues.SelectedRows[0].Cells[viewsColumnNames.IssueIDColumn].Value.ToString();//[0].Value.ToString();
-            //    string situatie = advancedDataGridViewGekoppeldeIssues.SelectedRows[0].Cells[viewsColumnNames.GevaarlijkeSituatieColumn].Value.ToString();
-            //    string gebeurtenis = advancedDataGridViewGekoppeldeIssues.SelectedRows[0].Cells[viewsColumnNames.GevaarlijkeGebeurtenisColumn].Value.ToString();
-
-            //    string discipline = advancedDataGridViewGekoppeldeIssues.SelectedRows[0].Cells[viewsColumnNames.GevaarDisciplineColumn].Value.ToString();
-            //    string gevaar = advancedDataGridViewGekoppeldeIssues.SelectedRows[0].Cells[viewsColumnNames.GevaarGevaarTypeColumn].Value.ToString();
-
-
-
-            //    Form issueMaatregelen = new IssueMaatregelen(ObjectNaam, ObjectID, issueId,
-            //                                                 discipline, gevaar, situatie, gebeurtenis);
-            //    issueMaatregelen.ShowDialog();
-            //    //ShowDataWithFiltering();
-            //    LoadData();
-            //}
-            //catch (Exception err)
-            //{
-
-            //    Console.WriteLine(err);
-            //}
-            
+            OpenIssuePage();            
         }
 
         private void buttonClearDGVFilter_Click(object sender, EventArgs e)

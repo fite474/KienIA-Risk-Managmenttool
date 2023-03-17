@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using RiskManagmentTool.LogicLayer;
 using RiskManagmentTool.InterfaceLayer.EditWindows;
@@ -59,7 +53,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
         private void LoadData()
         {
-            //dataGridViewMaatregelen.DataSource = comunicator.GetMaatregelTable();
+
             maatregelenData = comunicator.GetMaatregelTable();
             advancedDataGridViewMaatregelen.DataSource = maatregelenData;
 
@@ -125,17 +119,6 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
         }
 
-        private void dataGridViewMaatregelen_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            //string maatregelID = dataGridViewMaatregelen.SelectedRows[0].Cells[0].Value.ToString();
-            //if (!SelectedMaatregelId.Contains(maatregelID))
-            //{
-            //    SelectedMaatregelId.Add(maatregelID);
-            //    textBoxSelectedMaatregelen.Text += maatregelID + ", ";
-            //}
-        }
-
-
         private void buttonCreateNewMaatregel_Click(object sender, EventArgs e)
         {
             Form editMaatregelen = new EditMaatregelen();
@@ -161,21 +144,10 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
                 //}
             }
             advancedDataGridViewMaatregelen.ClearSelection();
-            controler.CheckIssueForDubbleMaatregelen(SelectedMaatregelId);
+            controler.CheckIssueForDubbleMaatregelenAndAddNewOnes(SelectedMaatregelId);
             SelectedMaatregelId.Clear();
-            this.Close();
-
-            //foreach (string maatregelId in SelectedMaatregelId)
-            //    {
-            //        comunicator.AddMaatregelToIssue(IssueID, maatregelId);
-            //    }
-             
+            this.Close();             
         }
-
-        //private void dataGridViewMaatregelen_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        //{
-        //    dataGridViewMaatregelen.ClearSelection();
-        //}
 
         private void comboBoxWeergaveTemplate_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -184,15 +156,8 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
             dataGridViewTemplateMaatregelen.DataSource = comunicator.GetObjectIssuesByObjectName(selectedTemplateName);
         }
 
-        //private void comboBoxObjectenWeergave_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    //dataGridViewObjectIssues.DataSource = comunicator.GetObjectIssuesByObjectName(comboBoxObjectenWeergave.SelectedItem.ToString());
-        //}
-
         private void dataGridViewObjectIssues_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-
-
             for (int i = 0; i < (dataGridViewObjectIssues.ColumnCount - 1); i++)
             {
                 dataGridViewObjectIssues.AutoResizeColumn((i + 1), DataGridViewAutoSizeColumnMode.AllCells);
@@ -211,27 +176,6 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
             string clickedObjectNaam = dataGridViewObjectIssues.SelectedRows[0].Cells[0].Value.ToString();
             AddMaatregelenFromOtherIssue addMaatregelenFromOtherIssue = new AddMaatregelenFromOtherIssue(clickedObjectNaam, IssueID, clickedIssueId);
             addMaatregelenFromOtherIssue.Show();
-
-            //string issueId = dataGridViewObjectIssues.SelectedRows[0].Cells[viewsColumnNames.IssueIDColumn].Value.ToString();//[0].Value.ToString();
-            //string situatie = dataGridViewObjectIssues.SelectedRows[0].Cells[viewsColumnNames.GevaarlijkeSituatieColumn].Value.ToString();
-            //string gebeurtenis = dataGridViewObjectIssues.SelectedRows[0].Cells[viewsColumnNames.GevaarlijkeGebeurtenisColumn].Value.ToString();
-
-            //string discipline = dataGridViewObjectIssues.SelectedRows[0].Cells[viewsColumnNames.GevaarDisciplineColumn].Value.ToString();
-            //string gevaar = dataGridViewObjectIssues.SelectedRows[0].Cells[viewsColumnNames.GevaarGevaarTypeColumn].Value.ToString();
-
-            //string init_Risico = "";
-            //string init_Risico_Beschrijving = "";
-            //string rest_Risico = "";
-            //string rest_Risico_Beschrijving = "";
-
-            ////string objectNaam = comunicator.GetObjectIdByIssueNmr
-
-
-            //Form issueMaatregelen = new IssueMaatregelen(ObjectNaam, ObjectID, issueId,
-            //                                             discipline, gevaar, situatie, gebeurtenis,
-            //                                             init_Risico, init_Risico_Beschrijving,
-            //                                             rest_Risico, rest_Risico_Beschrijving);
-            //issueMaatregelen.ShowDialog();
         }
 
         private void advancedDataGridViewMaatregelen_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -247,6 +191,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
                 }
             }
             advancedDataGridViewMaatregelen.ClearSelection();
+
         }
 
         private void advancedDataGridViewMaatregelen_SortStringChanged(object sender, EventArgs e)

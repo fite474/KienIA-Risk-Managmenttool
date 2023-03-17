@@ -139,6 +139,17 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void LoadEmptyGevaarData()
         {
+
+            GevolgenCheckedItemsAtStart = new Dictionary<int, int>();
+            GevarenzonesCheckedItemsAtStart = new Dictionary<int, int>();
+            GevaarTypesCheckedItemsAtStart = new Dictionary<int, int>();
+            GebruiksfaseCheckedItemsAtStart = new Dictionary<int, int>();
+            GebruikersCheckedItemsAtStart = new Dictionary<int, int>();
+            DisciplinesCheckedItemsAtStart = new Dictionary<int, int>();
+            BedienvormenCheckedItemsAtStart = new Dictionary<int, int>();
+            TakenCheckedItemsAtStart = new Dictionary<int, int>();
+
+
             GevolgenCheckedItems = new Dictionary<int, int>();
             GevarenzonesCheckedItems = new Dictionary<int, int>();
             GevaarTypesCheckedItems = new Dictionary<int, int>();

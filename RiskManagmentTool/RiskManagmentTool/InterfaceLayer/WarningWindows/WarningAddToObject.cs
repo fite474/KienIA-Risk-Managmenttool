@@ -180,7 +180,7 @@ namespace RiskManagmentTool.InterfaceLayer.WarningWindows
             }
 
             dataGridViewMaatregelenNewIssue.ClearSelection();
-            controler.CheckIssueForDubbleMaatregelen(SelectedGevarenId);
+            controler.CheckIssueForDubbleMaatregelenAndAddNewOnes(SelectedGevarenId);
 
 
 

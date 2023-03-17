@@ -148,7 +148,7 @@ namespace RiskManagmentTool.LogicLayer
 
         #endregion old version
 
-        public void CheckIssueForDubbleMaatregelen(List<string> itemsToAdd)
+        public void CheckIssueForDubbleMaatregelenAndAddNewOnes(List<string> itemsToAdd)
         {
 
             List<string> maatregelenVanIssue = comunicator.GetMaatregelenFromIssuesAsList(CurrentID) ;

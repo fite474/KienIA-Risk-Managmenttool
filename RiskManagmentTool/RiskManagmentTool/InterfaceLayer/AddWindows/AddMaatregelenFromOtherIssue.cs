@@ -54,7 +54,7 @@ namespace RiskManagmentTool.InterfaceLayer.AddWindows
 
             }
             advancedDataGridViewIssueMaatregelen.ClearSelection();
-            controler.CheckIssueForDubbleMaatregelen(SelectedMaatregelId);
+            controler.CheckIssueForDubbleMaatregelenAndAddNewOnes(SelectedMaatregelId);
             SelectedMaatregelId.Clear();
             this.Close();
         }

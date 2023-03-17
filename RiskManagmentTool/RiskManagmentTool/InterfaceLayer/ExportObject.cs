@@ -5,7 +5,8 @@ using RiskManagmentTool.LogicLayer;
 using Syncfusion.XlsIO;
 using System.IO;
 using System.Reflection;
-using System.Drawing;
+using Microsoft.Office.Interop.Excel;
+using Application = Microsoft.Office.Interop.Excel.Application;
 
 namespace RiskManagmentTool.InterfaceLayer
 {
@@ -161,7 +162,7 @@ namespace RiskManagmentTool.InterfaceLayer
         //}
 
 
-        private Microsoft.Office.Interop.Excel.Workbook GetTemplate(Microsoft.Office.Interop.Excel.Application xlApp)
+        private Microsoft.Office.Interop.Excel.Workbook GetTemplate(Application xlApp)
         {
             Microsoft.Office.Interop.Excel.Workbook template;
             switch (this.checkedListBoxTemplate.CheckedIndices[0])

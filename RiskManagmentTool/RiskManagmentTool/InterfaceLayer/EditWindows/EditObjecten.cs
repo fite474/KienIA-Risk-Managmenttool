@@ -37,7 +37,7 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         private int SelectedComboboxItemFiltering;
 
         private BindingSource objectIssuesDataTable;
-
+        private BindingSource objectMaatregelsDataTable;
         public EditObjecten(string objectID,
                             string projectNaam,
                             string objectNaam,
@@ -75,6 +75,11 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
         {
             objectIssuesDataTable = comunicator.GetObjectIssues(ObjectID);
             advancedDataGridViewGekoppeldeIssues.DataSource = objectIssuesDataTable;
+
+
+            //todo: change datatable to only object maatregels
+            objectMaatregelsDataTable = comunicator.GetObjectIssues(ObjectID);
+            advancedDataGridViewGekoppeldeMaatregels.DataSource = objectMaatregelsDataTable;
 
 
             //comboBoxFilterIssues.SelectedIndex = 0;

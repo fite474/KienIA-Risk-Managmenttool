@@ -1555,7 +1555,26 @@ namespace RiskManagmentTool.DataLayer
         {
             sqlConnection.Open();
             string query = "SELECT * FROM View_ObjectIssues " +
-                            "WHERE View_ObjectIssues.RisicoID IN (SELECT TableObjectIssues.IssueID FROM TableObjectIssues WHERE TableObjectIssues.ObjectID = '" + objectID + "') ";
+                            "WHERE View_ObjectIssues.RisicoID IN ( " +
+                            " SELECT TableObjectIssues.IssueID FROM TableObjectIssues WHERE TableObjectIssues.ObjectID = '" + objectID + "') ";
+
+            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
+            sqlConnection.Close();
+            return adapter;
+
+        }
+
+        public SqlDataAdapter GetMaatregelsFromObject(string objectID)
+        {
+            sqlConnection.Open();
+            //string query = "SELECT * FROM View_ObjectIssues " +
+            //                "WHERE View_ObjectIssues.RisicoID IN (SELECT TableObjectIssues.IssueID FROM TableObjectIssues WHERE TableObjectIssues.ObjectID = '" + objectID + "') ";
+
+
+            //TODO: querie aanpassen naar correcte shit
+            string query = "SELECT * FROM View_ObjectIssues " +
+                            "WHERE View_ObjectIssues.RisicoID IN ( " +
+                            " SELECT TableObjectIssues.IssueID FROM TableObjectIssues WHERE TableObjectIssues.ObjectID = '" + objectID + "') ";
 
             SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
             sqlConnection.Close();

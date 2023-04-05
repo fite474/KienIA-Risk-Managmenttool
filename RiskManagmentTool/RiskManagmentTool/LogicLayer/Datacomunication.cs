@@ -604,7 +604,16 @@ namespace RiskManagmentTool.LogicLayer
             return bindingSource;
         }
 
+        public BindingSource GetObjectMaatregels(string objectID)
+        {
+            SqlDataAdapter adapter = databaseCommunication.GetMaatregelsFromObject(objectID);
+            DataTable data = new DataTable();
+            adapter.Fill(data);
 
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = data;
+            return bindingSource;
+        }
 
         public BindingSource GetObjectIssuesByObjectName(string objectNaam)
         {

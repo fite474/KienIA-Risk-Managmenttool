@@ -3324,17 +3324,6 @@ namespace RiskManagmentTool.DataLayer
 
 
 
-        #region version2
-
-        //#region get
-
-
-
-
-
-
-        #endregion version2
-
 
 
 

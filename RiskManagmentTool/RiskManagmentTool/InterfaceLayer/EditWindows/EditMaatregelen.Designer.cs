@@ -44,6 +44,11 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.buttonAddMenuOption = new System.Windows.Forms.Button();
             this.checkedListBoxOptions = new System.Windows.Forms.CheckedListBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBoxMaatregelOmschrijving = new System.Windows.Forms.TextBox();
+            this.textBoxDocumentNummer = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -53,43 +58,48 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 65);
+            this.label1.Location = new System.Drawing.Point(11, 69);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 17);
+            this.label1.Size = new System.Drawing.Size(83, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Maatregel naam";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 225);
+            this.label2.Location = new System.Drawing.Point(10, 311);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 17);
+            this.label2.Size = new System.Drawing.Size(82, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Maatregel Norm";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 345);
+            this.label3.Location = new System.Drawing.Point(11, 408);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(134, 17);
+            this.label3.Size = new System.Drawing.Size(101, 13);
             this.label3.TabIndex = 3;
             this.label3.Text = "Maatregel categorie";
             // 
             // textBoxMaatregelNaam
             // 
-            this.textBoxMaatregelNaam.Location = new System.Drawing.Point(200, 65);
+            this.textBoxMaatregelNaam.Location = new System.Drawing.Point(149, 69);
+            this.textBoxMaatregelNaam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxMaatregelNaam.Multiline = true;
             this.textBoxMaatregelNaam.Name = "textBoxMaatregelNaam";
-            this.textBoxMaatregelNaam.Size = new System.Drawing.Size(356, 57);
+            this.textBoxMaatregelNaam.Size = new System.Drawing.Size(268, 47);
             this.textBoxMaatregelNaam.TabIndex = 5;
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(742, 13);
+            this.buttonSave.Location = new System.Drawing.Point(643, 4);
+            this.buttonSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(116, 48);
+            this.buttonSave.Size = new System.Drawing.Size(140, 46);
             this.buttonSave.TabIndex = 9;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
@@ -99,13 +109,19 @@
             // 
             this.panel1.Controls.Add(this.buttonSave);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 474);
+            this.panel1.Location = new System.Drawing.Point(0, 533);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1093, 73);
+            this.panel1.Size = new System.Drawing.Size(864, 59);
             this.panel1.TabIndex = 11;
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.textBoxDocumentNummer);
+            this.panel2.Controls.Add(this.textBoxMaatregelOmschrijving);
+            this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.buttonCategorie);
             this.panel2.Controls.Add(this.buttonNorm);
             this.panel2.Controls.Add(this.textBoxMaatregelCategorie);
@@ -116,15 +132,17 @@
             this.panel2.Controls.Add(this.textBoxMaatregelNaam);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(683, 474);
+            this.panel2.Size = new System.Drawing.Size(562, 533);
             this.panel2.TabIndex = 12;
             // 
             // buttonCategorie
             // 
-            this.buttonCategorie.Location = new System.Drawing.Point(589, 339);
+            this.buttonCategorie.Location = new System.Drawing.Point(441, 403);
+            this.buttonCategorie.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonCategorie.Name = "buttonCategorie";
-            this.buttonCategorie.Size = new System.Drawing.Size(88, 34);
+            this.buttonCategorie.Size = new System.Drawing.Size(66, 28);
             this.buttonCategorie.TabIndex = 9;
             this.buttonCategorie.Text = "Categorie";
             this.buttonCategorie.UseVisualStyleBackColor = true;
@@ -132,9 +150,10 @@
             // 
             // buttonNorm
             // 
-            this.buttonNorm.Location = new System.Drawing.Point(590, 225);
+            this.buttonNorm.Location = new System.Drawing.Point(441, 311);
+            this.buttonNorm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonNorm.Name = "buttonNorm";
-            this.buttonNorm.Size = new System.Drawing.Size(88, 34);
+            this.buttonNorm.Size = new System.Drawing.Size(66, 28);
             this.buttonNorm.TabIndex = 8;
             this.buttonNorm.Text = "Norm";
             this.buttonNorm.UseVisualStyleBackColor = true;
@@ -142,20 +161,22 @@
             // 
             // textBoxMaatregelCategorie
             // 
-            this.textBoxMaatregelCategorie.Location = new System.Drawing.Point(200, 340);
+            this.textBoxMaatregelCategorie.Location = new System.Drawing.Point(149, 404);
+            this.textBoxMaatregelCategorie.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxMaatregelCategorie.Multiline = true;
             this.textBoxMaatregelCategorie.Name = "textBoxMaatregelCategorie";
             this.textBoxMaatregelCategorie.ReadOnly = true;
-            this.textBoxMaatregelCategorie.Size = new System.Drawing.Size(356, 47);
+            this.textBoxMaatregelCategorie.Size = new System.Drawing.Size(268, 39);
             this.textBoxMaatregelCategorie.TabIndex = 7;
             // 
             // textBoxMaatregelNorm
             // 
-            this.textBoxMaatregelNorm.Location = new System.Drawing.Point(200, 225);
+            this.textBoxMaatregelNorm.Location = new System.Drawing.Point(149, 311);
+            this.textBoxMaatregelNorm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxMaatregelNorm.Multiline = true;
             this.textBoxMaatregelNorm.Name = "textBoxMaatregelNorm";
             this.textBoxMaatregelNorm.ReadOnly = true;
-            this.textBoxMaatregelNorm.Size = new System.Drawing.Size(356, 58);
+            this.textBoxMaatregelNorm.Size = new System.Drawing.Size(268, 48);
             this.textBoxMaatregelNorm.TabIndex = 6;
             // 
             // panel3
@@ -163,16 +184,18 @@
             this.panel3.Controls.Add(this.buttonDeleteMaatregel);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(683, 0);
+            this.panel3.Location = new System.Drawing.Point(562, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(410, 474);
+            this.panel3.Size = new System.Drawing.Size(302, 533);
             this.panel3.TabIndex = 13;
             // 
             // buttonDeleteMaatregel
             // 
-            this.buttonDeleteMaatregel.Location = new System.Drawing.Point(159, 32);
+            this.buttonDeleteMaatregel.Location = new System.Drawing.Point(119, 26);
+            this.buttonDeleteMaatregel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonDeleteMaatregel.Name = "buttonDeleteMaatregel";
-            this.buttonDeleteMaatregel.Size = new System.Drawing.Size(136, 50);
+            this.buttonDeleteMaatregel.Size = new System.Drawing.Size(102, 41);
             this.buttonDeleteMaatregel.TabIndex = 1;
             this.buttonDeleteMaatregel.Text = "Verwijder deze maatregel";
             this.buttonDeleteMaatregel.UseVisualStyleBackColor = true;
@@ -183,16 +206,18 @@
             this.panel4.Controls.Add(this.buttonAddMenuOption);
             this.panel4.Controls.Add(this.checkedListBoxOptions);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 138);
+            this.panel4.Location = new System.Drawing.Point(0, 104);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(410, 336);
+            this.panel4.Size = new System.Drawing.Size(302, 429);
             this.panel4.TabIndex = 0;
             // 
             // buttonAddMenuOption
             // 
-            this.buttonAddMenuOption.Location = new System.Drawing.Point(0, 20);
+            this.buttonAddMenuOption.Location = new System.Drawing.Point(0, 16);
+            this.buttonAddMenuOption.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonAddMenuOption.Name = "buttonAddMenuOption";
-            this.buttonAddMenuOption.Size = new System.Drawing.Size(162, 46);
+            this.buttonAddMenuOption.Size = new System.Drawing.Size(122, 37);
             this.buttonAddMenuOption.TabIndex = 1;
             this.buttonAddMenuOption.Text = "Voeg keuze optie toe";
             this.buttonAddMenuOption.UseVisualStyleBackColor = true;
@@ -202,20 +227,66 @@
             // 
             this.checkedListBoxOptions.CheckOnClick = true;
             this.checkedListBoxOptions.FormattingEnabled = true;
-            this.checkedListBoxOptions.Location = new System.Drawing.Point(3, 85);
+            this.checkedListBoxOptions.Location = new System.Drawing.Point(2, 69);
+            this.checkedListBoxOptions.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkedListBoxOptions.Name = "checkedListBoxOptions";
-            this.checkedListBoxOptions.Size = new System.Drawing.Size(293, 242);
+            this.checkedListBoxOptions.Size = new System.Drawing.Size(289, 259);
             this.checkedListBoxOptions.TabIndex = 0;
             this.checkedListBoxOptions.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxOptions_ItemCheck);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 180);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(115, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Maatregel omschrijving";
+            // 
+            // textBoxMaatregelOmschrijving
+            // 
+            this.textBoxMaatregelOmschrijving.Location = new System.Drawing.Point(149, 177);
+            this.textBoxMaatregelOmschrijving.Multiline = true;
+            this.textBoxMaatregelOmschrijving.Name = "textBoxMaatregelOmschrijving";
+            this.textBoxMaatregelOmschrijving.Size = new System.Drawing.Size(268, 83);
+            this.textBoxMaatregelOmschrijving.TabIndex = 11;
+            this.textBoxMaatregelOmschrijving.Text = "Not implemented yet";
+            // 
+            // textBoxDocumentNummer
+            // 
+            this.textBoxDocumentNummer.Location = new System.Drawing.Point(149, 477);
+            this.textBoxDocumentNummer.Name = "textBoxDocumentNummer";
+            this.textBoxDocumentNummer.Size = new System.Drawing.Size(268, 20);
+            this.textBoxDocumentNummer.TabIndex = 12;
+            this.textBoxDocumentNummer.Text = "Not implemented yet";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(10, 484);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(96, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Document nummer";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(441, 69);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(77, 47);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Soort maatregel";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // EditMaatregelen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1093, 547);
+            this.ClientSize = new System.Drawing.Size(864, 592);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "EditMaatregelen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Maatregelen ";
@@ -245,5 +316,10 @@
         private System.Windows.Forms.Button buttonCategorie;
         private System.Windows.Forms.Button buttonNorm;
         private System.Windows.Forms.Button buttonDeleteMaatregel;
+        private System.Windows.Forms.TextBox textBoxMaatregelOmschrijving;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBoxDocumentNummer;
     }
 }

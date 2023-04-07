@@ -36,28 +36,28 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void LoadData()
         {
-            switch (MenuTableName)
-            {
-                case MenuTableName.ObjectTypes:
-                    //MenuOptions = keuzeMenus.GetTypeObjectMenu();
-                    break;
-                case MenuTableName.Gevolgen:
-                    break;
-                case MenuTableName.Gevarenzones:
-                    break;
-                case MenuTableName.GevaarTypes:
-                    break;
-                case MenuTableName.Gebruiksfases:
-                    break;
-                case MenuTableName.Gebruikers:
-                    break;
-                case MenuTableName.Disciplines:
-                    break;
-                case MenuTableName.Bedienvormen:
-                    break;
-                default:
-                    break;
-            }
+            //switch (MenuTableName)
+            //{
+            //    case MenuTableName.ObjectTypes:
+            //        //MenuOptions = keuzeMenus.GetTypeObjectMenu();
+            //        break;
+            //    case MenuTableName.Gevolgen:
+            //        break;
+            //    case MenuTableName.Gevarenzones:
+            //        break;
+            //    case MenuTableName.GevaarTypes:
+            //        break;
+            //    case MenuTableName.Gebruiksfases:
+            //        break;
+            //    case MenuTableName.Gebruikers:
+            //        break;
+            //    case MenuTableName.Disciplines:
+            //        break;
+            //    case MenuTableName.Bedienvormen:
+            //        break;
+            //    default:
+            //        break;
+            //}
             textBoxMenuName.Text = MenuName;
 
             foreach (KeyValuePair<int, string> kvp in MenuOptions)
@@ -73,13 +73,14 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
 
         private void buttonAddOption_Click(object sender, EventArgs e)
         {
-            EditText editText = new EditText();
+            EditText editText = new EditText(this.MenuTableName);
             if (editText.ShowDialog(this) == DialogResult.OK)
             {
                 // Read the contents of testDialog's TextBox.
                 string textResult = editText.textBoxInput.Text;
+                string textDescription = editText.textBoxDescription.Text;
                 listBoxMenuOptions.Items.Add(textResult);
-                AddInput(textResult);
+                AddInput(textResult, textDescription);
             }
             else
             {
@@ -89,15 +90,15 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             
         }
 
-        private void AddInput(string input)
+        private void AddInput(string input, string inputDescription)
         {
-            comunicator.AddToMenu(MenuTableName, input, objectId);
+            comunicator.AddToMenu(MenuTableName, input, inputDescription, objectId);
             keuzeMenus.ReloadAllLists(); 
         }
 
-        private void EditInput(int dbIndex, string input)
+        private void EditInput(int dbIndex, string input, string description)
         {
-            comunicator.EditToMenu(MenuTableName, dbIndex, input);
+            comunicator.EditToMenu(MenuTableName, dbIndex, input, description);
             keuzeMenus.ReloadAllLists();
         }
 
@@ -135,14 +136,15 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
                 }
 
 
-                EditText editText = new EditText();
+                EditText editText = new EditText(this.MenuTableName);
                 editText.textBoxInput.Text = listBoxMenuOptions.SelectedItem.ToString();
                 if (editText.ShowDialog(this) == DialogResult.OK)
                 {
                     // Read the contents of testDialog's TextBox.
                     string textResult = editText.textBoxInput.Text;
+                    string textDescriptionResult = editText.textBoxDescription.Text;
                     listBoxMenuOptions.Items.Add(textResult);
-                    EditInput(itemDB_ID, textResult);
+                    EditInput(itemDB_ID, textResult, textDescriptionResult);
                 }
                 else
                 {

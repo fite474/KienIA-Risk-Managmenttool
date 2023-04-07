@@ -359,8 +359,8 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             if (open.ShowDialog() == DialogResult.OK)
             {
                 
-                //TODO change to uploading a byte map of the image to the database
-                string imageFilePath = Path.GetFullPath(open.FileName);//ImageHandler.ChangeLocation(open.FileName);
+                
+                string imageFilePath = Path.GetFullPath(open.FileName);
 
                 // display image in picture box  
                 pictureBoxObjectFoto.Image = new Bitmap(imageFilePath);//open.FileName);
@@ -435,10 +435,53 @@ namespace RiskManagmentTool.InterfaceLayer.EditWindows
             this.objectIssuesDataTable.Sort = this.advancedDataGridViewGekoppeldeIssues.SortString;
         }
 
-        //private void EditObjecten_Load(object sender, EventArgs e)
-        //{
 
-        //}
+
+
+
+        private void advancedDataGridViewGekoppeldeMaatregels_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            IssuesToVerify = new List<string>();
+            for (int i = 0; i < (advancedDataGridViewGekoppeldeIssues.ColumnCount - 2); i++)
+            {
+                advancedDataGridViewGekoppeldeIssues.AutoResizeColumn((i + 1), DataGridViewAutoSizeColumnMode.AllCells);
+                if (advancedDataGridViewGekoppeldeIssues.Columns[i + 1].Width > 400)
+                {
+                    advancedDataGridViewGekoppeldeIssues.Columns[i + 1].Width = 400;
+                }
+            }
+
+            advancedDataGridViewGekoppeldeIssues.ClearSelection();
+
+            Cursor.Current = Cursors.Default;
+            textBoxIssuesToVerify.Text = IssuesToVerify.Count.ToString();
+            SetVisualInstellingen();
+            if (OpenedFromRedirectionPage)
+            {
+                advancedDataGridViewGekoppeldeIssues.Rows[1].Selected = true;
+                OpenedFromRedirectionPage = false;
+                OpenIssuePage();
+            }
+
+        }
+
+        private void advancedDataGridViewGekoppeldeMaatregels_FilterStringChanged(object sender, EventArgs e)
+        {
+            this.objectIssuesDataTable.Filter = this.advancedDataGridViewGekoppeldeIssues.FilterString;
+        }
+
+        private void advancedDataGridViewGekoppeldeMaatregels_SortStringChanged(object sender, EventArgs e)
+        {
+            this.objectIssuesDataTable.Sort = this.advancedDataGridViewGekoppeldeIssues.SortString;
+        }
+
+
+
+        private void advancedDataGridViewGekoppeldeMaatregels_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
 
         private void OpenIssuePage()
         {

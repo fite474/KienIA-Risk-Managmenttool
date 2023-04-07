@@ -1453,55 +1453,55 @@ namespace RiskManagmentTool.LogicLayer
         }
 
 
-        public void AddToMenu(MenuTableName menuTableName, string optionToAdd, string objectId)
+        public void AddToMenu(MenuTableName menuTableName, string optionToAdd, string optionDescriptionToAdd, string objectId)
         {
-            SendMenuOptionToDB(menuTableName, optionToAdd, objectId);
+            SendMenuOptionToDB(menuTableName, optionToAdd, optionDescriptionToAdd, objectId);
         }
 
 
-        //re-writen for object specifics. update early 2023
-        private void SendMenuOptionToDB(MenuTableName menuTableName, string inputText, string objectId)
+
+        private void SendMenuOptionToDB(MenuTableName menuTableName, string inputText, string optionDescriptionToAdd, string objectId)
         {
             switch (menuTableName)
             {
                 case MenuTableName.ObjectTypes:
-                    databaseCommunication.AddToObjectTypesMenu(inputText);
+                    databaseCommunication.AddToObjectTypesMenu(inputText, optionDescriptionToAdd);
                     break;
                 case MenuTableName.Gevolgen:
-                    databaseCommunication.AddToGevolgenMenu(inputText, objectId);
+                    databaseCommunication.AddToGevolgenMenu(inputText, optionDescriptionToAdd, objectId);
                     break;
                 case MenuTableName.Gevarenzones:
-                    databaseCommunication.AddToGevarenzonesMenu(inputText, objectId);
+                    databaseCommunication.AddToGevarenzonesMenu(inputText, optionDescriptionToAdd, objectId);
                     break;
                 case MenuTableName.GevaarTypes:
-                    databaseCommunication.AddToGevaarTypesMenu(inputText, objectId);
+                    databaseCommunication.AddToGevaarTypesMenu(inputText, optionDescriptionToAdd, objectId);
                     break;
                 case MenuTableName.Gebruiksfases:
-                    databaseCommunication.AddToGebruiksfasesMenu(inputText, objectId);
+                    databaseCommunication.AddToGebruiksfasesMenu(inputText, optionDescriptionToAdd, objectId);
                     break;
                 case MenuTableName.Gebruikers:
-                    databaseCommunication.AddToGebruikersMenu(inputText, objectId);
+                    databaseCommunication.AddToGebruikersMenu(inputText, optionDescriptionToAdd, objectId);
                     break;
                 case MenuTableName.Disciplines:
-                    databaseCommunication.AddToDisciplinesMenu(inputText, objectId);
+                    databaseCommunication.AddToDisciplinesMenu(inputText, optionDescriptionToAdd, objectId);
                     break;
                 case MenuTableName.Bedienvormen:
-                    databaseCommunication.AddToBedienvormenMenu(inputText, objectId);
+                    databaseCommunication.AddToBedienvormenMenu(inputText, optionDescriptionToAdd, objectId);
                     break;
                 case MenuTableName.Taken:
-                    databaseCommunication.AddToTakenMenu(inputText, objectId);
+                    databaseCommunication.AddToTakenMenu(inputText, optionDescriptionToAdd, objectId);
                     break;
                 case MenuTableName.Normen:
-                    databaseCommunication.AddToNormenMenu(inputText);
+                    databaseCommunication.AddToNormenMenu(inputText, optionDescriptionToAdd);
                     break;
                 case MenuTableName.Categories:
-                    databaseCommunication.AddToCategoriesMenu(inputText);
+                    databaseCommunication.AddToCategoriesMenu(inputText, optionDescriptionToAdd);
                     break;
                 case MenuTableName.TemplateTypes:
-                    databaseCommunication.AddToTemplateTypes(inputText);
+                    databaseCommunication.AddToTemplateTypes(inputText, optionDescriptionToAdd);
                     break;
                 case MenuTableName.TemplateToepassing:
-                    databaseCommunication.AddToTemplateToepassingen(inputText);
+                    databaseCommunication.AddToTemplateToepassingen(inputText, optionDescriptionToAdd);
                     break;
                 default:
                     break;
@@ -1511,12 +1511,12 @@ namespace RiskManagmentTool.LogicLayer
 
 
 
-        public void EditToMenu(MenuTableName menuTableName, int itemIndex, string optionToAdd)
+        public void EditToMenu(MenuTableName menuTableName, int itemIndex, string optionToAdd, string optionDescriptionToAdd)
         {
-            SendEditMenuOptionToDB(menuTableName, itemIndex, optionToAdd);
+            SendEditMenuOptionToDB(menuTableName, itemIndex, optionToAdd, optionDescriptionToAdd);
         }
 
-        private void SendEditMenuOptionToDB(MenuTableName menuTableName, int itemIndex, string inputText)
+        private void SendEditMenuOptionToDB(MenuTableName menuTableName, int itemIndex, string inputText, string optionDescriptionToAdd)
         {
             string databaseTableName = "";
             string databaseColumnName = "";
@@ -1593,7 +1593,7 @@ namespace RiskManagmentTool.LogicLayer
                     break;
             }
 
-            databaseCommunication.EditFromMenu(databaseTableName, databaseColumnName, databaseIDColumnName, itemIndex,  inputText);
+            databaseCommunication.EditFromMenu(databaseTableName, databaseColumnName, databaseIDColumnName, itemIndex,  inputText, optionDescriptionToAdd);
 
         }
 

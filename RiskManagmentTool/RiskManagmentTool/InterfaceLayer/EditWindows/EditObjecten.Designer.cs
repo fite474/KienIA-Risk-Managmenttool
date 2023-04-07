@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditObjecten));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -59,6 +59,10 @@
             this.comboBoxVisualSettings = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.comboBoxFilterIssues = new System.Windows.Forms.ComboBox();
+            this.tabPagemaatregel = new System.Windows.Forms.TabPage();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.advancedDataGridViewGekoppeldeMaatregels = new ADGV.AdvancedDataGridView();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.tabPageObjectInfo = new System.Windows.Forms.TabPage();
             this.buttonSaveObjectNotes = new System.Windows.Forms.Button();
             this.textBoxObjectNotes = new System.Windows.Forms.TextBox();
@@ -71,10 +75,6 @@
             this.buttonIssuesOplossen = new System.Windows.Forms.Button();
             this.buttonDeleteGevaren = new System.Windows.Forms.Button();
             this.buttonAddRisico = new System.Windows.Forms.Button();
-            this.tabPagemaatregel = new System.Windows.Forms.TabPage();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.advancedDataGridViewGekoppeldeMaatregels = new ADGV.AdvancedDataGridView();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -87,12 +87,12 @@
             this.tabPagerisicos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridViewGekoppeldeIssues)).BeginInit();
             this.panel5.SuspendLayout();
-            this.tabPageObjectInfo.SuspendLayout();
-            this.tabPageSettings.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.tabPagemaatregel.SuspendLayout();
             this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridViewGekoppeldeMaatregels)).BeginInit();
+            this.tabPageObjectInfo.SuspendLayout();
+            this.tabPageSettings.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -104,7 +104,7 @@
             this.tableLayoutPanel1.Controls.Add(this.panel4, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.32512F));
@@ -124,7 +124,7 @@
             this.tableLayoutPanel2.Controls.Add(this.panel6, 2, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 2);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -143,7 +143,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(2, 2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(588, 179);
             this.panel1.TabIndex = 0;
@@ -151,7 +151,7 @@
             // textBoxObjectType
             // 
             this.textBoxObjectType.Location = new System.Drawing.Point(141, 80);
-            this.textBoxObjectType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxObjectType.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxObjectType.Name = "textBoxObjectType";
             this.textBoxObjectType.ReadOnly = true;
             this.textBoxObjectType.Size = new System.Drawing.Size(211, 20);
@@ -160,7 +160,7 @@
             // textBoxProjectNaam
             // 
             this.textBoxProjectNaam.Location = new System.Drawing.Point(141, 20);
-            this.textBoxProjectNaam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxProjectNaam.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxProjectNaam.Name = "textBoxProjectNaam";
             this.textBoxProjectNaam.ReadOnly = true;
             this.textBoxProjectNaam.Size = new System.Drawing.Size(211, 20);
@@ -169,7 +169,7 @@
             // textBoxOmschrijving
             // 
             this.textBoxOmschrijving.Location = new System.Drawing.Point(141, 111);
-            this.textBoxOmschrijving.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxOmschrijving.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxOmschrijving.Multiline = true;
             this.textBoxOmschrijving.Name = "textBoxOmschrijving";
             this.textBoxOmschrijving.ReadOnly = true;
@@ -179,7 +179,7 @@
             // textBoxObjectNaam
             // 
             this.textBoxObjectNaam.Location = new System.Drawing.Point(141, 51);
-            this.textBoxObjectNaam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxObjectNaam.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxObjectNaam.Name = "textBoxObjectNaam";
             this.textBoxObjectNaam.ReadOnly = true;
             this.textBoxObjectNaam.Size = new System.Drawing.Size(211, 20);
@@ -231,7 +231,7 @@
             this.panel2.Controls.Add(this.label6);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(594, 2);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(224, 179);
             this.panel2.TabIndex = 1;
@@ -239,7 +239,7 @@
             // textBoxIssuesToVerify
             // 
             this.textBoxIssuesToVerify.Location = new System.Drawing.Point(161, 71);
-            this.textBoxIssuesToVerify.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxIssuesToVerify.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxIssuesToVerify.Name = "textBoxIssuesToVerify";
             this.textBoxIssuesToVerify.ReadOnly = true;
             this.textBoxIssuesToVerify.Size = new System.Drawing.Size(50, 20);
@@ -263,7 +263,7 @@
             this.panel6.Controls.Add(this.panel7);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(822, 2);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(353, 179);
             this.panel6.TabIndex = 2;
@@ -273,7 +273,7 @@
             this.panel8.Controls.Add(this.pictureBoxObjectFoto);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(0, 0);
-            this.panel8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel8.Margin = new System.Windows.Forms.Padding(2);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(353, 168);
             this.panel8.TabIndex = 3;
@@ -283,7 +283,7 @@
             this.pictureBoxObjectFoto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBoxObjectFoto.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxObjectFoto.Image")));
             this.pictureBoxObjectFoto.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxObjectFoto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxObjectFoto.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxObjectFoto.Name = "pictureBoxObjectFoto";
             this.pictureBoxObjectFoto.Size = new System.Drawing.Size(353, 168);
             this.pictureBoxObjectFoto.TabIndex = 0;
@@ -294,7 +294,7 @@
             // 
             this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel7.Location = new System.Drawing.Point(0, 168);
-            this.panel7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(353, 11);
             this.panel7.TabIndex = 2;
@@ -304,7 +304,7 @@
             this.panel3.Controls.Add(this.tabControl1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(2, 189);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1177, 400);
             this.panel3.TabIndex = 2;
@@ -317,7 +317,7 @@
             this.tabControl1.Controls.Add(this.tabPageSettings);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1177, 400);
@@ -328,9 +328,9 @@
             this.tabPagerisicos.Controls.Add(this.advancedDataGridViewGekoppeldeIssues);
             this.tabPagerisicos.Controls.Add(this.panel5);
             this.tabPagerisicos.Location = new System.Drawing.Point(4, 22);
-            this.tabPagerisicos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPagerisicos.Margin = new System.Windows.Forms.Padding(2);
             this.tabPagerisicos.Name = "tabPagerisicos";
-            this.tabPagerisicos.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPagerisicos.Padding = new System.Windows.Forms.Padding(2);
             this.tabPagerisicos.Size = new System.Drawing.Size(1169, 374);
             this.tabPagerisicos.TabIndex = 0;
             this.tabPagerisicos.Text = "Gekoppelde risico\'s";
@@ -344,17 +344,17 @@
             this.advancedDataGridViewGekoppeldeIssues.BackgroundColor = System.Drawing.SystemColors.Window;
             this.advancedDataGridViewGekoppeldeIssues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.advancedDataGridViewGekoppeldeIssues.DateWithTime = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advancedDataGridViewGekoppeldeIssues.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advancedDataGridViewGekoppeldeIssues.DefaultCellStyle = dataGridViewCellStyle2;
             this.advancedDataGridViewGekoppeldeIssues.Dock = System.Windows.Forms.DockStyle.Fill;
             this.advancedDataGridViewGekoppeldeIssues.Location = new System.Drawing.Point(2, 43);
-            this.advancedDataGridViewGekoppeldeIssues.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.advancedDataGridViewGekoppeldeIssues.Margin = new System.Windows.Forms.Padding(2);
             this.advancedDataGridViewGekoppeldeIssues.Name = "advancedDataGridViewGekoppeldeIssues";
             this.advancedDataGridViewGekoppeldeIssues.ReadOnly = true;
             this.advancedDataGridViewGekoppeldeIssues.RowHeadersWidth = 51;
@@ -379,7 +379,7 @@
             this.panel5.Controls.Add(this.comboBoxFilterIssues);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(2, 2);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1165, 41);
             this.panel5.TabIndex = 1;
@@ -388,7 +388,7 @@
             // 
             this.buttonShowLegenda.Dock = System.Windows.Forms.DockStyle.Right;
             this.buttonShowLegenda.Location = new System.Drawing.Point(1068, 0);
-            this.buttonShowLegenda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonShowLegenda.Margin = new System.Windows.Forms.Padding(2);
             this.buttonShowLegenda.Name = "buttonShowLegenda";
             this.buttonShowLegenda.Size = new System.Drawing.Size(97, 41);
             this.buttonShowLegenda.TabIndex = 6;
@@ -399,7 +399,7 @@
             // buttonClearDGVFilter
             // 
             this.buttonClearDGVFilter.Location = new System.Drawing.Point(645, 7);
-            this.buttonClearDGVFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonClearDGVFilter.Margin = new System.Windows.Forms.Padding(2);
             this.buttonClearDGVFilter.Name = "buttonClearDGVFilter";
             this.buttonClearDGVFilter.Size = new System.Drawing.Size(100, 28);
             this.buttonClearDGVFilter.TabIndex = 5;
@@ -425,7 +425,7 @@
             "Rest risico OK",
             "Clear"});
             this.comboBoxVisualSettings.Location = new System.Drawing.Point(392, 5);
-            this.comboBoxVisualSettings.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxVisualSettings.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxVisualSettings.Name = "comboBoxVisualSettings";
             this.comboBoxVisualSettings.Size = new System.Drawing.Size(132, 21);
             this.comboBoxVisualSettings.TabIndex = 3;
@@ -448,11 +448,61 @@
             "Alle risico\'s",
             "Risico\'s zonder maatregelen"});
             this.comboBoxFilterIssues.Location = new System.Drawing.Point(86, 5);
-            this.comboBoxFilterIssues.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxFilterIssues.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxFilterIssues.Name = "comboBoxFilterIssues";
             this.comboBoxFilterIssues.Size = new System.Drawing.Size(139, 21);
             this.comboBoxFilterIssues.TabIndex = 1;
             this.comboBoxFilterIssues.SelectedIndexChanged += new System.EventHandler(this.comboBoxFilterIssues_SelectedIndexChanged);
+            // 
+            // tabPagemaatregel
+            // 
+            this.tabPagemaatregel.Controls.Add(this.panel10);
+            this.tabPagemaatregel.Controls.Add(this.panel9);
+            this.tabPagemaatregel.Location = new System.Drawing.Point(4, 22);
+            this.tabPagemaatregel.Name = "tabPagemaatregel";
+            this.tabPagemaatregel.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPagemaatregel.Size = new System.Drawing.Size(1169, 374);
+            this.tabPagemaatregel.TabIndex = 3;
+            this.tabPagemaatregel.Text = "Gekoppelde maatregels";
+            this.tabPagemaatregel.UseVisualStyleBackColor = true;
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.advancedDataGridViewGekoppeldeMaatregels);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel10.Location = new System.Drawing.Point(3, 44);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(1163, 327);
+            this.panel10.TabIndex = 1;
+            // 
+            // advancedDataGridViewGekoppeldeMaatregels
+            // 
+            this.advancedDataGridViewGekoppeldeMaatregels.AllowUserToAddRows = false;
+            this.advancedDataGridViewGekoppeldeMaatregels.AllowUserToDeleteRows = false;
+            this.advancedDataGridViewGekoppeldeMaatregels.AutoGenerateContextFilters = true;
+            this.advancedDataGridViewGekoppeldeMaatregels.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.advancedDataGridViewGekoppeldeMaatregels.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.advancedDataGridViewGekoppeldeMaatregels.DateWithTime = false;
+            this.advancedDataGridViewGekoppeldeMaatregels.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.advancedDataGridViewGekoppeldeMaatregels.Location = new System.Drawing.Point(0, 0);
+            this.advancedDataGridViewGekoppeldeMaatregels.Name = "advancedDataGridViewGekoppeldeMaatregels";
+            this.advancedDataGridViewGekoppeldeMaatregels.ReadOnly = true;
+            this.advancedDataGridViewGekoppeldeMaatregels.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.advancedDataGridViewGekoppeldeMaatregels.Size = new System.Drawing.Size(1163, 327);
+            this.advancedDataGridViewGekoppeldeMaatregels.TabIndex = 0;
+            this.advancedDataGridViewGekoppeldeMaatregels.TimeFilter = false;
+            this.advancedDataGridViewGekoppeldeMaatregels.SortStringChanged += new System.EventHandler(this.advancedDataGridViewGekoppeldeMaatregels_SortStringChanged);
+            this.advancedDataGridViewGekoppeldeMaatregels.FilterStringChanged += new System.EventHandler(this.advancedDataGridViewGekoppeldeMaatregels_FilterStringChanged);
+            this.advancedDataGridViewGekoppeldeMaatregels.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.advancedDataGridViewGekoppeldeMaatregels_DataBindingComplete);
+            this.advancedDataGridViewGekoppeldeMaatregels.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.advancedDataGridViewGekoppeldeMaatregels_MouseDoubleClick);
+            // 
+            // panel9
+            // 
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel9.Location = new System.Drawing.Point(3, 3);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(1163, 41);
+            this.panel9.TabIndex = 0;
             // 
             // tabPageObjectInfo
             // 
@@ -460,9 +510,9 @@
             this.tabPageObjectInfo.Controls.Add(this.textBoxObjectNotes);
             this.tabPageObjectInfo.Controls.Add(this.label9);
             this.tabPageObjectInfo.Location = new System.Drawing.Point(4, 22);
-            this.tabPageObjectInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPageObjectInfo.Margin = new System.Windows.Forms.Padding(2);
             this.tabPageObjectInfo.Name = "tabPageObjectInfo";
-            this.tabPageObjectInfo.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPageObjectInfo.Padding = new System.Windows.Forms.Padding(2);
             this.tabPageObjectInfo.Size = new System.Drawing.Size(1169, 374);
             this.tabPageObjectInfo.TabIndex = 1;
             this.tabPageObjectInfo.Text = "Object informatie";
@@ -471,7 +521,7 @@
             // buttonSaveObjectNotes
             // 
             this.buttonSaveObjectNotes.Location = new System.Drawing.Point(543, 242);
-            this.buttonSaveObjectNotes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonSaveObjectNotes.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSaveObjectNotes.Name = "buttonSaveObjectNotes";
             this.buttonSaveObjectNotes.Size = new System.Drawing.Size(134, 74);
             this.buttonSaveObjectNotes.TabIndex = 2;
@@ -482,7 +532,7 @@
             // textBoxObjectNotes
             // 
             this.textBoxObjectNotes.Location = new System.Drawing.Point(20, 33);
-            this.textBoxObjectNotes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxObjectNotes.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxObjectNotes.Multiline = true;
             this.textBoxObjectNotes.Name = "textBoxObjectNotes";
             this.textBoxObjectNotes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -504,7 +554,7 @@
             this.tabPageSettings.Controls.Add(this.label5);
             this.tabPageSettings.Controls.Add(this.checkedListBoxRisicograaf);
             this.tabPageSettings.Location = new System.Drawing.Point(4, 22);
-            this.tabPageSettings.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPageSettings.Margin = new System.Windows.Forms.Padding(2);
             this.tabPageSettings.Name = "tabPageSettings";
             this.tabPageSettings.Size = new System.Drawing.Size(1169, 374);
             this.tabPageSettings.TabIndex = 2;
@@ -528,7 +578,7 @@
             "SIL",
             "PL"});
             this.checkedListBoxRisicograaf.Location = new System.Drawing.Point(37, 48);
-            this.checkedListBoxRisicograaf.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkedListBoxRisicograaf.Margin = new System.Windows.Forms.Padding(2);
             this.checkedListBoxRisicograaf.Name = "checkedListBoxRisicograaf";
             this.checkedListBoxRisicograaf.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.checkedListBoxRisicograaf.Size = new System.Drawing.Size(114, 94);
@@ -542,7 +592,7 @@
             this.panel4.Controls.Add(this.buttonAddRisico);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(2, 593);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1177, 65);
             this.panel4.TabIndex = 3;
@@ -551,7 +601,7 @@
             // 
             this.buttonExportToExcel.Dock = System.Windows.Forms.DockStyle.Right;
             this.buttonExportToExcel.Location = new System.Drawing.Point(921, 0);
-            this.buttonExportToExcel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonExportToExcel.Margin = new System.Windows.Forms.Padding(2);
             this.buttonExportToExcel.Name = "buttonExportToExcel";
             this.buttonExportToExcel.Size = new System.Drawing.Size(256, 65);
             this.buttonExportToExcel.TabIndex = 1;
@@ -562,7 +612,7 @@
             // buttonIssuesOplossen
             // 
             this.buttonIssuesOplossen.Location = new System.Drawing.Point(718, 4);
-            this.buttonIssuesOplossen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonIssuesOplossen.Margin = new System.Windows.Forms.Padding(2);
             this.buttonIssuesOplossen.Name = "buttonIssuesOplossen";
             this.buttonIssuesOplossen.Size = new System.Drawing.Size(124, 58);
             this.buttonIssuesOplossen.TabIndex = 4;
@@ -574,7 +624,7 @@
             // buttonDeleteGevaren
             // 
             this.buttonDeleteGevaren.Location = new System.Drawing.Point(446, 3);
-            this.buttonDeleteGevaren.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonDeleteGevaren.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDeleteGevaren.Name = "buttonDeleteGevaren";
             this.buttonDeleteGevaren.Size = new System.Drawing.Size(160, 61);
             this.buttonDeleteGevaren.TabIndex = 3;
@@ -586,54 +636,13 @@
             // 
             this.buttonAddRisico.Dock = System.Windows.Forms.DockStyle.Left;
             this.buttonAddRisico.Location = new System.Drawing.Point(0, 0);
-            this.buttonAddRisico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAddRisico.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAddRisico.Name = "buttonAddRisico";
             this.buttonAddRisico.Size = new System.Drawing.Size(128, 65);
             this.buttonAddRisico.TabIndex = 2;
             this.buttonAddRisico.Text = "Voeg gevaar toe";
             this.buttonAddRisico.UseVisualStyleBackColor = true;
             this.buttonAddRisico.Click += new System.EventHandler(this.buttonAddRisico_Click);
-            // 
-            // tabPagemaatregel
-            // 
-            this.tabPagemaatregel.Controls.Add(this.panel10);
-            this.tabPagemaatregel.Controls.Add(this.panel9);
-            this.tabPagemaatregel.Location = new System.Drawing.Point(4, 22);
-            this.tabPagemaatregel.Name = "tabPagemaatregel";
-            this.tabPagemaatregel.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagemaatregel.Size = new System.Drawing.Size(1169, 374);
-            this.tabPagemaatregel.TabIndex = 3;
-            this.tabPagemaatregel.Text = "Gekoppelde maatregels";
-            this.tabPagemaatregel.UseVisualStyleBackColor = true;
-            // 
-            // panel9
-            // 
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel9.Location = new System.Drawing.Point(3, 3);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(1163, 89);
-            this.panel9.TabIndex = 0;
-            // 
-            // panel10
-            // 
-            this.panel10.Controls.Add(this.advancedDataGridViewGekoppeldeMaatregels);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel10.Location = new System.Drawing.Point(3, 92);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(1163, 279);
-            this.panel10.TabIndex = 1;
-            // 
-            // advancedDataGridViewGekoppeldeMaatregels
-            // 
-            this.advancedDataGridViewGekoppeldeMaatregels.AutoGenerateContextFilters = true;
-            this.advancedDataGridViewGekoppeldeMaatregels.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.advancedDataGridViewGekoppeldeMaatregels.DateWithTime = false;
-            this.advancedDataGridViewGekoppeldeMaatregels.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.advancedDataGridViewGekoppeldeMaatregels.Location = new System.Drawing.Point(0, 0);
-            this.advancedDataGridViewGekoppeldeMaatregels.Name = "advancedDataGridViewGekoppeldeMaatregels";
-            this.advancedDataGridViewGekoppeldeMaatregels.Size = new System.Drawing.Size(1163, 279);
-            this.advancedDataGridViewGekoppeldeMaatregels.TabIndex = 0;
-            this.advancedDataGridViewGekoppeldeMaatregels.TimeFilter = false;
             // 
             // EditObjecten
             // 
@@ -642,7 +651,7 @@
             this.ClientSize = new System.Drawing.Size(1181, 660);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EditObjecten";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Object Pagina";
@@ -662,14 +671,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridViewGekoppeldeIssues)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.tabPagemaatregel.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridViewGekoppeldeMaatregels)).EndInit();
             this.tabPageObjectInfo.ResumeLayout(false);
             this.tabPageObjectInfo.PerformLayout();
             this.tabPageSettings.ResumeLayout(false);
             this.tabPageSettings.PerformLayout();
             this.panel4.ResumeLayout(false);
-            this.tabPagemaatregel.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridViewGekoppeldeMaatregels)).EndInit();
             this.ResumeLayout(false);
 
         }

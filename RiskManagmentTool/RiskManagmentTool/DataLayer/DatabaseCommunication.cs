@@ -2796,8 +2796,8 @@ namespace RiskManagmentTool.DataLayer
         #region add menus
 
 
-
-        public void AddToObjectTypesMenu(string optionToAdd)
+        //TODO, add descirptions
+        public void AddToObjectTypesMenu(string optionToAdd, string optionDescriptionToAdd)
         {
             string databaseTableName = "ObjectTypes";
 
@@ -2810,7 +2810,7 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
         }
 
-        public void AddToGevolgenMenu(string optionToAdd, string objectId)
+        public void AddToGevolgenMenu(string optionToAdd, string optionDescriptionToAdd, string objectId)
         {
             string databaseTableName = "Gevolgen";
 
@@ -2824,7 +2824,7 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
         }
 
-        public void AddToGevarenzonesMenu(string optionToAdd, string objectId)
+        public void AddToGevarenzonesMenu(string optionToAdd, string optionDescriptionToAdd, string objectId)
         {
             string databaseTableName = "Gevarenzones";
 
@@ -2838,7 +2838,7 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
         }
 
-        public void AddToGevaarTypesMenu(string optionToAdd, string objectId)
+        public void AddToGevaarTypesMenu(string optionToAdd, string optionDescriptionToAdd, string objectId)
         {
             string databaseTableName = "GevaarTypes";
 
@@ -2852,7 +2852,7 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
         }
 
-        public void AddToGebruiksfasesMenu(string optionToAdd, string objectId)
+        public void AddToGebruiksfasesMenu(string optionToAdd, string optionDescriptionToAdd, string objectId)
         {
             string databaseTableName = "Gebruiksfases";
 
@@ -2866,7 +2866,7 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
         }
 
-        public void AddToGebruikersMenu(string optionToAdd, string objectId)
+        public void AddToGebruikersMenu(string optionToAdd, string optionDescriptionToAdd, string objectId)
         {
             string databaseTableName = "Gebruikers";
 
@@ -2880,7 +2880,7 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
         }
 
-        public void AddToDisciplinesMenu(string optionToAdd, string objectId)
+        public void AddToDisciplinesMenu(string optionToAdd, string optionDescriptionToAdd, string objectId)
         {
             string databaseTableName = "Disciplines";
 
@@ -2894,7 +2894,7 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
         }
 
-        public void AddToBedienvormenMenu(string optionToAdd, string objectId)
+        public void AddToBedienvormenMenu(string optionToAdd, string optionDescriptionToAdd, string objectId)
         {
             string databaseTableName = "Bedienvormen";
 
@@ -2908,7 +2908,7 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
         }
 
-        public void AddToTakenMenu(string optionToAdd, string objectId)
+        public void AddToTakenMenu(string optionToAdd, string optionDescriptionToAdd, string objectId)
         {
             string databaseTableName = "Taken";
 
@@ -2922,7 +2922,7 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
         }
 
-        public void AddToNormenMenu(string optionToAdd)
+        public void AddToNormenMenu(string optionToAdd, string optionDescriptionToAdd)
         {
             string databaseTableName = "Normen";
 
@@ -2935,7 +2935,7 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
         }
 
-        public void AddToCategoriesMenu(string optionToAdd)
+        public void AddToCategoriesMenu(string optionToAdd, string optionDescriptionToAdd)
         {
             string databaseTableName = "Categories";
 
@@ -2948,7 +2948,7 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
         }
 
-        public void AddToTemplateTypes(string optionToAdd)
+        public void AddToTemplateTypes(string optionToAdd, string optionDescriptionToAdd)
         {
             string databaseTableName = "TemplateTypes";
 
@@ -2961,7 +2961,7 @@ namespace RiskManagmentTool.DataLayer
             sqlConnection.Close();
         }
 
-        public void AddToTemplateToepassingen(string optionToAdd)
+        public void AddToTemplateToepassingen(string optionToAdd, string optionDescriptionToAdd)
         {
             string databaseTableName = "TemplateToepassingen";
 
@@ -2993,9 +2993,9 @@ namespace RiskManagmentTool.DataLayer
         #endregion delete menus
 
         #region edit menus
-        public void EditFromMenu(string databaseTableName, string databaseColumnName, string databaseIDColumnName, int optionID, string newText)
+        public void EditFromMenu(string databaseTableName, string databaseColumnName, string databaseIDColumnName, int optionID, string newText, string newDescriptionText)
         {
-            sqlConnection.Open();
+            sqlConnection.Open();//TODo Add descirption
             SqlCommand cmd = new SqlCommand("UPDATE " + databaseTableName + " " +
                                              "SET " + databaseColumnName + " = @NewText" +
                                             " WHERE "+ databaseIDColumnName + " = '" + optionID + "'", sqlConnection);
